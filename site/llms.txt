@@ -1,0 +1,146 @@
+# affectUI
+
+> Agent-ready React UI for AI products and SaaS: 109 components, screens, blocks, illustrations and motion effects. Every item is one .tsx file with its styles inside – no Tailwind, no animation library, no other dependencies. React 19, dark mode and reduced motion built in.
+
+40 items are free and open source (MIT). The other 69 are part of affectUI Pro, a one-time purchase (https://www.affectui.com/pricing).
+
+## How to add an item
+
+- Free items: `npx shadcn@latest add https://www.affectui.com/r/<slug>.json` – the file lands in components/ui.
+- Short names: register `"@affectui": "https://www.affectui.com/r/{name}.json"` under "registries" in components.json, then `npx shadcn@latest add @affectui/<slug>`.
+- Pro items: the same commands, with the buyer's access key (AFFECTUI_TOKEN, created under https://www.affectui.com/account/downloads) sent as `Authorization: Bearer <key>` – set it as a header on the @affectui registry in components.json. Without a key the registry answers 401.
+- Import from `@/components/ui/<slug>` and keep the component's own styles and motion; adapt only content and props.
+- MCP server: https://www.affectui.com/api/mcp (Streamable HTTP) – search items, read docs and fetch source from Claude Code, Cursor, VS Code or Codex.
+
+## Docs
+
+- [Introduction](https://www.affectui.com/docs/introduction): what affectUI is, free and Pro
+- [Installation](https://www.affectui.com/docs/installation): shadcn CLI, short names, Pro access key
+- [Theming](https://www.affectui.com/docs/theming): colors via CSS variables, dark mode
+- [Accessibility](https://www.affectui.com/docs/accessibility): keyboard, focus, reduced motion
+- [Using with AI](https://www.affectui.com/docs/ai): prompts and setup for coding assistants
+- [Full docs in one file](https://www.affectui.com/llms-full.txt): every item's usage, props and notes
+
+## Components
+
+- [Agent Inbox](https://www.affectui.com/components/agent-inbox): All your background agent tasks in one calm list – live clocks and status tags, filter tabs with rolling counts, rows that unfold to the last steps with Approve, Reject, Retry or Open, and glide to their new place (Pro, Agents)
+- [Agent Lanes](https://www.affectui.com/components/agent-lanes): Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the block (Pro, Agents)
+- [Agent Plan](https://www.affectui.com/components/agent-plan): An agent's step-by-step plan to review before it runs – rename, drag to reorder, remove or add steps, then watch each one run with live timers and retry from a failed step (Pro, Agents)
+- [Agent Steering](https://www.affectui.com/components/agent-steering): Steer an agent while it works – queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away (Pro, Agents)
+- [Agent Tree](https://www.affectui.com/components/agent-tree): Who started whom – an orchestrator and its sub-agents as a live tree, with status, cost and time on every card, costs rolling up each branch, and branches that fold to one line (Pro, Agents)
+- [AI Answer](https://www.affectui.com/components/ai-answer): Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups (Pro, Chat)
+- [Approval Card](https://www.affectui.com/components/approval-card): An agent asks before it acts – risk badge, preview, Approve and Deny with shortcuts, a pausing countdown, and a smooth morph into a resolved row (Pro, Agents)
+- [Autonomy Dial](https://www.affectui.com/components/autonomy-dial): How much an agent may do on its own – a three-stop dial, and its real actions gliding between “Runs on its own” and “Asks you first”, with a lock for what always asks (Pro, Agents)
+- [Billing Schedule](https://www.affectui.com/components/billing-schedule): Build a billing phase – start date, duration, products with repeats and timing, discount, minimum and live totals (Pro, Inputs)
+- [Breakdown Chart](https://www.affectui.com/components/breakdown-chart): Stacked bar chart with measure, slice and segment pickers, a hover breakdown and a linked table (Pro, Data display)
+- [Button](https://www.affectui.com/components/button): Primary, secondary, ghost and destructive buttons with icons, sizes and a shimmering loading state (Free, Buttons)
+- [Change Summary](https://www.affectui.com/components/change-summary): What moved since last time – one metric per row with a colored trend (Free, Data display)
+- [Chat Composer](https://www.affectui.com/components/chat-composer): Prompt composer with model picker, voice input, app connections and approval request (Pro, Chat)
+- [Cited Answer](https://www.affectui.com/components/cited-answer): An AI answer wired to its sources – point at a citation to light up its sentence and source, click to unfold the quoted passage with the matching words marked (Pro, Chat)
+- [Combobox](https://www.affectui.com/components/combobox): Pick one or many from a searchable, grouped list – chips with avatars, highlighted matches, create-on-the-fly and full keyboard support (Pro, Inputs)
+- [Command Menu](https://www.affectui.com/components/command-menu): Search and run anything from one field – tool actions with logos and ⌘1–⌘5, everyday commands with icons (Pro, Navigation)
+- [Comment Thread](https://www.affectui.com/components/comment-thread): One comment with replies – an assistant reports what it did, folds open details and answers @mentions (Free, Chat)
+- [Comments Panel](https://www.affectui.com/components/comments-panel): Comment feed with filters, runnable /edit commands, resolve and a composer (Pro, Chat)
+- [Compact Breakdown](https://www.affectui.com/components/compact-breakdown): A total split into its parts in one small card – numbers roll, the bar glides and the ranked rows trade places when the period changes (Pro, Data display)
+- [Context Window](https://www.affectui.com/components/context-window): What fills the model's context, as a field of cells – hover a part to light it up, remove files, and compact the conversation while its cells shimmer and clear (Pro, Agents)
+- [Data Table](https://www.affectui.com/components/data-table): Spreadsheet-style table: select cells and ranges, edit in place, copy and paste, undo and sort (Pro, Data display)
+- [Date Range Picker](https://www.affectui.com/components/date-range-picker): Presets and two calendars with a hover preview, comparison with the previous period or year, full keyboard control (Pro, Inputs)
+- [Decision Inbox](https://www.affectui.com/components/decision-inbox): Open decisions with two quick answers each – answered ones confirm and fold away (Free, Feedback)
+- [Delegate Board](https://www.affectui.com/components/delegate-board): Hand work to your agents by dragging it onto them – each agent previews its new “busy until” time, or switch to Auto and every new task goes to whoever is free first (Pro, Agents)
+- [Dropzone](https://www.affectui.com/components/dropzone): Drag files in and watch them upload – fanning documents, colored type badges, progress with time left, errors with retry (Pro, Inputs)
+- [Email Draft](https://www.affectui.com/components/email-draft): Agent-written email for review – switch recipient and tone, edit inline, remove the attachment, send or discard with undo (Free, Cards)
+- [Experiment Card](https://www.affectui.com/components/experiment-card): An A/B test in two lines that quietly unfolds on hover – variants linked to a tiny chart, a metric switch with rolling numbers, and a winner you pick with a click (Pro, Data display)
+- [Filter Menu](https://www.affectui.com/components/filter-menu): Grouped filters with removable chips, collapsible checkbox groups, Clear all and full keyboard control (Free, Inputs)
+- [Inline Diff](https://www.affectui.com/components/inline-diff): AI edits to prose shown inline – struck and added words you accept or reject one by one, with keys, a popover and undo (Pro, Agents)
+- [Integration Picker](https://www.affectui.com/components/integration-picker): Integrations page of a command menu – search, a list of services and the picked one with its connection on two tiles (Pro, Navigation)
+- [Integration Settings](https://www.affectui.com/components/integration-settings): Settings card for a connected service – on/off switch, API key, validated site address, time zone and a save bar (Pro, Inputs)
+- [KPI Chart](https://www.affectui.com/components/kpi-chart): Metric card with a multi-line chart and a tooltip that follows the pointer (Pro, Data display)
+- [Memory Panel](https://www.affectui.com/components/memory-panel): What the assistant remembers about you, grouped and editable – a master switch, category filters, and on every memory edit in place, pause or forget with Undo on the tray (Pro, Agents)
+- [Message Actions](https://www.affectui.com/components/message-actions): The quiet bar under an AI message – copy turns into a check, regenerate spins and unfolds a version switcher, thumbs pop and ask why, read aloud becomes a tiny equalizer (Free, Chat)
+- [Model Picker](https://www.affectui.com/components/model-picker): The model menu of an AI chat – point at a model and its speed, quality and cost bars fill, switch on extended thinking and its effort unfolds, while the tray rolls the first-token time and price (Pro, Chat)
+- [Notification Stack](https://www.affectui.com/components/notification-stack): Notice cards stacked behind each other – dismiss the front one to reveal the next (Free, Feedback)
+- [OTP Input](https://www.affectui.com/components/otp-input): The verification code field done right – a gliding focus ring, paste and SMS autofill, a calm shake on errors and a morph into Verified (Free, Inputs)
+- [Permission Request](https://www.affectui.com/components/permission-request): An agent asks for one specific right – who, why and exactly what will happen – and you allow it once, for an hour or always; then it folds into one line with the time left and Revoke (Pro, Agents)
+- [Profile Menu](https://www.affectui.com/components/profile-menu): Account card with the signed-in user, menu actions and profile setup progress (Free, Navigation)
+- [Progress Tracker](https://www.affectui.com/components/progress-tracker): Onboarding checklist with an animated progress bar, ticks that draw themselves and auto play (Free, Feedback)
+- [Project Card](https://www.affectui.com/components/project-card): A two-line project summary that quietly unfolds on hover – a progress ring with one segment per subtask, a people filter and a status picker, all linked by hover (Pro, Cards)
+- [Prompt Library](https://www.affectui.com/components/prompt-library): Saved prompt templates with variables – type straight into the sentence, watch the finished prompt assemble below, and use it once every variable is filled (Pro, Inputs)
+- [Reaction Bar](https://www.affectui.com/components/reaction-bar): Like, comment, repost and share in one pill – icons pop and fill, counts roll in digit by digit (Free, Buttons)
+- [Segmented Control](https://www.affectui.com/components/segmented-control): Switch between two to six options – a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges (Free, Navigation)
+- [Setup Guide](https://www.affectui.com/components/setup-guide): Onboarding panel with a progress bar and collapsible task groups that strike through when done (Pro, Feedback)
+- [Smart Recommendation](https://www.affectui.com/components/smart-recommendation): Suggestion card with a confidence signal, alternatives to switch to and accept with undo (Free, Cards)
+- [Stepper Form](https://www.affectui.com/components/stepper-form): A multi-step flow for onboarding and setup – steps that fill and check off, sliding steps, a card that morphs to each step, inline validation and a success state (Pro, Inputs)
+- [Thinking Loader](https://www.affectui.com/components/thinking-loader): A small working pill for AI replies – an eight-ray spinner and a shimmering label that rolls through phases and settles on a check (Free, Chat)
+- [Thinking State](https://www.affectui.com/components/thinking-state): AI working panel with a live timer, searched sources and thinking steps that appear one by one (Pro, Chat)
+- [Tips Panel](https://www.affectui.com/components/tips-panel): Grid of short tips with one action each – taken tips turn into a done state (Free, Cards)
+- [Toaster](https://www.affectui.com/components/toaster): Calm toasts from anywhere – a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss (Pro, Feedback)
+- [Tool Call Card](https://www.affectui.com/components/tool-call-card): An agent's tool call in one line – live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that sums them up (Free, Agents)
+- [Usage Meter](https://www.affectui.com/components/usage-meter): Plan usage and AI credits – a stacked credits meter by category, daily sparkline, limits and a button that speaks up near the limit (Pro, Data display)
+- [Writing Assistant](https://www.affectui.com/components/writing-assistant): AI chat card with a soft gradient glow, suggestions, streaming replies and live voice dictation (Pro, Chat)
+
+## Screens
+
+- [Agent Chat](https://www.affectui.com/screens/agent-chat): Chat with an orchestrating agent, the agents at work, and a brief to fill in beside it (Pro, App screens)
+- [Agent Run](https://www.affectui.com/screens/agent-run): One autonomous agent run: the plan ticking through its steps, the tool calls, an approval it waits on and the draft it wrote (Pro, App screens)
+- [Analytics](https://www.affectui.com/screens/analytics): Revenue dashboard: key figures, revenue by channel, breakdown, top products and weekly trends (Pro, App screens)
+- [App Shell](https://www.affectui.com/screens/app-shell): Collapsible sidebar with workspace, menu, projects and account – the frame every screen sits in (Pro, App screens)
+- [Assistant Home](https://www.affectui.com/screens/assistant-home): AI assistant start page: greeting, prompt box with tools, connected apps and suggestions (Pro, App screens)
+- [CRM](https://www.affectui.com/screens/crm): Company list with pipelines, open views as tabs and an editable data table (Pro, App screens)
+- [Evals](https://www.affectui.com/screens/evals): Prompt evaluation dashboard: pass rate by version, reviewable prompt changes and test cases you can re-run (Pro, App screens)
+- [Folder](https://www.affectui.com/screens/folder): Inside one folder: breadcrumbs, file cards with previews, and an empty state (Pro, App screens)
+- [Folders](https://www.affectui.com/screens/files): Folder overview with tabs, search, sort, grid/list toggle and file templates (Pro, App screens)
+- [Integrations](https://www.affectui.com/screens/integrations): App directory with a sticky header, categories, search and connect states (Pro, App screens)
+- [Onboarding](https://www.affectui.com/screens/onboarding): First-run flow of an AI workspace: workspace setup, tool connections, team invites and a first agent, with a getting-started checklist (Pro, App screens)
+- [Settings & Billing](https://www.affectui.com/screens/settings-billing): Settings page with tabs: workspace, members, API keys and billing with plan, usage, payment method, plan comparison and invoices (Pro, App screens)
+
+## Blocks
+
+- [Agent Gallery](https://www.affectui.com/blocks/agent-gallery): Slim gradient panels with one open product screen in the middle – pick a panel and it glides open (Pro, Feature sections)
+- [AI Workspace](https://www.affectui.com/blocks/ai-workspace): Complete assistant app – sidebar, welcome, streaming chat and projects, built on the Chat Composer (Pro, Productivity)
+- [App Directory](https://www.affectui.com/blocks/app-directory): Browse, search and connect integrations – categories, filters and app cards with a connect flow (Pro, Integrations)
+- [Client Context](https://www.affectui.com/blocks/client-context): A client workspace with live numbers and a shared context timeline – switch clients, search, filter and add notes or files (Pro, Productivity)
+- [Invoice & Credit Note](https://www.affectui.com/blocks/invoice-credit): An invoice and its credit note stacked like paper – switch between them, pick lines to credit, adjust amounts and issue (Pro, Billing)
+- [KPI Board](https://www.affectui.com/blocks/kpi-board): The top of a dashboard – three trend cards, an overview chart that compares this period with the last, and a focus card; hover shows any day's value and every number rolls when the range changes (Pro, Analytics)
+- [Logo Marquee](https://www.affectui.com/blocks/logo-marquee): The endless “Trusted by” strip – a seamless loop that eases to a stop on hover, scrubs with inertia and lifts the hovered logo to colour (Free, Social proof)
+- [Metrics Dashboard](https://www.affectui.com/blocks/metrics-dashboard): Sales overview – KPI cards pick the metric, one chart switches between dotted line and bars, with top products and channels (Pro, Analytics)
+- [Pricing Plans](https://www.affectui.com/blocks/pricing-plans): Pricing section with a monthly / yearly switch, three plan cards and collapsible details (Pro, Pricing)
+- [Task Board](https://www.affectui.com/blocks/task-board): Kanban board with drag and drop, quick add, a detail panel, search, label filters and a compact view (Pro, Productivity)
+- [Testimonial Wall](https://www.affectui.com/blocks/testimonial-wall): The landing-page wall of quotes – columns that scroll endlessly in opposite directions, ease to a stop on hover and scrub with inertia (Free, Social proof)
+
+## Illustrations
+
+- [Agent Team](https://www.affectui.com/illustrations/agent-team): A prompt types itself and branches out into three agents, each with a role and overlapping tool logos (Free, Card illustrations)
+- [Cover Flow](https://www.affectui.com/illustrations/cover-flow): Browse covers in 3D – drag, flick or scrub the row, it springs to the nearest cover; images drift in their frames over a soft reflection (Free, Card illustrations)
+- [DACH Region](https://www.affectui.com/illustrations/region-dach): DACH map with fading neighbours and a pastel band along the border, switchable to the US, China, India, Brazil or Japan (Free, Maps)
+- [Empty Calendar](https://www.affectui.com/illustrations/empty-calendar): Stack of calendar cards marked empty, fanning out on hover (Free, Card illustrations)
+- [Enrichment Orbit](https://www.affectui.com/illustrations/enrichment-orbit): Grok tile inside two rings with comets and data nodes orbiting around it (Free, Card illustrations)
+- [Frost Cloud](https://www.affectui.com/illustrations/frost-cloud): A frosted white cloud with eyes cut out of it, on a red-orange or blue sky – it floats, turns to look around, blinks, follows the pointer and bounces with a wink when clicked (Free, Card illustrations)
+- [Ghosted Chat](https://www.affectui.com/illustrations/ghosted-chat): Unanswered chat messages marked as read, with a thumbs-down reply on hover (Free, Card illustrations)
+- [Glass Folder](https://www.affectui.com/illustrations/glass-folder): Glassy blue folder with documents behind a frosted pocket that tips open on hover (Pro, Card illustrations)
+- [Glow Cloud](https://www.affectui.com/illustrations/glow-cloud): A glowing cloud with eyes in blue or red-orange – it floats, turns to look around, blinks, follows the pointer and bounces with a wink when clicked (Free, Card illustrations)
+- [Glow Keyboard](https://www.affectui.com/illustrations/glow-keyboard): AI chat input that types itself over a glass keyboard – every key press sends a wave up the gradient floor (Pro, Product scenes)
+- [Integration Beam](https://www.affectui.com/illustrations/integration-beam): Your product between the tools it connects – light pulses flow along curved beams, hover to focus a tool, click to pause it (Free, Product scenes)
+- [Integration Flow](https://www.affectui.com/illustrations/integration-flow): Integration pills rotating along a dashed arc, each beaming its data into a central analysis hub (Pro, Product scenes)
+- [Integration Grid](https://www.affectui.com/illustrations/integration-grid): Honeycomb-like wall of integration logos around a bright centre tile with your product mark, fading out toward the edges (Free, Card illustrations)
+- [Layer Stack](https://www.affectui.com/illustrations/layer-stack): Isometric stack of five layers with a list beside it – the chosen entry lifts its layer out in color (Free, Card illustrations)
+- [Lead Sourcing](https://www.affectui.com/illustrations/lead-sourcing): ChatGPT tile linked to Gmail and Grok, with a shine running along the connection (Free, Card illustrations)
+- [Logo Cluster](https://www.affectui.com/illustrations/logo-cluster): Your mark on a white disc in the middle – company logos bounce out of it and settle around it (Free, Card illustrations)
+- [Model Wheel](https://www.affectui.com/illustrations/model-wheel): AI model names on a turning drum – the rows bend away at the edges and each model lands on a soft gray fill (Free, Card illustrations)
+- [Outreach Branches](https://www.affectui.com/illustrations/outreach-branches): Lines branching out to Gmail, Slack and Notion with colored pulses flowing down (Pro, Card illustrations)
+- [Project Flow](https://www.affectui.com/illustrations/project-flow): Animated scene of a client task branching into subtasks, notes and assigned roles (Pro, Product scenes)
+- [Side Folder](https://www.affectui.com/illustrations/side-folder): Glassy blue folder on its side, documents sliding out to the right as the pocket swings open on hover (Free, Card illustrations)
+- [Tab Overload](https://www.affectui.com/illustrations/tab-overload): Overlapping browser windows where the highlight follows the hovered tab (Free, Card illustrations)
+- [Team Invite](https://www.affectui.com/illustrations/team-invite): Connected teammates – a cursor drags a new one into the empty slot, the line turns solid and they go online (Free, Card illustrations)
+- [Voice Orb](https://www.affectui.com/illustrations/voice-orb): The face of a voice assistant – a sphere of dots that breathes, catches sound, collapses into a spinning ring while thinking and ripples when it speaks (Pro, Product scenes)
+- [World Map Continental](https://www.affectui.com/illustrations/world-map): World map with one highlighted continent and a pastel band along its coastline, switchable between all six (Pro, Maps)
+
+## Motion
+
+- [Blur Crossfade](https://www.affectui.com/motion/blur-crossfade): Swaps content with a soft blur while the box glides smoothly to the size of what comes next (Pro, Transitions)
+- [Gradient Floor](https://www.affectui.com/motion/gradient-floor): A blurred colour gradient that glows up from the bottom edge – two layers that drift and morph (Pro, Backgrounds)
+- [Gradient Text](https://www.affectui.com/motion/gradient-text): Letters cut from a liquid, ever-flowing gradient – the color sweeps across the word the first time it's seen (Pro, Text)
+- [Grid Background](https://www.affectui.com/motion/grid-background): A fine line grid that drifts slowly behind your content and fades out towards the edges (Free, Backgrounds)
+- [Number Ticker](https://www.affectui.com/motion/number-ticker): Odometer-style numbers – every digit rolls to its new value and counts in from zero when it scrolls into view (Free, Numbers)
+- [Shimmer Loader](https://www.affectui.com/motion/shimmer-loader): Skeleton blocks that share one soft light sweep, plus shimmering text for “Thinking…” states (Free, Loaders)
+- [Text Reveal](https://www.affectui.com/motion/text-reveal): Text that arrives word by word or letter by letter – each piece rises out of a soft blur as it scrolls into view (Free, Text)
+- [Tilt Card](https://www.affectui.com/motion/tilt-card): A card that tilts in 3D towards the pointer, with a soft glare that follows it and a smooth spring back (Pro, Hover)

@@ -1,0 +1,799 @@
+{
+  "source": "https://www.affectui.com",
+  "routes": [
+    "/",
+    "/blocks",
+    "/blocks/agent-gallery",
+    "/blocks/ai-workspace",
+    "/blocks/app-directory",
+    "/blocks/category/analytics",
+    "/blocks/category/billing",
+    "/blocks/category/feature-sections",
+    "/blocks/category/integrations",
+    "/blocks/category/pricing",
+    "/blocks/category/productivity",
+    "/blocks/category/social-proof",
+    "/blocks/client-context",
+    "/blocks/invoice-credit",
+    "/blocks/kpi-board",
+    "/blocks/logo-marquee",
+    "/blocks/metrics-dashboard",
+    "/blocks/pricing-plans",
+    "/blocks/task-board",
+    "/blocks/testimonial-wall",
+    "/category/agents",
+    "/category/buttons",
+    "/category/cards",
+    "/category/chat",
+    "/category/data-display",
+    "/category/feedback",
+    "/category/inputs",
+    "/category/navigation",
+    "/components",
+    "/components/agent-inbox",
+    "/components/agent-lanes",
+    "/components/agent-plan",
+    "/components/agent-steering",
+    "/components/agent-tree",
+    "/components/ai-answer",
+    "/components/approval-card",
+    "/components/autonomy-dial",
+    "/components/billing-schedule",
+    "/components/breakdown-chart",
+    "/components/button",
+    "/components/change-summary",
+    "/components/chat-composer",
+    "/components/cited-answer",
+    "/components/combobox",
+    "/components/command-menu",
+    "/components/comment-thread",
+    "/components/comments-panel",
+    "/components/compact-breakdown",
+    "/components/context-window",
+    "/components/data-table",
+    "/components/date-range-picker",
+    "/components/decision-inbox",
+    "/components/delegate-board",
+    "/components/dropzone",
+    "/components/email-draft",
+    "/components/experiment-card",
+    "/components/filter-menu",
+    "/components/inline-diff",
+    "/components/integration-picker",
+    "/components/integration-settings",
+    "/components/kpi-chart",
+    "/components/memory-panel",
+    "/components/message-actions",
+    "/components/model-picker",
+    "/components/notification-stack",
+    "/components/otp-input",
+    "/components/permission-request",
+    "/components/profile-menu",
+    "/components/progress-tracker",
+    "/components/project-card",
+    "/components/prompt-library",
+    "/components/reaction-bar",
+    "/components/segmented-control",
+    "/components/setup-guide",
+    "/components/smart-recommendation",
+    "/components/stepper-form",
+    "/components/thinking-loader",
+    "/components/thinking-state",
+    "/components/tips-panel",
+    "/components/toaster",
+    "/components/tool-call-card",
+    "/components/usage-meter",
+    "/components/writing-assistant",
+    "/contact",
+    "/docs",
+    "/docs/accessibility",
+    "/docs/ai",
+    "/docs/installation",
+    "/docs/introduction",
+    "/docs/theming",
+    "/illustrations",
+    "/illustrations/agent-team",
+    "/illustrations/category/card-illustrations",
+    "/illustrations/category/maps",
+    "/illustrations/category/product-scenes",
+    "/illustrations/cover-flow",
+    "/illustrations/empty-calendar",
+    "/illustrations/enrichment-orbit",
+    "/illustrations/frost-cloud",
+    "/illustrations/ghosted-chat",
+    "/illustrations/glass-folder",
+    "/illustrations/glow-cloud",
+    "/illustrations/glow-keyboard",
+    "/illustrations/integration-beam",
+    "/illustrations/integration-flow",
+    "/illustrations/integration-grid",
+    "/illustrations/layer-stack",
+    "/illustrations/lead-sourcing",
+    "/illustrations/logo-cluster",
+    "/illustrations/model-wheel",
+    "/illustrations/outreach-branches",
+    "/illustrations/project-flow",
+    "/illustrations/region-dach",
+    "/illustrations/side-folder",
+    "/illustrations/tab-overload",
+    "/illustrations/team-invite",
+    "/illustrations/voice-orb",
+    "/illustrations/world-map",
+    "/imprint",
+    "/license",
+    "/motion",
+    "/motion/blur-crossfade",
+    "/motion/category/backgrounds",
+    "/motion/category/hover",
+    "/motion/category/loaders",
+    "/motion/category/numbers",
+    "/motion/category/text",
+    "/motion/category/transitions",
+    "/motion/gradient-floor",
+    "/motion/gradient-text",
+    "/motion/grid-background",
+    "/motion/number-ticker",
+    "/motion/shimmer-loader",
+    "/motion/text-reveal",
+    "/motion/tilt-card",
+    "/pricing",
+    "/privacy",
+    "/refund",
+    "/screens",
+    "/screens/agent-chat",
+    "/screens/agent-chat/full",
+    "/screens/agent-run",
+    "/screens/agent-run/full",
+    "/screens/analytics",
+    "/screens/analytics/full",
+    "/screens/app-shell",
+    "/screens/app-shell/full",
+    "/screens/assistant-home",
+    "/screens/assistant-home/full",
+    "/screens/category/app-screens",
+    "/screens/crm",
+    "/screens/crm/full",
+    "/screens/evals",
+    "/screens/evals/full",
+    "/screens/files",
+    "/screens/files/full",
+    "/screens/folder",
+    "/screens/folder/full",
+    "/screens/integrations",
+    "/screens/integrations/full",
+    "/screens/onboarding",
+    "/screens/onboarding/full",
+    "/screens/settings-billing",
+    "/screens/settings-billing/full",
+    "/terms"
+  ],
+  "items": {
+    "components": [
+      {
+        "slug": "agent-inbox",
+        "category": "Agents"
+      },
+      {
+        "slug": "agent-lanes",
+        "category": "Agents"
+      },
+      {
+        "slug": "agent-plan",
+        "category": "Agents"
+      },
+      {
+        "slug": "agent-steering",
+        "category": "Agents"
+      },
+      {
+        "slug": "agent-tree",
+        "category": "Agents"
+      },
+      {
+        "slug": "ai-answer",
+        "category": "Chat"
+      },
+      {
+        "slug": "approval-card",
+        "category": "Agents"
+      },
+      {
+        "slug": "autonomy-dial",
+        "category": "Agents"
+      },
+      {
+        "slug": "billing-schedule",
+        "category": "Inputs"
+      },
+      {
+        "slug": "breakdown-chart",
+        "category": "Data display"
+      },
+      {
+        "slug": "button",
+        "category": "Buttons"
+      },
+      {
+        "slug": "change-summary",
+        "category": "Data display"
+      },
+      {
+        "slug": "chat-composer",
+        "category": "Chat"
+      },
+      {
+        "slug": "cited-answer",
+        "category": "Chat"
+      },
+      {
+        "slug": "combobox",
+        "category": "Inputs"
+      },
+      {
+        "slug": "command-menu",
+        "category": "Navigation"
+      },
+      {
+        "slug": "comment-thread",
+        "category": "Chat"
+      },
+      {
+        "slug": "comments-panel",
+        "category": "Chat"
+      },
+      {
+        "slug": "compact-breakdown",
+        "category": "Data display"
+      },
+      {
+        "slug": "context-window",
+        "category": "Agents"
+      },
+      {
+        "slug": "data-table",
+        "category": "Data display"
+      },
+      {
+        "slug": "date-range-picker",
+        "category": "Inputs"
+      },
+      {
+        "slug": "decision-inbox",
+        "category": "Feedback"
+      },
+      {
+        "slug": "delegate-board",
+        "category": "Agents"
+      },
+      {
+        "slug": "dropzone",
+        "category": "Inputs"
+      },
+      {
+        "slug": "email-draft",
+        "category": "Cards"
+      },
+      {
+        "slug": "experiment-card",
+        "category": "Data display"
+      },
+      {
+        "slug": "filter-menu",
+        "category": "Inputs"
+      },
+      {
+        "slug": "inline-diff",
+        "category": "Agents"
+      },
+      {
+        "slug": "integration-picker",
+        "category": "Navigation"
+      },
+      {
+        "slug": "integration-settings",
+        "category": "Inputs"
+      },
+      {
+        "slug": "kpi-chart",
+        "category": "Data display"
+      },
+      {
+        "slug": "memory-panel",
+        "category": "Agents"
+      },
+      {
+        "slug": "message-actions",
+        "category": "Chat"
+      },
+      {
+        "slug": "model-picker",
+        "category": "Chat"
+      },
+      {
+        "slug": "notification-stack",
+        "category": "Feedback"
+      },
+      {
+        "slug": "otp-input",
+        "category": "Inputs"
+      },
+      {
+        "slug": "permission-request",
+        "category": "Agents"
+      },
+      {
+        "slug": "profile-menu",
+        "category": "Navigation"
+      },
+      {
+        "slug": "progress-tracker",
+        "category": "Feedback"
+      },
+      {
+        "slug": "project-card",
+        "category": "Cards"
+      },
+      {
+        "slug": "prompt-library",
+        "category": "Inputs"
+      },
+      {
+        "slug": "reaction-bar",
+        "category": "Buttons"
+      },
+      {
+        "slug": "segmented-control",
+        "category": "Navigation"
+      },
+      {
+        "slug": "setup-guide",
+        "category": "Feedback"
+      },
+      {
+        "slug": "smart-recommendation",
+        "category": "Cards"
+      },
+      {
+        "slug": "stepper-form",
+        "category": "Inputs"
+      },
+      {
+        "slug": "thinking-loader",
+        "category": "Chat"
+      },
+      {
+        "slug": "thinking-state",
+        "category": "Chat"
+      },
+      {
+        "slug": "tips-panel",
+        "category": "Cards"
+      },
+      {
+        "slug": "toaster",
+        "category": "Feedback"
+      },
+      {
+        "slug": "tool-call-card",
+        "category": "Agents"
+      },
+      {
+        "slug": "usage-meter",
+        "category": "Data display"
+      },
+      {
+        "slug": "writing-assistant",
+        "category": "Chat"
+      }
+    ],
+    "screens": [
+      {
+        "slug": "agent-chat",
+        "category": "App screens"
+      },
+      {
+        "slug": "agent-run",
+        "category": "App screens"
+      },
+      {
+        "slug": "analytics",
+        "category": "App screens"
+      },
+      {
+        "slug": "app-shell",
+        "category": "App screens"
+      },
+      {
+        "slug": "assistant-home",
+        "category": "App screens"
+      },
+      {
+        "slug": "crm",
+        "category": "App screens"
+      },
+      {
+        "slug": "evals",
+        "category": "App screens"
+      },
+      {
+        "slug": "files",
+        "category": "App screens"
+      },
+      {
+        "slug": "folder",
+        "category": "App screens"
+      },
+      {
+        "slug": "integrations",
+        "category": "App screens"
+      },
+      {
+        "slug": "onboarding",
+        "category": "App screens"
+      },
+      {
+        "slug": "settings-billing",
+        "category": "App screens"
+      }
+    ],
+    "blocks": [
+      {
+        "slug": "agent-gallery",
+        "category": "Feature sections"
+      },
+      {
+        "slug": "ai-workspace",
+        "category": "Productivity"
+      },
+      {
+        "slug": "app-directory",
+        "category": "Integrations"
+      },
+      {
+        "slug": "client-context",
+        "category": "Productivity"
+      },
+      {
+        "slug": "invoice-credit",
+        "category": "Billing"
+      },
+      {
+        "slug": "kpi-board",
+        "category": "Analytics"
+      },
+      {
+        "slug": "logo-marquee",
+        "category": "Social proof"
+      },
+      {
+        "slug": "metrics-dashboard",
+        "category": "Analytics"
+      },
+      {
+        "slug": "pricing-plans",
+        "category": "Pricing"
+      },
+      {
+        "slug": "task-board",
+        "category": "Productivity"
+      },
+      {
+        "slug": "testimonial-wall",
+        "category": "Social proof"
+      }
+    ],
+    "illustrations": [
+      {
+        "slug": "agent-team",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "cover-flow",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "empty-calendar",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "enrichment-orbit",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "frost-cloud",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "ghosted-chat",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "glass-folder",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "glow-cloud",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "glow-keyboard",
+        "category": "Product scenes"
+      },
+      {
+        "slug": "integration-beam",
+        "category": "Product scenes"
+      },
+      {
+        "slug": "integration-flow",
+        "category": "Product scenes"
+      },
+      {
+        "slug": "integration-grid",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "layer-stack",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "lead-sourcing",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "logo-cluster",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "model-wheel",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "outreach-branches",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "project-flow",
+        "category": "Product scenes"
+      },
+      {
+        "slug": "region-dach",
+        "category": "Maps"
+      },
+      {
+        "slug": "side-folder",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "tab-overload",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "team-invite",
+        "category": "Card illustrations"
+      },
+      {
+        "slug": "voice-orb",
+        "category": "Product scenes"
+      },
+      {
+        "slug": "world-map",
+        "category": "Maps"
+      }
+    ],
+    "motion": [
+      {
+        "slug": "blur-crossfade",
+        "category": "Transitions"
+      },
+      {
+        "slug": "gradient-floor",
+        "category": "Backgrounds"
+      },
+      {
+        "slug": "gradient-text",
+        "category": "Text"
+      },
+      {
+        "slug": "grid-background",
+        "category": "Backgrounds"
+      },
+      {
+        "slug": "number-ticker",
+        "category": "Numbers"
+      },
+      {
+        "slug": "shimmer-loader",
+        "category": "Loaders"
+      },
+      {
+        "slug": "text-reveal",
+        "category": "Text"
+      },
+      {
+        "slug": "tilt-card",
+        "category": "Hover"
+      }
+    ]
+  },
+  "registry": {
+    "mirrored": [
+      "agent-team",
+      "button",
+      "button-clean",
+      "change-summary",
+      "change-summary-clean",
+      "comment-thread",
+      "comment-thread-clean",
+      "cover-flow",
+      "decision-inbox",
+      "decision-inbox-clean",
+      "email-draft",
+      "email-draft-clean",
+      "empty-calendar",
+      "enrichment-orbit",
+      "filter-menu",
+      "filter-menu-clean",
+      "frost-cloud",
+      "ghosted-chat",
+      "glow-cloud",
+      "grid-background",
+      "integration-beam",
+      "integration-grid",
+      "layer-stack",
+      "lead-sourcing",
+      "logo-cluster",
+      "logo-marquee",
+      "message-actions",
+      "message-actions-clean",
+      "model-wheel",
+      "notification-stack",
+      "notification-stack-clean",
+      "number-ticker",
+      "otp-input",
+      "otp-input-clean",
+      "profile-menu",
+      "profile-menu-clean",
+      "progress-tracker",
+      "progress-tracker-clean",
+      "reaction-bar",
+      "reaction-bar-clean",
+      "region-dach",
+      "segmented-control",
+      "segmented-control-clean",
+      "shimmer-loader",
+      "side-folder",
+      "smart-recommendation",
+      "smart-recommendation-clean",
+      "tab-overload",
+      "team-invite",
+      "testimonial-wall",
+      "text-reveal",
+      "thinking-loader",
+      "thinking-loader-clean",
+      "tips-panel",
+      "tips-panel-clean",
+      "tool-call-card",
+      "tool-call-card-clean"
+    ],
+    "serverBacked": [
+      "agent-chat",
+      "agent-gallery",
+      "agent-inbox",
+      "agent-inbox-clean",
+      "agent-lanes",
+      "agent-lanes-clean",
+      "agent-plan",
+      "agent-plan-clean",
+      "agent-run",
+      "agent-steering",
+      "agent-steering-clean",
+      "agent-tree",
+      "agent-tree-clean",
+      "ai-answer",
+      "ai-answer-clean",
+      "ai-workspace",
+      "analytics",
+      "app-directory",
+      "app-shell",
+      "approval-card",
+      "approval-card-clean",
+      "assistant-home",
+      "autonomy-dial",
+      "autonomy-dial-clean",
+      "billing-schedule",
+      "billing-schedule-clean",
+      "blur-crossfade",
+      "breakdown-chart",
+      "breakdown-chart-clean",
+      "chat-composer",
+      "chat-composer-clean",
+      "cited-answer",
+      "cited-answer-clean",
+      "client-context",
+      "combobox",
+      "combobox-clean",
+      "command-menu",
+      "command-menu-clean",
+      "comments-panel",
+      "comments-panel-clean",
+      "compact-breakdown",
+      "compact-breakdown-clean",
+      "context-window",
+      "context-window-clean",
+      "crm",
+      "data-table",
+      "data-table-clean",
+      "date-range-picker",
+      "date-range-picker-clean",
+      "delegate-board",
+      "delegate-board-clean",
+      "dropzone",
+      "dropzone-clean",
+      "evals",
+      "experiment-card",
+      "experiment-card-clean",
+      "files",
+      "folder",
+      "glass-folder",
+      "glow-keyboard",
+      "gradient-floor",
+      "gradient-text",
+      "inline-diff",
+      "inline-diff-clean",
+      "integration-flow",
+      "integration-picker",
+      "integration-picker-clean",
+      "integration-settings",
+      "integration-settings-clean",
+      "integrations",
+      "invoice-credit",
+      "kpi-board",
+      "kpi-chart",
+      "kpi-chart-clean",
+      "memory-panel",
+      "memory-panel-clean",
+      "metrics-dashboard",
+      "model-picker",
+      "model-picker-clean",
+      "onboarding",
+      "outreach-branches",
+      "permission-request",
+      "permission-request-clean",
+      "pricing-plans",
+      "project-card",
+      "project-card-clean",
+      "project-flow",
+      "prompt-library",
+      "prompt-library-clean",
+      "settings-billing",
+      "setup-guide",
+      "setup-guide-clean",
+      "stepper-form",
+      "stepper-form-clean",
+      "task-board",
+      "thinking-state",
+      "thinking-state-clean",
+      "tilt-card",
+      "toaster",
+      "toaster-clean",
+      "usage-meter",
+      "usage-meter-clean",
+      "voice-orb",
+      "world-map",
+      "writing-assistant",
+      "writing-assistant-clean"
+    ]
+  },
+  "excludedRoutes": [
+    "/account",
+    "/api",
+    "/login",
+    "/partner"
+  ],
+  "excludedAssets": [
+    "/assets/AccountPage-B6VEfxu-.js",
+    "/assets/LoginPage-C2MmKrs3.js",
+    "/assets/PartnerPage-B8QmlA8_.css",
+    "/assets/PartnerPage-DPmO7MGf.js"
+  ]
+}

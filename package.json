@@ -1,0 +1,16 @@
+{
+  "name": "connected-mate-affectui-mirror",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reproducible static mirror of the public affectUI website and MIT-licensed library",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "mirror": "node scripts/mirror.mjs",
+    "check": "node scripts/mirror.mjs --check",
+    "preview": "node scripts/mirror.mjs --serve"
+  }
+}
