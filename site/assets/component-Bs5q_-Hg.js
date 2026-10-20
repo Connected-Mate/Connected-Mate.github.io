@@ -246,7 +246,7 @@ export function AssistantMark() {
         <linearGradient id={\`\${id}-fill\`} x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
           <stop offset="0" stopColor="#528eda" />
           <stop offset="0.5" stopColor="#326eb6" />
-          <stop offset="1" stopColor="#9f1746" />
+          <stop offset="1" stopColor="#891c3e" />
         </linearGradient>
       </defs>
       <circle cx="12" cy="12" r="12" fill={\`url(#\${id}-fill)\`} />

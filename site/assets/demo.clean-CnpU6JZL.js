@@ -16,8 +16,8 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-src-accent-bg: rgba(35, 95, 166, 0.05);
   --ui-src-accent-line: rgba(35, 95, 166, 0.35);
   --ui-src-tag: rgba(35, 95, 166, 0.08);
-  --ui-src-alt: #9f1746;
-  --ui-src-alt-bg: rgba(159, 23, 70, 0.1);
+  --ui-src-alt: #891c3e;
+  --ui-src-alt-bg: rgba(137, 28, 62, 0.1);
   --ui-src-ok: #1a9a52;
   --ui-src-ok-bg: rgba(26, 154, 82, 0.08);
   --ui-src-warn: #e8a20c;
@@ -285,8 +285,8 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-src-accent-bg: rgba(72, 131, 206, 0.14);
   --ui-src-accent-line: rgba(72, 131, 206, 0.4);
   --ui-src-tag: rgba(72, 131, 206, 0.16);
-  --ui-src-alt: #952c49;
-  --ui-src-alt-bg: rgba(159, 23, 70, 0.22);
+  --ui-src-alt: #871f3e;
+  --ui-src-alt-bg: rgba(137, 28, 62, 0.22);
   --ui-src-ok: #3ec27a;
   --ui-src-ok-bg: rgba(26, 154, 82, 0.14);
   --ui-src-warn: #f0b232;

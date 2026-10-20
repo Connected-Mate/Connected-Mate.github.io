@@ -10,7 +10,7 @@ export function Revenue() {
       labels={["Mar 3", "Mar 4", "Mar 5"]}
       series={[
         { label: "Organic", color: "#326eb6", values: [4600, 4900, 5200] },
-        { label: "Paid ads", color: "#9f1746", values: [3100, 3400, 3200] },
+        { label: "Paid ads", color: "#891c3e", values: [3100, 3400, 3200] },
       ]}
       footer="Top channels"
     />

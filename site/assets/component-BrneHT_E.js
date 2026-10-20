@@ -200,7 +200,7 @@ const css = /* css */ \`
   --ui-sr-shadow: 0 1px 2px rgba(26, 62, 112, 0.06);
   --ui-sr-head-hover: #f6f8fc;
   --ui-sr-pill: #eff3f9;
-  --ui-sr-pill-text: #9f1746;
+  --ui-sr-pill-text: #891c3e;
   --ui-sr-bar: #ccd5e2;
   --ui-sr-btn: #fff;
   --ui-sr-btn-hover: #f4f7fc;
@@ -401,7 +401,7 @@ const css = /* css */ \`
   --ui-sr-border: rgba(255, 255, 255, 0.08);
   --ui-sr-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
   --ui-sr-head-hover: rgba(255, 255, 255, 0.06);
-  --ui-sr-pill: rgba(159, 23, 70, 0.18);
+  --ui-sr-pill: rgba(137, 28, 62, 0.18);
   --ui-sr-pill-text: #f9869e;
   --ui-sr-bar: rgba(255, 255, 255, 0.14);
   --ui-sr-btn: #0f2a50;

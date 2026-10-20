@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-"""Repaint the static mirror in the TGV INOUI / A-Team design system.
+"""Repaint the static mirror in the A-Team design system (IA Innovation team).
 
 The mirror keeps every route, demo and layout of the original site. This pass
 only changes what a viewer reads as the brand: colours, typeface and the
-raster previews that show the components. Reference surfaces: the hub sign-in
-page and the programme e-mails (bleu nuit vitrine, French berry calls to
-action, Avenir Next Condensed capitals for display titles).
+raster previews that show the components. Reference: the Vibe Creators hub
+("Osmose", css/hub-osmose.css in the programme repo) — its sign-in page, the
+account pages and the programme e-mails. Light objects on a tinted, gridded
+ground (#eaeff6), each with a 1px hairline and a navy-tinted shadow; a navy
+vitrine (#16345c → #0f2747); berry #851437 primary buttons, 12px corners;
+Avenir Next Condensed bold titles in sentence case, ink #00162B.
 
   * Greys become the charter's blue greys at the same lightness, so contrast
     and hierarchy stay as designed; dark greys become the bleu nuit vitrine.
@@ -39,7 +42,7 @@ IMAGE_SUFFIXES = {".webp", ".png", ".jpg", ".jpeg"}
 
 NEUTRAL_HUE = 258.0  # bleu nuit #1a3e70
 BLUE_HUE = 255.0     # bleu charrette / bleu ciel
-BERRY_HUE = 8.0      # French berry #9c0c35
+BERRY_HUE = 8.0      # hub berry #851437
 # Chroma given to a grey, by lightness: white stays white, mid-greys take a
 # visible steel tint, near-blacks become navy night.
 CHROMA_L = np.array([0.0, 0.15, 0.30, 0.60, 0.85, 0.95, 0.985, 1.0])
@@ -61,50 +64,54 @@ BRAND_COLOURS = {
 # Design tokens of the site shell, set to the hub's own values rather than
 # derived, so the frame matches the hub exactly. Appended after the original.
 TOKENS = """
-/* TGV INOUI / A-Team design system — appended by scripts/theme_team_ia.py */
+/* A-Team design system (hub Osmose) — appended by scripts/theme_team_ia.py */
 :root{--font-sans:"Avenir Next","Avenir",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
 --font-display:"Avenir Next Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
---bg:#eef2f8;--panel:#fff;--card:#fff;--preview:#f4f7fb;--muted-bg:#1a3e700d;--hover-bg:#1a3e7012;
---text:#00162b;--text-muted:#5a6a85;--text-subtle:#1a3e7099;--border:#dae2ec;--border-soft:#1a3e701a;
---card-stroke:#1a3e7014;--panel-stroke:#dae2ec;--tier-stroke:#e6ecf4;--guarantee-bg:#f4f7fb;--guarantee-tray:#e6ecf4;
---panel-shadow:0 1px 0 #1a3e700f,0 18px 30px -24px #1a3e7059;--primary:#9c0c35;--primary-fg:#fff;
---accent:#1a3e70;--accent-soft:#1a3e7014;--pro-bg:#fbe7ec;--pro-from:#9c0c35;--pro-to:#1a3e70;
---shadow-card:0 1px 1.5px #1a3e700f,inset 0 -1px 0 #1a3e7014;
+--bg:#eaeff6;--panel:#fbfcfe;--card:#fff;--preview:#f2f6fa;--muted-bg:#1a3e700d;--hover-bg:#1a3e7012;
+--text:#00162b;--text-muted:#00162ba3;--text-subtle:#00162b99;--border:#dae2ec;--border-soft:#00162b1a;
+--card-stroke:#e6ecf4;--panel-stroke:#dae2ec;--tier-stroke:#e6ecf4;--guarantee-bg:#f2f6fa;--guarantee-tray:#e6ecf4;
+--panel-shadow:0 8px 16px -4px #1a3e7029;--primary:#851437;--primary-fg:#fff;
+--accent:#1a3e70;--accent-soft:#eef5ff;--pro-bg:#fbe7ec;--pro-from:#851437;--pro-to:#16345c;
+--shadow-card:0 18px 20px -24px #1a3e708c;
 --shadow-pop:0 24px 48px -24px #1a3e704d,0 8px 16px -4px #1a3e7029,0 0 0 1px #cbd6e4;
---dark-btn-top:#a8113d;--dark-btn-bottom:#8a0b2f;--dark-btn-top-hover:#b8164a;--dark-btn-bottom-hover:#9c0c35;
---dark-btn-edge-1:#c23a60;--dark-btn-edge-2:#9c0c35;--dark-btn-edge-3:#6d0822;--dark-btn-ring:#6d082259;--dark-btn-text:#fff;
---title:#1a3e70;--link:#254f8a;--grid:#1a3e700f}
+--cadre:#f2f6fa;--trait-fort:#cbd6e4;--title:#00162b;--grid:#1a3e7012}
 :root:not([data-theme=light]){color-scheme:light}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){
---bg:#0f2747;--panel:#12305a;--card:#16386a;--preview:#1a3e70;--muted-bg:#ffffff12;--hover-bg:#ffffff1a;
---text:#fff;--text-muted:#c3d3ea;--text-subtle:#ffffff99;--border:#2a4f82;--border-soft:#ffffff1f;
---card-stroke:#ffffff17;--panel-stroke:#244878;--tier-stroke:#1d406f;--guarantee-bg:#12305a;--guarantee-tray:#1a3e70;
---panel-shadow:0 1px 0 #0000004d,0 2px 1px -1px #00000059;--primary:#9c0c35;--primary-fg:#fff;
---accent:#a4c2e7;--accent-soft:#a4c2e726;--pro-bg:#9c0c3540;--pro-from:#f8c3c3;--pro-to:#a4c2e7;
+--bg:#0b1d36;--panel:#0f2747;--card:#16345c;--preview:#132c50;--muted-bg:#ffffff12;--hover-bg:#ffffff1a;
+--text:#fff;--text-muted:#ffffffb8;--text-subtle:#ffffff8f;--border:#ffffff24;--border-soft:#ffffff1f;
+--card-stroke:#ffffff17;--panel-stroke:#ffffff24;--tier-stroke:#ffffff14;--guarantee-bg:#0f2747;--guarantee-tray:#16345c;
+--panel-shadow:0 24px 44px -20px #0000008c,0 8px 16px -8px #0000004d;--primary:#851437;--primary-fg:#fff;
+--accent:#8fbdf2;--accent-soft:#8fbdf226;--pro-bg:#85143740;--pro-from:#f6bcc8;--pro-to:#8fbdf2;
 --shadow-card:0 1px 1.5px #00000040,inset 0 -1px 0 #ffffff0f;--shadow-pop:0 24px 48px -20px #00000080,0 0 0 1px #ffffff26;
---title:#fff;--link:#a4c2e7;--grid:#ffffff0d;color-scheme:dark}}
+--cadre:#0f2747;--trait-fort:#ffffff2e;--title:#fff;--grid:#ffffff0d;color-scheme:dark}}
 :root[data-theme=dark]{
---bg:#0f2747;--panel:#12305a;--card:#16386a;--preview:#1a3e70;--muted-bg:#ffffff12;--hover-bg:#ffffff1a;
---text:#fff;--text-muted:#c3d3ea;--text-subtle:#ffffff99;--border:#2a4f82;--border-soft:#ffffff1f;
---card-stroke:#ffffff17;--panel-stroke:#244878;--tier-stroke:#1d406f;--guarantee-bg:#12305a;--guarantee-tray:#1a3e70;
---panel-shadow:0 1px 0 #0000004d,0 2px 1px -1px #00000059;--primary:#9c0c35;--primary-fg:#fff;
---accent:#a4c2e7;--accent-soft:#a4c2e726;--pro-bg:#9c0c3540;--pro-from:#f8c3c3;--pro-to:#a4c2e7;
+--bg:#0b1d36;--panel:#0f2747;--card:#16345c;--preview:#132c50;--muted-bg:#ffffff12;--hover-bg:#ffffff1a;
+--text:#fff;--text-muted:#ffffffb8;--text-subtle:#ffffff8f;--border:#ffffff24;--border-soft:#ffffff1f;
+--card-stroke:#ffffff17;--panel-stroke:#ffffff24;--tier-stroke:#ffffff14;--guarantee-bg:#0f2747;--guarantee-tray:#16345c;
+--panel-shadow:0 24px 44px -20px #0000008c,0 8px 16px -8px #0000004d;--primary:#851437;--primary-fg:#fff;
+--accent:#8fbdf2;--accent-soft:#8fbdf226;--pro-bg:#85143740;--pro-from:#f6bcc8;--pro-to:#8fbdf2;
 --shadow-card:0 1px 1.5px #00000040,inset 0 -1px 0 #ffffff0f;--shadow-pop:0 24px 48px -20px #00000080,0 0 0 1px #ffffff26;
---title:#fff;--link:#a4c2e7;--grid:#ffffff0d;color-scheme:dark}
-::selection{background:#f8c3c3;color:#00162b}
-/* Ground: the hub's tinted canvas under a 56px grid */
+--cadre:#0f2747;--trait-fort:#ffffff2e;--title:#fff;--grid:#ffffff0d;color-scheme:dark}
+::selection{background:#851437;color:#fff}
+/* Ground: tinted canvas under the hub's 56px grid */
 body{background-color:var(--bg);background-image:linear-gradient(to right,var(--grid) 1px,transparent 1px),linear-gradient(to bottom,var(--grid) 1px,transparent 1px);background-size:56px 56px}
 html:has(.lp),html:has(.lp) body{background-color:var(--bg)}
 html.dark:has(.lp),html.dark:has(.lp) body,html[data-theme=dark]:has(.lp),html[data-theme=dark]:has(.lp) body{background-color:var(--bg)}
-/* Display titles: Avenir Next Condensed bold capitals in bleu nuit, as on the hub and in the e-mails */
-.lp-hero__title,.lp-lead,.doc__title,.page-head__title,.hero__title,.faq__title,.legal__title,.not-found__title{
-font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:.2px;color:var(--title)}
-.lp-hero__title{font-size:clamp(36px,6vw,60px);line-height:1}
-.doc__h2{color:var(--title)}
-/* Primary actions: French berry pill, as the hub "Se connecter" */
-.btn--primary,.tier__cta--primary,.promo__cta{border-radius:999px;font-weight:600;box-shadow:0 8px 16px -6px #9c0c3566,0 0 0 1px var(--dark-btn-ring)}
-.prompt-bar__code{background:#9c0c35;color:#fff;border-radius:999px}
-.prompt-bar__code:hover{background:#b00d3c;opacity:1}
+/* Display titles: Avenir Next Condensed bold, sentence case, ink — as « Connexion » on the hub */
+.lp-hero__title,.lp-lead,.doc__title,.page-head__title,.hero__title,.faq__title,.legal__title,.not-found__title,.pricing__title{
+font-family:var(--font-display);font-weight:700;letter-spacing:-.012em;color:var(--title)}
+.lp-hero__title{font-size:clamp(40px,6vw,64px);line-height:1.02}
+.doc__h2{font-family:var(--font-display);font-weight:700;letter-spacing:-.01em;color:var(--title)}
+/* The hub's signature: a short berry rail under the page title */
+.doc__title,.page-head__title{padding-bottom:16px;background:linear-gradient(#851437,#851437) left bottom/60px 3px no-repeat}
+/* Primary actions: flat berry, 12px corners, like « Se connecter » */
+.btn--primary,.tier__cta--primary,.promo__cta{background:#851437!important;border:1px solid #851437!important;color:#fff!important;border-radius:12px;box-shadow:0 8px 16px -6px #85143759}
+.btn--primary:hover:not(:disabled),.tier__cta--primary:hover:not(:disabled),.promo__cta:hover{background:#6d0f2d!important;border-color:#6d0f2d!important}
+.prompt-bar__code{background:#851437;color:#fff;border-radius:10px}
+.prompt-bar__code:hover{background:#6d0f2d;opacity:1}
+/* Secondary actions: light object with hairline and drop shadow */
+.btn--secondary{background:var(--panel);border:1px solid var(--trait-fort);box-shadow:0 8px 16px -4px #1a3e7029;border-radius:12px}
+:focus-visible{outline-color:#8fbdf2}
 /* Avenir Next sets wider than Inter: keep one-line labels on one line */
 .pro-badge{white-space:nowrap}
 """
@@ -174,7 +181,7 @@ def repaint(rgb):
     newL = np.where(blue & (L < 0.75), L * 0.92, newL)
     newC = np.where(blue, np.minimum(C, 0.13), newC)
     newH = np.where(blue, BLUE_HUE, newH)
-    newL = np.where(berry & (L < 0.75), np.minimum(L, 0.46), newL)
+    newL = np.where(berry & (L < 0.75), np.minimum(L, 0.42), newL)
     newC = np.where(berry, np.minimum(C, 0.17), newC)
     newH = np.where(berry, BERRY_HUE, newH)
 
@@ -322,7 +329,7 @@ def main():
     with main_css[0].open("a", encoding="utf-8") as handle:
         handle.write(TOKENS)
 
-    marker.write_text("Repainted in the TGV INOUI / A-Team design system by scripts/theme_team_ia.py\n", encoding="utf-8")
+    marker.write_text("Repainted in the A-Team design system by scripts/theme_team_ia.py\n", encoding="utf-8")
     print(f"Repainted {texts} text files and {images} images; tokens appended to {main_css[0].name}.")
 
 

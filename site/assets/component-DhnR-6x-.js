@@ -152,9 +152,9 @@ const icons: Record<ReactionKey, ReactNode> = {
 const css = /* css */ \`
 .ui-rb {
   --ui-rb-ink: #274066;
-  --ui-rb-like: #9f1746;
+  --ui-rb-like: #891c3e;
   --ui-rb-comment: #326eb6;
-  --ui-rb-repost: #9f1746;
+  --ui-rb-repost: #891c3e;
   --ui-rb-share: #041632;
   --ui-rb-ease: cubic-bezier(0.85, 0, 0.15, 1);
   --ui-rb-soft: cubic-bezier(0.22, 1, 0.36, 1);
@@ -239,9 +239,9 @@ const css = /* css */ \`
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-rb {
   --ui-rb-ink: #bbc5d5;
-  --ui-rb-like: #9f1746;
+  --ui-rb-like: #891c3e;
   --ui-rb-comment: #508cd7;
-  --ui-rb-repost: #9b2047;
+  --ui-rb-repost: #8e0e3c;
   --ui-rb-share: #e8eef6;
   background: #0b2345;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 22, 43, 0.4), 0 4px 12px rgba(0, 22, 43, 0.35);

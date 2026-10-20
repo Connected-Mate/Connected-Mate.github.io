@@ -271,7 +271,7 @@ const GmailLogo = ({ x, y, width }: { x: number; y: number; width: number }) => 
           y2="6.45153"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.08" stopColor="#9f1746" />
+          <stop offset="0.08" stopColor="#891c3e" />
           <stop offset="0.3" stopColor="#fc413d" />
           <stop offset="0.5" stopColor="#fc413d" />
           <stop offset="0.65" stopColor="#fc413d" />

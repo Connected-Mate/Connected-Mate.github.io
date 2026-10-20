@@ -8,8 +8,8 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-at-accent: #326eb6;
   --ui-at-caret: #041632;
   /* Same pink → violet as the Get Pro button */
-  --ui-at-halo-from: rgba(159, 23, 70, 0.18);
-  --ui-at-halo-to: rgba(159, 23, 70, 0.18);
+  --ui-at-halo-from: rgba(137, 28, 62, 0.18);
+  --ui-at-halo-to: rgba(137, 28, 62, 0.18);
   --ui-at-dash: #e1e7f1; /* same gray as the lines in Outreach Branches */
   --ui-at-face: #ecf0f8;
   --ui-at-online: #34c46a;
@@ -236,8 +236,8 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-at-text: #e8eef6;
   --ui-at-accent: #326eb6;
   --ui-at-caret: #e8eef6;
-  --ui-at-halo-from: rgba(159, 23, 70, 0.16);
-  --ui-at-halo-to: rgba(155, 32, 71, 0.16);
+  --ui-at-halo-from: rgba(137, 28, 62, 0.16);
+  --ui-at-halo-to: rgba(142, 14, 60, 0.16);
   --ui-at-dash: rgba(255, 255, 255, 0.14);
   --ui-at-face: #122e56;
   --ui-at-online: #3fd17a;

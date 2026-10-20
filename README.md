@@ -14,7 +14,7 @@ This copy was made with the founder's authorization. No authentication, locked P
 
 ## Team IA art direction
 
-This branch repaints the mirror in the TGV INOUI / A-Team design system, as on the hub sign-in page and the programme e-mails: blue greys on a gridded `#eef2f8` ground, bleu nuit `#1a3e70` titles in Avenir Next Condensed capitals, French berry `#9c0c35` pill buttons, the charter blues for charts, a bleu nuit vitrine for dark mode, and Avenir Next for text. Layout, routes and demos are unchanged; third-party brand colours and semantic reds, greens and yellows are kept.
+This branch repaints the mirror in the A-Team design system of the IA Innovation team (the Vibe Creators hub "Osmose": sign-in page, account pages, e-mails): light objects on a gridded `#eaeff6` ground with navy-tinted shadows, ink `#00162B` titles in Avenir Next Condensed bold with a berry rail, flat berry `#851437` buttons with 12px corners, and the navy vitrine `#16345c → #0f2747` for dark mode. Layout, routes and demos are unchanged; third-party brand colours and semantic reds, greens and yellows are kept.
 
 ```sh
 npm run mirror   # refresh the original copy

@@ -525,7 +525,7 @@ const css = /* css */ \`
   --ui-tcc-key: rgba(0, 22, 43, 0.88);
   --ui-tcc-str: rgba(50, 102, 166, 0.9);
   --ui-tcc-num: #b25b0c;
-  --ui-tcc-lit: #9f1746;
+  --ui-tcc-lit: #891c3e;
   --ui-tcc-shine: rgba(255, 255, 255, 0.82);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
   --ui-tcc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);

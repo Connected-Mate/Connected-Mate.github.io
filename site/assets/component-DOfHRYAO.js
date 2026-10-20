@@ -518,7 +518,7 @@ const css = /* css */ \`
   --ui-tc-key: #041632;
   --ui-tc-str: #0f7b6c;
   --ui-tc-num: #b25b0c;
-  --ui-tc-lit: #9f1746;
+  --ui-tc-lit: #891c3e;
   --ui-tc-shine: rgba(255, 255, 255, 0.82);
   --ui-tc-focus: rgba(4, 22, 50, 0.22);
   --ui-tc-ease: cubic-bezier(0.22, 1, 0.36, 1);
