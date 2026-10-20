@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-CTsRTJUX.js";import{l as t,u as n}from"./index-C2dRF6Sj.js";import{t as r}from"./component-BaBclG2e.js";var i=e();function a(){return(0,i.jsx)(t,{children:(0,i.jsx)(r,{onNavigate:n})})}export{a as default};

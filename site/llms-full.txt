@@ -1,8 +1,8 @@
 # affectUI
 
-> Agent-ready React UI for AI products and SaaS: 109 components, screens, blocks, illustrations and motion effects. Every item is one .tsx file with its styles inside – no Tailwind, no animation library, no other dependencies. React 19, dark mode and reduced motion built in.
+> Agent-ready React UI for AI products and SaaS: 110 components, screens, blocks, illustrations and motion effects. Every item is one .tsx file with its styles inside – no Tailwind, no animation library, no other dependencies. React 19, dark mode and reduced motion built in.
 
-40 items are free and open source (MIT). The other 69 are part of affectUI Pro, a one-time purchase (https://www.affectui.com/pricing).
+40 items are free and open source (MIT). The other 70 are part of affectUI Pro, a one-time purchase (https://www.affectui.com/pricing).
 
 ## How to add an item
 
@@ -27,14 +27,14 @@ All your background agent tasks in one calm list – live clocks and status tags
 ### When to use
 
 - Agent products where several tasks run in the background and people come back to see what finished, what failed and what waits for them
-- A sidebar or home screen that collects approvals from many runs in one place, instead of one modal per agent
-- Job queues in general – imports, syncs, evaluations – where each job has a short history and one next step
+- A home screen or dashboard that collects approvals from many runs in one calm board, instead of one modal per agent
+- Job queues in general – imports, syncs, evaluations – where each job has a short description, a short history and one next step
 
 ### When not to use
 
 - One single approval in the flow of a chat – use Approval Card
 - The plan of one run, step by step – use Agent Plan; for a single tool call use Tool Call Card
-- Hundreds of jobs – the list is for a few dozen at most; page or search a bigger queue in a table
+- Hundreds of jobs – the board is for a few dozen at most; page or search a bigger queue in a table
 
 ### Usage
 
@@ -47,16 +47,19 @@ export function Tasks() {
       tasks={[
         {
           id: "migrate",
-          title: "Migrate users table to Postgres 17",
+          title: "Migrate users table",
+          description: "Split users into accounts and profiles. The dry run on staging passed.",
           agent: "Opus 5.5",
           status: "waiting",
           startedAt: Date.now() - 6 * 60_000,
+          tools: 14,
+          sources: 9,
           steps: [
             { label: "Dry run on staging – no errors", time: "2m ago" },
             { label: "Wants to run it on production", time: "1m ago" },
           ],
         },
-        { id: "notes", title: "Write release notes for v2.4", agent: "Sonnet 5.5", status: "running", startedAt: Date.now() - 80_000 },
+        { id: "notes", title: "Release notes v2.4", agent: "Sonnet 5.5", status: "running", startedAt: Date.now() - 80_000 },
         { id: "digest", title: "Weekly metrics digest", agent: "Haiku 5.5", status: "done", elapsed: 252_000 },
       ]}
     />
@@ -68,52 +71,49 @@ export function Tasks() {
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
-| tasks | `AgentTask[]` |  | { id, title, agent, status, startedAt?, elapsed?, steps? } – status is "running", "waiting", "done" or "failed"; steps are { label, time? }, oldest first |
-| onApprove | `(task: AgentTask) => void` |  | Approve on a waiting task. Without it the task turns running inside the inbox |
-| onReject | `(task: AgentTask) => void` |  | Reject on a waiting task. Without it the task turns failed with the step "Rejected by you" |
+| tasks | `AgentTask[]` |  | { id, title, description?, agent, status, startedAt?, elapsed?, tools?, sources?, steps? } – status is "running", "waiting", "done" or "failed"; steps are { label, time? }, oldest first |
+| onApprove | `(task: AgentTask) => void` |  | Approve on a waiting task. Without it the task turns running inside the board |
+| onReject | `(task: AgentTask) => void` |  | Reject on a waiting task. Without it the task turns failed |
 | onRetry | `(task: AgentTask) => void` |  | Retry on a failed task. Without it the task runs again and its clock starts over |
 | onOpen | `(task: AgentTask) => void` |  | Shows an Open button on running and done tasks |
-| filter | `"all" \| "needs-you" \| "running" \| "done"` |  | Controlled filter. Needs you holds waiting and failed tasks |
-| defaultFilter | `AgentInboxFilter` | `"all"` | Starting filter when uncontrolled |
-| onFilterChange | `(filter: AgentInboxFilter) => void` |  | Called when a tab is picked |
-| action | `{ label: string; onClick: () => void }` |  | A button on the tray with a plus, e.g. New task |
+| title | `string` | `"Agent inbox"` | Heading on the left of the bar, after "Agents /" |
+| action | `{ label: string; onClick: () => void }` |  | A button in the bar next to the layout switch, e.g. New task |
+| view | `"board" \| "list"` |  | Controlled layout |
+| defaultView | `"board" \| "list"` | `"board"` | Starting layout when uncontrolled |
+| onViewChange | `(view: AgentInboxView) => void` |  | Called when Board or List is picked |
 | className | `string` |  | Extra class on the root |
 
 ### Keyboard
 
-- ← / →: On the tabs: moves to and picks the previous or next filter; Home and End jump to the first and last
-- Tab: From the tabs through the rows, then the buttons inside an open row and the tray action
-- Enter / Space: Opens or closes a row, presses Approve, Reject, Retry or Open
-- Esc: Closes the open row and puts focus back on it
+- Tab: Through the layout switch, the cards and the buttons inside an open card
+- Enter / Space: Opens or closes a card, presses Approve, Reject, Retry or Open
+- Esc: Closes the open card and puts focus back on it
 
 ### Accessibility
 
-- The filter is a radio group with one tab stop; each tab's count is part of its name
-- Each row is a button with aria-expanded that reads title, agent, time and status; a closed row's details are inert
-- Rows hidden by the filter are inert and hidden from screen readers while they fold away
-- Status changes are announced politely once ("Write release notes for v2.4: done"); the hover line on the tray stays quiet
+- Each column is a labeled section; each card is a button with aria-expanded, and a closed card's details are inert
+- Board / List is a radio group
+- A polite live region says how many tasks need you and how many run
 
 ### Motion
 
-- Running tasks spin a small blue ring and their clock ticks every second; a waiting task's amber dot breathes slowly
-- When a status changes, the glyph pops into its new shape and the tag crossfades in place; after a moment the row glides to its new group (FLIP) or folds away if the filter no longer holds it
-- The tab thumb slides to the picked filter; counts roll up or down when tasks change
-- Rows open in place to the last steps as a tiny timeline; new steps rise in, new tasks unfold at their spot
-- Hovering a tab or a part of the tray line fades the rows it doesn't include; hovering a row tells on the tray what it is doing right now
+- Running tasks spin a small ring and their clock ticks every second
+- When a status changes, the card shows its new state in place first, then glides over to its new column (FLIP)
+- Cards open in place to the last steps as a tiny timeline and the buttons for what you can do now
 - With prefers-reduced-motion everything switches without movement
 
 ### Responsive
 
-- Fills its container up to 400px. Below 380px the tabs tighten, below 330px the count of All gives way and rows lose a little padding – it works down to 300px
-- Touch screens: taller tabs, rows and buttons
+- Three columns from about 620px; narrower containers always get the list and hide the switch – it works down to 300px
+- Touch screens: taller cards and buttons
 - Dark mode built in: switches when an ancestor (usually <html>) has the class dark or data-theme="dark"
 
 ### Notes for AI
 
-- Pass startedAt for running and waiting tasks so the clock ticks; pass elapsed for finished ones – without it the clock stops where it was when the status changed
-- Rows are sorted into groups: waiting, failed, running, done; inside a group they keep your order, so put new tasks first
-- With a handler the inbox never changes a status by itself – update the task in your state (e.g. waiting → running → done) and it follows
-- Show the last step as what the agent is doing or asking – it is what the tray says when the row is hovered
+- Pass startedAt for running and waiting tasks so the clock ticks; pass elapsed for finished ones
+- Columns: Needs you holds waiting and failed tasks, then Running and Done; inside a column the cards keep your order
+- Keep the description to one or two sentences on what the task is about or where it stands – it is clamped to two lines
+- With a handler the board never changes a status by itself – update the task in your state and the card follows
 
 ### Requirements
 
@@ -5216,7 +5216,7 @@ export default function Page() {
 - React 19
 - @hugeicons/react
 - @hugeicons/core-free-icons
-- App Shell, Agent Plan, Tool Call Card, Approval Card, Inline Diff, Thinking Loader and Button (installed with it)
+- App Shell Inset, Agent Plan, Tool Call Card, Approval Card, Inline Diff, Thinking Loader and Button (installed with it)
 
 ---
 
@@ -5276,7 +5276,80 @@ export default function Page() {
 
 ---
 
-## App Shell (Pro)
+## App Shell Flat (Pro)
+
+The App Shell laid flat – gray sidebar and an edge-to-edge page, split by a single hairline
+
+- Page: https://www.affectui.com/screens/app-shell-flat
+- Section: Screens · App screens
+- Install: `npx shadcn@latest add https://www.affectui.com/r/app-shell-flat.json` (needs the Pro access key)
+- Import: `@/components/ui/app-shell-flat`
+
+### When to use
+
+- Tools and dashboards that should feel calm and edge to edge, like Linear or Notion
+- Dense screens – tables, boards, editors – that want every pixel instead of a framed panel
+
+### When not to use
+
+- When the page should read as a card on a gray page – use App Shell Inset
+- Marketing pages – use a block or a plain layout
+
+### Usage
+
+```tsx
+import { AppShellFlat } from "@/components/ui/app-shell-flat";
+
+export function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <AppShellFlat active="New chat" workspace="Acme" user={{ name: "Alex Morgan" }} onNavigate={(label) => router.push(routes[label])}>
+      <div className="ui-as-page">{children}</div>
+    </AppShellFlat>
+  );
+}
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| children | `ReactNode` |  | The page shown next to the sidebar |
+| active | `string` |  | Label of the menu item or project that is open |
+| onNavigate | `(label: string) => void` |  | Called with the label of a menu item or project when it is clicked |
+| workspace | `string` | `"Acme"` | Workspace name; its first letter becomes the logo |
+| user | `{ name: string; avatar?: string }` | `{ name: "Alex Morgan" }` | Account at the bottom; without an avatar it shows initials |
+| nav | `ShellNavItem[]` | `New chat, Folders, Integrations` | Menu items, each { label, icon } |
+| projects | `string[]` |  | Project list under the menu |
+| groups | `ShellGroup[]` |  | Lists under the menu instead of Projects, e.g. Tools or Pipelines |
+| className | `string` |  | Extra class on the root |
+
+### Accessibility
+
+- Sidebar items, projects and the collapse toggle are real buttons with labels
+- Icons are decorative and hidden from screen readers
+
+### Responsive
+
+- Fills its container – give it the full viewport height in your app
+- Below 900px the sidebar becomes a drawer that slides in over the page
+- Dark mode built in: switches when an ancestor (usually <html>) has the class dark or data-theme="dark"
+
+### Notes for AI
+
+- Same props and the same page classes (.ui-as-page, .ui-as-page-title) as App Shell Inset – swap one for the other without touching the screens inside
+
+### Requirements
+
+- React 19
+- @hugeicons/react
+- @hugeicons/core-free-icons
+- App Shell Inset (installed with it)
+
+Related: app-shell
+
+---
+
+## App Shell Inset (Pro)
 
 Collapsible sidebar with workspace, menu, projects and account – the frame every screen sits in
 
@@ -5507,7 +5580,7 @@ export default function Page() {
 - React 19
 - @hugeicons/react
 - @hugeicons/core-free-icons
-- App Shell, KPI Chart, Inline Diff, Segmented Control and Button (installed with it)
+- App Shell Inset, KPI Chart, Inline Diff, Segmented Control and Button (installed with it)
 
 ---
 
@@ -5564,7 +5637,7 @@ export default function Page() {
 - React 19
 - @hugeicons/react
 - @hugeicons/core-free-icons
-- App Shell (installed with it)
+- App Shell Inset (installed with it)
 
 ---
 

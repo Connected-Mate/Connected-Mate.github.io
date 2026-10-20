@@ -1,8 +1,8 @@
 # affectUI
 
-> Agent-ready React UI for AI products and SaaS: 109 components, screens, blocks, illustrations and motion effects. Every item is one .tsx file with its styles inside – no Tailwind, no animation library, no other dependencies. React 19, dark mode and reduced motion built in.
+> Agent-ready React UI for AI products and SaaS: 110 components, screens, blocks, illustrations and motion effects. Every item is one .tsx file with its styles inside – no Tailwind, no animation library, no other dependencies. React 19, dark mode and reduced motion built in.
 
-40 items are free and open source (MIT). The other 69 are part of affectUI Pro, a one-time purchase (https://www.affectui.com/pricing).
+40 items are free and open source (MIT). The other 70 are part of affectUI Pro, a one-time purchase (https://www.affectui.com/pricing).
 
 ## How to add an item
 
@@ -83,7 +83,8 @@
 - [Agent Chat](https://www.affectui.com/screens/agent-chat): Chat with an orchestrating agent, the agents at work, and a brief to fill in beside it (Pro, App screens)
 - [Agent Run](https://www.affectui.com/screens/agent-run): One autonomous agent run: the plan ticking through its steps, the tool calls, an approval it waits on and the draft it wrote (Pro, App screens)
 - [Analytics](https://www.affectui.com/screens/analytics): Revenue dashboard: key figures, revenue by channel, breakdown, top products and weekly trends (Pro, App screens)
-- [App Shell](https://www.affectui.com/screens/app-shell): Collapsible sidebar with workspace, menu, projects and account – the frame every screen sits in (Pro, App screens)
+- [App Shell Flat](https://www.affectui.com/screens/app-shell-flat): The App Shell laid flat – gray sidebar and an edge-to-edge page, split by a single hairline (Pro, App screens)
+- [App Shell Inset](https://www.affectui.com/screens/app-shell): Collapsible sidebar with workspace, menu, projects and account – the frame every screen sits in (Pro, App screens)
 - [Assistant Home](https://www.affectui.com/screens/assistant-home): AI assistant start page: greeting, prompt box with tools, connected apps and suggestions (Pro, App screens)
 - [CRM](https://www.affectui.com/screens/crm): Company list with pipelines, open views as tabs and an editable data table (Pro, App screens)
 - [Evals](https://www.affectui.com/screens/evals): Prompt evaluation dashboard: pass rate by version, reviewable prompt changes and test cases you can re-run (Pro, App screens)

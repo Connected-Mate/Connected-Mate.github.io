@@ -20,14 +20,14 @@ Requirements: Node.js 20 or newer. There are no npm dependencies and no browser 
 npm run mirror
 ```
 
-The command uses the public `https://www.affectui.com` site and downloads:
+The command uses the public `https://www.affectui.com` site, with the public `https://affectui.vercel.app` deployment as an automatic read-only fallback if the custom domain is unavailable. It downloads:
 
 - every discovered public route into `site/<route>/index.html`;
 - JavaScript modules, CSS, fonts, images, icons, the web manifest, public text resources, and unauthenticated `/r/*.json` registry items;
 - nested route files and `site/404.html` for static hosting;
-- `site/routes.json`, the complete route, item, registry, and exclusion inventory.
+- `site/routes.json`, the complete route, item, registry, customization, redirect, and exclusion inventory.
 
-The crawl excludes `/account`, `/api`, `/login`, and `/partner`, including the lazy-loaded login, account, and partner bundles. Pro registry responses that require authentication remain server-backed and are not fetched with credentials.
+The crawl excludes `/account`, `/api`, `/login`, and `/partner`, including the lazy-loaded login, account, partner, and pricing-page bundles. Pro registry responses that require authentication remain server-backed and are not fetched with credentials.
 
 To verify an existing mirror without accessing the network:
 
@@ -49,12 +49,19 @@ Open <http://127.0.0.1:4173/components/progress-tracker>. Use `-- --port 5000` t
 
 [`.github/workflows/pages.yml`](.github/workflows/pages.yml) deploys only `site/` through the official GitHub Pages actions when `main` is pushed or the workflow is run manually. `site/.nojekyll` disables Jekyll processing. This workflow is configuration only; mirroring does not create a repository, commit, push, enable Pages, or publish anything.
 
+## Mirror customizations
+
+- The Pro sales layer is removed from the mirrored UI: offer banners, pricing links, Get Pro actions, promotional modals, upsells, and Pro copy toasts are not rendered.
+- `/pricing` and `/pro` redirect to `/components`; the pricing application chunk is not mirrored.
+- Locked items keep their public previews and documentation, but their source panels say that source is not included in this static mirror.
+- Former Pro badges are replaced with the exact text `AI component` only for AI-related components: the Agents and Chat categories, plus `email-draft`, `prompt-library`, and `smart-recommendation`. Other former Pro badges disappear. Existing New and 2-styles badges are unchanged.
+
 ## Compatibility and server-backed limitations
 
 - Login and account links redirect to `https://www.affectui.com`; no credential form is reproduced.
-- Checkout buttons go to the original pricing page, where the original server can start checkout. No payment endpoint runs locally.
-- Original Vercel Analytics network loading is disabled.
+- Checkout and payment UI are not mirrored. No payment endpoint runs locally.
+- Original Vercel, Google, and Meta analytics network loading is disabled; the cookie-consent banner is not rendered.
 - Demo API-key-shaped sample strings are masked before publication.
-- Free public registry JSON is mirrored. Pro source and Pro registry items still require the original authenticated service.
-- Features dependent on live server data—accounts, downloads, team management, dynamic offers, GitHub star counts, contact delivery, and authenticated Pro source—are not provided by the static copy. Their original public UI remains, but live data or delivery can be unavailable.
+- Free public registry JSON is mirrored. Pro source and Pro registry items still require the original authenticated service and are not exposed here.
+- Features dependent on live server data—accounts, downloads, team management, dynamic offers, GitHub star counts, contact delivery, and authenticated Pro source—are not provided by the static copy. Their original public UI remains only where it is not part of the removed sales layer.
 - The mirror is static React hosting, not a replacement for affectUI's backend. External services and original absolute links continue to refer to their original providers.

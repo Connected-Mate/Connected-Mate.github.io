@@ -1,5 +1,6 @@
 {
   "source": "https://www.affectui.com",
+  "fetchedFrom": "https://affectui.vercel.app",
   "routes": [
     "/",
     "/blocks",
@@ -147,6 +148,8 @@
     "/screens/analytics",
     "/screens/analytics/full",
     "/screens/app-shell",
+    "/screens/app-shell-flat",
+    "/screens/app-shell-flat/full",
     "/screens/app-shell/full",
     "/screens/assistant-home",
     "/screens/assistant-home/full",
@@ -171,447 +174,561 @@
     "components": [
       {
         "slug": "agent-inbox",
-        "category": "Agents"
+        "category": "Agents",
+        "pro": true
       },
       {
         "slug": "agent-lanes",
-        "category": "Agents"
+        "category": "Agents",
+        "pro": true
       },
       {
         "slug": "agent-plan",
-        "category": "Agents"
+        "category": "Agents",
+        "pro": true
       },
       {
         "slug": "agent-steering",
-        "category": "Agents"
+        "category": "Agents",
+        "pro": true
       },
       {
         "slug": "agent-tree",
-        "category": "Agents"
+        "category": "Agents",
+        "pro": true
       },
       {
         "slug": "ai-answer",
-        "category": "Chat"
+        "category": "Chat",
+        "pro": true
       },
       {
         "slug": "approval-card",
-        "category": "Agents"
+        "category": "Agents",
+        "pro": true
       },
       {
         "slug": "autonomy-dial",
-        "category": "Agents"
+        "category": "Agents",
+        "pro": true
       },
       {
         "slug": "billing-schedule",
-        "category": "Inputs"
+        "category": "Inputs",
+        "pro": true
       },
       {
         "slug": "breakdown-chart",
-        "category": "Data display"
+        "category": "Data display",
+        "pro": true
       },
       {
         "slug": "button",
-        "category": "Buttons"
+        "category": "Buttons",
+        "pro": false
       },
       {
         "slug": "change-summary",
-        "category": "Data display"
+        "category": "Data display",
+        "pro": false
       },
       {
         "slug": "chat-composer",
-        "category": "Chat"
+        "category": "Chat",
+        "pro": true
       },
       {
         "slug": "cited-answer",
-        "category": "Chat"
+        "category": "Chat",
+        "pro": true
       },
       {
         "slug": "combobox",
-        "category": "Inputs"
+        "category": "Inputs",
+        "pro": true
       },
       {
         "slug": "command-menu",
-        "category": "Navigation"
+        "category": "Navigation",
+        "pro": true
       },
       {
         "slug": "comment-thread",
-        "category": "Chat"
+        "category": "Chat",
+        "pro": false
       },
       {
         "slug": "comments-panel",
-        "category": "Chat"
+        "category": "Chat",
+        "pro": true
       },
       {
         "slug": "compact-breakdown",
-        "category": "Data display"
+        "category": "Data display",
+        "pro": true
       },
       {
         "slug": "context-window",
-        "category": "Agents"
+        "category": "Agents",
+        "pro": true
       },
       {
         "slug": "data-table",
-        "category": "Data display"
+        "category": "Data display",
+        "pro": true
       },
       {
         "slug": "date-range-picker",
-        "category": "Inputs"
+        "category": "Inputs",
+        "pro": true
       },
       {
         "slug": "decision-inbox",
-        "category": "Feedback"
+        "category": "Feedback",
+        "pro": false
       },
       {
         "slug": "delegate-board",
-        "category": "Agents"
+        "category": "Agents",
+        "pro": true
       },
       {
         "slug": "dropzone",
-        "category": "Inputs"
+        "category": "Inputs",
+        "pro": true
       },
       {
         "slug": "email-draft",
-        "category": "Cards"
+        "category": "Cards",
+        "pro": false
       },
       {
         "slug": "experiment-card",
-        "category": "Data display"
+        "category": "Data display",
+        "pro": true
       },
       {
         "slug": "filter-menu",
-        "category": "Inputs"
+        "category": "Inputs",
+        "pro": false
       },
       {
         "slug": "inline-diff",
-        "category": "Agents"
+        "category": "Agents",
+        "pro": true
       },
       {
         "slug": "integration-picker",
-        "category": "Navigation"
+        "category": "Navigation",
+        "pro": true
       },
       {
         "slug": "integration-settings",
-        "category": "Inputs"
+        "category": "Inputs",
+        "pro": true
       },
       {
         "slug": "kpi-chart",
-        "category": "Data display"
+        "category": "Data display",
+        "pro": true
       },
       {
         "slug": "memory-panel",
-        "category": "Agents"
+        "category": "Agents",
+        "pro": true
       },
       {
         "slug": "message-actions",
-        "category": "Chat"
+        "category": "Chat",
+        "pro": false
       },
       {
         "slug": "model-picker",
-        "category": "Chat"
+        "category": "Chat",
+        "pro": true
       },
       {
         "slug": "notification-stack",
-        "category": "Feedback"
+        "category": "Feedback",
+        "pro": false
       },
       {
         "slug": "otp-input",
-        "category": "Inputs"
+        "category": "Inputs",
+        "pro": false
       },
       {
         "slug": "permission-request",
-        "category": "Agents"
+        "category": "Agents",
+        "pro": true
       },
       {
         "slug": "profile-menu",
-        "category": "Navigation"
+        "category": "Navigation",
+        "pro": false
       },
       {
         "slug": "progress-tracker",
-        "category": "Feedback"
+        "category": "Feedback",
+        "pro": false
       },
       {
         "slug": "project-card",
-        "category": "Cards"
+        "category": "Cards",
+        "pro": true
       },
       {
         "slug": "prompt-library",
-        "category": "Inputs"
+        "category": "Inputs",
+        "pro": true
       },
       {
         "slug": "reaction-bar",
-        "category": "Buttons"
+        "category": "Buttons",
+        "pro": false
       },
       {
         "slug": "segmented-control",
-        "category": "Navigation"
+        "category": "Navigation",
+        "pro": false
       },
       {
         "slug": "setup-guide",
-        "category": "Feedback"
+        "category": "Feedback",
+        "pro": true
       },
       {
         "slug": "smart-recommendation",
-        "category": "Cards"
+        "category": "Cards",
+        "pro": false
       },
       {
         "slug": "stepper-form",
-        "category": "Inputs"
+        "category": "Inputs",
+        "pro": true
       },
       {
         "slug": "thinking-loader",
-        "category": "Chat"
+        "category": "Chat",
+        "pro": false
       },
       {
         "slug": "thinking-state",
-        "category": "Chat"
+        "category": "Chat",
+        "pro": true
       },
       {
         "slug": "tips-panel",
-        "category": "Cards"
+        "category": "Cards",
+        "pro": false
       },
       {
         "slug": "toaster",
-        "category": "Feedback"
+        "category": "Feedback",
+        "pro": true
       },
       {
         "slug": "tool-call-card",
-        "category": "Agents"
+        "category": "Agents",
+        "pro": false
       },
       {
         "slug": "usage-meter",
-        "category": "Data display"
+        "category": "Data display",
+        "pro": true
       },
       {
         "slug": "writing-assistant",
-        "category": "Chat"
+        "category": "Chat",
+        "pro": true
       }
     ],
     "screens": [
       {
         "slug": "agent-chat",
-        "category": "App screens"
+        "category": "App screens",
+        "pro": true
       },
       {
         "slug": "agent-run",
-        "category": "App screens"
+        "category": "App screens",
+        "pro": true
       },
       {
         "slug": "analytics",
-        "category": "App screens"
+        "category": "App screens",
+        "pro": true
       },
       {
         "slug": "app-shell",
-        "category": "App screens"
+        "category": "App screens",
+        "pro": true
+      },
+      {
+        "slug": "app-shell-flat",
+        "category": "App screens",
+        "pro": true
       },
       {
         "slug": "assistant-home",
-        "category": "App screens"
+        "category": "App screens",
+        "pro": true
       },
       {
         "slug": "crm",
-        "category": "App screens"
+        "category": "App screens",
+        "pro": true
       },
       {
         "slug": "evals",
-        "category": "App screens"
+        "category": "App screens",
+        "pro": true
       },
       {
         "slug": "files",
-        "category": "App screens"
+        "category": "App screens",
+        "pro": true
       },
       {
         "slug": "folder",
-        "category": "App screens"
+        "category": "App screens",
+        "pro": true
       },
       {
         "slug": "integrations",
-        "category": "App screens"
+        "category": "App screens",
+        "pro": true
       },
       {
         "slug": "onboarding",
-        "category": "App screens"
+        "category": "App screens",
+        "pro": true
       },
       {
         "slug": "settings-billing",
-        "category": "App screens"
+        "category": "App screens",
+        "pro": true
       }
     ],
     "blocks": [
       {
         "slug": "agent-gallery",
-        "category": "Feature sections"
+        "category": "Feature sections",
+        "pro": true
       },
       {
         "slug": "ai-workspace",
-        "category": "Productivity"
+        "category": "Productivity",
+        "pro": true
       },
       {
         "slug": "app-directory",
-        "category": "Integrations"
+        "category": "Integrations",
+        "pro": true
       },
       {
         "slug": "client-context",
-        "category": "Productivity"
+        "category": "Productivity",
+        "pro": true
       },
       {
         "slug": "invoice-credit",
-        "category": "Billing"
+        "category": "Billing",
+        "pro": true
       },
       {
         "slug": "kpi-board",
-        "category": "Analytics"
+        "category": "Analytics",
+        "pro": true
       },
       {
         "slug": "logo-marquee",
-        "category": "Social proof"
+        "category": "Social proof",
+        "pro": false
       },
       {
         "slug": "metrics-dashboard",
-        "category": "Analytics"
+        "category": "Analytics",
+        "pro": true
       },
       {
         "slug": "pricing-plans",
-        "category": "Pricing"
+        "category": "Pricing",
+        "pro": true
       },
       {
         "slug": "task-board",
-        "category": "Productivity"
+        "category": "Productivity",
+        "pro": true
       },
       {
         "slug": "testimonial-wall",
-        "category": "Social proof"
+        "category": "Social proof",
+        "pro": false
       }
     ],
     "illustrations": [
       {
         "slug": "agent-team",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": false
       },
       {
         "slug": "cover-flow",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": false
       },
       {
         "slug": "empty-calendar",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": false
       },
       {
         "slug": "enrichment-orbit",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": false
       },
       {
         "slug": "frost-cloud",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": false
       },
       {
         "slug": "ghosted-chat",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": false
       },
       {
         "slug": "glass-folder",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": true
       },
       {
         "slug": "glow-cloud",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": false
       },
       {
         "slug": "glow-keyboard",
-        "category": "Product scenes"
+        "category": "Product scenes",
+        "pro": true
       },
       {
         "slug": "integration-beam",
-        "category": "Product scenes"
+        "category": "Product scenes",
+        "pro": false
       },
       {
         "slug": "integration-flow",
-        "category": "Product scenes"
+        "category": "Product scenes",
+        "pro": true
       },
       {
         "slug": "integration-grid",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": false
       },
       {
         "slug": "layer-stack",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": false
       },
       {
         "slug": "lead-sourcing",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": false
       },
       {
         "slug": "logo-cluster",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": false
       },
       {
         "slug": "model-wheel",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": false
       },
       {
         "slug": "outreach-branches",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": true
       },
       {
         "slug": "project-flow",
-        "category": "Product scenes"
+        "category": "Product scenes",
+        "pro": true
       },
       {
         "slug": "region-dach",
-        "category": "Maps"
+        "category": "Maps",
+        "pro": false
       },
       {
         "slug": "side-folder",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": false
       },
       {
         "slug": "tab-overload",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": false
       },
       {
         "slug": "team-invite",
-        "category": "Card illustrations"
+        "category": "Card illustrations",
+        "pro": false
       },
       {
         "slug": "voice-orb",
-        "category": "Product scenes"
+        "category": "Product scenes",
+        "pro": true
       },
       {
         "slug": "world-map",
-        "category": "Maps"
+        "category": "Maps",
+        "pro": true
       }
     ],
     "motion": [
       {
         "slug": "blur-crossfade",
-        "category": "Transitions"
+        "category": "Transitions",
+        "pro": true
       },
       {
         "slug": "gradient-floor",
-        "category": "Backgrounds"
+        "category": "Backgrounds",
+        "pro": true
       },
       {
         "slug": "gradient-text",
-        "category": "Text"
+        "category": "Text",
+        "pro": true
       },
       {
         "slug": "grid-background",
-        "category": "Backgrounds"
+        "category": "Backgrounds",
+        "pro": false
       },
       {
         "slug": "number-ticker",
-        "category": "Numbers"
+        "category": "Numbers",
+        "pro": false
       },
       {
         "slug": "shimmer-loader",
-        "category": "Loaders"
+        "category": "Loaders",
+        "pro": false
       },
       {
         "slug": "text-reveal",
-        "category": "Text"
+        "category": "Text",
+        "pro": false
       },
       {
         "slug": "tilt-card",
-        "category": "Hover"
+        "category": "Hover",
+        "pro": true
       }
     ]
   },
@@ -695,6 +812,7 @@
       "analytics",
       "app-directory",
       "app-shell",
+      "app-shell-flat",
       "approval-card",
       "approval-card-clean",
       "assistant-home",
@@ -784,6 +902,35 @@
       "writing-assistant-clean"
     ]
   },
+  "redirects": {
+    "/pricing": "/components",
+    "/pro": "/components"
+  },
+  "customization": {
+    "aiComponentBadgeCount": 20,
+    "aiComponentBadges": [
+      "agent-inbox",
+      "agent-lanes",
+      "agent-plan",
+      "agent-steering",
+      "agent-tree",
+      "ai-answer",
+      "approval-card",
+      "autonomy-dial",
+      "chat-composer",
+      "cited-answer",
+      "comments-panel",
+      "context-window",
+      "delegate-board",
+      "inline-diff",
+      "memory-panel",
+      "model-picker",
+      "permission-request",
+      "prompt-library",
+      "thinking-state",
+      "writing-assistant"
+    ]
+  },
   "excludedRoutes": [
     "/account",
     "/api",
@@ -791,9 +938,10 @@
     "/partner"
   ],
   "excludedAssets": [
-    "/assets/AccountPage-B6VEfxu-.js",
-    "/assets/LoginPage-C2MmKrs3.js",
+    "/assets/AccountPage-mQUgvRtp.js",
+    "/assets/LoginPage-C9DWJET2.js",
     "/assets/PartnerPage-B8QmlA8_.css",
-    "/assets/PartnerPage-DPmO7MGf.js"
+    "/assets/PartnerPage-DB3R_drX.js",
+    "/assets/PricingPage-BHXL6Q_n.js"
   ]
 }
