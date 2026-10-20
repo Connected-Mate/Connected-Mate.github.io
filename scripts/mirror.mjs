@@ -136,41 +136,62 @@ async function request(pathname, options = {}) {
   throw lastError;
 }
 
+const SITE_URL = "https://connected-mate.github.io";
+const SITE_REPO = "https://github.com/Connected-Mate/Connected-Mate.github.io";
+const SCALING_ROUTE = "/components/agent-tree-scaling";
+
 function compatibilityScript() {
-  const origin = JSON.stringify(ORIGIN);
   return `<script data-static-mirror-compatibility>
 (() => {
-  const origin = ${origin};
-  const serverOnly = /^\\/(?:login|account|partner)(?:\\/|$)/;
+  const serverOnly = /^\\/(?:login|account|partner|api)(?:\\/|$)/;
   const salesOnly = /^\\/(?:pricing|pro)(?:\\/|$)/;
+  const scalingPath = ${JSON.stringify(SCALING_ROUTE)};
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && salesOnly.test(target.pathname)
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
-    return;
-  }
-  if (serverOnly.test(window.location.pathname)) {
-    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
     const original = window.history[method].bind(window.history);
     window.history[method] = (state, title, url) => original(state, title, url == null ? url : libraryPath(url));
   }
+  const relabel = (root) => {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    let node;
+    while ((node = walker.nextNode())) {
+      if (node.textContent.trim() === "Agent Tree") node.textContent = node.textContent.replace("Agent Tree", "Agent Tree Scaling");
+    }
+  };
+  const injectScaling = () => {
+    document.querySelectorAll('a[href="/components/agent-tree"]').forEach((anchor) => {
+      const parent = anchor.parentElement;
+      if (!parent || parent.querySelector('a[href="' + scalingPath + '"]')) return;
+      const clone = anchor.cloneNode(true);
+      clone.setAttribute("href", scalingPath);
+      clone.removeAttribute("aria-current");
+      clone.classList.remove("active", "nav-link--active");
+      relabel(clone);
+      const image = clone.querySelector("img[src*='/previews/']");
+      if (image) image.src = "/previews/agent-tree-scaling.webp";
+      anchor.insertAdjacentElement("afterend", clone);
+    });
+  };
   const removeSalesLayer = () => {
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/\s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
     });
+    injectScaling();
   };
   let queued = false;
   const scheduleCleanup = () => {
@@ -190,14 +211,14 @@ function compatibilityScript() {
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (salesOnly.test(target.pathname)) {
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
-    } else if (serverOnly.test(target.pathname)) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
@@ -375,6 +396,297 @@ function patchJavaScript(source) {
     output = replaceOnce(output, "lead:`${e.name} is a Pro component.`", "lead:`${e.name} source is not included in this static mirror.`", "locked installation heading");
   }
   return output;
+}
+
+// ---------- Phase 2: debrand, open bundled source, custom component ----------
+
+function swapAll(source, search, replacement, label, warnings) {
+  if (!source.includes(search)) {
+    if (!source.includes(replacement)) warnings.push(`${label}: target not found`);
+    return source;
+  }
+  return source.split(search).join(replacement);
+}
+
+function debrand(source) {
+  let out = source;
+  const ordered = [
+    ["affectUI · Agent-ready React UI for AI products", "Agent-ready React UI for AI products"],
+    ["affectUI · Agent-ready UI for AI products", "Agent-ready UI for AI products"],
+    ["affectUI – Agent-ready UI for AI products", "Agent-ready UI for AI products"],
+    ["affectUI – Polished UI for React, ready to ship", "Polished UI for React, ready to ship"],
+    ["Connect the affectUI MCP server", "Connect the MCP server"],
+    ["Use the affectUI MCP server", "Use the MCP server"],
+    ["What is affectUI?", "What is this library?"],
+    ["affectUI Team", "Team plan"],
+    ["affectUI Individual", "Individual plan"],
+    ["www.affectui.com", "connected-mate.github.io"],
+    ["affectui.com", "connected-mate.github.io"],
+    ["@affectui", "@components"],
+    ["AFFECTUI_TOKEN", "COMPONENTS_TOKEN"],
+    ["AffectUI", "Components"],
+    ["affectUI", "Components"],
+    ["affectui", "components"],
+  ];
+  for (const [search, replacement] of ordered) out = out.split(search).join(replacement);
+  return out;
+}
+
+function phase2IndexBundle(source, warnings) {
+  let out = source;
+  const swap = (search, replacement, label) => { out = swapAll(out, search, replacement, label, warnings); };
+  swap(
+    "async function R(e){if(!e.pro)return e.loadSource();",
+    "async function R(e){if(!e.pro)return e.loadSource();{let z=await fetch(`/demo-source/${e.sourceSlug??e.slug}.js`);if(z.ok)return z.text()}",
+    "open bundled source loader",
+  );
+  swap("if(r(null),a&&!t)return;", "if(r(null),!1)return;", "code loads without session");
+  swap("[t,` is not included in this static mirror`]", "[t,` — source under the Code tab`]", "locked panel title");
+  swap("The preview and documentation remain available.", "Open the Code tab to copy the bundled source.", "locked panel body");
+  swap(
+    "Free items can be used in any project. Locked previews and documentation remain available; their source is not included in this static mirror.",
+    "Free items ship their original source in the registry. Every other item includes the bundled source of its live preview under the Code tab.",
+    "introduction source note",
+  );
+  swap(
+    "Locked previews and documentation remain available. Their source and registry packages are not included in this static mirror; no account or access-key flow is mirrored.",
+    "Every item includes its live preview, its documentation and the bundled source of that preview under the Code tab.",
+    "installation source note",
+  );
+  swap(
+    "The mirrored documentation and free registry work without a key. Locked source is not included in this static mirror.",
+    "The documentation and the free registry work without a key; every page also ships the bundled source of its preview.",
+    "MCP source note",
+  );
+  swap(
+    "Works with every MCP client. No key is needed for the free items and all docs in this mirror; locked source is not included. Prefer plain text? ",
+    "Works with every MCP client. No key is needed for the free items and all docs. Prefer plain text? ",
+    "landing MCP note",
+  );
+  swap(
+    " items are free to copy and keep. Locked previews and documentation remain available; their source is not included in this static mirror.",
+    " items are free to copy and keep. Every other item ships the bundled source of its live preview under the Code tab.",
+    "landing FAQ answer",
+  );
+  swap("title:`Locked source and MCP`", "title:`Source and MCP`", "MCP section title");
+  swap("title:`Locked source`", "title:`Component source`", "installation section title");
+  swap("title:`Free and server-backed items`", "title:`Free and bundled items`", "introduction section title");
+  swap("title:`What ${c.name} is`", "title:`What this is`", "introduction heading");
+  swap("[c.name,` is a library of React components", "[`This`,` is a library of React components", "introduction first sentence");
+  swap("description:`What ${c.name} is, how it is organized", "description:`What this library is, how it is organized", "docs nav description");
+  swap("`${e} · ${c.name}`", "`${e}`", "document title template");
+  swap("`${c.name} · Agent-ready React UI for AI products`", "`Agent-ready React UI for AI products`", "home document title");
+  swap("`${c.name} home`", "`Home`", "logo aria label");
+  swap("`${c.name} on GitHub, ${t} stars`", "`${t} stars on GitHub`", "GitHub stars aria label");
+  swap("`${c.name} on GitHub`", "`GitHub repository`", "GitHub aria label");
+  return out;
+}
+
+function phase2ComponentPage(source, warnings) {
+  let out = source;
+  const swap = (search, replacement, label) => { out = swapAll(out, search, replacement, label, warnings); };
+  swap("x=!l.pro||y?.plan===`pro`,S=N(l,x)", "x=!0,S=N(l,x)", "every page unlocked");
+  swap(
+    "title:t?`Copy the source code`:`Source is not included in this static mirror.`",
+    "title:`Copy the source code`",
+    "copy button title",
+  );
+  swap(
+    "Source is not included in this static mirror.",
+    "Copy the source from the Code tab above.",
+    "install locked note",
+  );
+  swap("x?(0,R.jsx)(c,{command:n(f)", "x&&!l.pro?(0,R.jsx)(c,{command:n(f)", "header install command only for registry items");
+  swap("o=e.sourceSlug??e.slug;return t?", "o=e.sourceSlug??e.slug;return t&&!e.pro?", "install section only for registry items");
+  swap(
+    "lead:`${e.name} source is not included in this static mirror.`",
+    "lead:`Copy the source of ${e.name} from the Code tab above.`",
+    "install lead",
+  );
+  swap(
+    "Its source is not included in this static mirror; use the preview and documentation as the reference.",
+    "Use the bundled source from the Code tab, the preview and the documentation as the reference.",
+    "AI prompt source note",
+  );
+  return out;
+}
+
+function phase2SiteConfig(source, warnings) {
+  let out = source;
+  const swap = (search, replacement, label) => { out = swapAll(out, search, replacement, label, warnings); };
+  swap("name:`affectUI`", "name:``", "site name removed");
+  swap("registry:`@affectui`", "registry:`@components`", "registry name");
+  swap("url:`https://www.affectui.com`", `url:\`${SITE_URL}\``, "site url");
+  swap("author:{name:`Flo`,url:`https://x.com/flohoeller`}", "author:{name:`Connected Mate`,url:`https://github.com/Connected-Mate`}", "author");
+  swap("contactEmail:`office@adfects.com`", "contactEmail:``", "contact email");
+  swap(
+    "links:{pro:`/pricing`,github:`https://github.com/flohoeller/affectui`,feedback:`#`,x:`https://x.com/flohoeller`,support:`/contact?topic=support`}",
+    `links:{pro:\`/components\`,github:\`${SITE_REPO}\`,feedback:\`${SITE_REPO}/issues\`,x:\`https://github.com/Connected-Mate\`,support:\`/contact\`}`,
+    "footer links",
+  );
+  return out;
+}
+
+function phase2LegalPage(source, warnings) {
+  let out = source;
+  const swap = (search, replacement, label) => { out = swapAll(out, search, replacement, label, warnings); };
+  swap(
+    "a={name:`Florian Höller`,trade:`adfects`,street:`Romana Dmowskiego 1b/40`,city:`50-203 Wrocław`,country:`Poland`,email:`office@adfects.com`,phone:`+48 608 678 868`,vat:`PL8982328320`}",
+    "a={name:`Connected Mate`,trade:`Connected Mate`,street:``,city:``,country:``,email:``,phone:``,vat:``}",
+    "legal entity",
+  );
+  swap(
+    "c=()=>(0,i.jsxs)(i.Fragment,{children:[a.name,`, trading as `,a.trade,`, `,a.street,`, `,a.city,`, `,a.country,`, VAT ID `,a.vat]})",
+    "c=()=>(0,i.jsx)(i.Fragment,{children:`Connected Mate (github.com/Connected-Mate)`})",
+    "legal entity sentence",
+  );
+  swap(
+    "s=()=>(0,i.jsx)(`a`,{href:`mailto:${a.email}`,children:a.email})",
+    `s=()=>(0,i.jsx)(\`a\`,{href:\`${SITE_REPO}\`,children:\`github.com/Connected-Mate\`})`,
+    "legal contact link",
+  );
+  swap(
+    "lead:`The rules for using ${t.name} and for buying a Pro license. Written to be read, not skimmed past.`",
+    "lead:`The rules for using this library. Written to be read, not skimmed past.`",
+    "terms lead",
+  );
+  const imprintMarker = "imprint:{title:`Imprint`";
+  const markerIndex = out.indexOf(imprintMarker);
+  if (markerIndex >= 0) {
+    const open = out.indexOf("{", markerIndex);
+    const range = balancedRange(out, open, "{", "}", "imprint section");
+    const replacement = `{title:\`Imprint\`,lead:\`Who runs this site.\`,body:(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(\`p\`,{children:\`This site is published by Connected Mate.\`}),(0,i.jsxs)(\`p\`,{children:[\`Source, issues and contact: \`,(0,i.jsx)(\`a\`,{href:\`${SITE_REPO}\`,children:\`github.com/Connected-Mate/Connected-Mate.github.io\`})]})]})}`;
+    out = `${out.slice(0, open)}${replacement}${out.slice(range.end + 1)}`;
+  } else if (!out.includes("Who runs this site.")) {
+    warnings.push("imprint section: target not found");
+  }
+  return out;
+}
+
+const CONTACT_PAGE_SOURCE = `import{t as e}from"./react-BkAXpnfr.js";import{t as r}from"./jsx-runtime-CTsRTJUX.js";import{j as l}from"./index-C2dRF6Sj.js";var u=e(),d=r();function p(){return(0,d.jsxs)(\`div\`,{className:\`login\`,children:[(0,d.jsxs)(\`button\`,{className:\`btn btn--ghost login__back\`,onClick:()=>window.history.length>1?window.history.back():window.location.assign(\`/\`),children:[\`Back\`]}),(0,d.jsxs)(\`div\`,{className:\`login__card\`,children:[(0,d.jsx)(l,{size:28,className:\`login__mark\`}),(0,d.jsx)(\`h1\`,{className:\`login__title\`,children:\`Get in touch\`}),(0,d.jsx)(\`p\`,{className:\`login__sub\`,children:\`Questions, feedback or ideas – open an issue on GitHub, we read everything.\`}),(0,d.jsx)(\`a\`,{className:\`tier__cta tier__cta--primary login__submit\`,href:\`${SITE_REPO}/issues\`,target:\`_blank\`,rel:\`noreferrer\`,children:\`Open a GitHub issue\`})]})]})}export{p as ContactPage};
+`;
+
+function llmsTxt() {
+  return `# Components
+
+> Agent-ready React UI for AI products and SaaS: components, screens, blocks, illustrations and motion effects. Free items are one .tsx file each with styles inside – no Tailwind, no animation library, no other dependencies. React 19, dark mode and reduced motion built in.
+
+Free items are open source (MIT). Every other page ships its live preview, its documentation and the bundled source of that preview under the Code tab.
+
+## How to add a free item
+
+- \`npx shadcn@latest add ${SITE_URL}/r/<slug>.json\` – the file lands in components/ui.
+- Short names: register \`"@components": "${SITE_URL}/r/{name}.json"\` under "registries" in components.json, then \`npx shadcn@latest add @components/<slug>\`.
+- Import from \`@/components/ui/<slug>\` and keep the component's own styles and motion; adapt only content and props.
+
+## Docs
+
+- [Introduction](${SITE_URL}/docs/introduction): what this library is and how it is organized
+- [Installation](${SITE_URL}/docs/installation): shadcn CLI, short names
+- [Theming](${SITE_URL}/docs/theming): colors via CSS variables, dark mode
+- [Accessibility](${SITE_URL}/docs/accessibility): keyboard, focus, reduced motion
+- [Using with AI](${SITE_URL}/docs/ai): prompts and setup for coding assistants
+- [Full docs in one file](${SITE_URL}/llms-full.txt): every item's usage, props and notes
+
+## Components
+
+Browse every component at ${SITE_URL}/components – each page has a live preview, a Code tab with source, documentation and a Copy prompt bar for coding assistants.
+`;
+}
+
+async function generateDemoSources(mainSource, warnings) {
+  const mod = await import("js-beautify");
+  const js_beautify = mod.js_beautify ?? mod.default?.js_beautify ?? mod.default;
+  if (typeof js_beautify !== "function") throw new Error("js-beautify is not available; run npm install");
+  const outDir = path.join(SITE, "demo-source");
+  await fs.mkdir(outDir, { recursive: true });
+  const seen = new Set();
+  let count = 0;
+  for (const match of mainSource.matchAll(/slug:`([a-z0-9-]+)`/g)) {
+    const slug = match[1];
+    if (seen.has(slug)) continue;
+    seen.add(slug);
+    let entry;
+    try {
+      entry = objectLiteralAt(mainSource, match.index);
+    } catch {
+      continue;
+    }
+    if (!/pro:!0/.test(entry)) continue;
+    const name = entry.match(/name:`([^`]+)`/)?.[1] ?? slug;
+    const demo = entry.match(/import\(`\.\/(demo-[A-Za-z0-9_-]+)\.js`\)/)?.[1];
+    const demoClean = entry.match(/import\(`\.\/(demo\.clean-[A-Za-z0-9_-]+)\.js`\)/)?.[1];
+    for (const [chunk, fileSlug] of [[demo, slug], [demoClean, `${slug}-clean`]]) {
+      if (!chunk) continue;
+      const file = path.join(SITE, "assets", `${chunk}.js`);
+      if (!(await exists(file))) {
+        warnings.push(`demo chunk missing for ${slug}: ${chunk}`);
+        continue;
+      }
+      const pretty = js_beautify(await fs.readFile(file, "utf8"), { indent_size: 2 });
+      const header = `// ${name} – bundled source of the live preview on this page.\n// Beautified from the production build; the bundler shortened identifier names.\n// Free items ship their original authored source through the registry instead.\n\n`;
+      await fs.writeFile(path.join(outDir, `${fileSlug}.js`), header + pretty);
+      count++;
+    }
+  }
+  return count;
+}
+
+async function postprocess() {
+  const warnings = [];
+  const rootHtml = await fs.readFile(path.join(SITE, "index.html"), "utf8");
+  const mainAsset = referencesIn(rootHtml, "/").find((pathname) => /\/assets\/index-[^/]+\.js$/.test(pathname));
+  if (!mainAsset) throw new Error("Could not find the main JavaScript bundle for postprocess");
+  const mainSource = await fs.readFile(localFile(mainAsset), "utf8");
+  const demoCount = await generateDemoSources(mainSource, warnings);
+
+  const files = await walk(SITE);
+  for (const file of files) {
+    const extension = path.extname(file);
+    if (![".html", ".js", ".json", ".txt", ".webmanifest", ".svg"].includes(extension)) continue;
+    const relative = path.relative(SITE, file).split(path.sep).join("/");
+    if (relative === "routes.json") continue;
+    let source = await fs.readFile(file, "utf8");
+    let updated = source;
+    if (extension === ".js" && !relative.startsWith("demo-source/")) {
+      if (updated.includes("async function R(e){if(!e.pro)return e.loadSource();") || updated.includes("[t,` is not included in this static mirror`]") || updated.includes("if(r(null),a&&!t)return;")) {
+        updated = phase2IndexBundle(updated, warnings);
+      }
+      if (updated.includes("prompt-bar__code") || updated.includes("x=!l.pro||y?.plan===`pro`")) {
+        updated = phase2ComponentPage(updated, warnings);
+      }
+      if (updated.includes("name:`affectUI`") && updated.includes("tagline:")) {
+        updated = phase2SiteConfig(updated, warnings);
+      }
+      if (updated.includes("trade:`adfects`") || updated.includes("imprint:{title:`Imprint`")) {
+        updated = phase2LegalPage(updated, warnings);
+      }
+      if (updated.includes("/api/contact") && updated.includes("export{p as ContactPage}")) {
+        updated = CONTACT_PAGE_SOURCE;
+      }
+    }
+    if (extension === ".html") {
+      updated = updated.replace(/<script data-static-mirror-compatibility>[\s\S]*?<\/script>/, () => compatibilityScript());
+    }
+    if (relative === "llms.txt") updated = llmsTxt();
+    updated = debrand(updated);
+    if (extension === ".txt") {
+      updated = updated.split("(Pro, ").join("(").split(" (Pro)").join("");
+    }
+    if (updated !== source) await fs.writeFile(file, updated);
+  }
+
+  const inventoryPath = path.join(SITE, "routes.json");
+  const inventory = JSON.parse(await fs.readFile(inventoryPath, "utf8"));
+  if (!inventory.routes.includes(SCALING_ROUTE)) {
+    inventory.routes.push(SCALING_ROUTE);
+    inventory.routes.sort((a, b) => a.localeCompare(b));
+  }
+  inventory.custom = { ...inventory.custom, agentTreeScaling: SCALING_ROUTE };
+  await fs.writeFile(inventoryPath, `${JSON.stringify(inventory, null, 2)}\n`);
+
+  console.log(`Postprocess: generated ${demoCount} bundled-source files`);
+  for (const warning of warnings) console.warn(`Postprocess warning: ${warning}`);
 }
 
 function normalizeReference(reference, basePath = "/") {

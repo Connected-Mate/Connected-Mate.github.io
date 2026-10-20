@@ -14,7 +14,9 @@ This copy was made with the founder's authorization. No authentication, locked P
 
 ## Team IA art direction
 
-This branch repaints the mirror in the A-Team design system of the IA Innovation team (the Vibe Creators hub "Osmose": sign-in page, account pages, e-mails): light objects on a gridded `#eaeff6` ground with navy-tinted shadows, ink `#00162B` titles in Avenir Next Condensed bold with a berry rail, flat berry `#851437` buttons with 12px corners, and the navy vitrine `#16345c → #0f2747` for dark mode. Layout, routes and demos are unchanged; third-party brand colours and semantic reds, greens and yellows are kept.
+This branch dresses the mirror in the A-Team design system of the IA Innovation team — the Vibe Creators hub "Osmose" (sign-in page, account pages, e-mails). Every page gets the hub's navy masthead (A-Team plate, Vibe Creators BÊTA chip, TGV INOUI), the gridded `#eaeff6` ground, double objects (matte frame holding a raised panel) for the main panel, cards and previews, navy-tinted shadows, Avenir Next Condensed titles with the berry rail, flat berry `#851437` buttons, state chips and icon pebbles, and the navy vitrine as dark mode. Demo colours and component previews are repainted to match. Layout, routes and demos are unchanged; third-party brand colours and semantic state colours are kept.
+
+The layer lives in `scripts/theme/` (`osmose.css`, `ateam.js`, brand files) and is served from `/ateam/`.
 
 ```sh
 npm run mirror   # refresh the original copy

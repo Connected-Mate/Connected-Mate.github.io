@@ -61,60 +61,11 @@ BRAND_COLOURS = {
     "25d366", "00b2ff", "ff0000", "1db954", "6772e5",  # WhatsApp, YouTube, Spotify, Stripe legacy
 }
 
-# Design tokens of the site shell, set to the hub's own values rather than
-# derived, so the frame matches the hub exactly. Appended after the original.
-TOKENS = """
-/* A-Team design system (hub Osmose) — appended by scripts/theme_team_ia.py */
-:root{--font-sans:"Avenir Next","Avenir",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
---font-display:"Avenir Next Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
---bg:#eaeff6;--panel:#fbfcfe;--card:#fff;--preview:#f2f6fa;--muted-bg:#1a3e700d;--hover-bg:#1a3e7012;
---text:#00162b;--text-muted:#00162ba3;--text-subtle:#00162b99;--border:#dae2ec;--border-soft:#00162b1a;
---card-stroke:#e6ecf4;--panel-stroke:#dae2ec;--tier-stroke:#e6ecf4;--guarantee-bg:#f2f6fa;--guarantee-tray:#e6ecf4;
---panel-shadow:0 8px 16px -4px #1a3e7029;--primary:#851437;--primary-fg:#fff;
---accent:#1a3e70;--accent-soft:#eef5ff;--pro-bg:#fbe7ec;--pro-from:#851437;--pro-to:#16345c;
---shadow-card:0 18px 20px -24px #1a3e708c;
---shadow-pop:0 24px 48px -24px #1a3e704d,0 8px 16px -4px #1a3e7029,0 0 0 1px #cbd6e4;
---cadre:#f2f6fa;--trait-fort:#cbd6e4;--title:#00162b;--grid:#1a3e7012}
-:root:not([data-theme=light]){color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
---bg:#0b1d36;--panel:#0f2747;--card:#16345c;--preview:#132c50;--muted-bg:#ffffff12;--hover-bg:#ffffff1a;
---text:#fff;--text-muted:#ffffffb8;--text-subtle:#ffffff8f;--border:#ffffff24;--border-soft:#ffffff1f;
---card-stroke:#ffffff17;--panel-stroke:#ffffff24;--tier-stroke:#ffffff14;--guarantee-bg:#0f2747;--guarantee-tray:#16345c;
---panel-shadow:0 24px 44px -20px #0000008c,0 8px 16px -8px #0000004d;--primary:#851437;--primary-fg:#fff;
---accent:#8fbdf2;--accent-soft:#8fbdf226;--pro-bg:#85143740;--pro-from:#f6bcc8;--pro-to:#8fbdf2;
---shadow-card:0 1px 1.5px #00000040,inset 0 -1px 0 #ffffff0f;--shadow-pop:0 24px 48px -20px #00000080,0 0 0 1px #ffffff26;
---cadre:#0f2747;--trait-fort:#ffffff2e;--title:#fff;--grid:#ffffff0d;color-scheme:dark}}
-:root[data-theme=dark]{
---bg:#0b1d36;--panel:#0f2747;--card:#16345c;--preview:#132c50;--muted-bg:#ffffff12;--hover-bg:#ffffff1a;
---text:#fff;--text-muted:#ffffffb8;--text-subtle:#ffffff8f;--border:#ffffff24;--border-soft:#ffffff1f;
---card-stroke:#ffffff17;--panel-stroke:#ffffff24;--tier-stroke:#ffffff14;--guarantee-bg:#0f2747;--guarantee-tray:#16345c;
---panel-shadow:0 24px 44px -20px #0000008c,0 8px 16px -8px #0000004d;--primary:#851437;--primary-fg:#fff;
---accent:#8fbdf2;--accent-soft:#8fbdf226;--pro-bg:#85143740;--pro-from:#f6bcc8;--pro-to:#8fbdf2;
---shadow-card:0 1px 1.5px #00000040,inset 0 -1px 0 #ffffff0f;--shadow-pop:0 24px 48px -20px #00000080,0 0 0 1px #ffffff26;
---cadre:#0f2747;--trait-fort:#ffffff2e;--title:#fff;--grid:#ffffff0d;color-scheme:dark}
-::selection{background:#851437;color:#fff}
-/* Ground: tinted canvas under the hub's 56px grid */
-body{background-color:var(--bg);background-image:linear-gradient(to right,var(--grid) 1px,transparent 1px),linear-gradient(to bottom,var(--grid) 1px,transparent 1px);background-size:56px 56px}
-html:has(.lp),html:has(.lp) body{background-color:var(--bg)}
-html.dark:has(.lp),html.dark:has(.lp) body,html[data-theme=dark]:has(.lp),html[data-theme=dark]:has(.lp) body{background-color:var(--bg)}
-/* Display titles: Avenir Next Condensed bold, sentence case, ink — as « Connexion » on the hub */
-.lp-hero__title,.lp-lead,.doc__title,.page-head__title,.hero__title,.faq__title,.legal__title,.not-found__title,.pricing__title{
-font-family:var(--font-display);font-weight:700;letter-spacing:-.012em;color:var(--title)}
-.lp-hero__title{font-size:clamp(40px,6vw,64px);line-height:1.02}
-.doc__h2{font-family:var(--font-display);font-weight:700;letter-spacing:-.01em;color:var(--title)}
-/* The hub's signature: a short berry rail under the page title */
-.doc__title,.page-head__title{padding-bottom:16px;background:linear-gradient(#851437,#851437) left bottom/60px 3px no-repeat}
-/* Primary actions: flat berry, 12px corners, like « Se connecter » */
-.btn--primary,.tier__cta--primary,.promo__cta{background:#851437!important;border:1px solid #851437!important;color:#fff!important;border-radius:12px;box-shadow:0 8px 16px -6px #85143759}
-.btn--primary:hover:not(:disabled),.tier__cta--primary:hover:not(:disabled),.promo__cta:hover{background:#6d0f2d!important;border-color:#6d0f2d!important}
-.prompt-bar__code{background:#851437;color:#fff;border-radius:10px}
-.prompt-bar__code:hover{background:#6d0f2d;opacity:1}
-/* Secondary actions: light object with hairline and drop shadow */
-.btn--secondary{background:var(--panel);border:1px solid var(--trait-fort);box-shadow:0 8px 16px -4px #1a3e7029;border-radius:12px}
-:focus-visible{outline-color:#8fbdf2}
-/* Avenir Next sets wider than Inter: keep one-line labels on one line */
-.pro-badge{white-space:nowrap}
-"""
+THEME_DIR = Path(__file__).resolve().parent / "theme"
+# The A-Team layer: stylesheet, masthead script and brand files, served from /ateam/.
+THEME_FILES = ("osmose.css", "ateam.js", "a-team.svg", "inoui-white.png")
+HEAD_TAGS = '<link rel="stylesheet" href="/ateam/osmose.css">\n    <script defer src="/ateam/ateam.js"></script>\n  '
+
 
 
 # ——— OKLCH, vectorised (shape (..., 3), sRGB in 0..1) ———
@@ -323,14 +274,20 @@ def main():
         elif suffix in IMAGE_SUFFIXES and path.relative_to(site).parts[0] in IMAGE_DIRS:
             images += paint_image(path)
 
-    main_css = sorted((site / "assets").glob("index-*.css"))
-    if len(main_css) != 1:
-        sys.exit(f"Expected one main stylesheet, found {len(main_css)}.")
-    with main_css[0].open("a", encoding="utf-8") as handle:
-        handle.write(TOKENS)
+    out = site / "ateam"
+    out.mkdir(exist_ok=True)
+    for name in THEME_FILES:
+        (out / name).write_bytes((THEME_DIR / name).read_bytes())
+    pages = 0
+    for page in sorted(site.rglob("*.html")):
+        html = page.read_text(encoding="utf-8")
+        if "</head>" not in html or "/ateam/osmose.css" in html:
+            continue
+        page.write_text(html.replace("</head>", HEAD_TAGS + "</head>", 1), encoding="utf-8")
+        pages += 1
 
     marker.write_text("Repainted in the A-Team design system by scripts/theme_team_ia.py\n", encoding="utf-8")
-    print(f"Repainted {texts} text files and {images} images; tokens appended to {main_css[0].name}.")
+    print(f"Repainted {texts} text files and {images} images; A-Team layer added to {pages} pages.")
 
 
 if __name__ == "__main__":

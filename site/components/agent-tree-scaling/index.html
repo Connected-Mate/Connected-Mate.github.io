@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Tree Scaling · Connected Mate</title>
+    <meta name="description" content="Agent Tree Scaling — a fractal agent-org visualization. A Chief of Staff launches Chiefs of Staff, which launch Chiefs of Staff, which launch Teams of agents. Watch how far the hierarchy can scale." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/index-B9QHEEXq.css" />
+    <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/ateam/osmose.css">
+    <script defer src="/ateam/ateam.js"></script>
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar" aria-label="Site navigation">
+        <a class="wordmark" href="/">
+          <svg class="wordmark-mark" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M12 2.5 21.5 12 12 21.5 2.5 12Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M12 7.5 16.5 12 12 16.5 7.5 12Z" fill="currentColor"/>
+          </svg>
+          <span class="wordmark-name">Connected Mate</span>
+        </a>
+        <div class="search">
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input id="navSearch" type="search" placeholder="Search…" aria-label="Filter components" autocomplete="off" />
+          <kbd>⌘K</kbd>
+        </div>
+        <nav class="nav" id="navList">
+          <div class="nav-section"><span class="nav-icon">▤</span> Library</div>
+          <div class="nav-section"><span class="nav-icon">▦</span> Docs</div>
+          <div class="nav-section"><span class="nav-icon">✦</span> Style <span class="pill pill-neutral">Classic</span></div>
+          <div class="nav-section nav-section-head"><span class="nav-icon">▦</span> Components <span class="pill pill-count">54</span></div>
+          <ul class="nav-items" id="navItems">
+            <li><a href="/components/ai-answer">AI Answer <span class="pill pill-ai"><svg viewBox="0 0 24 24" width="9" height="9" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z" fill="currentColor"/></svg> AI component</span></a></li>
+            <li><a href="/components/chat-composer">Chat Composer <span class="pill pill-ai"><svg viewBox="0 0 24 24" width="9" height="9" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z" fill="currentColor"/></svg> AI component</span></a></li>
+            <li><a href="/components/thinking-state">Thinking State <span class="pill pill-ai"><svg viewBox="0 0 24 24" width="9" height="9" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z" fill="currentColor"/></svg> AI component</span></a></li>
+            <li><a href="/components/writing-assistant">Writing Assistant <span class="pill pill-ai"><svg viewBox="0 0 24 24" width="9" height="9" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z" fill="currentColor"/></svg> AI component</span></a></li>
+            <li><a href="/components/thinking-loader">Thinking Loader</a></li>
+            <li><a href="/components/combobox">Combobox</a></li>
+            <li><a href="/components/command-menu">Command Menu</a></li>
+            <li><a href="/components/date-range-picker">Date Range Picker</a></li>
+            <li><a href="/components/dropzone">Dropzone</a></li>
+            <li><a href="/components/otp-input">OTP Input</a></li>
+            <li><a href="/components/segmented-control">Segmented Control</a></li>
+            <li><a href="/components/stepper-form">Stepper Form</a></li>
+            <li><a href="/components/toaster">Toaster</a></li>
+            <li><a href="/components/usage-meter">Usage Meter</a></li>
+            <li><a href="/components/agent-inbox">Agent Inbox <span class="pill pill-ai"><svg viewBox="0 0 24 24" width="9" height="9" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z" fill="currentColor"/></svg> AI component</span></a></li>
+            <li><a href="/components/agent-lanes">Agent Lanes <span class="pill pill-ai"><svg viewBox="0 0 24 24" width="9" height="9" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z" fill="currentColor"/></svg> AI component</span></a></li>
+            <li><a href="/components/agent-steering">Agent Steering <span class="pill pill-ai"><svg viewBox="0 0 24 24" width="9" height="9" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z" fill="currentColor"/></svg> AI component</span></a></li>
+            <li><a href="/components/agent-tree">Agent Tree <span class="pill pill-ai"><svg viewBox="0 0 24 24" width="9" height="9" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z" fill="currentColor"/></svg> AI component</span></a></li>
+            <li><a class="active" href="/components/agent-tree-scaling" aria-current="page">Agent Tree Scaling <span class="pill pill-ai"><svg viewBox="0 0 24 24" width="9" height="9" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z" fill="currentColor"/></svg> AI component</span></a></li>
+            <li><a href="/components/autonomy-dial">Autonomy Dial <span class="pill pill-ai"><svg viewBox="0 0 24 24" width="9" height="9" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z" fill="currentColor"/></svg> AI component</span></a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <div class="main">
+        <header class="topbar">
+          <span class="topbar-wordmark">Connected Mate</span>
+          <span class="topbar-spacer"></span>
+          <a class="topbar-link" href="https://github.com/Connected-Mate" rel="noopener">GitHub</a>
+        </header>
+
+        <main class="content">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/components">Components</a>
+            <span class="breadcrumb-sep" aria-hidden="true">›</span>
+            <span>Agent Tree Scaling</span>
+          </nav>
+
+          <h1 class="title">Agent Tree Scaling <span class="pill pill-ai pill-ai-lg"><svg viewBox="0 0 24 24" width="11" height="11" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z" fill="currentColor"/></svg> AI component</span></h1>
+          <p class="lede">A Chief of Staff launches Chiefs of Staff, which launch Chiefs of Staff, which launch Teams of agents — a fractal org chart with live status, cost and time on every card, so you can see how far the hierarchy can scale.</p>
+
+          <div class="tabs" role="tablist" aria-label="Component view">
+            <button class="tab active" id="tabPreview" role="tab" aria-selected="true" aria-controls="panelPreview">
+              <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/></svg>
+              Preview
+            </button>
+            <button class="tab" id="tabCode" role="tab" aria-selected="false" aria-controls="panelCode">
+              <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="m8 6-6 6 6 6M16 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Code
+            </button>
+          </div>
+
+          <section class="panel" id="panelPreview" role="tabpanel" aria-labelledby="tabPreview">
+            <div class="controls">
+              <label class="control">
+                <span class="control-label">Chief levels <output id="chiefLevelsVal">1</output></span>
+                <input type="range" id="chiefLevels" min="1" max="4" step="1" value="1" />
+              </label>
+              <label class="control">
+                <span class="control-label">Chiefs per chief <output id="chiefsPerVal">2</output></span>
+                <input type="range" id="chiefsPer" min="1" max="4" step="1" value="2" />
+              </label>
+              <label class="control">
+                <span class="control-label">Agents per team <output id="agentsPerVal">3</output></span>
+                <input type="range" id="agentsPer" min="2" max="6" step="1" value="3" />
+              </label>
+              <button class="autoscale" id="autoScaleBtn" aria-pressed="false">
+                <svg class="autoscale-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+                <svg class="autoscale-stop" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor"/></svg>
+                Auto-scale
+              </button>
+              <span class="totals" id="totals" aria-live="polite"></span>
+            </div>
+            <div class="viewport" id="viewport">
+              <svg id="stage" role="img" aria-label="Fractal agent hierarchy tree">
+                <g id="world"><path id="edgePath" fill="none"/><g id="nodeLayer"></g></g>
+              </svg>
+              <div class="zoombar">
+                <button id="zoomOut" aria-label="Zoom out">−</button>
+                <button id="zoomIn" aria-label="Zoom in">+</button>
+                <button id="zoomReset" aria-label="Reset zoom">Fit</button>
+              </div>
+              <p class="hint">Drag to pan · scroll to zoom</p>
+            </div>
+          </section>
+
+          <section class="panel panel-code" id="panelCode" role="tabpanel" aria-labelledby="tabCode" hidden>
+            <div class="code-head">
+              <span class="code-file">app.js</span>
+              <button class="copy" id="copyBtn">
+                <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span id="copyLabel">Copy</span>
+              </button>
+            </div>
+            <pre class="code-block"><code id="codeText">Loading…</code></pre>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="app.js" defer></script>
+  </body>
+</html>

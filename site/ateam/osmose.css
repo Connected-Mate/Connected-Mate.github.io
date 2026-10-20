@@ -1,0 +1,692 @@
+/* ————————————————————————————————————————————————————————————————
+ * A-Team design system — "Osmose", the Vibe Creators hub material.
+ * Loaded after the site stylesheet by scripts/theme_team_ia.py.
+ *
+ * The six rules of the hub, applied to this library:
+ *   1. Every object is a light surface on a TINTED, gridded ground (#eaeff6).
+ *   2. Object = surface + 1px hairline + negative-spread shadow, always the three.
+ *   3. Important objects are DOUBLE: a matte frame holds a raised panel.
+ *   4. Icon pebbles are double too, lit from below.
+ *   5. One transition cadence: 0.15 s.
+ *   6. Four state families, each a fill + hairline pair.
+ * Shadows are tinted navy rgba(26, 62, 112, α) — never grey.
+ * ———————————————————————————————————————————————————————————————— */
+
+:root {
+  --font-sans: "Avenir Next", "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-display: "Avenir Next Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+
+  /* Hub tokens */
+  --o-fond: #eaeff6;
+  --o-cadre: #f2f6fa;
+  --o-panneau: #fbfcfe;
+  --o-carte: #ffffff;
+  --o-trait-fort: #cbd6e4;
+  --o-trait: #dae2ec;
+  --o-trait-doux: #e6ecf4;
+  --o-acier: #00162b;
+  --o-acier-2: rgba(0, 22, 43, .64);
+  --o-acier-3: rgba(0, 22, 43, .6);
+  --o-berry: #851437;
+  --o-berry-fonce: #6d0f2d;
+  --o-rose: #f6bcc8;
+  --o-rose-fond: #fbe7ec;
+  --o-navy-1: #16345c;
+  --o-navy-2: #0f2747;
+  --o-info-fond: #eef5ff;
+  --o-info-trait: #c1daff;
+  --o-info-vif: #8fbdf2;
+  --o-info-encre: #1a3e70;
+  --o-trame: rgba(26, 62, 112, .07);
+  --o-ombre-drop: 0 8px 16px -4px rgba(26, 62, 112, .16);
+  --o-ombre-panneau: 0 18px 20px -24px rgba(26, 62, 112, .55);
+  --o-ombre-flottante: 0 24px 48px -24px rgba(26, 62, 112, .3);
+  --o-ombre-levee: 0 18px 30px -16px rgba(26, 62, 112, .38), 0 4px 10px -6px rgba(26, 62, 112, .18);
+  --o-ombre-navy: 0 24px 44px -20px rgba(15, 39, 71, .55), 0 8px 16px -8px rgba(15, 39, 71, .3);
+  --o-galet: 0 4px 12px -4px rgba(26, 62, 112, .3), inset 0 -2px 8px -5px rgba(26, 62, 112, .45);
+  --o-enfonce: inset 0 3px 8px -3px rgba(26, 62, 112, .4), 0 1px 2px -1px rgba(26, 62, 112, .15);
+  --o-tempo: .15s;
+  --o-expo: cubic-bezier(.16, 1, .3, 1);
+
+  /* Site tokens, re-pointed at the hub */
+  --bg: var(--o-fond);
+  --panel: var(--o-panneau);
+  --card: var(--o-carte);
+  --preview: var(--o-cadre);
+  --muted-bg: rgba(26, 62, 112, .06);
+  --hover-bg: rgba(26, 62, 112, .07);
+  --text: var(--o-acier);
+  --text-muted: var(--o-acier-2);
+  --text-subtle: var(--o-acier-3);
+  --border: var(--o-trait);
+  --border-soft: var(--o-trait-doux);
+  --card-stroke: var(--o-trait-doux);
+  --panel-stroke: var(--o-trait);
+  --tier-stroke: var(--o-trait-doux);
+  --guarantee-bg: var(--o-cadre);
+  --guarantee-tray: var(--o-trait-doux);
+  --panel-shadow: var(--o-ombre-drop);
+  --primary: var(--o-berry);
+  --primary-fg: #fff;
+  --accent: var(--o-info-encre);
+  --accent-soft: var(--o-info-fond);
+  --pro-bg: var(--o-rose-fond);
+  --pro-from: var(--o-berry);
+  --pro-to: var(--o-berry);
+  --shadow-card: var(--o-ombre-panneau);
+  --shadow-pop: var(--o-ombre-flottante), var(--o-ombre-drop), 0 0 0 1px var(--o-trait-fort);
+  --radius-panel: 20px;
+  --radius-card: 20px;
+  --duration: var(--o-tempo);
+  --ease-out: var(--o-expo);
+  --dark-btn-top: var(--o-berry);
+  --dark-btn-bottom: var(--o-berry);
+  --dark-btn-top-hover: var(--o-berry-fonce);
+  --dark-btn-bottom-hover: var(--o-berry-fonce);
+  --dark-btn-edge-1: var(--o-berry);
+  --dark-btn-edge-2: var(--o-berry);
+  --dark-btn-edge-3: var(--o-berry);
+  --dark-btn-ring: transparent;
+  --dark-btn-text: #fff;
+}
+
+/* Dark: the navy vitrine becomes the whole room */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme=light]) {
+    --o-fond: #0b1d36;
+    --o-cadre: #0f2747;
+    --o-panneau: #132c50;
+    --o-carte: #16345c;
+    --o-trait-fort: rgba(255, 255, 255, .2);
+    --o-trait: rgba(255, 255, 255, .14);
+    --o-trait-doux: rgba(255, 255, 255, .09);
+    --o-acier: #ffffff;
+    --o-acier-2: rgba(255, 255, 255, .72);
+    --o-acier-3: rgba(255, 255, 255, .58);
+    --o-rose-fond: rgba(133, 20, 55, .32);
+    --o-info-fond: rgba(143, 189, 242, .14);
+    --o-info-trait: rgba(143, 189, 242, .32);
+    --o-info-encre: #c1daff;
+    --o-trame: rgba(255, 255, 255, .045);
+    --o-ombre-drop: 0 8px 16px -4px rgba(0, 0, 0, .4);
+    --o-ombre-panneau: 0 18px 20px -24px rgba(0, 0, 0, .8);
+    --o-ombre-flottante: 0 24px 48px -24px rgba(0, 0, 0, .6);
+    --o-ombre-levee: 0 18px 30px -16px rgba(0, 0, 0, .6), 0 4px 10px -6px rgba(0, 0, 0, .35);
+    --o-galet: 0 4px 12px -4px rgba(0, 0, 0, .5), inset 0 -2px 8px -5px rgba(0, 0, 0, .6);
+    --o-enfonce: inset 0 3px 8px -3px rgba(0, 0, 0, .55);
+    --muted-bg: rgba(255, 255, 255, .07);
+    --hover-bg: rgba(255, 255, 255, .09);
+    --pro-from: var(--o-rose);
+    --pro-to: var(--o-rose);
+    color-scheme: dark;
+  }
+}
+:root[data-theme=dark] {
+  --o-fond: #0b1d36;
+  --o-cadre: #0f2747;
+  --o-panneau: #132c50;
+  --o-carte: #16345c;
+  --o-trait-fort: rgba(255, 255, 255, .2);
+  --o-trait: rgba(255, 255, 255, .14);
+  --o-trait-doux: rgba(255, 255, 255, .09);
+  --o-acier: #ffffff;
+  --o-acier-2: rgba(255, 255, 255, .72);
+  --o-acier-3: rgba(255, 255, 255, .58);
+  --o-rose-fond: rgba(133, 20, 55, .32);
+  --o-info-fond: rgba(143, 189, 242, .14);
+  --o-info-trait: rgba(143, 189, 242, .32);
+  --o-info-encre: #c1daff;
+  --o-trame: rgba(255, 255, 255, .045);
+  --o-ombre-drop: 0 8px 16px -4px rgba(0, 0, 0, .4);
+  --o-ombre-panneau: 0 18px 20px -24px rgba(0, 0, 0, .8);
+  --o-ombre-flottante: 0 24px 48px -24px rgba(0, 0, 0, .6);
+  --o-ombre-levee: 0 18px 30px -16px rgba(0, 0, 0, .6), 0 4px 10px -6px rgba(0, 0, 0, .35);
+  --o-galet: 0 4px 12px -4px rgba(0, 0, 0, .5), inset 0 -2px 8px -5px rgba(0, 0, 0, .6);
+  --o-enfonce: inset 0 3px 8px -3px rgba(0, 0, 0, .55);
+  --muted-bg: rgba(255, 255, 255, .07);
+  --hover-bg: rgba(255, 255, 255, .09);
+  --pro-from: var(--o-rose);
+  --pro-to: var(--o-rose);
+  color-scheme: dark;
+}
+
+::selection { background: var(--o-berry); color: #fff; }
+:focus-visible { outline: 2px solid var(--o-info-vif); outline-offset: 2px; }
+
+/* ——— The ground: tinted matter under the hub's 56 px grid ——— */
+html, body, html:has(.lp), html:has(.lp) body,
+html.dark:has(.lp), html.dark:has(.lp) body,
+html[data-theme=dark]:has(.lp), html[data-theme=dark]:has(.lp) body { background-color: var(--o-fond); }
+body {
+  font-family: var(--font-sans);
+  color: var(--o-acier);
+  background-image:
+    linear-gradient(to right, var(--o-trame) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--o-trame) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-attachment: fixed;
+}
+.lp { --lp-page: transparent; background: transparent; }
+.sidebar { background: transparent; }
+
+/* ————————————————————————————————————————————————
+   THE MASTHEAD — the hub's navy bandeau, in its frame.
+   ———————————————————————————————————————————————— */
+.ateam-bandeau {
+  position: relative;
+  z-index: 25;
+  max-width: 1736px;
+  margin: 8px auto 0;
+  padding: 0 8px;
+}
+.ateam-bandeau__panneau {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 20px;
+  padding: 14px 22px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--o-navy-1), var(--o-navy-2));
+  border: 1px solid rgba(255, 255, 255, .14);
+  box-shadow: 0 0 0 8px var(--o-cadre), 0 0 0 9px var(--o-trait), var(--o-ombre-navy);
+  margin: 9px;
+  animation: ateam-deployer .62s var(--o-expo) both .05s;
+}
+/* Halo in the corner, constellation and white grid — the vitrine's layers */
+.ateam-bandeau__panneau::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform-origin: 88% 0%;
+  background: radial-gradient(115% 130% at 88% -12%, rgba(48, 123, 191, .55) 0%, transparent 62%);
+  animation: ateam-halo 12s ease-in-out infinite;
+}
+.ateam-bandeau__panneau::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, .05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, .05) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.ateam-etoile {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 0 7px 1px rgba(255, 255, 255, .5);
+  pointer-events: none;
+  animation: ateam-scintiller 6s ease-in-out infinite;
+  animation-delay: var(--d);
+}
+.ateam-rails {
+  position: absolute;
+  inset: 0 -280px;
+  pointer-events: none;
+  background: repeating-linear-gradient(115deg, rgba(255, 255, 255, .06) 0 1px, transparent 1px 240px);
+  animation: ateam-rails 20s linear infinite;
+}
+.ateam-lueur {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, .13) 50%, transparent 62%);
+  transform: translateX(-130%);
+  animation: ateam-traverser .95s var(--o-expo) both .7s;
+}
+.ateam-bandeau__panneau:hover .ateam-lueur {
+  animation: none;
+  transform: translateX(130%);
+  transition: transform .75s var(--o-expo);
+}
+.ateam-bandeau__contenu {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.ateam-marque {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 14px;
+}
+.ateam-marque:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+/* On the navy, the A-Team blues vanish — hence the light plate */
+.ateam-plaque {
+  flex: none;
+  display: grid;
+  place-items: center;
+  padding: 7px 11px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff, #eef2f8);
+  border: 1px solid rgba(255, 255, 255, .55);
+  box-shadow: 0 12px 20px -12px rgba(0, 0, 0, .6);
+  animation: ateam-surgir .55s cubic-bezier(.34, 1.56, .64, 1) both .5s;
+}
+.ateam-plaque img { display: block; width: 92px; height: auto; }
+.ateam-titres { display: block; min-width: 0; }
+.ateam-nom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -.012em;
+  line-height: 1.15;
+}
+.ateam-beta {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 10px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, .34);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .17), rgba(255, 255, 255, .07));
+  box-shadow: 0 6px 12px -8px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(255, 255, 255, .22);
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ateam-sous-titre {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .78);
+}
+.ateam-inoui {
+  display: block;
+  flex: none;
+  width: 72px;
+  height: auto;
+  animation: ateam-surgir .55s cubic-bezier(.34, 1.56, .64, 1) both .6s;
+}
+
+@keyframes ateam-deployer { from { opacity: 0; transform: translateY(-8px) scale(.985); } }
+@keyframes ateam-surgir { from { opacity: 0; transform: scale(.86); } }
+@keyframes ateam-halo { 0%, 100% { opacity: .78; transform: scale(1); } 50% { opacity: 1; transform: scale(1.09); } }
+@keyframes ateam-scintiller { 0%, 100% { opacity: .22; transform: scale(.8); } 45% { opacity: .95; transform: scale(1.3); } }
+@keyframes ateam-rails { to { transform: translateX(264.9px); } }
+@keyframes ateam-traverser { to { transform: translateX(130%); } }
+
+@media (max-width: 900px) {
+  .ateam-bandeau__panneau { padding: 12px 14px; }
+  .ateam-plaque img { width: 70px; }
+  .ateam-nom { font-size: 20px; }
+  .ateam-inoui { width: 56px; }
+  .ateam-long { display: none; }
+}
+@media (max-width: 480px) {
+  .ateam-bandeau { margin-top: 6px; padding: 0 4px; }
+  .ateam-bandeau__panneau { margin: 7px; box-shadow: 0 0 0 6px var(--o-cadre), 0 0 0 7px var(--o-trait), var(--o-ombre-navy); }
+  .ateam-marque { gap: 10px; }
+  .ateam-plaque { padding: 5px 8px; border-radius: 11px; }
+  .ateam-plaque img { width: 58px; }
+  .ateam-nom { font-size: 18px; }
+  .ateam-beta { margin-left: 7px; padding: 2px 7px; font-size: 9.5px; }
+  .ateam-sous-titre { font-size: 10.5px; letter-spacing: .08em; }
+  .ateam-inoui { width: 48px; }
+}
+
+/* ————————————————————————————————————————————————
+   THE MAIN PANEL — a double object: matte frame, raised panel.
+   ———————————————————————————————————————————————— */
+.shell { padding-top: 10px; }
+.panel {
+  background: var(--o-panneau);
+  border: 1px solid var(--o-trait-doux);
+  border-radius: 16px;
+  box-shadow: 0 0 0 8px var(--o-cadre), 0 0 0 9px var(--o-trait), var(--o-ombre-drop), 0 30px 60px -40px rgba(26, 62, 112, .35);
+  margin: 9px 9px 9px 0;
+}
+.main-col > .footer { padding-top: 64px; }
+
+/* ——— Sidebar: the hub's light column ——— */
+.sidebar__head { height: 44px; }
+.sidebar-search__field {
+  height: 40px;
+  border-radius: 10px;
+  background: var(--o-carte);
+  box-shadow: 0 0 0 1px var(--o-trait-fort), inset 0 2px 10px -6px rgba(26, 62, 112, .16);
+}
+.sidebar-search__field:focus-within {
+  box-shadow: 0 0 0 1px var(--o-info-vif), 0 0 0 4px rgba(193, 218, 255, .5), inset 0 2px 10px -6px rgba(26, 62, 112, .16);
+}
+.sidebar-search__keys kbd {
+  background: var(--o-cadre);
+  box-shadow: 0 0 0 1px var(--o-trait), 0 1px 0 var(--o-trait-fort);
+  color: var(--o-acier-2);
+  border-radius: 5px;
+}
+.sidebar .nav-link { border-radius: 10px; transition: background-color var(--o-tempo), color var(--o-tempo), box-shadow var(--o-tempo); }
+.sidebar .nav-link:hover { background: var(--o-cadre); color: var(--o-acier); }
+/* The current page is a small raised object, like a hub card */
+.sidebar .nav-link[aria-current=page],
+.sidebar .nav-link[data-active] {
+  background: var(--o-carte);
+  color: var(--o-acier);
+  font-weight: 600;
+  box-shadow: 0 0 0 1px var(--o-trait), var(--o-ombre-drop);
+}
+.tree__items { border-left-color: var(--o-trait-fort); }
+.tree__items .nav-link[aria-current=page]::before { background: var(--o-berry); width: 3px; border-radius: 2px; left: -8px; }
+.section__label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--o-acier-2);
+}
+.section__label svg { color: var(--o-berry); }
+.nav-link__count, .lib-tabs__tab span, .card__styles {
+  display: inline-grid;
+  place-items: center;
+  min-width: 24px;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--o-carte);
+  border: 1px solid var(--o-trait);
+  color: var(--o-acier-2);
+  font-size: 11px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ——— Logo words: the library's own name, condensed like the hub ——— */
+.logo-mark { display: none; }
+.logo__name { font-size: 0 !important; }
+.logo__name::before {
+  content: "Composants IA";
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  color: var(--o-acier);
+}
+.logo::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  background: var(--o-berry);
+  box-shadow: 0 0 0 3px var(--o-rose-fond);
+  margin-right: 4px;
+}
+
+/* ——— Buttons: the hub's .btn, light object; .btn-berry for the main action ——— */
+.btn--secondary, .topbar .btn--secondary, .lp-nav .btn--secondary {
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 10px;
+  background: var(--o-panneau);
+  border: 1px solid var(--o-trait-fort);
+  box-shadow: var(--o-ombre-drop);
+  color: var(--o-acier);
+  font-weight: 600;
+  transition: background var(--o-tempo), box-shadow var(--o-tempo), transform var(--o-tempo);
+}
+.btn--secondary:hover { background: var(--o-carte) !important; box-shadow: var(--o-ombre-flottante); }
+.btn--secondary:active { transform: translateY(1px); box-shadow: var(--o-enfonce); }
+.btn--secondary.btn--icon, .topbar__github.btn--icon { width: 32px; padding: 0; }
+.topbar__name { font-size: 0 !important; }
+.topbar__name::before {
+  content: "Composants IA";
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--o-acier);
+}
+.btn--primary, .tier__cta--primary, .promo__cta {
+  background: var(--o-berry) !important;
+  border: 1px solid var(--o-berry) !important;
+  color: #fff !important;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: var(--o-ombre-drop) !important;
+}
+.btn--primary:hover:not(:disabled), .tier__cta--primary:hover:not(:disabled), .promo__cta:hover {
+  background: var(--o-berry-fonce) !important;
+  border-color: var(--o-berry-fonce) !important;
+  box-shadow: var(--o-ombre-flottante) !important;
+}
+.btn--primary:active:not(:disabled) { transform: translateY(1px); box-shadow: inset 0 3px 8px -3px rgba(0, 0, 0, .35) !important; }
+.lp-hero__ctas .btn { height: 48px; padding: 0 22px; font-size: 15px; }
+
+/* Theme switch and segmented controls: matte tray, raised selection */
+.segmented, .pm-tabs, .theme-switch {
+  background: var(--o-cadre);
+  border: 1px solid var(--o-trait);
+  border-radius: 12px;
+  padding: 3px;
+}
+.segmented button, .theme-switch .icon-btn, .theme-switch--top .icon-btn { border-radius: 9px; }
+.segmented button[aria-selected=true],
+.theme-switch .icon-btn[aria-checked=true],
+.theme-switch--top .icon-btn[aria-checked=true] {
+  background: var(--o-carte);
+  color: var(--o-acier);
+  font-weight: 600;
+  box-shadow: 0 0 0 1px var(--o-trait), var(--o-ombre-drop);
+}
+
+/* Icon pebbles: double, lit from below */
+.prompt-bar__tool, .preview-bar__reset, .stage__theme, .icon-btn--card {
+  background: linear-gradient(180deg, var(--o-carte), var(--o-cadre));
+  box-shadow: 0 0 0 1px var(--o-trait-fort), var(--o-galet);
+  border-radius: 10px;
+}
+.prompt-bar__tool:hover { background: var(--o-carte); box-shadow: 0 0 0 1px var(--o-trait-fort), var(--o-ombre-flottante); }
+.prompt-bar__code {
+  height: 32px;
+  border-radius: 10px;
+  background: var(--o-berry);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: var(--o-ombre-drop);
+}
+.prompt-bar__code:hover { background: var(--o-berry-fonce); opacity: 1; }
+
+/* ——— Page head: kicker, condensed title, berry rail ——— */
+.doc__header > div::before,
+.page-head::before {
+  content: "Composant · Component";
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--o-berry);
+}
+.doc__header > div::before { content: "● Composant IA · AI component"; }
+.lp-hero__title, .lp-lead, .doc__title, .page-head__title, .hero__title,
+.faq__title, .legal__title, .not-found__title, .pricing__title, .doc__h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -.012em;
+  color: var(--o-acier);
+}
+.doc__title { font-size: 40px; line-height: 1.05; }
+.doc__title, .page-head__title {
+  padding-bottom: 18px;
+  background: linear-gradient(var(--o-berry), var(--o-berry)) left bottom / 64px 3px no-repeat;
+}
+.doc__lead { color: var(--o-acier-2); max-width: 62ch; }
+.doc__h2 { font-size: 24px; line-height: 1.15; }
+.doc__p strong { color: var(--o-acier); font-weight: 600; }
+.doc__footer { border-top-color: var(--o-trait); }
+
+/* ——— The preview stage: a double object on the gridded ground ——— */
+.stage {
+  background-color: var(--o-cadre);
+  background-image:
+    linear-gradient(to right, var(--o-trame) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--o-trame) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: center;
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 1px var(--o-trait), inset 0 3px 14px -10px rgba(26, 62, 112, .35);
+}
+.stage__theme-btn[aria-checked=true] { background: var(--o-carte); box-shadow: 0 0 0 1px var(--o-trait); }
+
+/* ——— Library tabs: berry ink, counters as hub compteurs ——— */
+.lib-tabs::after { background: var(--o-trait); }
+.lib-tabs__tab { font-weight: 600; color: var(--o-acier-2); }
+.lib-tabs__tab:hover, .lib-tabs__tab[aria-current] { color: var(--o-acier); }
+.lib-tabs__ink { background: var(--o-berry); height: 3px; border-radius: 2px; }
+.shell:has(.lib-tabs) .topbar, .lib-tabs { background: var(--o-panneau); }
+
+/* ——— Cards: frame > raised panel > footer in the frame ——— */
+.card {
+  --card-inset: 8px;
+  border-radius: 20px;
+  background: var(--o-cadre);
+  border: 1px solid var(--o-trait);
+  box-shadow: var(--o-ombre-drop);
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow var(--o-tempo), transform var(--o-tempo) var(--o-expo), border-color var(--o-tempo);
+}
+.card__stage {
+  border-radius: 14px;
+  background: var(--o-panneau);
+  box-shadow: inset 0 0 0 1px var(--o-trait-doux), var(--o-ombre-panneau);
+}
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, .5) 50%, transparent 62%);
+  transform: translateX(-130%);
+  transition: transform .75s var(--o-expo);
+}
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--o-trait-fort);
+  box-shadow: var(--o-ombre-levee);
+}
+.card:hover::after { transform: translateX(130%); }
+.card__footer { padding: 12px 6px 12px 10px; }
+.card__title { font-size: 14px; font-weight: 700; color: var(--o-acier); }
+.card__desc { color: var(--o-acier-2); }
+
+/* ——— State chips: the four families, fill + hairline ——— */
+.card__tag {
+  background: var(--o-info-fond);
+  color: var(--o-info-encre);
+  box-shadow: 0 0 0 1px var(--o-info-trait);
+  font-weight: 600;
+}
+.pro-badge, .card__pro {
+  background: var(--o-rose-fond) !important;
+  box-shadow: 0 0 0 1px var(--o-rose) !important;
+  white-space: nowrap;
+}
+.pro-badge span, .card__pro span {
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  color: var(--o-berry) !important;
+  font-weight: 700;
+}
+.pro-badge svg { color: var(--o-berry); }
+.dark .pro-badge span, .dark .card__pro span, .dark .pro-badge svg { color: var(--o-rose) !important; }
+
+/* ——— Landing ——— */
+.lp-nav {
+  margin-top: 18px;
+  height: 60px;
+  border-radius: 16px;
+  background: var(--o-panneau);
+  border: 1px solid var(--o-trait);
+  box-shadow: var(--o-ombre-drop);
+  padding-left: 18px !important;
+  padding-right: 12px !important;
+}
+.lp-nav__link { border-radius: 10px; font-weight: 600; color: var(--o-acier-2); }
+.lp-nav__link:hover { background: var(--o-cadre); color: var(--o-acier); }
+.lp-hero__copy::before {
+  content: "● La bibliothèque de l'équipe IA Innovation";
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--o-carte);
+  border: 1px solid var(--o-trait);
+  box-shadow: var(--o-ombre-drop);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--o-berry);
+}
+.lp-hero__title { font-size: clamp(42px, 6vw, 68px); line-height: 1; }
+.lp-hero__sub { color: var(--o-acier-2); }
+.lp-lead { font-size: clamp(28px, 3.4vw, 38px); line-height: 1.08; }
+.lp-menu__panel, .menu, .sidebar-search__results {
+  border-radius: 16px;
+  background: var(--o-panneau);
+  box-shadow: 0 0 0 1px var(--o-trait), var(--o-ombre-flottante);
+}
+.lp-menu__icon {
+  background: linear-gradient(180deg, var(--o-carte), var(--o-cadre));
+  box-shadow: 0 0 0 1px var(--o-trait-fort), var(--o-galet);
+  border-radius: 10px;
+  color: var(--o-berry);
+}
+
+/* ——— Footer: the hub's pied ——— */
+.footer__heading {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--o-acier);
+}
+.footer__col a, .footer__credit a { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: .2em; transition: color var(--o-tempo), text-decoration-color var(--o-tempo); }
+.footer__col a:hover, .footer__credit a:hover { color: var(--o-acier); text-decoration-color: currentColor; }
+.footer__logo { opacity: 1; }
+
+/* ——— Mobile: the panel goes full width, the frame stays ——— */
+@media (max-width: 900px) {
+  .shell { padding-top: 6px; }
+  .panel { margin: 7px; border-radius: 16px; box-shadow: 0 0 0 6px var(--o-cadre), 0 0 0 7px var(--o-trait), var(--o-ombre-drop); border: 1px solid var(--o-trait-doux); }
+  .topbar { border-radius: 16px 16px 0 0; }
+  .sidebar { background: var(--o-fond); border-right-color: var(--o-trait); }
+  .lp-nav { margin-top: 12px; width: calc(100% - 24px) !important; }
+  .doc__title { font-size: 34px; }
+}
+@media (max-width: 600px) {
+  .lp-hero__copy::before { content: "● Équipe IA Innovation"; font-size: 11px; letter-spacing: .07em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ateam-bandeau__panneau, .ateam-plaque, .ateam-inoui, .ateam-etoile, .ateam-rails, .ateam-lueur,
+  .ateam-bandeau__panneau::before { animation: none !important; }
+  .ateam-lueur { display: none; }
+  .card, .card::after { transition: none; }
+  .card:hover { transform: none; }
+}
