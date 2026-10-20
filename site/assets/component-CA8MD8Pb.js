@@ -384,25 +384,25 @@ function useSmoothHeight(inner: RefObject<HTMLElement | null>) {
 
 const css = /* css */ \`
 .ui-ed {
-  --ui-ed-tray: #ebf1f8;
+  --ui-ed-tray: #ecf1f8;
   --ui-ed-card: #ffffff;
-  --ui-ed-card-line: #dee6f0;
-  --ui-ed-line: #e6edf6;
-  --ui-ed-ink: #0a1829;
-  --ui-ed-text: #2f4159;
-  --ui-ed-muted: #8091a6;
-  --ui-ed-chip: #f1f6fb;
-  --ui-ed-chip-line: #e5ecf5;
-  --ui-ed-hover: #f1f6fb;
+  --ui-ed-card-line: #dfe6ef;
+  --ui-ed-line: #e7edf5;
+  --ui-ed-ink: #041632;
+  --ui-ed-text: #274066;
+  --ui-ed-muted: #8090a8;
+  --ui-ed-chip: #f2f5fb;
+  --ui-ed-chip-line: #e6ecf4;
+  --ui-ed-hover: #f2f5fb;
   --ui-ed-warn: #c2570c;
-  --ui-ed-warn-bg: #ebf1f9;
+  --ui-ed-warn-bg: #ecf1f8;
   --ui-ed-ok: #2f7d32;
-  --ui-ed-ok-bg: #ebf1f9;
-  --ui-ed-btn-top: #20334b;
-  --ui-ed-btn-bottom: #102034;
-  --ui-ed-btn-ring: #030d1c;
+  --ui-ed-ok-bg: #ecf1f8;
+  --ui-ed-btn-top: #173159;
+  --ui-ed-btn-bottom: #081e3f;
+  --ui-ed-btn-ring: #010c23;
   --ui-ed-btn-text: #ffffff;
-  --ui-ed-focus: #aa254f;
+  --ui-ed-focus: #326eb6;
   --ui-ed-shadow: 0 1px 2px rgba(26, 62, 112, 0.06);
   --ui-ed-ease: cubic-bezier(0.22, 1, 0.36, 1);
   width: 100%;
@@ -730,25 +730,25 @@ const css = /* css */ \`
 .ui-ed [contenteditable]:focus-visible { outline: none; }
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-ed {
-  --ui-ed-tray: #091728;
-  --ui-ed-card: #132439;
+  --ui-ed-tray: #041531;
+  --ui-ed-card: #0b2345;
   --ui-ed-card-line: rgba(255, 255, 255, 0.08);
   --ui-ed-line: rgba(255, 255, 255, 0.07);
-  --ui-ed-ink: #e7eef6;
-  --ui-ed-text: #b9c5d6;
-  --ui-ed-muted: #8091a6;
-  --ui-ed-chip: #192b42;
+  --ui-ed-ink: #e8eef6;
+  --ui-ed-text: #bbc5d5;
+  --ui-ed-muted: #8090a8;
+  --ui-ed-chip: #0f2a50;
   --ui-ed-chip-line: rgba(255, 255, 255, 0.08);
   --ui-ed-hover: rgba(255, 255, 255, 0.05);
   --ui-ed-warn: #fb9a4b;
   --ui-ed-warn-bg: rgba(251, 154, 75, 0.14);
   --ui-ed-ok: #6fd27a;
   --ui-ed-ok-bg: rgba(111, 210, 122, 0.14);
-  --ui-ed-btn-top: #f0f5fb;
-  --ui-ed-btn-bottom: #dde5f0;
+  --ui-ed-btn-top: #f1f5fa;
+  --ui-ed-btn-bottom: #dee5ef;
   --ui-ed-btn-ring: rgba(0, 22, 43, 0.6);
-  --ui-ed-btn-text: #061223;
-  --ui-ed-focus: #c84969;
+  --ui-ed-btn-text: #02112b;
+  --ui-ed-focus: #508cd7;
   --ui-ed-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
 }
 \`;

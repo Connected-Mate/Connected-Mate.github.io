@@ -156,7 +156,7 @@ const css = /* css */ \`
 .ui-tlc {
   --ui-tlc-ink: rgba(0, 22, 43, 0.88);
   --ui-tlc-text: rgba(0, 22, 43, 0.61);
-  --ui-tlc-accent: rgba(155, 16, 66, 0.765);
+  --ui-tlc-accent: rgba(35, 95, 166, 0.765);
   --ui-tlc-bg: #ffffff;
   --ui-tlc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
   --ui-tlc-shine: rgba(255, 255, 255, 0.82);
@@ -324,8 +324,8 @@ const css = /* css */ \`
 :where(.dark, [data-theme="dark"]) .ui-tlc {
   --ui-tlc-ink: rgba(255, 255, 255, 0.9);
   --ui-tlc-text: rgba(255, 255, 255, 0.62);
-  --ui-tlc-accent: #c13d61;
-  --ui-tlc-bg: #0e1d30;
+  --ui-tlc-accent: #4883ce;
+  --ui-tlc-bg: #061b3a;
   --ui-tlc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 22, 43, 0.4);
   --ui-tlc-shine: #ffffff;
 }

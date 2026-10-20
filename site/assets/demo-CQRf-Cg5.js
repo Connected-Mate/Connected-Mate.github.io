@@ -1,24 +1,24 @@
 import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js";/* empty css             */var n=e(),r=t(),i=[{name:`Jonas Weber`,email:`jonas@northwind.io`},{name:`Lena Hart`,email:`lena@northwind.io`},{name:`Finance team`,email:`billing@northwind.io`}],a=e=>e.name.split(` `)[0],o=[{id:`friendly`,label:`Friendly`,body:e=>`Hi ${a(e)}, a heads-up that your Growth plan renews on October 9 for $8,900 a year. If you'd like to add seats or switch to monthly billing, you can review the quote here:`},{id:`short`,label:`Short`,body:e=>`Hi ${a(e)}, your Growth plan renews on October 9 ($8,900/year). Quote for changes:`},{id:`formal`,label:`Formal`,body:e=>`Dear ${e.name}, this is a reminder that your Growth subscription is scheduled to renew on October 9 at $8,900 per year. Should you wish to adjust seats or billing, please review the attached quote:`}];function s({reference:e=`SUB-1182`,account:t=`Northwind Logistics`,amount:s=`$8,900`,status:d=`Renews in 5 days`,agent:f=`Renewal agent`,contacts:p=i,attachment:m=`Renewal-quote.pdf`,tones:h=o,link:g={label:`Review quote`,href:`#`},onSend:_,onDiscard:v,className:y}){let[b,x]=(0,n.useState)(p[0]),[S,C]=(0,n.useState)(m),[w,T]=(0,n.useState)(h[0].id),[E,D]=(0,n.useState)(null),[O,k]=(0,n.useState)(!1),[A,j]=(0,n.useState)(!1),[M,N]=(0,n.useState)(`draft`),[P,F]=(0,n.useState)(0),I=(0,n.useRef)(null),L=l(I),R=(0,n.useRef)(null),z=(0,n.useRef)(null),B=(0,n.useRef)([]),V=h.find(e=>e.id===w).body(b),H=E??V;(0,n.useEffect)(()=>()=>B.current.forEach(e=>window.clearTimeout(e)),[]),(0,n.useEffect)(()=>{if(!A)return;let e=e=>{z.current?.contains(e.target)||j(!1)},t=e=>e.key===`Escape`&&j(!1);return document.addEventListener(`pointerdown`,e),document.addEventListener(`keydown`,t),()=>{document.removeEventListener(`pointerdown`,e),document.removeEventListener(`keydown`,t)}},[A]),(0,n.useLayoutEffect)(()=>{let e=R.current;e&&(e.style.height=`auto`,e.style.height=`${e.scrollHeight}px`)},[O,H]);let U=()=>{D(H),k(!0),requestAnimationFrame(()=>{let e=R.current;e&&(e.focus(),e.setSelectionRange(e.value.length,e.value.length))})},W=e=>{(e!==w||E!==null)&&(T(e),D(null),k(!1),F(e=>e+1))},G=e=>{x(e),j(!1),E!==null&&D(E.replace(RegExp(`\\b${a(b)}\\b|${b.name}`,`g`),t=>t===b.name?e.name:a(e)))},K=()=>{M===`draft`&&(k(!1),N(`sending`),B.current.push(window.setTimeout(()=>{N(`sent`),_?.({to:b,body:`${H} ${g.label}: ${g.href}`,attachment:S})},900)))},q=()=>{k(!1),N(`discarded`),v?.()},J=()=>N(`draft`),Y=M===`draft`||M===`sending`,X=M===`sent`?{text:`Sent`,tone:`ok`}:M===`discarded`?{text:`Discarded`,tone:`muted`}:{text:`Ready for review`,tone:`ok`};return(0,r.jsxs)(`div`,{className:[`ui-ed`,y].filter(Boolean).join(` `),children:[(0,r.jsx)(`style`,{href:`ui-email-draft`,precedence:`default`,children:u}),(0,r.jsxs)(`div`,{className:`ui-ed__record`,children:[(0,r.jsxs)(`div`,{className:`ui-ed__ref`,children:[(0,r.jsx)(`span`,{className:`ui-ed__id`,children:e}),(0,r.jsx)(`span`,{className:`ui-ed__status`,children:d}),(0,r.jsx)(`span`,{className:`ui-ed__amount`,children:s})]}),(0,r.jsx)(`span`,{className:`ui-ed__account`,children:t})]}),(0,r.jsx)(`div`,{className:`ui-ed__outer`,ref:L,children:(0,r.jsx)(`div`,{ref:I,children:Y?(0,r.jsxs)(`div`,{className:`ui-ed__card`,"data-sending":M===`sending`?``:void 0,children:[(0,r.jsxs)(`div`,{className:`ui-ed__meta`,children:[(0,r.jsxs)(`div`,{className:`ui-ed__to`,ref:z,children:[(0,r.jsx)(`span`,{className:`ui-ed__label`,children:`to`}),(0,r.jsxs)(`button`,{type:`button`,className:`ui-ed__recipient`,"aria-haspopup":`listbox`,"aria-expanded":A,onClick:()=>j(e=>!e),children:[b.name,` `,(0,r.jsxs)(`span`,{className:`ui-ed__email`,children:[`(`,b.email,`)`]}),(0,r.jsx)(`svg`,{viewBox:`0 0 24 24`,"aria-hidden":`true`,children:(0,r.jsx)(`path`,{d:`m7 10 5 5 5-5`})})]}),A&&(0,r.jsx)(`ul`,{className:`ui-ed__menu`,role:`listbox`,"aria-label":`Recipient`,children:p.map(e=>(0,r.jsx)(`li`,{children:(0,r.jsxs)(`button`,{type:`button`,role:`option`,"aria-selected":e.email===b.email,onClick:()=>G(e),children:[(0,r.jsx)(`span`,{className:`ui-ed__avatar`,"aria-hidden":`true`,children:e.name.split(` `).map(e=>e[0]).join(``).slice(0,2)}),(0,r.jsxs)(`span`,{className:`ui-ed__menu-text`,children:[e.name,(0,r.jsx)(`small`,{children:e.email})]}),e.email===b.email&&(0,r.jsx)(`svg`,{className:`ui-ed__tick`,viewBox:`0 0 24 24`,"aria-hidden":`true`,children:(0,r.jsx)(`path`,{d:`m6 12.5 4 4 8-9`})})]})},e.email))})]}),S?(0,r.jsxs)(`span`,{className:`ui-ed__file`,children:[(0,r.jsx)(c,{children:(0,r.jsx)(`path`,{d:`m15.5 7.5-6.4 6.4a1.8 1.8 0 0 0 2.5 2.5l6.7-6.7a3.5 3.5 0 0 0-5-5l-6.9 6.9a5.2 5.2 0 0 0 7.4 7.4l6-6`})}),S,(0,r.jsx)(`button`,{type:`button`,"aria-label":`Remove ${S}`,onClick:()=>C(null),children:(0,r.jsx)(c,{children:(0,r.jsx)(`path`,{d:`M7 7l10 10M17 7 7 17`})})})]}):m&&(0,r.jsxs)(`button`,{type:`button`,className:`ui-ed__attach`,onClick:()=>C(m),children:[(0,r.jsx)(c,{children:(0,r.jsx)(`path`,{d:`M12 6v12M6 12h12`})}),`Attach `,m]})]}),(0,r.jsx)(`div`,{className:`ui-ed__body`,children:O?(0,r.jsx)(`textarea`,{ref:R,className:`ui-ed__edit`,value:E??``,onChange:e=>D(e.target.value),onKeyDown:e=>{e.key===`Enter`&&(e.metaKey||e.ctrlKey)&&(e.preventDefault(),K()),e.key===`Escape`&&k(!1)},onBlur:()=>k(!1),"aria-label":`Email text`}):(0,r.jsxs)(`p`,{className:`ui-ed__text`,onClick:U,title:`Click to edit`,children:[H,` `,(0,r.jsx)(`a`,{href:g.href,onClick:e=>e.stopPropagation(),children:g.label})]},P)}),(0,r.jsxs)(`div`,{className:`ui-ed__actions`,children:[(0,r.jsxs)(`div`,{className:`ui-ed__tones`,role:`group`,"aria-label":`Tone`,children:[h.map(e=>(0,r.jsx)(`button`,{type:`button`,"aria-pressed":w===e.id&&E===null,onClick:()=>W(e.id),children:e.label},e.id)),(0,r.jsx)(`button`,{type:`button`,className:`ui-ed__edit-btn`,"aria-pressed":O,"aria-label":`Edit text`,onClick:U,children:(0,r.jsx)(c,{children:(0,r.jsx)(`path`,{d:`M14.5 5.5 18.5 9.5M5 19l1-4L15.5 5.5l4 4L10 19l-5 0Z`})})})]}),(0,r.jsxs)(`div`,{className:`ui-ed__buttons`,children:[(0,r.jsx)(`button`,{type:`button`,className:`ui-ed__secondary`,onClick:q,disabled:M===`sending`,children:`Discard`}),(0,r.jsx)(`button`,{type:`button`,className:`ui-ed__primary`,onClick:K,disabled:M===`sending`,children:M===`sending`?(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(`span`,{className:`ui-ed__spinner`,"aria-hidden":`true`}),`Sending`]}):`Send email`})]})]})]}):(0,r.jsxs)(`div`,{className:`ui-ed__receipt`,role:`status`,children:[(0,r.jsx)(`span`,{className:`ui-ed__receipt-icon`,"data-tone":M===`sent`?`ok`:`muted`,"aria-hidden":`true`,children:(0,r.jsx)(c,{children:M===`sent`?(0,r.jsx)(`path`,{d:`m6 12.5 4 4 8-9`}):(0,r.jsx)(`path`,{d:`M7 7l10 10M17 7 7 17`})})}),(0,r.jsx)(`span`,{className:`ui-ed__receipt-text`,children:M===`sent`?(0,r.jsxs)(r.Fragment,{children:[`Sent to `,(0,r.jsx)(`b`,{children:b.name}),S?` with ${S}`:``]}):`Draft discarded`}),(0,r.jsx)(`button`,{type:`button`,className:`ui-ed__undo`,onClick:J,children:`Undo`})]})})}),(0,r.jsxs)(`div`,{className:`ui-ed__foot`,children:[(0,r.jsx)(`span`,{className:`ui-ed__agent`,children:f}),(0,r.jsx)(`span`,{className:`ui-ed__badge`,"data-tone":X.tone,children:X.text},X.text),Y&&(0,r.jsx)(`span`,{className:`ui-ed__hint`,children:`⌘ Enter to send`})]})]})}var c=({children:e})=>(0,r.jsx)(`svg`,{viewBox:`0 0 24 24`,"aria-hidden":`true`,children:e});function l(e){let t=(0,n.useRef)(null);return(0,n.useLayoutEffect)(()=>{let n=t.current,r=e.current;if(!n||!r)return;let i=()=>{n.style.height=`${r.offsetHeight}px`};i();let a=new ResizeObserver(i);a.observe(r);let o=requestAnimationFrame(()=>n.setAttribute(`data-smooth`,``));return()=>{a.disconnect(),cancelAnimationFrame(o)}},[e]),t}var u=`
 .ui-ed {
-  --ui-ed-tray: #ebf1f8;
+  --ui-ed-tray: #ecf1f8;
   --ui-ed-card: #ffffff;
-  --ui-ed-card-line: #dee6f0;
-  --ui-ed-line: #e6edf6;
-  --ui-ed-ink: #0a1829;
-  --ui-ed-text: #2f4159;
-  --ui-ed-muted: #8091a6;
-  --ui-ed-chip: #f1f6fb;
-  --ui-ed-chip-line: #e5ecf5;
-  --ui-ed-hover: #f1f6fb;
+  --ui-ed-card-line: #dfe6ef;
+  --ui-ed-line: #e7edf5;
+  --ui-ed-ink: #041632;
+  --ui-ed-text: #274066;
+  --ui-ed-muted: #8090a8;
+  --ui-ed-chip: #f2f5fb;
+  --ui-ed-chip-line: #e6ecf4;
+  --ui-ed-hover: #f2f5fb;
   --ui-ed-warn: #c2570c;
-  --ui-ed-warn-bg: #ebf1f9;
+  --ui-ed-warn-bg: #ecf1f8;
   --ui-ed-ok: #2f7d32;
-  --ui-ed-ok-bg: #ebf1f9;
-  --ui-ed-btn-top: #20334b;
-  --ui-ed-btn-bottom: #102034;
-  --ui-ed-btn-ring: #030d1c;
+  --ui-ed-ok-bg: #ecf1f8;
+  --ui-ed-btn-top: #173159;
+  --ui-ed-btn-bottom: #081e3f;
+  --ui-ed-btn-ring: #010c23;
   --ui-ed-btn-text: #ffffff;
-  --ui-ed-focus: #aa254f;
+  --ui-ed-focus: #326eb6;
   --ui-ed-shadow: 0 1px 2px rgba(26, 62, 112, 0.06);
   --ui-ed-ease: cubic-bezier(0.22, 1, 0.36, 1);
   width: 100%;
@@ -346,25 +346,25 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 .ui-ed [contenteditable]:focus-visible { outline: none; }
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-ed {
-  --ui-ed-tray: #091728;
-  --ui-ed-card: #132439;
+  --ui-ed-tray: #041531;
+  --ui-ed-card: #0b2345;
   --ui-ed-card-line: rgba(255, 255, 255, 0.08);
   --ui-ed-line: rgba(255, 255, 255, 0.07);
-  --ui-ed-ink: #e7eef6;
-  --ui-ed-text: #b9c5d6;
-  --ui-ed-muted: #8091a6;
-  --ui-ed-chip: #192b42;
+  --ui-ed-ink: #e8eef6;
+  --ui-ed-text: #bbc5d5;
+  --ui-ed-muted: #8090a8;
+  --ui-ed-chip: #0f2a50;
   --ui-ed-chip-line: rgba(255, 255, 255, 0.08);
   --ui-ed-hover: rgba(255, 255, 255, 0.05);
   --ui-ed-warn: #fb9a4b;
   --ui-ed-warn-bg: rgba(251, 154, 75, 0.14);
   --ui-ed-ok: #6fd27a;
   --ui-ed-ok-bg: rgba(111, 210, 122, 0.14);
-  --ui-ed-btn-top: #f0f5fb;
-  --ui-ed-btn-bottom: #dde5f0;
+  --ui-ed-btn-top: #f1f5fa;
+  --ui-ed-btn-bottom: #dee5ef;
   --ui-ed-btn-ring: rgba(0, 22, 43, 0.6);
-  --ui-ed-btn-text: #061223;
-  --ui-ed-focus: #c84969;
+  --ui-ed-btn-text: #02112b;
+  --ui-ed-focus: #508cd7;
   --ui-ed-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
 }
 `;function d(){return(0,r.jsx)(`div`,{className:`email-draft-demo`,children:(0,r.jsx)(s,{})})}export{d as default};

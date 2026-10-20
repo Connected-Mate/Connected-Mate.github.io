@@ -1,12 +1,12 @@
 import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js";var n=e(),r=t(),i=360;function a({className:e,label:t=`A chat with three unanswered messages marked as read`}){let a=(0,n.useRef)(null),[s,c]=(0,n.useState)(0),[l,u]=(0,n.useState)(!1);return(0,n.useEffect)(()=>{let e=a.current;if(!e)return;let t=new IntersectionObserver(([e])=>{e.isIntersecting&&(u(!0),t.disconnect())},{threshold:.35});return t.observe(e),()=>t.disconnect()},[]),(0,n.useEffect)(()=>{let e=a.current;if(!e)return;let t=()=>c(e.clientWidth/i);t();let n=new ResizeObserver(t);return n.observe(e),()=>n.disconnect()},[]),(0,r.jsxs)(`div`,{ref:a,className:[`ui-gc`,e].filter(Boolean).join(` `),role:`img`,"aria-label":t,children:[(0,r.jsx)(`style`,{href:`ui-ghosted-chat`,precedence:`default`,children:o}),(0,r.jsx)(`div`,{className:`ui-gc-stage`,"aria-hidden":`true`,"data-play":l||void 0,style:{transform:`scale(${s})`,visibility:s>0?`visible`:`hidden`},children:(0,r.jsxs)(`div`,{className:`ui-gc-content`,children:[(0,r.jsx)(`span`,{className:`ui-gc-status`,children:`No new messages`}),(0,r.jsxs)(`div`,{className:`ui-gc-bubbles`,children:[(0,r.jsx)(`div`,{className:`ui-gc-bubble`,children:(0,r.jsx)(`span`,{children:`Hi team!`})}),(0,r.jsx)(`div`,{className:`ui-gc-bubble`,children:(0,r.jsx)(`span`,{children:`Are you by any chance looking for a recruiter?`})}),(0,r.jsx)(`div`,{className:`ui-gc-bubble ui-gc-bubble-last`,children:(0,r.jsx)(`span`,{className:`ui-gc-alert`,children:`Hello?`})}),(0,r.jsx)(`span`,{className:`ui-gc-read`,children:`Read`})]}),(0,r.jsx)(`div`,{className:`ui-gc-bubble ui-gc-reply`,children:(0,r.jsx)(`span`,{children:`👎`})})]})})]})}var o=`
 .ui-gc {
   --ui-gc-bubble: #FFFFFF;
-  --ui-gc-bubble-border: #e7eef6;
-  --ui-gc-bubble-shadow: 0 2px 6px rgba(14, 30, 49, 0.08), 0 1px 2px rgba(14, 30, 49, 0.05);
-  --ui-gc-text: #3b4e65;
-  --ui-gc-ink: #112135;
-  --ui-gc-status: #8f9eb3;
-  --ui-gc-read: #9eacbf;
+  --ui-gc-bubble-border: #e8eef6;
+  --ui-gc-bubble-shadow: 0 2px 6px rgba(7, 28, 59, 0.08), 0 1px 2px rgba(7, 28, 59, 0.05);
+  --ui-gc-text: #354d70;
+  --ui-gc-ink: #091f40;
+  --ui-gc-status: #8f9eb4;
+  --ui-gc-read: #9facc0;
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 2;
@@ -171,13 +171,13 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   max-width: none;
   width: auto;
   padding: 6px 12px;
-  background: #9e1545;
-  border: 1px solid #9e1545;
+  background: #2662a9;
+  border: 1px solid #2662a9;
   border-radius: 14px 14px 14px 4px;
   color: #FFFFFF;
   font-size: 15px;
   line-height: 1.1;
-  box-shadow: 0 4px 12px rgba(158, 21, 69, 0.22), 0 1px 2px rgba(158, 21, 69, 0.18);
+  box-shadow: 0 4px 12px rgba(38, 98, 169, 0.22), 0 1px 2px rgba(38, 98, 169, 0.18);
   opacity: 0;
   transform: translateY(14px) scale(0.92);
   transform-origin: bottom left;
@@ -198,13 +198,13 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-gc {
-  --ui-gc-bubble: #132439;
+  --ui-gc-bubble: #0b2345;
   --ui-gc-bubble-border: rgba(255, 255, 255, 0.08);
   --ui-gc-bubble-shadow: 0 2px 6px rgba(0, 22, 43, 0.35), 0 1px 2px rgba(0, 22, 43, 0.4);
-  --ui-gc-text: #b9c5d6;
-  --ui-gc-ink: #e7eef6;
-  --ui-gc-status: #8091a6;
-  --ui-gc-read: #8091a6;
+  --ui-gc-text: #bbc5d5;
+  --ui-gc-ink: #e8eef6;
+  --ui-gc-status: #8090a8;
+  --ui-gc-read: #8090a8;
 }
 :where(.dark, [data-theme="dark"]) .ui-gc-bubble-last::after { opacity: 0.45; }
 :where(.dark, [data-theme="dark"]) .ui-gc-reply {

@@ -9,8 +9,8 @@ export function Revenue() {
       format={(n) => \`$\${(n / 1000).toFixed(1)}k\`}
       labels={["Mar 3", "Mar 4", "Mar 5"]}
       series={[
-        { label: "Organic", color: "#aa254f", values: [4600, 4900, 5200] },
-        { label: "Paid ads", color: "#c13c61", values: [3100, 3400, 3200] },
+        { label: "Organic", color: "#326eb6", values: [4600, 4900, 5200] },
+        { label: "Paid ads", color: "#9f1746", values: [3100, 3400, 3200] },
       ]}
       footer="Top channels"
     />

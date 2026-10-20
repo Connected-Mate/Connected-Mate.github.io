@@ -13,14 +13,14 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-mac-wash: rgba(26, 62, 112, 0.03);
   --ui-mac-solid: rgba(0, 22, 43, 0.88);
   --ui-mac-solid-hover: rgba(0, 22, 43, 0.8);
-  --ui-mac-on-solid: #fafcff;
-  --ui-mac-accent: rgba(155, 16, 66, 0.765);
+  --ui-mac-on-solid: #fbfcfe;
+  --ui-mac-accent: rgba(35, 95, 166, 0.765);
   --ui-mac-ok: #1a9a52;
   --ui-mac-ok-bg: rgba(26, 154, 82, 0.08);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
   --ui-mac-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
   --ui-mac-shadow-pop: 0 0 0 0.5px rgba(26, 62, 112, 0.08), 0 12px 28px -10px rgba(26, 62, 112, 0.16), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
-  --ui-mac-focus: rgba(155, 16, 66, 0.35);
+  --ui-mac-focus: rgba(35, 95, 166, 0.35);
   --ui-mac-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
   display: block;
@@ -172,7 +172,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-mac {
-  --ui-mac-card: #0e1d30;
+  --ui-mac-card: #061b3a;
   --ui-mac-strong: #ffffff;
   --ui-mac-ink: rgba(255, 255, 255, 0.9);
   --ui-mac-text: rgba(255, 255, 255, 0.62);
@@ -184,12 +184,12 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-mac-wash: rgba(255, 255, 255, 0.04);
   --ui-mac-solid: rgba(255, 255, 255, 0.9);
   --ui-mac-solid-hover: rgba(255, 255, 255, 0.8);
-  --ui-mac-on-solid: #0e1d30;
-  --ui-mac-accent: #c13d61;
+  --ui-mac-on-solid: #061b3a;
+  --ui-mac-accent: #4883ce;
   --ui-mac-ok: #3ec27a;
   --ui-mac-ok-bg: rgba(62, 194, 122, 0.14);
   --ui-mac-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
   --ui-mac-shadow-pop: 0 0 0 0.5px rgba(255, 255, 255, 0.12), 0 12px 28px -10px rgba(0, 22, 43, 0.6);
-  --ui-mac-focus: rgba(193, 61, 97, 0.5);
+  --ui-mac-focus: rgba(72, 131, 206, 0.5);
 }
 `,m=[`Version 2.4 adds shared workspaces, cuts sync time in half and fixes the export bug on Windows.`,`Shared workspaces arrive in 2.4, sync is twice as fast, and exports on Windows work again.`,`In short: teams can now share a workspace, syncing takes half as long and Windows exports are fixed.`];function h(){let e=(0,n.useRef)(null),[t,i]=(0,n.useState)(0),[a,s]=(0,n.useState)(1),[c,l]=(0,n.useState)(0),[u,d]=(0,n.useState)(!1),[p,h]=(0,n.useState)(!1),g=(0,n.useRef)(!1),_=()=>{u||(d(!0),window.setTimeout(()=>{d(!1),s(e=>Math.min(m.length,e+1))},1e3))};(0,n.useEffect)(()=>l(a-1),[a]),(0,n.useEffect)(()=>{let t=t=>()=>e.current?.querySelector(t)?.click(),n=[[700,t(`.ui-mac__btn--copy`)],[1e3,t(`.ui-mac__btn--down`)],[700,t(`.ui-mac__chip:nth-child(2)`)],[900,t(`.ui-mac__send`)],[2600,t(`.ui-mac__btn--regenerate`)],[2800,t(`.ui-mac__step[data-dir='prev']`)],[2e3,t(`.ui-mac__step[data-dir='next']`)],[3e3,()=>{s(1),l(0),i(e=>e+1)}]],r=0,a=0,o=()=>{g.current||r>=n.length||(a=window.setTimeout(()=>{g.current||(n[r][1](),r++,o())},n[r][0]))};return o(),()=>window.clearTimeout(a)},[t]);let v=()=>{g.current=!0,h(!0)},y=m[c];return(0,r.jsx)(`div`,{ref:e,className:`ma-demo ma-demo--clean`,onPointerEnter:v,onPointerDownCapture:v,onKeyDownCapture:v,onFocusCapture:v,children:(0,r.jsxs)(`div`,{className:`mac-demo__card`,"data-ui-message":``,children:[(0,r.jsxs)(`div`,{className:`mac-demo__body`,children:[(0,r.jsx)(`p`,{className:`mac-demo__ask`,children:`Summarize the 2.4 release notes in one sentence.`}),(0,r.jsxs)(`div`,{className:`mac-demo__who`,children:[(0,r.jsx)(`span`,{className:`mac-demo__dot`,"aria-hidden":`true`}),`Sonnet 5.5`]}),(0,r.jsx)(`div`,{className:`mac-demo__answer`,"data-writing":u?``:void 0,children:(0,r.jsx)(o,{version:c,children:y})})]}),(0,r.jsx)(`div`,{className:`mac-demo__foot`,children:(0,r.jsx)(f,{text:p?y:void 0,versions:a,version:c,onVersionChange:l,onRegenerate:_,regenerating:u},t)})]})})}export{h as default};

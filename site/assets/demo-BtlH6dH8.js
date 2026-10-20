@@ -4,18 +4,18 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --u: calc(100cqw / 600);
   --ui-at-surface: #ffffff;
   --ui-at-ring: rgba(26, 62, 112, 0.06);
-  --ui-at-text: #0a1829;
-  --ui-at-accent: #aa254f;
-  --ui-at-caret: #0a1829;
+  --ui-at-text: #041632;
+  --ui-at-accent: #326eb6;
+  --ui-at-caret: #041632;
   /* Same pink → violet as the Get Pro button */
-  --ui-at-halo-from: rgba(171, 38, 79, 0.18);
-  --ui-at-halo-to: rgba(149, 4, 62, 0.18);
-  --ui-at-dash: #e0e8f2; /* same gray as the lines in Outreach Branches */
-  --ui-at-face: #ebf1f8;
+  --ui-at-halo-from: rgba(159, 23, 70, 0.18);
+  --ui-at-halo-to: rgba(159, 23, 70, 0.18);
+  --ui-at-dash: #e1e7f1; /* same gray as the lines in Outreach Branches */
+  --ui-at-face: #ecf0f8;
   --ui-at-online: #34c46a;
-  --ui-at-dot-ring: #ebf1f8;
+  --ui-at-dot-ring: #ecf0f8;
   --ui-at-dot-edge: rgba(52, 196, 106, 0.1);
-  --ui-at-tool-ring: #dee6f0;
+  --ui-at-tool-ring: #dfe6ef;
   --ui-at-shadow: 0 calc(10 * var(--u)) calc(24 * var(--u)) rgba(26, 62, 112, 0.07), 0 calc(2 * var(--u)) calc(5 * var(--u)) rgba(26, 62, 112, 0.05);
   --ui-at-ease: cubic-bezier(0.7, 0, 0.25, 1);
   --ui-at-pop: cubic-bezier(0.34, 1.4, 0.64, 1);
@@ -231,20 +231,20 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-at {
-  --ui-at-surface: #132439;
+  --ui-at-surface: #0b2345;
   --ui-at-ring: rgba(255, 255, 255, 0.08);
-  --ui-at-text: #e7eef6;
-  --ui-at-accent: #aa254f;
-  --ui-at-caret: #e7eef6;
-  --ui-at-halo-from: rgba(213, 79, 113, 0.16);
-  --ui-at-halo-to: rgba(204, 80, 111, 0.16);
+  --ui-at-text: #e8eef6;
+  --ui-at-accent: #326eb6;
+  --ui-at-caret: #e8eef6;
+  --ui-at-halo-from: rgba(159, 23, 70, 0.16);
+  --ui-at-halo-to: rgba(155, 32, 71, 0.16);
   --ui-at-dash: rgba(255, 255, 255, 0.14);
-  --ui-at-face: #1d2f47;
+  --ui-at-face: #122e56;
   --ui-at-online: #3fd17a;
   --ui-at-dot-ring: #24392c;
   --ui-at-dot-edge: rgba(63, 209, 122, 0.12);
   --ui-at-tool-ring: rgba(255, 255, 255, 0.12);
   --ui-at-shadow: 0 calc(10 * var(--u)) calc(24 * var(--u)) rgba(0, 22, 43, 0.4), 0 calc(2 * var(--u)) calc(5 * var(--u)) rgba(0, 22, 43, 0.3);
 }
-:where(.dark, [data-theme="dark"]) .ui-at-tool { background: #f0f5fb; }
+:where(.dark, [data-theme="dark"]) .ui-at-tool { background: #f1f5fa; }
 `;function p(){return(0,r.jsx)(`div`,{className:`agent-team-demo`,children:(0,r.jsx)(l,{members:[{role:`Lead Researcher`,avatar:`/avatars/lena.jpg`,tools:[`linkedin`,`hubspot`]},{role:`Inbound Qualifier`,avatar:`/avatars/theo.jpg`,tools:[`hubspot`,`slack`]},{role:`Outbound SDR`,avatar:`/avatars/noah.jpg`,tools:[`gmail`,`salesforce`]}]})})}export{p as default};

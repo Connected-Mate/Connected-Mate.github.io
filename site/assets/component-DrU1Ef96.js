@@ -154,13 +154,13 @@ export function ThinkingLoader({
 
 const css = /* css */ \`
 .ui-tl {
-  --ui-tl-ink: #0a1829;
-  --ui-tl-text: #5b6d84;
-  --ui-tl-ray: #0a1829;
+  --ui-tl-ink: #041632;
+  --ui-tl-text: #586c8a;
+  --ui-tl-ray: #041632;
   --ui-tl-bg: #ffffff;
-  --ui-tl-line: #e0e8f2;
+  --ui-tl-line: #e1e8f1;
   --ui-tl-shine: rgba(255, 255, 255, 0.82);
-  --ui-tl-done: #0a1829;
+  --ui-tl-done: #041632;
   --ui-tl-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-tl-h: 34px;
   --ui-tl-font: 14px;
@@ -318,13 +318,13 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-tl {
-  --ui-tl-ink: #e7eef6;
-  --ui-tl-text: #8091a6;
-  --ui-tl-ray: #e7eef6;
-  --ui-tl-bg: #091728;
+  --ui-tl-ink: #e8eef6;
+  --ui-tl-text: #8090a8;
+  --ui-tl-ray: #e8eef6;
+  --ui-tl-bg: #041531;
   --ui-tl-line: rgba(255, 255, 255, 0.1);
   --ui-tl-shine: rgba(255, 255, 255, 0.95);
-  --ui-tl-done: #e7eef6;
+  --ui-tl-done: #e8eef6;
 }
 \`;
 `;export{e as default};

@@ -434,23 +434,23 @@ const css = /* css */ \`
 .ui-otp {
   --ui-otp-box: 48px;
   --ui-otp-gap: 8px;
-  --ui-otp-bg: #f7fafe;
+  --ui-otp-bg: #f8fafe;
   --ui-otp-card: #ffffff;
-  --ui-otp-line: #dde5f0;
-  --ui-otp-line-strong: #c5d1e0;
-  --ui-otp-ink: #0a1829;
-  --ui-otp-text: #2f4159;
-  --ui-otp-muted: #8091a6;
-  --ui-otp-faint: #b9c6d6;
-  --ui-otp-halo: rgba(10, 24, 41, 0.07);
-  --ui-otp-wait: #eef3fa;
+  --ui-otp-line: #dee5ef;
+  --ui-otp-line-strong: #c7d0de;
+  --ui-otp-ink: #041632;
+  --ui-otp-text: #274066;
+  --ui-otp-muted: #8090a8;
+  --ui-otp-faint: #bbc5d5;
+  --ui-otp-halo: rgba(4, 22, 50, 0.07);
+  --ui-otp-wait: #eef3f9;
   --ui-otp-shine: rgba(255, 255, 255, 0.95);
   --ui-otp-danger: #e5484d;
   --ui-otp-danger-line: rgba(229, 72, 77, 0.6);
   --ui-otp-danger-halo: rgba(229, 72, 77, 0.12);
   --ui-otp-success: #2f9e5b;
-  --ui-otp-accent: #aa254f;
-  --ui-otp-focus: rgba(10, 24, 41, 0.22);
+  --ui-otp-accent: #326eb6;
+  --ui-otp-focus: rgba(4, 22, 50, 0.22);
   --ui-otp-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
   container-type: inline-size;
@@ -679,22 +679,22 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-otp {
-  --ui-otp-bg: #0f1e31;
-  --ui-otp-card: #0b1a2c;
-  --ui-otp-line: #192b42;
-  --ui-otp-line-strong: #293c54;
-  --ui-otp-ink: #e7eef6;
-  --ui-otp-text: #becada;
-  --ui-otp-muted: #7d8da3;
-  --ui-otp-faint: #3a4c64;
+  --ui-otp-bg: #071d3c;
+  --ui-otp-card: #051836;
+  --ui-otp-line: #0f2a50;
+  --ui-otp-line-strong: #213b61;
+  --ui-otp-ink: #e8eef6;
+  --ui-otp-text: #bfc9d8;
+  --ui-otp-muted: #7d8da5;
+  --ui-otp-faint: #334b6f;
   --ui-otp-halo: rgba(255, 255, 255, 0.08);
-  --ui-otp-wait: #0f1e31;
+  --ui-otp-wait: #071d3c;
   --ui-otp-shine: rgba(255, 255, 255, 0.07);
   --ui-otp-danger: #ff6369;
   --ui-otp-danger-line: rgba(255, 99, 105, 0.55);
   --ui-otp-danger-halo: rgba(255, 99, 105, 0.14);
   --ui-otp-success: #4cc38a;
-  --ui-otp-accent: #c54064;
+  --ui-otp-accent: #4b87d1;
   --ui-otp-focus: rgba(255, 255, 255, 0.3);
 }
 \`;

@@ -107,7 +107,7 @@ export function RegionDach({
         <svg className="ui-rd-art" viewBox="0 0 540 440" aria-hidden="true">
           <defs>
             <filter id={\`\${id}-shadow\`} x="-15%" y="-15%" width="130%" height="130%">
-              <feDropShadow className="ui-rd-drop" dx="0" dy="3" stdDeviation="3.5" floodColor="#122236" floodOpacity="0.07" />
+              <feDropShadow className="ui-rd-drop" dx="0" dy="3" stdDeviation="3.5" floodColor="#092042" floodOpacity="0.07" />
             </filter>
             {/* Colors of the band that travels along the outer border */}
             <linearGradient id={\`\${id}-shine\`} gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="540" y2="220">
@@ -173,7 +173,7 @@ function MapLayer({ id, shared, region, phase }: { id: string; shared: string; r
       </g>
 
       {/* The region's countries */}
-      <g className="ui-rd-land" filter={\`url(#\${shared}-shadow)\`} fill="#f5f8fd" stroke="#d0dae7" strokeWidth="0.9" strokeLinejoin="round">
+      <g className="ui-rd-land" filter={\`url(#\${shared}-shadow)\`} fill="#f6f8fc" stroke="#d2dae5" strokeWidth="0.9" strokeLinejoin="round">
         {map.land.map((d, i) => (
           <path key={i} d={d} />
         ))}
@@ -377,7 +377,7 @@ const ChevronIcon = () => (
     <path
       d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9"
       className="ui-rd-chevron-ink"
-      stroke="#63758c"
+      stroke="#617491"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -567,11 +567,11 @@ const css = /* css */ \`
   height: 28px;
   margin: 0;
   padding: 0 8px 0 12px;
-  border: 1px solid #dee6f0;
+  border: 1px solid #dfe6ef;
   border-radius: 999px;
   background: #ffffff;
   box-shadow: 0 1px 2px rgba(26, 62, 112, 0.04);
-  color: #0a1829;
+  color: #041632;
   font: inherit;
   font-size: 13px;
   font-weight: 500;
@@ -619,7 +619,7 @@ const css = /* css */ \`
   flex-direction: column;
   padding: 5px;
   background: #ffffff;
-  border: 1px solid #dee6f0;
+  border: 1px solid #dfe6ef;
   border-radius: 16px;
   outline: none;
   clip-path: inset(0 0 0 0 round 16px);
@@ -648,7 +648,7 @@ const css = /* css */ \`
   left: 5px;
   right: 5px;
   border-radius: 10px;
-  background: #f1f6fb;
+  background: #f2f5fb;
   pointer-events: none;
   transition:
     transform 190ms cubic-bezier(0.25, 1, 0.3, 1),
@@ -665,7 +665,7 @@ const css = /* css */ \`
   gap: 8px;
   padding: 7px 8px 7px 10px;
   border-radius: 10px;
-  color: #0a1829;
+  color: #041632;
   font-size: 13px;
   font-weight: 500;
   line-height: 18px;
@@ -714,21 +714,21 @@ const css = /* css */ \`
 }
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
-:where(.dark, [data-theme="dark"]) .ui-rd-neighbors { stroke: #4c5e76; }
-:where(.dark, [data-theme="dark"]) .ui-rd-land { fill: #1b2d45; stroke: #3a4c64; }
+:where(.dark, [data-theme="dark"]) .ui-rd-neighbors { stroke: #485e7e; }
+:where(.dark, [data-theme="dark"]) .ui-rd-land { fill: #112c53; stroke: #334b6f; }
 :where(.dark, [data-theme="dark"]) .ui-rd-drop { flood-color: #000000; flood-opacity: 0.45; }
 :where(.dark, [data-theme="dark"]) .ui-rd-trigger {
   border-color: rgba(255, 255, 255, 0.08);
-  background: #132439;
+  background: #0b2345;
   box-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
-  color: #e7eef6;
+  color: #e8eef6;
 }
-:where(.dark, [data-theme="dark"]) .ui-rd-chevron-ink { stroke: #8091a6; }
+:where(.dark, [data-theme="dark"]) .ui-rd-chevron-ink { stroke: #8090a8; }
 :where(.dark, [data-theme="dark"]) .ui-rd-menu {
   filter: drop-shadow(0 6px 12px rgba(0, 22, 43, 0.4)) drop-shadow(0 1px 2.5px rgba(0, 22, 43, 0.35));
 }
-:where(.dark, [data-theme="dark"]) .ui-rd-panel { background: #132439; border-color: rgba(255, 255, 255, 0.08); }
-:where(.dark, [data-theme="dark"]) .ui-rd-fill { background: #192b42; }
-:where(.dark, [data-theme="dark"]) .ui-rd-option { color: #e7eef6; }
+:where(.dark, [data-theme="dark"]) .ui-rd-panel { background: #0b2345; border-color: rgba(255, 255, 255, 0.08); }
+:where(.dark, [data-theme="dark"]) .ui-rd-fill { background: #0f2a50; }
+:where(.dark, [data-theme="dark"]) .ui-rd-option { color: #e8eef6; }
 \`;
 `;export{e as default};

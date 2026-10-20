@@ -157,29 +157,29 @@ function contentKey(node: ReactNode) {
 const css = /* css */ \`
 /* Colors and motion as variables – override them on .ui-button (see Theming in the docs) */
 .ui-button {
-  --ui-btn-ink: #0a1829;
-  --ui-btn-on-ink: #f7fafe;
-  --ui-btn-dark-top: #20334b;
-  --ui-btn-dark-bottom: #102034;
-  --ui-btn-dark-hover-top: #2b3d55;
-  --ui-btn-dark-hover-bottom: #182940;
-  --ui-btn-edge-top: #394c63;
-  --ui-btn-edge-mid: #20324a;
-  --ui-btn-edge-bottom: #0a182a;
-  --ui-btn-ring: #030d1c;
+  --ui-btn-ink: #041632;
+  --ui-btn-on-ink: #f8fafe;
+  --ui-btn-dark-top: #173159;
+  --ui-btn-dark-bottom: #081e3f;
+  --ui-btn-dark-hover-top: #223c62;
+  --ui-btn-dark-hover-bottom: #0e284d;
+  --ui-btn-edge-top: #334b6f;
+  --ui-btn-edge-mid: #163158;
+  --ui-btn-edge-bottom: #041733;
+  --ui-btn-ring: #010c23;
   --ui-btn-dark-shadow: rgba(26, 62, 112, 0.1);
   --ui-btn-surface: #ffffff;
-  --ui-btn-surface-hover: #f7fafe;
+  --ui-btn-surface-hover: #f8fafe;
   --ui-btn-surface-shadow: rgba(26, 62, 112, 0.06);
-  --ui-btn-line: #dee6f0;
-  --ui-btn-muted: #63758c;
-  --ui-btn-hover: #2f4159;
-  --ui-btn-fill: #ebf1f8;
+  --ui-btn-line: #dfe6ef;
+  --ui-btn-muted: #617491;
+  --ui-btn-hover: #274066;
+  --ui-btn-fill: #ecf1f8;
   --ui-btn-shine: rgba(255, 255, 255, 0.82);
   --ui-btn-shine-on-ink: rgba(255, 255, 255, 0.95);
   --ui-btn-danger: #ff0000;
-  --ui-btn-danger-bg: #e7eef6;
-  --ui-btn-focus: rgba(10, 24, 41, 0.22);
+  --ui-btn-danger-bg: #e8eef6;
+  --ui-btn-focus: rgba(4, 22, 50, 0.22);
   --ui-btn-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-btn-load: 650ms;
 
@@ -408,30 +408,30 @@ const css = /* css */ \`
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-button {
   /* primary inverts: a light gradient with dark text */
-  --ui-btn-on-ink: #061223;
-  --ui-btn-dark-top: #f0f5fb;
-  --ui-btn-dark-bottom: #dde5f0;
+  --ui-btn-on-ink: #02112b;
+  --ui-btn-dark-top: #f1f5fa;
+  --ui-btn-dark-bottom: #dee5ef;
   --ui-btn-dark-hover-top: #ffffff;
-  --ui-btn-dark-hover-bottom: #e6edf6;
+  --ui-btn-dark-hover-bottom: #e7edf5;
   --ui-btn-edge-top: #ffffff;
-  --ui-btn-edge-mid: #e6edf6;
-  --ui-btn-edge-bottom: #cbd6e4;
+  --ui-btn-edge-mid: #e7edf5;
+  --ui-btn-edge-bottom: #cdd5e2;
   --ui-btn-ring: rgba(0, 22, 43, 0.6);
   --ui-btn-dark-shadow: rgba(0, 22, 43, 0.4);
   --ui-btn-shine-on-ink: rgba(255, 255, 255, 0.9);
 
-  --ui-btn-ink: #e7eef6;
-  --ui-btn-surface: #132439;
-  --ui-btn-surface-hover: #192b42;
+  --ui-btn-ink: #e8eef6;
+  --ui-btn-surface: #0b2345;
+  --ui-btn-surface-hover: #0f2a50;
   --ui-btn-surface-shadow: rgba(0, 22, 43, 0.4);
   --ui-btn-line: rgba(255, 255, 255, 0.1);
-  --ui-btn-muted: #8091a6;
-  --ui-btn-hover: #e7eef6;
+  --ui-btn-muted: #8090a8;
+  --ui-btn-hover: #e8eef6;
   --ui-btn-fill: rgba(255, 255, 255, 0.06);
-  --ui-btn-shine: rgba(231, 238, 246, 0.95);
+  --ui-btn-shine: rgba(232, 238, 246, 0.95);
   --ui-btn-danger: #ff6b6b;
   --ui-btn-danger-bg: rgba(255, 64, 64, 0.16);
-  --ui-btn-focus: rgba(231, 238, 246, 0.3);
+  --ui-btn-focus: rgba(232, 238, 246, 0.3);
 }
 \`;
 `;export{e as default};

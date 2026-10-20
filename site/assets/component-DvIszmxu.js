@@ -454,9 +454,9 @@ export function CoverFlow({
 
 const css = /* css */ \`
 .ui-cf {
-  --ui-cf-ink: #0a1829;
-  --ui-cf-muted: #7b8ca1;
-  --ui-cf-card: #ecf2f9;
+  --ui-cf-ink: #041632;
+  --ui-cf-muted: #7b8ba4;
+  --ui-cf-card: #edf2f8;
   --ui-cf-edge: rgba(26, 62, 112, 0.08);
   --ui-cf-dim: rgba(255, 255, 255, 0.24);
   --ui-cf-shadow: 0 1px 2px rgba(26, 62, 112, 0.05), 0 10px 20px -12px rgba(26, 62, 112, 0.18);
@@ -464,8 +464,8 @@ const css = /* css */ \`
   --ui-cf-ground: rgba(26, 62, 112, 0.16);
   --ui-cf-tick: rgba(26, 62, 112, 0.16);
   --ui-cf-nav: #ffffff;
-  --ui-cf-nav-line: #e0e8f2;
-  --ui-cf-focus: rgba(10, 24, 41, 0.25);
+  --ui-cf-nav-line: #e1e8f1;
+  --ui-cf-focus: rgba(4, 22, 50, 0.25);
   --ui-cf-ease: cubic-bezier(0.22, 1, 0.36, 1);
   display: grid;
   gap: 4px;
@@ -710,16 +710,16 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-cf {
-  --ui-cf-ink: #e7eef6;
-  --ui-cf-muted: #8091a6;
-  --ui-cf-card: #0f1e31;
+  --ui-cf-ink: #e8eef6;
+  --ui-cf-muted: #8090a8;
+  --ui-cf-card: #071d3c;
   --ui-cf-edge: rgba(255, 255, 255, 0.1);
   --ui-cf-dim: rgba(0, 22, 43, 0.5);
   --ui-cf-shadow: 0 1px 2px rgba(0, 22, 43, 0.3), 0 12px 24px -14px rgba(0, 22, 43, 0.6);
   --ui-cf-reflect: 0.3;
   --ui-cf-ground: rgba(0, 22, 43, 0.45);
   --ui-cf-tick: rgba(255, 255, 255, 0.2);
-  --ui-cf-nav: #0f1e31;
+  --ui-cf-nav: #071d3c;
   --ui-cf-nav-line: rgba(255, 255, 255, 0.1);
   --ui-cf-focus: rgba(255, 255, 255, 0.35);
 }

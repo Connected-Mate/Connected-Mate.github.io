@@ -14,7 +14,7 @@ This copy was made with the founder's authorization. No authentication, locked P
 
 ## Team IA art direction
 
-This branch repaints the mirror in the Team IA art direction (the hub "Osmose" look also used by the sign-in page, the account pages and the e-mails): blue-tinted neutrals on a `#eaeff6` ground, navy `#16345c`/`#0f2747`, berry `#851437` with rose `#f6bcc8` on dark surfaces, and Avenir Next. Layout, routes and demos are unchanged; third-party brand colours and semantic reds, greens and yellows are kept.
+This branch repaints the mirror in the TGV INOUI / A-Team design system, as on the hub sign-in page and the programme e-mails: blue greys on a gridded `#eef2f8` ground, bleu nuit `#1a3e70` titles in Avenir Next Condensed capitals, French berry `#9c0c35` pill buttons, the charter blues for charts, a bleu nuit vitrine for dark mode, and Avenir Next for text. Layout, routes and demos are unchanged; third-party brand colours and semantic reds, greens and yellows are kept.
 
 ```sh
 npm run mirror   # refresh the original copy

@@ -376,18 +376,18 @@ const css = /* css */ \`
 @property --ui-seg-fade-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
 
 .ui-seg {
-  --ui-seg-tray: #ebf1f8;
+  --ui-seg-tray: #ecf1f8;
   --ui-seg-pill: #ffffff;
-  --ui-seg-line: #e6edf6;
-  --ui-seg-ink: #0a1829;
-  --ui-seg-text: #2f4159;
-  --ui-seg-soft: #63758c;
-  --ui-seg-muted: #8091a6;
+  --ui-seg-line: #e7edf5;
+  --ui-seg-ink: #041632;
+  --ui-seg-text: #274066;
+  --ui-seg-soft: #617491;
+  --ui-seg-muted: #8090a8;
   --ui-seg-count: rgba(26, 62, 112, 0.06);
-  --ui-seg-accent: #aa254f;
-  --ui-seg-accent-soft: rgba(170, 37, 79, 0.1);
+  --ui-seg-accent: #326eb6;
+  --ui-seg-accent-soft: rgba(50, 110, 182, 0.1);
   --ui-seg-pill-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.08), 0 1px 2px rgba(26, 62, 112, 0.08), 0 2px 8px -2px rgba(26, 62, 112, 0.06);
-  --ui-seg-focus: rgba(10, 24, 41, 0.22);
+  --ui-seg-focus: rgba(4, 22, 50, 0.22);
   --ui-seg-ease: cubic-bezier(0.22, 1, 0.36, 1);
   /* Size: md */
   --ui-seg-h: 30px;
@@ -556,16 +556,16 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-seg {
-  --ui-seg-tray: #061222;
-  --ui-seg-pill: #16273d;
-  --ui-seg-line: #192b42;
-  --ui-seg-ink: #e7eef6;
-  --ui-seg-text: #becada;
-  --ui-seg-soft: #7d8da3;
-  --ui-seg-muted: #7d8da3;
+  --ui-seg-tray: #021029;
+  --ui-seg-pill: #0d264a;
+  --ui-seg-line: #0f2a50;
+  --ui-seg-ink: #e8eef6;
+  --ui-seg-text: #bfc9d8;
+  --ui-seg-soft: #7d8da5;
+  --ui-seg-muted: #7d8da5;
   --ui-seg-count: rgba(255, 255, 255, 0.08);
-  --ui-seg-accent: #c54064;
-  --ui-seg-accent-soft: rgba(197, 64, 100, 0.14);
+  --ui-seg-accent: #4b87d1;
+  --ui-seg-accent-soft: rgba(75, 135, 209, 0.14);
   --ui-seg-pill-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 22, 43, 0.4);
   --ui-seg-focus: rgba(255, 255, 255, 0.3);
 }

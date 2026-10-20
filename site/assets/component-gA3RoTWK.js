@@ -205,11 +205,11 @@ const ArrowIcon = () => (
 const css = /* css */ \`
 .ui-ns {
   --ui-ns-card: #ffffff;
-  --ui-ns-line: #dee6f0;
-  --ui-ns-ink: #0a1829;
-  --ui-ns-muted: #63758c;
-  --ui-ns-art: #dce4ef;
-  --ui-ns-accent: #aa254f;
+  --ui-ns-line: #dfe6ef;
+  --ui-ns-ink: #041632;
+  --ui-ns-muted: #617491;
+  --ui-ns-art: #dde4ee;
+  --ui-ns-accent: #326eb6;
   --ui-ns-ease: cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   box-sizing: border-box;
@@ -262,8 +262,8 @@ const css = /* css */ \`
   -webkit-mask-image: radial-gradient(120% 110% at 100% 0%, #000000 20%, transparent 70%);
   mask-image: radial-gradient(120% 110% at 100% 0%, #000000 20%, transparent 70%);
 }
-.ui-ns__dot { fill: #cbd5e3; stroke: none; }
-.ui-ns__fill { fill: #f1f6fb; }
+.ui-ns__dot { fill: #ccd5e2; stroke: none; }
+.ui-ns__fill { fill: #f2f5fb; }
 
 .ui-ns__body {
   position: relative;
@@ -286,7 +286,7 @@ const css = /* css */ \`
   line-height: 18px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #41546b;
+  color: #3c5375;
 }
 .ui-ns__close {
   display: grid;
@@ -348,10 +348,10 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-ns {
-  --ui-ns-card: #132439;
+  --ui-ns-card: #0b2345;
   --ui-ns-line: rgba(255, 255, 255, 0.1);
-  --ui-ns-ink: #e7eef6;
-  --ui-ns-muted: #8091a6;
+  --ui-ns-ink: #e8eef6;
+  --ui-ns-muted: #8090a8;
   --ui-ns-art: rgba(255, 255, 255, 0.08);
 }
 :where(.dark, [data-theme="dark"]) .ui-ns__card {
@@ -361,12 +361,12 @@ const css = /* css */ \`
 }
 :where(.dark, [data-theme="dark"]) .ui-ns__dot { fill: rgba(255, 255, 255, 0.22); }
 :where(.dark, [data-theme="dark"]) .ui-ns__fill { fill: rgba(255, 255, 255, 0.04); }
-:where(.dark, [data-theme="dark"]) .ui-ns__badge { background: #192b42; color: #b9c5d6; }
+:where(.dark, [data-theme="dark"]) .ui-ns__badge { background: #0f2a50; color: #bbc5d5; }
 :where(.dark, [data-theme="dark"]) .ui-ns__close:hover { background: rgba(255, 255, 255, 0.06); }
 :where(.dark, [data-theme="dark"]) .ui-ns__btn {
-  background: #192b42;
+  background: #0f2a50;
   box-shadow: 0 0 0 1px var(--ui-ns-line), 0 1px 2px rgba(0, 22, 43, 0.4);
 }
-:where(.dark, [data-theme="dark"]) .ui-ns__btn:hover { background: #20324a; }
+:where(.dark, [data-theme="dark"]) .ui-ns__btn:hover { background: #163158; }
 \`;
 `;export{e as default};

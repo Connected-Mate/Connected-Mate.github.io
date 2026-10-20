@@ -151,10 +151,10 @@ const css = /* css */ \`
   --ui-pgc-ring: rgba(26, 62, 112, 0.2);
   --ui-pgc-track: rgba(26, 62, 112, 0.06);
   --ui-pgc-hover: rgba(26, 62, 112, 0.03);
-  --ui-pgc-accent: rgba(155, 16, 66, 0.765);
+  --ui-pgc-accent: rgba(35, 95, 166, 0.765);
   --ui-pgc-on-accent: #ffffff;
   --ui-pgc-shine: rgba(255, 255, 255, 0.82);
-  --ui-pgc-focus: rgba(155, 16, 66, 0.35);
+  --ui-pgc-focus: rgba(35, 95, 166, 0.35);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
   --ui-pgc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
   --ui-pgc-ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -417,7 +417,7 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-progressc {
-  --ui-pgc-card: #0e1d30;
+  --ui-pgc-card: #061b3a;
   --ui-pgc-strong: #ffffff;
   --ui-pgc-ink: rgba(255, 255, 255, 0.9);
   --ui-pgc-muted: rgba(255, 255, 255, 0.46);
@@ -426,10 +426,10 @@ const css = /* css */ \`
   --ui-pgc-ring: rgba(255, 255, 255, 0.24);
   --ui-pgc-track: rgba(255, 255, 255, 0.08);
   --ui-pgc-hover: rgba(255, 255, 255, 0.04);
-  --ui-pgc-accent: #c13d61;
+  --ui-pgc-accent: #4883ce;
   --ui-pgc-on-accent: #ffffff;
   --ui-pgc-shine: #ffffff;
-  --ui-pgc-focus: rgba(193, 61, 97, 0.5);
+  --ui-pgc-focus: rgba(72, 131, 206, 0.5);
   --ui-pgc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
 }
 \`;

@@ -96,17 +96,17 @@ const css = /* css */ \`
   --u: calc(100cqw / 600);
   --ui-ti-bubble: #ffffff;
   --ui-ti-bubble-ring: rgba(26, 62, 112, 0.06);
-  --ui-ti-face: #ebf1f8;
+  --ui-ti-face: #ecf0f8;
   /* Same gray as the lines in Outreach Branches */
-  --ui-ti-line-a: #e0e8f2;
-  --ui-ti-line-b: #e0e8f2;
-  --ui-ti-dash: #e0e8f2;
-  --ui-ti-plus: #b9c5d6;
+  --ui-ti-line-a: #e1e7f1;
+  --ui-ti-line-b: #e1e7f1;
+  --ui-ti-dash: #e1e7f1;
+  --ui-ti-plus: #bbc5d5;
   --ui-ti-online: #34c46a;
   /* Ring around the status dot: mostly white with a hint of the green, fully opaque */
-  --ui-ti-dot-ring: #ebf1f8;
+  --ui-ti-dot-ring: #ecf0f8;
   --ui-ti-dot-edge: rgba(52, 196, 106, 0.1);
-  --ui-ti-cursor: #270a11;
+  --ui-ti-cursor: #07192f;
   --ui-ti-shadow: 0 calc(10 * var(--u)) calc(24 * var(--u)) rgba(26, 62, 112, 0.07), 0 calc(2 * var(--u)) calc(5 * var(--u)) rgba(26, 62, 112, 0.05);
   --ui-ti-lift: 0 calc(18 * var(--u)) calc(34 * var(--u)) rgba(26, 62, 112, 0.12), 0 calc(3 * var(--u)) calc(8 * var(--u)) rgba(26, 62, 112, 0.06);
   --ui-ti-loop: 4.4s;
@@ -282,13 +282,13 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-ti {
-  --ui-ti-bubble: #132439;
+  --ui-ti-bubble: #0b2345;
   --ui-ti-bubble-ring: rgba(255, 255, 255, 0.08);
-  --ui-ti-face: #1d2f47;
+  --ui-ti-face: #122e56;
   --ui-ti-line-a: rgba(255, 255, 255, 0.14);
   --ui-ti-line-b: rgba(255, 255, 255, 0.14);
   --ui-ti-dash: rgba(255, 255, 255, 0.14);
-  --ui-ti-plus: #4c5e75;
+  --ui-ti-plus: #485e7e;
   --ui-ti-online: #3fd17a;
   --ui-ti-dot-ring: #24392c;
   --ui-ti-dot-edge: rgba(63, 209, 122, 0.12);

@@ -534,19 +534,19 @@ export function MessageActions({
 const css = /* css */ \`
 .ui-ma {
   --ui-ma-card: #ffffff;
-  --ui-ma-line: #e6edf6;
-  --ui-ma-ink: #0a1829;
-  --ui-ma-text: #2f4159;
-  --ui-ma-muted: #8091a6;
-  --ui-ma-well: #f0f5fb;
-  --ui-ma-hover: rgba(10, 24, 41, 0.06);
-  --ui-ma-accent: #aa254f;
-  --ui-ma-accent-bg: rgba(170, 37, 79, 0.1);
+  --ui-ma-line: #e7edf5;
+  --ui-ma-ink: #041632;
+  --ui-ma-text: #274066;
+  --ui-ma-muted: #8090a8;
+  --ui-ma-well: #f1f5fa;
+  --ui-ma-hover: rgba(4, 22, 50, 0.06);
+  --ui-ma-accent: #326eb6;
+  --ui-ma-accent-bg: rgba(50, 110, 182, 0.1);
   --ui-ma-ok: #18794e;
   --ui-ma-ok-bg: rgba(34, 160, 90, 0.11);
-  --ui-ma-tip-bg: #0a1829;
+  --ui-ma-tip-bg: #041632;
   --ui-ma-tip-text: #ffffff;
-  --ui-ma-focus: rgba(10, 24, 41, 0.22);
+  --ui-ma-focus: rgba(4, 22, 50, 0.22);
   --ui-ma-ease: cubic-bezier(0.32, 0.72, 0.24, 1);
   box-sizing: border-box;
   display: block;
@@ -695,19 +695,19 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-ma {
-  --ui-ma-card: #0b1a2c;
-  --ui-ma-line: #192b42;
-  --ui-ma-ink: #e7eef6;
-  --ui-ma-text: #becada;
-  --ui-ma-muted: #7d8da3;
-  --ui-ma-well: #132338;
+  --ui-ma-card: #051836;
+  --ui-ma-line: #0f2a50;
+  --ui-ma-ink: #e8eef6;
+  --ui-ma-text: #bfc9d8;
+  --ui-ma-muted: #7d8da5;
+  --ui-ma-well: #0a2244;
   --ui-ma-hover: rgba(255, 255, 255, 0.07);
-  --ui-ma-accent: #f392a5;
-  --ui-ma-accent-bg: rgba(187, 54, 92, 0.16);
+  --ui-ma-accent: #7eb6fd;
+  --ui-ma-accent-bg: rgba(66, 125, 199, 0.16);
   --ui-ma-ok: #6ee7a8;
   --ui-ma-ok-bg: rgba(110, 231, 168, 0.12);
-  --ui-ma-tip-bg: #e7eef6;
-  --ui-ma-tip-text: #0a1829;
+  --ui-ma-tip-bg: #e8eef6;
+  --ui-ma-tip-text: #041632;
   --ui-ma-focus: rgba(255, 255, 255, 0.3);
 }
 \`;

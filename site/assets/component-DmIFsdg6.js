@@ -93,12 +93,12 @@ export function GhostedChat({
 const css = /* css */ \`
 .ui-gc {
   --ui-gc-bubble: #FFFFFF;
-  --ui-gc-bubble-border: #e7eef6;
-  --ui-gc-bubble-shadow: 0 2px 6px rgba(14, 30, 49, 0.08), 0 1px 2px rgba(14, 30, 49, 0.05);
-  --ui-gc-text: #3b4e65;
-  --ui-gc-ink: #112135;
-  --ui-gc-status: #8f9eb3;
-  --ui-gc-read: #9eacbf;
+  --ui-gc-bubble-border: #e8eef6;
+  --ui-gc-bubble-shadow: 0 2px 6px rgba(7, 28, 59, 0.08), 0 1px 2px rgba(7, 28, 59, 0.05);
+  --ui-gc-text: #354d70;
+  --ui-gc-ink: #091f40;
+  --ui-gc-status: #8f9eb4;
+  --ui-gc-read: #9facc0;
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 2;
@@ -263,13 +263,13 @@ const css = /* css */ \`
   max-width: none;
   width: auto;
   padding: 6px 12px;
-  background: #9e1545;
-  border: 1px solid #9e1545;
+  background: #2662a9;
+  border: 1px solid #2662a9;
   border-radius: 14px 14px 14px 4px;
   color: #FFFFFF;
   font-size: 15px;
   line-height: 1.1;
-  box-shadow: 0 4px 12px rgba(158, 21, 69, 0.22), 0 1px 2px rgba(158, 21, 69, 0.18);
+  box-shadow: 0 4px 12px rgba(38, 98, 169, 0.22), 0 1px 2px rgba(38, 98, 169, 0.18);
   opacity: 0;
   transform: translateY(14px) scale(0.92);
   transform-origin: bottom left;
@@ -290,13 +290,13 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-gc {
-  --ui-gc-bubble: #132439;
+  --ui-gc-bubble: #0b2345;
   --ui-gc-bubble-border: rgba(255, 255, 255, 0.08);
   --ui-gc-bubble-shadow: 0 2px 6px rgba(0, 22, 43, 0.35), 0 1px 2px rgba(0, 22, 43, 0.4);
-  --ui-gc-text: #b9c5d6;
-  --ui-gc-ink: #e7eef6;
-  --ui-gc-status: #8091a6;
-  --ui-gc-read: #8091a6;
+  --ui-gc-text: #bbc5d5;
+  --ui-gc-ink: #e8eef6;
+  --ui-gc-status: #8090a8;
+  --ui-gc-read: #8090a8;
 }
 :where(.dark, [data-theme="dark"]) .ui-gc-bubble-last::after { opacity: 0.45; }
 :where(.dark, [data-theme="dark"]) .ui-gc-reply {

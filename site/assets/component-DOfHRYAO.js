@@ -503,24 +503,24 @@ async function copyText(text: string) {
 const css = /* css */ \`
 .ui-tc,
 .ui-tc-group {
-  --ui-tc-ink: #0a1829;
-  --ui-tc-text: #5b6d84;
-  --ui-tc-muted: #7b8ca1;
+  --ui-tc-ink: #041632;
+  --ui-tc-text: #586c8a;
+  --ui-tc-muted: #7b8ba4;
   --ui-tc-bg: #ffffff;
-  --ui-tc-line: #e0e8f2;
-  --ui-tc-hover: #f7fafe;
-  --ui-tc-tile: #f1f6fb;
-  --ui-tc-code: #f7fafe;
+  --ui-tc-line: #e1e8f1;
+  --ui-tc-hover: #f8fafe;
+  --ui-tc-tile: #f2f5fb;
+  --ui-tc-code: #f8fafe;
   --ui-tc-ring: #ffffff;
   --ui-tc-red: #c8372d;
   --ui-tc-red-bg: rgba(200, 55, 45, 0.06);
   --ui-tc-red-line: rgba(200, 55, 45, 0.16);
-  --ui-tc-key: #0a1829;
+  --ui-tc-key: #041632;
   --ui-tc-str: #0f7b6c;
   --ui-tc-num: #b25b0c;
   --ui-tc-lit: #9f1746;
   --ui-tc-shine: rgba(255, 255, 255, 0.82);
-  --ui-tc-focus: rgba(10, 24, 41, 0.22);
+  --ui-tc-focus: rgba(4, 22, 50, 0.22);
   --ui-tc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-tc-mono: ui-monospace, "SF Mono", Menlo, monospace;
   box-sizing: border-box;
@@ -901,19 +901,19 @@ const css = /* css */ \`
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-tc,
 :where(.dark, [data-theme="dark"]) .ui-tc-group {
-  --ui-tc-ink: #e7eef6;
-  --ui-tc-text: #94a3b6;
-  --ui-tc-muted: #6c7e94;
-  --ui-tc-bg: #091728;
+  --ui-tc-ink: #e8eef6;
+  --ui-tc-text: #94a2b7;
+  --ui-tc-muted: #6b7d98;
+  --ui-tc-bg: #041531;
   --ui-tc-line: rgba(255, 255, 255, 0.1);
   --ui-tc-hover: rgba(255, 255, 255, 0.035);
-  --ui-tc-tile: #0f1e31;
-  --ui-tc-code: #0f1e31;
-  --ui-tc-ring: #091728;
+  --ui-tc-tile: #071d3c;
+  --ui-tc-code: #071d3c;
+  --ui-tc-ring: #041531;
   --ui-tc-red: #ff7b72;
   --ui-tc-red-bg: rgba(255, 110, 100, 0.08);
   --ui-tc-red-line: rgba(255, 110, 100, 0.2);
-  --ui-tc-key: #e7eef6;
+  --ui-tc-key: #e8eef6;
   --ui-tc-str: #5fd4b8;
   --ui-tc-num: #f2a65a;
   --ui-tc-lit: #f98fa4;

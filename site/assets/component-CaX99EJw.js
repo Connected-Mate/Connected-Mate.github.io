@@ -293,20 +293,20 @@ export function GlowCloud({
 const css = /* css */ \`
 /* Palette as variables – blue, or red-orange via data-color="orange" */
 .ui-gc {
-  --ui-gc-sky-top: #ab254f;
-  --ui-gc-sky-bottom: #8cbbf7;
-  --ui-gc-sky-light: rgba(176, 210, 254, 0.55);
+  --ui-gc-sky-top: #326eb6;
+  --ui-gc-sky-bottom: #89bbfc;
+  --ui-gc-sky-light: rgba(177, 210, 252, 0.55);
   --ui-gc-white: #ffffff;
   --ui-gc-rim: #f8fbfe;
-  --ui-gc-body-1: #719fd9;
-  --ui-gc-body-2: #7baae5;
-  --ui-gc-body-3: #92c1fe;
+  --ui-gc-body-1: #518dd8;
+  --ui-gc-body-2: #5b97e3;
+  --ui-gc-body-3: #97c1f8;
   --ui-gc-eye: #dbeafc;
-  --ui-gc-eye-shade: rgba(94, 139, 196, 0.3);
-  --ui-gc-halo: rgba(195, 62, 99, 0.2);
-  --ui-gc-edge: rgba(173, 40, 81, 0.4);
-  --ui-gc-shadow: rgba(137, 28, 62, 0.55);
-  --ui-gc-ground: rgba(129, 18, 55, 0.4);
+  --ui-gc-eye-shade: rgba(63, 123, 196, 0.3);
+  --ui-gc-halo: rgba(73, 133, 208, 0.2);
+  --ui-gc-edge: rgba(53, 112, 185, 0.4);
+  --ui-gc-shadow: rgba(25, 86, 157, 0.55);
+  --ui-gc-ground: rgba(14, 78, 148, 0.4);
   position: relative;
   display: grid;
   place-items: center;
@@ -321,7 +321,7 @@ const css = /* css */ \`
   --ui-gc-sky-top: #e94135;
   --ui-gc-sky-bottom: #fa9842;
   --ui-gc-sky-light: rgba(255, 205, 150, 0.5);
-  --ui-gc-rim: #f8fbfe;
+  --ui-gc-rim: #f8fafe;
   --ui-gc-body-1: #f45434;
   --ui-gc-body-2: #fa7342;
   --ui-gc-body-3: #ffb175;
@@ -350,10 +350,10 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> – a deeper sky */
 :where(.dark, [data-theme="dark"]) .ui-gc {
-  --ui-gc-sky-top: #891c3e;
-  --ui-gc-sky-bottom: #709ed8;
-  --ui-gc-sky-light: rgba(146, 194, 254, 0.45);
-  --ui-gc-ground: rgba(89, 7, 36, 0.5);
+  --ui-gc-sky-top: #19569c;
+  --ui-gc-sky-bottom: #508cd7;
+  --ui-gc-sky-light: rgba(151, 193, 248, 0.45);
+  --ui-gc-ground: rgba(12, 53, 100, 0.5);
 }
 :where(.dark, [data-theme="dark"]) .ui-gc[data-color="orange"] {
   --ui-gc-sky-top: #bf2722;

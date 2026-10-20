@@ -289,20 +289,20 @@ export function FrostCloud({
 const css = /* css */ \`
 /* Palette as variables – blue, or red-orange via data-color="orange" */
 .ui-fc {
-  --ui-fc-sky-top: #ab254f;
-  --ui-fc-sky-bottom: #8cbbf7;
-  --ui-fc-sky-light: rgba(176, 210, 254, 0.55);
+  --ui-fc-sky-top: #326eb6;
+  --ui-fc-sky-bottom: #89bbfc;
+  --ui-fc-sky-light: rgba(177, 210, 252, 0.55);
   --ui-fc-white: #ffffff;
-  --ui-fc-frost: #f3f7fc;
-  --ui-fc-tint: rgba(114, 160, 219, 0.2);
-  --ui-fc-hole-1: #78a6e1;
+  --ui-fc-frost: #f3f7fb;
+  --ui-fc-tint: rgba(82, 142, 217, 0.2);
+  --ui-fc-hole-1: #5894e0;
   --ui-fc-hole-2: #93c2fe;
-  --ui-fc-eye-drop: rgba(84, 129, 185, 0.1);
-  --ui-fc-eye-shade: rgba(135, 25, 60, 0.24);
-  --ui-fc-halo: rgba(195, 62, 99, 0.2);
-  --ui-fc-edge: rgba(173, 40, 81, 0.4);
-  --ui-fc-shadow: rgba(137, 28, 62, 0.55);
-  --ui-fc-ground: rgba(129, 18, 55, 0.4);
+  --ui-fc-eye-drop: rgba(54, 114, 186, 0.1);
+  --ui-fc-eye-shade: rgba(22, 84, 154, 0.24);
+  --ui-fc-halo: rgba(73, 133, 208, 0.2);
+  --ui-fc-edge: rgba(53, 112, 185, 0.4);
+  --ui-fc-shadow: rgba(25, 86, 157, 0.55);
+  --ui-fc-ground: rgba(14, 78, 148, 0.4);
   position: relative;
   display: grid;
   place-items: center;
@@ -317,7 +317,7 @@ const css = /* css */ \`
   --ui-fc-sky-top: #e94135;
   --ui-fc-sky-bottom: #fa9842;
   --ui-fc-sky-light: rgba(255, 205, 150, 0.5);
-  --ui-fc-frost: #f4f8fd;
+  --ui-fc-frost: #f4f7fc;
   --ui-fc-tint: rgba(235, 110, 70, 0.2);
   --ui-fc-hole-1: #f05f42;
   --ui-fc-hole-2: #fba05b;
@@ -348,10 +348,10 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> – a deeper sky */
 :where(.dark, [data-theme="dark"]) .ui-fc {
-  --ui-fc-sky-top: #891c3e;
-  --ui-fc-sky-bottom: #709ed8;
-  --ui-fc-sky-light: rgba(146, 194, 254, 0.45);
-  --ui-fc-ground: rgba(89, 7, 36, 0.5);
+  --ui-fc-sky-top: #19569c;
+  --ui-fc-sky-bottom: #508cd7;
+  --ui-fc-sky-light: rgba(151, 193, 248, 0.45);
+  --ui-fc-ground: rgba(12, 53, 100, 0.5);
 }
 :where(.dark, [data-theme="dark"]) .ui-fc[data-color="orange"] {
   --ui-fc-sky-top: #bf2722;

@@ -121,7 +121,7 @@ import{t as e}from"./jsx-runtime-CTsRTJUX.js";/* empty css             */var t=e
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-csc {
-  --ui-csc-card: #0e1d30;
+  --ui-csc-card: #061b3a;
   --ui-csc-ink: rgba(255, 255, 255, 0.9);
   --ui-csc-strong: #ffffff;
   --ui-csc-text: rgba(255, 255, 255, 0.62);

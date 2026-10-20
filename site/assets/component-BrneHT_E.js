@@ -188,26 +188,26 @@ const Icon = ({ d, size = 16 }: { d: string; size?: number }) => (
 
 const css = /* css */ \`
 .ui-sr {
-  --ui-sr-tray: #ebf1f8;
+  --ui-sr-tray: #ecf1f8;
   --ui-sr-card: #ffffff;
-  --ui-sr-ink: #0a1829;
-  --ui-sr-text: #2f4159;
-  --ui-sr-muted: #8091a6;
-  --ui-sr-accent: #aa254f;
+  --ui-sr-ink: #041632;
+  --ui-sr-text: #274066;
+  --ui-sr-muted: #8090a8;
+  --ui-sr-accent: #326eb6;
   --ui-sr-ok: #1f8a4c;
-  --ui-sr-accent-text: #aa254f;
-  --ui-sr-border: #dee6f0;
+  --ui-sr-accent-text: #326eb6;
+  --ui-sr-border: #dfe6ef;
   --ui-sr-shadow: 0 1px 2px rgba(26, 62, 112, 0.06);
-  --ui-sr-head-hover: #f5f8fd;
-  --ui-sr-pill: #eef3fa;
-  --ui-sr-pill-text: #aa244e;
-  --ui-sr-bar: #cbd5e3;
+  --ui-sr-head-hover: #f6f8fc;
+  --ui-sr-pill: #eff3f9;
+  --ui-sr-pill-text: #9f1746;
+  --ui-sr-bar: #ccd5e2;
   --ui-sr-btn: #fff;
   --ui-sr-btn-hover: #f4f7fc;
   --ui-sr-menu: #fff;
-  --ui-sr-option-hover: #f1f6fb;
-  --ui-sr-option-on: #f5f8fd;
-  --ui-sr-tag: #eff4fa;
+  --ui-sr-option-hover: #f2f5fb;
+  --ui-sr-option-on: #f5f8fc;
+  --ui-sr-tag: #eff3f9;
   --ui-sr-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
   width: 100%;
@@ -309,7 +309,7 @@ const css = /* css */ \`
 [data-level="1"] > span[data-on] { background: #f59e0b; }
 [data-level="2"] > span[data-on] { background: var(--ui-sr-accent); }
 [data-level="3"] > span[data-on] { background: var(--ui-sr-ok); }
-.ui-sr__signal[data-level="0"] .ui-sr__bars span:first-child { background: #8091a6; }
+.ui-sr__signal[data-level="0"] .ui-sr__bars span:first-child { background: #8090a8; }
 
 .ui-sr__actions { display: flex; align-items: center; gap: 6px; margin-left: auto; }
 .ui-sr__btn {
@@ -327,11 +327,11 @@ const css = /* css */ \`
 .ui-sr__btn:hover { background: var(--ui-sr-btn-hover); }
 .ui-sr__btn:active { transform: scale(0.98); }
 .ui-sr__btn--primary {
-  background: linear-gradient(#20334b, #102034);
-  box-shadow: 0 0 0 1px #030d1c, 0 2px 4px rgba(26, 62, 112, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  background: linear-gradient(#173159, #081e3f);
+  box-shadow: 0 0 0 1px #010c23, 0 2px 4px rgba(26, 62, 112, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   color: #fff !important;
 }
-.ui-sr__btn--primary:hover { background: linear-gradient(#2a3c54, #15263c); }
+.ui-sr__btn--primary:hover { background: linear-gradient(#213b61, #0c2448); }
 .ui-sr__done {
   display: inline-flex;
   align-items: center;
@@ -391,34 +391,34 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-sr {
-  --ui-sr-tray: #091728;
-  --ui-sr-card: #132439;
-  --ui-sr-ink: #e7eef6;
-  --ui-sr-text: #b9c5d6;
-  --ui-sr-muted: #8091a6;
+  --ui-sr-tray: #041531;
+  --ui-sr-card: #0b2345;
+  --ui-sr-ink: #e8eef6;
+  --ui-sr-text: #bbc5d5;
+  --ui-sr-muted: #8090a8;
   --ui-sr-ok: #3dbb6f;
-  --ui-sr-accent-text: #c84969;
+  --ui-sr-accent-text: #508cd7;
   --ui-sr-border: rgba(255, 255, 255, 0.08);
   --ui-sr-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
   --ui-sr-head-hover: rgba(255, 255, 255, 0.06);
-  --ui-sr-pill: rgba(178, 45, 85, 0.18);
+  --ui-sr-pill: rgba(159, 23, 70, 0.18);
   --ui-sr-pill-text: #f9869e;
   --ui-sr-bar: rgba(255, 255, 255, 0.14);
-  --ui-sr-btn: #192b42;
-  --ui-sr-btn-hover: #20324a;
-  --ui-sr-menu: #192b42;
-  --ui-sr-option-hover: #20324a;
-  --ui-sr-option-on: rgba(170, 37, 79, 0.16);
-  --ui-sr-tag: rgba(170, 37, 79, 0.16);
+  --ui-sr-btn: #0f2a50;
+  --ui-sr-btn-hover: #163158;
+  --ui-sr-menu: #0f2a50;
+  --ui-sr-option-hover: #163158;
+  --ui-sr-option-on: rgba(50, 110, 182, 0.16);
+  --ui-sr-tag: rgba(50, 110, 182, 0.16);
 }
 :where(.dark, [data-theme="dark"]) .ui-sr__menu {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 12px 30px -8px rgba(0, 22, 43, 0.5);
 }
 :where(.dark, [data-theme="dark"]) .ui-sr__btn--primary {
-  background: linear-gradient(#f0f5fb, #dde5f0);
+  background: linear-gradient(#f1f5fa, #dee5ef);
   box-shadow: 0 0 0 1px rgba(0, 22, 43, 0.6), 0 2px 4px rgba(0, 22, 43, 0.35), inset 0 1px 0 #ffffff;
-  color: #061223 !important;
+  color: #02112b !important;
 }
-:where(.dark, [data-theme="dark"]) .ui-sr__btn--primary:hover { background: linear-gradient(#ffffff, #e6edf6); }
+:where(.dark, [data-theme="dark"]) .ui-sr__btn--primary:hover { background: linear-gradient(#ffffff, #e7edf5); }
 \`;
 `;export{e as default};

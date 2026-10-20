@@ -210,18 +210,18 @@ const defaultItems: ProfileMenuItem[] = [
 const css = /* css */ \`
 .ui-pm {
   --ui-pm-card: #ffffff;
-  --ui-pm-line: #e6edf6;
-  --ui-pm-ink: #0a1829;
-  --ui-pm-text: #2f4159;
-  --ui-pm-muted: #8091a6;
-  --ui-pm-icon: #63758c;
-  --ui-pm-hover: #f1f6fb;
-  --ui-pm-off: #ebf1f8;
-  --ui-pm-fill: #aa254f;
+  --ui-pm-line: #e7edf5;
+  --ui-pm-ink: #041632;
+  --ui-pm-text: #274066;
+  --ui-pm-muted: #8090a8;
+  --ui-pm-icon: #617491;
+  --ui-pm-hover: #f2f5fb;
+  --ui-pm-off: #ecf1f8;
+  --ui-pm-fill: #326eb6;
   --ui-pm-badge: #e11d48;
-  --ui-pm-badge-wash: #f0f5fb;
+  --ui-pm-badge-wash: #f1f5fa;
   --ui-pm-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --ui-pm-tray: #ebf1f8;
+  --ui-pm-tray: #ecf1f8;
   box-sizing: border-box;
   width: 100%;
   max-width: 320px;
@@ -238,7 +238,7 @@ const css = /* css */ \`
 .ui-pm__card {
   padding: 16px 8px 8px;
   background: var(--ui-pm-card);
-  border: 1px solid #dee6f0;
+  border: 1px solid #dfe6ef;
   border-radius: 16px;
   box-shadow: 0 1px 2px rgba(26, 62, 112, 0.06);
 }
@@ -303,7 +303,7 @@ const css = /* css */ \`
   color: var(--ui-pm-ink);
   outline: none;
 }
-.ui-pm__item:active { background: #eaf0f8; }
+.ui-pm__item:active { background: #eaf0f7; }
 
 .ui-pm__icon {
   display: grid;
@@ -418,24 +418,24 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-pm {
-  --ui-pm-card: #132439;
+  --ui-pm-card: #0b2345;
   --ui-pm-line: rgba(255, 255, 255, 0.08);
-  --ui-pm-ink: #e7eef6;
-  --ui-pm-text: #b9c5d6;
-  --ui-pm-muted: #8091a6;
-  --ui-pm-icon: #8091a6;
-  --ui-pm-hover: #192b42;
-  --ui-pm-off: #091728;
+  --ui-pm-ink: #e8eef6;
+  --ui-pm-text: #bbc5d5;
+  --ui-pm-muted: #8090a8;
+  --ui-pm-icon: #8090a8;
+  --ui-pm-hover: #0f2a50;
+  --ui-pm-off: #041531;
   --ui-pm-badge: #fb7185;
   --ui-pm-badge-wash: rgba(225, 29, 72, 0.16);
-  --ui-pm-tray: #091728;
+  --ui-pm-tray: #041531;
 }
 :where(.dark, [data-theme="dark"]) .ui-pm__card {
   border-color: rgba(255, 255, 255, 0.08);
   box-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
 }
-:where(.dark, [data-theme="dark"]) .ui-pm__avatar { color: #c84969; }
-:where(.dark, [data-theme="dark"]) .ui-pm__item:active { background: #20324a; }
+:where(.dark, [data-theme="dark"]) .ui-pm__avatar { color: #508cd7; }
+:where(.dark, [data-theme="dark"]) .ui-pm__item:active { background: #163158; }
 :where(.dark, [data-theme="dark"]) .ui-pm__track { background: rgba(255, 255, 255, 0.1); }
 :where(.dark, [data-theme="dark"]) .ui-pm__next:hover,
 :where(.dark, [data-theme="dark"]) .ui-pm__next:focus-visible { background: rgba(255, 255, 255, 0.06); }

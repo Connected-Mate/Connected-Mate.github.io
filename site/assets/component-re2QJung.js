@@ -86,12 +86,12 @@ const DashIcon = () => (
 
 const css = /* css */ \`
 .ui-cs {
-  --ui-cs-tray: #ebf1f8;
+  --ui-cs-tray: #ecf1f8;
   --ui-cs-card: #ffffff;
-  --ui-cs-line: #ebf1f8;
-  --ui-cs-ink: #0a1829;
-  --ui-cs-muted: #63758c;
-  --ui-cs-accent: #aa254f;
+  --ui-cs-line: #ecf1f8;
+  --ui-cs-ink: #041632;
+  --ui-cs-muted: #617491;
+  --ui-cs-accent: #326eb6;
   --ui-cs-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
   width: 100%;
@@ -130,7 +130,7 @@ const css = /* css */ \`
   margin: 0;
   overflow: hidden;
   background: var(--ui-cs-card);
-  border: 1px solid #dee6f0;
+  border: 1px solid #dfe6ef;
   border-radius: 16px;
   box-shadow: 0 1px 2px rgba(26, 62, 112, 0.06);
 }
@@ -145,7 +145,7 @@ const css = /* css */ \`
   transition: background-color 140ms ease;
 }
 .ui-cs__row + .ui-cs__row { border-top: 1px solid var(--ui-cs-line); }
-.ui-cs__row:hover { background: #f7fafe; }
+.ui-cs__row:hover { background: #f8fafe; }
 .ui-cs__label {
   overflow: hidden;
   font-size: 14px;
@@ -179,9 +179,9 @@ const css = /* css */ \`
   height: 20px;
   border-radius: 6px;
 }
-.ui-cs__trend[data-tone="good"] { background: #f3f7fc; color: #1f8a4c; }
-.ui-cs__trend[data-tone="bad"] { background: #f0f5fb; color: #e5484d; }
-.ui-cs__trend[data-tone="neutral"] { background: #f1f6fb; color: #8091a6; }
+.ui-cs__trend[data-tone="good"] { background: #f3f6fb; color: #1f8a4c; }
+.ui-cs__trend[data-tone="bad"] { background: #f1f4fa; color: #e5484d; }
+.ui-cs__trend[data-tone="neutral"] { background: #f2f5fb; color: #8090a8; }
 
 @keyframes ui-cs-in {
   from { opacity: 0; transform: translateY(4px); }
@@ -192,20 +192,20 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-cs {
-  --ui-cs-tray: #091728;
-  --ui-cs-card: #132439;
+  --ui-cs-tray: #041531;
+  --ui-cs-card: #0b2345;
   --ui-cs-line: rgba(255, 255, 255, 0.08);
-  --ui-cs-ink: #e7eef6;
-  --ui-cs-muted: #8091a6;
-  --ui-cs-accent: #c84969;
+  --ui-cs-ink: #e8eef6;
+  --ui-cs-muted: #8090a8;
+  --ui-cs-accent: #508cd7;
 }
 :where(.dark, [data-theme="dark"]) .ui-cs__card {
   border-color: rgba(255, 255, 255, 0.08);
   box-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
 }
-:where(.dark, [data-theme="dark"]) .ui-cs__row:hover { background: #192b42; }
+:where(.dark, [data-theme="dark"]) .ui-cs__row:hover { background: #0f2a50; }
 :where(.dark, [data-theme="dark"]) .ui-cs__trend[data-tone="good"] { background: rgba(31, 138, 76, 0.18); color: #3fbf74; }
 :where(.dark, [data-theme="dark"]) .ui-cs__trend[data-tone="bad"] { background: rgba(229, 72, 77, 0.16); color: #f2777b; }
-:where(.dark, [data-theme="dark"]) .ui-cs__trend[data-tone="neutral"] { background: #192b42; color: #8091a6; }
+:where(.dark, [data-theme="dark"]) .ui-cs__trend[data-tone="neutral"] { background: #0f2a50; color: #8090a8; }
 \`;
 `;export{e as default};

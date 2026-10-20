@@ -1,11 +1,11 @@
 import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js";/* empty css             */var n=e(),r=t(),i=12;function a({notices:e,onDismiss:t,className:a}){let[u,d]=(0,n.useState)(e),[f,p]=(0,n.useState)(new Set),[m,h]=(0,n.useState)({}),g=(0,n.useRef)(new Map),_=u.filter(e=>!f.has(e.id)),v=Math.min(_.length-1,2);(0,n.useLayoutEffect)(()=>{let e=()=>{let e={};g.current.forEach((t,n)=>e[n]=t.offsetHeight),h(e)};e();let t=new ResizeObserver(e);return g.current.forEach(e=>t.observe(e)),()=>t.disconnect()},[u]);let y=e=>{p(t=>new Set(t).add(e.id)),t?.(e),window.setTimeout(()=>{d(t=>t.filter(t=>t.id!==e.id)),p(t=>{let n=new Set(t);return n.delete(e.id),n})},320)},b=_[0]?m[_[0].id]??0:0;return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(`style`,{href:`ui-notification-stack`,precedence:`default`,children:l}),(0,r.jsx)(`section`,{className:[`ui-ns`,a].filter(Boolean).join(` `),"aria-label":`Notifications`,style:{height:_.length?b+v*i:0},children:u.map(e=>{let t=_.findIndex(t=>t.id===e.id),n=t===-1,a=Math.max(0,t),l=!n&&a>0,u=n||a===0?0:b-(m[e.id]??b)+Math.min(a,2)*i,d=n?1:1-Math.min(a,2)*.05;return(0,r.jsxs)(`article`,{ref:t=>{t?g.current.set(e.id,t):g.current.delete(e.id)},className:`ui-ns__card`,"data-depth":n?void 0:a,"data-leaving":n||void 0,"aria-labelledby":`${e.id}-title`,"aria-hidden":l||void 0,inert:l||n,style:{zIndex:n?10:10-a,transform:n?void 0:`translateY(${u}px) scale(${d})`,opacity:a>2?0:void 0},children:[(0,r.jsx)(o,{kind:e.pattern??`orbit`}),(0,r.jsxs)(`div`,{className:`ui-ns__body`,children:[(0,r.jsxs)(`div`,{className:`ui-ns__top`,children:[e.badge?(0,r.jsx)(`span`,{className:`ui-ns__badge`,children:e.badge}):(0,r.jsx)(`span`,{}),(0,r.jsx)(`button`,{type:`button`,className:`ui-ns__close`,"aria-label":`Dismiss ${e.title}`,onClick:t=>{t.stopPropagation(),y(e)},children:(0,r.jsx)(s,{})})]}),(0,r.jsx)(`h3`,{id:`${e.id}-title`,className:`ui-ns__title`,children:e.title}),(0,r.jsx)(`p`,{className:`ui-ns__text`,children:e.text}),e.action&&(e.action.href?(0,r.jsxs)(`a`,{className:`ui-ns__btn`,href:e.action.href,onClick:e.action.onClick,...e.action.external?{target:`_blank`,rel:`noreferrer`}:{},children:[e.action.label,e.action.external&&(0,r.jsx)(c,{})]}):(0,r.jsx)(`button`,{type:`button`,className:`ui-ns__btn`,onClick:e.action.onClick,children:e.action.label}))]})]},e.id)})})]})}function o({kind:e}){return(0,r.jsxs)(`svg`,{className:`ui-ns__pattern`,viewBox:`0 0 220 160`,fill:`none`,"aria-hidden":`true`,children:[e===`orbit`&&(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(`circle`,{cx:`190`,cy:`10`,r:`46`}),(0,r.jsx)(`circle`,{cx:`190`,cy:`10`,r:`86`}),(0,r.jsx)(`circle`,{cx:`190`,cy:`10`,r:`128`}),(0,r.jsx)(`path`,{d:`M60 160 220 0M0 58h220M150 0v160`}),(0,r.jsx)(`circle`,{cx:`150`,cy:`58`,r:`3.5`,className:`ui-ns__dot`})]}),e===`grid`&&(0,r.jsxs)(r.Fragment,{children:[[30,60,90,120,150,180,210].map(e=>(0,r.jsx)(`path`,{d:`M${e} 0v160`},`x${e}`)),[20,50,80,110,140].map(e=>(0,r.jsx)(`path`,{d:`M0 ${e}h220`},`y${e}`)),(0,r.jsx)(`rect`,{x:`150`,y:`50`,width:`30`,height:`30`,className:`ui-ns__fill`}),(0,r.jsx)(`circle`,{cx:`180`,cy:`50`,r:`3.5`,className:`ui-ns__dot`})]}),e===`rays`&&(0,r.jsxs)(r.Fragment,{children:[[0,1,2,3,4,5,6,7].map(e=>(0,r.jsx)(`path`,{d:`M210 6 L${210-Math.cos(e*Math.PI/16)*230} ${6+Math.sin(e*Math.PI/16)*230}`},e)),(0,r.jsx)(`path`,{d:`M120 6a90 90 0 0 0 90 90`}),(0,r.jsx)(`circle`,{cx:`146`,cy:`70`,r:`3.5`,className:`ui-ns__dot`})]})]})}var s=()=>(0,r.jsx)(`svg`,{viewBox:`0 0 16 16`,width:`16`,height:`16`,fill:`none`,stroke:`currentColor`,strokeWidth:`1.4`,strokeLinecap:`round`,"aria-hidden":`true`,children:(0,r.jsx)(`path`,{d:`m4 4 8 8M12 4l-8 8`})}),c=()=>(0,r.jsx)(`svg`,{viewBox:`0 0 16 16`,width:`14`,height:`14`,fill:`none`,stroke:`currentColor`,strokeWidth:`1.4`,strokeLinecap:`round`,strokeLinejoin:`round`,"aria-hidden":`true`,children:(0,r.jsx)(`path`,{d:`M5 11 11 5M6 5h5v5`})}),l=`
 .ui-ns {
   --ui-ns-card: #ffffff;
-  --ui-ns-line: #dee6f0;
-  --ui-ns-ink: #0a1829;
-  --ui-ns-muted: #63758c;
-  --ui-ns-art: #dce4ef;
-  --ui-ns-accent: #aa254f;
+  --ui-ns-line: #dfe6ef;
+  --ui-ns-ink: #041632;
+  --ui-ns-muted: #617491;
+  --ui-ns-art: #dde4ee;
+  --ui-ns-accent: #326eb6;
   --ui-ns-ease: cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   box-sizing: border-box;
@@ -58,8 +58,8 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   -webkit-mask-image: radial-gradient(120% 110% at 100% 0%, #000000 20%, transparent 70%);
   mask-image: radial-gradient(120% 110% at 100% 0%, #000000 20%, transparent 70%);
 }
-.ui-ns__dot { fill: #cbd5e3; stroke: none; }
-.ui-ns__fill { fill: #f1f6fb; }
+.ui-ns__dot { fill: #ccd5e2; stroke: none; }
+.ui-ns__fill { fill: #f2f5fb; }
 
 .ui-ns__body {
   position: relative;
@@ -82,7 +82,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   line-height: 18px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #41546b;
+  color: #3c5375;
 }
 .ui-ns__close {
   display: grid;
@@ -144,10 +144,10 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-ns {
-  --ui-ns-card: #132439;
+  --ui-ns-card: #0b2345;
   --ui-ns-line: rgba(255, 255, 255, 0.1);
-  --ui-ns-ink: #e7eef6;
-  --ui-ns-muted: #8091a6;
+  --ui-ns-ink: #e8eef6;
+  --ui-ns-muted: #8090a8;
   --ui-ns-art: rgba(255, 255, 255, 0.08);
 }
 :where(.dark, [data-theme="dark"]) .ui-ns__card {
@@ -157,11 +157,11 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 }
 :where(.dark, [data-theme="dark"]) .ui-ns__dot { fill: rgba(255, 255, 255, 0.22); }
 :where(.dark, [data-theme="dark"]) .ui-ns__fill { fill: rgba(255, 255, 255, 0.04); }
-:where(.dark, [data-theme="dark"]) .ui-ns__badge { background: #192b42; color: #b9c5d6; }
+:where(.dark, [data-theme="dark"]) .ui-ns__badge { background: #0f2a50; color: #bbc5d5; }
 :where(.dark, [data-theme="dark"]) .ui-ns__close:hover { background: rgba(255, 255, 255, 0.06); }
 :where(.dark, [data-theme="dark"]) .ui-ns__btn {
-  background: #192b42;
+  background: #0f2a50;
   box-shadow: 0 0 0 1px var(--ui-ns-line), 0 1px 2px rgba(0, 22, 43, 0.4);
 }
-:where(.dark, [data-theme="dark"]) .ui-ns__btn:hover { background: #20324a; }
+:where(.dark, [data-theme="dark"]) .ui-ns__btn:hover { background: #163158; }
 `,u=[{id:`dark-mode`,badge:`New`,title:`Dark mode is here`,text:`Every screen now follows your system theme – or pick one yourself in settings.`,action:{label:`Try it`},pattern:`orbit`},{id:`maintenance`,badge:`Notice`,title:`Scheduled maintenance`,text:`We'll be offline on Sunday from 02:00 to 03:00 UTC. Your data stays safe.`,action:{label:`View status`,href:`#`,external:!0},pattern:`grid`},{id:`invite`,badge:`Invite`,title:`Mara invited you to Design Ops`,text:`Join the workspace to see shared projects, files and comments.`,action:{label:`Accept invite`},pattern:`rays`}];function d(){let[e,t]=(0,n.useState)(0),[i,o]=(0,n.useState)(u.length);return(0,r.jsx)(`div`,{className:`notice-demo`,children:(0,r.jsx)(a,{notices:u,onDismiss:()=>{if(i>1)return o(i-1);window.setTimeout(()=>{o(u.length),t(e=>e+1)},1200)}},e)})}export{d as default};

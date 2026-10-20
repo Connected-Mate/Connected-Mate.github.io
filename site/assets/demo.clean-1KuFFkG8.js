@@ -5,10 +5,10 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-rbc-icon: rgba(0, 22, 43, 0.447);
   --ui-rbc-line: rgba(26, 62, 112, 0.06);
   --ui-rbc-wash: rgba(26, 62, 112, 0.03);
-  --ui-rbc-accent: rgba(155, 16, 66, 0.765);
-  --ui-rbc-mine: rgba(155, 16, 66, 0.05);
-  --ui-rbc-mine-line: rgba(155, 16, 66, 0.35);
-  --ui-rbc-focus: rgba(155, 16, 66, 0.35);
+  --ui-rbc-accent: rgba(35, 95, 166, 0.765);
+  --ui-rbc-mine: rgba(35, 95, 166, 0.05);
+  --ui-rbc-mine-line: rgba(35, 95, 166, 0.35);
+  --ui-rbc-focus: rgba(35, 95, 166, 0.35);
   --ui-rbc-ease: cubic-bezier(0.85, 0, 0.15, 1);
   --ui-rbc-h: 28px;
   display: inline-flex;
@@ -105,9 +105,9 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-rbc-icon: rgba(255, 255, 255, 0.46);
   --ui-rbc-line: rgba(255, 255, 255, 0.08);
   --ui-rbc-wash: rgba(255, 255, 255, 0.04);
-  --ui-rbc-accent: #c13d61;
-  --ui-rbc-mine: rgba(193, 61, 97, 0.14);
-  --ui-rbc-mine-line: rgba(193, 61, 97, 0.4);
-  --ui-rbc-focus: rgba(193, 61, 97, 0.45);
+  --ui-rbc-accent: #4883ce;
+  --ui-rbc-mine: rgba(72, 131, 206, 0.14);
+  --ui-rbc-mine-line: rgba(72, 131, 206, 0.4);
+  --ui-rbc-focus: rgba(72, 131, 206, 0.45);
 }
 `;function d(){return(0,r.jsx)(`div`,{className:`reaction-demo`,children:(0,r.jsx)(o,{reactions:{like:{count:128},comment:{count:24},repost:{count:9},share:{count:0}}})})}export{d as default};

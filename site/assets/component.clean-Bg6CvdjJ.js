@@ -222,8 +222,8 @@ const css = /* css */ \`
   --ui-pmc-wash: rgba(26, 62, 112, 0.03);
   --ui-pmc-hover: rgba(26, 62, 112, 0.06);
   --ui-pmc-track: rgba(26, 62, 112, 0.06);
-  --ui-pmc-accent: rgba(155, 16, 66, 0.765);
-  --ui-pmc-focus: rgba(155, 16, 66, 0.35);
+  --ui-pmc-accent: rgba(35, 95, 166, 0.765);
+  --ui-pmc-focus: rgba(35, 95, 166, 0.35);
   --ui-pmc-badge: #e11d48;
   --ui-pmc-badge-wash: rgba(225, 29, 72, 0.08);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift, like a popover */
@@ -413,7 +413,7 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-pmc {
-  --ui-pmc-card: #0e1d30;
+  --ui-pmc-card: #061b3a;
   --ui-pmc-strong: #ffffff;
   --ui-pmc-ink: rgba(255, 255, 255, 0.9);
   --ui-pmc-text: rgba(255, 255, 255, 0.62);
@@ -424,8 +424,8 @@ const css = /* css */ \`
   --ui-pmc-wash: rgba(255, 255, 255, 0.04);
   --ui-pmc-hover: rgba(255, 255, 255, 0.08);
   --ui-pmc-track: rgba(255, 255, 255, 0.1);
-  --ui-pmc-accent: #c13d61;
-  --ui-pmc-focus: rgba(193, 61, 97, 0.45);
+  --ui-pmc-accent: #4883ce;
+  --ui-pmc-focus: rgba(72, 131, 206, 0.45);
   --ui-pmc-badge: #fb7185;
   --ui-pmc-badge-wash: rgba(225, 29, 72, 0.14);
   --ui-pmc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 22, 43, 0.4);

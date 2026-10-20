@@ -4,20 +4,20 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --u: calc(100cqw / 600);
   --ui-lyr-row: calc(52 * var(--u));
   /* The accent blue used across the library */
-  --ui-lyr-accent: #aa254f;
-  --ui-lyr-accent-deep: #95053e;
+  --ui-lyr-accent: #326eb6;
+  --ui-lyr-accent-deep: #1d5aa1;
   --ui-lyr-tint: #ebf0f8;
-  --ui-lyr-glow: rgba(170, 37, 79, 0.28);
+  --ui-lyr-glow: rgba(50, 110, 182, 0.28);
   --ui-lyr-face: rgba(255, 255, 255, 0.6);
   --ui-lyr-edge: rgba(26, 62, 112, 0.11);
-  --ui-lyr-side: #e6edf6;
+  --ui-lyr-side: #e7edf5;
   --ui-lyr-face-above: rgba(255, 255, 255, 0.3);
-  --ui-lyr-side-above: rgba(230, 237, 246, 0.55);
-  --ui-lyr-panel: #f1f6fb;
+  --ui-lyr-side-above: rgba(231, 237, 245, 0.55);
+  --ui-lyr-panel: #f2f5fb;
   --ui-lyr-pill: #ffffff;
-  --ui-lyr-pill-ring: #dee6f0;
-  --ui-lyr-text: #0a1829;
-  --ui-lyr-muted: #8091a6;
+  --ui-lyr-pill-ring: #dfe6ef;
+  --ui-lyr-text: #041632;
+  --ui-lyr-muted: #8090a8;
   --ui-lyr-ease: cubic-bezier(0.65, 0, 0.25, 1);
   position: relative;
   width: 100%;
@@ -150,19 +150,19 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-lyr {
-  --ui-lyr-accent: #c84969;
-  --ui-lyr-accent-deep: #aa254f;
-  --ui-lyr-tint: #3b141d;
-  --ui-lyr-glow: rgba(170, 37, 79, 0.3);
+  --ui-lyr-accent: #508cd7;
+  --ui-lyr-accent-deep: #326eb6;
+  --ui-lyr-tint: #102846;
+  --ui-lyr-glow: rgba(50, 110, 182, 0.3);
   --ui-lyr-face: rgba(255, 255, 255, 0.04);
   --ui-lyr-edge: rgba(255, 255, 255, 0.13);
-  --ui-lyr-side: #16273d;
+  --ui-lyr-side: #0d264a;
   --ui-lyr-face-above: rgba(255, 255, 255, 0.025);
-  --ui-lyr-side-above: rgba(22, 39, 61, 0.5);
-  --ui-lyr-panel: #091728;
-  --ui-lyr-pill: #132439;
+  --ui-lyr-side-above: rgba(13, 38, 74, 0.5);
+  --ui-lyr-panel: #041531;
+  --ui-lyr-pill: #0b2345;
   --ui-lyr-pill-ring: rgba(255, 255, 255, 0.08);
-  --ui-lyr-text: #e7eef6;
-  --ui-lyr-muted: #8091a6;
+  --ui-lyr-text: #e8eef6;
+  --ui-lyr-muted: #8090a8;
 }
 `;function m(){return(0,r.jsx)(`div`,{className:`layer-stack-demo`,children:(0,r.jsx)(d,{})})}export{m as default};

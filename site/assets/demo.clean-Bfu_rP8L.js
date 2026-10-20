@@ -12,11 +12,11 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-tpc-ok: #1a9a52;
   --ui-tpc-primary: rgba(0, 22, 43, 0.88);
   --ui-tpc-primary-hover: rgba(0, 22, 43, 0.8);
-  --ui-tpc-on-primary: #fafcff;
+  --ui-tpc-on-primary: #fbfcfe;
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
   --ui-tpc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
   --ui-tpc-shadow-hover: 0 0 0 0.5px rgba(26, 62, 112, 0.1), 0 1px 1px -1px rgba(26, 62, 112, 0.12), 0 1px 3px 0 rgba(26, 62, 112, 0.07);
-  --ui-tpc-focus: rgba(155, 16, 66, 0.35);
+  --ui-tpc-focus: rgba(35, 95, 166, 0.35);
   /* Height of the tip list before it scrolls */
   --ui-tpc-max-height: 420px;
   --ui-tpc-ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -190,7 +190,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-tpc {
-  --ui-tpc-card: #0e1d30;
+  --ui-tpc-card: #061b3a;
   --ui-tpc-strong: #ffffff;
   --ui-tpc-ink: rgba(255, 255, 255, 0.9);
   --ui-tpc-text: rgba(255, 255, 255, 0.62);
@@ -201,11 +201,11 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-tpc-ok: #5fd394;
   --ui-tpc-primary: rgba(255, 255, 255, 0.9);
   --ui-tpc-primary-hover: rgba(255, 255, 255, 0.8);
-  --ui-tpc-on-primary: #0e1d30;
+  --ui-tpc-on-primary: #061b3a;
   --ui-tpc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
   --ui-tpc-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
-  --ui-tpc-focus: rgba(193, 61, 97, 0.5);
+  --ui-tpc-focus: rgba(72, 131, 206, 0.5);
   color-scheme: dark;
 }
-:where(.dark, [data-theme="dark"]) .ui-tpc__btn:not(.ui-tpc__btn--primary) { background: #132439; }
+:where(.dark, [data-theme="dark"]) .ui-tpc__btn:not(.ui-tpc__btn--primary) { background: #0b2345; }
 `,c=[{id:`invite`,title:`Invite your team`,description:`Work on projects together and keep feedback in one place.`,action:`Invite`,doneLabel:`Invite sent`},{id:`search`,title:`Quick search`,description:(0,r.jsxs)(r.Fragment,{children:[`Press `,(0,r.jsx)(a,{children:`⌘K`}),` to jump to any page, project or setting.`]}),action:`Try it`,doneLabel:`Got it`},{id:`digest`,title:`Weekly digest`,description:`Get a short summary of what changed every Monday morning.`,action:`Turn on`,doneLabel:`Turned on`},{id:`slack`,title:`Connect Slack`,description:`Post an update to a channel when something needs your attention.`,action:`Connect`,doneLabel:`Connected`},{id:`mobile`,title:`Mobile app`,description:`Check activity and approve requests while you're on the go.`,action:`Get the app`,doneLabel:`Link sent`},{id:`pro`,title:`Ready for Pro?`,description:`Unlimited projects, priority support and advanced analytics.`,action:`See plans`,doneLabel:`Opened`,primary:!0},{id:`theme`,title:`Dark mode`,description:`Switch the theme or follow your system setting automatically.`,action:`Switch`,doneLabel:`Switched`},{id:`api`,title:`API keys`,description:`Automate your workflow and pull data into your own tools.`,action:`Create key`,doneLabel:`Key created`},{id:`export`,title:`Export data`,description:`Download every project as CSV whenever you need a copy.`,action:`Export`,doneLabel:`Export started`}],l={width:720,height:410};function u(){let e=(0,n.useRef)(null),[t,a]=(0,n.useState)(null),[o,s]=(0,n.useState)(0),[u,d]=(0,n.useState)(!1);return(0,n.useLayoutEffect)(()=>{let t=e.current?.closest(`.card__preview`);if(!t)return;let n=()=>a(Math.min((t.clientWidth-48)/l.width,(t.clientHeight-80)/l.height));n();let r=new ResizeObserver(n);return r.observe(t),()=>r.disconnect()},[]),(0,r.jsx)(`div`,{ref:e,className:`tips-demo`,"data-closing":u||void 0,style:t===null?void 0:{"--fit":t},children:(0,r.jsx)(i,{tips:c,onClose:()=>{d(!0),window.setTimeout(()=>{s(e=>e+1),d(!1)},900)}},o)})}export{u as default};

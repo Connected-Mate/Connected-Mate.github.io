@@ -1,12 +1,12 @@
 import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js";/* empty css             */var n=e(),r=t();function i({decisions:e,onDecide:t,className:i}){let[c,l]=(0,n.useState)(()=>Object.fromEntries(e.map(e=>[e.id,{open:!e.collapsed}]))),u=(e,t)=>l(n=>({...n,[e]:{...n[e],...t}})),d=e.filter(e=>!c[e.id]?.answered).length,f=(n,r)=>{u(n.id,{answered:r===`primary`?n.primary:n.secondary}),t?.(n,r),window.setTimeout(()=>{l(t=>{let r={...t,[n.id]:{...t[n.id],gone:!0}},i=e.find(e=>e.id!==n.id&&!r[e.id]?.open&&!r[e.id]?.answered);return i&&(r[i.id]={...r[i.id],open:!0}),r})},1100)};return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(`style`,{href:`ui-decision-inbox`,precedence:`default`,children:s}),(0,r.jsxs)(`section`,{className:[`ui-di`,i].filter(Boolean).join(` `),"data-clear":d===0||void 0,children:[(0,r.jsx)(`header`,{className:`ui-di__head`,"aria-live":`polite`,children:d>0?(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(a,{}),(0,r.jsxs)(`span`,{children:[d,` `,d===1?`needs`:`need`,` your input`]})]}):(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(o,{}),(0,r.jsx)(`span`,{children:`All caught up`})]})}),(0,r.jsxs)(`div`,{className:`ui-di__card`,children:[e.map(e=>{let t=c[e.id]??{open:!0};return(0,r.jsx)(`div`,{className:`ui-di__row`,"data-gone":t.gone||void 0,inert:t.gone,children:(0,r.jsx)(`div`,{className:`ui-di__row-inner`,children:(0,r.jsxs)(`div`,{className:`ui-di__item`,"data-open":t.open||void 0,"data-answered":t.answered?!0:void 0,children:[t.open?(0,r.jsx)(`p`,{className:`ui-di__title`,children:e.title}):(0,r.jsx)(`button`,{type:`button`,className:`ui-di__title ui-di__title--folded`,onClick:()=>u(e.id,{open:!0}),children:e.title}),(0,r.jsx)(`div`,{className:`ui-di__body`,"data-open":t.open||void 0,children:(0,r.jsxs)(`div`,{className:`ui-di__body-inner`,children:[e.detail&&(0,r.jsx)(`p`,{className:`ui-di__detail`,children:e.detail}),(0,r.jsx)(`div`,{className:`ui-di__actions`,children:t.answered?(0,r.jsxs)(`span`,{className:`ui-di__done`,role:`status`,children:[(0,r.jsx)(o,{}),t.answered]}):(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(`button`,{type:`button`,className:`ui-di__btn ui-di__btn--primary`,onClick:()=>f(e,`primary`),children:e.primary}),(0,r.jsx)(`button`,{type:`button`,className:`ui-di__btn`,onClick:()=>f(e,`secondary`),children:e.secondary})]})})]})})]})})},e.id)}),(0,r.jsx)(`p`,{className:`ui-di__empty`,children:`Nothing waiting on you – new decisions show up here.`})]})]})]})}var a=()=>(0,r.jsxs)(`svg`,{viewBox:`0 0 16 16`,width:`16`,height:`16`,"aria-hidden":`true`,children:[(0,r.jsx)(`path`,{d:`M6.7 2.3a1.5 1.5 0 0 1 2.6 0l5.4 9.4A1.5 1.5 0 0 1 13.4 14H2.6a1.5 1.5 0 0 1-1.3-2.3Z`,fill:`currentColor`}),(0,r.jsx)(`path`,{d:`M8 5.6v3.6`,stroke:`#fff`,strokeWidth:`1.5`,strokeLinecap:`round`}),(0,r.jsx)(`circle`,{cx:`8`,cy:`11.4`,r:`0.85`,fill:`#fff`})]}),o=()=>(0,r.jsxs)(`svg`,{viewBox:`0 0 16 16`,width:`16`,height:`16`,"aria-hidden":`true`,children:[(0,r.jsx)(`circle`,{cx:`8`,cy:`8`,r:`7`,fill:`currentColor`}),(0,r.jsx)(`path`,{d:`m5 8.2 2 2 4-4.2`,fill:`none`,stroke:`#fff`,strokeWidth:`1.6`,strokeLinecap:`round`,strokeLinejoin:`round`})]}),s=`
 .ui-di {
-  --ui-di-tray: #ebf1f8;
+  --ui-di-tray: #ecf1f8;
   --ui-di-card: #ffffff;
-  --ui-di-line: #ebf1f8;
-  --ui-di-ink: #0a1829;
-  --ui-di-text: #2f4159;
-  --ui-di-muted: #8091a6;
-  --ui-di-faint: #a9b7c8;
+  --ui-di-line: #ecf1f8;
+  --ui-di-ink: #041632;
+  --ui-di-text: #274066;
+  --ui-di-muted: #8090a8;
+  --ui-di-faint: #aab6c8;
   --ui-di-alert: #e8590c;
   --ui-di-ok: #1f8a4c;
   --ui-di-ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -24,7 +24,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 }
 .ui-di *, .ui-di *::before, .ui-di *::after { box-sizing: border-box; }
 .ui-di button { margin: 0; font: inherit; cursor: pointer; }
-.ui-di button:focus-visible { outline: 2px solid #aa254f; outline-offset: 2px; }
+.ui-di button:focus-visible { outline: 2px solid #326eb6; outline-offset: 2px; }
 
 .ui-di__head {
   display: flex;
@@ -42,7 +42,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 .ui-di__card {
   overflow: hidden;
   background: var(--ui-di-card);
-  border: 1px solid #dee6f0;
+  border: 1px solid #dfe6ef;
   border-radius: 16px;
   box-shadow: 0 1px 2px rgba(26, 62, 112, 0.06);
 }
@@ -112,7 +112,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   border: 0;
   border-radius: 9px;
   background: #fff;
-  box-shadow: 0 0 0 1px #dee6f0, 0 1px 2px rgba(26, 62, 112, 0.04);
+  box-shadow: 0 0 0 1px #dfe6ef, 0 1px 2px rgba(26, 62, 112, 0.04);
   font-size: 13px !important;
   font-weight: 500;
   line-height: 20px;
@@ -122,11 +122,11 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 .ui-di__btn:hover { background: #f4f7fc; }
 .ui-di__btn:active { transform: scale(0.98); }
 .ui-di__btn--primary {
-  background: linear-gradient(#20334b, #102034);
-  box-shadow: 0 0 0 1px #030d1c, 0 2px 4px rgba(26, 62, 112, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  background: linear-gradient(#173159, #081e3f);
+  box-shadow: 0 0 0 1px #010c23, 0 2px 4px rgba(26, 62, 112, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   color: #fff;
 }
-.ui-di__btn--primary:hover { background: linear-gradient(#2a3c54, #15263c); }
+.ui-di__btn--primary:hover { background: linear-gradient(#213b61, #0c2448); }
 
 .ui-di__done {
   display: inline-flex;
@@ -160,13 +160,13 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-di {
-  --ui-di-tray: #091728;
-  --ui-di-card: #132439;
+  --ui-di-tray: #041531;
+  --ui-di-card: #0b2345;
   --ui-di-line: rgba(255, 255, 255, 0.08);
-  --ui-di-ink: #e7eef6;
-  --ui-di-text: #b9c5d6;
-  --ui-di-muted: #8091a6;
-  --ui-di-faint: #5b6d84;
+  --ui-di-ink: #e8eef6;
+  --ui-di-text: #bbc5d5;
+  --ui-di-muted: #8090a8;
+  --ui-di-faint: #596d8b;
   --ui-di-alert: #fb8a3c;
   --ui-di-ok: #3fbf74;
 }
@@ -175,15 +175,15 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   box-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
 }
 :where(.dark, [data-theme="dark"]) .ui-di__btn {
-  background: #192b42;
+  background: #0f2a50;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 22, 43, 0.4);
 }
-:where(.dark, [data-theme="dark"]) .ui-di__btn:hover { background: #20324a; }
+:where(.dark, [data-theme="dark"]) .ui-di__btn:hover { background: #163158; }
 /* The dark primary button inverts, like on the site */
 :where(.dark, [data-theme="dark"]) .ui-di__btn--primary {
-  background: linear-gradient(#f0f5fb, #dde5f0);
+  background: linear-gradient(#f1f5fa, #dee5ef);
   box-shadow: 0 0 0 1px rgba(0, 22, 43, 0.6), 0 2px 4px rgba(0, 22, 43, 0.3), inset 0 1px 0 #ffffff;
-  color: #061223;
+  color: #02112b;
 }
-:where(.dark, [data-theme="dark"]) .ui-di__btn--primary:hover { background: linear-gradient(#ffffff, #e6edf6); }
+:where(.dark, [data-theme="dark"]) .ui-di__btn--primary:hover { background: linear-gradient(#ffffff, #e7edf5); }
 `,c=[{id:`rollout`,title:`Roll out the new onboarding to everyone?`,detail:`Test won with +8% activation · 2 weeks of data`,primary:`Roll out`,secondary:`Keep testing`},{id:`renewal`,title:`Renew Figma for the design team?`,detail:`12 seats · $1,800 per year · renews in 5 days`,primary:`Renew`,secondary:`Change seats`}];function l(){let[e,t]=(0,n.useState)(0),[a,o]=(0,n.useState)(c.length);return(0,r.jsx)(`div`,{className:`decision-demo`,children:(0,r.jsx)(i,{decisions:c,onDecide:()=>{if(a>1)return o(a-1);window.setTimeout(()=>{o(c.length),t(e=>e+1)},3200)}},e)})}export{l as default};

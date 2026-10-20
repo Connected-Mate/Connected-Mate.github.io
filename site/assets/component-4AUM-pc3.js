@@ -141,11 +141,11 @@ const css = /* css */ \`
 /* Colors and motion as variables – override them on .ui-progress (see Theming in the docs) */
 .ui-progress {
   --ui-pg-card: #ffffff;
-  --ui-pg-line: #dee6f0;
-  --ui-pg-ink: #0a1829;
-  --ui-pg-muted: #96a5b8;
-  --ui-pg-ring: #8091a6;
-  --ui-pg-track: #ebf1f8;
+  --ui-pg-line: #dfe6ef;
+  --ui-pg-ink: #041632;
+  --ui-pg-muted: #96a4b9;
+  --ui-pg-ring: #8090a8;
+  --ui-pg-track: #ecf1f8;
   --ui-pg-hover: #f4f7fc;
   --ui-pg-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-pg-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -258,7 +258,7 @@ const css = /* css */ \`
   background: var(--ui-pg-hover);
 }
 .ui-progress__step:focus-visible {
-  outline: 2px solid rgba(10, 24, 41, 0.22);
+  outline: 2px solid rgba(4, 22, 50, 0.22);
   outline-offset: 0;
 }
 
@@ -376,22 +376,22 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-progress {
-  --ui-pg-card: #132439;
+  --ui-pg-card: #0b2345;
   --ui-pg-line: rgba(255, 255, 255, 0.08);
-  --ui-pg-ink: #e7eef6;
-  --ui-pg-muted: #8091a6;
-  --ui-pg-ring: #5b6d84;
+  --ui-pg-ink: #e8eef6;
+  --ui-pg-muted: #8090a8;
+  --ui-pg-ring: #596d8b;
   --ui-pg-track: rgba(255, 255, 255, 0.1);
-  --ui-pg-hover: #192b42;
+  --ui-pg-hover: #0f2a50;
   box-shadow:
     0 1px 2px rgba(0, 22, 43, 0.4),
     0 8px 24px rgba(0, 22, 43, 0.35);
 }
 /* The filled check is light in dark mode, so the tick turns dark */
-:where(.dark, [data-theme="dark"]) .ui-progress__check svg { stroke: #061223; }
+:where(.dark, [data-theme="dark"]) .ui-progress__check svg { stroke: #02112b; }
 :where(.dark, [data-theme="dark"]) .ui-progress__shine {
   background-image: linear-gradient(90deg, transparent 30%, rgba(255, 255, 255, 0.7) 50%, transparent 70%);
 }
-:where(.dark, [data-theme="dark"]) .ui-progress__step:focus-visible { outline-color: rgba(231, 238, 246, 0.3); }
+:where(.dark, [data-theme="dark"]) .ui-progress__step:focus-visible { outline-color: rgba(232, 238, 246, 0.3); }
 \`;
 `;export{e as default};

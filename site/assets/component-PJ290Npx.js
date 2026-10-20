@@ -42,12 +42,12 @@ export function EmptyCalendar({
             <stop offset="100%" stopColor="#f69eae" stopOpacity="0.25" />
           </linearGradient>
           <linearGradient id={\`\${id}-stroke\`} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop className="ui-ec-edge" offset="0%" stopColor="#e0e8f2" />
+            <stop className="ui-ec-edge" offset="0%" stopColor="#e1e7f1" />
             <stop offset="18%" stopColor="#ffb5bc" />
             <stop offset="40%" stopColor="#ffc5ab" />
             <stop offset="60%" stopColor="#f4b3be" />
             <stop offset="82%" stopColor="#f8adb9" />
-            <stop className="ui-ec-edge" offset="100%" stopColor="#e0e8f2" />
+            <stop className="ui-ec-edge" offset="100%" stopColor="#e1e7f1" />
           </linearGradient>
         </defs>
 
@@ -90,8 +90,8 @@ export function EmptyCalendar({
 function CalendarCard({ shadow }: { shadow: string }) {
   return (
     <>
-      <rect className="ui-ec-card" x="40" y="20" width="240" height="140" rx="10" fill="#FFFFFF" stroke="#e0e8f2" strokeWidth="0.5" filter={shadow} />
-      <text className="ui-ec-title" x="56" y="48" fontSize="13" fontWeight="500" fill="#7b8ca1">
+      <rect className="ui-ec-card" x="40" y="20" width="240" height="140" rx="10" fill="#FFFFFF" stroke="#e1e7f1" strokeWidth="0.5" filter={shadow} />
+      <text className="ui-ec-title" x="56" y="48" fontSize="13" fontWeight="500" fill="#7b8ba4">
         Calendar
       </text>
       <g transform="translate(218 34)">
@@ -100,17 +100,17 @@ function CalendarCard({ shadow }: { shadow: string }) {
           EMPTY
         </text>
       </g>
-      <rect className="ui-ec-bar" x="56" y="64" width="208" height="7" rx="2" fill="#ecf1f9" />
-      <rect className="ui-ec-bar" x="56" y="74" width="208" height="7" rx="2" fill="#ecf1f9" />
-      <rect className="ui-ec-bar" x="56" y="84" width="168" height="7" rx="2" fill="#ecf1f9" />
+      <rect className="ui-ec-bar" x="56" y="64" width="208" height="7" rx="2" fill="#edf1f8" />
+      <rect className="ui-ec-bar" x="56" y="74" width="208" height="7" rx="2" fill="#edf1f8" />
+      <rect className="ui-ec-bar" x="56" y="84" width="168" height="7" rx="2" fill="#edf1f8" />
       <g transform="translate(56 104)">
-        <rect className="ui-ec-btn" width="208" height="40" rx="8" fill="#f0f5fb" stroke="#e0e8f2" strokeWidth="0.5" />
+        <rect className="ui-ec-btn" width="208" height="40" rx="8" fill="#f1f5fa" stroke="#e1e7f1" strokeWidth="0.5" />
         {/* "Not available" icon + label, centered together */}
         <g
           className="ui-ec-btn-ink"
           transform="translate(64 14)"
           fill="none"
-          stroke="#8d9db1"
+          stroke="#8d9cb2"
           strokeWidth="1.3"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -118,7 +118,7 @@ function CalendarCard({ shadow }: { shadow: string }) {
           <circle cx="6" cy="6" r="5" />
           <line x1="2.5" y1="9.5" x2="9.5" y2="2.5" />
         </g>
-        <text className="ui-ec-btn-label" x="84" y="24" fontSize="10" fontWeight="500" fill="#8d9db1">
+        <text className="ui-ec-btn-label" x="84" y="24" fontSize="10" fontWeight="500" fill="#8d9cb2">
           Join meeting
         </text>
       </g>
@@ -147,8 +147,8 @@ const css = /* css */ \`
 /* Placeholder lines shimmer softly */
 .ui-ec-bar { animation: ui-ec-shimmer 2.4s ease-in-out infinite; }
 @keyframes ui-ec-shimmer {
-  0%, 100% { fill: #ecf1f9; }
-  50% { fill: #d9e1ed; }
+  0%, 100% { fill: #edf1f8; }
+  50% { fill: #dae1ec; }
 }
 
 /* The glow under the front card breathes */
@@ -185,21 +185,21 @@ const css = /* css */ \`
 }
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
-:where(.dark, [data-theme="dark"]) .ui-ec-card { fill: #132439; stroke: rgba(255, 255, 255, 0.08); }
+:where(.dark, [data-theme="dark"]) .ui-ec-card { fill: #0b2345; stroke: rgba(255, 255, 255, 0.08); }
 :where(.dark, [data-theme="dark"]) .ui-ec-drop { flood-opacity: 0.4; }
-:where(.dark, [data-theme="dark"]) .ui-ec-edge { stop-color: #293c54; }
-:where(.dark, [data-theme="dark"]) .ui-ec-title { fill: #8091a6; }
+:where(.dark, [data-theme="dark"]) .ui-ec-edge { stop-color: #213b61; }
+:where(.dark, [data-theme="dark"]) .ui-ec-title { fill: #8090a8; }
 :where(.dark, [data-theme="dark"]) .ui-ec-badge { fill: rgba(250, 176, 130, 0.16); }
-:where(.dark, [data-theme="dark"]) .ui-ec-bar { fill: #192b42; }
+:where(.dark, [data-theme="dark"]) .ui-ec-bar { fill: #0f2a50; }
 @media (prefers-reduced-motion: no-preference) {
   :where(.dark, [data-theme="dark"]) .ui-ec-bar { animation-name: ui-ec-shimmer-dark; }
 }
-:where(.dark, [data-theme="dark"]) .ui-ec-btn { fill: #192b42; stroke: rgba(255, 255, 255, 0.08); }
-:where(.dark, [data-theme="dark"]) .ui-ec-btn-ink { stroke: #5b6d84; }
-:where(.dark, [data-theme="dark"]) .ui-ec-btn-label { fill: #5b6d84; }
+:where(.dark, [data-theme="dark"]) .ui-ec-btn { fill: #0f2a50; stroke: rgba(255, 255, 255, 0.08); }
+:where(.dark, [data-theme="dark"]) .ui-ec-btn-ink { stroke: #596d8b; }
+:where(.dark, [data-theme="dark"]) .ui-ec-btn-label { fill: #596d8b; }
 @keyframes ui-ec-shimmer-dark {
-  0%, 100% { fill: #192b42; }
-  50% { fill: #25384f; }
+  0%, 100% { fill: #0f2a50; }
+  50% { fill: #1c365d; }
 }
 \`;
 `;export{e as default};

@@ -13,9 +13,9 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-fmc-fill-strong: rgba(26, 62, 112, 0.1);
   --ui-fmc-wash: rgba(26, 62, 112, 0.03);
   --ui-fmc-box-ring: rgba(26, 62, 112, 0.22);
-  --ui-fmc-accent: rgba(155, 16, 66, 0.765);
+  --ui-fmc-accent: rgba(35, 95, 166, 0.765);
   --ui-fmc-check: #ffffff;
-  --ui-fmc-focus: rgba(155, 16, 66, 0.35);
+  --ui-fmc-focus: rgba(35, 95, 166, 0.35);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
   --ui-fmc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
   --ui-fmc-ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -243,7 +243,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-fmc {
-  --ui-fmc-card: #0e1d30;
+  --ui-fmc-card: #061b3a;
   --ui-fmc-ink: rgba(255, 255, 255, 0.9);
   --ui-fmc-strong: #ffffff;
   --ui-fmc-text: rgba(255, 255, 255, 0.62);
@@ -255,9 +255,9 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-fmc-fill-strong: rgba(255, 255, 255, 0.13);
   --ui-fmc-wash: rgba(255, 255, 255, 0.04);
   --ui-fmc-box-ring: rgba(255, 255, 255, 0.28);
-  --ui-fmc-accent: #c13d61;
+  --ui-fmc-accent: #4883ce;
   --ui-fmc-check: #ffffff;
-  --ui-fmc-focus: rgba(193, 61, 97, 0.5);
+  --ui-fmc-focus: rgba(72, 131, 206, 0.5);
   --ui-fmc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
 }
 `,c=[{id:`stage`,label:`Stage`,options:[{id:`new`,label:`New lead`},{id:`qualified`,label:`Qualified`},{id:`proposal`,label:`Proposal sent`},{id:`negotiation`,label:`Negotiation`}]},{id:`value`,label:`Deal size`,chipPrefix:`Deal: `,options:[{id:`s`,label:`Under $5k`},{id:`m`,label:`$5k–20k`},{id:`l`,label:`$20k–50k`},{id:`xl`,label:`Over $50k`}]},{id:`region`,label:`Region`,options:[{id:`dach`,label:`DACH`},{id:`nordics`,label:`Nordics`},{id:`uk`,label:`UK & Ireland`},{id:`na`,label:`North America`},{id:`apac`,label:`APAC`}]}];function l(){return(0,r.jsx)(`div`,{className:`filter-menu-demo`,children:(0,r.jsx)(a,{groups:c,defaultValue:{stage:[`qualified`],value:[`m`],region:[`dach`]}})})}export{l as default};

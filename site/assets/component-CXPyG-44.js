@@ -366,11 +366,11 @@ const css = /* css */ \`
   --ui-lm-g: var(--ui-lm-gap, 56px);
   --ui-lm-row-gap: 20px;
   --ui-lm-fade: min(14%, 120px);
-  --ui-lm-muted: #8c9cb0;
-  --ui-lm-ink: #0a1829;
-  --ui-lm-label: #8091a6;
+  --ui-lm-muted: #8c9bb2;
+  --ui-lm-ink: #041632;
+  --ui-lm-label: #8090a8;
   --ui-lm-dim: 0.75;
-  --ui-lm-focus: #aa254f;
+  --ui-lm-focus: #326eb6;
   --ui-lm-ease: cubic-bezier(0.22, 1, 0.36, 1);
   container-type: inline-size;
   display: grid;
@@ -502,10 +502,10 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-lm {
-  --ui-lm-muted: #6b7d93;
-  --ui-lm-ink: #e7eef6;
-  --ui-lm-label: #7d8da3;
-  --ui-lm-focus: #c54064;
+  --ui-lm-muted: #6a7c97;
+  --ui-lm-ink: #e8eef6;
+  --ui-lm-label: #7d8da5;
+  --ui-lm-focus: #4b87d1;
 }
 \`;
 `;export{e as default};

@@ -254,9 +254,9 @@ export function AssistantMark() {
     <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
       <defs>
         <linearGradient id={\`\${id}-fill\`} x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#c94d6c" />
-          <stop offset="0.5" stopColor="#aa254f" />
-          <stop offset="1" stopColor="#b22d55" />
+          <stop offset="0" stopColor="#528eda" />
+          <stop offset="0.5" stopColor="#326eb6" />
+          <stop offset="1" stopColor="#9f1746" />
         </linearGradient>
       </defs>
       <circle cx="12" cy="12" r="12" fill={\`url(#\${id}-fill)\`} />
@@ -314,14 +314,14 @@ const css = /* css */ \`
   --ui-ctc-fill: rgba(26, 62, 112, 0.06);
   --ui-ctc-wash: rgba(26, 62, 112, 0.03);
   --ui-ctc-solid: rgba(0, 22, 43, 0.88);
-  --ui-ctc-on-solid: #fafcff;
-  --ui-ctc-accent: rgba(155, 16, 66, 0.765);
+  --ui-ctc-on-solid: #fbfcfe;
+  --ui-ctc-accent: rgba(35, 95, 166, 0.765);
   --ui-ctc-ok: #1a9a52;
   --ui-ctc-shine: rgba(255, 255, 255, 0.82);
   --ui-ctc-avatar-ring: rgba(26, 62, 112, 0.08);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
   --ui-ctc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
-  --ui-ctc-focus: rgba(155, 16, 66, 0.35);
+  --ui-ctc-focus: rgba(35, 95, 166, 0.35);
   --ui-ctc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
   container-type: inline-size;
@@ -592,7 +592,7 @@ img.ui-ctc__avatar { box-shadow: 0 0 0 0.5px var(--ui-ctc-avatar-ring); }
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-ctc {
-  --ui-ctc-card: #0e1d30;
+  --ui-ctc-card: #061b3a;
   --ui-ctc-strong: #ffffff;
   --ui-ctc-ink: rgba(255, 255, 255, 0.9);
   --ui-ctc-text: rgba(255, 255, 255, 0.62);
@@ -604,13 +604,13 @@ img.ui-ctc__avatar { box-shadow: 0 0 0 0.5px var(--ui-ctc-avatar-ring); }
   --ui-ctc-fill: rgba(255, 255, 255, 0.08);
   --ui-ctc-wash: rgba(255, 255, 255, 0.04);
   --ui-ctc-solid: rgba(255, 255, 255, 0.92);
-  --ui-ctc-on-solid: #091728;
-  --ui-ctc-accent: #c13d61;
+  --ui-ctc-on-solid: #041531;
+  --ui-ctc-accent: #4883ce;
   --ui-ctc-ok: #3ec27a;
   --ui-ctc-shine: #ffffff;
   --ui-ctc-avatar-ring: rgba(255, 255, 255, 0.1);
   --ui-ctc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
-  --ui-ctc-focus: rgba(193, 61, 97, 0.5);
+  --ui-ctc-focus: rgba(72, 131, 206, 0.5);
 }
 \`;
 `;export{e as default};

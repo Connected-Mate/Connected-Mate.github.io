@@ -104,12 +104,12 @@ const CheckIcon = () => (
 
 const css = /* css */ \`
 .ui-tp {
-  --ui-tp-tray: #ebf1f8;
+  --ui-tp-tray: #ecf1f8;
   --ui-tp-card: #ffffff;
-  --ui-tp-line: #e6edf6;
-  --ui-tp-ink: #0a1829;
-  --ui-tp-muted: #63758c;
-  --ui-tp-ok: #aa254f;
+  --ui-tp-line: #e7edf5;
+  --ui-tp-ink: #041632;
+  --ui-tp-muted: #617491;
+  --ui-tp-ok: #326eb6;
   /* Height of the tip list before it scrolls */
   --ui-tp-max-height: 420px;
   --ui-tp-ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -155,7 +155,7 @@ const css = /* css */ \`
   overflow-y: auto;
   scrollbar-width: thin;
   background: var(--ui-tp-card);
-  border: 1px solid #dee6f0;
+  border: 1px solid #dfe6ef;
   border-radius: 16px;
   box-shadow: 0 1px 2px rgba(26, 62, 112, 0.06);
 }
@@ -180,7 +180,7 @@ const css = /* css */ \`
   animation: ui-tp-in 480ms var(--ui-tp-ease) both;
   transition: background-color 260ms ease, border-color 260ms ease;
 }
-.ui-tp__tip[data-done] { background: #f7fafe; }
+.ui-tp__tip[data-done] { background: #f8fafe; }
 .ui-tp__tip-title {
   margin: 0;
   font-size: 14px;
@@ -202,7 +202,7 @@ const css = /* css */ \`
   padding: 0 5px;
   border-radius: 6px;
   background: #fff;
-  box-shadow: 0 0 0 1px #dee6f0, 0 1px 0 #dee6f0;
+  box-shadow: 0 0 0 1px #dfe6ef, 0 1px 0 #dfe6ef;
   font-family: inherit;
   font-size: 11px;
   font-weight: 500;
@@ -217,7 +217,7 @@ const css = /* css */ \`
   border: 0;
   border-radius: 9px;
   background: #fff;
-  box-shadow: 0 0 0 1px #dee6f0, 0 1px 2px rgba(26, 62, 112, 0.04);
+  box-shadow: 0 0 0 1px #dfe6ef, 0 1px 2px rgba(26, 62, 112, 0.04);
   font-size: 13px !important;
   font-weight: 500;
   line-height: 20px;
@@ -227,11 +227,11 @@ const css = /* css */ \`
 .ui-tp__btn:hover { background: #f4f7fc; }
 .ui-tp__btn:active { transform: scale(0.98); }
 .ui-tp__btn--primary {
-  background: linear-gradient(#20334b, #102034);
-  box-shadow: 0 0 0 1px #030d1c, 0 2px 4px rgba(26, 62, 112, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  background: linear-gradient(#173159, #081e3f);
+  box-shadow: 0 0 0 1px #010c23, 0 2px 4px rgba(26, 62, 112, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   color: #fff;
 }
-.ui-tp__btn--primary:hover { background: linear-gradient(#2a3c54, #15263c); }
+.ui-tp__btn--primary:hover { background: linear-gradient(#213b61, #0c2448); }
 
 .ui-tp__done {
   display: inline-flex;
@@ -259,34 +259,34 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-tp {
-  --ui-tp-tray: #091728;
-  --ui-tp-card: #132439;
+  --ui-tp-tray: #041531;
+  --ui-tp-card: #0b2345;
   --ui-tp-line: rgba(255, 255, 255, 0.08);
-  --ui-tp-ink: #e7eef6;
-  --ui-tp-muted: #8091a6;
-  --ui-tp-ok: #c84969;
+  --ui-tp-ink: #e8eef6;
+  --ui-tp-muted: #8090a8;
+  --ui-tp-ok: #508cd7;
 }
 :where(.dark, [data-theme="dark"]) .ui-tp__card {
   border-color: rgba(255, 255, 255, 0.08);
   box-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
   color-scheme: dark;
 }
-:where(.dark, [data-theme="dark"]) .ui-tp__tip[data-done] { background: #192b42; }
+:where(.dark, [data-theme="dark"]) .ui-tp__tip[data-done] { background: #0f2a50; }
 :where(.dark, [data-theme="dark"]) .ui-tp__kbd {
-  background: #192b42;
+  background: #0f2a50;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 :where(.dark, [data-theme="dark"]) .ui-tp__btn {
-  background: #192b42;
+  background: #0f2a50;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 22, 43, 0.4);
 }
-:where(.dark, [data-theme="dark"]) .ui-tp__btn:hover { background: #20324a; }
+:where(.dark, [data-theme="dark"]) .ui-tp__btn:hover { background: #163158; }
 /* The dark primary button inverts, like on the site */
 :where(.dark, [data-theme="dark"]) .ui-tp__btn--primary {
-  background: linear-gradient(#f0f5fb, #dde5f0);
+  background: linear-gradient(#f1f5fa, #dee5ef);
   box-shadow: 0 0 0 1px rgba(0, 22, 43, 0.6), 0 2px 4px rgba(0, 22, 43, 0.3), inset 0 1px 0 #ffffff;
-  color: #061223;
+  color: #02112b;
 }
-:where(.dark, [data-theme="dark"]) .ui-tp__btn--primary:hover { background: linear-gradient(#ffffff, #e6edf6); }
+:where(.dark, [data-theme="dark"]) .ui-tp__btn--primary:hover { background: linear-gradient(#ffffff, #e7edf5); }
 \`;
 `;export{e as default};

@@ -263,20 +263,20 @@ function useSmoothHeight(inner: RefObject<HTMLElement | null>) {
 
 const css = /* css */ \`
 .ui-fm {
-  --ui-fm-tray: #ebf1f8;
+  --ui-fm-tray: #ecf1f8;
   --ui-fm-card: #ffffff;
-  --ui-fm-card-line: #dee6f0;
-  --ui-fm-ink: #0a1829;
-  --ui-fm-text: #2f4159;
-  --ui-fm-muted: #8091a6;
-  --ui-fm-chip: #eff4fa;
-  --ui-fm-chip-hover: #e5ecf5;
-  --ui-fm-box: #ebf1f8;
-  --ui-fm-box-line: #dce4ef;
+  --ui-fm-card-line: #dfe6ef;
+  --ui-fm-ink: #041632;
+  --ui-fm-text: #274066;
+  --ui-fm-muted: #8090a8;
+  --ui-fm-chip: #eff3f9;
+  --ui-fm-chip-hover: #e6ecf4;
+  --ui-fm-box: #ecf1f8;
+  --ui-fm-box-line: #dde4ee;
   --ui-fm-check: #ffffff;
   --ui-fm-row-hover: #f4f7fc;
   --ui-fm-kbd: #ffffff;
-  --ui-fm-focus: #aa254f;
+  --ui-fm-focus: #326eb6;
   --ui-fm-shadow: 0 1px 2px rgba(26, 62, 112, 0.06);
   --ui-fm-ease: cubic-bezier(0.22, 1, 0.36, 1);
   width: 100%;
@@ -472,20 +472,20 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-fm {
-  --ui-fm-tray: #091728;
-  --ui-fm-card: #132439;
+  --ui-fm-tray: #041531;
+  --ui-fm-card: #0b2345;
   --ui-fm-card-line: rgba(255, 255, 255, 0.08);
-  --ui-fm-ink: #e7eef6;
-  --ui-fm-text: #b9c5d6;
-  --ui-fm-muted: #8091a6;
-  --ui-fm-chip: #192b42;
-  --ui-fm-chip-hover: #20324a;
-  --ui-fm-box: #192b42;
+  --ui-fm-ink: #e8eef6;
+  --ui-fm-text: #bbc5d5;
+  --ui-fm-muted: #8090a8;
+  --ui-fm-chip: #0f2a50;
+  --ui-fm-chip-hover: #163158;
+  --ui-fm-box: #0f2a50;
   --ui-fm-box-line: rgba(255, 255, 255, 0.1);
-  --ui-fm-check: #061223;
+  --ui-fm-check: #02112b;
   --ui-fm-row-hover: rgba(255, 255, 255, 0.05);
-  --ui-fm-kbd: #132439;
-  --ui-fm-focus: #c84969;
+  --ui-fm-kbd: #0b2345;
+  --ui-fm-focus: #508cd7;
   --ui-fm-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
 }
 \`;

@@ -159,11 +159,11 @@ const css = /* css */ \`
   --ui-dic-ok-bg: rgba(26, 154, 82, 0.08);
   --ui-dic-solid: rgba(0, 22, 43, 0.88);
   --ui-dic-solid-hover: rgba(0, 22, 43, 0.8);
-  --ui-dic-on-solid: #fafcff;
+  --ui-dic-on-solid: #fbfcfe;
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
   --ui-dic-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
   --ui-dic-shadow-hover: 0 0 0 0.5px rgba(26, 62, 112, 0.1), 0 1px 1px -1px rgba(26, 62, 112, 0.12), 0 1px 3px 0 rgba(26, 62, 112, 0.07);
-  --ui-dic-focus: rgba(155, 16, 66, 0.35);
+  --ui-dic-focus: rgba(35, 95, 166, 0.35);
   --ui-dic-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
   container-type: inline-size;
@@ -344,7 +344,7 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-dic {
-  --ui-dic-card: #0e1d30;
+  --ui-dic-card: #061b3a;
   --ui-dic-strong: #ffffff;
   --ui-dic-ink: rgba(255, 255, 255, 0.9);
   --ui-dic-text: rgba(255, 255, 255, 0.62);
@@ -358,10 +358,10 @@ const css = /* css */ \`
   /* The primary inverts: a light chip with dark text */
   --ui-dic-solid: rgba(255, 255, 255, 0.9);
   --ui-dic-solid-hover: rgba(255, 255, 255, 0.82);
-  --ui-dic-on-solid: #091728;
+  --ui-dic-on-solid: #041531;
   --ui-dic-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
   --ui-dic-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
-  --ui-dic-focus: rgba(193, 61, 97, 0.5);
+  --ui-dic-focus: rgba(72, 131, 206, 0.5);
 }
 \`;
 `;export{e as default};

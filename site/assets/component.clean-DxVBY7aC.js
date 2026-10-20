@@ -448,8 +448,8 @@ const css = /* css */ \`
   --ui-otpc-fill: rgba(26, 62, 112, 0.06);
   --ui-otpc-wash: rgba(26, 62, 112, 0.03);
   --ui-otpc-shine: rgba(255, 255, 255, 0.82);
-  --ui-otpc-accent: rgba(155, 16, 66, 0.765);
-  --ui-otpc-focus: rgba(155, 16, 66, 0.35);
+  --ui-otpc-accent: rgba(35, 95, 166, 0.765);
+  --ui-otpc-focus: rgba(35, 95, 166, 0.35);
   --ui-otpc-danger: #e5484d;
   --ui-otpc-success: #1a9a52;
   --ui-otpc-danger-tint: rgba(229, 72, 77, 0.08);
@@ -696,7 +696,7 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-otpc {
-  --ui-otpc-card: #0e1d30;
+  --ui-otpc-card: #061b3a;
   --ui-otpc-ink: rgba(255, 255, 255, 0.9);
   --ui-otpc-strong: #ffffff;
   --ui-otpc-text: rgba(255, 255, 255, 0.62);
@@ -707,8 +707,8 @@ const css = /* css */ \`
   --ui-otpc-fill: rgba(255, 255, 255, 0.08);
   --ui-otpc-wash: rgba(255, 255, 255, 0.03);
   --ui-otpc-shine: rgba(255, 255, 255, 0.1);
-  --ui-otpc-accent: #c13d61;
-  --ui-otpc-focus: rgba(193, 61, 97, 0.5);
+  --ui-otpc-accent: #4883ce;
+  --ui-otpc-focus: rgba(72, 131, 206, 0.5);
   --ui-otpc-danger: #ff6369;
   --ui-otpc-success: #3ec27a;
   --ui-otpc-danger-tint: rgba(255, 99, 105, 0.14);

@@ -79,20 +79,20 @@ export function TabOverload({
             </g>
             <g className={\`ui-to-tab ui-to-tab-\${n}\`} transform={\`translate(\${x} \${y})\`}>
               {/* Outer gray frame, reaching well past the edges */}
-              <rect className="ui-to-frame" width="380" height="300" rx="6" fill="#f1f5fb" stroke="#e0e8f2" strokeWidth="0.7" />
-              <circle className="ui-to-dot" cx="14" cy="14" r="3" fill="#c1cddd" />
-              <circle className="ui-to-dot" cx="24" cy="14" r="3" fill="#c1cddd" />
-              <circle className="ui-to-dot" cx="34" cy="14" r="3" fill="#c1cddd" />
-              <rect className="ui-to-page" x="4" y="24" width="372" height="272" rx="5" fill="#FFFFFF" stroke="#e0e8f2" strokeWidth="0.7" />
+              <rect className="ui-to-frame" width="380" height="300" rx="6" fill="#f2f5fb" stroke="#e1e7f1" strokeWidth="0.7" />
+              <circle className="ui-to-dot" cx="14" cy="14" r="3" fill="#c3cddb" />
+              <circle className="ui-to-dot" cx="24" cy="14" r="3" fill="#c3cddb" />
+              <circle className="ui-to-dot" cx="34" cy="14" r="3" fill="#c3cddb" />
+              <rect className="ui-to-page" x="4" y="24" width="372" height="272" rx="5" fill="#FFFFFF" stroke="#e1e7f1" strokeWidth="0.7" />
             </g>
             <g className={\`ui-to-content ui-to-content-\${n}\`} transform={\`translate(\${x} \${y})\`}>
-              <rect className="ui-to-bar" x="12" y="36" width="30" height="30" rx="4" fill="#ecf1f9" />
-              <rect className="ui-to-bar" x="52" y="38" width="100" height="6" rx="2" fill="#ecf1f9" />
-              <rect className="ui-to-bar" x="52" y="46" width="100" height="6" rx="2" fill="#ecf1f9" />
-              <rect className="ui-to-bar" x="52" y="54" width="35" height="6" rx="2" fill="#ecf1f9" />
-              <rect className="ui-to-bar" x="12" y="72" width="140" height="6" rx="2" fill="#ecf1f9" />
-              <rect className="ui-to-bar" x="12" y="80" width="140" height="6" rx="2" fill="#ecf1f9" />
-              <rect className="ui-to-bar" x="12" y="88" width="55" height="6" rx="2" fill="#ecf1f9" />
+              <rect className="ui-to-bar" x="12" y="36" width="30" height="30" rx="4" fill="#edf1f8" />
+              <rect className="ui-to-bar" x="52" y="38" width="100" height="6" rx="2" fill="#edf1f8" />
+              <rect className="ui-to-bar" x="52" y="46" width="100" height="6" rx="2" fill="#edf1f8" />
+              <rect className="ui-to-bar" x="52" y="54" width="35" height="6" rx="2" fill="#edf1f8" />
+              <rect className="ui-to-bar" x="12" y="72" width="140" height="6" rx="2" fill="#edf1f8" />
+              <rect className="ui-to-bar" x="12" y="80" width="140" height="6" rx="2" fill="#edf1f8" />
+              <rect className="ui-to-bar" x="12" y="88" width="55" height="6" rx="2" fill="#edf1f8" />
             </g>
           </g>
         ))}
@@ -145,8 +145,8 @@ const css = /* css */ \`
 /* Placeholder blocks shimmer softly */
 .ui-to-bar { animation: ui-to-shimmer 2.4s ease-in-out infinite; }
 @keyframes ui-to-shimmer {
-  0%, 100% { fill: #ecf1f9; }
-  50% { fill: #d9e1ed; }
+  0%, 100% { fill: #edf1f8; }
+  50% { fill: #dae1ec; }
 }
 
 /* The highlight follows the hovered window; the front window is active by default */
@@ -182,16 +182,16 @@ const css = /* css */ \`
 }
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
-:where(.dark, [data-theme="dark"]) .ui-to-frame { fill: #0d1c2f; stroke: rgba(255, 255, 255, 0.1); }
-:where(.dark, [data-theme="dark"]) .ui-to-dot { fill: #293c54; }
-:where(.dark, [data-theme="dark"]) .ui-to-page { fill: #132439; stroke: rgba(255, 255, 255, 0.08); }
-:where(.dark, [data-theme="dark"]) .ui-to-bar { fill: #1d2f47; }
+:where(.dark, [data-theme="dark"]) .ui-to-frame { fill: #061a39; stroke: rgba(255, 255, 255, 0.1); }
+:where(.dark, [data-theme="dark"]) .ui-to-dot { fill: #213b61; }
+:where(.dark, [data-theme="dark"]) .ui-to-page { fill: #0b2345; stroke: rgba(255, 255, 255, 0.08); }
+:where(.dark, [data-theme="dark"]) .ui-to-bar { fill: #122e56; }
 @media (prefers-reduced-motion: no-preference) {
   :where(.dark, [data-theme="dark"]) .ui-to-bar { animation-name: ui-to-shimmer-dark; }
 }
 @keyframes ui-to-shimmer-dark {
-  0%, 100% { fill: #1d2f47; }
-  50% { fill: #293c54; }
+  0%, 100% { fill: #122e56; }
+  50% { fill: #213b61; }
 }
 \`;
 `;export{e as default};

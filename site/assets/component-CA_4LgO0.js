@@ -1,24 +1,24 @@
 import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js";var n=e(),r=t();function i({name:e,summary:t,icon:i,status:a,args:s,result:m,error:h,startedAt:g,duration:_,defaultOpen:y=!1,open:b,onOpenChange:x,openOnError:S=!0,onRetry:C,maxCodeHeight:w=220,className:T}){let E=(0,n.useId)(),[D,O]=(0,n.useState)(y),k=b??D,A=e=>{b===void 0&&O(e),x?.(e)},[j,M]=(0,n.useState)(a),[N,P]=(0,n.useState)(!1);a!==j&&(M(a),b===void 0&&S&&(a===`error`&&!D?(O(!0),P(!0)):j===`error`&&N&&(O(!1),P(!1))));let F=f(a===`running`,g,!1),I=a===`running`?F??0:_??F,L=a===`running`?`${e} running`:a===`success`?`${e} finished`:`${e} failed${h?`: ${h}`:``}`;return(0,r.jsxs)(`div`,{className:[`ui-tc`,T].filter(Boolean).join(` `),"data-status":a,"data-open":k||void 0,children:[(0,r.jsx)(`style`,{href:`ui-tool-call`,precedence:`default`,children:v}),(0,r.jsx)(`span`,{className:`ui-tc-sr`,role:`status`,"aria-live":`polite`,children:L}),(0,r.jsxs)(`button`,{type:`button`,className:`ui-tc__head`,"aria-expanded":k,"aria-controls":`${E}-body`,onClick:()=>{P(!1),A(!k)},children:[(0,r.jsx)(`span`,{className:`ui-tc__icon`,"aria-hidden":`true`,children:i??(0,r.jsx)(d,{})}),(0,r.jsxs)(`span`,{className:`ui-tc__main`,children:[(0,r.jsx)(`code`,{className:`ui-tc__name`,children:e}),t!=null&&(0,r.jsx)(`span`,{className:`ui-tc__summary`,title:typeof t==`string`?t:void 0,children:t})]}),(0,r.jsxs)(`span`,{className:`ui-tc__status`,children:[a===`running`&&(0,r.jsx)(c,{}),a===`success`&&(0,r.jsx)(`svg`,{className:`ui-tc__ok`,viewBox:`0 0 16 16`,"aria-hidden":`true`,children:(0,r.jsx)(`path`,{d:`M3.5 8.4 6.6 11.3 12.5 4.9`,pathLength:1})}),a===`error`&&(0,r.jsx)(l,{}),(0,r.jsx)(`span`,{className:`ui-tc__time`,children:a===`error`?`Failed`:I==null?null:p(I,a===`running`)})]},a),(0,r.jsx)(u,{})]}),(0,r.jsx)(`div`,{className:`ui-tc__body`,id:`${E}-body`,inert:!k,children:(0,r.jsx)(`div`,{className:`ui-tc__clip`,children:(0,r.jsxs)(`div`,{className:`ui-tc__sections`,children:[a===`error`&&(0,r.jsxs)(`div`,{className:`ui-tc__error`,children:[(0,r.jsx)(l,{}),(0,r.jsx)(`p`,{className:`ui-tc__error-text`,children:h??`The tool call failed.`}),C&&(0,r.jsxs)(`button`,{type:`button`,className:`ui-tc__retry`,onClick:C,children:[(0,r.jsxs)(`svg`,{viewBox:`0 0 16 16`,"aria-hidden":`true`,children:[(0,r.jsx)(`path`,{d:`M2.75 8a5.25 5.25 0 1 0 1.6-3.77`}),(0,r.jsx)(`path`,{d:`M2.5 2.5v2.75h2.75`})]}),`Retry`]})]}),s!==void 0&&(0,r.jsx)(o,{label:`Arguments`,value:s,cap:w}),m===void 0?a===`running`?(0,r.jsxs)(`div`,{className:`ui-tc__section`,children:[(0,r.jsx)(`div`,{className:`ui-tc__section-head`,children:(0,r.jsx)(`span`,{className:`ui-tc__label`,children:`Result`})}),(0,r.jsx)(`p`,{className:`ui-tc__pending`,children:`Waiting for result…`})]}):null:(0,r.jsx)(o,{label:`Result`,value:m,cap:w}),s===void 0&&m===void 0&&a===`success`&&(0,r.jsx)(`p`,{className:`ui-tc__pending`,children:`No arguments or result.`})]})})})]})}function a({children:e,label:t,runningLabel:i=`Using tools…`,duration:a,defaultOpen:o=!1,open:s,onOpenChange:c,className:l}){let m=(0,n.useId)(),[h,g]=(0,n.useState)(o),_=s??h,y=n.Children.toArray(e).filter(n.isValidElement).map(e=>e.props),b=y.some(e=>e.status===`running`),x=y.filter(e=>e.status===`error`).length,S=f(b,void 0,!0),C=y.length&&y.every(e=>e.duration!=null)?y.reduce((e,t)=>e+(t.duration??0),0):null,w=b?S:a??C??S,T=`Used ${y.length} ${y.length===1?`tool`:`tools`}`,E=b?i:t??T,D=y.slice(-3);return(0,r.jsxs)(`div`,{className:[`ui-tc-group`,l].filter(Boolean).join(` `),"data-running":b||void 0,"data-open":_||void 0,children:[(0,r.jsx)(`style`,{href:`ui-tool-call`,precedence:`default`,children:v}),(0,r.jsx)(`span`,{className:`ui-tc-sr`,role:`status`,"aria-live":`polite`,children:b?i:`${T}${x?`, ${x} failed`:``}`}),(0,r.jsxs)(`button`,{type:`button`,className:`ui-tc-group__head`,"aria-expanded":_,"aria-controls":`${m}-list`,onClick:()=>{s===void 0&&g(!_),c?.(!_)},children:[(0,r.jsx)(`span`,{className:`ui-tc-group__stack`,"aria-hidden":`true`,children:D.map((e,t)=>(0,r.jsx)(`span`,{className:`ui-tc__icon`,children:e.icon??(0,r.jsx)(d,{})},y.length-D.length+t))}),(0,r.jsxs)(`span`,{className:`ui-tc-group__title`,children:[(0,r.jsx)(`span`,{className:b?`ui-tc-group__label ui-tc__shine`:`ui-tc-group__label`,"data-text":E,children:E}),!b&&x>0&&(0,r.jsxs)(`span`,{className:`ui-tc-group__failed`,children:[`· `,x,` failed`]}),w!=null&&(0,r.jsxs)(`span`,{className:`ui-tc-group__time`,children:[`· `,p(w,b)]})]},b?`busy`:`done`),(0,r.jsx)(u,{})]}),(0,r.jsx)(`div`,{className:`ui-tc__body`,id:`${m}-list`,inert:!_,children:(0,r.jsx)(`div`,{className:`ui-tc__clip`,children:(0,r.jsx)(`div`,{className:`ui-tc-group__list`,children:e})})})]})}function o({label:e,value:t,cap:i}){let{text:a,json:o}=m(t),c=(0,n.useRef)(null),[l,u]=(0,n.useState)(!1),[d,f]=(0,n.useState)(0);(0,n.useLayoutEffect)(()=>{let e=c.current,t=e?.firstElementChild;if(!e||!t)return;let n=()=>f(e.scrollHeight);n();let r=new ResizeObserver(n);return r.observe(t),()=>r.disconnect()},[a]);let p=d>i+24;return(0,r.jsxs)(`div`,{className:`ui-tc__section`,children:[(0,r.jsxs)(`div`,{className:`ui-tc__section-head`,children:[(0,r.jsx)(`span`,{className:`ui-tc__label`,children:e}),(0,r.jsx)(s,{text:a,label:e.toLowerCase()})]}),(0,r.jsx)(`pre`,{ref:c,className:`ui-tc__code`,"data-capped":p&&!l||void 0,style:p?{maxHeight:l?d:i}:void 0,children:(0,r.jsx)(`code`,{children:o?g(a):a})}),p&&(0,r.jsx)(`button`,{type:`button`,className:`ui-tc__more`,"aria-expanded":l,onClick:()=>u(!l),children:l?`Show less`:`Show all`})]})}function s({text:e,label:t}){let[i,a]=(0,n.useState)(!1);return(0,n.useEffect)(()=>{if(!i)return;let e=window.setTimeout(()=>a(!1),1400);return()=>window.clearTimeout(e)},[i]),(0,r.jsxs)(`button`,{type:`button`,className:`ui-tc__copy`,"data-copied":i||void 0,"aria-label":i?`Copied`:`Copy ${t}`,title:i?`Copied`:`Copy ${t}`,onClick:()=>_(e).then(e=>e&&a(!0)),children:[(0,r.jsxs)(`svg`,{className:`ui-tc__copy-icon`,viewBox:`0 0 16 16`,"aria-hidden":`true`,children:[(0,r.jsx)(`rect`,{x:`5.25`,y:`5.25`,width:`8`,height:`8`,rx:`2`}),(0,r.jsx)(`path`,{d:`M10.75 5.25v-1a1.5 1.5 0 0 0-1.5-1.5h-4.5a2 2 0 0 0-2 2v4.5a1.5 1.5 0 0 0 1.5 1.5h1`})]}),(0,r.jsx)(`svg`,{className:`ui-tc__copy-done`,viewBox:`0 0 16 16`,"aria-hidden":`true`,children:(0,r.jsx)(`path`,{d:`M3.5 8.4 6.6 11.3 12.5 4.9`,pathLength:1})})]})}function c(){return(0,r.jsxs)(`svg`,{className:`ui-tc__spinner`,viewBox:`0 0 16 16`,"aria-hidden":`true`,children:[(0,r.jsx)(`circle`,{cx:`8`,cy:`8`,r:`5.75`}),(0,r.jsx)(`path`,{d:`M8 2.25a5.75 5.75 0 0 1 5.75 5.75`})]})}function l(){return(0,r.jsxs)(`svg`,{className:`ui-tc__err`,viewBox:`0 0 16 16`,"aria-hidden":`true`,children:[(0,r.jsx)(`circle`,{cx:`8`,cy:`8`,r:`6`}),(0,r.jsx)(`path`,{d:`M8 5v3.4M8 10.9v.1`})]})}function u(){return(0,r.jsx)(`svg`,{className:`ui-tc__chevron`,viewBox:`0 0 16 16`,"aria-hidden":`true`,children:(0,r.jsx)(`path`,{d:`M4.5 6.25 8 9.75l3.5-3.5`})})}function d(){return(0,r.jsx)(`svg`,{viewBox:`0 0 16 16`,children:(0,r.jsx)(`path`,{d:`M10.2 2.4a3.5 3.5 0 0 0-4.3 4.6L2.6 10.3a1.4 1.4 0 0 0 2 2L7.9 9a3.5 3.5 0 0 0 4.6-4.3l-2 2-1.6-.4-.4-1.6 1.7-2.3Z`})})}function f(e,t,r){let i=(0,n.useRef)(null),a=(0,n.useRef)(0),[o,s]=(0,n.useState)(null);return(0,n.useEffect)(()=>{if(!e){i.current!==null&&(a.current+=Date.now()-i.current,i.current=null,s(a.current));return}r||(a.current=0),i.current=t??Date.now();let n=()=>s(a.current+Date.now()-(i.current??Date.now()));n();let o=window.setInterval(n,100);return()=>window.clearInterval(o)},[e,t,r]),o}function p(e,t){if(!t&&e<1e3)return`${Math.max(1,Math.round(e))}ms`;if(e<6e4)return`${(Math.floor(e/100)/10).toFixed(1)}s`;let n=Math.floor(e/1e3);return`${Math.floor(n/60)}m ${String(n%60).padStart(2,`0`)}s`}function m(e){if(typeof e==`string`){let t=e.trim();if(t.startsWith(`{`)||t.startsWith(`[`))try{return{text:JSON.stringify(JSON.parse(t),null,2),json:!0}}catch{}return{text:e,json:!1}}try{let t=JSON.stringify(e,null,2);return t===void 0?{text:String(e),json:!1}:{text:t,json:!0}}catch{return{text:String(e),json:!1}}}var h=/("(?:[^"\\]|\\.)*")(\s*:)?|\b(?:true|false|null)\b|-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?/g;function g(e){let t=[],n=new RegExp(h.source,`g`),i=0,a;for(;a=n.exec(e);){if(a.index>i&&t.push(e.slice(i,a.index)),a[1]&&a[2])t.push((0,r.jsx)(`span`,{className:`ui-tc__t-key`,children:a[1]},a.index),a[2]);else{let e=a[1]?`str`:/^[tfn]/.test(a[0])?`lit`:`num`;t.push((0,r.jsx)(`span`,{className:`ui-tc__t-${e}`,children:a[0]},a.index))}i=a.index+a[0].length}return i<e.length&&t.push(e.slice(i)),t}async function _(e){try{return await navigator.clipboard.writeText(e),!0}catch{let t=document.createElement(`textarea`);t.value=e,t.style.cssText=`position:fixed;opacity:0`,document.body.appendChild(t),t.select();let n=document.execCommand(`copy`);return t.remove(),n}}var v=`
 .ui-tc,
 .ui-tc-group {
-  --ui-tc-ink: #0a1829;
-  --ui-tc-text: #5b6d84;
-  --ui-tc-muted: #7b8ca1;
+  --ui-tc-ink: #041632;
+  --ui-tc-text: #586c8a;
+  --ui-tc-muted: #7b8ba4;
   --ui-tc-bg: #ffffff;
-  --ui-tc-line: #e0e8f2;
-  --ui-tc-hover: #f7fafe;
-  --ui-tc-tile: #f1f6fb;
-  --ui-tc-code: #f7fafe;
+  --ui-tc-line: #e1e8f1;
+  --ui-tc-hover: #f8fafe;
+  --ui-tc-tile: #f2f5fb;
+  --ui-tc-code: #f8fafe;
   --ui-tc-ring: #ffffff;
   --ui-tc-red: #c8372d;
   --ui-tc-red-bg: rgba(200, 55, 45, 0.06);
   --ui-tc-red-line: rgba(200, 55, 45, 0.16);
-  --ui-tc-key: #0a1829;
+  --ui-tc-key: #041632;
   --ui-tc-str: #0f7b6c;
   --ui-tc-num: #b25b0c;
   --ui-tc-lit: #9f1746;
   --ui-tc-shine: rgba(255, 255, 255, 0.82);
-  --ui-tc-focus: rgba(10, 24, 41, 0.22);
+  --ui-tc-focus: rgba(4, 22, 50, 0.22);
   --ui-tc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-tc-mono: ui-monospace, "SF Mono", Menlo, monospace;
   box-sizing: border-box;
@@ -399,19 +399,19 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-tc,
 :where(.dark, [data-theme="dark"]) .ui-tc-group {
-  --ui-tc-ink: #e7eef6;
-  --ui-tc-text: #94a3b6;
-  --ui-tc-muted: #6c7e94;
-  --ui-tc-bg: #091728;
+  --ui-tc-ink: #e8eef6;
+  --ui-tc-text: #94a2b7;
+  --ui-tc-muted: #6b7d98;
+  --ui-tc-bg: #041531;
   --ui-tc-line: rgba(255, 255, 255, 0.1);
   --ui-tc-hover: rgba(255, 255, 255, 0.035);
-  --ui-tc-tile: #0f1e31;
-  --ui-tc-code: #0f1e31;
-  --ui-tc-ring: #091728;
+  --ui-tc-tile: #071d3c;
+  --ui-tc-code: #071d3c;
+  --ui-tc-ring: #041531;
   --ui-tc-red: #ff7b72;
   --ui-tc-red-bg: rgba(255, 110, 100, 0.08);
   --ui-tc-red-line: rgba(255, 110, 100, 0.2);
-  --ui-tc-key: #e7eef6;
+  --ui-tc-key: #e8eef6;
   --ui-tc-str: #5fd4b8;
   --ui-tc-num: #f2a65a;
   --ui-tc-lit: #f98fa4;

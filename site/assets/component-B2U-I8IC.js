@@ -542,11 +542,11 @@ const DEFAULT_RIGHT: BeamTool[] = [
     logo: (
       <Svg>
         <svg x="1" y="2" width="22" height="20" viewBox="0 0 87.3 78">
-          <path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#9d1344" />
+          <path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#2460a8" />
           <path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z" fill="#00ac47" />
           <path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z" fill="#ea4335" />
           <path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d" />
-          <path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#b83359" />
+          <path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#3f7ac4" />
           <path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00" />
         </svg>
       </Svg>
@@ -558,27 +558,27 @@ const DEFAULT_RIGHT: BeamTool[] = [
 
 const css = /* css */ \`
 .ui-ib {
-  --ui-ib-ink: #0a1829;
-  --ui-ib-text: #2f4159;
-  --ui-ib-muted: #8091a6;
-  --ui-ib-faint: #a9b7c8;
-  --ui-ib-line: #dbe3ee;
-  --ui-ib-line-hi: #f7a9b6;
+  --ui-ib-ink: #041632;
+  --ui-ib-text: #274066;
+  --ui-ib-muted: #8090a8;
+  --ui-ib-faint: #aab6c8;
+  --ui-ib-line: #dce3ed;
+  --ui-ib-line-hi: #99c5fe;
   --ui-ib-card: #ffffff;
-  --ui-ib-tray: #ebf1f8;
-  --ui-ib-accent: #aa254f;
+  --ui-ib-tray: #ecf1f8;
+  --ui-ib-accent: #326eb6;
   /* Pulse: clear tail, accent body, a pale tip that reads as light */
-  --ui-ib-pulse: #aa254f;
-  --ui-ib-tip-color: #f9bbc5;
-  --ui-ib-ring: rgba(170, 37, 79, 0.2);
-  --ui-ib-glow: rgba(170, 37, 79, 0.26);
-  --ui-ib-hub: #0a1829;
+  --ui-ib-pulse: #326eb6;
+  --ui-ib-tip-color: #aed1fe;
+  --ui-ib-ring: rgba(50, 110, 182, 0.2);
+  --ui-ib-glow: rgba(50, 110, 182, 0.26);
+  --ui-ib-hub: #041632;
   --ui-ib-hub-mark: #ffffff;
   --ui-ib-hub-edge: rgba(0, 22, 43, 0.9);
-  --ui-ib-tooltip: #0a1829;
+  --ui-ib-tooltip: #041632;
   --ui-ib-tooltip-text: #ffffff;
   --ui-ib-shadow: 0 0 0 1px rgba(26, 62, 112, 0.07), 0 1px 2px rgba(26, 62, 112, 0.04), 0 8px 18px -10px rgba(26, 62, 112, 0.18);
-  --ui-ib-focus: rgba(10, 24, 41, 0.22);
+  --ui-ib-focus: rgba(4, 22, 50, 0.22);
   --ui-ib-ease: \${EASE};
   position: relative;
   width: 100%;
@@ -809,27 +809,27 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-ib {
-  --ui-ib-ink: #e7eef6;
-  --ui-ib-text: #becada;
-  --ui-ib-muted: #7d8da3;
-  --ui-ib-faint: #4c5e76;
-  --ui-ib-line: #1d2f47;
-  --ui-ib-line-hi: #7c3243;
-  --ui-ib-card: #0b1a2c;
-  --ui-ib-tray: #061222;
-  --ui-ib-accent: #c54064;
-  --ui-ib-pulse: #c54064;
+  --ui-ib-ink: #e8eef6;
+  --ui-ib-text: #bfc9d8;
+  --ui-ib-muted: #7d8da5;
+  --ui-ib-faint: #485e7e;
+  --ui-ib-line: #122e56;
+  --ui-ib-line-hi: #2c5990;
+  --ui-ib-card: #051836;
+  --ui-ib-tray: #021029;
+  --ui-ib-accent: #4b87d1;
+  --ui-ib-pulse: #4b87d1;
   --ui-ib-tip-color: #ffffff;
-  --ui-ib-ring: rgba(197, 64, 100, 0.24);
-  --ui-ib-glow: rgba(197, 64, 100, 0.3);
-  --ui-ib-hub: #16273d;
+  --ui-ib-ring: rgba(75, 135, 209, 0.24);
+  --ui-ib-glow: rgba(75, 135, 209, 0.3);
+  --ui-ib-hub: #0d264a;
   --ui-ib-hub-mark: #ffffff;
   --ui-ib-hub-edge: rgba(255, 255, 255, 0.12);
-  --ui-ib-tooltip: #e7eef6;
-  --ui-ib-tooltip-text: #061222;
-  --ui-ib-shadow: 0 0 0 1px #192b42, 0 1px 2px rgba(0, 22, 43, 0.3), 0 8px 18px -10px rgba(0, 22, 43, 0.6);
+  --ui-ib-tooltip: #e8eef6;
+  --ui-ib-tooltip-text: #021029;
+  --ui-ib-shadow: 0 0 0 1px #0f2a50, 0 1px 2px rgba(0, 22, 43, 0.3), 0 8px 18px -10px rgba(0, 22, 43, 0.6);
   --ui-ib-focus: rgba(255, 255, 255, 0.3);
 }
-:where(.dark, [data-theme="dark"]) .ui-ib__chip { box-shadow: 0 0 0 1px #192b42, 0 1px 2px rgba(0, 22, 43, 0.3); }
+:where(.dark, [data-theme="dark"]) .ui-ib__chip { box-shadow: 0 0 0 1px #0f2a50, 0 1px 2px rgba(0, 22, 43, 0.3); }
 \`;
 `;export{e as default};

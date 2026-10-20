@@ -215,9 +215,9 @@ const css = /* css */ \`
   --ui-nsc-wash: rgba(26, 62, 112, 0.03);
   --ui-nsc-fill: rgba(26, 62, 112, 0.06);
   --ui-nsc-art: rgba(26, 62, 112, 0.07);
-  --ui-nsc-accent: rgba(155, 16, 66, 0.765);
-  --ui-nsc-accent-bg: rgba(155, 16, 66, 0.05);
-  --ui-nsc-focus: rgba(155, 16, 66, 0.35);
+  --ui-nsc-accent: rgba(35, 95, 166, 0.765);
+  --ui-nsc-accent-bg: rgba(35, 95, 166, 0.05);
+  --ui-nsc-focus: rgba(35, 95, 166, 0.35);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
   --ui-nsc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
   --ui-nsc-shadow-hover: 0 0 0 0.5px rgba(26, 62, 112, 0.1), 0 1px 1px -1px rgba(26, 62, 112, 0.12), 0 1px 3px 0 rgba(26, 62, 112, 0.07);
@@ -373,7 +373,7 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-nsc {
-  --ui-nsc-card: #0e1d30;
+  --ui-nsc-card: #061b3a;
   --ui-nsc-strong: #ffffff;
   --ui-nsc-ink: rgba(255, 255, 255, 0.9);
   --ui-nsc-text: rgba(255, 255, 255, 0.62);
@@ -382,9 +382,9 @@ const css = /* css */ \`
   --ui-nsc-wash: rgba(255, 255, 255, 0.04);
   --ui-nsc-fill: rgba(255, 255, 255, 0.08);
   --ui-nsc-art: rgba(255, 255, 255, 0.07);
-  --ui-nsc-accent: #c13d61;
-  --ui-nsc-accent-bg: rgba(193, 61, 97, 0.1);
-  --ui-nsc-focus: rgba(193, 61, 97, 0.5);
+  --ui-nsc-accent: #4883ce;
+  --ui-nsc-accent-bg: rgba(72, 131, 206, 0.1);
+  --ui-nsc-focus: rgba(72, 131, 206, 0.5);
   --ui-nsc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
   --ui-nsc-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
 }

@@ -420,17 +420,17 @@ export function TestimonialWall({
 const css = /* css */ \`
 .ui-tw {
   --ui-tw-card: #ffffff;
-  --ui-tw-line: #e6edf6;
-  --ui-tw-ink: #0a1829;
-  --ui-tw-text: #2f4159;
-  --ui-tw-muted: #8091a6;
-  --ui-tw-faint: #a9b7c8;
-  --ui-tw-star: #96a5b9;
-  --ui-tw-star-off: #dbe3ee;
-  --ui-tw-initials: #ebf1f8;
+  --ui-tw-line: #e7edf5;
+  --ui-tw-ink: #041632;
+  --ui-tw-text: #274066;
+  --ui-tw-muted: #8090a8;
+  --ui-tw-faint: #aab6c8;
+  --ui-tw-star: #97a5ba;
+  --ui-tw-star-off: #dce3ed;
+  --ui-tw-initials: #ecf1f8;
   --ui-tw-shadow: 0 0 0 1px var(--ui-tw-line), 0 1px 2px rgba(26, 62, 112, 0.04);
   --ui-tw-lift: 0 0 0 1px var(--ui-tw-line), 0 2px 4px rgba(26, 62, 112, 0.03), 0 12px 28px -10px rgba(26, 62, 112, 0.14);
-  --ui-tw-focus: #aa254f;
+  --ui-tw-focus: #326eb6;
   --ui-tw-gap: 16px;
   --ui-tw-fade: 96px;
   --ui-tw-dim: 0.62;
@@ -581,18 +581,18 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-tw {
-  --ui-tw-card: #0b1a2c;
-  --ui-tw-line: #192b42;
-  --ui-tw-ink: #e7eef6;
-  --ui-tw-text: #becada;
-  --ui-tw-muted: #7d8da3;
-  --ui-tw-faint: #5c6d84;
-  --ui-tw-star: #6b7d93;
-  --ui-tw-star-off: #1e3048;
-  --ui-tw-initials: #142439;
+  --ui-tw-card: #051836;
+  --ui-tw-line: #0f2a50;
+  --ui-tw-ink: #e8eef6;
+  --ui-tw-text: #bfc9d8;
+  --ui-tw-muted: #7d8da5;
+  --ui-tw-faint: #596d8b;
+  --ui-tw-star: #6a7c97;
+  --ui-tw-star-off: #142f57;
+  --ui-tw-initials: #0b2345;
   --ui-tw-shadow: 0 0 0 1px var(--ui-tw-line);
-  --ui-tw-lift: 0 0 0 1px #23364e, 0 12px 28px -10px rgba(0, 22, 43, 0.6);
-  --ui-tw-focus: #c54064;
+  --ui-tw-lift: 0 0 0 1px #1a345b, 0 12px 28px -10px rgba(0, 22, 43, 0.6);
+  --ui-tw-focus: #4b87d1;
 }
 :where(.dark, [data-theme="dark"]) .ui-tw__avatar { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06); }
 \`;

@@ -12,8 +12,8 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-edc-fill: rgba(26, 62, 112, 0.06);
   --ui-edc-wash: rgba(26, 62, 112, 0.03);
   --ui-edc-solid: rgba(0, 22, 43, 0.88);
-  --ui-edc-on-solid: #fafcff;
-  --ui-edc-accent: rgba(155, 16, 66, 0.765);
+  --ui-edc-on-solid: #fbfcfe;
+  --ui-edc-accent: rgba(35, 95, 166, 0.765);
   --ui-edc-ok: #1a9a52;
   --ui-edc-ok-bg: rgba(26, 154, 82, 0.08);
   --ui-edc-warn: #b47a06;
@@ -21,7 +21,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
   --ui-edc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
   --ui-edc-shadow-pop: 0 0 0 0.5px rgba(26, 62, 112, 0.08), 0 12px 28px -10px rgba(26, 62, 112, 0.16), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
-  --ui-edc-focus: rgba(155, 16, 66, 0.35);
+  --ui-edc-focus: rgba(35, 95, 166, 0.35);
   --ui-edc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   box-sizing: border-box;
@@ -440,7 +440,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-edc {
-  --ui-edc-card: #0e1d30;
+  --ui-edc-card: #061b3a;
   --ui-edc-strong: #ffffff;
   --ui-edc-ink: rgba(255, 255, 255, 0.9);
   --ui-edc-text: rgba(255, 255, 255, 0.62);
@@ -451,15 +451,15 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-edc-fill: rgba(255, 255, 255, 0.08);
   --ui-edc-wash: rgba(255, 255, 255, 0.04);
   --ui-edc-solid: rgba(255, 255, 255, 0.92);
-  --ui-edc-on-solid: #091728;
-  --ui-edc-accent: #c13d61;
+  --ui-edc-on-solid: #041531;
+  --ui-edc-accent: #4883ce;
   --ui-edc-ok: #3ec27a;
   --ui-edc-ok-bg: rgba(62, 194, 122, 0.14);
   --ui-edc-warn: #f0b43c;
   --ui-edc-warn-bg: rgba(232, 162, 12, 0.14);
   --ui-edc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
   --ui-edc-shadow-pop: 0 0 0 0.5px rgba(255, 255, 255, 0.12), 0 12px 28px -10px rgba(0, 22, 43, 0.6);
-  --ui-edc-focus: rgba(193, 61, 97, 0.5);
+  --ui-edc-focus: rgba(72, 131, 206, 0.5);
 }
 :where(.dark, [data-theme="dark"]) .ui-edc__primary:hover:not(:disabled) { background: #ffffff; }
 `;function d(){return(0,r.jsx)(`div`,{className:`email-draft-demo`,children:(0,r.jsx)(s,{})})}export{d as default};

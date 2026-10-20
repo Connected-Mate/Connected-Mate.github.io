@@ -14,9 +14,9 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-segc-track: rgba(26, 62, 112, 0.04);
   --ui-segc-card: #ffffff;
   --ui-segc-card-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
-  --ui-segc-accent: rgba(155, 16, 66, 0.765);
-  --ui-segc-accent-soft: rgba(155, 16, 66, 0.08);
-  --ui-segc-focus: rgba(155, 16, 66, 0.35);
+  --ui-segc-accent: rgba(35, 95, 166, 0.765);
+  --ui-segc-accent-soft: rgba(35, 95, 166, 0.08);
+  --ui-segc-focus: rgba(35, 95, 166, 0.35);
   --ui-segc-ease: cubic-bezier(0.25, 0.9, 0.3, 1);
   /* Size: md – 28px chips, 4px 10px */
   --ui-segc-h: 28px;
@@ -209,11 +209,11 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-segc-wash: rgba(255, 255, 255, 0.04);
   --ui-segc-fill: rgba(255, 255, 255, 0.08);
   --ui-segc-track: rgba(255, 255, 255, 0.05);
-  --ui-segc-card: #1b2d45;
+  --ui-segc-card: #102c53;
   --ui-segc-card-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 22, 43, 0.4);
-  --ui-segc-accent: #c13d61;
-  --ui-segc-accent-soft: rgba(193, 61, 97, 0.14);
-  --ui-segc-focus: rgba(193, 61, 97, 0.45);
+  --ui-segc-accent: #4883ce;
+  --ui-segc-accent-soft: rgba(72, 131, 206, 0.14);
+  --ui-segc-focus: rgba(72, 131, 206, 0.45);
 }
 :where(.dark, [data-theme="dark"]) .ui-segc__icon { color: rgba(255, 255, 255, 0.46); }
 :where(.dark, [data-theme="dark"]) .ui-segc__opt[data-active] .ui-segc__icon { color: var(--ui-segc-ink); }

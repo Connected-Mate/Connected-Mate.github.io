@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-"""Repaint the static mirror in the Team IA art direction (hub "Osmose").
+"""Repaint the static mirror in the TGV INOUI / A-Team design system.
 
 The mirror keeps every route, demo and layout of the original site. This pass
 only changes what a viewer reads as the brand: colours, typeface and the
-raster previews that show the components.
+raster previews that show the components. Reference surfaces: the hub sign-in
+page and the programme e-mails (bleu nuit vitrine, French berry calls to
+action, Avenir Next Condensed capitals for display titles).
 
-  * Greys become the hub's blue-tinted neutrals (ground #eaeff6, ink #00162B),
-    at the same lightness, so contrast and hierarchy stay as designed.
-  * The site's blues, violets and pinks become the berry family (#851437 on
-    light, toward rose #f6bcc8 as they get lighter); cyans become navy.
+  * Greys become the charter's blue greys at the same lightness, so contrast
+    and hierarchy stay as designed; dark greys become the bleu nuit vitrine.
+  * Blues stay blue but move onto the charter's blues (bleu nuit #1a3e70,
+    bleu charrette #254f8a, bleu ciel #307bbf, bleu clair #a4c2e7).
+  * Violets, magentas and pinks become French berry #9c0c35 / rose poudre.
   * Semantic reds, greens and yellows are kept, and so are third-party brand
     colours (Slack, Stripe, Google…), which must not be repainted.
   * Black shadows and hairlines become the hub's navy-tinted ones.
@@ -34,12 +37,13 @@ TEXT_SUFFIXES = {".css", ".js", ".json", ".svg", ".html", ".webmanifest"}
 IMAGE_DIRS = ("previews", "landing", "illustrations")  # not photos of people or album covers
 IMAGE_SUFFIXES = {".webp", ".png", ".jpg", ".jpeg"}
 
-NEUTRAL_HUE = 255.0  # the hub's navy
-BERRY_HUE = 8.0      # #851437
+NEUTRAL_HUE = 258.0  # bleu nuit #1a3e70
+BLUE_HUE = 255.0     # bleu charrette / bleu ciel
+BERRY_HUE = 8.0      # French berry #9c0c35
 # Chroma given to a grey, by lightness: white stays white, mid-greys take a
 # visible steel tint, near-blacks become navy night.
 CHROMA_L = np.array([0.0, 0.15, 0.30, 0.60, 0.85, 0.95, 0.985, 1.0])
-CHROMA_C = np.array([0.0, 0.035, 0.050, 0.040, 0.025, 0.013, 0.006, 0.0])
+CHROMA_C = np.array([0.0, 0.050, 0.080, 0.045, 0.022, 0.012, 0.005, 0.0])
 
 # Third-party brand colours seen in the integration and logo demos.
 BRAND_COLOURS = {
@@ -57,42 +61,52 @@ BRAND_COLOURS = {
 # Design tokens of the site shell, set to the hub's own values rather than
 # derived, so the frame matches the hub exactly. Appended after the original.
 TOKENS = """
-/* Team IA art direction (hub Osmose) — appended by scripts/theme_team_ia.py */
+/* TGV INOUI / A-Team design system — appended by scripts/theme_team_ia.py */
 :root{--font-sans:"Avenir Next","Avenir",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
---bg:#eaeff6;--panel:#fbfcfe;--card:#fff;--preview:#f2f6fa;--muted-bg:#1a3e700d;--hover-bg:#1a3e7012;
---text:#00162b;--text-muted:#00162ba3;--text-subtle:#00162b99;--border:#dae2ec;--border-soft:#00162b1a;
---card-stroke:#1a3e7014;--panel-stroke:#dae2ec;--tier-stroke:#e6ecf4;--guarantee-bg:#f2f6fa;--guarantee-tray:#e6ecf4;
---panel-shadow:0 1px 0 #1a3e700f,0 18px 20px -24px #1a3e708c;--primary:#851437;--primary-fg:#fff;
---accent:#16345c;--accent-soft:#16345c1a;--pro-bg:#fbe7ec;--pro-from:#851437;--pro-to:#16345c;
+--font-display:"Avenir Next Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+--bg:#eef2f8;--panel:#fff;--card:#fff;--preview:#f4f7fb;--muted-bg:#1a3e700d;--hover-bg:#1a3e7012;
+--text:#00162b;--text-muted:#5a6a85;--text-subtle:#1a3e7099;--border:#dae2ec;--border-soft:#1a3e701a;
+--card-stroke:#1a3e7014;--panel-stroke:#dae2ec;--tier-stroke:#e6ecf4;--guarantee-bg:#f4f7fb;--guarantee-tray:#e6ecf4;
+--panel-shadow:0 1px 0 #1a3e700f,0 18px 30px -24px #1a3e7059;--primary:#9c0c35;--primary-fg:#fff;
+--accent:#1a3e70;--accent-soft:#1a3e7014;--pro-bg:#fbe7ec;--pro-from:#9c0c35;--pro-to:#1a3e70;
 --shadow-card:0 1px 1.5px #1a3e700f,inset 0 -1px 0 #1a3e7014;
 --shadow-pop:0 24px 48px -24px #1a3e704d,0 8px 16px -4px #1a3e7029,0 0 0 1px #cbd6e4;
---dark-btn-top:#16345c;--dark-btn-bottom:#0f2747;--dark-btn-top-hover:#1d4170;--dark-btn-bottom-hover:#143259;
---dark-btn-edge-1:#2c4f80;--dark-btn-edge-2:#16345c;--dark-btn-edge-3:#0a1c35;--dark-btn-ring:#071426;--dark-btn-text:#fff}
+--dark-btn-top:#a8113d;--dark-btn-bottom:#8a0b2f;--dark-btn-top-hover:#b8164a;--dark-btn-bottom-hover:#9c0c35;
+--dark-btn-edge-1:#c23a60;--dark-btn-edge-2:#9c0c35;--dark-btn-edge-3:#6d0822;--dark-btn-ring:#6d082259;--dark-btn-text:#fff;
+--title:#1a3e70;--link:#254f8a;--grid:#1a3e700f}
 :root:not([data-theme=light]){color-scheme:light}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){
---bg:#071426;--panel:#0b1c33;--card:#0f2747;--preview:#132d50;--muted-bg:#a4c2e712;--hover-bg:#a4c2e71a;
---text:#eef3f9;--text-muted:#a9b8cc;--text-subtle:#eef3f999;--border:#1d3a60;--border-soft:#a4c2e71a;
---card-stroke:#a4c2e714;--panel-stroke:#173356;--tier-stroke:#132d50;--guarantee-bg:#0b1c33;--guarantee-tray:#132d50;
---panel-shadow:0 1px 0 #00000059,0 2px 1px -1px #00000066;--primary:#f6bcc8;--primary-fg:#0f2747;
---accent:#a4c2e7;--accent-soft:#a4c2e71f;--pro-bg:#f6bcc824;--pro-from:#f6bcc8;--pro-to:#a4c2e7;
---shadow-card:0 1px 1.5px #0000004d,inset 0 -1px 0 #a4c2e70f;--shadow-pop:0 24px 48px -20px #000000a6,0 0 0 1px #a4c2e71f;
---dark-btn-top:#ffffff;--dark-btn-bottom:#eaeff6;--dark-btn-top-hover:#fff;--dark-btn-bottom-hover:#f2f6fa;
---dark-btn-edge-1:#fff;--dark-btn-edge-2:#f2f6fa;--dark-btn-edge-3:#cbd6e4;--dark-btn-ring:#00000099;--dark-btn-text:#0f2747;color-scheme:dark}}
+--bg:#0f2747;--panel:#12305a;--card:#16386a;--preview:#1a3e70;--muted-bg:#ffffff12;--hover-bg:#ffffff1a;
+--text:#fff;--text-muted:#c3d3ea;--text-subtle:#ffffff99;--border:#2a4f82;--border-soft:#ffffff1f;
+--card-stroke:#ffffff17;--panel-stroke:#244878;--tier-stroke:#1d406f;--guarantee-bg:#12305a;--guarantee-tray:#1a3e70;
+--panel-shadow:0 1px 0 #0000004d,0 2px 1px -1px #00000059;--primary:#9c0c35;--primary-fg:#fff;
+--accent:#a4c2e7;--accent-soft:#a4c2e726;--pro-bg:#9c0c3540;--pro-from:#f8c3c3;--pro-to:#a4c2e7;
+--shadow-card:0 1px 1.5px #00000040,inset 0 -1px 0 #ffffff0f;--shadow-pop:0 24px 48px -20px #00000080,0 0 0 1px #ffffff26;
+--title:#fff;--link:#a4c2e7;--grid:#ffffff0d;color-scheme:dark}}
 :root[data-theme=dark]{
---bg:#071426;--panel:#0b1c33;--card:#0f2747;--preview:#132d50;--muted-bg:#a4c2e712;--hover-bg:#a4c2e71a;
---text:#eef3f9;--text-muted:#a9b8cc;--text-subtle:#eef3f999;--border:#1d3a60;--border-soft:#a4c2e71a;
---card-stroke:#a4c2e714;--panel-stroke:#173356;--tier-stroke:#132d50;--guarantee-bg:#0b1c33;--guarantee-tray:#132d50;
---panel-shadow:0 1px 0 #00000059,0 2px 1px -1px #00000066;--primary:#f6bcc8;--primary-fg:#0f2747;
---accent:#a4c2e7;--accent-soft:#a4c2e71f;--pro-bg:#f6bcc824;--pro-from:#f6bcc8;--pro-to:#a4c2e7;
---shadow-card:0 1px 1.5px #0000004d,inset 0 -1px 0 #a4c2e70f;--shadow-pop:0 24px 48px -20px #000000a6,0 0 0 1px #a4c2e71f;
---dark-btn-top:#ffffff;--dark-btn-bottom:#eaeff6;--dark-btn-top-hover:#fff;--dark-btn-bottom-hover:#f2f6fa;
---dark-btn-edge-1:#fff;--dark-btn-edge-2:#f2f6fa;--dark-btn-edge-3:#cbd6e4;--dark-btn-ring:#00000099;--dark-btn-text:#0f2747;color-scheme:dark}
-::selection{background:#f2dce4;color:#00162b}
-:where(.dark,[data-theme=dark]) ::selection{background:#851437;color:#fff}
-html:has(.lp),html:has(.lp) body{background:#fbfcfe}
+--bg:#0f2747;--panel:#12305a;--card:#16386a;--preview:#1a3e70;--muted-bg:#ffffff12;--hover-bg:#ffffff1a;
+--text:#fff;--text-muted:#c3d3ea;--text-subtle:#ffffff99;--border:#2a4f82;--border-soft:#ffffff1f;
+--card-stroke:#ffffff17;--panel-stroke:#244878;--tier-stroke:#1d406f;--guarantee-bg:#12305a;--guarantee-tray:#1a3e70;
+--panel-shadow:0 1px 0 #0000004d,0 2px 1px -1px #00000059;--primary:#9c0c35;--primary-fg:#fff;
+--accent:#a4c2e7;--accent-soft:#a4c2e726;--pro-bg:#9c0c3540;--pro-from:#f8c3c3;--pro-to:#a4c2e7;
+--shadow-card:0 1px 1.5px #00000040,inset 0 -1px 0 #ffffff0f;--shadow-pop:0 24px 48px -20px #00000080,0 0 0 1px #ffffff26;
+--title:#fff;--link:#a4c2e7;--grid:#ffffff0d;color-scheme:dark}
+::selection{background:#f8c3c3;color:#00162b}
+/* Ground: the hub's tinted canvas under a 56px grid */
+body{background-color:var(--bg);background-image:linear-gradient(to right,var(--grid) 1px,transparent 1px),linear-gradient(to bottom,var(--grid) 1px,transparent 1px);background-size:56px 56px}
+html:has(.lp),html:has(.lp) body{background-color:var(--bg)}
+html.dark:has(.lp),html.dark:has(.lp) body,html[data-theme=dark]:has(.lp),html[data-theme=dark]:has(.lp) body{background-color:var(--bg)}
+/* Display titles: Avenir Next Condensed bold capitals in bleu nuit, as on the hub and in the e-mails */
+.lp-hero__title,.lp-lead,.doc__title,.page-head__title,.hero__title,.faq__title,.legal__title,.not-found__title{
+font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:.2px;color:var(--title)}
+.lp-hero__title{font-size:clamp(36px,6vw,60px);line-height:1}
+.doc__h2{color:var(--title)}
+/* Primary actions: French berry pill, as the hub "Se connecter" */
+.btn--primary,.tier__cta--primary,.promo__cta{border-radius:999px;font-weight:600;box-shadow:0 8px 16px -6px #9c0c3566,0 0 0 1px var(--dark-btn-ring)}
+.prompt-bar__code{background:#9c0c35;color:#fff;border-radius:999px}
+.prompt-bar__code:hover{background:#b00d3c;opacity:1}
 /* Avenir Next sets wider than Inter: keep one-line labels on one line */
 .pro-badge{white-space:nowrap}
-html.dark:has(.lp),html.dark:has(.lp) body,html[data-theme=dark]:has(.lp),html[data-theme=dark]:has(.lp) body{background:var(--panel)}
 """
 
 
@@ -154,15 +168,17 @@ def repaint(rgb):
     newH = np.where(neutral, NEUTRAL_HUE, newH)
 
     chroma = ~neutral
-    berry = chroma & ((H >= 250) | (H < 5))
-    navy = chroma & (H >= 195) & (H < 250)
-    newL = np.where(berry & (L < 0.75), L * 0.85, newL)
+    blue = chroma & (H >= 195) & (H < 275)
+    berry = chroma & ((H >= 275) | (H < 5))
+    # Saturated web blues (#2f6bff) land on bleu ciel / charrette, never neon.
+    newL = np.where(blue & (L < 0.75), L * 0.92, newL)
+    newC = np.where(blue, np.minimum(C, 0.13), newC)
+    newH = np.where(blue, BLUE_HUE, newH)
+    newL = np.where(berry & (L < 0.75), np.minimum(L, 0.46), newL)
     newC = np.where(berry, np.minimum(C, 0.17), newC)
     newH = np.where(berry, BERRY_HUE, newH)
-    newC = np.where(navy, np.minimum(C, 0.10), newC)
-    newH = np.where(navy, NEUTRAL_HUE, newH)
 
-    changed = neutral | berry | navy
+    changed = neutral | blue | berry
     out = oklch_to_rgb(newL, newC, newH)
     return np.where(changed[..., None], out, rgb)
 
@@ -306,7 +322,7 @@ def main():
     with main_css[0].open("a", encoding="utf-8") as handle:
         handle.write(TOKENS)
 
-    marker.write_text("Repainted in the Team IA art direction by scripts/theme_team_ia.py\n", encoding="utf-8")
+    marker.write_text("Repainted in the TGV INOUI / A-Team design system by scripts/theme_team_ia.py\n", encoding="utf-8")
     print(f"Repainted {texts} text files and {images} images; tokens appended to {main_css[0].name}.")
 
 
