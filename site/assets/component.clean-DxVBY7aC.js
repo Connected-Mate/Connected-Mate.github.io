@@ -438,24 +438,24 @@ const css = /* css */ \`
   --ui-otpc-box: 40px;
   --ui-otpc-gap: 8px;
   --ui-otpc-card: #ffffff;
-  --ui-otpc-ink: rgba(0, 0, 0, 0.88);
+  --ui-otpc-ink: rgba(0, 22, 43, 0.88);
   --ui-otpc-strong: #000000;
-  --ui-otpc-text: rgba(0, 0, 0, 0.61);
-  --ui-otpc-muted: rgba(0, 0, 0, 0.45);
-  --ui-otpc-faint: rgba(0, 0, 0, 0.27);
-  --ui-otpc-icon: rgba(0, 0, 0, 0.447);
-  --ui-otpc-line: rgba(0, 0, 0, 0.06);
-  --ui-otpc-fill: rgba(0, 0, 0, 0.06);
-  --ui-otpc-wash: rgba(0, 0, 0, 0.03);
+  --ui-otpc-text: rgba(0, 22, 43, 0.61);
+  --ui-otpc-muted: rgba(0, 22, 43, 0.45);
+  --ui-otpc-faint: rgba(0, 22, 43, 0.27);
+  --ui-otpc-icon: rgba(0, 22, 43, 0.447);
+  --ui-otpc-line: rgba(26, 62, 112, 0.06);
+  --ui-otpc-fill: rgba(26, 62, 112, 0.06);
+  --ui-otpc-wash: rgba(26, 62, 112, 0.03);
   --ui-otpc-shine: rgba(255, 255, 255, 0.82);
-  --ui-otpc-accent: rgba(0, 96, 226, 0.765);
-  --ui-otpc-focus: rgba(0, 96, 226, 0.35);
+  --ui-otpc-accent: rgba(155, 16, 66, 0.765);
+  --ui-otpc-focus: rgba(155, 16, 66, 0.35);
   --ui-otpc-danger: #e5484d;
   --ui-otpc-success: #1a9a52;
   --ui-otpc-danger-tint: rgba(229, 72, 77, 0.08);
   --ui-otpc-success-tint: rgba(26, 154, 82, 0.08);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
-  --ui-otpc-lift: 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ui-otpc-lift: 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
   --ui-otpc-shadow: 0 0 0 0.5px var(--ui-otpc-line), var(--ui-otpc-lift);
   --ui-otpc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
@@ -463,7 +463,7 @@ const css = /* css */ \`
   display: grid;
   justify-self: stretch; /* it sizes the boxes from its own width, so it must never shrink to fit them */
   width: 100%;
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   line-height: 20px;
   font-weight: 400;
@@ -696,7 +696,7 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-otpc {
-  --ui-otpc-card: #1c1c1e;
+  --ui-otpc-card: #0e1d30;
   --ui-otpc-ink: rgba(255, 255, 255, 0.9);
   --ui-otpc-strong: #ffffff;
   --ui-otpc-text: rgba(255, 255, 255, 0.62);
@@ -707,13 +707,13 @@ const css = /* css */ \`
   --ui-otpc-fill: rgba(255, 255, 255, 0.08);
   --ui-otpc-wash: rgba(255, 255, 255, 0.03);
   --ui-otpc-shine: rgba(255, 255, 255, 0.1);
-  --ui-otpc-accent: #4d8dff;
-  --ui-otpc-focus: rgba(77, 141, 255, 0.5);
+  --ui-otpc-accent: #c13d61;
+  --ui-otpc-focus: rgba(193, 61, 97, 0.5);
   --ui-otpc-danger: #ff6369;
   --ui-otpc-success: #3ec27a;
   --ui-otpc-danger-tint: rgba(255, 99, 105, 0.14);
   --ui-otpc-success-tint: rgba(62, 194, 122, 0.14);
-  --ui-otpc-lift: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --ui-otpc-lift: 0 1px 2px 0 rgba(0, 22, 43, 0.4);
 }
 \`;
 `;export{e as default};

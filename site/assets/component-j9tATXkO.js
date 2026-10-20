@@ -534,26 +534,26 @@ export function MessageActions({
 const css = /* css */ \`
 .ui-ma {
   --ui-ma-card: #ffffff;
-  --ui-ma-line: #ececec;
-  --ui-ma-ink: #171717;
-  --ui-ma-text: #404040;
-  --ui-ma-muted: #8f8f8f;
-  --ui-ma-well: #f4f4f5;
-  --ui-ma-hover: rgba(23, 23, 23, 0.06);
-  --ui-ma-accent: #2f6bff;
-  --ui-ma-accent-bg: rgba(47, 107, 255, 0.1);
+  --ui-ma-line: #e6edf6;
+  --ui-ma-ink: #0a1829;
+  --ui-ma-text: #2f4159;
+  --ui-ma-muted: #8091a6;
+  --ui-ma-well: #f0f5fb;
+  --ui-ma-hover: rgba(10, 24, 41, 0.06);
+  --ui-ma-accent: #aa254f;
+  --ui-ma-accent-bg: rgba(170, 37, 79, 0.1);
   --ui-ma-ok: #18794e;
   --ui-ma-ok-bg: rgba(34, 160, 90, 0.11);
-  --ui-ma-tip-bg: #171717;
+  --ui-ma-tip-bg: #0a1829;
   --ui-ma-tip-text: #ffffff;
-  --ui-ma-focus: rgba(23, 23, 23, 0.22);
+  --ui-ma-focus: rgba(10, 24, 41, 0.22);
   --ui-ma-ease: cubic-bezier(0.32, 0.72, 0.24, 1);
   box-sizing: border-box;
   display: block;
   width: 100%;
   min-width: 0;
   container-type: inline-size;
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   line-height: 20px;
   color: var(--ui-ma-text);
@@ -641,7 +641,7 @@ const css = /* css */ \`
 .ui-ma__fold { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 420ms var(--ui-ma-ease), opacity 220ms ease; }
 .ui-ma__fold[data-open] { grid-template-rows: 1fr; opacity: 1; transition: grid-template-rows 420ms var(--ui-ma-ease), opacity 320ms ease 80ms; }
 .ui-ma__clip { min-height: 0; overflow: hidden; margin: -1px; padding: 1px; }  /* the 1px keeps the card's hairline from being clipped */
-.ui-ma__panel { max-width: 440px; margin: 6px 0 0; padding: 12px 14px 14px; border-radius: 16px; background: var(--ui-ma-card); box-shadow: 0 0 0 1px var(--ui-ma-line), 0 1px 2px rgba(0, 0, 0, 0.04); }
+.ui-ma__panel { max-width: 440px; margin: 6px 0 0; padding: 12px 14px 14px; border-radius: 16px; background: var(--ui-ma-card); box-shadow: 0 0 0 1px var(--ui-ma-line), 0 1px 2px rgba(26, 62, 112, 0.04); }
 .ui-ma__panel-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 24px; }
 .ui-ma__ask { font-size: 12.5px; font-weight: 500; color: var(--ui-ma-ink); }
 .ui-ma__close { display: grid; flex: none; place-items: center; width: 24px; height: 24px; margin-right: -4px; border-radius: 7px; color: var(--ui-ma-muted); transition: background-color 160ms ease, color 160ms ease; }
@@ -695,19 +695,19 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-ma {
-  --ui-ma-card: #19191b;
-  --ui-ma-line: #2a2a2e;
-  --ui-ma-ink: #ededed;
-  --ui-ma-text: #c8c8cc;
-  --ui-ma-muted: #8b8b92;
-  --ui-ma-well: #222225;
+  --ui-ma-card: #0b1a2c;
+  --ui-ma-line: #192b42;
+  --ui-ma-ink: #e7eef6;
+  --ui-ma-text: #becada;
+  --ui-ma-muted: #7d8da3;
+  --ui-ma-well: #132338;
   --ui-ma-hover: rgba(255, 255, 255, 0.07);
-  --ui-ma-accent: #8fb1ff;
-  --ui-ma-accent-bg: rgba(79, 130, 255, 0.16);
+  --ui-ma-accent: #f392a5;
+  --ui-ma-accent-bg: rgba(187, 54, 92, 0.16);
   --ui-ma-ok: #6ee7a8;
   --ui-ma-ok-bg: rgba(110, 231, 168, 0.12);
-  --ui-ma-tip-bg: #ededed;
-  --ui-ma-tip-text: #171717;
+  --ui-ma-tip-bg: #e7eef6;
+  --ui-ma-tip-text: #0a1829;
   --ui-ma-focus: rgba(255, 255, 255, 0.3);
 }
 \`;

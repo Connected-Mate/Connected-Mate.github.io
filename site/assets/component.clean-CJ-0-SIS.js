@@ -160,23 +160,23 @@ function contentKey(node: ReactNode) {
 const css = /* css */ \`
 /* Colors and motion as variables – override them on .ui-buttonc (see Theming in the docs) */
 .ui-buttonc {
-  --ui-btnc-title: #000;
-  --ui-btnc-ink: rgba(0, 0, 0, 0.88);
-  --ui-btnc-muted: rgba(0, 0, 0, 0.61);
-  --ui-btnc-icon: rgba(0, 0, 0, 0.447);
-  --ui-btnc-solid: rgba(0, 0, 0, 0.88);
-  --ui-btnc-solid-hover: rgba(0, 0, 0, 0.8);
-  --ui-btnc-on-solid: #fcfcfc;
+  --ui-btnc-title: #000000;
+  --ui-btnc-ink: rgba(0, 22, 43, 0.88);
+  --ui-btnc-muted: rgba(0, 22, 43, 0.61);
+  --ui-btnc-icon: rgba(0, 22, 43, 0.447);
+  --ui-btnc-solid: rgba(0, 22, 43, 0.88);
+  --ui-btnc-solid-hover: rgba(0, 22, 43, 0.8);
+  --ui-btnc-on-solid: #fafcff;
   --ui-btnc-surface: #ffffff;
-  --ui-btnc-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --ui-btnc-shadow-hover: 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 1px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.07);
-  --ui-btnc-wash: rgba(0, 0, 0, 0.03);
+  --ui-btnc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
+  --ui-btnc-shadow-hover: 0 0 0 0.5px rgba(26, 62, 112, 0.1), 0 1px 1px -1px rgba(26, 62, 112, 0.12), 0 1px 3px 0 rgba(26, 62, 112, 0.07);
+  --ui-btnc-wash: rgba(26, 62, 112, 0.03);
   --ui-btnc-danger: #e5484d;
   --ui-btnc-danger-bg: rgba(229, 72, 77, 0.08);
   --ui-btnc-danger-bg-hover: rgba(229, 72, 77, 0.12);
   --ui-btnc-shine: rgba(255, 255, 255, 0.82);
   --ui-btnc-shine-on-solid: #ffffff;
-  --ui-btnc-focus: rgba(0, 96, 226, 0.35);
+  --ui-btnc-focus: rgba(155, 16, 66, 0.35);
   --ui-btnc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-btnc-load: 650ms;
 
@@ -199,7 +199,7 @@ const css = /* css */ \`
   margin: 0;
   border: 0;
   border-radius: var(--radius);
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: var(--fs);
   font-weight: 500;
   line-height: var(--lh);
@@ -417,22 +417,22 @@ const css = /* css */ \`
   /* primary inverts: a light chip with dark text */
   --ui-btnc-solid: rgba(255, 255, 255, 0.9);
   --ui-btnc-solid-hover: rgba(255, 255, 255, 0.82);
-  --ui-btnc-on-solid: #161618;
+  --ui-btnc-on-solid: #091728;
   --ui-btnc-shine-on-solid: #ffffff;
 
   --ui-btnc-title: rgba(255, 255, 255, 0.9);
   --ui-btnc-ink: rgba(255, 255, 255, 0.9);
   --ui-btnc-muted: rgba(255, 255, 255, 0.62);
   --ui-btnc-icon: rgba(255, 255, 255, 0.5);
-  --ui-btnc-surface: #1c1c1e;
-  --ui-btnc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --ui-btnc-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --ui-btnc-surface: #0e1d30;
+  --ui-btnc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
+  --ui-btnc-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
   --ui-btnc-wash: rgba(255, 255, 255, 0.06);
   --ui-btnc-danger: #ff6369;
   --ui-btnc-danger-bg: rgba(229, 72, 77, 0.14);
   --ui-btnc-danger-bg-hover: rgba(229, 72, 77, 0.2);
   --ui-btnc-shine: #ffffff;
-  --ui-btnc-focus: rgba(77, 141, 255, 0.5);
+  --ui-btnc-focus: rgba(193, 61, 97, 0.5);
 }
 \`;
 `;export{e as default};

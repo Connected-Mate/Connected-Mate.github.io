@@ -2,20 +2,20 @@ import{t as e}from"./jsx-runtime-CTsRTJUX.js";/* empty css             */var t=e
 /* Colors and motion as variables – override them on .ui-csc */
 .ui-csc {
   --ui-csc-card: #ffffff;
-  --ui-csc-ink: rgba(0, 0, 0, 0.88);
+  --ui-csc-ink: rgba(0, 22, 43, 0.88);
   --ui-csc-strong: #000000;
-  --ui-csc-text: rgba(0, 0, 0, 0.61);
-  --ui-csc-muted: rgba(0, 0, 0, 0.45);
-  --ui-csc-icon: rgba(0, 0, 0, 0.447);
-  --ui-csc-line: rgba(0, 0, 0, 0.06);
-  --ui-csc-wash: rgba(0, 0, 0, 0.015);
+  --ui-csc-text: rgba(0, 22, 43, 0.61);
+  --ui-csc-muted: rgba(0, 22, 43, 0.45);
+  --ui-csc-icon: rgba(0, 22, 43, 0.447);
+  --ui-csc-line: rgba(26, 62, 112, 0.06);
+  --ui-csc-wash: rgba(26, 62, 112, 0.015);
   --ui-csc-good: #1a9a52;
   --ui-csc-good-fill: rgba(26, 154, 82, 0.08);
   --ui-csc-bad: #e5484d;
   --ui-csc-bad-fill: rgba(229, 72, 77, 0.08);
-  --ui-csc-neutral-fill: rgba(0, 0, 0, 0.04);
+  --ui-csc-neutral-fill: rgba(26, 62, 112, 0.04);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
-  --ui-csc-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ui-csc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
   --ui-csc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
   width: 100%;
@@ -25,7 +25,7 @@ import{t as e}from"./jsx-runtime-CTsRTJUX.js";/* empty css             */var t=e
   border-radius: 10px;
   background: var(--ui-csc-card);
   box-shadow: var(--ui-csc-shadow);
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   line-height: 20px;
   font-weight: 400;
@@ -121,7 +121,7 @@ import{t as e}from"./jsx-runtime-CTsRTJUX.js";/* empty css             */var t=e
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-csc {
-  --ui-csc-card: #1c1c1e;
+  --ui-csc-card: #0e1d30;
   --ui-csc-ink: rgba(255, 255, 255, 0.9);
   --ui-csc-strong: #ffffff;
   --ui-csc-text: rgba(255, 255, 255, 0.62);
@@ -134,6 +134,6 @@ import{t as e}from"./jsx-runtime-CTsRTJUX.js";/* empty css             */var t=e
   --ui-csc-bad: #f2777b;
   --ui-csc-bad-fill: rgba(229, 72, 77, 0.14);
   --ui-csc-neutral-fill: rgba(255, 255, 255, 0.08);
-  --ui-csc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --ui-csc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
 }
 `,s=[{label:`Active users`,change:`Up 6.1% to 18.2K`,tone:`good`},{label:`Activation`,change:`Climbed to 41%, up 3 pts`,tone:`good`},{label:`Churn`,change:`Down to 2.1% from 2.6%`,tone:`good`,direction:`down`},{label:`Support tickets`,change:`Up 14% to 312`,tone:`bad`,direction:`up`}];function c(){return(0,t.jsx)(`div`,{className:`change-demo`,children:(0,t.jsx)(n,{period:`This week`,changes:s})})}export{c as default};

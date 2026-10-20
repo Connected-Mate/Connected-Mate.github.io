@@ -11,6 +11,7 @@
   "scripts": {
     "mirror": "node scripts/mirror.mjs",
     "check": "node scripts/mirror.mjs --check",
-    "preview": "node scripts/mirror.mjs --serve"
+    "preview": "node scripts/mirror.mjs --serve",
+    "theme": "python3 scripts/theme_team_ia.py"
   }
 }

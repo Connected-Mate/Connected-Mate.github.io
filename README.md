@@ -12,6 +12,16 @@ The original MIT-licensed source library is included under [`library/`](library/
 
 This copy was made with the founder's authorization. No authentication, locked Pro source, or private endpoint was accessed to create it.
 
+## Team IA art direction
+
+This branch repaints the mirror in the Team IA art direction (the hub "Osmose" look also used by the sign-in page, the account pages and the e-mails): blue-tinted neutrals on a `#eaeff6` ground, navy `#16345c`/`#0f2747`, berry `#851437` with rose `#f6bcc8` on dark surfaces, and Avenir Next. Layout, routes and demos are unchanged; third-party brand colours and semantic reds, greens and yellows are kept.
+
+```sh
+npm run mirror   # refresh the original copy
+npm run theme    # repaint it (needs Python 3 with numpy and Pillow); runs once per mirror
+npm run check
+```
+
 ## Rebuild the mirror
 
 Requirements: Node.js 20 or newer. There are no npm dependencies and no browser automation dependency.

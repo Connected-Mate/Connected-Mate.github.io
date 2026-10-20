@@ -366,18 +366,18 @@ const css = /* css */ \`
   --ui-lm-g: var(--ui-lm-gap, 56px);
   --ui-lm-row-gap: 20px;
   --ui-lm-fade: min(14%, 120px);
-  --ui-lm-muted: #9a9a9a;
-  --ui-lm-ink: #171717;
-  --ui-lm-label: #8f8f8f;
+  --ui-lm-muted: #8c9cb0;
+  --ui-lm-ink: #0a1829;
+  --ui-lm-label: #8091a6;
   --ui-lm-dim: 0.75;
-  --ui-lm-focus: #2f6bff;
+  --ui-lm-focus: #aa254f;
   --ui-lm-ease: cubic-bezier(0.22, 1, 0.36, 1);
   container-type: inline-size;
   display: grid;
   gap: var(--ui-lm-row-gap);
   width: 100%;
   min-width: 0;
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 /* Narrow containers (phones): smaller logos, tighter gaps */
@@ -392,8 +392,8 @@ const css = /* css */ \`
   cursor: grab;
   user-select: none;
   -webkit-user-select: none;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--ui-lm-fade), #000 calc(100% - var(--ui-lm-fade)), transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 var(--ui-lm-fade), #000 calc(100% - var(--ui-lm-fade)), transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000000 var(--ui-lm-fade), #000000 calc(100% - var(--ui-lm-fade)), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000000 var(--ui-lm-fade), #000000 calc(100% - var(--ui-lm-fade)), transparent);
   /* Room for focus rings so they aren't clipped */
   padding-block: 6px;
 }
@@ -502,10 +502,10 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-lm {
-  --ui-lm-muted: #7a7a82;
-  --ui-lm-ink: #ededed;
-  --ui-lm-label: #8b8b92;
-  --ui-lm-focus: #6d8bff;
+  --ui-lm-muted: #6b7d93;
+  --ui-lm-ink: #e7eef6;
+  --ui-lm-label: #7d8da3;
+  --ui-lm-focus: #c54064;
 }
 \`;
 `;export{e as default};

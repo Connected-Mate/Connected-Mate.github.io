@@ -3,30 +3,30 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 .ui-otp {
   --ui-otp-box: 48px;
   --ui-otp-gap: 8px;
-  --ui-otp-bg: #fafafa;
+  --ui-otp-bg: #f7fafe;
   --ui-otp-card: #ffffff;
-  --ui-otp-line: #e4e4e7;
-  --ui-otp-line-strong: #cfcfd4;
-  --ui-otp-ink: #171717;
-  --ui-otp-text: #404040;
-  --ui-otp-muted: #8f8f8f;
-  --ui-otp-faint: #c4c4c8;
-  --ui-otp-halo: rgba(23, 23, 23, 0.07);
-  --ui-otp-wait: #f2f2f3;
+  --ui-otp-line: #dde5f0;
+  --ui-otp-line-strong: #c5d1e0;
+  --ui-otp-ink: #0a1829;
+  --ui-otp-text: #2f4159;
+  --ui-otp-muted: #8091a6;
+  --ui-otp-faint: #b9c6d6;
+  --ui-otp-halo: rgba(10, 24, 41, 0.07);
+  --ui-otp-wait: #eef3fa;
   --ui-otp-shine: rgba(255, 255, 255, 0.95);
   --ui-otp-danger: #e5484d;
   --ui-otp-danger-line: rgba(229, 72, 77, 0.6);
   --ui-otp-danger-halo: rgba(229, 72, 77, 0.12);
   --ui-otp-success: #2f9e5b;
-  --ui-otp-accent: #2f6bff;
-  --ui-otp-focus: rgba(23, 23, 23, 0.22);
+  --ui-otp-accent: #aa254f;
+  --ui-otp-focus: rgba(10, 24, 41, 0.22);
   --ui-otp-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
   container-type: inline-size;
   display: grid;
   justify-self: stretch; /* it sizes the boxes from its own width, so it must never shrink to fit them */
   width: 100%;
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13.5px;
   line-height: 1.45;
   color: var(--ui-otp-text);
@@ -248,22 +248,22 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-otp {
-  --ui-otp-bg: #1d1d20;
-  --ui-otp-card: #19191b;
-  --ui-otp-line: #2a2a2e;
-  --ui-otp-line-strong: #3a3a40;
-  --ui-otp-ink: #ededed;
-  --ui-otp-text: #c8c8cc;
-  --ui-otp-muted: #8b8b92;
-  --ui-otp-faint: #4a4a50;
+  --ui-otp-bg: #0f1e31;
+  --ui-otp-card: #0b1a2c;
+  --ui-otp-line: #192b42;
+  --ui-otp-line-strong: #293c54;
+  --ui-otp-ink: #e7eef6;
+  --ui-otp-text: #becada;
+  --ui-otp-muted: #7d8da3;
+  --ui-otp-faint: #3a4c64;
   --ui-otp-halo: rgba(255, 255, 255, 0.08);
-  --ui-otp-wait: #1d1d20;
+  --ui-otp-wait: #0f1e31;
   --ui-otp-shine: rgba(255, 255, 255, 0.07);
   --ui-otp-danger: #ff6369;
   --ui-otp-danger-line: rgba(255, 99, 105, 0.55);
   --ui-otp-danger-halo: rgba(255, 99, 105, 0.14);
   --ui-otp-success: #4cc38a;
-  --ui-otp-accent: #6d8bff;
+  --ui-otp-accent: #c54064;
   --ui-otp-focus: rgba(255, 255, 255, 0.3);
 }
 `,l=`482913`,u=`481973`,ee=e=>e>0?`That code didn't work. ${e} ${e===1?`try`:`tries`} left.`:`That code didn't work. Request a new code.`;function d(){let[e,t]=(0,n.useState)(``),[i,a]=(0,n.useState)(`idle`),[o,c]=(0,n.useState)(3),d=(0,n.useRef)([]),f=(0,n.useRef)(!0),p=(e,t)=>d.current.push(window.setTimeout(t,e)),m=()=>{d.current.forEach(clearTimeout),d.current=[]},h=e=>{a(`verifying`),p(1e3,()=>{e===l?(a(`success`),p(3200,()=>{t(``),a(`idle`),c(3)})):(c(e=>Math.max(0,e-1)),a(`error`))})};(0,n.useEffect)(()=>{let e=700,n=n=>{for(let r=1;r<=n.length;r++){let i=n.slice(0,r);p(e,()=>t(i)),e+=150}};return n(u),p(e+150,()=>h(u)),e+=2850,p(e,()=>a(`idle`)),n(l),p(e+150,()=>{f.current=!1,h(l)}),m},[]);let g=()=>{f.current&&(f.current=!1,m(),t(``),a(`idle`))};return(0,r.jsx)(`div`,{className:`otp-demo`,onPointerDownCapture:g,onKeyDownCapture:g,onFocusCapture:g,children:(0,r.jsxs)(`div`,{className:`otp-demo__tray`,children:[(0,r.jsxs)(`div`,{className:`otp-demo__card`,children:[(0,r.jsx)(`span`,{className:`otp-demo__icon`,"aria-hidden":`true`,children:(0,r.jsxs)(`svg`,{viewBox:`0 0 24 24`,children:[(0,r.jsx)(`rect`,{x:`3.5`,y:`5.5`,width:`17`,height:`13`,rx:`2.5`}),(0,r.jsx)(`path`,{d:`M4.5 7.5l7.5 5.5 7.5-5.5`})]})}),(0,r.jsx)(`h3`,{className:`otp-demo__title`,children:`Check your email`}),(0,r.jsxs)(`p`,{className:`otp-demo__text`,children:[`We sent a code to `,(0,r.jsx)(`strong`,{children:`maya@acme.com`})]}),(0,r.jsx)(s,{className:`otp-demo__otp`,separator:!0,align:`center`,value:e,status:i,errorMessage:ee(o),onChange:e=>{t(e),i===`error`&&e&&a(`idle`)},onComplete:h,onResend:()=>c(3),resendIn:30})]}),(0,r.jsxs)(`p`,{className:`otp-demo__hint`,children:[`Demo code: `,(0,r.jsxs)(`span`,{children:[`482`,`\xA0`,`913`]})]})]})})}export{d as default};

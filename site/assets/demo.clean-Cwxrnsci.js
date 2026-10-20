@@ -3,22 +3,22 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 .ui-dic {
   --ui-dic-card: #ffffff;
   --ui-dic-strong: #000000;
-  --ui-dic-ink: rgba(0, 0, 0, 0.88);
-  --ui-dic-text: rgba(0, 0, 0, 0.61);
-  --ui-dic-muted: rgba(0, 0, 0, 0.45);
-  --ui-dic-faint: rgba(0, 0, 0, 0.27);
-  --ui-dic-line: rgba(0, 0, 0, 0.06);
-  --ui-dic-wash: rgba(0, 0, 0, 0.03);
+  --ui-dic-ink: rgba(0, 22, 43, 0.88);
+  --ui-dic-text: rgba(0, 22, 43, 0.61);
+  --ui-dic-muted: rgba(0, 22, 43, 0.45);
+  --ui-dic-faint: rgba(0, 22, 43, 0.27);
+  --ui-dic-line: rgba(26, 62, 112, 0.06);
+  --ui-dic-wash: rgba(26, 62, 112, 0.03);
   --ui-dic-alert: #e8a20c;
   --ui-dic-ok: #1a9a52;
   --ui-dic-ok-bg: rgba(26, 154, 82, 0.08);
-  --ui-dic-solid: rgba(0, 0, 0, 0.88);
-  --ui-dic-solid-hover: rgba(0, 0, 0, 0.8);
-  --ui-dic-on-solid: #fcfcfc;
+  --ui-dic-solid: rgba(0, 22, 43, 0.88);
+  --ui-dic-solid-hover: rgba(0, 22, 43, 0.8);
+  --ui-dic-on-solid: #fafcff;
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
-  --ui-dic-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --ui-dic-shadow-hover: 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 1px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.07);
-  --ui-dic-focus: rgba(0, 96, 226, 0.35);
+  --ui-dic-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
+  --ui-dic-shadow-hover: 0 0 0 0.5px rgba(26, 62, 112, 0.1), 0 1px 1px -1px rgba(26, 62, 112, 0.12), 0 1px 3px 0 rgba(26, 62, 112, 0.07);
+  --ui-dic-focus: rgba(155, 16, 66, 0.35);
   --ui-dic-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
   container-type: inline-size;
@@ -29,7 +29,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   border-radius: 10px;
   background: var(--ui-dic-card);
   box-shadow: var(--ui-dic-shadow);
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 20px;
@@ -199,7 +199,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-dic {
-  --ui-dic-card: #1c1c1e;
+  --ui-dic-card: #0e1d30;
   --ui-dic-strong: #ffffff;
   --ui-dic-ink: rgba(255, 255, 255, 0.9);
   --ui-dic-text: rgba(255, 255, 255, 0.62);
@@ -213,9 +213,9 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   /* The primary inverts: a light chip with dark text */
   --ui-dic-solid: rgba(255, 255, 255, 0.9);
   --ui-dic-solid-hover: rgba(255, 255, 255, 0.82);
-  --ui-dic-on-solid: #161618;
-  --ui-dic-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --ui-dic-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --ui-dic-focus: rgba(77, 141, 255, 0.5);
+  --ui-dic-on-solid: #091728;
+  --ui-dic-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
+  --ui-dic-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
+  --ui-dic-focus: rgba(193, 61, 97, 0.5);
 }
 `,c=[{id:`rollout`,title:`Roll out the new onboarding to everyone?`,detail:`Test won with +8% activation · 2 weeks of data`,primary:`Roll out`,secondary:`Keep testing`},{id:`renewal`,title:`Renew Figma for the design team?`,detail:`12 seats · $1,800 per year · renews in 5 days`,primary:`Renew`,secondary:`Change seats`}];function l(){let[e,t]=(0,n.useState)(0),[a,o]=(0,n.useState)(c.length);return(0,r.jsx)(`div`,{className:`decision-demo`,children:(0,r.jsx)(i,{decisions:c,onDecide:()=>{if(a>1)return o(a-1);window.setTimeout(()=>{o(c.length),t(e=>e+1)},3200)}},e)})}export{l as default};

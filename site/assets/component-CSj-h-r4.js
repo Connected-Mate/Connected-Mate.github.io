@@ -49,8 +49,8 @@ export function SideFolder({
               <feComposite in="light" in2="SourceAlpha" operator="in" />
             </filter>
           </defs>
-          <rect x="0" y="18" width="440" height="486" rx="36" fill="#5bb7ea" />
-          <rect x="0" y="18" width="440" height="486" rx="36" fill="#000" filter={\`url(#\${id}-hl)\`} />
+          <rect x="0" y="18" width="440" height="486" rx="36" fill="#80afea" />
+          <rect x="0" y="18" width="440" height="486" rx="36" fill="#000000" filter={\`url(#\${id}-hl)\`} />
         </svg>
 
         {/* Documents – each one slides out on its own */}
@@ -58,12 +58,12 @@ export function SideFolder({
           <defs>
             <linearGradient id={\`\${id}-paper\`} x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#fff" />
-              <stop offset="100%" stopColor="#eaf2f8" />
+              <stop offset="100%" stopColor="#ecf1f9" />
             </linearGradient>
             <symbol id={\`\${id}-doc\`} overflow="visible">
-              <rect x="0.6" y="0.6" width="278.8" height="348.8" rx="19.4" fill={\`url(#\${id}-paper)\`} stroke="rgba(0,0,0,0.12)" strokeWidth="1.2" />
+              <rect x="0.6" y="0.6" width="278.8" height="348.8" rx="19.4" fill={\`url(#\${id}-paper)\`} stroke="rgba(26, 62, 112, 0.12)" strokeWidth="1.2" />
               {LINES.map((w, i) => (
-                <rect key={i} x="30" y={87 + i * 28} width={w} height="9" rx="4.5" fill="rgba(0,0,0,0.12)" />
+                <rect key={i} x="30" y={87 + i * 28} width={w} height="9" rx="4.5" fill="rgba(26, 62, 112, 0.12)" />
               ))}
             </symbol>
           </defs>
@@ -115,16 +115,16 @@ const css = /* css */ \`
 .ui-sf-layer { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .ui-sf-back {
   filter:
-    drop-shadow(0 5.4cqw 6.4cqw rgba(60, 130, 180, 0.28))
-    drop-shadow(0 1.8cqw 2.7cqw rgba(60, 130, 180, 0.16))
-    drop-shadow(0 0.45cqw 0.9cqw rgba(60, 130, 180, 0.1));
+    drop-shadow(0 5.4cqw 6.4cqw rgba(81, 125, 182, 0.28))
+    drop-shadow(0 1.8cqw 2.7cqw rgba(81, 125, 182, 0.16))
+    drop-shadow(0 0.45cqw 0.9cqw rgba(81, 125, 182, 0.1));
 }
 
 /* Documents, in the 1.15 scaled space of the stack */
 .ui-sf-doc {
   transform-box: fill-box;
   transform-origin: center;
-  filter: drop-shadow(0 3px 4px rgba(0, 30, 60, 0.18));
+  filter: drop-shadow(0 3px 4px rgba(45, 4, 16, 0.18));
   transition: transform 0.55s var(--ui-sf-ease);
 }
 .ui-sf-doc--top    { transform: translate(83px, 43px) rotate(3deg); }
@@ -144,8 +144,8 @@ const css = /* css */ \`
   -webkit-mask: \${MASK};
   mask: \${MASK};
   background:
-    linear-gradient(180deg, rgba(0, 40, 75, 0) 76%, rgba(0, 40, 75, 0.26) 100%),
-    linear-gradient(160deg, rgba(132, 214, 248, 0.45) 0%, rgba(69, 170, 220, 0.45) 100%);
+    linear-gradient(180deg, rgba(0, 40, 75, 0) 76%, rgba(57, 7, 22, 0.26) 100%),
+    linear-gradient(160deg, rgba(167, 204, 253, 0.45) 0%, rgba(115, 161, 220, 0.45) 100%);
   -webkit-backdrop-filter: blur(4.5cqw) saturate(1.1);
   backdrop-filter: blur(4.5cqw) saturate(1.1);
   transform-origin: 0 50%;

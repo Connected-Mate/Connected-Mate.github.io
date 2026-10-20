@@ -208,26 +208,26 @@ const css = /* css */ \`
 .ui-nsc {
   --ui-nsc-card: #ffffff;
   --ui-nsc-strong: #000000;
-  --ui-nsc-ink: rgba(0, 0, 0, 0.88);
-  --ui-nsc-text: rgba(0, 0, 0, 0.61);
-  --ui-nsc-icon: rgba(0, 0, 0, 0.447);
-  --ui-nsc-line: rgba(0, 0, 0, 0.06);
-  --ui-nsc-wash: rgba(0, 0, 0, 0.03);
-  --ui-nsc-fill: rgba(0, 0, 0, 0.06);
-  --ui-nsc-art: rgba(0, 0, 0, 0.07);
-  --ui-nsc-accent: rgba(0, 96, 226, 0.765);
-  --ui-nsc-accent-bg: rgba(0, 96, 226, 0.05);
-  --ui-nsc-focus: rgba(0, 96, 226, 0.35);
+  --ui-nsc-ink: rgba(0, 22, 43, 0.88);
+  --ui-nsc-text: rgba(0, 22, 43, 0.61);
+  --ui-nsc-icon: rgba(0, 22, 43, 0.447);
+  --ui-nsc-line: rgba(26, 62, 112, 0.06);
+  --ui-nsc-wash: rgba(26, 62, 112, 0.03);
+  --ui-nsc-fill: rgba(26, 62, 112, 0.06);
+  --ui-nsc-art: rgba(26, 62, 112, 0.07);
+  --ui-nsc-accent: rgba(155, 16, 66, 0.765);
+  --ui-nsc-accent-bg: rgba(155, 16, 66, 0.05);
+  --ui-nsc-focus: rgba(155, 16, 66, 0.35);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
-  --ui-nsc-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --ui-nsc-shadow-hover: 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 1px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.07);
+  --ui-nsc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
+  --ui-nsc-shadow-hover: 0 0 0 0.5px rgba(26, 62, 112, 0.1), 0 1px 1px -1px rgba(26, 62, 112, 0.12), 0 1px 3px 0 rgba(26, 62, 112, 0.07);
   --ui-nsc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   box-sizing: border-box;
   container-type: inline-size;
   width: 100%;
   max-width: 380px;
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 20px;
@@ -277,8 +277,8 @@ const css = /* css */ \`
   stroke: var(--ui-nsc-art);
   stroke-width: 0.75;
   pointer-events: none;
-  -webkit-mask-image: radial-gradient(120% 110% at 100% 0%, #000 20%, transparent 70%);
-  mask-image: radial-gradient(120% 110% at 100% 0%, #000 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(120% 110% at 100% 0%, #000000 20%, transparent 70%);
+  mask-image: radial-gradient(120% 110% at 100% 0%, #000000 20%, transparent 70%);
 }
 .ui-nsc__dot { fill: var(--ui-nsc-accent); stroke: none; }
 .ui-nsc__fill { fill: var(--ui-nsc-accent-bg); }
@@ -373,7 +373,7 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-nsc {
-  --ui-nsc-card: #1c1c1e;
+  --ui-nsc-card: #0e1d30;
   --ui-nsc-strong: #ffffff;
   --ui-nsc-ink: rgba(255, 255, 255, 0.9);
   --ui-nsc-text: rgba(255, 255, 255, 0.62);
@@ -382,11 +382,11 @@ const css = /* css */ \`
   --ui-nsc-wash: rgba(255, 255, 255, 0.04);
   --ui-nsc-fill: rgba(255, 255, 255, 0.08);
   --ui-nsc-art: rgba(255, 255, 255, 0.07);
-  --ui-nsc-accent: #4d8dff;
-  --ui-nsc-accent-bg: rgba(77, 141, 255, 0.1);
-  --ui-nsc-focus: rgba(77, 141, 255, 0.5);
-  --ui-nsc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --ui-nsc-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --ui-nsc-accent: #c13d61;
+  --ui-nsc-accent-bg: rgba(193, 61, 97, 0.1);
+  --ui-nsc-focus: rgba(193, 61, 97, 0.5);
+  --ui-nsc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
+  --ui-nsc-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
 }
 :where(.dark, [data-theme="dark"]) .ui-nsc .ui-nsc__btn { background: rgba(255, 255, 255, 0.04); }
 \`;

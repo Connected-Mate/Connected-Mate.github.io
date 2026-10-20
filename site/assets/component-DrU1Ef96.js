@@ -154,13 +154,13 @@ export function ThinkingLoader({
 
 const css = /* css */ \`
 .ui-tl {
-  --ui-tl-ink: #171717;
-  --ui-tl-text: #6b6b6b;
-  --ui-tl-ray: #171717;
+  --ui-tl-ink: #0a1829;
+  --ui-tl-text: #5b6d84;
+  --ui-tl-ray: #0a1829;
   --ui-tl-bg: #ffffff;
-  --ui-tl-line: #e7e7e7;
+  --ui-tl-line: #e0e8f2;
   --ui-tl-shine: rgba(255, 255, 255, 0.82);
-  --ui-tl-done: #171717;
+  --ui-tl-done: #0a1829;
   --ui-tl-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-tl-h: 34px;
   --ui-tl-font: 14px;
@@ -173,9 +173,9 @@ const css = /* css */ \`
   padding: 0 15px 0 12px;
   border-radius: 999px;
   background: var(--ui-tl-bg);
-  box-shadow: inset 0 0 0 1px var(--ui-tl-line), 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0 0 0 1px var(--ui-tl-line), 0 1px 2px rgba(26, 62, 112, 0.04);
   color: var(--ui-tl-text);
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: var(--ui-tl-font);
   font-weight: 450;
   line-height: 1;
@@ -318,13 +318,13 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-tl {
-  --ui-tl-ink: #ededed;
-  --ui-tl-text: #8f8f8f;
-  --ui-tl-ray: #ededed;
-  --ui-tl-bg: #161618;
+  --ui-tl-ink: #e7eef6;
+  --ui-tl-text: #8091a6;
+  --ui-tl-ray: #e7eef6;
+  --ui-tl-bg: #091728;
   --ui-tl-line: rgba(255, 255, 255, 0.1);
   --ui-tl-shine: rgba(255, 255, 255, 0.95);
-  --ui-tl-done: #ededed;
+  --ui-tl-done: #e7eef6;
 }
 \`;
 `;export{e as default};

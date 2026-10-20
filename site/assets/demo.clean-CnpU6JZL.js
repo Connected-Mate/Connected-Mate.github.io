@@ -3,32 +3,32 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 .ui-src {
   --ui-src-card: #ffffff;
   --ui-src-strong: #000000;
-  --ui-src-ink: rgba(0, 0, 0, 0.88);
-  --ui-src-text: rgba(0, 0, 0, 0.61);
-  --ui-src-muted: rgba(0, 0, 0, 0.45);
-  --ui-src-faint: rgba(0, 0, 0, 0.27);
-  --ui-src-icon: rgba(0, 0, 0, 0.447);
-  --ui-src-line: rgba(0, 0, 0, 0.06);
-  --ui-src-wash: rgba(0, 0, 0, 0.03);
-  --ui-src-fill: rgba(0, 0, 0, 0.06);
-  --ui-src-bar: rgba(0, 0, 0, 0.1);
-  --ui-src-accent: rgba(0, 96, 226, 0.765);
-  --ui-src-accent-bg: rgba(0, 96, 226, 0.05);
-  --ui-src-accent-line: rgba(0, 96, 226, 0.35);
-  --ui-src-tag: rgba(0, 96, 226, 0.08);
-  --ui-src-alt: #5b5bd6;
-  --ui-src-alt-bg: rgba(91, 91, 214, 0.1);
+  --ui-src-ink: rgba(0, 22, 43, 0.88);
+  --ui-src-text: rgba(0, 22, 43, 0.61);
+  --ui-src-muted: rgba(0, 22, 43, 0.45);
+  --ui-src-faint: rgba(0, 22, 43, 0.27);
+  --ui-src-icon: rgba(0, 22, 43, 0.447);
+  --ui-src-line: rgba(26, 62, 112, 0.06);
+  --ui-src-wash: rgba(26, 62, 112, 0.03);
+  --ui-src-fill: rgba(26, 62, 112, 0.06);
+  --ui-src-bar: rgba(26, 62, 112, 0.1);
+  --ui-src-accent: rgba(155, 16, 66, 0.765);
+  --ui-src-accent-bg: rgba(155, 16, 66, 0.05);
+  --ui-src-accent-line: rgba(155, 16, 66, 0.35);
+  --ui-src-tag: rgba(155, 16, 66, 0.08);
+  --ui-src-alt: #9f1645;
+  --ui-src-alt-bg: rgba(159, 22, 69, 0.1);
   --ui-src-ok: #1a9a52;
   --ui-src-ok-bg: rgba(26, 154, 82, 0.08);
   --ui-src-warn: #e8a20c;
-  --ui-src-solid: rgba(0, 0, 0, 0.88);
-  --ui-src-solid-hover: rgba(0, 0, 0, 0.8);
-  --ui-src-on-solid: #fcfcfc;
+  --ui-src-solid: rgba(0, 22, 43, 0.88);
+  --ui-src-solid-hover: rgba(0, 22, 43, 0.8);
+  --ui-src-on-solid: #fafcff;
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
-  --ui-src-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --ui-src-shadow-hover: 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 1px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.07);
-  --ui-src-shadow-pop: 0 0 0 0.5px rgba(0, 0, 0, 0.08), 0 12px 28px -10px rgba(0, 0, 0, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --ui-src-focus: rgba(0, 96, 226, 0.35);
+  --ui-src-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
+  --ui-src-shadow-hover: 0 0 0 0.5px rgba(26, 62, 112, 0.1), 0 1px 1px -1px rgba(26, 62, 112, 0.12), 0 1px 3px 0 rgba(26, 62, 112, 0.07);
+  --ui-src-shadow-pop: 0 0 0 0.5px rgba(26, 62, 112, 0.08), 0 12px 28px -10px rgba(26, 62, 112, 0.16), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
+  --ui-src-focus: rgba(155, 16, 66, 0.35);
   --ui-src-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
   container-type: inline-size;
@@ -38,7 +38,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   border-radius: 10px;
   background: var(--ui-src-card);
   box-shadow: var(--ui-src-shadow);
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 20px;
@@ -270,7 +270,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-src {
-  --ui-src-card: #1c1c1e;
+  --ui-src-card: #0e1d30;
   --ui-src-strong: #ffffff;
   --ui-src-ink: rgba(255, 255, 255, 0.9);
   --ui-src-text: rgba(255, 255, 255, 0.62);
@@ -281,23 +281,23 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-src-wash: rgba(255, 255, 255, 0.04);
   --ui-src-fill: rgba(255, 255, 255, 0.08);
   --ui-src-bar: rgba(255, 255, 255, 0.14);
-  --ui-src-accent: #4d8dff;
-  --ui-src-accent-bg: rgba(77, 141, 255, 0.14);
-  --ui-src-accent-line: rgba(77, 141, 255, 0.4);
-  --ui-src-tag: rgba(77, 141, 255, 0.16);
-  --ui-src-alt: #9d9dff;
-  --ui-src-alt-bg: rgba(91, 91, 214, 0.22);
+  --ui-src-accent: #c13d61;
+  --ui-src-accent-bg: rgba(193, 61, 97, 0.14);
+  --ui-src-accent-line: rgba(193, 61, 97, 0.4);
+  --ui-src-tag: rgba(193, 61, 97, 0.16);
+  --ui-src-alt: #cd5f78;
+  --ui-src-alt-bg: rgba(159, 22, 69, 0.22);
   --ui-src-ok: #3ec27a;
   --ui-src-ok-bg: rgba(26, 154, 82, 0.14);
   --ui-src-warn: #f0b232;
   /* The primary inverts: a light chip with dark text */
   --ui-src-solid: rgba(255, 255, 255, 0.9);
   --ui-src-solid-hover: rgba(255, 255, 255, 0.82);
-  --ui-src-on-solid: #161618;
-  --ui-src-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --ui-src-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --ui-src-shadow-pop: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 12px 28px -10px rgba(0, 0, 0, 0.6), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --ui-src-focus: rgba(77, 141, 255, 0.5);
+  --ui-src-on-solid: #091728;
+  --ui-src-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
+  --ui-src-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
+  --ui-src-shadow-pop: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 12px 28px -10px rgba(0, 22, 43, 0.6), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
+  --ui-src-focus: rgba(193, 61, 97, 0.5);
 }
-:where(.dark, [data-theme="dark"]) .ui-src__menu { background: #232326; }
+:where(.dark, [data-theme="dark"]) .ui-src__menu { background: #132439; }
 `,l=[{id:`incremental`,label:`Incremental sync`,reason:(0,r.jsxs)(r.Fragment,{children:[`Only 4% of rows changed since yesterday – switching to `,(0,r.jsx)(`strong`,{children:`Incremental sync`}),` saves about 40 minutes.`]}),signal:3},{id:`full`,label:`Full refresh`,reason:(0,r.jsxs)(r.Fragment,{children:[`A `,(0,r.jsx)(`strong`,{children:`Full refresh`}),` rebuilds every table. Safest after schema changes, but takes about 50 minutes.`]}),signal:1},{id:`skip`,label:`Skip tonight`,reason:(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(`strong`,{children:`Skip tonight`}),` keeps yesterday's data. Fine if nobody needs fresh numbers tomorrow morning.`]}),signal:0}];function u(){return(0,r.jsx)(`div`,{className:`recommendation-demo`,children:(0,r.jsx)(a,{options:l})})}export{u as default};

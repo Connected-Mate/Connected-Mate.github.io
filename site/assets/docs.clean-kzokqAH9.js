@@ -2,7 +2,7 @@ var e={requirements:[`React 19`],whenToUse:[`Showing how a set of records splits
 
 const dimensions = [
   { key: "status", label: "Status", values: ["Todo", "In progress", "Done"] },
-  { key: "priority", label: "Priority", values: ["High", "Medium", "Low"], colors: { High: "#e5484d", Medium: "#3c85e9" } },
+  { key: "priority", label: "Priority", values: ["High", "Medium", "Low"], colors: { High: "#e5484d", Medium: "#b63359" } },
 ];
 const measures = [
   { key: "count", label: "Task count", unit: "tasks" },

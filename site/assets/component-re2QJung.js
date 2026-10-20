@@ -86,12 +86,12 @@ const DashIcon = () => (
 
 const css = /* css */ \`
 .ui-cs {
-  --ui-cs-tray: #f0f0f0;
+  --ui-cs-tray: #ebf1f8;
   --ui-cs-card: #ffffff;
-  --ui-cs-line: #f0f0f0;
-  --ui-cs-ink: #171717;
-  --ui-cs-muted: #737373;
-  --ui-cs-accent: #2f6bff;
+  --ui-cs-line: #ebf1f8;
+  --ui-cs-ink: #0a1829;
+  --ui-cs-muted: #63758c;
+  --ui-cs-accent: #aa254f;
   --ui-cs-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
   width: 100%;
@@ -102,7 +102,7 @@ const css = /* css */ \`
   /* The gray tray frames the white card on every side */
   padding: 6px;
   border-radius: 22px;
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color: var(--ui-cs-ink);
   -webkit-font-smoothing: antialiased;
 }
@@ -130,9 +130,9 @@ const css = /* css */ \`
   margin: 0;
   overflow: hidden;
   background: var(--ui-cs-card);
-  border: 1px solid #e5e5e5;
+  border: 1px solid #dee6f0;
   border-radius: 16px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 2px rgba(26, 62, 112, 0.06);
 }
 .ui-cs__row {
   display: grid;
@@ -145,7 +145,7 @@ const css = /* css */ \`
   transition: background-color 140ms ease;
 }
 .ui-cs__row + .ui-cs__row { border-top: 1px solid var(--ui-cs-line); }
-.ui-cs__row:hover { background: #fafafa; }
+.ui-cs__row:hover { background: #f7fafe; }
 .ui-cs__label {
   overflow: hidden;
   font-size: 14px;
@@ -179,9 +179,9 @@ const css = /* css */ \`
   height: 20px;
   border-radius: 6px;
 }
-.ui-cs__trend[data-tone="good"] { background: #edfaf3; color: #1f8a4c; }
-.ui-cs__trend[data-tone="bad"] { background: #fff0f0; color: #e5484d; }
-.ui-cs__trend[data-tone="neutral"] { background: #f5f5f5; color: #8f8f8f; }
+.ui-cs__trend[data-tone="good"] { background: #f3f7fc; color: #1f8a4c; }
+.ui-cs__trend[data-tone="bad"] { background: #f0f5fb; color: #e5484d; }
+.ui-cs__trend[data-tone="neutral"] { background: #f1f6fb; color: #8091a6; }
 
 @keyframes ui-cs-in {
   from { opacity: 0; transform: translateY(4px); }
@@ -192,20 +192,20 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-cs {
-  --ui-cs-tray: #161618;
-  --ui-cs-card: #232326;
+  --ui-cs-tray: #091728;
+  --ui-cs-card: #132439;
   --ui-cs-line: rgba(255, 255, 255, 0.08);
-  --ui-cs-ink: #ededed;
-  --ui-cs-muted: #8f8f8f;
-  --ui-cs-accent: #6b95ff;
+  --ui-cs-ink: #e7eef6;
+  --ui-cs-muted: #8091a6;
+  --ui-cs-accent: #c84969;
 }
 :where(.dark, [data-theme="dark"]) .ui-cs__card {
   border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
 }
-:where(.dark, [data-theme="dark"]) .ui-cs__row:hover { background: #2a2a2d; }
+:where(.dark, [data-theme="dark"]) .ui-cs__row:hover { background: #192b42; }
 :where(.dark, [data-theme="dark"]) .ui-cs__trend[data-tone="good"] { background: rgba(31, 138, 76, 0.18); color: #3fbf74; }
 :where(.dark, [data-theme="dark"]) .ui-cs__trend[data-tone="bad"] { background: rgba(229, 72, 77, 0.16); color: #f2777b; }
-:where(.dark, [data-theme="dark"]) .ui-cs__trend[data-tone="neutral"] { background: #2a2a2d; color: #8f8f8f; }
+:where(.dark, [data-theme="dark"]) .ui-cs__trend[data-tone="neutral"] { background: #192b42; color: #8091a6; }
 \`;
 `;export{e as default};

@@ -1,26 +1,26 @@
 import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js";/* empty css             */var n=e(),r=t(),i=()=>typeof window<`u`&&window.matchMedia?.(`(prefers-reduced-motion: reduce)`).matches;function a({id:e,children:t,className:i}){let a=(0,n.useRef)({id:e,node:t}),[o,s]=(0,n.useState)(e),[c,l]=(0,n.useState)(null);return o!==e&&(s(e),l(a.current)),a.current={id:e,node:t},(0,n.useEffect)(()=>{if(!c)return;let e=window.setTimeout(()=>l(null),300);return()=>window.clearTimeout(e)},[c]),(0,r.jsxs)(`span`,{className:[`ui-ma__swap`,i].filter(Boolean).join(` `),children:[c&&(0,r.jsx)(`span`,{className:`ui-ma__swap-item`,"data-out":``,"aria-hidden":`true`,children:c.node},`out-${c.id}`),(0,r.jsx)(`span`,{className:`ui-ma__swap-item`,children:t},e)]})}function o({version:e,children:t,className:i}){let o=(0,n.useRef)(null),[s,c]=(0,n.useState)(void 0);return(0,n.useEffect)(()=>{let e=o.current;if(!e||typeof ResizeObserver>`u`)return;let t=new ResizeObserver(()=>c(e.offsetHeight));return t.observe(e),()=>t.disconnect()},[]),(0,r.jsxs)(`div`,{className:[`ui-ma-text`,i].filter(Boolean).join(` `),style:{height:s},children:[(0,r.jsx)(`style`,{href:`ui-message-actions`,precedence:`default`,children:f}),(0,r.jsx)(`div`,{ref:o,className:`ui-ma-text__inner`,children:(0,r.jsx)(a,{id:String(e),className:`ui-ma-text__swap`,children:t})})]})}var s=({d:e})=>(0,r.jsx)(`svg`,{viewBox:`0 0 24 24`,className:`ui-ma__glyph`,"aria-hidden":`true`,children:(0,r.jsx)(`path`,{d:e})}),c={copy:`M9 9.5A1.5 1.5 0 0 1 10.5 8h8A1.5 1.5 0 0 1 20 9.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 9 18.5zM15 8V5.5A1.5 1.5 0 0 0 13.5 4h-8A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H9`,check:`M5.5 12.5l4.2 4.2L18.5 7.8`,redo:`M19.5 12a7.5 7.5 0 1 1-2.2-5.3L19.5 9M19.5 4.5V9H15`,thumb:`M7.5 10.5v9M7.5 10.5l3.3-6a1.8 1.8 0 0 1 3.3 1.2l-.6 3.8H18a2 2 0 0 1 2 2.3l-1.2 6.4a2 2 0 0 1-2 1.8H5a1 1 0 0 1-1-1v-7.5a1 1 0 0 1 1-1z`,speaker:`M11 5.5 6.8 9H4v6h2.8l4.2 3.5zM15.2 9.2a4 4 0 0 1 0 5.6M17.9 6.6a7.8 7.8 0 0 1 0 10.8`,prev:`m14.5 7-5 5 5 5`,next:`m9.5 7 5 5-5 5`,close:`m7.5 7.5 9 9m0-9-9 9`},l=[`copy`,`regenerate`,`feedback`,`speak`],u=[`Not accurate`,`Too long`,`Didn't follow instructions`,`Other`];function d({text:e,actions:t=l,versions:o,version:d,defaultVersion:p,onVersionChange:m,onCopy:h,onRegenerate:g,regenerating:_=!1,onFeedback:v,reasons:y=u,onSpeak:b,speaking:x,speakDuration:ee,quiet:te=!0,label:ne=`Message actions`,className:re}){let S=(0,n.useId)(),C=Math.max(1,typeof o==`number`?Math.floor(o):o?.length??1),[w,T]=(0,n.useState)(()=>Math.min(C-1,Math.max(0,p??C-1))),[E,D]=(0,n.useState)(C),[O,k]=(0,n.useState)(null),[A,j]=(0,n.useState)(!1),[M,N]=(0,n.useState)(null),[P,F]=(0,n.useState)(``),[I,L]=(0,n.useState)(!1);E!==C&&(C>E&&(T(C-1),k(null),j(!1)),D(C));let R=Math.min(C-1,Math.max(0,d??w)),z=e=>{let t=Math.min(C-1,Math.max(0,e));t!==R&&(d===void 0&&T(t),m?.(t),H(`Version ${t+1} of ${C}`))},[B,V]=(0,n.useState)(``),H=e=>V(t=>t===e?`${e} `:e),[U,W]=(0,n.useState)(0);(0,n.useEffect)(()=>{if(!U)return;let e=window.setTimeout(()=>W(0),1600);return()=>window.clearTimeout(e)},[U]);let ie=()=>{e!==void 0&&navigator.clipboard?.writeText(e).catch(()=>{}),h?.(e),W(Date.now()),H(`Copied`)},[G,ae]=(0,n.useState)(0),oe=()=>{ae(e=>e+1),g?.(),H(`Regenerating`)},se=()=>{if(O===`up`){k(null),v?.(null);return}k(`up`),j(!1),v?.(`up`),H(`Marked as good response`)},ce=()=>{if(O===`down`){k(null),j(!1),v?.(null);return}k(`down`),j(!0),L(!1),N(null),F(``),v?.(`down`),H(`Marked as bad response. Tell us what went wrong below`)},K=()=>{M&&!I&&(v?.(`down`,M===`Other`?P.trim()||`Other`:M),L(!0),H(`Thanks for the feedback`))};(0,n.useEffect)(()=>{if(!I)return;let e=window.setTimeout(()=>j(!1),i()?1200:1500);return()=>window.clearTimeout(e)},[I]);let q=(0,n.useRef)(null),J=()=>{j(!1),q.current?.focus()},[Y,X]=(0,n.useState)(!1),Z=x??Y,le=e?e.trim().split(/\s+/).length:0,Q=ee??Math.max(2600,le*380);(0,n.useEffect)(()=>{if(x!==void 0||!Y)return;let e=window.setTimeout(()=>{X(!1),b?.(!1),H(`Finished reading`)},Q);return()=>window.clearTimeout(e)},[Y,x,Q]);let ue=()=>{let e=!Z;x===void 0&&X(e),b?.(e),H(e?`Reading aloud`:`Stopped reading`)},de=!!U||A||Z||_,$=e=>(0,r.jsxs)(`span`,{className:`ui-ma__item`,"data-flash":e.flash?``:void 0,children:[(0,r.jsx)(`button`,{ref:e.refEl,type:`button`,className:`ui-ma__btn ui-ma__btn--${e.key}`,"aria-label":e.labelText,"aria-pressed":e.pressed,"aria-expanded":e.expanded,"aria-controls":e.controls,onClick:e.onClick,...e.extra,children:e.children}),(0,r.jsx)(`span`,{className:`ui-ma__tip`,"aria-hidden":`true`,children:(0,r.jsx)(a,{id:e.tip,children:e.tip})})]},e.key),fe=t.map(e=>e===`copy`?$({key:`copy`,tip:U?`Copied`:`Copy`,labelText:U?`Copied`:`Copy message`,onClick:ie,flash:!!U,extra:{"data-done":U?``:void 0},children:(0,r.jsxs)(`span`,{className:`ui-ma__icon ui-ma__morph`,children:[(0,r.jsx)(`span`,{className:`ui-ma__layer`,"data-on":U?void 0:``,children:(0,r.jsx)(s,{d:c.copy})}),(0,r.jsx)(`span`,{className:`ui-ma__layer ui-ma__layer--check`,"data-on":U?``:void 0,children:(0,r.jsx)(s,{d:c.check})})]})}):e===`regenerate`?(0,r.jsxs)(`span`,{className:`ui-ma__regen`,children:[$({key:`regenerate`,tip:_?`Writing…`:`Regenerate`,labelText:`Regenerate response`,onClick:oe,extra:{"data-busy":_?``:void 0},children:(0,r.jsx)(`span`,{className:`ui-ma__icon`,children:(0,r.jsx)(`span`,{className:`ui-ma__spin`,"data-spin":G?``:void 0,children:(0,r.jsx)(s,{d:c.redo})},G)})}),(0,r.jsx)(`span`,{className:`ui-ma__versions`,"data-open":C>1?``:void 0,inert:C<2,children:(0,r.jsxs)(`span`,{className:`ui-ma__versions-clip`,role:`group`,"aria-label":`Versions`,children:[(0,r.jsx)(`button`,{type:`button`,className:`ui-ma__step`,"data-dir":`prev`,"aria-label":`Previous version`,disabled:R===0,onClick:()=>z(R-1),children:(0,r.jsx)(s,{d:c.prev})}),(0,r.jsxs)(`span`,{className:`ui-ma__count`,"aria-label":`Version ${R+1} of ${C}`,children:[(0,r.jsx)(a,{id:String(R),className:`ui-ma__count-now`,children:R+1}),(0,r.jsx)(`span`,{"aria-hidden":`true`,children:`/`}),(0,r.jsx)(a,{id:String(C),children:C})]}),(0,r.jsx)(`button`,{type:`button`,className:`ui-ma__step`,"data-dir":`next`,"aria-label":`Next version`,disabled:R>=C-1,onClick:()=>z(R+1),children:(0,r.jsx)(s,{d:c.next})})]})})]},`regenerate`):e===`feedback`?(0,r.jsxs)(n.Fragment,{children:[$({key:`up`,tip:O===`up`?`Thanks!`:`Good response`,labelText:`Good response`,pressed:O===`up`,onClick:se,children:(0,r.jsx)(`span`,{className:`ui-ma__icon ui-ma__thumb`,children:(0,r.jsx)(s,{d:c.thumb})})}),$({key:`down`,tip:`Bad response`,labelText:`Bad response`,pressed:O===`down`,expanded:A,controls:`${S}-feedback`,onClick:ce,refEl:q,children:(0,r.jsx)(`span`,{className:`ui-ma__icon ui-ma__thumb`,children:(0,r.jsx)(s,{d:c.thumb})})})]},`feedback`):$({key:`speak`,tip:Z?`Stop`:`Read aloud`,labelText:Z?`Stop reading`:`Read aloud`,pressed:Z,onClick:ue,children:(0,r.jsxs)(`span`,{className:`ui-ma__icon ui-ma__morph`,children:[(0,r.jsx)(`span`,{className:`ui-ma__layer`,"data-on":Z?void 0:``,children:(0,r.jsx)(s,{d:c.speaker})}),(0,r.jsxs)(`span`,{className:`ui-ma__layer ui-ma__eq`,"data-on":Z?``:void 0,children:[(0,r.jsx)(`i`,{}),(0,r.jsx)(`i`,{}),(0,r.jsx)(`i`,{}),(0,r.jsx)(`i`,{})]})]})}));return(0,r.jsxs)(`div`,{className:[`ui-ma`,re].filter(Boolean).join(` `),"data-quiet":te?``:void 0,"data-active":de?``:void 0,children:[(0,r.jsx)(`style`,{href:`ui-message-actions`,precedence:`default`,children:f}),(0,r.jsx)(`div`,{className:`ui-ma__bar`,role:`group`,"aria-label":ne,children:fe}),t.includes(`feedback`)&&(0,r.jsx)(`div`,{id:`${S}-feedback`,className:`ui-ma__fold`,"data-open":A?``:void 0,inert:!A,children:(0,r.jsx)(`div`,{className:`ui-ma__clip`,children:(0,r.jsxs)(`div`,{className:`ui-ma__panel`,role:`group`,"aria-labelledby":`${S}-ask`,onKeyDown:e=>{e.key===`Escape`&&(e.stopPropagation(),J())},children:[(0,r.jsxs)(`div`,{className:`ui-ma__panel-head`,children:[(0,r.jsx)(`span`,{id:`${S}-ask`,className:`ui-ma__ask`,children:`What went wrong?`}),(0,r.jsx)(`button`,{type:`button`,className:`ui-ma__close`,"aria-label":`Close feedback`,onClick:J,children:(0,r.jsx)(s,{d:c.close})})]}),(0,r.jsxs)(`div`,{className:`ui-ma__chips`,children:[y.map(e=>(0,r.jsx)(`button`,{type:`button`,className:`ui-ma__chip`,"aria-pressed":M===e,disabled:I,onClick:()=>N(M===e?null:e),children:e},e)),(0,r.jsx)(`button`,{type:`button`,className:`ui-ma__send`,"data-sent":I?``:void 0,disabled:!M,"aria-disabled":I||void 0,onClick:K,children:(0,r.jsx)(a,{id:I?`sent`:`send`,children:I?(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(s,{d:c.check}),`Thanks!`]}):`Send`})})]}),y.includes(`Other`)&&(0,r.jsx)(`div`,{className:`ui-ma__fold`,"data-open":M===`Other`&&!I?``:void 0,inert:M!==`Other`||I,children:(0,r.jsx)(`div`,{className:`ui-ma__clip`,children:(0,r.jsx)(`input`,{className:`ui-ma__input`,value:P,placeholder:`Tell us more (optional)`,"aria-label":`What went wrong, in your words`,onChange:e=>F(e.target.value),onKeyDown:e=>{e.key===`Enter`&&K()}})})})]})})}),(0,r.jsx)(`span`,{className:`ui-ma__sr`,"aria-live":`polite`,children:B})]})}var f=`
 .ui-ma {
   --ui-ma-card: #ffffff;
-  --ui-ma-line: #ececec;
-  --ui-ma-ink: #171717;
-  --ui-ma-text: #404040;
-  --ui-ma-muted: #8f8f8f;
-  --ui-ma-well: #f4f4f5;
-  --ui-ma-hover: rgba(23, 23, 23, 0.06);
-  --ui-ma-accent: #2f6bff;
-  --ui-ma-accent-bg: rgba(47, 107, 255, 0.1);
+  --ui-ma-line: #e6edf6;
+  --ui-ma-ink: #0a1829;
+  --ui-ma-text: #2f4159;
+  --ui-ma-muted: #8091a6;
+  --ui-ma-well: #f0f5fb;
+  --ui-ma-hover: rgba(10, 24, 41, 0.06);
+  --ui-ma-accent: #aa254f;
+  --ui-ma-accent-bg: rgba(170, 37, 79, 0.1);
   --ui-ma-ok: #18794e;
   --ui-ma-ok-bg: rgba(34, 160, 90, 0.11);
-  --ui-ma-tip-bg: #171717;
+  --ui-ma-tip-bg: #0a1829;
   --ui-ma-tip-text: #ffffff;
-  --ui-ma-focus: rgba(23, 23, 23, 0.22);
+  --ui-ma-focus: rgba(10, 24, 41, 0.22);
   --ui-ma-ease: cubic-bezier(0.32, 0.72, 0.24, 1);
   box-sizing: border-box;
   display: block;
   width: 100%;
   min-width: 0;
   container-type: inline-size;
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   line-height: 20px;
   color: var(--ui-ma-text);
@@ -108,7 +108,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 .ui-ma__fold { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 420ms var(--ui-ma-ease), opacity 220ms ease; }
 .ui-ma__fold[data-open] { grid-template-rows: 1fr; opacity: 1; transition: grid-template-rows 420ms var(--ui-ma-ease), opacity 320ms ease 80ms; }
 .ui-ma__clip { min-height: 0; overflow: hidden; margin: -1px; padding: 1px; }  /* the 1px keeps the card's hairline from being clipped */
-.ui-ma__panel { max-width: 440px; margin: 6px 0 0; padding: 12px 14px 14px; border-radius: 16px; background: var(--ui-ma-card); box-shadow: 0 0 0 1px var(--ui-ma-line), 0 1px 2px rgba(0, 0, 0, 0.04); }
+.ui-ma__panel { max-width: 440px; margin: 6px 0 0; padding: 12px 14px 14px; border-radius: 16px; background: var(--ui-ma-card); box-shadow: 0 0 0 1px var(--ui-ma-line), 0 1px 2px rgba(26, 62, 112, 0.04); }
 .ui-ma__panel-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 24px; }
 .ui-ma__ask { font-size: 12.5px; font-weight: 500; color: var(--ui-ma-ink); }
 .ui-ma__close { display: grid; flex: none; place-items: center; width: 24px; height: 24px; margin-right: -4px; border-radius: 7px; color: var(--ui-ma-muted); transition: background-color 160ms ease, color 160ms ease; }
@@ -162,19 +162,19 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-ma {
-  --ui-ma-card: #19191b;
-  --ui-ma-line: #2a2a2e;
-  --ui-ma-ink: #ededed;
-  --ui-ma-text: #c8c8cc;
-  --ui-ma-muted: #8b8b92;
-  --ui-ma-well: #222225;
+  --ui-ma-card: #0b1a2c;
+  --ui-ma-line: #192b42;
+  --ui-ma-ink: #e7eef6;
+  --ui-ma-text: #becada;
+  --ui-ma-muted: #7d8da3;
+  --ui-ma-well: #132338;
   --ui-ma-hover: rgba(255, 255, 255, 0.07);
-  --ui-ma-accent: #8fb1ff;
-  --ui-ma-accent-bg: rgba(79, 130, 255, 0.16);
+  --ui-ma-accent: #f392a5;
+  --ui-ma-accent-bg: rgba(187, 54, 92, 0.16);
   --ui-ma-ok: #6ee7a8;
   --ui-ma-ok-bg: rgba(110, 231, 168, 0.12);
-  --ui-ma-tip-bg: #ededed;
-  --ui-ma-tip-text: #171717;
+  --ui-ma-tip-bg: #e7eef6;
+  --ui-ma-tip-text: #0a1829;
   --ui-ma-focus: rgba(255, 255, 255, 0.3);
 }
 `,p=[`Version 2.4 adds shared workspaces, cuts sync time in half and fixes the export bug on Windows.`,`Shared workspaces arrive in 2.4, sync is twice as fast, and exports on Windows work again.`,`In short: teams can now share a workspace, syncing takes half as long and Windows exports are fixed.`];function m(){let e=(0,n.useRef)(null),[t,i]=(0,n.useState)(0),[a,s]=(0,n.useState)(1),[c,l]=(0,n.useState)(0),[u,f]=(0,n.useState)(!1),[m,h]=(0,n.useState)(!1),g=(0,n.useRef)(!1),_=()=>{u||(f(!0),window.setTimeout(()=>{f(!1),s(e=>Math.min(p.length,e+1))},1e3))};(0,n.useEffect)(()=>l(a-1),[a]),(0,n.useEffect)(()=>{let t=t=>()=>e.current?.querySelector(t)?.click(),n=[[700,t(`.ui-ma__btn--copy`)],[1e3,t(`.ui-ma__btn--down`)],[700,t(`.ui-ma__chip:nth-child(2)`)],[900,t(`.ui-ma__send`)],[2600,t(`.ui-ma__btn--regenerate`)],[2800,t(`.ui-ma__step[data-dir='prev']`)],[2e3,t(`.ui-ma__step[data-dir='next']`)],[3e3,()=>{s(1),l(0),i(e=>e+1)}]],r=0,a=0,o=()=>{g.current||r>=n.length||(a=window.setTimeout(()=>{g.current||(n[r][1](),r++,o())},n[r][0]))};return o(),()=>window.clearTimeout(a)},[t]);let v=()=>{g.current=!0,h(!0)},y=p[c];return(0,r.jsx)(`div`,{ref:e,className:`ma-demo`,onPointerEnter:v,onPointerDownCapture:v,onKeyDownCapture:v,onFocusCapture:v,children:(0,r.jsxs)(`div`,{className:`ma-demo__message`,"data-ui-message":``,children:[(0,r.jsxs)(`div`,{className:`ma-demo__card`,children:[(0,r.jsx)(`p`,{className:`ma-demo__ask`,children:`Summarize the 2.4 release notes in one sentence.`}),(0,r.jsxs)(`div`,{className:`ma-demo__who`,children:[(0,r.jsx)(`span`,{className:`ma-demo__dot`,"aria-hidden":`true`}),`Sonnet 5.5`]}),(0,r.jsx)(`div`,{className:`ma-demo__answer`,"data-writing":u?``:void 0,children:(0,r.jsx)(o,{version:c,children:y})})]}),(0,r.jsx)(`div`,{className:`ma-demo__tray`,children:(0,r.jsx)(d,{text:m?y:void 0,versions:a,version:c,onVersionChange:l,onRegenerate:_,regenerating:u},t)})]})})}export{m as default};

@@ -434,30 +434,30 @@ const css = /* css */ \`
 .ui-otp {
   --ui-otp-box: 48px;
   --ui-otp-gap: 8px;
-  --ui-otp-bg: #fafafa;
+  --ui-otp-bg: #f7fafe;
   --ui-otp-card: #ffffff;
-  --ui-otp-line: #e4e4e7;
-  --ui-otp-line-strong: #cfcfd4;
-  --ui-otp-ink: #171717;
-  --ui-otp-text: #404040;
-  --ui-otp-muted: #8f8f8f;
-  --ui-otp-faint: #c4c4c8;
-  --ui-otp-halo: rgba(23, 23, 23, 0.07);
-  --ui-otp-wait: #f2f2f3;
+  --ui-otp-line: #dde5f0;
+  --ui-otp-line-strong: #c5d1e0;
+  --ui-otp-ink: #0a1829;
+  --ui-otp-text: #2f4159;
+  --ui-otp-muted: #8091a6;
+  --ui-otp-faint: #b9c6d6;
+  --ui-otp-halo: rgba(10, 24, 41, 0.07);
+  --ui-otp-wait: #eef3fa;
   --ui-otp-shine: rgba(255, 255, 255, 0.95);
   --ui-otp-danger: #e5484d;
   --ui-otp-danger-line: rgba(229, 72, 77, 0.6);
   --ui-otp-danger-halo: rgba(229, 72, 77, 0.12);
   --ui-otp-success: #2f9e5b;
-  --ui-otp-accent: #2f6bff;
-  --ui-otp-focus: rgba(23, 23, 23, 0.22);
+  --ui-otp-accent: #aa254f;
+  --ui-otp-focus: rgba(10, 24, 41, 0.22);
   --ui-otp-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
   container-type: inline-size;
   display: grid;
   justify-self: stretch; /* it sizes the boxes from its own width, so it must never shrink to fit them */
   width: 100%;
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13.5px;
   line-height: 1.45;
   color: var(--ui-otp-text);
@@ -679,22 +679,22 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-otp {
-  --ui-otp-bg: #1d1d20;
-  --ui-otp-card: #19191b;
-  --ui-otp-line: #2a2a2e;
-  --ui-otp-line-strong: #3a3a40;
-  --ui-otp-ink: #ededed;
-  --ui-otp-text: #c8c8cc;
-  --ui-otp-muted: #8b8b92;
-  --ui-otp-faint: #4a4a50;
+  --ui-otp-bg: #0f1e31;
+  --ui-otp-card: #0b1a2c;
+  --ui-otp-line: #192b42;
+  --ui-otp-line-strong: #293c54;
+  --ui-otp-ink: #e7eef6;
+  --ui-otp-text: #becada;
+  --ui-otp-muted: #7d8da3;
+  --ui-otp-faint: #3a4c64;
   --ui-otp-halo: rgba(255, 255, 255, 0.08);
-  --ui-otp-wait: #1d1d20;
+  --ui-otp-wait: #0f1e31;
   --ui-otp-shine: rgba(255, 255, 255, 0.07);
   --ui-otp-danger: #ff6369;
   --ui-otp-danger-line: rgba(255, 99, 105, 0.55);
   --ui-otp-danger-halo: rgba(255, 99, 105, 0.14);
   --ui-otp-success: #4cc38a;
-  --ui-otp-accent: #6d8bff;
+  --ui-otp-accent: #c54064;
   --ui-otp-focus: rgba(255, 255, 255, 0.3);
 }
 \`;

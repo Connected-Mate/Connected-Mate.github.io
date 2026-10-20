@@ -244,9 +244,9 @@ export function AssistantMark() {
     <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
       <defs>
         <linearGradient id={\`\${id}-fill\`} x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#5b9dff" />
-          <stop offset="0.5" stopColor="#2f6bff" />
-          <stop offset="1" stopColor="#8b5cf6" />
+          <stop offset="0" stopColor="#c94d6c" />
+          <stop offset="0.5" stopColor="#aa254f" />
+          <stop offset="1" stopColor="#b22d55" />
         </linearGradient>
       </defs>
       <circle cx="12" cy="12" r="12" fill={\`url(#\${id}-fill)\`} />
@@ -290,22 +290,22 @@ function useSmoothHeight(inner: RefObject<HTMLElement | null>) {
 
 const css = /* css */ \`
 .ui-ct {
-  --ui-ct-tray: #f0f0f0;
+  --ui-ct-tray: #ebf1f8;
   --ui-ct-card: #ffffff;
-  --ui-ct-ink: #171717;
-  --ui-ct-text: #404040;
-  --ui-ct-muted: #8f8f8f;
-  --ui-ct-accent: #2f6bff;
+  --ui-ct-ink: #0a1829;
+  --ui-ct-text: #2f4159;
+  --ui-ct-muted: #8091a6;
+  --ui-ct-accent: #aa254f;
   --ui-ct-ok: #1f8a4c;
-  --ui-ct-accent-text: #2f6bff;
-  --ui-ct-border: #e5e5e5;
-  --ui-ct-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
-  --ui-ct-hover: rgba(0, 0, 0, 0.05);
-  --ui-ct-row-hover: #f5f5f5;
-  --ui-ct-initials: #eef3ff;
-  --ui-ct-dot: #d4d4d4;
-  --ui-ct-subtle: #a3a3a3;
-  --ui-ct-avatar-ring: rgba(0, 0, 0, 0.06);
+  --ui-ct-accent-text: #aa254f;
+  --ui-ct-border: #dee6f0;
+  --ui-ct-shadow: 0 1px 2px rgba(26, 62, 112, 0.06);
+  --ui-ct-hover: rgba(26, 62, 112, 0.05);
+  --ui-ct-row-hover: #f1f6fb;
+  --ui-ct-initials: #eff4fa;
+  --ui-ct-dot: #cbd5e3;
+  --ui-ct-subtle: #96a5b8;
+  --ui-ct-avatar-ring: rgba(26, 62, 112, 0.06);
   --ui-ct-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
   width: 100%;
@@ -315,7 +315,7 @@ const css = /* css */ \`
   /* The gray tray frames the white card on every side */
   padding: 6px;
   border-radius: 22px;
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color: var(--ui-ct-ink);
   -webkit-font-smoothing: antialiased;
 }
@@ -504,8 +504,8 @@ img.ui-ct__avatar { box-shadow: 0 0 0 1px var(--ui-ct-avatar-ring); }
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: linear-gradient(#323137, #201e25);
-  box-shadow: 0 0 0 1px #0d0d0d, 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(#20334b, #102034);
+  box-shadow: 0 0 0 1px #030d1c, 0 2px 4px rgba(26, 62, 112, 0.1);
   color: #fff !important;
   transition: opacity 160ms ease, transform 160ms ease;
 }
@@ -531,26 +531,26 @@ img.ui-ct__avatar { box-shadow: 0 0 0 1px var(--ui-ct-avatar-ring); }
 .ui-ct [contenteditable]:focus-visible { outline: none; }
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-ct {
-  --ui-ct-tray: #161618;
-  --ui-ct-card: #232326;
-  --ui-ct-ink: #ededed;
-  --ui-ct-text: #c4c4c4;
-  --ui-ct-muted: #8f8f8f;
+  --ui-ct-tray: #091728;
+  --ui-ct-card: #132439;
+  --ui-ct-ink: #e7eef6;
+  --ui-ct-text: #b9c5d6;
+  --ui-ct-muted: #8091a6;
   --ui-ct-ok: #2a9d5c;
-  --ui-ct-accent-text: #6b95ff;
+  --ui-ct-accent-text: #c84969;
   --ui-ct-border: rgba(255, 255, 255, 0.08);
-  --ui-ct-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ui-ct-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
   --ui-ct-hover: rgba(255, 255, 255, 0.06);
   --ui-ct-row-hover: rgba(255, 255, 255, 0.06);
-  --ui-ct-initials: rgba(47, 107, 255, 0.16);
+  --ui-ct-initials: rgba(170, 37, 79, 0.16);
   --ui-ct-dot: rgba(255, 255, 255, 0.14);
-  --ui-ct-subtle: #6b6b70;
+  --ui-ct-subtle: #5b6d84;
   --ui-ct-avatar-ring: rgba(255, 255, 255, 0.08);
 }
 :where(.dark, [data-theme="dark"]) .ui-ct__send {
-  background: linear-gradient(#f4f4f5, #e4e4e7);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.35), inset 0 1px 0 #ffffff;
-  color: #121213 !important;
+  background: linear-gradient(#f0f5fb, #dde5f0);
+  box-shadow: 0 0 0 1px rgba(0, 22, 43, 0.6), 0 2px 4px rgba(0, 22, 43, 0.35), inset 0 1px 0 #ffffff;
+  color: #061223 !important;
 }
 \`;
 `;export{e as default};

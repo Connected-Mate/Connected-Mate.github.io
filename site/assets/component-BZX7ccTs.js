@@ -157,29 +157,29 @@ function contentKey(node: ReactNode) {
 const css = /* css */ \`
 /* Colors and motion as variables – override them on .ui-button (see Theming in the docs) */
 .ui-button {
-  --ui-btn-ink: #171717;
-  --ui-btn-on-ink: #fafafa;
-  --ui-btn-dark-top: #323137;
-  --ui-btn-dark-bottom: #201e25;
-  --ui-btn-dark-hover-top: #3c3b42;
-  --ui-btn-dark-hover-bottom: #29272f;
-  --ui-btn-edge-top: #4b4951;
-  --ui-btn-edge-mid: #31303a;
-  --ui-btn-edge-bottom: #18171b;
-  --ui-btn-ring: #0d0d0d;
-  --ui-btn-dark-shadow: rgba(0, 0, 0, 0.1);
+  --ui-btn-ink: #0a1829;
+  --ui-btn-on-ink: #f7fafe;
+  --ui-btn-dark-top: #20334b;
+  --ui-btn-dark-bottom: #102034;
+  --ui-btn-dark-hover-top: #2b3d55;
+  --ui-btn-dark-hover-bottom: #182940;
+  --ui-btn-edge-top: #394c63;
+  --ui-btn-edge-mid: #20324a;
+  --ui-btn-edge-bottom: #0a182a;
+  --ui-btn-ring: #030d1c;
+  --ui-btn-dark-shadow: rgba(26, 62, 112, 0.1);
   --ui-btn-surface: #ffffff;
-  --ui-btn-surface-hover: #fafafa;
-  --ui-btn-surface-shadow: rgba(0, 0, 0, 0.06);
-  --ui-btn-line: #e5e5e5;
-  --ui-btn-muted: #737373;
-  --ui-btn-hover: #404040;
-  --ui-btn-fill: #f0f0f0;
+  --ui-btn-surface-hover: #f7fafe;
+  --ui-btn-surface-shadow: rgba(26, 62, 112, 0.06);
+  --ui-btn-line: #dee6f0;
+  --ui-btn-muted: #63758c;
+  --ui-btn-hover: #2f4159;
+  --ui-btn-fill: #ebf1f8;
   --ui-btn-shine: rgba(255, 255, 255, 0.82);
   --ui-btn-shine-on-ink: rgba(255, 255, 255, 0.95);
   --ui-btn-danger: #ff0000;
-  --ui-btn-danger-bg: #ffe6e9;
-  --ui-btn-focus: rgba(23, 23, 23, 0.22);
+  --ui-btn-danger-bg: #e7eef6;
+  --ui-btn-focus: rgba(10, 24, 41, 0.22);
   --ui-btn-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-btn-load: 650ms;
 
@@ -200,7 +200,7 @@ const css = /* css */ \`
   margin: 0;
   border: 1px solid transparent;
   border-radius: var(--radius);
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: var(--fs);
   font-weight: 500;
   line-height: 1;
@@ -408,30 +408,30 @@ const css = /* css */ \`
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-button {
   /* primary inverts: a light gradient with dark text */
-  --ui-btn-on-ink: #121213;
-  --ui-btn-dark-top: #f4f4f5;
-  --ui-btn-dark-bottom: #e4e4e7;
+  --ui-btn-on-ink: #061223;
+  --ui-btn-dark-top: #f0f5fb;
+  --ui-btn-dark-bottom: #dde5f0;
   --ui-btn-dark-hover-top: #ffffff;
-  --ui-btn-dark-hover-bottom: #ececef;
+  --ui-btn-dark-hover-bottom: #e6edf6;
   --ui-btn-edge-top: #ffffff;
-  --ui-btn-edge-mid: #ececef;
-  --ui-btn-edge-bottom: #d4d4d8;
-  --ui-btn-ring: rgba(0, 0, 0, 0.6);
-  --ui-btn-dark-shadow: rgba(0, 0, 0, 0.4);
+  --ui-btn-edge-mid: #e6edf6;
+  --ui-btn-edge-bottom: #cbd6e4;
+  --ui-btn-ring: rgba(0, 22, 43, 0.6);
+  --ui-btn-dark-shadow: rgba(0, 22, 43, 0.4);
   --ui-btn-shine-on-ink: rgba(255, 255, 255, 0.9);
 
-  --ui-btn-ink: #ededed;
-  --ui-btn-surface: #232326;
-  --ui-btn-surface-hover: #2a2a2d;
-  --ui-btn-surface-shadow: rgba(0, 0, 0, 0.4);
+  --ui-btn-ink: #e7eef6;
+  --ui-btn-surface: #132439;
+  --ui-btn-surface-hover: #192b42;
+  --ui-btn-surface-shadow: rgba(0, 22, 43, 0.4);
   --ui-btn-line: rgba(255, 255, 255, 0.1);
-  --ui-btn-muted: #8f8f8f;
-  --ui-btn-hover: #ededed;
+  --ui-btn-muted: #8091a6;
+  --ui-btn-hover: #e7eef6;
   --ui-btn-fill: rgba(255, 255, 255, 0.06);
-  --ui-btn-shine: rgba(237, 237, 237, 0.95);
+  --ui-btn-shine: rgba(231, 238, 246, 0.95);
   --ui-btn-danger: #ff6b6b;
   --ui-btn-danger-bg: rgba(255, 64, 64, 0.16);
-  --ui-btn-focus: rgba(237, 237, 237, 0.3);
+  --ui-btn-focus: rgba(231, 238, 246, 0.3);
 }
 \`;
 `;export{e as default};

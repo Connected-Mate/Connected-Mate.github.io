@@ -210,18 +210,18 @@ const defaultItems: ProfileMenuItem[] = [
 const css = /* css */ \`
 .ui-pm {
   --ui-pm-card: #ffffff;
-  --ui-pm-line: #ececec;
-  --ui-pm-ink: #171717;
-  --ui-pm-text: #404040;
-  --ui-pm-muted: #8f8f8f;
-  --ui-pm-icon: #737373;
-  --ui-pm-hover: #f5f5f5;
-  --ui-pm-off: #f0f0f0;
-  --ui-pm-fill: #2f6bff;
+  --ui-pm-line: #e6edf6;
+  --ui-pm-ink: #0a1829;
+  --ui-pm-text: #2f4159;
+  --ui-pm-muted: #8091a6;
+  --ui-pm-icon: #63758c;
+  --ui-pm-hover: #f1f6fb;
+  --ui-pm-off: #ebf1f8;
+  --ui-pm-fill: #aa254f;
   --ui-pm-badge: #e11d48;
-  --ui-pm-badge-wash: #fff0f3;
+  --ui-pm-badge-wash: #f0f5fb;
   --ui-pm-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --ui-pm-tray: #f0f0f0;
+  --ui-pm-tray: #ebf1f8;
   box-sizing: border-box;
   width: 100%;
   max-width: 320px;
@@ -230,7 +230,7 @@ const css = /* css */ \`
   /* The gray tray frames the white card on every side */
   padding: 6px;
   border-radius: 22px;
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color: var(--ui-pm-ink);
   -webkit-font-smoothing: antialiased;
 }
@@ -238,9 +238,9 @@ const css = /* css */ \`
 .ui-pm__card {
   padding: 16px 8px 8px;
   background: var(--ui-pm-card);
-  border: 1px solid #e5e5e5;
+  border: 1px solid #dee6f0;
   border-radius: 16px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 2px rgba(26, 62, 112, 0.06);
 }
 
 .ui-pm__user {
@@ -303,7 +303,7 @@ const css = /* css */ \`
   color: var(--ui-pm-ink);
   outline: none;
 }
-.ui-pm__item:active { background: #efefef; }
+.ui-pm__item:active { background: #eaf0f8; }
 
 .ui-pm__icon {
   display: grid;
@@ -360,7 +360,7 @@ const css = /* css */ \`
   margin-top: 7px;
   overflow: hidden;
   border-radius: 2px;
-  background: rgba(0, 0, 0, 0.07);
+  background: rgba(26, 62, 112, 0.07);
 }
 .ui-pm__fill {
   display: block;
@@ -390,7 +390,7 @@ const css = /* css */ \`
 }
 .ui-pm__next:hover,
 .ui-pm__next:focus-visible {
-  background: rgba(0, 0, 0, 0.04);
+  background: rgba(26, 62, 112, 0.04);
   outline: none;
 }
 .ui-pm__next-label {
@@ -418,24 +418,24 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-pm {
-  --ui-pm-card: #232326;
+  --ui-pm-card: #132439;
   --ui-pm-line: rgba(255, 255, 255, 0.08);
-  --ui-pm-ink: #ededed;
-  --ui-pm-text: #c4c4c4;
-  --ui-pm-muted: #8f8f8f;
-  --ui-pm-icon: #8f8f8f;
-  --ui-pm-hover: #2a2a2d;
-  --ui-pm-off: #161618;
+  --ui-pm-ink: #e7eef6;
+  --ui-pm-text: #b9c5d6;
+  --ui-pm-muted: #8091a6;
+  --ui-pm-icon: #8091a6;
+  --ui-pm-hover: #192b42;
+  --ui-pm-off: #091728;
   --ui-pm-badge: #fb7185;
   --ui-pm-badge-wash: rgba(225, 29, 72, 0.16);
-  --ui-pm-tray: #161618;
+  --ui-pm-tray: #091728;
 }
 :where(.dark, [data-theme="dark"]) .ui-pm__card {
   border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
 }
-:where(.dark, [data-theme="dark"]) .ui-pm__avatar { color: #6b95ff; }
-:where(.dark, [data-theme="dark"]) .ui-pm__item:active { background: #313135; }
+:where(.dark, [data-theme="dark"]) .ui-pm__avatar { color: #c84969; }
+:where(.dark, [data-theme="dark"]) .ui-pm__item:active { background: #20324a; }
 :where(.dark, [data-theme="dark"]) .ui-pm__track { background: rgba(255, 255, 255, 0.1); }
 :where(.dark, [data-theme="dark"]) .ui-pm__next:hover,
 :where(.dark, [data-theme="dark"]) .ui-pm__next:focus-visible { background: rgba(255, 255, 255, 0.06); }

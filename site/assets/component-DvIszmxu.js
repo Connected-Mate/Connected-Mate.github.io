@@ -454,24 +454,24 @@ export function CoverFlow({
 
 const css = /* css */ \`
 .ui-cf {
-  --ui-cf-ink: #171717;
-  --ui-cf-muted: #8a8a8a;
-  --ui-cf-card: #f1f1f1;
-  --ui-cf-edge: rgba(0, 0, 0, 0.08);
+  --ui-cf-ink: #0a1829;
+  --ui-cf-muted: #7b8ca1;
+  --ui-cf-card: #ecf2f9;
+  --ui-cf-edge: rgba(26, 62, 112, 0.08);
   --ui-cf-dim: rgba(255, 255, 255, 0.24);
-  --ui-cf-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 10px 20px -12px rgba(0, 0, 0, 0.18);
+  --ui-cf-shadow: 0 1px 2px rgba(26, 62, 112, 0.05), 0 10px 20px -12px rgba(26, 62, 112, 0.18);
   --ui-cf-reflect: 0.22;
-  --ui-cf-ground: rgba(0, 0, 0, 0.16);
-  --ui-cf-tick: rgba(0, 0, 0, 0.16);
+  --ui-cf-ground: rgba(26, 62, 112, 0.16);
+  --ui-cf-tick: rgba(26, 62, 112, 0.16);
   --ui-cf-nav: #ffffff;
-  --ui-cf-nav-line: #e7e7e7;
-  --ui-cf-focus: rgba(23, 23, 23, 0.25);
+  --ui-cf-nav-line: #e0e8f2;
+  --ui-cf-focus: rgba(10, 24, 41, 0.25);
   --ui-cf-ease: cubic-bezier(0.22, 1, 0.36, 1);
   display: grid;
   gap: 4px;
   width: 100%;
   min-width: 0;
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -487,8 +487,8 @@ const css = /* css */ \`
   touch-action: pan-y;
   user-select: none;
   -webkit-user-select: none;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000000 9%, #000000 91%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000000 9%, #000000 91%, transparent);
 }
 .ui-cf[data-reflection] .ui-cf__viewport { height: calc(var(--ui-cf-h) * 1.4); }
 .ui-cf__viewport[data-dragging] { cursor: grabbing; }
@@ -670,7 +670,7 @@ const css = /* css */ \`
   border: 0;
   border-radius: 999px;
   background: var(--ui-cf-nav);
-  box-shadow: inset 0 0 0 1px var(--ui-cf-nav-line), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 0 1px var(--ui-cf-nav-line), 0 1px 2px rgba(26, 62, 112, 0.05);
   color: var(--ui-cf-ink);
   cursor: pointer;
   transition: transform 160ms var(--ui-cf-ease), opacity 160ms ease;
@@ -710,16 +710,16 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-cf {
-  --ui-cf-ink: #ededed;
-  --ui-cf-muted: #8f8f8f;
-  --ui-cf-card: #1d1d20;
+  --ui-cf-ink: #e7eef6;
+  --ui-cf-muted: #8091a6;
+  --ui-cf-card: #0f1e31;
   --ui-cf-edge: rgba(255, 255, 255, 0.1);
-  --ui-cf-dim: rgba(0, 0, 0, 0.5);
-  --ui-cf-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 24px -14px rgba(0, 0, 0, 0.6);
+  --ui-cf-dim: rgba(0, 22, 43, 0.5);
+  --ui-cf-shadow: 0 1px 2px rgba(0, 22, 43, 0.3), 0 12px 24px -14px rgba(0, 22, 43, 0.6);
   --ui-cf-reflect: 0.3;
-  --ui-cf-ground: rgba(0, 0, 0, 0.45);
+  --ui-cf-ground: rgba(0, 22, 43, 0.45);
   --ui-cf-tick: rgba(255, 255, 255, 0.2);
-  --ui-cf-nav: #1d1d20;
+  --ui-cf-nav: #0f1e31;
   --ui-cf-nav-line: rgba(255, 255, 255, 0.1);
   --ui-cf-focus: rgba(255, 255, 255, 0.35);
 }

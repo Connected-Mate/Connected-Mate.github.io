@@ -1,12 +1,12 @@
 import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js";var n=e(),r=t(),i=[`Thinking`,`Searching the web`,`Reading sources`,`Writing response`],a=Array.from({length:8},(e,t)=>t);function o({phases:e=i,interval:t=2200,phase:o,loop:c=!1,done:l=!1,doneLabel:u=e=>`Thought for ${e}s`,size:d=`md`,variant:f=`pill`,className:p}){let[m,h]=(0,n.useState)(0),[g,_]=(0,n.useState)(()=>Date.now()),[v,y]=(0,n.useState)(null),b=v??Math.max(1,Math.round((Date.now()-g)/1e3));l&&v===null&&y(b),!l&&v!==null&&(y(null),_(Date.now()),h(0)),(0,n.useEffect)(()=>{if(l||o!==void 0||e.length<2)return;let n=window.setInterval(()=>{h(t=>t+1<e.length?t+1:c?0:t)},t);return()=>window.clearInterval(n)},[l,o,e.length,t,c]);let x=Math.min(Math.max(o??m,0),Math.max(e.length-1,0)),S=l?typeof u==`function`?u(b):u:e[x]??``,[C,w]=(0,n.useState)({key:0,text:S}),[T,E]=(0,n.useState)(null);S!==C.text&&(E(C),w({key:C.key+1,text:S}));let D=(0,n.useRef)(null),O=(0,n.useRef)(null),k=(0,n.useRef)(!1);return(0,n.useLayoutEffect)(()=>{let e=D.current,t=O.current;e&&t&&(k.current||(e.style.transition=`none`),e.style.width=`${t.offsetWidth+1}px`,k.current||=(e.getBoundingClientRect(),e.style.transition=``,!0))},[C.key]),(0,r.jsxs)(`span`,{className:[`ui-tl`,p].filter(Boolean).join(` `),"data-size":d,"data-variant":f,"data-done":l||void 0,role:`status`,"aria-live":`polite`,children:[(0,r.jsx)(`style`,{href:`ui-thinking-loader`,precedence:`default`,children:s}),(0,r.jsxs)(`span`,{className:`ui-tl__icon`,"aria-hidden":`true`,children:[(0,r.jsx)(`svg`,{className:`ui-tl__spinner`,viewBox:`0 0 16 16`,children:a.map(e=>(0,r.jsx)(`line`,{x1:`8`,y1:`1.75`,x2:`8`,y2:`4.75`,transform:`rotate(${e*45} 8 8)`,style:{animationDelay:`${(e-8)*100}ms`}},e))}),(0,r.jsx)(`svg`,{className:`ui-tl__check`,viewBox:`0 0 16 16`,children:(0,r.jsx)(`path`,{d:`M3.5 8.4 6.6 11.3 12.5 4.9`,pathLength:1})})]}),(0,r.jsxs)(`span`,{ref:D,className:`ui-tl__text`,children:[T&&(0,r.jsx)(`span`,{className:`ui-tl__label ui-tl__label--out`,"aria-hidden":`true`,onAnimationEnd:()=>E(null),children:T.text},T.key),(0,r.jsx)(`span`,{ref:O,className:[`ui-tl__label`,C.key>0&&`ui-tl__label--in`,!l&&`ui-tl__shine`].filter(Boolean).join(` `),"data-text":C.text,children:C.text},C.key)]})]})}var s=`
 .ui-tl {
-  --ui-tl-ink: #171717;
-  --ui-tl-text: #6b6b6b;
-  --ui-tl-ray: #171717;
+  --ui-tl-ink: #0a1829;
+  --ui-tl-text: #5b6d84;
+  --ui-tl-ray: #0a1829;
   --ui-tl-bg: #ffffff;
-  --ui-tl-line: #e7e7e7;
+  --ui-tl-line: #e0e8f2;
   --ui-tl-shine: rgba(255, 255, 255, 0.82);
-  --ui-tl-done: #171717;
+  --ui-tl-done: #0a1829;
   --ui-tl-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-tl-h: 34px;
   --ui-tl-font: 14px;
@@ -19,9 +19,9 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   padding: 0 15px 0 12px;
   border-radius: 999px;
   background: var(--ui-tl-bg);
-  box-shadow: inset 0 0 0 1px var(--ui-tl-line), 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0 0 0 1px var(--ui-tl-line), 0 1px 2px rgba(26, 62, 112, 0.04);
   color: var(--ui-tl-text);
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: var(--ui-tl-font);
   font-weight: 450;
   line-height: 1;
@@ -164,12 +164,12 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-tl {
-  --ui-tl-ink: #ededed;
-  --ui-tl-text: #8f8f8f;
-  --ui-tl-ray: #ededed;
-  --ui-tl-bg: #161618;
+  --ui-tl-ink: #e7eef6;
+  --ui-tl-text: #8091a6;
+  --ui-tl-ray: #e7eef6;
+  --ui-tl-bg: #091728;
   --ui-tl-line: rgba(255, 255, 255, 0.1);
   --ui-tl-shine: rgba(255, 255, 255, 0.95);
-  --ui-tl-done: #ededed;
+  --ui-tl-done: #e7eef6;
 }
 `;export{o as t};

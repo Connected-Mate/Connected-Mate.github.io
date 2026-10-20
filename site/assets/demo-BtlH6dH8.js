@@ -3,20 +3,20 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   /* 1 unit of the 600 × 400 layout grid */
   --u: calc(100cqw / 600);
   --ui-at-surface: #ffffff;
-  --ui-at-ring: rgba(10, 10, 10, 0.06);
-  --ui-at-text: #171717;
-  --ui-at-accent: #2f6bff;
-  --ui-at-caret: #171717;
+  --ui-at-ring: rgba(26, 62, 112, 0.06);
+  --ui-at-text: #0a1829;
+  --ui-at-accent: #aa254f;
+  --ui-at-caret: #0a1829;
   /* Same pink → violet as the Get Pro button */
-  --ui-at-halo-from: rgba(221, 6, 116, 0.18);
-  --ui-at-halo-to: rgba(94, 62, 224, 0.18);
-  --ui-at-dash: #e4e7ec; /* same gray as the lines in Outreach Branches */
-  --ui-at-face: #eef0f4;
+  --ui-at-halo-from: rgba(171, 38, 79, 0.18);
+  --ui-at-halo-to: rgba(149, 4, 62, 0.18);
+  --ui-at-dash: #e0e8f2; /* same gray as the lines in Outreach Branches */
+  --ui-at-face: #ebf1f8;
   --ui-at-online: #34c46a;
-  --ui-at-dot-ring: #e2f6e9;
+  --ui-at-dot-ring: #ebf1f8;
   --ui-at-dot-edge: rgba(52, 196, 106, 0.1);
-  --ui-at-tool-ring: #e5e5e5;
-  --ui-at-shadow: 0 calc(10 * var(--u)) calc(24 * var(--u)) rgba(0, 0, 0, 0.07), 0 calc(2 * var(--u)) calc(5 * var(--u)) rgba(0, 0, 0, 0.05);
+  --ui-at-tool-ring: #dee6f0;
+  --ui-at-shadow: 0 calc(10 * var(--u)) calc(24 * var(--u)) rgba(26, 62, 112, 0.07), 0 calc(2 * var(--u)) calc(5 * var(--u)) rgba(26, 62, 112, 0.05);
   --ui-at-ease: cubic-bezier(0.7, 0, 0.25, 1);
   --ui-at-pop: cubic-bezier(0.34, 1.4, 0.64, 1);
   position: relative;
@@ -24,7 +24,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   aspect-ratio: 3 / 2;
   overflow: hidden;
   container-type: inline-size;
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 .ui-at *, .ui-at *::before, .ui-at *::after { box-sizing: border-box; }
@@ -212,7 +212,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   height: calc(26 * var(--u));
   border-radius: 50%;
   background: var(--ui-at-surface);
-  box-shadow: 0 0 0 calc(1 * var(--u)) var(--ui-at-tool-ring), 0 calc(1.5 * var(--u)) calc(3 * var(--u)) rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 0 calc(1 * var(--u)) var(--ui-at-tool-ring), 0 calc(1.5 * var(--u)) calc(3 * var(--u)) rgba(26, 62, 112, 0.08);
 }
 /* The second circle sits slightly over the first */
 .ui-at-tool + .ui-at-tool { margin-left: calc(-8 * var(--u)); }
@@ -231,20 +231,20 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-at {
-  --ui-at-surface: #232326;
+  --ui-at-surface: #132439;
   --ui-at-ring: rgba(255, 255, 255, 0.08);
-  --ui-at-text: #ededed;
-  --ui-at-accent: #2f6bff;
-  --ui-at-caret: #ededed;
-  --ui-at-halo-from: rgba(244, 114, 182, 0.16);
-  --ui-at-halo-to: rgba(167, 139, 250, 0.16);
+  --ui-at-text: #e7eef6;
+  --ui-at-accent: #aa254f;
+  --ui-at-caret: #e7eef6;
+  --ui-at-halo-from: rgba(213, 79, 113, 0.16);
+  --ui-at-halo-to: rgba(204, 80, 111, 0.16);
   --ui-at-dash: rgba(255, 255, 255, 0.14);
-  --ui-at-face: #2e2e33;
+  --ui-at-face: #1d2f47;
   --ui-at-online: #3fd17a;
   --ui-at-dot-ring: #24392c;
   --ui-at-dot-edge: rgba(63, 209, 122, 0.12);
   --ui-at-tool-ring: rgba(255, 255, 255, 0.12);
-  --ui-at-shadow: 0 calc(10 * var(--u)) calc(24 * var(--u)) rgba(0, 0, 0, 0.4), 0 calc(2 * var(--u)) calc(5 * var(--u)) rgba(0, 0, 0, 0.3);
+  --ui-at-shadow: 0 calc(10 * var(--u)) calc(24 * var(--u)) rgba(0, 22, 43, 0.4), 0 calc(2 * var(--u)) calc(5 * var(--u)) rgba(0, 22, 43, 0.3);
 }
-:where(.dark, [data-theme="dark"]) .ui-at-tool { background: #f4f4f5; }
+:where(.dark, [data-theme="dark"]) .ui-at-tool { background: #f0f5fb; }
 `;function p(){return(0,r.jsx)(`div`,{className:`agent-team-demo`,children:(0,r.jsx)(l,{members:[{role:`Lead Researcher`,avatar:`/avatars/lena.jpg`,tools:[`linkedin`,`hubspot`]},{role:`Inbound Qualifier`,avatar:`/avatars/theo.jpg`,tools:[`hubspot`,`slack`]},{role:`Outbound SDR`,avatar:`/avatars/noah.jpg`,tools:[`gmail`,`salesforce`]}]})})}export{p as default};

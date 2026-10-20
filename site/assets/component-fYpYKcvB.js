@@ -37,22 +37,22 @@ export function TabOverload({
       <svg className="ui-to-art" viewBox="0 0 360 240" aria-hidden="true">
         <defs>
           <linearGradient id={\`\${id}-blob-h\`} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#FFB89E" stopOpacity="0.3" />
-            <stop offset="50%" stopColor="#C8A8E5" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#A8B5FF" stopOpacity="0.3" />
+            <stop offset="0%" stopColor="#ffb89e" stopOpacity="0.3" />
+            <stop offset="50%" stopColor="#eb9fac" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#f69eae" stopOpacity="0.3" />
           </linearGradient>
           <linearGradient id={\`\${id}-blob-v\`} x1="0%" y1="100%" x2="0%" y2="0%">
-            <stop offset="0%" stopColor="#FF6B5C" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#FFB89E" stopOpacity="0.3" />
+            <stop offset="0%" stopColor="#ff6b5c" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#ffb89e" stopOpacity="0.3" />
           </linearGradient>
           <filter id={\`\${id}-blur\`} x="-200%" y="-200%" width="500%" height="500%">
             <feGaussianBlur stdDeviation="12" />
           </filter>
           <linearGradient id={\`\${id}-stroke\`} x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#B5C0FF" />
-            <stop offset="40%" stopColor="#D5BBEF" />
-            <stop offset="75%" stopColor="#FFC5AB" />
-            <stop offset="100%" stopColor="#FFB5BC" />
+            <stop offset="0%" stopColor="#f8adb9" />
+            <stop offset="40%" stopColor="#f4b3be" />
+            <stop offset="75%" stopColor="#ffc5ab" />
+            <stop offset="100%" stopColor="#ffb5bc" />
           </linearGradient>
         </defs>
 
@@ -79,20 +79,20 @@ export function TabOverload({
             </g>
             <g className={\`ui-to-tab ui-to-tab-\${n}\`} transform={\`translate(\${x} \${y})\`}>
               {/* Outer gray frame, reaching well past the edges */}
-              <rect className="ui-to-frame" width="380" height="300" rx="6" fill="#F4F5F7" stroke="#E4E7EC" strokeWidth="0.7" />
-              <circle className="ui-to-dot" cx="14" cy="14" r="3" fill="#CCCCCC" />
-              <circle className="ui-to-dot" cx="24" cy="14" r="3" fill="#CCCCCC" />
-              <circle className="ui-to-dot" cx="34" cy="14" r="3" fill="#CCCCCC" />
-              <rect className="ui-to-page" x="4" y="24" width="372" height="272" rx="5" fill="#FFFFFF" stroke="#E4E7EC" strokeWidth="0.7" />
+              <rect className="ui-to-frame" width="380" height="300" rx="6" fill="#f1f5fb" stroke="#e0e8f2" strokeWidth="0.7" />
+              <circle className="ui-to-dot" cx="14" cy="14" r="3" fill="#c1cddd" />
+              <circle className="ui-to-dot" cx="24" cy="14" r="3" fill="#c1cddd" />
+              <circle className="ui-to-dot" cx="34" cy="14" r="3" fill="#c1cddd" />
+              <rect className="ui-to-page" x="4" y="24" width="372" height="272" rx="5" fill="#FFFFFF" stroke="#e0e8f2" strokeWidth="0.7" />
             </g>
             <g className={\`ui-to-content ui-to-content-\${n}\`} transform={\`translate(\${x} \${y})\`}>
-              <rect className="ui-to-bar" x="12" y="36" width="30" height="30" rx="4" fill="#EFF1F4" />
-              <rect className="ui-to-bar" x="52" y="38" width="100" height="6" rx="2" fill="#EFF1F4" />
-              <rect className="ui-to-bar" x="52" y="46" width="100" height="6" rx="2" fill="#EFF1F4" />
-              <rect className="ui-to-bar" x="52" y="54" width="35" height="6" rx="2" fill="#EFF1F4" />
-              <rect className="ui-to-bar" x="12" y="72" width="140" height="6" rx="2" fill="#EFF1F4" />
-              <rect className="ui-to-bar" x="12" y="80" width="140" height="6" rx="2" fill="#EFF1F4" />
-              <rect className="ui-to-bar" x="12" y="88" width="55" height="6" rx="2" fill="#EFF1F4" />
+              <rect className="ui-to-bar" x="12" y="36" width="30" height="30" rx="4" fill="#ecf1f9" />
+              <rect className="ui-to-bar" x="52" y="38" width="100" height="6" rx="2" fill="#ecf1f9" />
+              <rect className="ui-to-bar" x="52" y="46" width="100" height="6" rx="2" fill="#ecf1f9" />
+              <rect className="ui-to-bar" x="52" y="54" width="35" height="6" rx="2" fill="#ecf1f9" />
+              <rect className="ui-to-bar" x="12" y="72" width="140" height="6" rx="2" fill="#ecf1f9" />
+              <rect className="ui-to-bar" x="12" y="80" width="140" height="6" rx="2" fill="#ecf1f9" />
+              <rect className="ui-to-bar" x="12" y="88" width="55" height="6" rx="2" fill="#ecf1f9" />
             </g>
           </g>
         ))}
@@ -100,9 +100,9 @@ export function TabOverload({
         {/* Active-window decoration (colored dots + outline), shown on one window at a time */}
         {windows.map(({ n, x, y }) => (
           <g key={n} className={\`ui-to-front ui-to-front-\${n}\`}>
-            <circle cx={x + 14} cy={y + 14} r="3" fill="#FF6B5C" />
-            <circle cx={x + 24} cy={y + 14} r="3" fill="#FFB89E" />
-            <circle cx={x + 34} cy={y + 14} r="3" fill="#A8B5FF" />
+            <circle cx={x + 14} cy={y + 14} r="3" fill="#ff6b5c" />
+            <circle cx={x + 24} cy={y + 14} r="3" fill="#ffb89e" />
+            <circle cx={x + 34} cy={y + 14} r="3" fill="#f69eae" />
             <path
               d={\`M \${x} 240 L \${x} \${y + 6} A 6 6 0 0 1 \${x + 6} \${y} L \${n === 3 ? 360 : x + 95} \${y}\`}
               fill="none"
@@ -126,12 +126,12 @@ const css = /* css */ \`
   overflow: hidden;
   /* Fade out towards the right and bottom edge */
   -webkit-mask-image:
-    linear-gradient(to right, #000 70%, transparent 100%),
-    linear-gradient(to bottom, #000 70%, transparent 100%);
+    linear-gradient(to right, #000000 70%, transparent 100%),
+    linear-gradient(to bottom, #000000 70%, transparent 100%);
   -webkit-mask-composite: source-in;
   mask-image:
-    linear-gradient(to right, #000 70%, transparent 100%),
-    linear-gradient(to bottom, #000 70%, transparent 100%);
+    linear-gradient(to right, #000000 70%, transparent 100%),
+    linear-gradient(to bottom, #000000 70%, transparent 100%);
   mask-composite: intersect;
 }
 .ui-to-art {
@@ -145,8 +145,8 @@ const css = /* css */ \`
 /* Placeholder blocks shimmer softly */
 .ui-to-bar { animation: ui-to-shimmer 2.4s ease-in-out infinite; }
 @keyframes ui-to-shimmer {
-  0%, 100% { fill: #EFF1F4; }
-  50% { fill: #DDE1E5; }
+  0%, 100% { fill: #ecf1f9; }
+  50% { fill: #d9e1ed; }
 }
 
 /* The highlight follows the hovered window; the front window is active by default */
@@ -182,16 +182,16 @@ const css = /* css */ \`
 }
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
-:where(.dark, [data-theme="dark"]) .ui-to-frame { fill: #1b1b1d; stroke: rgba(255, 255, 255, 0.1); }
-:where(.dark, [data-theme="dark"]) .ui-to-dot { fill: #3a3a3f; }
-:where(.dark, [data-theme="dark"]) .ui-to-page { fill: #232326; stroke: rgba(255, 255, 255, 0.08); }
-:where(.dark, [data-theme="dark"]) .ui-to-bar { fill: #2e2e32; }
+:where(.dark, [data-theme="dark"]) .ui-to-frame { fill: #0d1c2f; stroke: rgba(255, 255, 255, 0.1); }
+:where(.dark, [data-theme="dark"]) .ui-to-dot { fill: #293c54; }
+:where(.dark, [data-theme="dark"]) .ui-to-page { fill: #132439; stroke: rgba(255, 255, 255, 0.08); }
+:where(.dark, [data-theme="dark"]) .ui-to-bar { fill: #1d2f47; }
 @media (prefers-reduced-motion: no-preference) {
   :where(.dark, [data-theme="dark"]) .ui-to-bar { animation-name: ui-to-shimmer-dark; }
 }
 @keyframes ui-to-shimmer-dark {
-  0%, 100% { fill: #2e2e32; }
-  50% { fill: #3a3a3f; }
+  0%, 100% { fill: #1d2f47; }
+  50% { fill: #293c54; }
 }
 \`;
 `;export{e as default};

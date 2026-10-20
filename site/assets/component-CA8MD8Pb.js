@@ -384,33 +384,33 @@ function useSmoothHeight(inner: RefObject<HTMLElement | null>) {
 
 const css = /* css */ \`
 .ui-ed {
-  --ui-ed-tray: #f0f0f0;
+  --ui-ed-tray: #ebf1f8;
   --ui-ed-card: #ffffff;
-  --ui-ed-card-line: #e5e5e5;
-  --ui-ed-line: #ececec;
-  --ui-ed-ink: #171717;
-  --ui-ed-text: #404040;
-  --ui-ed-muted: #8f8f8f;
-  --ui-ed-chip: #f5f5f5;
-  --ui-ed-chip-line: #ebebeb;
-  --ui-ed-hover: #f5f5f5;
+  --ui-ed-card-line: #dee6f0;
+  --ui-ed-line: #e6edf6;
+  --ui-ed-ink: #0a1829;
+  --ui-ed-text: #2f4159;
+  --ui-ed-muted: #8091a6;
+  --ui-ed-chip: #f1f6fb;
+  --ui-ed-chip-line: #e5ecf5;
+  --ui-ed-hover: #f1f6fb;
   --ui-ed-warn: #c2570c;
-  --ui-ed-warn-bg: #fdeedd;
+  --ui-ed-warn-bg: #ebf1f9;
   --ui-ed-ok: #2f7d32;
-  --ui-ed-ok-bg: #e8f5e6;
-  --ui-ed-btn-top: #323137;
-  --ui-ed-btn-bottom: #201e25;
-  --ui-ed-btn-ring: #0d0d0d;
+  --ui-ed-ok-bg: #ebf1f9;
+  --ui-ed-btn-top: #20334b;
+  --ui-ed-btn-bottom: #102034;
+  --ui-ed-btn-ring: #030d1c;
   --ui-ed-btn-text: #ffffff;
-  --ui-ed-focus: #2f6bff;
-  --ui-ed-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --ui-ed-focus: #aa254f;
+  --ui-ed-shadow: 0 1px 2px rgba(26, 62, 112, 0.06);
   --ui-ed-ease: cubic-bezier(0.22, 1, 0.36, 1);
   width: 100%;
   max-width: 520px;
   padding: 6px;
   border-radius: 20px;
   background: var(--ui-ed-tray);
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color: var(--ui-ed-ink);
   -webkit-font-smoothing: antialiased;
 }
@@ -497,7 +497,7 @@ const css = /* css */ \`
   list-style: none;
   border-radius: 12px;
   background: var(--ui-ed-card);
-  box-shadow: 0 0 0 1px var(--ui-ed-card-line), 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 1px var(--ui-ed-card-line), 0 10px 30px rgba(26, 62, 112, 0.1);
   animation: ui-ed-menu 200ms var(--ui-ed-ease) both;
   transform-origin: top left;
 }
@@ -730,26 +730,26 @@ const css = /* css */ \`
 .ui-ed [contenteditable]:focus-visible { outline: none; }
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-ed {
-  --ui-ed-tray: #161618;
-  --ui-ed-card: #232326;
+  --ui-ed-tray: #091728;
+  --ui-ed-card: #132439;
   --ui-ed-card-line: rgba(255, 255, 255, 0.08);
   --ui-ed-line: rgba(255, 255, 255, 0.07);
-  --ui-ed-ink: #ededed;
-  --ui-ed-text: #c4c4c4;
-  --ui-ed-muted: #8f8f8f;
-  --ui-ed-chip: #2a2a2d;
+  --ui-ed-ink: #e7eef6;
+  --ui-ed-text: #b9c5d6;
+  --ui-ed-muted: #8091a6;
+  --ui-ed-chip: #192b42;
   --ui-ed-chip-line: rgba(255, 255, 255, 0.08);
   --ui-ed-hover: rgba(255, 255, 255, 0.05);
   --ui-ed-warn: #fb9a4b;
   --ui-ed-warn-bg: rgba(251, 154, 75, 0.14);
   --ui-ed-ok: #6fd27a;
   --ui-ed-ok-bg: rgba(111, 210, 122, 0.14);
-  --ui-ed-btn-top: #f4f4f5;
-  --ui-ed-btn-bottom: #e4e4e7;
-  --ui-ed-btn-ring: rgba(0, 0, 0, 0.6);
-  --ui-ed-btn-text: #121213;
-  --ui-ed-focus: #6b95ff;
-  --ui-ed-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ui-ed-btn-top: #f0f5fb;
+  --ui-ed-btn-bottom: #dde5f0;
+  --ui-ed-btn-ring: rgba(0, 22, 43, 0.6);
+  --ui-ed-btn-text: #061223;
+  --ui-ed-focus: #c84969;
+  --ui-ed-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
 }
 \`;
 `;export{e as default};

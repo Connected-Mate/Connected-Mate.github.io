@@ -107,14 +107,14 @@ export function RegionDach({
         <svg className="ui-rd-art" viewBox="0 0 540 440" aria-hidden="true">
           <defs>
             <filter id={\`\${id}-shadow\`} x="-15%" y="-15%" width="130%" height="130%">
-              <feDropShadow className="ui-rd-drop" dx="0" dy="3" stdDeviation="3.5" floodColor="#1F2128" floodOpacity="0.07" />
+              <feDropShadow className="ui-rd-drop" dx="0" dy="3" stdDeviation="3.5" floodColor="#122236" floodOpacity="0.07" />
             </filter>
             {/* Colors of the band that travels along the outer border */}
             <linearGradient id={\`\${id}-shine\`} gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="540" y2="220">
-              <stop offset="0%" stopColor="#FFA0AB" />
-              <stop offset="33%" stopColor="#FFB89E" />
-              <stop offset="66%" stopColor="#C8A8E5" />
-              <stop offset="100%" stopColor="#A8B5FF" />
+              <stop offset="0%" stopColor="#ffa0ab" />
+              <stop offset="33%" stopColor="#ffb89e" />
+              <stop offset="66%" stopColor="#eb9fac" />
+              <stop offset="100%" stopColor="#f69eae" />
             </linearGradient>
             <filter id={\`\${id}-blur\`} x="-20%" y="-20%" width="140%" height="140%">
               <feGaussianBlur stdDeviation="4" />
@@ -162,7 +162,7 @@ function MapLayer({ id, shared, region, phase }: { id: string; shared: string; r
         mask={\`url(#\${id}-neighbors)\`}
         className="ui-rd-neighbors"
         fill="none"
-        stroke="#A6ABB3"
+        stroke="#9eacbf"
         strokeWidth="0.7"
         strokeLinejoin="round"
         strokeLinecap="round"
@@ -173,7 +173,7 @@ function MapLayer({ id, shared, region, phase }: { id: string; shared: string; r
       </g>
 
       {/* The region's countries */}
-      <g className="ui-rd-land" filter={\`url(#\${shared}-shadow)\`} fill="#F8F8F8" stroke="#D6D9DE" strokeWidth="0.9" strokeLinejoin="round">
+      <g className="ui-rd-land" filter={\`url(#\${shared}-shadow)\`} fill="#f5f8fd" stroke="#d0dae7" strokeWidth="0.9" strokeLinejoin="round">
         {map.land.map((d, i) => (
           <path key={i} d={d} />
         ))}
@@ -377,7 +377,7 @@ const ChevronIcon = () => (
     <path
       d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9"
       className="ui-rd-chevron-ink"
-      stroke="#737373"
+      stroke="#63758c"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -567,11 +567,11 @@ const css = /* css */ \`
   height: 28px;
   margin: 0;
   padding: 0 8px 0 12px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #dee6f0;
   border-radius: 999px;
   background: #ffffff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  color: #171717;
+  box-shadow: 0 1px 2px rgba(26, 62, 112, 0.04);
+  color: #0a1829;
   font: inherit;
   font-size: 13px;
   font-weight: 500;
@@ -584,7 +584,7 @@ const css = /* css */ \`
   transform: scale(0.96);
 }
 .ui-rd-trigger:focus-visible {
-  outline: 2px solid #a8b5ff;
+  outline: 2px solid #f69eae;
   outline-offset: 2px;
 }
 .ui-rd-chevron {
@@ -604,7 +604,7 @@ const css = /* css */ \`
   left: 12px;
   width: 172px;
   /* the shadow sits on the wrapper, so it follows the morphing shape */
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.08)) drop-shadow(0 1px 2.5px rgba(0, 0, 0, 0.05));
+  filter: drop-shadow(0 6px 12px rgba(26, 62, 112, 0.08)) drop-shadow(0 1px 2.5px rgba(26, 62, 112, 0.05));
   transition: visibility 0s linear 0s;
 }
 .ui-rd-menu[data-open="false"] {
@@ -619,7 +619,7 @@ const css = /* css */ \`
   flex-direction: column;
   padding: 5px;
   background: #ffffff;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #dee6f0;
   border-radius: 16px;
   outline: none;
   clip-path: inset(0 0 0 0 round 16px);
@@ -648,7 +648,7 @@ const css = /* css */ \`
   left: 5px;
   right: 5px;
   border-radius: 10px;
-  background: #f5f5f5;
+  background: #f1f6fb;
   pointer-events: none;
   transition:
     transform 190ms cubic-bezier(0.25, 1, 0.3, 1),
@@ -665,7 +665,7 @@ const css = /* css */ \`
   gap: 8px;
   padding: 7px 8px 7px 10px;
   border-radius: 10px;
-  color: #171717;
+  color: #0a1829;
   font-size: 13px;
   font-weight: 500;
   line-height: 18px;
@@ -714,21 +714,21 @@ const css = /* css */ \`
 }
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
-:where(.dark, [data-theme="dark"]) .ui-rd-neighbors { stroke: #5c5c63; }
-:where(.dark, [data-theme="dark"]) .ui-rd-land { fill: #2c2c30; stroke: #4a4a50; }
+:where(.dark, [data-theme="dark"]) .ui-rd-neighbors { stroke: #4c5e76; }
+:where(.dark, [data-theme="dark"]) .ui-rd-land { fill: #1b2d45; stroke: #3a4c64; }
 :where(.dark, [data-theme="dark"]) .ui-rd-drop { flood-color: #000000; flood-opacity: 0.45; }
 :where(.dark, [data-theme="dark"]) .ui-rd-trigger {
   border-color: rgba(255, 255, 255, 0.08);
-  background: #232326;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  color: #ededed;
+  background: #132439;
+  box-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
+  color: #e7eef6;
 }
-:where(.dark, [data-theme="dark"]) .ui-rd-chevron-ink { stroke: #8f8f8f; }
+:where(.dark, [data-theme="dark"]) .ui-rd-chevron-ink { stroke: #8091a6; }
 :where(.dark, [data-theme="dark"]) .ui-rd-menu {
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4)) drop-shadow(0 1px 2.5px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 6px 12px rgba(0, 22, 43, 0.4)) drop-shadow(0 1px 2.5px rgba(0, 22, 43, 0.35));
 }
-:where(.dark, [data-theme="dark"]) .ui-rd-panel { background: #232326; border-color: rgba(255, 255, 255, 0.08); }
-:where(.dark, [data-theme="dark"]) .ui-rd-fill { background: #2a2a2d; }
-:where(.dark, [data-theme="dark"]) .ui-rd-option { color: #ededed; }
+:where(.dark, [data-theme="dark"]) .ui-rd-panel { background: #132439; border-color: rgba(255, 255, 255, 0.08); }
+:where(.dark, [data-theme="dark"]) .ui-rd-fill { background: #192b42; }
+:where(.dark, [data-theme="dark"]) .ui-rd-option { color: #e7eef6; }
 \`;
 `;export{e as default};

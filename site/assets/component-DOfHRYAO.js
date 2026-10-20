@@ -503,30 +503,30 @@ async function copyText(text: string) {
 const css = /* css */ \`
 .ui-tc,
 .ui-tc-group {
-  --ui-tc-ink: #171717;
-  --ui-tc-text: #6b6b6b;
-  --ui-tc-muted: #8a8a8a;
+  --ui-tc-ink: #0a1829;
+  --ui-tc-text: #5b6d84;
+  --ui-tc-muted: #7b8ca1;
   --ui-tc-bg: #ffffff;
-  --ui-tc-line: #e7e7e7;
-  --ui-tc-hover: #fafafa;
-  --ui-tc-tile: #f5f5f5;
-  --ui-tc-code: #fafafa;
+  --ui-tc-line: #e0e8f2;
+  --ui-tc-hover: #f7fafe;
+  --ui-tc-tile: #f1f6fb;
+  --ui-tc-code: #f7fafe;
   --ui-tc-ring: #ffffff;
   --ui-tc-red: #c8372d;
   --ui-tc-red-bg: rgba(200, 55, 45, 0.06);
   --ui-tc-red-line: rgba(200, 55, 45, 0.16);
-  --ui-tc-key: #171717;
+  --ui-tc-key: #0a1829;
   --ui-tc-str: #0f7b6c;
   --ui-tc-num: #b25b0c;
-  --ui-tc-lit: #6e56cf;
+  --ui-tc-lit: #9f1746;
   --ui-tc-shine: rgba(255, 255, 255, 0.82);
-  --ui-tc-focus: rgba(23, 23, 23, 0.22);
+  --ui-tc-focus: rgba(10, 24, 41, 0.22);
   --ui-tc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-tc-mono: ui-monospace, "SF Mono", Menlo, monospace;
   box-sizing: border-box;
   min-width: 0;
   color: var(--ui-tc-text);
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13.5px;
   line-height: 1.4;
   letter-spacing: -0.006em;
@@ -539,7 +539,7 @@ const css = /* css */ \`
   position: relative;
   border-radius: 12px;
   background: var(--ui-tc-bg);
-  box-shadow: inset 0 0 0 1px var(--ui-tc-line), 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0 0 0 1px var(--ui-tc-line), 0 1px 2px rgba(26, 62, 112, 0.04);
 }
 .ui-tc-sr {
   position: absolute;
@@ -797,7 +797,7 @@ const css = /* css */ \`
   padding: 0 10px 0 8px;
   border-radius: 7px;
   background: var(--ui-tc-bg);
-  box-shadow: inset 0 0 0 1px var(--ui-tc-line), 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0 0 0 1px var(--ui-tc-line), 0 1px 2px rgba(26, 62, 112, 0.04);
   color: var(--ui-tc-ink);
   font-size: 12.5px;
   font-weight: 500;
@@ -901,22 +901,22 @@ const css = /* css */ \`
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-tc,
 :where(.dark, [data-theme="dark"]) .ui-tc-group {
-  --ui-tc-ink: #ededed;
-  --ui-tc-text: #a1a1a1;
-  --ui-tc-muted: #7c7c7c;
-  --ui-tc-bg: #161618;
+  --ui-tc-ink: #e7eef6;
+  --ui-tc-text: #94a3b6;
+  --ui-tc-muted: #6c7e94;
+  --ui-tc-bg: #091728;
   --ui-tc-line: rgba(255, 255, 255, 0.1);
   --ui-tc-hover: rgba(255, 255, 255, 0.035);
-  --ui-tc-tile: #1d1d20;
-  --ui-tc-code: #1d1d20;
-  --ui-tc-ring: #161618;
+  --ui-tc-tile: #0f1e31;
+  --ui-tc-code: #0f1e31;
+  --ui-tc-ring: #091728;
   --ui-tc-red: #ff7b72;
   --ui-tc-red-bg: rgba(255, 110, 100, 0.08);
   --ui-tc-red-line: rgba(255, 110, 100, 0.2);
-  --ui-tc-key: #ededed;
+  --ui-tc-key: #e7eef6;
   --ui-tc-str: #5fd4b8;
   --ui-tc-num: #f2a65a;
-  --ui-tc-lit: #b5a4ff;
+  --ui-tc-lit: #f98fa4;
   --ui-tc-shine: rgba(255, 255, 255, 0.95);
   --ui-tc-focus: rgba(255, 255, 255, 0.3);
 }

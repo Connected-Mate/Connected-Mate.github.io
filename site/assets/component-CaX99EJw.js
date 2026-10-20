@@ -293,20 +293,20 @@ export function GlowCloud({
 const css = /* css */ \`
 /* Palette as variables – blue, or red-orange via data-color="orange" */
 .ui-gc {
-  --ui-gc-sky-top: #2475ea;
-  --ui-gc-sky-bottom: #4ac8f5;
-  --ui-gc-sky-light: rgba(110, 225, 255, 0.55);
+  --ui-gc-sky-top: #ab254f;
+  --ui-gc-sky-bottom: #8cbbf7;
+  --ui-gc-sky-light: rgba(176, 210, 254, 0.55);
   --ui-gc-white: #ffffff;
-  --ui-gc-rim: #f4fcff;
-  --ui-gc-body-1: #06a3ff;
-  --ui-gc-body-2: #18b2ff;
-  --ui-gc-body-3: #58cdff;
-  --ui-gc-eye: #cdeeff;
-  --ui-gc-eye-shade: rgba(30, 140, 230, 0.3);
-  --ui-gc-halo: rgba(30, 150, 255, 0.2);
-  --ui-gc-edge: rgba(20, 120, 240, 0.4);
-  --ui-gc-shadow: rgba(10, 90, 200, 0.55);
-  --ui-gc-ground: rgba(10, 80, 190, 0.4);
+  --ui-gc-rim: #f8fbfe;
+  --ui-gc-body-1: #719fd9;
+  --ui-gc-body-2: #7baae5;
+  --ui-gc-body-3: #92c1fe;
+  --ui-gc-eye: #dbeafc;
+  --ui-gc-eye-shade: rgba(94, 139, 196, 0.3);
+  --ui-gc-halo: rgba(195, 62, 99, 0.2);
+  --ui-gc-edge: rgba(173, 40, 81, 0.4);
+  --ui-gc-shadow: rgba(137, 28, 62, 0.55);
+  --ui-gc-ground: rgba(129, 18, 55, 0.4);
   position: relative;
   display: grid;
   place-items: center;
@@ -321,7 +321,7 @@ const css = /* css */ \`
   --ui-gc-sky-top: #e94135;
   --ui-gc-sky-bottom: #fa9842;
   --ui-gc-sky-light: rgba(255, 205, 150, 0.5);
-  --ui-gc-rim: #fff9f5;
+  --ui-gc-rim: #f8fbfe;
   --ui-gc-body-1: #f45434;
   --ui-gc-body-2: #fa7342;
   --ui-gc-body-3: #ffb175;
@@ -350,10 +350,10 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> – a deeper sky */
 :where(.dark, [data-theme="dark"]) .ui-gc {
-  --ui-gc-sky-top: #1659c8;
-  --ui-gc-sky-bottom: #2aa6e6;
-  --ui-gc-sky-light: rgba(90, 205, 255, 0.45);
-  --ui-gc-ground: rgba(5, 50, 140, 0.5);
+  --ui-gc-sky-top: #891c3e;
+  --ui-gc-sky-bottom: #709ed8;
+  --ui-gc-sky-light: rgba(146, 194, 254, 0.45);
+  --ui-gc-ground: rgba(89, 7, 36, 0.5);
 }
 :where(.dark, [data-theme="dark"]) .ui-gc[data-color="orange"] {
   --ui-gc-sky-top: #bf2722;

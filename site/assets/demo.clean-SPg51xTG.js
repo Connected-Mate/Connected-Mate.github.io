@@ -4,24 +4,24 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-otpc-box: 40px;
   --ui-otpc-gap: 8px;
   --ui-otpc-card: #ffffff;
-  --ui-otpc-ink: rgba(0, 0, 0, 0.88);
+  --ui-otpc-ink: rgba(0, 22, 43, 0.88);
   --ui-otpc-strong: #000000;
-  --ui-otpc-text: rgba(0, 0, 0, 0.61);
-  --ui-otpc-muted: rgba(0, 0, 0, 0.45);
-  --ui-otpc-faint: rgba(0, 0, 0, 0.27);
-  --ui-otpc-icon: rgba(0, 0, 0, 0.447);
-  --ui-otpc-line: rgba(0, 0, 0, 0.06);
-  --ui-otpc-fill: rgba(0, 0, 0, 0.06);
-  --ui-otpc-wash: rgba(0, 0, 0, 0.03);
+  --ui-otpc-text: rgba(0, 22, 43, 0.61);
+  --ui-otpc-muted: rgba(0, 22, 43, 0.45);
+  --ui-otpc-faint: rgba(0, 22, 43, 0.27);
+  --ui-otpc-icon: rgba(0, 22, 43, 0.447);
+  --ui-otpc-line: rgba(26, 62, 112, 0.06);
+  --ui-otpc-fill: rgba(26, 62, 112, 0.06);
+  --ui-otpc-wash: rgba(26, 62, 112, 0.03);
   --ui-otpc-shine: rgba(255, 255, 255, 0.82);
-  --ui-otpc-accent: rgba(0, 96, 226, 0.765);
-  --ui-otpc-focus: rgba(0, 96, 226, 0.35);
+  --ui-otpc-accent: rgba(155, 16, 66, 0.765);
+  --ui-otpc-focus: rgba(155, 16, 66, 0.35);
   --ui-otpc-danger: #e5484d;
   --ui-otpc-success: #1a9a52;
   --ui-otpc-danger-tint: rgba(229, 72, 77, 0.08);
   --ui-otpc-success-tint: rgba(26, 154, 82, 0.08);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
-  --ui-otpc-lift: 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ui-otpc-lift: 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
   --ui-otpc-shadow: 0 0 0 0.5px var(--ui-otpc-line), var(--ui-otpc-lift);
   --ui-otpc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
@@ -29,7 +29,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   display: grid;
   justify-self: stretch; /* it sizes the boxes from its own width, so it must never shrink to fit them */
   width: 100%;
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   line-height: 20px;
   font-weight: 400;
@@ -262,7 +262,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-otpc {
-  --ui-otpc-card: #1c1c1e;
+  --ui-otpc-card: #0e1d30;
   --ui-otpc-ink: rgba(255, 255, 255, 0.9);
   --ui-otpc-strong: #ffffff;
   --ui-otpc-text: rgba(255, 255, 255, 0.62);
@@ -273,12 +273,12 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-otpc-fill: rgba(255, 255, 255, 0.08);
   --ui-otpc-wash: rgba(255, 255, 255, 0.03);
   --ui-otpc-shine: rgba(255, 255, 255, 0.1);
-  --ui-otpc-accent: #4d8dff;
-  --ui-otpc-focus: rgba(77, 141, 255, 0.5);
+  --ui-otpc-accent: #c13d61;
+  --ui-otpc-focus: rgba(193, 61, 97, 0.5);
   --ui-otpc-danger: #ff6369;
   --ui-otpc-success: #3ec27a;
   --ui-otpc-danger-tint: rgba(255, 99, 105, 0.14);
   --ui-otpc-success-tint: rgba(62, 194, 122, 0.14);
-  --ui-otpc-lift: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --ui-otpc-lift: 0 1px 2px 0 rgba(0, 22, 43, 0.4);
 }
 `,l=`482913`,u=`481973`,ee=e=>e>0?`That code didn't work. ${e} ${e===1?`try`:`tries`} left.`:`That code didn't work. Request a new code.`;function d(){let[e,t]=(0,n.useState)(``),[i,a]=(0,n.useState)(`idle`),[o,c]=(0,n.useState)(3),d=(0,n.useRef)([]),f=(0,n.useRef)(!0),p=(e,t)=>d.current.push(window.setTimeout(t,e)),m=()=>{d.current.forEach(clearTimeout),d.current=[]},h=e=>{a(`verifying`),p(1e3,()=>{e===l?(a(`success`),p(3200,()=>{t(``),a(`idle`),c(3)})):(c(e=>Math.max(0,e-1)),a(`error`))})};(0,n.useEffect)(()=>{let e=700,n=n=>{for(let r=1;r<=n.length;r++){let i=n.slice(0,r);p(e,()=>t(i)),e+=150}};return n(u),p(e+150,()=>h(u)),e+=2850,p(e,()=>a(`idle`)),n(l),p(e+150,()=>{f.current=!1,h(l)}),m},[]);let g=()=>{f.current&&(f.current=!1,m(),t(``),a(`idle`))};return(0,r.jsx)(`div`,{className:`otp-demo`,onPointerDownCapture:g,onKeyDownCapture:g,onFocusCapture:g,children:(0,r.jsxs)(`div`,{className:`otp-democ`,children:[(0,r.jsxs)(`div`,{className:`otp-democ__body`,children:[(0,r.jsx)(`span`,{className:`otp-democ__icon`,"aria-hidden":`true`,children:(0,r.jsxs)(`svg`,{viewBox:`0 0 16 16`,children:[(0,r.jsx)(`rect`,{x:`1.75`,y:`3.25`,width:`12.5`,height:`9.5`,rx:`2`}),(0,r.jsx)(`path`,{d:`M2.5 4.75l5.5 4 5.5-4`})]})}),(0,r.jsx)(`h3`,{className:`otp-democ__title`,children:`Check your email`}),(0,r.jsxs)(`p`,{className:`otp-democ__text`,children:[`We sent a code to `,(0,r.jsx)(`strong`,{children:`maya@acme.com`})]}),(0,r.jsx)(s,{className:`otp-demo__otp`,separator:!0,align:`center`,value:e,status:i,errorMessage:ee(o),onChange:e=>{t(e),i===`error`&&e&&a(`idle`)},onComplete:h,onResend:()=>c(3),resendIn:30})]}),(0,r.jsxs)(`p`,{className:`otp-democ__hint`,children:[`Demo code: `,(0,r.jsxs)(`span`,{children:[`482`,`\xA0`,`913`]})]})]})})}export{d as default};

@@ -5,18 +5,18 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 @property --ui-segc-fade-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
 
 .ui-segc {
-  --ui-segc-ink: rgba(0, 0, 0, 0.88);
-  --ui-segc-text: rgba(0, 0, 0, 0.61);
-  --ui-segc-hover-text: rgba(0, 0, 0, 0.75);
-  --ui-segc-line: rgba(0, 0, 0, 0.06);
-  --ui-segc-wash: rgba(0, 0, 0, 0.03);
-  --ui-segc-fill: rgba(0, 0, 0, 0.06);
-  --ui-segc-track: rgba(0, 0, 0, 0.04);
+  --ui-segc-ink: rgba(0, 22, 43, 0.88);
+  --ui-segc-text: rgba(0, 22, 43, 0.61);
+  --ui-segc-hover-text: rgba(0, 22, 43, 0.75);
+  --ui-segc-line: rgba(26, 62, 112, 0.06);
+  --ui-segc-wash: rgba(26, 62, 112, 0.03);
+  --ui-segc-fill: rgba(26, 62, 112, 0.06);
+  --ui-segc-track: rgba(26, 62, 112, 0.04);
   --ui-segc-card: #ffffff;
-  --ui-segc-card-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --ui-segc-accent: rgba(0, 96, 226, 0.765);
-  --ui-segc-accent-soft: rgba(0, 96, 226, 0.08);
-  --ui-segc-focus: rgba(0, 96, 226, 0.35);
+  --ui-segc-card-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
+  --ui-segc-accent: rgba(155, 16, 66, 0.765);
+  --ui-segc-accent-soft: rgba(155, 16, 66, 0.08);
+  --ui-segc-focus: rgba(155, 16, 66, 0.35);
   --ui-segc-ease: cubic-bezier(0.25, 0.9, 0.3, 1);
   /* Size: md – 28px chips, 4px 10px */
   --ui-segc-h: 28px;
@@ -33,7 +33,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   min-width: 0;
   vertical-align: middle;
   border-radius: 8px;
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: var(--ui-segc-fs);
   font-weight: 500;
   line-height: var(--ui-segc-lh);
@@ -59,8 +59,8 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   border-radius: inherit;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 var(--ui-segc-fade-l), #000 calc(100% - var(--ui-segc-fade-r)), transparent);
-  mask-image: linear-gradient(to right, transparent, #000 var(--ui-segc-fade-l), #000 calc(100% - var(--ui-segc-fade-r)), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000000 var(--ui-segc-fade-l), #000000 calc(100% - var(--ui-segc-fade-r)), transparent);
+  mask-image: linear-gradient(to right, transparent, #000000 var(--ui-segc-fade-l), #000000 calc(100% - var(--ui-segc-fade-r)), transparent);
   transition: --ui-segc-fade-l 160ms ease, --ui-segc-fade-r 160ms ease;
 }
 .ui-segc__scroller::-webkit-scrollbar { display: none; }
@@ -108,7 +108,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 .ui-segc__content { display: inline-flex; flex: none; align-items: center; gap: 6px; }
 .ui-segc[data-size="sm"] .ui-segc__content { gap: 5px; }
-.ui-segc__icon { display: grid; place-items: center; width: var(--ui-segc-icon); height: var(--ui-segc-icon); color: rgba(0, 0, 0, 0.447); transition: color 90ms ease; }
+.ui-segc__icon { display: grid; place-items: center; width: var(--ui-segc-icon); height: var(--ui-segc-icon); color: rgba(0, 22, 43, 0.447); transition: color 90ms ease; }
 .ui-segc__opt[data-active] .ui-segc__icon { color: var(--ui-segc-ink); }
 .ui-segc__icon svg { width: 100%; height: 100%; }
 .ui-segc__label { display: block; }
@@ -209,11 +209,11 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-segc-wash: rgba(255, 255, 255, 0.04);
   --ui-segc-fill: rgba(255, 255, 255, 0.08);
   --ui-segc-track: rgba(255, 255, 255, 0.05);
-  --ui-segc-card: #2c2c2f;
-  --ui-segc-card-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.4);
-  --ui-segc-accent: #4d8dff;
-  --ui-segc-accent-soft: rgba(77, 141, 255, 0.14);
-  --ui-segc-focus: rgba(77, 141, 255, 0.45);
+  --ui-segc-card: #1b2d45;
+  --ui-segc-card-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 22, 43, 0.4);
+  --ui-segc-accent: #c13d61;
+  --ui-segc-accent-soft: rgba(193, 61, 97, 0.14);
+  --ui-segc-focus: rgba(193, 61, 97, 0.45);
 }
 :where(.dark, [data-theme="dark"]) .ui-segc__icon { color: rgba(255, 255, 255, 0.46); }
 :where(.dark, [data-theme="dark"]) .ui-segc__opt[data-active] .ui-segc__icon { color: var(--ui-segc-ink); }

@@ -215,8 +215,8 @@ const css = /* css */ \`
   height: var(--ui-nt-lh);
   overflow: hidden;
   /* Soft top and bottom edges while digits pass through */
-  -webkit-mask-image: linear-gradient(transparent, #000 14%, #000 86%, transparent);
-  mask-image: linear-gradient(transparent, #000 14%, #000 86%, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #000000 14%, #000000 86%, transparent);
+  mask-image: linear-gradient(transparent, #000000 14%, #000000 86%, transparent);
 }
 .ui-nt__col[data-enter] { animation: ui-nt-in 450ms var(--ui-nt-ease) both; }
 .ui-nt__stack {

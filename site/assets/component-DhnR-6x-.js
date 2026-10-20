@@ -151,11 +151,11 @@ const icons: Record<ReactionKey, ReactNode> = {
 
 const css = /* css */ \`
 .ui-rb {
-  --ui-rb-ink: #404040;
-  --ui-rb-like: #ec4899;
-  --ui-rb-comment: #2f6bff;
-  --ui-rb-repost: #8b5cf6;
-  --ui-rb-share: #171717;
+  --ui-rb-ink: #2f4159;
+  --ui-rb-like: #c13c61;
+  --ui-rb-comment: #aa254f;
+  --ui-rb-repost: #b22d55;
+  --ui-rb-share: #0a1829;
   --ui-rb-ease: cubic-bezier(0.85, 0, 0.15, 1);
   --ui-rb-soft: cubic-bezier(0.22, 1, 0.36, 1);
   display: inline-flex;
@@ -164,8 +164,8 @@ const css = /* css */ \`
   padding: 4px 10px;
   border-radius: 999px;
   background: #fff;
-  box-shadow: 0 0 0 1px #ececec, 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 0 0 1px #e6edf6, 0 1px 2px rgba(26, 62, 112, 0.04), 0 4px 12px rgba(26, 62, 112, 0.03);
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 .ui-rb *, .ui-rb *::before, .ui-rb *::after { box-sizing: border-box; }
@@ -187,7 +187,7 @@ const css = /* css */ \`
   transition: background-color 160ms ease;
   -webkit-tap-highlight-color: transparent;
 }
-.ui-rb__btn:hover { background: #f5f5f5; }
+.ui-rb__btn:hover { background: #f1f6fb; }
 .ui-rb__btn:focus-visible { outline: 2px solid var(--ui-rb-comment); outline-offset: 2px; }
 .ui-rb__btn[data-kind="like"] { --ui-rb-tone: var(--ui-rb-like); }
 .ui-rb__btn[data-kind="comment"] { --ui-rb-tone: var(--ui-rb-comment); }
@@ -238,13 +238,13 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-rb {
-  --ui-rb-ink: #c4c4c4;
-  --ui-rb-like: #f472b6;
-  --ui-rb-comment: #6b95ff;
-  --ui-rb-repost: #a78bfa;
-  --ui-rb-share: #ededed;
-  background: #232326;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.35);
+  --ui-rb-ink: #b9c5d6;
+  --ui-rb-like: #d54f71;
+  --ui-rb-comment: #c84969;
+  --ui-rb-repost: #cc506f;
+  --ui-rb-share: #e7eef6;
+  background: #132439;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 22, 43, 0.4), 0 4px 12px rgba(0, 22, 43, 0.35);
 }
 :where(.dark, [data-theme="dark"]) .ui-rb__btn:hover { background: rgba(255, 255, 255, 0.06); }
 \`;

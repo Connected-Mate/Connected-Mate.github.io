@@ -5,18 +5,18 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 @property --ui-seg-fade-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
 
 .ui-seg {
-  --ui-seg-tray: #f0f0f0;
+  --ui-seg-tray: #ebf1f8;
   --ui-seg-pill: #ffffff;
-  --ui-seg-line: #ececec;
-  --ui-seg-ink: #171717;
-  --ui-seg-text: #404040;
-  --ui-seg-soft: #737373;
-  --ui-seg-muted: #8f8f8f;
-  --ui-seg-count: rgba(0, 0, 0, 0.06);
-  --ui-seg-accent: #2f6bff;
-  --ui-seg-accent-soft: rgba(47, 107, 255, 0.1);
-  --ui-seg-pill-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.06);
-  --ui-seg-focus: rgba(23, 23, 23, 0.22);
+  --ui-seg-line: #e6edf6;
+  --ui-seg-ink: #0a1829;
+  --ui-seg-text: #2f4159;
+  --ui-seg-soft: #63758c;
+  --ui-seg-muted: #8091a6;
+  --ui-seg-count: rgba(26, 62, 112, 0.06);
+  --ui-seg-accent: #aa254f;
+  --ui-seg-accent-soft: rgba(170, 37, 79, 0.1);
+  --ui-seg-pill-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.08), 0 1px 2px rgba(26, 62, 112, 0.08), 0 2px 8px -2px rgba(26, 62, 112, 0.06);
+  --ui-seg-focus: rgba(10, 24, 41, 0.22);
   --ui-seg-ease: cubic-bezier(0.22, 1, 0.36, 1);
   /* Size: md */
   --ui-seg-h: 30px;
@@ -33,7 +33,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   vertical-align: middle;
   border-radius: var(--ui-seg-r);
   background: var(--ui-seg-tray);
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: var(--ui-seg-fs);
   line-height: 1;
   color: var(--ui-seg-soft);
@@ -58,8 +58,8 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   border-radius: inherit;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 var(--ui-seg-fade-l), #000 calc(100% - var(--ui-seg-fade-r)), transparent);
-  mask-image: linear-gradient(to right, transparent, #000 var(--ui-seg-fade-l), #000 calc(100% - var(--ui-seg-fade-r)), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000000 var(--ui-seg-fade-l), #000000 calc(100% - var(--ui-seg-fade-r)), transparent);
+  mask-image: linear-gradient(to right, transparent, #000000 var(--ui-seg-fade-l), #000000 calc(100% - var(--ui-seg-fade-r)), transparent);
   transition: --ui-seg-fade-l 200ms ease, --ui-seg-fade-r 200ms ease;
 }
 .ui-seg__scroller::-webkit-scrollbar { display: none; }
@@ -185,17 +185,17 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-seg {
-  --ui-seg-tray: #111113;
-  --ui-seg-pill: #26262a;
-  --ui-seg-line: #2a2a2e;
-  --ui-seg-ink: #ededed;
-  --ui-seg-text: #c8c8cc;
-  --ui-seg-soft: #8b8b92;
-  --ui-seg-muted: #8b8b92;
+  --ui-seg-tray: #061222;
+  --ui-seg-pill: #16273d;
+  --ui-seg-line: #192b42;
+  --ui-seg-ink: #e7eef6;
+  --ui-seg-text: #becada;
+  --ui-seg-soft: #7d8da3;
+  --ui-seg-muted: #7d8da3;
   --ui-seg-count: rgba(255, 255, 255, 0.08);
-  --ui-seg-accent: #6d8bff;
-  --ui-seg-accent-soft: rgba(109, 139, 255, 0.14);
-  --ui-seg-pill-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ui-seg-accent: #c54064;
+  --ui-seg-accent-soft: rgba(197, 64, 100, 0.14);
+  --ui-seg-pill-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 22, 43, 0.4);
   --ui-seg-focus: rgba(255, 255, 255, 0.3);
 }
 `;export{i as t};

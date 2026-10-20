@@ -6,7 +6,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 }
 
 .ui-gb {
-  --ui-gb-color: rgba(0, 0, 0, 0.07);
+  --ui-gb-color: rgba(26, 62, 112, 0.07);
   --ui-gb-ease: cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   isolation: isolate;
@@ -19,8 +19,8 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  -webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent var(--ui-gb-fade));
-  mask-image: radial-gradient(ellipse at center, #000 20%, transparent var(--ui-gb-fade));
+  -webkit-mask-image: radial-gradient(ellipse at center, #000000 20%, transparent var(--ui-gb-fade));
+  mask-image: radial-gradient(ellipse at center, #000000 20%, transparent var(--ui-gb-fade));
 }
 
 /* Reveal: a circle from the center grows until it reaches the corners */
@@ -31,8 +31,8 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 }
 .ui-gb[data-reveal] .ui-gb-reveal {
   --ui-gb-r: 0%;
-  -webkit-mask-image: radial-gradient(circle farthest-corner at center, #000 var(--ui-gb-r), transparent calc(var(--ui-gb-r) + 12%));
-  mask-image: radial-gradient(circle farthest-corner at center, #000 var(--ui-gb-r), transparent calc(var(--ui-gb-r) + 12%));
+  -webkit-mask-image: radial-gradient(circle farthest-corner at center, #000000 var(--ui-gb-r), transparent calc(var(--ui-gb-r) + 12%));
+  mask-image: radial-gradient(circle farthest-corner at center, #000000 var(--ui-gb-r), transparent calc(var(--ui-gb-r) + 12%));
 }
 .ui-gb[data-reveal][data-shown] .ui-gb-reveal {
   animation: ui-gb-reveal 1.6s var(--ui-gb-ease) forwards;

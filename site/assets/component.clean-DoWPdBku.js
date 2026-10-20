@@ -508,35 +508,35 @@ const css = /* css */ \`
 .ui-tcc-group {
   --ui-tcc-card: #ffffff;
   --ui-tcc-strong: #000000;
-  --ui-tcc-ink: rgba(0, 0, 0, 0.88);
-  --ui-tcc-text: rgba(0, 0, 0, 0.61);
-  --ui-tcc-muted: rgba(0, 0, 0, 0.45);
-  --ui-tcc-faint: rgba(0, 0, 0, 0.27);
-  --ui-tcc-icon: rgba(0, 0, 0, 0.447);
-  --ui-tcc-line: rgba(0, 0, 0, 0.06);
-  --ui-tcc-wash: rgba(0, 0, 0, 0.03);
-  --ui-tcc-wash-big: rgba(0, 0, 0, 0.015);
+  --ui-tcc-ink: rgba(0, 22, 43, 0.88);
+  --ui-tcc-text: rgba(0, 22, 43, 0.61);
+  --ui-tcc-muted: rgba(0, 22, 43, 0.45);
+  --ui-tcc-faint: rgba(0, 22, 43, 0.27);
+  --ui-tcc-icon: rgba(0, 22, 43, 0.447);
+  --ui-tcc-line: rgba(26, 62, 112, 0.06);
+  --ui-tcc-wash: rgba(26, 62, 112, 0.03);
+  --ui-tcc-wash-big: rgba(26, 62, 112, 0.015);
   /* The code panel: a 2% black frame, kept opaque so the fade of capped blocks can end on it */
-  --ui-tcc-code: #fafafa;
-  --ui-tcc-accent: rgba(0, 96, 226, 0.765);
+  --ui-tcc-code: #f7fafe;
+  --ui-tcc-accent: rgba(155, 16, 66, 0.765);
   --ui-tcc-red: #d93a2b;
   --ui-tcc-red-bg: rgba(217, 58, 43, 0.04);
   --ui-tcc-red-line: rgba(217, 58, 43, 0.14);
-  --ui-tcc-key: rgba(0, 0, 0, 0.88);
-  --ui-tcc-str: rgba(0, 123, 172, 0.9);
+  --ui-tcc-key: rgba(0, 22, 43, 0.88);
+  --ui-tcc-str: rgba(72, 115, 171, 0.9);
   --ui-tcc-num: #b25b0c;
-  --ui-tcc-lit: #5b5bd6;
+  --ui-tcc-lit: #9f1645;
   --ui-tcc-shine: rgba(255, 255, 255, 0.82);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
-  --ui-tcc-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --ui-tcc-focus: rgba(0, 96, 226, 0.35);
+  --ui-tcc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
+  --ui-tcc-focus: rgba(155, 16, 66, 0.35);
   --ui-tcc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-tcc-mono: ui-monospace, "SF Mono", Menlo, monospace;
   box-sizing: border-box;
   container-type: inline-size;
   min-width: 0;
   color: var(--ui-tcc-ink);
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   line-height: 20px;
   font-weight: 400;
@@ -944,7 +944,7 @@ const css = /* css */ \`
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-tcc,
 :where(.dark, [data-theme="dark"]) .ui-tcc-group {
-  --ui-tcc-card: #1c1c1e;
+  --ui-tcc-card: #0e1d30;
   --ui-tcc-strong: #ffffff;
   --ui-tcc-ink: rgba(255, 255, 255, 0.9);
   --ui-tcc-text: rgba(255, 255, 255, 0.62);
@@ -954,18 +954,18 @@ const css = /* css */ \`
   --ui-tcc-line: rgba(255, 255, 255, 0.08);
   --ui-tcc-wash: rgba(255, 255, 255, 0.04);
   --ui-tcc-wash-big: rgba(255, 255, 255, 0.025);
-  --ui-tcc-code: #212123;
-  --ui-tcc-accent: #4d8dff;
+  --ui-tcc-code: #122236;
+  --ui-tcc-accent: #c13d61;
   --ui-tcc-red: #ff7b72;
   --ui-tcc-red-bg: rgba(255, 110, 100, 0.07);
   --ui-tcc-red-line: rgba(255, 110, 100, 0.18);
   --ui-tcc-key: rgba(255, 255, 255, 0.9);
-  --ui-tcc-str: #5fc8e8;
+  --ui-tcc-str: #8cbbf8;
   --ui-tcc-num: #f2a65a;
-  --ui-tcc-lit: #a5a5ff;
+  --ui-tcc-lit: #f58ca1;
   --ui-tcc-shine: #ffffff;
-  --ui-tcc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --ui-tcc-focus: rgba(77, 141, 255, 0.5);
+  --ui-tcc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
+  --ui-tcc-focus: rgba(193, 61, 97, 0.5);
 }
 \`;
 `;export{e as default};

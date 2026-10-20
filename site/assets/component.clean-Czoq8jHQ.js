@@ -151,22 +151,22 @@ const icons: Record<ReactionKey, ReactNode> = {
 
 const css = /* css */ \`
 .ui-rbc {
-  --ui-rbc-ink: rgba(0, 0, 0, 0.88);
-  --ui-rbc-text: rgba(0, 0, 0, 0.61);
-  --ui-rbc-icon: rgba(0, 0, 0, 0.447);
-  --ui-rbc-line: rgba(0, 0, 0, 0.06);
-  --ui-rbc-wash: rgba(0, 0, 0, 0.03);
-  --ui-rbc-accent: rgba(0, 96, 226, 0.765);
-  --ui-rbc-mine: rgba(0, 96, 226, 0.05);
-  --ui-rbc-mine-line: rgba(0, 96, 226, 0.35);
-  --ui-rbc-focus: rgba(0, 96, 226, 0.35);
+  --ui-rbc-ink: rgba(0, 22, 43, 0.88);
+  --ui-rbc-text: rgba(0, 22, 43, 0.61);
+  --ui-rbc-icon: rgba(0, 22, 43, 0.447);
+  --ui-rbc-line: rgba(26, 62, 112, 0.06);
+  --ui-rbc-wash: rgba(26, 62, 112, 0.03);
+  --ui-rbc-accent: rgba(155, 16, 66, 0.765);
+  --ui-rbc-mine: rgba(155, 16, 66, 0.05);
+  --ui-rbc-mine-line: rgba(155, 16, 66, 0.35);
+  --ui-rbc-focus: rgba(155, 16, 66, 0.35);
   --ui-rbc-ease: cubic-bezier(0.85, 0, 0.15, 1);
   --ui-rbc-h: 28px;
   display: inline-flex;
   align-items: center;
   gap: 4px;
   max-width: 100%;
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   font-weight: 500;
   line-height: 20px;
@@ -256,10 +256,10 @@ const css = /* css */ \`
   --ui-rbc-icon: rgba(255, 255, 255, 0.46);
   --ui-rbc-line: rgba(255, 255, 255, 0.08);
   --ui-rbc-wash: rgba(255, 255, 255, 0.04);
-  --ui-rbc-accent: #4d8dff;
-  --ui-rbc-mine: rgba(77, 141, 255, 0.14);
-  --ui-rbc-mine-line: rgba(77, 141, 255, 0.4);
-  --ui-rbc-focus: rgba(77, 141, 255, 0.45);
+  --ui-rbc-accent: #c13d61;
+  --ui-rbc-mine: rgba(193, 61, 97, 0.14);
+  --ui-rbc-mine-line: rgba(193, 61, 97, 0.4);
+  --ui-rbc-focus: rgba(193, 61, 97, 0.45);
 }
 \`;
 `;export{e as default};

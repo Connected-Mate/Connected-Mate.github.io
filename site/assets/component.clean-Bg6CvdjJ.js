@@ -213,27 +213,27 @@ const css = /* css */ \`
 .ui-pmc {
   --ui-pmc-card: #ffffff;
   --ui-pmc-strong: #000000;
-  --ui-pmc-ink: rgba(0, 0, 0, 0.88);
-  --ui-pmc-text: rgba(0, 0, 0, 0.61);
-  --ui-pmc-muted: rgba(0, 0, 0, 0.45);
-  --ui-pmc-faint: rgba(0, 0, 0, 0.27);
-  --ui-pmc-icon: rgba(0, 0, 0, 0.447);
-  --ui-pmc-line: rgba(0, 0, 0, 0.06);
-  --ui-pmc-wash: rgba(0, 0, 0, 0.03);
-  --ui-pmc-hover: rgba(0, 0, 0, 0.06);
-  --ui-pmc-track: rgba(0, 0, 0, 0.06);
-  --ui-pmc-accent: rgba(0, 96, 226, 0.765);
-  --ui-pmc-focus: rgba(0, 96, 226, 0.35);
+  --ui-pmc-ink: rgba(0, 22, 43, 0.88);
+  --ui-pmc-text: rgba(0, 22, 43, 0.61);
+  --ui-pmc-muted: rgba(0, 22, 43, 0.45);
+  --ui-pmc-faint: rgba(0, 22, 43, 0.27);
+  --ui-pmc-icon: rgba(0, 22, 43, 0.447);
+  --ui-pmc-line: rgba(26, 62, 112, 0.06);
+  --ui-pmc-wash: rgba(26, 62, 112, 0.03);
+  --ui-pmc-hover: rgba(26, 62, 112, 0.06);
+  --ui-pmc-track: rgba(26, 62, 112, 0.06);
+  --ui-pmc-accent: rgba(155, 16, 66, 0.765);
+  --ui-pmc-focus: rgba(155, 16, 66, 0.35);
   --ui-pmc-badge: #e11d48;
   --ui-pmc-badge-wash: rgba(225, 29, 72, 0.08);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift, like a popover */
-  --ui-pmc-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.08), 0 12px 28px -10px rgba(0, 0, 0, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ui-pmc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.08), 0 12px 28px -10px rgba(26, 62, 112, 0.16), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
   --ui-pmc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
   container-type: inline-size;
   width: 100%;
   max-width: 260px;
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   line-height: 20px;
   font-weight: 400;
@@ -302,7 +302,7 @@ const css = /* css */ \`
 }
 .ui-pmc__item:hover { background: var(--ui-pmc-hover); transition-duration: 60ms; }
 .ui-pmc__item:focus-visible { background: var(--ui-pmc-hover); outline: none; }
-.ui-pmc__item:active { background: rgba(0, 0, 0, 0.08); }
+.ui-pmc__item:active { background: rgba(26, 62, 112, 0.08); }
 
 .ui-pmc__icon {
   display: grid;
@@ -413,7 +413,7 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-pmc {
-  --ui-pmc-card: #1c1c1e;
+  --ui-pmc-card: #0e1d30;
   --ui-pmc-strong: #ffffff;
   --ui-pmc-ink: rgba(255, 255, 255, 0.9);
   --ui-pmc-text: rgba(255, 255, 255, 0.62);
@@ -424,11 +424,11 @@ const css = /* css */ \`
   --ui-pmc-wash: rgba(255, 255, 255, 0.04);
   --ui-pmc-hover: rgba(255, 255, 255, 0.08);
   --ui-pmc-track: rgba(255, 255, 255, 0.1);
-  --ui-pmc-accent: #4d8dff;
-  --ui-pmc-focus: rgba(77, 141, 255, 0.45);
+  --ui-pmc-accent: #c13d61;
+  --ui-pmc-focus: rgba(193, 61, 97, 0.45);
   --ui-pmc-badge: #fb7185;
   --ui-pmc-badge-wash: rgba(225, 29, 72, 0.14);
-  --ui-pmc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ui-pmc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 22, 43, 0.4);
 }
 :where(.dark, [data-theme="dark"]) .ui-pmc__item:active { background: rgba(255, 255, 255, 0.1); }
 \`;

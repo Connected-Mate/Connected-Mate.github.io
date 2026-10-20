@@ -1,29 +1,29 @@
 import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js";var n=e(),r=t();function i({variant:e=`primary`,size:t=`md`,loading:i=!1,icon:o,iconRight:s,children:u,className:d,disabled:f,onClick:p,type:m=`button`,ref:h,...g}){let _=typeof u==`string`?u:void 0,v=!u&&!!(o||s),y=(0,n.useRef)(null),b=(0,n.useRef)(0),[x,S]=(0,n.useState)(!1);(0,n.useEffect)(()=>S(!0),[]);let C=_??`label`,w=i&&o?`spinner`:c(o),T=c(s),E=`${C}|${w}|${T}`,D=(0,n.useRef)(E);return(0,n.useLayoutEffect)(()=>{let e=y.current;if(!e)return;let t=e.getBoundingClientRect().width,n=b.current,r=D.current!==E;b.current=t,D.current=E,!(!r||!n||Math.abs(n-t)<.5)&&(window.matchMedia(`(prefers-reduced-motion: reduce)`).matches||e.animate([{width:`${n}px`},{width:`${t}px`}],{duration:480,easing:`cubic-bezier(0.25, 1, 0.5, 1)`}))}),(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(`style`,{href:`ui-button`,precedence:`default`,children:l}),(0,r.jsxs)(`button`,{type:m,className:[`ui-button`,d].filter(Boolean).join(` `),"data-variant":e,"data-size":t,"data-loading":i||void 0,"data-icon-only":v||void 0,"data-ready":x||void 0,ref:e=>{y.current=e,typeof h==`function`?h(e):h&&(h.current=e)},disabled:f,"aria-busy":i||void 0,"aria-disabled":i||void 0,onClick:e=>{if(i){e.preventDefault();return}p?.(e)},...g,children:[o&&(0,r.jsx)(`span`,{className:`ui-button__icon`,"aria-hidden":`true`,children:i?(0,r.jsx)(a,{}):o},`icon-${w}`),u!=null&&(0,r.jsx)(`span`,{className:`ui-button__label`,"data-text":_,children:u},`label-${C}`),s&&(0,r.jsx)(`span`,{className:`ui-button__icon`,"aria-hidden":`true`,children:s},`icon-right-${T}`)]})]})}var a=()=>(0,r.jsxs)(`svg`,{className:`ui-button__spinner`,viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:2,strokeLinecap:`round`,children:[(0,r.jsx)(`circle`,{cx:`12`,cy:`12`,r:`8.5`,opacity:.2}),(0,r.jsx)(`path`,{d:`M12 3.5a8.5 8.5 0 0 1 8.5 8.5`})]}),o=new WeakMap,s=1;function c(e){if(!(0,n.isValidElement)(e)||typeof e.type==`string`)return 0;let t=e.type;return o.has(t)||o.set(t,s++),o.get(t)}var l=`
 /* Colors and motion as variables – override them on .ui-button (see Theming in the docs) */
 .ui-button {
-  --ui-btn-ink: #171717;
-  --ui-btn-on-ink: #fafafa;
-  --ui-btn-dark-top: #323137;
-  --ui-btn-dark-bottom: #201e25;
-  --ui-btn-dark-hover-top: #3c3b42;
-  --ui-btn-dark-hover-bottom: #29272f;
-  --ui-btn-edge-top: #4b4951;
-  --ui-btn-edge-mid: #31303a;
-  --ui-btn-edge-bottom: #18171b;
-  --ui-btn-ring: #0d0d0d;
-  --ui-btn-dark-shadow: rgba(0, 0, 0, 0.1);
+  --ui-btn-ink: #0a1829;
+  --ui-btn-on-ink: #f7fafe;
+  --ui-btn-dark-top: #20334b;
+  --ui-btn-dark-bottom: #102034;
+  --ui-btn-dark-hover-top: #2b3d55;
+  --ui-btn-dark-hover-bottom: #182940;
+  --ui-btn-edge-top: #394c63;
+  --ui-btn-edge-mid: #20324a;
+  --ui-btn-edge-bottom: #0a182a;
+  --ui-btn-ring: #030d1c;
+  --ui-btn-dark-shadow: rgba(26, 62, 112, 0.1);
   --ui-btn-surface: #ffffff;
-  --ui-btn-surface-hover: #fafafa;
-  --ui-btn-surface-shadow: rgba(0, 0, 0, 0.06);
-  --ui-btn-line: #e5e5e5;
-  --ui-btn-muted: #737373;
-  --ui-btn-hover: #404040;
-  --ui-btn-fill: #f0f0f0;
+  --ui-btn-surface-hover: #f7fafe;
+  --ui-btn-surface-shadow: rgba(26, 62, 112, 0.06);
+  --ui-btn-line: #dee6f0;
+  --ui-btn-muted: #63758c;
+  --ui-btn-hover: #2f4159;
+  --ui-btn-fill: #ebf1f8;
   --ui-btn-shine: rgba(255, 255, 255, 0.82);
   --ui-btn-shine-on-ink: rgba(255, 255, 255, 0.95);
   --ui-btn-danger: #ff0000;
-  --ui-btn-danger-bg: #ffe6e9;
-  --ui-btn-focus: rgba(23, 23, 23, 0.22);
+  --ui-btn-danger-bg: #e7eef6;
+  --ui-btn-focus: rgba(10, 24, 41, 0.22);
   --ui-btn-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-btn-load: 650ms;
 
@@ -44,7 +44,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   margin: 0;
   border: 1px solid transparent;
   border-radius: var(--radius);
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: var(--fs);
   font-weight: 500;
   line-height: 1;
@@ -252,29 +252,29 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-button {
   /* primary inverts: a light gradient with dark text */
-  --ui-btn-on-ink: #121213;
-  --ui-btn-dark-top: #f4f4f5;
-  --ui-btn-dark-bottom: #e4e4e7;
+  --ui-btn-on-ink: #061223;
+  --ui-btn-dark-top: #f0f5fb;
+  --ui-btn-dark-bottom: #dde5f0;
   --ui-btn-dark-hover-top: #ffffff;
-  --ui-btn-dark-hover-bottom: #ececef;
+  --ui-btn-dark-hover-bottom: #e6edf6;
   --ui-btn-edge-top: #ffffff;
-  --ui-btn-edge-mid: #ececef;
-  --ui-btn-edge-bottom: #d4d4d8;
-  --ui-btn-ring: rgba(0, 0, 0, 0.6);
-  --ui-btn-dark-shadow: rgba(0, 0, 0, 0.4);
+  --ui-btn-edge-mid: #e6edf6;
+  --ui-btn-edge-bottom: #cbd6e4;
+  --ui-btn-ring: rgba(0, 22, 43, 0.6);
+  --ui-btn-dark-shadow: rgba(0, 22, 43, 0.4);
   --ui-btn-shine-on-ink: rgba(255, 255, 255, 0.9);
 
-  --ui-btn-ink: #ededed;
-  --ui-btn-surface: #232326;
-  --ui-btn-surface-hover: #2a2a2d;
-  --ui-btn-surface-shadow: rgba(0, 0, 0, 0.4);
+  --ui-btn-ink: #e7eef6;
+  --ui-btn-surface: #132439;
+  --ui-btn-surface-hover: #192b42;
+  --ui-btn-surface-shadow: rgba(0, 22, 43, 0.4);
   --ui-btn-line: rgba(255, 255, 255, 0.1);
-  --ui-btn-muted: #8f8f8f;
-  --ui-btn-hover: #ededed;
+  --ui-btn-muted: #8091a6;
+  --ui-btn-hover: #e7eef6;
   --ui-btn-fill: rgba(255, 255, 255, 0.06);
-  --ui-btn-shine: rgba(237, 237, 237, 0.95);
+  --ui-btn-shine: rgba(231, 238, 246, 0.95);
   --ui-btn-danger: #ff6b6b;
   --ui-btn-danger-bg: rgba(255, 64, 64, 0.16);
-  --ui-btn-focus: rgba(237, 237, 237, 0.3);
+  --ui-btn-focus: rgba(231, 238, 246, 0.3);
 }
 `;export{i as t};

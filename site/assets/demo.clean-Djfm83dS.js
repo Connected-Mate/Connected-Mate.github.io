@@ -2,22 +2,22 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 /* Colors and motion as variables – override them on .ui-fmc */
 .ui-fmc {
   --ui-fmc-card: #ffffff;
-  --ui-fmc-ink: rgba(0, 0, 0, 0.88);
+  --ui-fmc-ink: rgba(0, 22, 43, 0.88);
   --ui-fmc-strong: #000000;
-  --ui-fmc-text: rgba(0, 0, 0, 0.61);
-  --ui-fmc-muted: rgba(0, 0, 0, 0.45);
-  --ui-fmc-faint: rgba(0, 0, 0, 0.27);
-  --ui-fmc-icon: rgba(0, 0, 0, 0.447);
-  --ui-fmc-line: rgba(0, 0, 0, 0.06);
-  --ui-fmc-fill: rgba(0, 0, 0, 0.06);
-  --ui-fmc-fill-strong: rgba(0, 0, 0, 0.1);
-  --ui-fmc-wash: rgba(0, 0, 0, 0.03);
-  --ui-fmc-box-ring: rgba(0, 0, 0, 0.22);
-  --ui-fmc-accent: rgba(0, 96, 226, 0.765);
+  --ui-fmc-text: rgba(0, 22, 43, 0.61);
+  --ui-fmc-muted: rgba(0, 22, 43, 0.45);
+  --ui-fmc-faint: rgba(0, 22, 43, 0.27);
+  --ui-fmc-icon: rgba(0, 22, 43, 0.447);
+  --ui-fmc-line: rgba(26, 62, 112, 0.06);
+  --ui-fmc-fill: rgba(26, 62, 112, 0.06);
+  --ui-fmc-fill-strong: rgba(26, 62, 112, 0.1);
+  --ui-fmc-wash: rgba(26, 62, 112, 0.03);
+  --ui-fmc-box-ring: rgba(26, 62, 112, 0.22);
+  --ui-fmc-accent: rgba(155, 16, 66, 0.765);
   --ui-fmc-check: #ffffff;
-  --ui-fmc-focus: rgba(0, 96, 226, 0.35);
+  --ui-fmc-focus: rgba(155, 16, 66, 0.35);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
-  --ui-fmc-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ui-fmc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
   --ui-fmc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-fmc-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   box-sizing: border-box;
@@ -28,7 +28,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   border-radius: 10px;
   background: var(--ui-fmc-card);
   box-shadow: var(--ui-fmc-shadow);
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   line-height: 20px;
   font-weight: 400;
@@ -167,7 +167,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   height: 14px;
   border-radius: 4px;
   background: var(--ui-fmc-card);
-  box-shadow: inset 0 0 0 0.5px var(--ui-fmc-box-ring), 0 1px 1px 0 rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0 0 0 0.5px var(--ui-fmc-box-ring), 0 1px 1px 0 rgba(26, 62, 112, 0.04);
   transition: background-color 160ms ease, box-shadow 160ms ease;
 }
 .ui-fmc__box svg {
@@ -243,7 +243,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-fmc {
-  --ui-fmc-card: #1c1c1e;
+  --ui-fmc-card: #0e1d30;
   --ui-fmc-ink: rgba(255, 255, 255, 0.9);
   --ui-fmc-strong: #ffffff;
   --ui-fmc-text: rgba(255, 255, 255, 0.62);
@@ -255,9 +255,9 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-fmc-fill-strong: rgba(255, 255, 255, 0.13);
   --ui-fmc-wash: rgba(255, 255, 255, 0.04);
   --ui-fmc-box-ring: rgba(255, 255, 255, 0.28);
-  --ui-fmc-accent: #4d8dff;
+  --ui-fmc-accent: #c13d61;
   --ui-fmc-check: #ffffff;
-  --ui-fmc-focus: rgba(77, 141, 255, 0.5);
-  --ui-fmc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --ui-fmc-focus: rgba(193, 61, 97, 0.5);
+  --ui-fmc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
 }
 `,c=[{id:`stage`,label:`Stage`,options:[{id:`new`,label:`New lead`},{id:`qualified`,label:`Qualified`},{id:`proposal`,label:`Proposal sent`},{id:`negotiation`,label:`Negotiation`}]},{id:`value`,label:`Deal size`,chipPrefix:`Deal: `,options:[{id:`s`,label:`Under $5k`},{id:`m`,label:`$5k–20k`},{id:`l`,label:`$20k–50k`},{id:`xl`,label:`Over $50k`}]},{id:`region`,label:`Region`,options:[{id:`dach`,label:`DACH`},{id:`nordics`,label:`Nordics`},{id:`uk`,label:`UK & Ireland`},{id:`na`,label:`North America`},{id:`apac`,label:`APAC`}]}];function l(){return(0,r.jsx)(`div`,{className:`filter-menu-demo`,children:(0,r.jsx)(a,{groups:c,defaultValue:{stage:[`qualified`],value:[`m`],region:[`dach`]}})})}export{l as default};

@@ -542,11 +542,11 @@ const DEFAULT_RIGHT: BeamTool[] = [
     logo: (
       <Svg>
         <svg x="1" y="2" width="22" height="20" viewBox="0 0 87.3 78">
-          <path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#0066da" />
+          <path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#9d1344" />
           <path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z" fill="#00ac47" />
           <path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z" fill="#ea4335" />
           <path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d" />
-          <path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#2684fc" />
+          <path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#b83359" />
           <path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00" />
         </svg>
       </Svg>
@@ -558,32 +558,32 @@ const DEFAULT_RIGHT: BeamTool[] = [
 
 const css = /* css */ \`
 .ui-ib {
-  --ui-ib-ink: #171717;
-  --ui-ib-text: #404040;
-  --ui-ib-muted: #8f8f8f;
-  --ui-ib-faint: #b5b5b5;
-  --ui-ib-line: #e2e2e2;
-  --ui-ib-line-hi: #a9c0ff;
+  --ui-ib-ink: #0a1829;
+  --ui-ib-text: #2f4159;
+  --ui-ib-muted: #8091a6;
+  --ui-ib-faint: #a9b7c8;
+  --ui-ib-line: #dbe3ee;
+  --ui-ib-line-hi: #f7a9b6;
   --ui-ib-card: #ffffff;
-  --ui-ib-tray: #f0f0f0;
-  --ui-ib-accent: #2f6bff;
+  --ui-ib-tray: #ebf1f8;
+  --ui-ib-accent: #aa254f;
   /* Pulse: clear tail, accent body, a pale tip that reads as light */
-  --ui-ib-pulse: #2f6bff;
-  --ui-ib-tip-color: #b9cdff;
-  --ui-ib-ring: rgba(47, 107, 255, 0.2);
-  --ui-ib-glow: rgba(47, 107, 255, 0.26);
-  --ui-ib-hub: #171717;
+  --ui-ib-pulse: #aa254f;
+  --ui-ib-tip-color: #f9bbc5;
+  --ui-ib-ring: rgba(170, 37, 79, 0.2);
+  --ui-ib-glow: rgba(170, 37, 79, 0.26);
+  --ui-ib-hub: #0a1829;
   --ui-ib-hub-mark: #ffffff;
-  --ui-ib-hub-edge: rgba(0, 0, 0, 0.9);
-  --ui-ib-tooltip: #171717;
+  --ui-ib-hub-edge: rgba(0, 22, 43, 0.9);
+  --ui-ib-tooltip: #0a1829;
   --ui-ib-tooltip-text: #ffffff;
-  --ui-ib-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07), 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 18px -10px rgba(0, 0, 0, 0.18);
-  --ui-ib-focus: rgba(23, 23, 23, 0.22);
+  --ui-ib-shadow: 0 0 0 1px rgba(26, 62, 112, 0.07), 0 1px 2px rgba(26, 62, 112, 0.04), 0 8px 18px -10px rgba(26, 62, 112, 0.18);
+  --ui-ib-focus: rgba(10, 24, 41, 0.22);
   --ui-ib-ease: \${EASE};
   position: relative;
   width: 100%;
   container-type: inline-size;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 13px;
   color: var(--ui-ib-text);
   -webkit-tap-highlight-color: transparent;
@@ -713,7 +713,7 @@ const css = /* css */ \`
   height: 80px;
   border-radius: 24px;
   background: var(--ui-ib-hub);
-  box-shadow: 0 0 0 1px var(--ui-ib-hub-edge), inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 14px 28px -12px rgba(0, 0, 0, 0.38);
+  box-shadow: 0 0 0 1px var(--ui-ib-hub-edge), inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 14px 28px -12px rgba(0, 22, 43, 0.38);
   color: var(--ui-ib-hub-mark);
 }
 .ui-ib__mark { display: grid; width: 36px; height: 36px; fill: currentColor; }
@@ -731,7 +731,7 @@ const css = /* css */ \`
   overflow: hidden;
   border-radius: 999px;
   background: var(--ui-ib-card);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07), 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 0 0 1px rgba(26, 62, 112, 0.07), 0 1px 2px rgba(26, 62, 112, 0.04);
   transition: width 320ms var(--ui-ib-ease);
 }
 .ui-ib__chip-inner {
@@ -809,27 +809,27 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-ib {
-  --ui-ib-ink: #ededed;
-  --ui-ib-text: #c8c8cc;
-  --ui-ib-muted: #8b8b92;
-  --ui-ib-faint: #5c5c63;
-  --ui-ib-line: #2e2e33;
-  --ui-ib-line-hi: #4b5f9e;
-  --ui-ib-card: #19191b;
-  --ui-ib-tray: #111113;
-  --ui-ib-accent: #6d8bff;
-  --ui-ib-pulse: #6d8bff;
+  --ui-ib-ink: #e7eef6;
+  --ui-ib-text: #becada;
+  --ui-ib-muted: #7d8da3;
+  --ui-ib-faint: #4c5e76;
+  --ui-ib-line: #1d2f47;
+  --ui-ib-line-hi: #7c3243;
+  --ui-ib-card: #0b1a2c;
+  --ui-ib-tray: #061222;
+  --ui-ib-accent: #c54064;
+  --ui-ib-pulse: #c54064;
   --ui-ib-tip-color: #ffffff;
-  --ui-ib-ring: rgba(109, 139, 255, 0.24);
-  --ui-ib-glow: rgba(109, 139, 255, 0.3);
-  --ui-ib-hub: #26262a;
+  --ui-ib-ring: rgba(197, 64, 100, 0.24);
+  --ui-ib-glow: rgba(197, 64, 100, 0.3);
+  --ui-ib-hub: #16273d;
   --ui-ib-hub-mark: #ffffff;
   --ui-ib-hub-edge: rgba(255, 255, 255, 0.12);
-  --ui-ib-tooltip: #ededed;
-  --ui-ib-tooltip-text: #111113;
-  --ui-ib-shadow: 0 0 0 1px #2a2a2e, 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 18px -10px rgba(0, 0, 0, 0.6);
+  --ui-ib-tooltip: #e7eef6;
+  --ui-ib-tooltip-text: #061222;
+  --ui-ib-shadow: 0 0 0 1px #192b42, 0 1px 2px rgba(0, 22, 43, 0.3), 0 8px 18px -10px rgba(0, 22, 43, 0.6);
   --ui-ib-focus: rgba(255, 255, 255, 0.3);
 }
-:where(.dark, [data-theme="dark"]) .ui-ib__chip { box-shadow: 0 0 0 1px #2a2a2e, 0 1px 2px rgba(0, 0, 0, 0.3); }
+:where(.dark, [data-theme="dark"]) .ui-ib__chip { box-shadow: 0 0 0 1px #192b42, 0 1px 2px rgba(0, 22, 43, 0.3); }
 \`;
 `;export{e as default};

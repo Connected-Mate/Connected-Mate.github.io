@@ -1,10 +1,10 @@
 import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js";/* empty css             */var n=e(),r=t(),i=[`Thinking`,`Searching the web`,`Reading sources`,`Writing response`],a=Array.from({length:8},(e,t)=>t);function o({phases:e=i,interval:t=2200,phase:o,loop:c=!1,done:l=!1,doneLabel:u=e=>`Thought for ${e}s`,size:d=`md`,variant:f=`pill`,className:p}){let[m,h]=(0,n.useState)(0),[g,_]=(0,n.useState)(()=>Date.now()),[v,y]=(0,n.useState)(null),b=v??Math.max(1,Math.round((Date.now()-g)/1e3));l&&v===null&&y(b),!l&&v!==null&&(y(null),_(Date.now()),h(0)),(0,n.useEffect)(()=>{if(l||o!==void 0||e.length<2)return;let n=window.setInterval(()=>{h(t=>t+1<e.length?t+1:c?0:t)},t);return()=>window.clearInterval(n)},[l,o,e.length,t,c]);let x=Math.min(Math.max(o??m,0),Math.max(e.length-1,0)),S=l?typeof u==`function`?u(b):u:e[x]??``,[C,w]=(0,n.useState)({key:0,text:S}),[T,E]=(0,n.useState)(null);S!==C.text&&(E(C),w({key:C.key+1,text:S}));let D=(0,n.useRef)(null),O=(0,n.useRef)(null),k=(0,n.useRef)(!1);return(0,n.useLayoutEffect)(()=>{let e=D.current,t=O.current;e&&t&&(k.current||(e.style.transition=`none`),e.style.width=`${t.offsetWidth+1}px`,k.current||=(e.getBoundingClientRect(),e.style.transition=``,!0))},[C.key]),(0,r.jsxs)(`span`,{className:[`ui-tlc`,p].filter(Boolean).join(` `),"data-size":d,"data-variant":f,"data-done":l||void 0,role:`status`,"aria-live":`polite`,children:[(0,r.jsx)(`style`,{href:`ui-thinking-loader-clean`,precedence:`default`,children:s}),(0,r.jsxs)(`span`,{className:`ui-tlc__icon`,"aria-hidden":`true`,children:[(0,r.jsx)(`svg`,{className:`ui-tlc__spinner`,viewBox:`0 0 16 16`,children:a.map(e=>(0,r.jsx)(`line`,{x1:`8`,y1:`1.75`,x2:`8`,y2:`4.75`,transform:`rotate(${e*45} 8 8)`,style:{animationDelay:`${(e-8)*100}ms`}},e))}),(0,r.jsx)(`svg`,{className:`ui-tlc__check`,viewBox:`0 0 16 16`,children:(0,r.jsx)(`path`,{d:`M3.5 8.4 6.6 11.3 12.5 4.9`,pathLength:1})})]}),(0,r.jsxs)(`span`,{ref:D,className:`ui-tlc__text`,children:[T&&(0,r.jsx)(`span`,{className:`ui-tlc__label ui-tlc__label--out`,"aria-hidden":`true`,onAnimationEnd:()=>E(null),children:T.text},T.key),(0,r.jsx)(`span`,{ref:O,className:[`ui-tlc__label`,C.key>0&&`ui-tlc__label--in`,!l&&`ui-tlc__shine`].filter(Boolean).join(` `),"data-text":C.text,children:C.text},C.key)]})]})}var s=`
 .ui-tlc {
-  --ui-tlc-ink: rgba(0, 0, 0, 0.88);
-  --ui-tlc-text: rgba(0, 0, 0, 0.61);
-  --ui-tlc-accent: rgba(0, 96, 226, 0.765);
+  --ui-tlc-ink: rgba(0, 22, 43, 0.88);
+  --ui-tlc-text: rgba(0, 22, 43, 0.61);
+  --ui-tlc-accent: rgba(155, 16, 66, 0.765);
   --ui-tlc-bg: #ffffff;
-  --ui-tlc-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ui-tlc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
   --ui-tlc-shine: rgba(255, 255, 255, 0.82);
   --ui-tlc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-tlc-h: 32px;
@@ -21,7 +21,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   background: var(--ui-tlc-bg);
   box-shadow: var(--ui-tlc-shadow);
   color: var(--ui-tlc-text);
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: var(--ui-tlc-font);
   font-weight: 500;
   line-height: var(--ui-tlc-lh);
@@ -170,9 +170,9 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 :where(.dark, [data-theme="dark"]) .ui-tlc {
   --ui-tlc-ink: rgba(255, 255, 255, 0.9);
   --ui-tlc-text: rgba(255, 255, 255, 0.62);
-  --ui-tlc-accent: #4d8dff;
-  --ui-tlc-bg: #1c1c1e;
-  --ui-tlc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ui-tlc-accent: #c13d61;
+  --ui-tlc-bg: #0e1d30;
+  --ui-tlc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 22, 43, 0.4);
   --ui-tlc-shine: #ffffff;
 }
 `,c=[`Thinking`,`Searching the web`,`Reading 12 sources`,`Comparing pricing`,`Writing response`],l=2e3,u=2600;function d(){let[e,t]=(0,n.useState)(0),[i,a]=(0,n.useState)(!1);return(0,n.useEffect)(()=>{let e=window.setTimeout(()=>a(!0),c.length*l),n=window.setTimeout(()=>{a(!1),t(e=>e+1)},c.length*l+u);return()=>{window.clearTimeout(e),window.clearTimeout(n)}},[e]),(0,r.jsx)(`div`,{className:`tl-demo tl-demo--clean`,children:(0,r.jsxs)(`div`,{className:`tl-demo__chat`,children:[(0,r.jsx)(`p`,{className:`tl-demo__you`,children:`Which CRM fits a 10-person sales team best?`}),(0,r.jsx)(o,{phases:c,interval:l,done:i},e)]})})}export{d as default};

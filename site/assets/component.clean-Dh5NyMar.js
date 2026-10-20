@@ -544,31 +544,31 @@ const css = /* css */ \`
 .ui-mac {
   --ui-mac-card: #ffffff;
   --ui-mac-strong: #000000;
-  --ui-mac-ink: rgba(0, 0, 0, 0.88);
-  --ui-mac-text: rgba(0, 0, 0, 0.61);
-  --ui-mac-muted: rgba(0, 0, 0, 0.45);
-  --ui-mac-faint: rgba(0, 0, 0, 0.27);
-  --ui-mac-icon: rgba(0, 0, 0, 0.447);
-  --ui-mac-line: rgba(0, 0, 0, 0.06);
-  --ui-mac-fill: rgba(0, 0, 0, 0.06);
-  --ui-mac-wash: rgba(0, 0, 0, 0.03);
-  --ui-mac-solid: rgba(0, 0, 0, 0.88);
-  --ui-mac-solid-hover: rgba(0, 0, 0, 0.8);
-  --ui-mac-on-solid: #fcfcfc;
-  --ui-mac-accent: rgba(0, 96, 226, 0.765);
+  --ui-mac-ink: rgba(0, 22, 43, 0.88);
+  --ui-mac-text: rgba(0, 22, 43, 0.61);
+  --ui-mac-muted: rgba(0, 22, 43, 0.45);
+  --ui-mac-faint: rgba(0, 22, 43, 0.27);
+  --ui-mac-icon: rgba(0, 22, 43, 0.447);
+  --ui-mac-line: rgba(26, 62, 112, 0.06);
+  --ui-mac-fill: rgba(26, 62, 112, 0.06);
+  --ui-mac-wash: rgba(26, 62, 112, 0.03);
+  --ui-mac-solid: rgba(0, 22, 43, 0.88);
+  --ui-mac-solid-hover: rgba(0, 22, 43, 0.8);
+  --ui-mac-on-solid: #fafcff;
+  --ui-mac-accent: rgba(155, 16, 66, 0.765);
   --ui-mac-ok: #1a9a52;
   --ui-mac-ok-bg: rgba(26, 154, 82, 0.08);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
-  --ui-mac-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --ui-mac-shadow-pop: 0 0 0 0.5px rgba(0, 0, 0, 0.08), 0 12px 28px -10px rgba(0, 0, 0, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --ui-mac-focus: rgba(0, 96, 226, 0.35);
+  --ui-mac-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
+  --ui-mac-shadow-pop: 0 0 0 0.5px rgba(26, 62, 112, 0.08), 0 12px 28px -10px rgba(26, 62, 112, 0.16), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
+  --ui-mac-focus: rgba(155, 16, 66, 0.35);
   --ui-mac-ease: cubic-bezier(0.22, 1, 0.36, 1);
   box-sizing: border-box;
   display: block;
   width: 100%;
   min-width: 0;
   container-type: inline-size;
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 20px;
@@ -713,7 +713,7 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-mac {
-  --ui-mac-card: #1c1c1e;
+  --ui-mac-card: #0e1d30;
   --ui-mac-strong: #ffffff;
   --ui-mac-ink: rgba(255, 255, 255, 0.9);
   --ui-mac-text: rgba(255, 255, 255, 0.62);
@@ -725,13 +725,13 @@ const css = /* css */ \`
   --ui-mac-wash: rgba(255, 255, 255, 0.04);
   --ui-mac-solid: rgba(255, 255, 255, 0.9);
   --ui-mac-solid-hover: rgba(255, 255, 255, 0.8);
-  --ui-mac-on-solid: #1c1c1e;
-  --ui-mac-accent: #4d8dff;
+  --ui-mac-on-solid: #0e1d30;
+  --ui-mac-accent: #c13d61;
   --ui-mac-ok: #3ec27a;
   --ui-mac-ok-bg: rgba(62, 194, 122, 0.14);
-  --ui-mac-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --ui-mac-shadow-pop: 0 0 0 0.5px rgba(255, 255, 255, 0.12), 0 12px 28px -10px rgba(0, 0, 0, 0.6);
-  --ui-mac-focus: rgba(77, 141, 255, 0.5);
+  --ui-mac-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
+  --ui-mac-shadow-pop: 0 0 0 0.5px rgba(255, 255, 255, 0.12), 0 12px 28px -10px rgba(0, 22, 43, 0.6);
+  --ui-mac-focus: rgba(193, 61, 97, 0.5);
 }
 \`;
 `;export{e as default};

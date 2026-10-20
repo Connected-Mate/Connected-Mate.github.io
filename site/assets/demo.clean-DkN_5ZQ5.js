@@ -1,23 +1,23 @@
 import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js";/* empty css             */var n=e(),r=t();function i({variant:e=`primary`,size:t=`md`,loading:i=!1,icon:o,iconRight:s,children:u,className:d,disabled:f,onClick:p,type:m=`button`,ref:h,...g}){let _=typeof u==`string`?u:void 0,v=!u&&!!(o||s),y=(0,n.useRef)(null),b=(0,n.useRef)(0),[x,S]=(0,n.useState)(!1);(0,n.useEffect)(()=>S(!0),[]);let C=_??`label`,w=i&&o?`spinner`:c(o),T=c(s),E=`${C}|${w}|${T}`,D=(0,n.useRef)(E);return(0,n.useLayoutEffect)(()=>{let e=y.current;if(!e)return;let t=e.getBoundingClientRect().width,n=b.current,r=D.current!==E;b.current=t,D.current=E,!(!r||!n||Math.abs(n-t)<.5)&&(window.matchMedia(`(prefers-reduced-motion: reduce)`).matches||e.animate([{width:`${n}px`},{width:`${t}px`}],{duration:480,easing:`cubic-bezier(0.25, 1, 0.5, 1)`}))}),(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(`style`,{href:`ui-button-clean`,precedence:`default`,children:l}),(0,r.jsxs)(`button`,{type:m,className:[`ui-buttonc`,d].filter(Boolean).join(` `),"data-variant":e,"data-size":t,"data-loading":i||void 0,"data-icon-only":v||void 0,"data-icon-left":!v&&!!o||void 0,"data-icon-right":!v&&!!s||void 0,"data-ready":x||void 0,ref:e=>{y.current=e,typeof h==`function`?h(e):h&&(h.current=e)},disabled:f,"aria-busy":i||void 0,"aria-disabled":i||void 0,onClick:e=>{if(i){e.preventDefault();return}p?.(e)},...g,children:[o&&(0,r.jsx)(`span`,{className:`ui-buttonc__icon`,"aria-hidden":`true`,children:i?(0,r.jsx)(a,{}):o},`icon-${w}`),u!=null&&(0,r.jsx)(`span`,{className:`ui-buttonc__label`,"data-text":_,children:u},`label-${C}`),s&&(0,r.jsx)(`span`,{className:`ui-buttonc__icon`,"aria-hidden":`true`,children:s},`icon-right-${T}`)]})]})}var a=()=>(0,r.jsxs)(`svg`,{className:`ui-buttonc__spinner`,viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:2,strokeLinecap:`round`,children:[(0,r.jsx)(`circle`,{cx:`12`,cy:`12`,r:`8.5`,opacity:.2}),(0,r.jsx)(`path`,{d:`M12 3.5a8.5 8.5 0 0 1 8.5 8.5`})]}),o=new WeakMap,s=1;function c(e){if(!(0,n.isValidElement)(e)||typeof e.type==`string`)return 0;let t=e.type;return o.has(t)||o.set(t,s++),o.get(t)}var l=`
 /* Colors and motion as variables – override them on .ui-buttonc (see Theming in the docs) */
 .ui-buttonc {
-  --ui-btnc-title: #000;
-  --ui-btnc-ink: rgba(0, 0, 0, 0.88);
-  --ui-btnc-muted: rgba(0, 0, 0, 0.61);
-  --ui-btnc-icon: rgba(0, 0, 0, 0.447);
-  --ui-btnc-solid: rgba(0, 0, 0, 0.88);
-  --ui-btnc-solid-hover: rgba(0, 0, 0, 0.8);
-  --ui-btnc-on-solid: #fcfcfc;
+  --ui-btnc-title: #000000;
+  --ui-btnc-ink: rgba(0, 22, 43, 0.88);
+  --ui-btnc-muted: rgba(0, 22, 43, 0.61);
+  --ui-btnc-icon: rgba(0, 22, 43, 0.447);
+  --ui-btnc-solid: rgba(0, 22, 43, 0.88);
+  --ui-btnc-solid-hover: rgba(0, 22, 43, 0.8);
+  --ui-btnc-on-solid: #fafcff;
   --ui-btnc-surface: #ffffff;
-  --ui-btnc-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --ui-btnc-shadow-hover: 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 1px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.07);
-  --ui-btnc-wash: rgba(0, 0, 0, 0.03);
+  --ui-btnc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
+  --ui-btnc-shadow-hover: 0 0 0 0.5px rgba(26, 62, 112, 0.1), 0 1px 1px -1px rgba(26, 62, 112, 0.12), 0 1px 3px 0 rgba(26, 62, 112, 0.07);
+  --ui-btnc-wash: rgba(26, 62, 112, 0.03);
   --ui-btnc-danger: #e5484d;
   --ui-btnc-danger-bg: rgba(229, 72, 77, 0.08);
   --ui-btnc-danger-bg-hover: rgba(229, 72, 77, 0.12);
   --ui-btnc-shine: rgba(255, 255, 255, 0.82);
   --ui-btnc-shine-on-solid: #ffffff;
-  --ui-btnc-focus: rgba(0, 96, 226, 0.35);
+  --ui-btnc-focus: rgba(155, 16, 66, 0.35);
   --ui-btnc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-btnc-load: 650ms;
 
@@ -40,7 +40,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   margin: 0;
   border: 0;
   border-radius: var(--radius);
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: var(--fs);
   font-weight: 500;
   line-height: var(--lh);
@@ -258,21 +258,21 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   /* primary inverts: a light chip with dark text */
   --ui-btnc-solid: rgba(255, 255, 255, 0.9);
   --ui-btnc-solid-hover: rgba(255, 255, 255, 0.82);
-  --ui-btnc-on-solid: #161618;
+  --ui-btnc-on-solid: #091728;
   --ui-btnc-shine-on-solid: #ffffff;
 
   --ui-btnc-title: rgba(255, 255, 255, 0.9);
   --ui-btnc-ink: rgba(255, 255, 255, 0.9);
   --ui-btnc-muted: rgba(255, 255, 255, 0.62);
   --ui-btnc-icon: rgba(255, 255, 255, 0.5);
-  --ui-btnc-surface: #1c1c1e;
-  --ui-btnc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --ui-btnc-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --ui-btnc-surface: #0e1d30;
+  --ui-btnc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
+  --ui-btnc-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
   --ui-btnc-wash: rgba(255, 255, 255, 0.06);
   --ui-btnc-danger: #ff6369;
   --ui-btnc-danger-bg: rgba(229, 72, 77, 0.14);
   --ui-btnc-danger-bg-hover: rgba(229, 72, 77, 0.2);
   --ui-btnc-shine: #ffffff;
-  --ui-btnc-focus: rgba(77, 141, 255, 0.5);
+  --ui-btnc-focus: rgba(193, 61, 97, 0.5);
 }
 `,u={fill:`none`,stroke:`currentColor`,strokeWidth:1.6,strokeLinecap:`round`,strokeLinejoin:`round`},d=()=>(0,r.jsxs)(`svg`,{viewBox:`0 0 24 24`,...u,children:[(0,r.jsx)(`path`,{d:`M12 5.5V19`}),(0,r.jsx)(`path`,{d:`M18 11s-4.42-6-6-6-6 6-6 6`})]}),f=()=>(0,r.jsxs)(`svg`,{viewBox:`0 0 24 24`,...u,children:[(0,r.jsx)(`path`,{d:`M18.5 12H5`}),(0,r.jsx)(`path`,{d:`M13 18s6-4.42 6-6-6-6-6-6`})]}),p=()=>(0,r.jsx)(`svg`,{viewBox:`0 0 24 24`,...u,children:(0,r.jsx)(`path`,{d:`M12 4v16M20 12H4`})}),m=()=>(0,r.jsx)(`svg`,{viewBox:`0 0 24 24`,...u,strokeWidth:2.5,children:(0,r.jsx)(`path`,{d:`M6 12h.01M12 12h.01M18 12h.01`})}),h=()=>(0,r.jsxs)(`svg`,{viewBox:`0 0 24 24`,...u,children:[(0,r.jsx)(`path`,{d:`M7.5 14.5c0-3.3 0-4.95 1.03-5.97C9.55 7.5 11.2 7.5 14.5 7.5s4.95 0 5.97 1.03c1.03 1.02 1.03 2.67 1.03 5.97s0 4.95-1.03 5.97c-1.02 1.03-2.67 1.03-5.97 1.03s-4.95 0-5.97-1.03C7.5 19.45 7.5 17.8 7.5 14.5Z`}),(0,r.jsx)(`path`,{d:`M7.5 16.5c-1.4 0-2.1 0-2.66-.2a3 3 0 0 1-2.14-2.14c-.2-.57-.2-1.27-.2-2.66v-2c0-3.3 0-4.95 1.03-5.97C4.55 2.5 6.2 2.5 9.5 2.5h2c1.4 0 2.1 0 2.66.2a3 3 0 0 1 2.14 2.14c.2.57.2 1.27.2 2.66`})]}),g=()=>(0,r.jsxs)(`svg`,{viewBox:`0 0 24 24`,...u,children:[(0,r.jsx)(`path`,{d:`M16.5 7.5S13.19 3 12 3 7.5 7.5 7.5 7.5M12 4v11`}),(0,r.jsx)(`path`,{d:`M3 16.5v1.5A3 3 0 0 0 6 21h12a3 3 0 0 0 3-3v-1.5`})]}),_=()=>(0,r.jsxs)(`svg`,{viewBox:`0 0 24 24`,...u,children:[(0,r.jsx)(`path`,{d:`m19.5 5.5-.62 10.03c-.16 2.56-.24 3.84-.88 4.76a4 4 0 0 1-1.2 1.13C15.84 22 14.56 22 12 22s-3.86 0-4.82-.59a4 4 0 0 1-1.2-1.13c-.64-.92-.72-2.2-.88-4.76L4.5 5.5`}),(0,r.jsx)(`path`,{d:`M3 5.5h18M16.06 5.5l-.69-1.41c-.45-.94-.68-1.4-1.07-1.7a2 2 0 0 0-.27-.17C13.6 2 13.07 2 12.03 2c-1.06 0-1.6 0-2.04.23a2 2 0 0 0-.27.18c-.4.3-.62.79-1.06 1.76L8.05 5.5M9.5 16.5v-6M14.5 16.5v-6`})]}),v=()=>(0,r.jsx)(`svg`,{viewBox:`0 0 24 24`,...u,children:(0,r.jsx)(`path`,{d:`M5 14l3.5 3.5L19 6.5`})});function y(e=1600){let[t,r]=(0,n.useState)(!1),i=(0,n.useRef)(void 0);return(0,n.useEffect)(()=>()=>clearTimeout(i.current),[]),[t,()=>{clearTimeout(i.current),r(!0),i.current=window.setTimeout(()=>r(!1),e)}]}function b({children:e}){let t=(0,n.useRef)(null),[i,a]=(0,n.useState)(0);return(0,n.useLayoutEffect)(()=>{let e=t.current?.firstElementChild;if(!e)return;let n=e.getBoundingClientRect().width;n>i&&a(n)}),(0,r.jsx)(`span`,{ref:t,className:`button-demo__slot`,style:{minWidth:i||void 0},children:e})}function x(){let[e,t]=(0,n.useState)(`idle`);return(0,n.useEffect)(()=>{if(e!==`loading`)return;let n=window.setTimeout(()=>t(`done`),1600);return()=>clearTimeout(n)},[e]),(0,r.jsxs)(`div`,{className:`button-demo__row button-demo__compact`,children:[(0,r.jsx)(b,{children:(0,r.jsx)(i,{variant:`ghost`,onClick:()=>t(`idle`),children:`Cancel`})}),(0,r.jsx)(b,{children:(0,r.jsx)(i,{variant:`secondary`,icon:e===`done`?(0,r.jsx)(v,{}):(0,r.jsx)(g,{}),loading:e===`loading`,onClick:()=>t(e=>e===`idle`?`loading`:e),children:e===`done`?`Done`:`Upload`})}),(0,r.jsx)(b,{children:(0,r.jsx)(i,{iconRight:(0,r.jsx)(d,{}),children:`Send`})})]})}function S(){let[e,t]=y(),[a,o]=y(),[s,c]=(0,n.useState)(`idle`);return(0,n.useEffect)(()=>{if(s!==`loading`)return;let e=window.setTimeout(()=>c(`done`),1800);return()=>clearTimeout(e)},[s]),(0,r.jsxs)(`div`,{className:`button-demo__showcase`,children:[(0,r.jsxs)(`section`,{children:[(0,r.jsx)(`h4`,{children:`Styles`}),(0,r.jsxs)(`div`,{className:`button-demo__row`,children:[(0,r.jsx)(b,{children:(0,r.jsx)(i,{children:`Save changes`})}),(0,r.jsx)(b,{children:(0,r.jsx)(i,{variant:`secondary`,children:`Secondary`})}),(0,r.jsx)(b,{children:(0,r.jsx)(i,{variant:`ghost`,children:`Ghost`})}),(0,r.jsx)(b,{children:(0,r.jsx)(i,{variant:`destructive`,icon:(0,r.jsx)(_,{}),children:`Delete`})})]})]}),(0,r.jsxs)(`section`,{children:[(0,r.jsx)(`h4`,{children:`Icons and sizes`}),(0,r.jsxs)(`div`,{className:`button-demo__row`,children:[(0,r.jsx)(b,{children:(0,r.jsx)(i,{variant:`secondary`,size:`sm`,icon:(0,r.jsx)(p,{}),children:`Add item`})}),(0,r.jsx)(b,{children:(0,r.jsx)(i,{iconRight:(0,r.jsx)(f,{}),children:`Continue`})}),(0,r.jsx)(b,{children:(0,r.jsx)(i,{variant:`ghost`,icon:(0,r.jsx)(m,{}),"aria-label":`More options`})}),(0,r.jsx)(b,{children:(0,r.jsx)(i,{variant:`secondary`,size:`lg`,children:`Large`})})]})]}),(0,r.jsxs)(`section`,{children:[(0,r.jsx)(`h4`,{children:`Feedback and states`}),(0,r.jsxs)(`div`,{className:`button-demo__row`,children:[(0,r.jsx)(b,{children:(0,r.jsx)(i,{variant:`secondary`,icon:e?(0,r.jsx)(v,{}):(0,r.jsx)(h,{}),onClick:t,children:e?`Copied`:`Copy link`})}),(0,r.jsx)(b,{children:(0,r.jsx)(i,{variant:`secondary`,icon:a?(0,r.jsx)(v,{}):(0,r.jsx)(h,{}),"aria-label":a?`Copied`:`Copy`,onClick:o})}),(0,r.jsx)(b,{children:(0,r.jsx)(i,{variant:`secondary`,icon:s===`done`?(0,r.jsx)(v,{}):(0,r.jsx)(g,{}),loading:s===`loading`,onClick:()=>c(e=>e===`loading`?e:`loading`),children:`Upload file`})}),(0,r.jsx)(b,{children:(0,r.jsx)(i,{variant:`secondary`,disabled:!0,children:`Disabled`})})]}),(0,r.jsx)(`p`,{className:`button-demo__status`,"aria-live":`polite`,children:s===`loading`?`Uploading…`:s===`done`?`Upload complete`:` `})]})]})}function C(){return(0,r.jsxs)(`div`,{className:`button-demo`,children:[(0,r.jsx)(x,{}),(0,r.jsx)(S,{})]})}export{C as default};

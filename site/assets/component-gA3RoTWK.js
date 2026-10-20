@@ -205,17 +205,17 @@ const ArrowIcon = () => (
 const css = /* css */ \`
 .ui-ns {
   --ui-ns-card: #ffffff;
-  --ui-ns-line: #e5e5e5;
-  --ui-ns-ink: #171717;
-  --ui-ns-muted: #737373;
-  --ui-ns-art: #e3e3e3;
-  --ui-ns-accent: #2f6bff;
+  --ui-ns-line: #dee6f0;
+  --ui-ns-ink: #0a1829;
+  --ui-ns-muted: #63758c;
+  --ui-ns-art: #dce4ef;
+  --ui-ns-accent: #aa254f;
   --ui-ns-ease: cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   box-sizing: border-box;
   width: 100%;
   max-width: 380px;
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color: var(--ui-ns-ink);
   -webkit-font-smoothing: antialiased;
   transition: height 460ms var(--ui-ns-ease);
@@ -232,8 +232,8 @@ const css = /* css */ \`
   border: 1px solid var(--ui-ns-line);
   border-radius: 20px;
   box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.03),
-    0 8px 24px rgba(0, 0, 0, 0.035);
+    0 1px 2px rgba(26, 62, 112, 0.03),
+    0 8px 24px rgba(26, 62, 112, 0.035);
   transform-origin: 50% 100%;
   transition:
     transform 460ms var(--ui-ns-ease),
@@ -259,11 +259,11 @@ const css = /* css */ \`
   stroke-width: 1;
   pointer-events: none;
   /* Only the top-right corner, fading out towards the text */
-  -webkit-mask-image: radial-gradient(120% 110% at 100% 0%, #000 20%, transparent 70%);
-  mask-image: radial-gradient(120% 110% at 100% 0%, #000 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(120% 110% at 100% 0%, #000000 20%, transparent 70%);
+  mask-image: radial-gradient(120% 110% at 100% 0%, #000000 20%, transparent 70%);
 }
-.ui-ns__dot { fill: #d4d4d4; stroke: none; }
-.ui-ns__fill { fill: #f5f5f5; }
+.ui-ns__dot { fill: #cbd5e3; stroke: none; }
+.ui-ns__fill { fill: #f1f6fb; }
 
 .ui-ns__body {
   position: relative;
@@ -286,7 +286,7 @@ const css = /* css */ \`
   line-height: 18px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #525252;
+  color: #41546b;
 }
 .ui-ns__close {
   display: grid;
@@ -302,7 +302,7 @@ const css = /* css */ \`
   cursor: pointer;
   transition: background-color 140ms ease, color 140ms ease;
 }
-.ui-ns__close:hover { background: rgba(0, 0, 0, 0.05); color: var(--ui-ns-ink); }
+.ui-ns__close:hover { background: rgba(26, 62, 112, 0.05); color: var(--ui-ns-ink); }
 .ui-ns__title {
   margin: 0;
   font-size: 16px;
@@ -327,7 +327,7 @@ const css = /* css */ \`
   border: 0;
   border-radius: 9px;
   background: #fff;
-  box-shadow: 0 0 0 1px var(--ui-ns-line), 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 0 0 1px var(--ui-ns-line), 0 1px 2px rgba(26, 62, 112, 0.04);
   font: inherit;
   font-size: 13px;
   font-weight: 500;
@@ -336,7 +336,7 @@ const css = /* css */ \`
   cursor: pointer;
   transition: background-color 160ms ease, transform 160ms ease;
 }
-.ui-ns__btn:hover { background: #f7f7f7; }
+.ui-ns__btn:hover { background: #f4f7fc; }
 .ui-ns__btn:active { transform: scale(0.98); }
 .ui-ns__btn svg { color: var(--ui-ns-muted); }
 .ui-ns button:focus-visible,
@@ -348,25 +348,25 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-ns {
-  --ui-ns-card: #232326;
+  --ui-ns-card: #132439;
   --ui-ns-line: rgba(255, 255, 255, 0.1);
-  --ui-ns-ink: #ededed;
-  --ui-ns-muted: #8f8f8f;
+  --ui-ns-ink: #e7eef6;
+  --ui-ns-muted: #8091a6;
   --ui-ns-art: rgba(255, 255, 255, 0.08);
 }
 :where(.dark, [data-theme="dark"]) .ui-ns__card {
   box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.4),
-    0 8px 24px rgba(0, 0, 0, 0.35);
+    0 1px 2px rgba(0, 22, 43, 0.4),
+    0 8px 24px rgba(0, 22, 43, 0.35);
 }
 :where(.dark, [data-theme="dark"]) .ui-ns__dot { fill: rgba(255, 255, 255, 0.22); }
 :where(.dark, [data-theme="dark"]) .ui-ns__fill { fill: rgba(255, 255, 255, 0.04); }
-:where(.dark, [data-theme="dark"]) .ui-ns__badge { background: #2a2a2d; color: #c4c4c4; }
+:where(.dark, [data-theme="dark"]) .ui-ns__badge { background: #192b42; color: #b9c5d6; }
 :where(.dark, [data-theme="dark"]) .ui-ns__close:hover { background: rgba(255, 255, 255, 0.06); }
 :where(.dark, [data-theme="dark"]) .ui-ns__btn {
-  background: #2a2a2d;
-  box-shadow: 0 0 0 1px var(--ui-ns-line), 0 1px 2px rgba(0, 0, 0, 0.4);
+  background: #192b42;
+  box-shadow: 0 0 0 1px var(--ui-ns-line), 0 1px 2px rgba(0, 22, 43, 0.4);
 }
-:where(.dark, [data-theme="dark"]) .ui-ns__btn:hover { background: #313135; }
+:where(.dark, [data-theme="dark"]) .ui-ns__btn:hover { background: #20324a; }
 \`;
 `;export{e as default};

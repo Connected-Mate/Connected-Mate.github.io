@@ -4,35 +4,35 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 .ui-tcc-group {
   --ui-tcc-card: #ffffff;
   --ui-tcc-strong: #000000;
-  --ui-tcc-ink: rgba(0, 0, 0, 0.88);
-  --ui-tcc-text: rgba(0, 0, 0, 0.61);
-  --ui-tcc-muted: rgba(0, 0, 0, 0.45);
-  --ui-tcc-faint: rgba(0, 0, 0, 0.27);
-  --ui-tcc-icon: rgba(0, 0, 0, 0.447);
-  --ui-tcc-line: rgba(0, 0, 0, 0.06);
-  --ui-tcc-wash: rgba(0, 0, 0, 0.03);
-  --ui-tcc-wash-big: rgba(0, 0, 0, 0.015);
+  --ui-tcc-ink: rgba(0, 22, 43, 0.88);
+  --ui-tcc-text: rgba(0, 22, 43, 0.61);
+  --ui-tcc-muted: rgba(0, 22, 43, 0.45);
+  --ui-tcc-faint: rgba(0, 22, 43, 0.27);
+  --ui-tcc-icon: rgba(0, 22, 43, 0.447);
+  --ui-tcc-line: rgba(26, 62, 112, 0.06);
+  --ui-tcc-wash: rgba(26, 62, 112, 0.03);
+  --ui-tcc-wash-big: rgba(26, 62, 112, 0.015);
   /* The code panel: a 2% black frame, kept opaque so the fade of capped blocks can end on it */
-  --ui-tcc-code: #fafafa;
-  --ui-tcc-accent: rgba(0, 96, 226, 0.765);
+  --ui-tcc-code: #f7fafe;
+  --ui-tcc-accent: rgba(155, 16, 66, 0.765);
   --ui-tcc-red: #d93a2b;
   --ui-tcc-red-bg: rgba(217, 58, 43, 0.04);
   --ui-tcc-red-line: rgba(217, 58, 43, 0.14);
-  --ui-tcc-key: rgba(0, 0, 0, 0.88);
-  --ui-tcc-str: rgba(0, 123, 172, 0.9);
+  --ui-tcc-key: rgba(0, 22, 43, 0.88);
+  --ui-tcc-str: rgba(72, 115, 171, 0.9);
   --ui-tcc-num: #b25b0c;
-  --ui-tcc-lit: #5b5bd6;
+  --ui-tcc-lit: #9f1645;
   --ui-tcc-shine: rgba(255, 255, 255, 0.82);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
-  --ui-tcc-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --ui-tcc-focus: rgba(0, 96, 226, 0.35);
+  --ui-tcc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
+  --ui-tcc-focus: rgba(155, 16, 66, 0.35);
   --ui-tcc-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ui-tcc-mono: ui-monospace, "SF Mono", Menlo, monospace;
   box-sizing: border-box;
   container-type: inline-size;
   min-width: 0;
   color: var(--ui-tcc-ink);
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   line-height: 20px;
   font-weight: 400;
@@ -440,7 +440,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-tcc,
 :where(.dark, [data-theme="dark"]) .ui-tcc-group {
-  --ui-tcc-card: #1c1c1e;
+  --ui-tcc-card: #0e1d30;
   --ui-tcc-strong: #ffffff;
   --ui-tcc-ink: rgba(255, 255, 255, 0.9);
   --ui-tcc-text: rgba(255, 255, 255, 0.62);
@@ -450,17 +450,17 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-tcc-line: rgba(255, 255, 255, 0.08);
   --ui-tcc-wash: rgba(255, 255, 255, 0.04);
   --ui-tcc-wash-big: rgba(255, 255, 255, 0.025);
-  --ui-tcc-code: #212123;
-  --ui-tcc-accent: #4d8dff;
+  --ui-tcc-code: #122236;
+  --ui-tcc-accent: #c13d61;
   --ui-tcc-red: #ff7b72;
   --ui-tcc-red-bg: rgba(255, 110, 100, 0.07);
   --ui-tcc-red-line: rgba(255, 110, 100, 0.18);
   --ui-tcc-key: rgba(255, 255, 255, 0.9);
-  --ui-tcc-str: #5fc8e8;
+  --ui-tcc-str: #8cbbf8;
   --ui-tcc-num: #f2a65a;
-  --ui-tcc-lit: #a5a5ff;
+  --ui-tcc-lit: #f58ca1;
   --ui-tcc-shine: #ffffff;
-  --ui-tcc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --ui-tcc-focus: rgba(77, 141, 255, 0.5);
+  --ui-tcc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
+  --ui-tcc-focus: rgba(193, 61, 97, 0.5);
 }
 `,y=[0,1500,2700,4300,5400,6700,8e3],b=11500,x={results:[{title:`HubSpot Sales Hub pricing`,url:`https://www.hubspot.com/pricing/sales`,price_per_seat:90},{title:`Pipedrive plans and pricing`,url:`https://www.pipedrive.com/en/pricing`,price_per_seat:49},{title:`Attio pricing`,url:`https://attio.com/pricing`,price_per_seat:59},{title:`Salesforce Starter Suite`,url:`https://www.salesforce.com/sales/pricing`,price_per_seat:25},{title:`Close CRM pricing`,url:`https://www.close.com/pricing`,price_per_seat:49}],total:5,cached:!1};function S(){let[e,t]=(0,n.useState)(0),[o,s]=(0,n.useState)(0),[c,l]=(0,n.useState)(!0),u=(0,n.useRef)(!1);(0,n.useEffect)(()=>{u.current=!1,s(0),l(!0);let e=y.slice(1).map((e,t)=>window.setTimeout(()=>s(e=>Math.max(e,t+1)),e));return e.push(window.setTimeout(()=>!u.current&&l(!1),y[6])),e.push(window.setTimeout(()=>!u.current&&t(e=>e+1),b)),()=>e.forEach(clearTimeout)},[e]);let d=o===2?`error`:o>=4?`success`:`running`;return(0,r.jsx)(`div`,{className:`tc-demo`,children:(0,r.jsxs)(`div`,{className:`tc-demo__chat`,children:[(0,r.jsx)(`p`,{className:`tc-demo__you`,children:`Compare CRM pricing for our 10-person team and check open deals.`}),(0,r.jsxs)(a,{open:c,onOpenChange:e=>{u.current=!0,l(e)},children:[(0,r.jsx)(i,{name:`search_web`,icon:(0,r.jsx)(C,{}),status:o>=1?`success`:`running`,summary:o>=1?`Searched the web for 'CRM pricing 2026'`:`Searching the web for 'CRM pricing 2026'`,args:{query:`CRM pricing 2026 small sales team`,max_results:5},result:o>=1?x:void 0}),o>=1&&(0,r.jsx)(i,{name:`fetch_page`,icon:(0,r.jsx)(w,{}),status:d,summary:d===`success`?`Read hubspot.com/pricing`:`Reading hubspot.com/pricing`,args:{url:`https://www.hubspot.com/pricing/sales`,timeout_ms:8e3},result:d===`success`?{status:200,title:`Sales Hub Pricing`,words:2140}:void 0,error:`Request timed out after 8s – hubspot.com didn't respond.`,onRetry:()=>s(e=>Math.max(e,3))}),o>=4&&(0,r.jsx)(i,{name:`crm.list_deals`,icon:(0,r.jsx)(T,{}),status:o>=5?`success`:`running`,summary:o>=5?`Found 4 open deals in negotiation`:`Looking up open deals`,args:{stage:`negotiation`,owner:`me`,limit:10},result:o>=5?{count:4,deals:[{name:`Northwind`,value:18400},{name:`Globex`,value:9600}]}:void 0})]},e)]})})}function C(){return(0,r.jsxs)(`svg`,{viewBox:`0 0 16 16`,children:[(0,r.jsx)(`circle`,{cx:`7`,cy:`7`,r:`4.25`}),(0,r.jsx)(`path`,{d:`m10.25 10.25 3 3`})]})}function w(){return(0,r.jsxs)(`svg`,{viewBox:`0 0 16 16`,children:[(0,r.jsx)(`path`,{d:`M4 2.75h5l3 3v7.5H4z`}),(0,r.jsx)(`path`,{d:`M9 2.75v3h3M6 9h4M6 11h3`})]})}function T(){return(0,r.jsxs)(`svg`,{viewBox:`0 0 16 16`,children:[(0,r.jsx)(`ellipse`,{cx:`8`,cy:`4`,rx:`4.75`,ry:`1.75`}),(0,r.jsx)(`path`,{d:`M3.25 4v8c0 .97 2.13 1.75 4.75 1.75s4.75-.78 4.75-1.75V4M3.25 8c0 .97 2.13 1.75 4.75 1.75S12.75 8.97 12.75 8`})]})}export{S as default};

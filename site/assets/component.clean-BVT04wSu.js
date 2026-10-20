@@ -107,20 +107,20 @@ const css = /* css */ \`
 .ui-tpc {
   --ui-tpc-card: #ffffff;
   --ui-tpc-strong: #000000;
-  --ui-tpc-ink: rgba(0, 0, 0, 0.88);
-  --ui-tpc-text: rgba(0, 0, 0, 0.61);
-  --ui-tpc-muted: rgba(0, 0, 0, 0.45);
-  --ui-tpc-line: rgba(0, 0, 0, 0.06);
-  --ui-tpc-wash: rgba(0, 0, 0, 0.015);
-  --ui-tpc-hover: rgba(0, 0, 0, 0.03);
+  --ui-tpc-ink: rgba(0, 22, 43, 0.88);
+  --ui-tpc-text: rgba(0, 22, 43, 0.61);
+  --ui-tpc-muted: rgba(0, 22, 43, 0.45);
+  --ui-tpc-line: rgba(26, 62, 112, 0.06);
+  --ui-tpc-wash: rgba(26, 62, 112, 0.015);
+  --ui-tpc-hover: rgba(26, 62, 112, 0.03);
   --ui-tpc-ok: #1a9a52;
-  --ui-tpc-primary: rgba(0, 0, 0, 0.88);
-  --ui-tpc-primary-hover: rgba(0, 0, 0, 0.8);
-  --ui-tpc-on-primary: #fcfcfc;
+  --ui-tpc-primary: rgba(0, 22, 43, 0.88);
+  --ui-tpc-primary-hover: rgba(0, 22, 43, 0.8);
+  --ui-tpc-on-primary: #fafcff;
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
-  --ui-tpc-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --ui-tpc-shadow-hover: 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 1px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.07);
-  --ui-tpc-focus: rgba(0, 96, 226, 0.35);
+  --ui-tpc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
+  --ui-tpc-shadow-hover: 0 0 0 0.5px rgba(26, 62, 112, 0.1), 0 1px 1px -1px rgba(26, 62, 112, 0.12), 0 1px 3px 0 rgba(26, 62, 112, 0.07);
+  --ui-tpc-focus: rgba(155, 16, 66, 0.35);
   /* Height of the tip list before it scrolls */
   --ui-tpc-max-height: 420px;
   --ui-tpc-ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -133,7 +133,7 @@ const css = /* css */ \`
   border-radius: 10px;
   background: var(--ui-tpc-card);
   box-shadow: var(--ui-tpc-shadow);
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   line-height: 20px;
   font-weight: 400;
@@ -294,7 +294,7 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-tpc {
-  --ui-tpc-card: #1c1c1e;
+  --ui-tpc-card: #0e1d30;
   --ui-tpc-strong: #ffffff;
   --ui-tpc-ink: rgba(255, 255, 255, 0.9);
   --ui-tpc-text: rgba(255, 255, 255, 0.62);
@@ -305,12 +305,12 @@ const css = /* css */ \`
   --ui-tpc-ok: #5fd394;
   --ui-tpc-primary: rgba(255, 255, 255, 0.9);
   --ui-tpc-primary-hover: rgba(255, 255, 255, 0.8);
-  --ui-tpc-on-primary: #1c1c1e;
-  --ui-tpc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --ui-tpc-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --ui-tpc-focus: rgba(77, 141, 255, 0.5);
+  --ui-tpc-on-primary: #0e1d30;
+  --ui-tpc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
+  --ui-tpc-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
+  --ui-tpc-focus: rgba(193, 61, 97, 0.5);
   color-scheme: dark;
 }
-:where(.dark, [data-theme="dark"]) .ui-tpc__btn:not(.ui-tpc__btn--primary) { background: #232326; }
+:where(.dark, [data-theme="dark"]) .ui-tpc__btn:not(.ui-tpc__btn--primary) { background: #132439; }
 \`;
 `;export{e as default};

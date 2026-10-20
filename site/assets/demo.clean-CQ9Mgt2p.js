@@ -3,19 +3,19 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 .ui-progressc {
   --ui-pgc-card: #ffffff;
   --ui-pgc-strong: #000000;
-  --ui-pgc-ink: rgba(0, 0, 0, 0.88);
-  --ui-pgc-muted: rgba(0, 0, 0, 0.45);
-  --ui-pgc-faint: rgba(0, 0, 0, 0.27);
-  --ui-pgc-icon: rgba(0, 0, 0, 0.447);
-  --ui-pgc-ring: rgba(0, 0, 0, 0.2);
-  --ui-pgc-track: rgba(0, 0, 0, 0.06);
-  --ui-pgc-hover: rgba(0, 0, 0, 0.03);
-  --ui-pgc-accent: rgba(0, 96, 226, 0.765);
+  --ui-pgc-ink: rgba(0, 22, 43, 0.88);
+  --ui-pgc-muted: rgba(0, 22, 43, 0.45);
+  --ui-pgc-faint: rgba(0, 22, 43, 0.27);
+  --ui-pgc-icon: rgba(0, 22, 43, 0.447);
+  --ui-pgc-ring: rgba(26, 62, 112, 0.2);
+  --ui-pgc-track: rgba(26, 62, 112, 0.06);
+  --ui-pgc-hover: rgba(26, 62, 112, 0.03);
+  --ui-pgc-accent: rgba(155, 16, 66, 0.765);
   --ui-pgc-on-accent: #ffffff;
   --ui-pgc-shine: rgba(255, 255, 255, 0.82);
-  --ui-pgc-focus: rgba(0, 96, 226, 0.35);
+  --ui-pgc-focus: rgba(155, 16, 66, 0.35);
   /* Strokes are shadows: a 0.5px hairline plus a soft lift */
-  --ui-pgc-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ui-pgc-shadow: 0 0 0 0.5px rgba(26, 62, 112, 0.06), 0 1px 1px -1px rgba(26, 62, 112, 0.1), 0 1px 2px 0 rgba(26, 62, 112, 0.05);
   --ui-pgc-ease: cubic-bezier(0.22, 1, 0.36, 1);
 
   container-type: inline-size;
@@ -26,7 +26,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   background: var(--ui-pgc-card);
   border-radius: 10px;
   box-shadow: var(--ui-pgc-shadow);
-  font-family: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 20px;
@@ -276,7 +276,7 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-progressc {
-  --ui-pgc-card: #1c1c1e;
+  --ui-pgc-card: #0e1d30;
   --ui-pgc-strong: #ffffff;
   --ui-pgc-ink: rgba(255, 255, 255, 0.9);
   --ui-pgc-muted: rgba(255, 255, 255, 0.46);
@@ -285,10 +285,10 @@ import{t as e}from"./react-BkAXpnfr.js";import{t}from"./jsx-runtime-CTsRTJUX.js"
   --ui-pgc-ring: rgba(255, 255, 255, 0.24);
   --ui-pgc-track: rgba(255, 255, 255, 0.08);
   --ui-pgc-hover: rgba(255, 255, 255, 0.04);
-  --ui-pgc-accent: #4d8dff;
+  --ui-pgc-accent: #c13d61;
   --ui-pgc-on-accent: #ffffff;
   --ui-pgc-shine: #ffffff;
-  --ui-pgc-focus: rgba(77, 141, 255, 0.5);
-  --ui-pgc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --ui-pgc-focus: rgba(193, 61, 97, 0.5);
+  --ui-pgc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
 }
 `,o=[{id:`tools`,label:`Connect your tools`},{id:`notify`,label:`Turn on notifications`},{id:`updates`,label:`Catch up on blockers`},{id:`priorities`,label:`Summarize priorities`},{id:`project`,label:`Create a project`,done:!0}];function s(){return(0,r.jsx)(`div`,{className:`progress-demo`,children:(0,r.jsx)(i,{steps:o,autoPlay:!0})})}export{s as default};

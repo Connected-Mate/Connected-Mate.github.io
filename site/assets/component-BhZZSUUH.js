@@ -75,9 +75,9 @@ export function ShimmerText({ children, duration = 2, className }: ShimmerTextPr
 const css = /* css */ \`
 .ui-shm,
 .ui-shm-text {
-  --ui-shm-base: #ececec;
+  --ui-shm-base: #e6edf6;
   --ui-shm-glow: rgba(255, 255, 255, 0.9);
-  --ui-shm-text: #a3a3a3;
+  --ui-shm-text: #96a5b8;
   --ui-shm-text-glow: #ffffff;
   --ui-shm-dur: 2.2s;
 }
@@ -141,10 +141,10 @@ const css = /* css */ \`
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-shm,
 :where(.dark, [data-theme="dark"]) .ui-shm-text {
-  --ui-shm-base: #2f2f33;
+  --ui-shm-base: #1e3048;
   --ui-shm-glow: rgba(255, 255, 255, 0.08);
-  --ui-shm-text: #6e6e73;
-  --ui-shm-text-glow: #f5f5f5;
+  --ui-shm-text: #5e7087;
+  --ui-shm-text-glow: #f1f6fb;
 }
 \`;
 `;export{e as default};
