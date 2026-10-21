@@ -12,6 +12,14 @@
     "mirror": "node scripts/mirror.mjs",
     "check": "node scripts/mirror.mjs --check",
     "preview": "node scripts/mirror.mjs --serve",
-    "theme": "python3 scripts/theme_team_ia.py"
+    "theme": "python3 scripts/theme_team_ia.py",
+    "ateam": "node scripts/build_ateam.mjs",
+    "ateam:preview": "node scripts/ateam_preview.mjs"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "esbuild": "^0.24.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }

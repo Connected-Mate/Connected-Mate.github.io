@@ -325,6 +325,8 @@ def main():
 
     # The components' own layer is read from the repainted assets, so it is generated now.
     subprocess.run([sys.executable, str(THEME_DIR / "composants.py"), str(site)], check=True)
+    # Our own rewrites of the items whose source was never published (components/ateam).
+    subprocess.run(["node", str(THEME_DIR.parent / "build_ateam.mjs"), str(site)], check=True)
 
     out = site / "ateam"
     out.mkdir(exist_ok=True)
