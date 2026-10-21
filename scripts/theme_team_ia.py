@@ -276,6 +276,12 @@ def restore_mit_sources(site, painter):
         code = code.replace("\\", "\\\\").replace("`", "\\`").replace("${", "\\${")
         (site / "assets" / match.group(1)).write_text("var e=`" + code + "`;export{e as default};\n", encoding="utf-8")
         start = text.index("slug:`%s`" % slug)
+        # Only the Classic version was ever published: the Clean tab shows that same code
+        # rather than "source not included".
+        clean = re.compile(r"(clean:\{.*?loadSource:\(\)=>i\(\(\)=>import\(`\./)(component\.clean-[^`]+\.js)(`\))", re.S)
+        found = clean.search(text, start)
+        if found and found.start() - start < 3000:
+            text = text[:found.start(2)] + match.group(1) + text[found.end(2):]
         flag = text.find("pro:!0", start)
         if 0 <= flag - start < 3000:
             text = text[:flag] + "pro:!1" + text[flag + 6:]
