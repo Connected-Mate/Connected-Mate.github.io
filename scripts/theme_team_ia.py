@@ -255,6 +255,35 @@ def paint_image(path):
     return True
 
 
+# Components whose source affectUI once released under MIT (github.com/flohoeller/affectui,
+# last version before each moved to Pro). The mirror ships them as empty stubs; their MIT
+# source goes behind the Code tab and the Copy button. Licence: theme/mit/LICENSE.
+MIT_DIR = THEME_DIR / "mit"
+
+
+def restore_mit_sources(site, painter):
+    index = next((site / "assets").glob("index-*.js"), None)
+    if index is None:
+        return 0
+    text = index.read_text(encoding="utf-8")
+    restored = 0
+    for source in sorted(MIT_DIR.glob("*.tsx")):
+        slug = source.stem
+        match = re.search(r"slug:`%s`.*?loadSource:\(\)=>i\(\(\)=>import\(`\./(component-[^`]+\.js)`\)" % re.escape(slug), text, re.S)
+        if not match:
+            continue
+        code = paint_text(source.read_text(encoding="utf-8"), painter)
+        code = code.replace("\\", "\\\\").replace("`", "\\`").replace("${", "\\${")
+        (site / "assets" / match.group(1)).write_text("var e=`" + code + "`;export{e as default};\n", encoding="utf-8")
+        start = text.index("slug:`%s`" % slug)
+        flag = text.find("pro:!0", start)
+        if 0 <= flag - start < 3000:
+            text = text[:flag] + "pro:!1" + text[flag + 6:]
+        restored += 1
+    index.write_text(text, encoding="utf-8")
+    return restored
+
+
 def is_component(path, site):
     """A component's own file: a demo/component module, or a registry item (the code people copy)."""
     parts = path.relative_to(site).parts
@@ -285,6 +314,8 @@ def main():
                 texts += 1
         elif suffix in IMAGE_SUFFIXES and path.relative_to(site).parts[0] in IMAGE_DIRS:
             images += paint_image(path)
+
+    restore_mit_sources(site, painter)
 
     # The components' own layer is read from the repainted assets, so it is generated now.
     subprocess.run([sys.executable, str(THEME_DIR / "composants.py"), str(site)], check=True)

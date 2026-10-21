@@ -21,7 +21,7 @@ The site itself stays exactly as the original. Only the **components** wear the 
 - every component palette re-pointed at the hub tokens, light and dark paired (a token whose name is shared but whose job differs is left alone);
 - each role in its hub shape: frame and raised panel (double object), flat berry main action, condensed bold titles, field shell with a berry caret, state chips with their family hairline, card feet in the frame, keys as pebbles, berry progress rail and ticked boxes.
 
-The free components' **copyable code** (Code tab, Copy button, `/r/*.json` registry) carries the same rules at the end of its own `css` block, so a copied component looks the same in another app. Pro components have no source in this mirror: their licence forbids publishing it.
+The free components' **copyable code** (Code tab, Copy button, `/r/*.json` registry) carries the same rules at the end of its own `css` block, so a copied component looks the same in another app. Data Table, Comments Panel, Integration Settings and Setup Guide (Classic style) get their source back from the last MIT release of affectUI (`scripts/theme/mit/`, licence included). The other Pro components were never published with source, so this mirror has none for them.
 
 ```sh
 npm run mirror   # refresh the original copy
