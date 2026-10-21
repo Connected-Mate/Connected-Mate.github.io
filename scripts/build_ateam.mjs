@@ -85,7 +85,7 @@ async function main() {
     }
     const demoName = `ateam-${slug}-${hash(demo)}.js`;
     const srcName = `ateam-src-${slug}-${hash(sourceModule)}.js`;
-    await writeFile(path.join(assets, demoName), demo);
+    void demoName; // the demo is still compiled (it must build) but the site keeps its own preview
     await writeFile(path.join(assets, srcName), sourceModule);
 
     const start = index.indexOf("slug:`" + slug + "`");
@@ -93,8 +93,8 @@ async function main() {
     const end = index.indexOf("},", index.indexOf("clean:{", start)) + 2;
     const tail = index.indexOf("pro:!", end);
     let entry = index.slice(start, tail + 6);
+    // The preview stays the original one (the porteur's choice, 21/10): only the code is ours.
     entry = entry
-      .replace(/import\(`\.\/(?:demo|demo\.clean|ateam-(?!src-)[\w-]+?)-[\w-]+\.js`\)/g, `import(\`./${demoName}\`)`)
       .replace(/import\(`\.\/(?:component|component\.clean|ateam-src-[\w-]+)-[\w-]+\.js`\)/g, `import(\`./${srcName}\`)`)
       .replace(/pro:!0$/, "pro:!1");
     index = index.slice(0, start) + entry + index.slice(tail + 6);
