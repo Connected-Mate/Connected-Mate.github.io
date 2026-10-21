@@ -14,7 +14,7 @@
 
 import { build } from "esbuild";
 import { createHash } from "node:crypto";
-import { mkdtemp, readdir, readFile, rm, unlink, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readdir, readFile, rm, unlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -61,6 +61,11 @@ async function main() {
   const external = [`./${reactChunk}`, `./${jsxChunk}`];
 
   let index = await readFile(path.join(assets, indexFile), "utf8");
+  // New items of our own (not in the original library), declared in components/ateam/items.json:
+  // each is cloned from a base item's registry entry and gets its own route, docs and preview.
+  const items = JSON.parse(await readFile(path.join(sources, "items.json"), "utf8").catch(() => "[]"));
+  const isNew = new Map(items.map((item) => [item.slug, item]));
+  for (const item of items) index = await addItem(index, item, files);
   const built = [];
   for (const slug of slugs) {
     const component = await readFile(path.join(sources, `${slug}.tsx`), "utf8");
@@ -80,12 +85,15 @@ async function main() {
     const demo = result.outputFiles[0].text;
     const sourceModule = "var e=`" + component.replace(/\\/g, "\\\\").replace(/`/g, "\\`").replace(/\$\{/g, "\\${") + "`;export{e as default};\n";
 
-    for (const f of files.filter((f) => f.startsWith(`ateam-${slug}-`) || f.startsWith(`ateam-src-${slug}-`))) {
+    // Exact names only: "agent-tree" must not sweep "agent-tree-scale"'s files
+    const ours = (kind, f) => f.length === `ateam-${kind}${slug}-`.length + 11 && f.startsWith(`ateam-${kind}${slug}-`);
+    for (const f of (await readdir(assets)).filter((f) => ours("", f) || ours("src-", f))) {
       await unlink(path.join(assets, f));
     }
     const demoName = `ateam-${slug}-${hash(demo)}.js`;
     const srcName = `ateam-src-${slug}-${hash(sourceModule)}.js`;
-    void demoName; // the demo is still compiled (it must build) but the site keeps its own preview
+    // The original items keep their own preview (the porteur's choice, 21/10); our new items use ours.
+    if (isNew.has(slug)) await writeFile(path.join(assets, demoName), demo);
     await writeFile(path.join(assets, srcName), sourceModule);
 
     const start = index.indexOf("slug:`" + slug + "`");
@@ -94,6 +102,9 @@ async function main() {
     const tail = index.indexOf("pro:!", end);
     let entry = index.slice(start, tail + 6);
     // The preview stays the original one (the porteur's choice, 21/10): only the code is ours.
+    if (isNew.has(slug)) {
+      entry = entry.replace(/import\(`\.\/(?:demo|demo\.clean|ateam-(?!src-|docs-)[\w-]+?)-[\w-]+\.js`\)/g, `import(\`./${demoName}\`)`);
+    }
     entry = entry
       .replace(/import\(`\.\/(?:component|component\.clean|ateam-src-[\w-]+)-[\w-]+\.js`\)/g, `import(\`./${srcName}\`)`)
       .replace(/pro:!0$/, "pro:!1");
@@ -103,6 +114,65 @@ async function main() {
   await writeFile(path.join(assets, indexFile), index);
   await rm(shims, { recursive: true, force: true });
   console.log(`A-Team components plugged in: ${built.length ? built.join(", ") : "none"}`);
+}
+
+/** Clone a base item's registry entry for a new item; also writes its docs module, route and inventory. */
+async function addItem(index, item, files) {
+  const { slug, base, name, description, category, docs } = item;
+  const docsBody = "var e=" + JSON.stringify(docs ?? {}) + ";export{e as docs};\n";
+  const docsName = `ateam-docs-${slug}-${hash(docsBody)}.js`;
+  for (const f of (await readdir(assets)).filter((f) => f.length === `ateam-docs-${slug}-`.length + 11 && f.startsWith(`ateam-docs-${slug}-`))) {
+    await unlink(path.join(assets, f));
+  }
+  await writeFile(path.join(assets, docsName), docsBody);
+
+  if (!index.includes("slug:`" + slug + "`")) {
+    const head = new RegExp("([\\w$]+)=e\\(\\{entry:\\(\\)=>([\\w$]+)\\}\\),\\2=\\{slug:`" + base + "`");
+    const m = head.exec(index);
+    if (!m) throw new Error(`${slug}: base ${base} not found in the site index`);
+    const objStart = m.index + m[0].indexOf("{slug:");
+    const objEnd = index.indexOf("pro:!", index.indexOf("},", index.indexOf("clean:{", objStart))) + 7;
+    const id = slug.replace(/[^a-z0-9]/gi, "_");
+    const tick = (s) => s.replace(/\\/g, "\\\\").replace(/`/g, "\\`").replace(/\$\{/g, "\\${");
+    let obj = index.slice(objStart, objEnd)
+      .replace("slug:`" + base + "`", "slug:`" + slug + "`")
+      .replace(/name:`[^`]*`/, "name:`" + tick(name) + "`")
+      .replace(/description:`[^`]*`/, "description:`" + tick(description) + "`")
+      .replace(/category:`[^`]*`/, "category:`" + tick(category) + "`")
+      .replace(/added:`[^`]*`/, "added:`" + new Date().toISOString().replace(/\.\d+Z$/, "+00:00") + "`");
+    const decl = `,$m_${id}=e({entry:()=>$e_${id}}),$e_${id}=${obj}`;
+    index = index.slice(0, objEnd) + decl + index.slice(objEnd);
+    const reg = `"./${base}/index.ts":${m[1]},`;
+    if (!index.includes(reg)) throw new Error(`${slug}: registry line of ${base} not found`);
+    index = index.replace(reg, reg + `"./${slug}/index.ts":$m_${id},`);
+  }
+  // Point the entry's docs at ours (both styles)
+  const s = index.indexOf("slug:`" + slug + "`");
+  const e2 = index.indexOf("pro:!", index.indexOf("},", index.indexOf("clean:{", s))) + 6;
+  const entry = index.slice(s, e2).replace(/import\(`\.\/(?:docs|docs\.clean|ateam-docs-[\w-]+?)-[\w-]+\.js`\)/g, `import(\`./${docsName}\`)`);
+  index = index.slice(0, s) + entry + index.slice(e2);
+
+  // Route page, from the base item's page
+  const baseHtml = await readFile(path.join(site, "components", base, "index.html"), "utf8");
+  const baseName = (/<title>([^<·|]+)/.exec(baseHtml)?.[1] ?? base).trim();
+  const html = baseHtml
+    .split(`/components/${base}"`).join(`/components/${slug}"`)
+    .split(`/components/${base}/`).join(`/components/${slug}/`)
+    .split(baseName).join(name);
+  await mkdir(path.join(site, "components", slug), { recursive: true });
+  await writeFile(path.join(site, "components", slug, "index.html"), html);
+
+  // Inventory
+  const routesFile = path.join(site, "routes.json");
+  const routes = JSON.parse(await readFile(routesFile, "utf8"));
+  if (!routes.routes.includes(`/components/${slug}`)) {
+    routes.routes.push(`/components/${slug}`);
+    routes.routes.sort();
+  }
+  const list = routes.items?.components;
+  if (Array.isArray(list) && !list.some((x) => x.slug === slug)) list.push({ slug, category, pro: false });
+  await writeFile(routesFile, JSON.stringify(routes, null, 2) + "\n");
+  return index;
 }
 
 main().catch((error) => {

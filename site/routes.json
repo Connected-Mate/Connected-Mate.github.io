@@ -36,6 +36,7 @@
     "/components/agent-plan",
     "/components/agent-steering",
     "/components/agent-tree",
+    "/components/agent-tree-scale",
     "/components/ai-answer",
     "/components/approval-card",
     "/components/autonomy-dial",
@@ -74,6 +75,7 @@
     "/components/project-card",
     "/components/prompt-library",
     "/components/reaction-bar",
+    "/components/role-change",
     "/components/segmented-control",
     "/components/setup-guide",
     "/components/smart-recommendation",
@@ -441,6 +443,16 @@
         "slug": "writing-assistant",
         "category": "Chat",
         "pro": true
+      },
+      {
+        "slug": "agent-tree-scale",
+        "category": "Agents",
+        "pro": false
+      },
+      {
+        "slug": "role-change",
+        "category": "Data display",
+        "pro": false
       }
     ],
     "screens": [
