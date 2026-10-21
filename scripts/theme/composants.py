@@ -698,7 +698,12 @@ def main() -> None:
         " * Shape: `html body` in front, so the component's hover and checked states still win. */\n"
     )
     target = pathlib.Path(__file__).with_name("composants.css")
-    target.write_text("\n".join([head, *colours, *shapes(all_rules), *roles(all_rules)]), encoding="utf-8")
+    stage = (
+        "/* Our own items grow with their content (a tree unfolds), so their preview stage does too. */\n"
+        ".stage:has(.ui-at-scale), .stage:has(.ui-at-rc) {\n  height: auto;\n  min-height: 520px;\n"
+        "  padding-top: 48px;\n  padding-bottom: 48px;\n}\n"
+    )
+    target.write_text("\n".join([head, *colours, *shapes(all_rules), *roles(all_rules), stage]), encoding="utf-8")
     print(f"{len(colours) // 2} palettes, {len(all_rules)} rules read -> {target}")
     print(f"design embedded in {embed_sources(site, target.read_text(encoding='utf-8'))} copyable sources")
 

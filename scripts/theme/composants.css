@@ -5643,3 +5643,11 @@ html body :is(.dark, [data-theme="dark"]) .ui-umc__item[data-active] {
   background: rgba(143, 189, 242, 0.14);
   box-shadow: inset 2px 0 0 #d9608a;
 }
+
+/* Our own items grow with their content (a tree unfolds), so their preview stage does too. */
+.stage:has(.ui-at-scale), .stage:has(.ui-at-rc) {
+  height: auto;
+  min-height: 520px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
