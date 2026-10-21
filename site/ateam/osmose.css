@@ -12,6 +12,9 @@
  * Shadows are tinted navy rgba(26, 62, 112, α) — never grey.
  * ———————————————————————————————————————————————————————————————— */
 
+/* The components themselves, generated from their own palettes. */
+@import url("composants.css");
+
 :root {
   --font-sans: "Avenir Next", "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   --font-display: "Avenir Next Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
@@ -151,7 +154,8 @@
 }
 
 ::selection { background: var(--o-berry); color: #fff; }
-:focus-visible { outline: 2px solid var(--o-info-vif); outline-offset: 2px; }
+/* The site's own ring; the components in a preview keep the focus they draw themselves. */
+:where(:not(.stage__look *)):focus-visible { outline: 2px solid var(--o-info-vif); outline-offset: 2px; }
 
 /* ——— The ground: tinted matter under the hub's 56 px grid ——— */
 html, body, html:has(.lp), html:has(.lp) body,

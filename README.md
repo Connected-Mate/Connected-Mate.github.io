@@ -16,7 +16,9 @@ This copy was made with the founder's authorization. No authentication, locked P
 
 This branch dresses the mirror in the A-Team design system of the IA Innovation team — the Vibe Creators hub "Osmose" (sign-in page, account pages, e-mails). Every page gets the hub's navy masthead (A-Team plate, Vibe Creators BÊTA chip, TGV INOUI), the gridded `#eaeff6` ground, double objects (matte frame holding a raised panel) for the main panel, cards and previews, navy-tinted shadows, Avenir Next Condensed titles with the berry rail, flat berry `#851437` buttons, state chips and icon pebbles, and the navy vitrine as dark mode. Demo colours and component previews are repainted to match. Layout, routes and demos are unchanged; third-party brand colours and semantic state colours are kept.
 
-The layer lives in `scripts/theme/` (`osmose.css`, `ateam.js`, brand files) and is served from `/ateam/`.
+The components themselves carry the same material, in both of their styles (Clean and Classic) and both themes: `scripts/theme/composants.py` reads each component's own CSS from the built site and writes `composants.css`. It re-points every component palette at the hub tokens (skipping a token whose name is shared but whose job differs, such as a size or a text colour named `soft`), then gives each role its hub shape: cards become double objects, the main action a flat berry block, titles the condensed bold, fields the hub shell with a berry caret, state chips their family hairline, icon tiles pebbles.
+
+The layer lives in `scripts/theme/` (`osmose.css`, `composants.css`, `ateam.js`, brand files) and is served from `/ateam/`. After changing `composants.py` alone, run `python3 scripts/theme/composants.py site && cp scripts/theme/composants.css site/ateam/`.
 
 ```sh
 npm run mirror   # refresh the original copy

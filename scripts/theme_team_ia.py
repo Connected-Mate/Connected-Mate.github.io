@@ -29,6 +29,7 @@ import io
 import json
 import math
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -63,7 +64,7 @@ BRAND_COLOURS = {
 
 THEME_DIR = Path(__file__).resolve().parent / "theme"
 # The A-Team layer: stylesheet, masthead script and brand files, served from /ateam/.
-THEME_FILES = ("osmose.css", "ateam.js", "a-team.svg", "inoui-white.png")
+THEME_FILES = ("osmose.css", "composants.css", "ateam.js", "a-team.svg", "inoui-white.png")
 HEAD_TAGS = '<link rel="stylesheet" href="/ateam/osmose.css">\n    <script defer src="/ateam/ateam.js"></script>\n  '
 
 
@@ -273,6 +274,9 @@ def main():
                 texts += 1
         elif suffix in IMAGE_SUFFIXES and path.relative_to(site).parts[0] in IMAGE_DIRS:
             images += paint_image(path)
+
+    # The components' own layer is read from the repainted assets, so it is generated now.
+    subprocess.run([sys.executable, str(THEME_DIR / "composants.py"), str(site)], check=True)
 
     out = site / "ateam"
     out.mkdir(exist_ok=True)
