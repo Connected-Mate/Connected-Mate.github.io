@@ -261,5 +261,30 @@ const css = /* css */ \`
   --ui-rbc-mine-line: rgba(72, 131, 206, 0.4);
   --ui-rbc-focus: rgba(72, 131, 206, 0.45);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-rbc.ui-rbc {
+  --ui-rbc-ink: #00162b;
+  --ui-rbc-text: rgba(0, 22, 43, 0.66);
+  --ui-rbc-icon: rgba(0, 22, 43, 0.52);
+  --ui-rbc-line: #dae2ec;
+  --ui-rbc-wash: rgba(26, 62, 112, 0.035);
+  --ui-rbc-accent: #1a3e70;
+  --ui-rbc-focus: rgba(143, 189, 242, 0.8);
+  --ui-rbc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-rbc.ui-rbc {
+  --ui-rbc-ink: rgba(255, 255, 255, 0.94);
+  --ui-rbc-text: rgba(255, 255, 255, 0.72);
+  --ui-rbc-icon: rgba(255, 255, 255, 0.62);
+  --ui-rbc-line: rgba(255, 255, 255, 0.12);
+  --ui-rbc-wash: rgba(255, 255, 255, 0.04);
+  --ui-rbc-accent: #8fbdf2;
+  --ui-rbc-focus: rgba(143, 189, 242, 0.6);
+  --ui-rbc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-rbc__btn {
+  border-radius: 9px;
+}
+
 \`;
 `;export{e as default};

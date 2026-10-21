@@ -507,5 +507,19 @@ const css = /* css */ \`
   --ui-lm-label: #7d8da5;
   --ui-lm-focus: #4b87d1;
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-lm.ui-lm {
+  --ui-lm-muted: rgba(0, 22, 43, 0.56);
+  --ui-lm-ink: #00162b;
+  --ui-lm-focus: rgba(143, 189, 242, 0.8);
+  --ui-lm-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-lm.ui-lm {
+  --ui-lm-muted: rgba(255, 255, 255, 0.58);
+  --ui-lm-ink: rgba(255, 255, 255, 0.94);
+  --ui-lm-focus: rgba(143, 189, 242, 0.6);
+  --ui-lm-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

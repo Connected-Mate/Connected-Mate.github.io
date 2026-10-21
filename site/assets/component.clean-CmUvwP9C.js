@@ -583,5 +583,33 @@ const css = /* css */ \`
 }
 :where(.dark, [data-theme="dark"]) .ui-segc__icon { color: rgba(255, 255, 255, 0.46); }
 :where(.dark, [data-theme="dark"]) .ui-segc__opt[data-active] .ui-segc__icon { color: var(--ui-segc-ink); }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-segc.ui-segc {
+  --ui-segc-ink: #00162b;
+  --ui-segc-text: rgba(0, 22, 43, 0.66);
+  --ui-segc-line: #dae2ec;
+  --ui-segc-wash: rgba(26, 62, 112, 0.035);
+  --ui-segc-fill: rgba(26, 62, 112, 0.06);
+  --ui-segc-track: rgba(26, 62, 112, 0.1);
+  --ui-segc-card: #ffffff;
+  --ui-segc-accent: #1a3e70;
+  --ui-segc-accent-soft: #eef5ff;
+  --ui-segc-focus: rgba(143, 189, 242, 0.8);
+  --ui-segc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-segc.ui-segc {
+  --ui-segc-ink: rgba(255, 255, 255, 0.94);
+  --ui-segc-text: rgba(255, 255, 255, 0.72);
+  --ui-segc-line: rgba(255, 255, 255, 0.12);
+  --ui-segc-wash: rgba(255, 255, 255, 0.04);
+  --ui-segc-fill: rgba(255, 255, 255, 0.07);
+  --ui-segc-track: rgba(255, 255, 255, 0.12);
+  --ui-segc-card: #16345c;
+  --ui-segc-accent: #8fbdf2;
+  --ui-segc-accent-soft: rgba(143, 189, 242, 0.16);
+  --ui-segc-focus: rgba(143, 189, 242, 0.6);
+  --ui-segc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

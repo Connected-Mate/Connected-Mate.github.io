@@ -160,5 +160,13 @@ const css = /* css */ \`
 :where(.dark, [data-theme="dark"]) .ui-trv {
   --ui-trv-blur: 6px;
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-trv.ui-trv {
+  --ui-trv-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-trv.ui-trv {
+  --ui-trv-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

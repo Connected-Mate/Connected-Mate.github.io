@@ -312,5 +312,98 @@ const css = /* css */ \`
   color-scheme: dark;
 }
 :where(.dark, [data-theme="dark"]) .ui-tpc__btn:not(.ui-tpc__btn--primary) { background: #0b2345; }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-tpc.ui-tpc {
+  --ui-tpc-card: #ffffff;
+  --ui-tpc-strong: #00162b;
+  --ui-tpc-ink: #00162b;
+  --ui-tpc-text: rgba(0, 22, 43, 0.66);
+  --ui-tpc-muted: rgba(0, 22, 43, 0.56);
+  --ui-tpc-line: #dae2ec;
+  --ui-tpc-wash: rgba(26, 62, 112, 0.035);
+  --ui-tpc-hover: rgba(26, 62, 112, 0.06);
+  --ui-tpc-ok: #1d6a34;
+  --ui-tpc-primary: #851437;
+  --ui-tpc-primary-hover: #6d0f2d;
+  --ui-tpc-on-primary: #ffffff;
+  --ui-tpc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-tpc-shadow-hover: 0 0 0 1px #cbd6e4, 0 14px 24px -14px rgba(26, 62, 112, 0.38), 0 4px 10px -6px rgba(26, 62, 112, 0.18);
+  --ui-tpc-focus: rgba(143, 189, 242, 0.8);
+  --ui-tpc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-tpc.ui-tpc {
+  --ui-tpc-card: #16345c;
+  --ui-tpc-strong: #ffffff;
+  --ui-tpc-ink: rgba(255, 255, 255, 0.94);
+  --ui-tpc-text: rgba(255, 255, 255, 0.72);
+  --ui-tpc-muted: rgba(255, 255, 255, 0.58);
+  --ui-tpc-line: rgba(255, 255, 255, 0.12);
+  --ui-tpc-wash: rgba(255, 255, 255, 0.04);
+  --ui-tpc-hover: rgba(255, 255, 255, 0.07);
+  --ui-tpc-ok: #7fe0a0;
+  --ui-tpc-primary: #a8204d;
+  --ui-tpc-primary-hover: #bd2a5a;
+  --ui-tpc-on-primary: #ffffff;
+  --ui-tpc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-tpc-shadow-hover: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 14px 24px -14px rgba(3, 12, 28, 0.75);
+  --ui-tpc-focus: rgba(143, 189, 242, 0.6);
+  --ui-tpc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-tpc {
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px #dae2ec, 0 0 0 6px #f2f6fa, 0 0 0 7px #dae2ec,
+  0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.18);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-tpc,
+html body :is(.dark, [data-theme="dark"]) .ui-tpc {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 0 6px #0f2747, 0 0 0 7px rgba(255, 255, 255, 0.1),
+  0 26px 40px -20px rgba(3, 12, 28, 0.8);
+}
+html body .ui-tpc__btn--primary {
+  border-radius: 9px;
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 6px 12px -6px rgba(133, 20, 55, 0.6);
+  transition: background-color .15s, box-shadow .15s, transform .15s cubic-bezier(.16, 1, .3, 1);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-tpc__btn--primary,
+html body :is(.dark, [data-theme="dark"]) .ui-tpc__btn--primary {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 6px 14px -6px rgba(3, 12, 28, 0.8);
+}
+html body .ui-tpc__btn {
+  border-radius: 9px;
+}
+html body .ui-tpc__title {
+  font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.002em;
+}
+html body .ui-tpc__foot {
+  background: #f5f8fb;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-tpc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-tpc__foot {
+  background: rgba(4, 16, 38, 0.32);
+}
+html body .ui-tpc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
+  box-shadow: 0 0 0 1px #cbd6e4, 0 6px 12px -8px rgba(26, 62, 112, 0.35);
+  font-weight: 600;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-tpc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-tpc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 6px 12px -8px rgba(3, 12, 28, 0.7);
+}
+html body .ui-tpc__kbd {
+  background: #ffffff;
+  box-shadow: 0 0 0 1px #dae2ec, 0 1px 0 1px #cbd6e4;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-tpc__kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-tpc__kbd {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 1px 0 1px rgba(0, 0, 0, 0.3);
+}
+
 \`;
 `;export{e as default};

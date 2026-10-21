@@ -247,5 +247,15 @@ const css = /* css */ \`
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 22, 43, 0.4), 0 4px 12px rgba(0, 22, 43, 0.35);
 }
 :where(.dark, [data-theme="dark"]) .ui-rb__btn:hover { background: rgba(255, 255, 255, 0.06); }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-rb.ui-rb {
+  --ui-rb-ink: #00162b;
+  --ui-rb-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-rb.ui-rb {
+  --ui-rb-ink: rgba(255, 255, 255, 0.94);
+  --ui-rb-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

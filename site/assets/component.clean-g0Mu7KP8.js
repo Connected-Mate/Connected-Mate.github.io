@@ -573,5 +573,74 @@ const css = /* css */ \`
   --ui-fmc-focus: rgba(72, 131, 206, 0.5);
   --ui-fmc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-fmc.ui-fmc {
+  --ui-fmc-card: #ffffff;
+  --ui-fmc-ink: #00162b;
+  --ui-fmc-strong: #00162b;
+  --ui-fmc-text: rgba(0, 22, 43, 0.66);
+  --ui-fmc-muted: rgba(0, 22, 43, 0.56);
+  --ui-fmc-faint: rgba(0, 22, 43, 0.36);
+  --ui-fmc-icon: rgba(0, 22, 43, 0.52);
+  --ui-fmc-line: #dae2ec;
+  --ui-fmc-fill: rgba(26, 62, 112, 0.06);
+  --ui-fmc-fill-strong: rgba(26, 62, 112, 0.1);
+  --ui-fmc-wash: rgba(26, 62, 112, 0.035);
+  --ui-fmc-accent: #1a3e70;
+  --ui-fmc-focus: rgba(143, 189, 242, 0.8);
+  --ui-fmc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-fmc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-fmc.ui-fmc {
+  --ui-fmc-card: #16345c;
+  --ui-fmc-ink: rgba(255, 255, 255, 0.94);
+  --ui-fmc-strong: #ffffff;
+  --ui-fmc-text: rgba(255, 255, 255, 0.72);
+  --ui-fmc-muted: rgba(255, 255, 255, 0.58);
+  --ui-fmc-faint: rgba(255, 255, 255, 0.36);
+  --ui-fmc-icon: rgba(255, 255, 255, 0.62);
+  --ui-fmc-line: rgba(255, 255, 255, 0.12);
+  --ui-fmc-fill: rgba(255, 255, 255, 0.07);
+  --ui-fmc-fill-strong: rgba(255, 255, 255, 0.12);
+  --ui-fmc-wash: rgba(255, 255, 255, 0.04);
+  --ui-fmc-accent: #8fbdf2;
+  --ui-fmc-focus: rgba(143, 189, 242, 0.6);
+  --ui-fmc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-fmc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-fmc {
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px #dae2ec, 0 0 0 6px #f2f6fa, 0 0 0 7px #dae2ec,
+  0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.18);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-fmc,
+html body :is(.dark, [data-theme="dark"]) .ui-fmc {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 0 6px #0f2747, 0 0 0 7px rgba(255, 255, 255, 0.1),
+  0 26px 40px -20px rgba(3, 12, 28, 0.8);
+}
+html body .ui-fmc__title {
+  font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.002em;
+}
+html body .ui-fmc__option[aria-checked="true"] .ui-fmc__box {
+  background: #851437;
+  box-shadow: none;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-fmc__option[aria-checked="true"] .ui-fmc__box,
+html body :is(.dark, [data-theme="dark"]) .ui-fmc__option[aria-checked="true"] .ui-fmc__box {
+  background: #a8204d;
+}
+html body .ui-fmc kbd {
+  background: #ffffff;
+  box-shadow: 0 0 0 1px #dae2ec, 0 1px 0 1px #cbd6e4;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-fmc kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-fmc kbd {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 1px 0 1px rgba(0, 0, 0, 0.3);
+}
+
 \`;
 `;export{e as default};

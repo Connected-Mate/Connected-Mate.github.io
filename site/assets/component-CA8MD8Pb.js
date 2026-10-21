@@ -751,5 +751,91 @@ const css = /* css */ \`
   --ui-ed-focus: #508cd7;
   --ui-ed-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-ed.ui-ed {
+  --ui-ed-tray: #f2f6fa;
+  --ui-ed-card: #ffffff;
+  --ui-ed-line: #dae2ec;
+  --ui-ed-ink: #00162b;
+  --ui-ed-text: rgba(0, 22, 43, 0.66);
+  --ui-ed-muted: rgba(0, 22, 43, 0.56);
+  --ui-ed-chip: #f2f6fa;
+  --ui-ed-hover: rgba(26, 62, 112, 0.06);
+  --ui-ed-warn: #775810;
+  --ui-ed-warn-bg: #fdf6dd;
+  --ui-ed-ok: #1d6a34;
+  --ui-ed-ok-bg: #eafbee;
+  --ui-ed-btn-top: #921a40;
+  --ui-ed-btn-bottom: #7a1131;
+  --ui-ed-btn-ring: #5c0b25;
+  --ui-ed-btn-text: #ffffff;
+  --ui-ed-focus: rgba(143, 189, 242, 0.8);
+  --ui-ed-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-ed-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-ed.ui-ed {
+  --ui-ed-tray: #0f2747;
+  --ui-ed-card: #16345c;
+  --ui-ed-line: rgba(255, 255, 255, 0.12);
+  --ui-ed-ink: rgba(255, 255, 255, 0.94);
+  --ui-ed-text: rgba(255, 255, 255, 0.72);
+  --ui-ed-muted: rgba(255, 255, 255, 0.58);
+  --ui-ed-chip: rgba(255, 255, 255, 0.07);
+  --ui-ed-hover: rgba(255, 255, 255, 0.07);
+  --ui-ed-warn: #f3d27a;
+  --ui-ed-warn-bg: rgba(243, 210, 122, 0.14);
+  --ui-ed-ok: #7fe0a0;
+  --ui-ed-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-ed-btn-top: #b02654;
+  --ui-ed-btn-bottom: #951b44;
+  --ui-ed-btn-ring: #6d0f2d;
+  --ui-ed-btn-text: #ffffff;
+  --ui-ed-focus: rgba(143, 189, 242, 0.6);
+  --ui-ed-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-ed-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-ed {
+  box-shadow: 0 0 0 1px #dae2ec, 0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.16);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-ed,
+html body :is(.dark, [data-theme="dark"]) .ui-ed {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 26px 40px -20px rgba(3, 12, 28, 0.8);
+}
+html body .ui-ed__card,
+html body .ui-ed__receipt {
+  box-shadow: 0 0 0 1px #dae2ec, 0 12px 20px -14px rgba(26, 62, 112, 0.4);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-ed__card,
+html body :is(.dark, [data-theme="dark"]) .ui-ed__card,
+html:is(.dark, [data-theme="dark"]) body .ui-ed__receipt,
+html body :is(.dark, [data-theme="dark"]) .ui-ed__receipt {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 20px -12px rgba(3, 12, 28, 0.7);
+}
+html body .ui-ed__badge[data-tone="ok"],
+html body .ui-ed__receipt-icon[data-tone="ok"] {
+  box-shadow: inset 0 0 0 1px #c9f5cf;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-ed__badge[data-tone="ok"],
+html body :is(.dark, [data-theme="dark"]) .ui-ed__badge[data-tone="ok"],
+html:is(.dark, [data-theme="dark"]) body .ui-ed__receipt-icon[data-tone="ok"],
+html body :is(.dark, [data-theme="dark"]) .ui-ed__receipt-icon[data-tone="ok"] {
+  box-shadow: inset 0 0 0 1px rgba(127, 224, 160, 0.32);
+}
+html body .ui-ed__status {
+  box-shadow: inset 0 0 0 1px #fae6a0;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-ed__status,
+html body :is(.dark, [data-theme="dark"]) .ui-ed__status {
+  box-shadow: inset 0 0 0 1px rgba(243, 210, 122, 0.32);
+}
+html body .ui-ed__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
+  box-shadow: 0 0 0 1px #cbd6e4, 0 6px 12px -8px rgba(26, 62, 112, 0.35);
+  font-weight: 600;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-ed__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-ed__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 6px 12px -8px rgba(3, 12, 28, 0.7);
+}
+
 \`;
 `;export{e as default};

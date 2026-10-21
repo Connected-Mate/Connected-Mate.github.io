@@ -329,5 +329,23 @@ const css = /* css */ \`
   --ui-tlc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 22, 43, 0.4);
   --ui-tlc-shine: #ffffff;
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-tlc.ui-tlc {
+  --ui-tlc-ink: #00162b;
+  --ui-tlc-text: rgba(0, 22, 43, 0.66);
+  --ui-tlc-accent: #1a3e70;
+  --ui-tlc-bg: #ffffff;
+  --ui-tlc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-tlc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-tlc.ui-tlc {
+  --ui-tlc-ink: rgba(255, 255, 255, 0.94);
+  --ui-tlc-text: rgba(255, 255, 255, 0.72);
+  --ui-tlc-accent: #8fbdf2;
+  --ui-tlc-bg: #16345c;
+  --ui-tlc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-tlc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

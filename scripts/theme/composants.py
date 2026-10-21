@@ -15,6 +15,7 @@ the "clean" style, *.clean-*.js, and the "classic" style, demo-* and component-*
 
 Usage: python3 scripts/theme/composants.py site
 """
+import json
 import pathlib
 import re
 import sys
@@ -30,7 +31,7 @@ LIGHT_TOKENS = {
     "soft": "#f7f9fc",
     "tray": "#f2f6fa",
     "surface": "#ffffff",
-    "tile": "#eef2f8",
+    "tile": "#f2f6fa",
     "title": "#00162b",
     "ink": "#00162b",
     "strong": "#00162b",
@@ -78,7 +79,8 @@ LIGHT_TOKENS = {
     "primary-hover": "#6d0f2d",
     "tag": "#1a3e70",
     "tag-bg": "#eef5ff",
-    "chip": "#eef5ff",
+    "chip": "#f2f6fa",
+    "chip-hover": "#e9eff6",
     "on-chip": "#1a3e70",
     "ok": "#1d6a34",
     "ok-fg": "#1d6a34",
@@ -158,7 +160,8 @@ DARK_TOKENS = {
     "primary-hover": "#bd2a5a",
     "tag": "#c1daff",
     "tag-bg": "rgba(143, 189, 242, 0.16)",
-    "chip": "rgba(143, 189, 242, 0.16)",
+    "chip": "rgba(255, 255, 255, 0.07)",
+    "chip-hover": "rgba(255, 255, 255, 0.11)",
     "on-chip": "#c1daff",
     "ok": "#7fe0a0",
     "ok-fg": "#7fe0a0",
@@ -214,6 +217,8 @@ def rules(site: pathlib.Path):
     for path in paths:
         text = path.read_text(encoding="utf-8")
         chunks = [text] if path.suffix == ".css" else TEMPLATE.findall(text)
+        # Never read back what embed_sources() wrote into the copyable code.
+        chunks = [chunk.split(EMBED_MARK)[0] for chunk in chunks]
         for chunk in chunks:
             # Some modules keep their CSS as an escaped string ("\\n.ui-fm {\\n  --ui-fm-…").
             css = COMMENT.sub("", chunk.replace("\\n", "\n").replace("\\t", "\t").replace('\\"', '"'))
@@ -268,7 +273,7 @@ def same_kind(name: str, value: str) -> bool:
 # themes (the dark theme used a white chip), selection turns to the info family.
 FLIPS = {
     "accent", "solid", "solid-hover", "primary", "primary-hover", "primary-ink", "on-solid",
-    "on-primary", "on-accent", "chip", "on-chip", "focus", "text",
+    "on-primary", "on-accent", "focus", "text",
     "btn-top", "btn-bottom", "btn-ring", "btn-text", "dark-top", "dark-bottom", "dark-hover-top", "dark-hover-bottom", "edge-top", "edge-mid", "edge-bottom",
 }
 
@@ -365,6 +370,7 @@ def plain(part: str) -> bool:
 def collect_shapes(all_rules):
     cards, menus, primaries, secondaries, fields, titles, pebbles = (set() for _ in range(7))
     inked, inked_hover = set(), set()
+    trays, classic_cards = set(), set()
     families: dict[str, str] = {}
     for selector, decls, nested in all_rules:
         if nested or ".ui-" not in selector:
@@ -375,6 +381,12 @@ def collect_shapes(all_rules):
             is_overlay = re.search(r"__(menu|pop|tooltip|picker|menu-panel|tip)\b", part)
             if r == "10px" and paints(decls, "card", "surface") and plain(part):
                 (menus if is_overlay else cards).add(part)
+            # Classic style is already double: a tray (the frame) holding a card (the panel).
+            if re.fullmatch(r"\.ui-[a-z0-9-]+", part) and paints(decls, "tray") and r:
+                trays.add(part)
+            if (re.search(r"__(card|panel|body|kpi|receipt|sheet)(?![a-z-])", part) and plain(part)
+                    and r in ("12px", "14px", "16px", "18px", "20px") and paints(decls, "card", "bg", "paper", "surface")):
+                classic_cards.add(part)
             if paints(decls, "solid", "primary") and plain(part) and "__send" not in part and "input" not in part:
                 primaries.add(part)
             # Classic style: the main action is painted with the ink (a navy chip). It turns berry.
@@ -387,7 +399,7 @@ def collect_shapes(all_rules):
                 secondaries.add(part)
             if re.search(r"(__input|__field|__search|__select)(?![a-z-])", part) and r in ("6px", "8px") and plain(part):
                 fields.add(part)
-            size = re.search(r"font-size:\s*(1[45])px", decls)
+            size = re.search(r"font-size:\s*(1[4-9]|2[0-6])px", decls)
             if re.search(r"__(title|heading|question)\b", part) and size and plain(part):
                 titles.add((part, int(size.group(1))))
             if re.search(r"__(icon|glyph|logo|mark)(?![a-z-])", part) and paints(decls, "card", "surface") and "box-shadow" in decls and plain(part):
@@ -395,7 +407,7 @@ def collect_shapes(all_rules):
             family = re.search(r"background:\s*var\(--ui-[a-z0-9]+-(%s)\)" % "|".join(FAMILY_LINE), decls)
             if family and "__btn" not in part and "button" not in part:
                 families[part] = family.group(1)
-    return cards, menus, primaries, secondaries, fields, titles, pebbles, families, inked, inked_hover
+    return cards, menus, primaries, secondaries, fields, titles, pebbles, families, inked, inked_hover, trays, classic_cards
 
 
 def scoped(parts, dark=False) -> str:
@@ -409,7 +421,8 @@ def scoped(parts, dark=False) -> str:
 
 
 def shapes(all_rules) -> list[str]:
-    cards, menus, primaries, secondaries, fields, titles, pebbles, families, inked, inked_hover = collect_shapes(all_rules)
+    (cards, menus, primaries, secondaries, fields, titles, pebbles, families, inked, inked_hover,
+     trays, classic_cards) = collect_shapes(all_rules)
     out = ["/* ——— Shape: the hub's objects, not only its colours ——— */\n"]
     if cards:
         out.append(
@@ -423,6 +436,26 @@ def shapes(all_rules) -> list[str]:
             f"{scoped(cards, dark=True)} {{\n"
             "  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 0 6px #0f2747, 0 0 0 7px rgba(255, 255, 255, 0.1),\n"
             "    0 26px 40px -20px rgba(3, 12, 28, 0.8);\n"
+            "}\n"
+        )
+    if trays:
+        out.append(
+            "/* Classic: the tray is the hub's matte frame — its own hairline, the navy shadow falls from it. */\n"
+            f"{scoped(trays)} {{\n"
+            "  box-shadow: 0 0 0 1px #dae2ec, 0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.16);\n"
+            "}\n"
+            f"{scoped(trays, dark=True)} {{\n"
+            "  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 26px 40px -20px rgba(3, 12, 28, 0.8);\n"
+            "}\n"
+        )
+    if classic_cards:
+        out.append(
+            "/* Classic: the card is the raised panel in that frame — hairline and a short navy drop. */\n"
+            f"{scoped(classic_cards)} {{\n"
+            "  box-shadow: 0 0 0 1px #dae2ec, 0 12px 20px -14px rgba(26, 62, 112, 0.4);\n"
+            "}\n"
+            f"{scoped(classic_cards, dark=True)} {{\n"
+            "  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 20px -12px rgba(3, 12, 28, 0.7);\n"
             "}\n"
         )
     if menus:
@@ -472,7 +505,7 @@ def shapes(all_rules) -> list[str]:
             out.append(
                 f"{scoped({p for p, s in titles if s == size})} {{\n"
                 '  font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;\n'
-                f"  font-size: {size + 2}px;\n"
+                f"  font-size: {size + 2 if size <= 15 else size + 1}px;\n"
                 "  font-weight: 700;\n"
                 "  letter-spacing: 0.002em;\n"
                 "}\n"
@@ -500,6 +533,158 @@ def shapes(all_rules) -> list[str]:
     return out
 
 
+# ——— Second wave: the smaller parts of a component, each in its hub form ———
+
+INK_PAINT = r"background(-color)?:\s*var\(--ui-[a-z0-9]+-(ink|accent|solid|primary|strong)\)"
+
+ROLES = [
+    # (comment, predicate(part, decls), light declarations, dark declarations)
+    (
+        "Card feet live in the frame: the matte band under the raised panel.",
+        lambda p, d: re.search(r"__(foot|footer)(?![a-z-])", p) and plain(p)
+        and re.search(r"border-top|box-shadow:\s*inset 0 1px|box-shadow: 0 -1px", d),
+        "background: #f5f8fb;\n  border-bottom-left-radius: 15px;\n  border-bottom-right-radius: 15px;",
+        "background: rgba(4, 16, 38, 0.32);",
+    ),
+    (
+        "Secondary actions: the hub's light object — pale panel, firm hairline, a short navy drop.",
+        lambda p, d: re.search(r"__(btn|button|action|secondary)(?![a-z])", p) and plain(p)
+        and (paints(d, "card", "surface", "bg") or re.search(r"box-shadow:\s*var\(--ui-[a-z0-9]+-shadow\)", d)),
+        "box-shadow: 0 0 0 1px #cbd6e4, 0 6px 12px -8px rgba(26, 62, 112, 0.35);\n  font-weight: 600;",
+        "box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 6px 12px -8px rgba(3, 12, 28, 0.7);",
+    ),
+    (
+        "Fields: the hub shell — firm hairline and a soft inner shade.",
+        lambda p, d: re.search(r"(__input|__field|__search|__select)(?![a-z-])", p) and plain(p)
+        and re.search(r"box-shadow|border", d) and "radius" in d,
+        "box-shadow: 0 0 0 1px #cbd6e4, inset 0 2px 6px -4px rgba(26, 62, 112, 0.25);",
+        "box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), inset 0 2px 6px -4px rgba(0, 0, 0, 0.4);",
+    ),
+    (
+        "Ticked boxes and switches that are on: berry, the colour of a choice made.",
+        lambda p, d: re.search(r"(__check|__box|__checkbox|__switch|__track|__toggle)", p)
+        and re.search(r'aria-checked="true"|:checked|data-checked|data-on', p) and re.search(INK_PAINT, d),
+        "background: #851437;\n  box-shadow: none;",
+        "background: #a8204d;",
+    ),
+    (
+        "Progress fills: the berry rail of the hub titles.",
+        lambda p, d: re.search(r"__(fill|progress|bar|meter)(?![a-z-])|__bar > span", p) and re.search(INK_PAINT, d),
+        "background: linear-gradient(90deg, #851437, #b5426a);",
+        "background: linear-gradient(90deg, #a8204d, #d9608a);",
+    ),
+    (
+        "Keys: small pebbles with a firmer bottom edge.",
+        lambda p, d: re.search(r"(kbd|__kbd|__key)(?![a-z-])", p) and plain(p) and "primary" not in p and "background" in d,
+        "background: #ffffff;\n  box-shadow: 0 0 0 1px #dae2ec, 0 1px 0 1px #cbd6e4;",
+        "background: rgba(255, 255, 255, 0.08);\n  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 1px 0 1px rgba(0, 0, 0, 0.3);",
+    ),
+    (
+        "Group labels: the hub's small capitals.",
+        lambda p, d: re.search(r"__(group-label|group-title|group-head|section-title|section-label|eyebrow|kicker)(?![a-z-])", p)
+        and plain(p) and re.search(r"font-size:\s*1[12](\.5)?px", d),
+        "font-size: 10.5px;\n  font-weight: 600;\n  letter-spacing: 0.09em;\n  text-transform: uppercase;",
+        "",
+    ),
+    (
+        "The highlighted row of a list: the info family, as a selected hub row.",
+        lambda p, d: re.search(r"__(option|item|row)", p) and re.search(r"data-active|data-highlighted", p)
+        and ":hover" not in p and re.search(r"background(-color)?:\s*var\(--ui-[a-z0-9]+-(fill|hover|wash|fill-strong)\)", d),
+        "background: #eef5ff;\n  box-shadow: inset 2px 0 0 #851437;",
+        "background: rgba(143, 189, 242, 0.14);\n  box-shadow: inset 2px 0 0 #d9608a;",
+    ),
+]
+
+
+def roles(all_rules) -> list[str]:
+    found = [set() for _ in ROLES]
+    for selector, decls, nested in all_rules:
+        if nested or ".ui-" not in selector:
+            continue
+        for part in split(selector):
+            if not part.startswith((".ui-", ":where(.ui-")):
+                continue
+            for i, (_, test, _, _) in enumerate(ROLES):
+                if test(part, decls):
+                    found[i].add(part)
+    out = []
+    for (comment, _, light, dark), parts in zip(ROLES, found):
+        if not parts:
+            continue
+        if comment.startswith("Secondary"):
+            # The base button class also carries the primary and ghost variants: leave those alone.
+            # :where() keeps the specificity low, so the component's hover still wins.
+            parts = {p + ':where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant]))' for p in parts}
+        out.append(f"/* {comment} */\n{scoped(parts)} {{\n  {light}\n}}\n")
+        if dark:
+            out.append(f"{scoped(parts, dark=True)} {{\n  {dark}\n}}\n")
+    return out
+
+
+# ——— The code people copy: free components carry the same design in their own file ———
+
+EMBED_MARK = "/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */"
+BLOCK = re.compile(r"(?:/\*.*?\*/\s*)?([^{}]+)\{([^{}]*)\}", re.S)
+
+
+def roots_of(css: str) -> set[str]:
+    """Component root names used in a stylesheet: `ui-di` for `.ui-di__btn`."""
+    return set(re.findall(r"\.(ui-[a-z0-9-]+?)(?=__|[\s.:\[{,>)]|$)", css))
+
+
+def subset(layer: str, roots: set[str]) -> str:
+    """The rules of the generated layer that only concern these roots."""
+    out = []
+    for match in BLOCK.finditer(layer):
+        body = match.group(2).strip()
+        parts = [p for p in split(match.group(1)) if roots_of(p) and roots_of(p) <= roots]
+        if parts and body:
+            out.append(",\n".join(parts) + " {\n  " + "\n  ".join(l.strip() for l in body.splitlines() if l.strip()) + "\n}")
+    return "\n".join(out)
+
+
+def embed(source: str, layer: str, opening: str, closing: str):
+    """Append the matching rules at the end of the source's `const css` block (idempotent)."""
+    start = source.find(opening)
+    if start < 0:
+        return None
+    end = source.find(closing, start + len(opening))
+    if end < 0:
+        return None
+    css = source[start + len(opening):end]
+    mark = css.find("\n" + EMBED_MARK)
+    if mark >= 0:
+        css = css[:mark]
+    extra = subset(layer, roots_of(css))
+    if not extra:
+        return None
+    return source[:start + len(opening)] + css + "\n" + EMBED_MARK + "\n" + extra + "\n" + source[end:]
+
+
+def embed_sources(site: pathlib.Path, layer: str) -> int:
+    changed = 0
+    # Registry items (`npx shadcn add …`): plain TSX inside JSON.
+    for path in sorted((site / "r").glob("*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        touched = False
+        for item in data.get("files", []):
+            new = embed(item.get("content", ""), layer, "const css = /* css */ `", "\n`;")
+            if new is not None and new != item["content"]:
+                item["content"] = new
+                touched = True
+        if touched:
+            path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            changed += 1
+    # The Code tab and the Copy button: the same TSX held in a JS template literal.
+    for path in sorted((site / "assets").glob("component*.js")):
+        text = path.read_text(encoding="utf-8")
+        new = embed(text, layer, "const css = /* css */ \\`", "\n\\`;")
+        if new is not None and new != text:
+            path.write_text(new, encoding="utf-8")
+            changed += 1
+    return changed
+
+
 def main() -> None:
     site = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "site")
     all_rules = list(rules(site))
@@ -513,8 +698,9 @@ def main() -> None:
         " * Shape: `html body` in front, so the component's hover and checked states still win. */\n"
     )
     target = pathlib.Path(__file__).with_name("composants.css")
-    target.write_text("\n".join([head, *colours, *shapes(all_rules)]), encoding="utf-8")
+    target.write_text("\n".join([head, *colours, *shapes(all_rules), *roles(all_rules)]), encoding="utf-8")
     print(f"{len(colours) // 2} palettes, {len(all_rules)} rules read -> {target}")
+    print(f"design embedded in {embed_sources(site, target.read_text(encoding='utf-8'))} copyable sources")
 
 
 if __name__ == "__main__":

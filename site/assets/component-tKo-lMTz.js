@@ -244,5 +244,13 @@ const css = /* css */ \`
 :where(.dark, [data-theme="dark"]) .ui-nt {
   --ui-nt-lh: 1.15em;
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-nt.ui-nt {
+  --ui-nt-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-nt.ui-nt {
+  --ui-nt-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

@@ -434,5 +434,55 @@ const css = /* css */ \`
   --ui-btnc-shine: #ffffff;
   --ui-btnc-focus: rgba(72, 131, 206, 0.5);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-buttonc.ui-buttonc {
+  --ui-btnc-title: #00162b;
+  --ui-btnc-ink: #00162b;
+  --ui-btnc-muted: rgba(0, 22, 43, 0.56);
+  --ui-btnc-icon: rgba(0, 22, 43, 0.52);
+  --ui-btnc-solid: #851437;
+  --ui-btnc-solid-hover: #6d0f2d;
+  --ui-btnc-on-solid: #ffffff;
+  --ui-btnc-surface: #ffffff;
+  --ui-btnc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-btnc-shadow-hover: 0 0 0 1px #cbd6e4, 0 14px 24px -14px rgba(26, 62, 112, 0.38), 0 4px 10px -6px rgba(26, 62, 112, 0.18);
+  --ui-btnc-wash: rgba(26, 62, 112, 0.035);
+  --ui-btnc-danger: #8a3a22;
+  --ui-btnc-danger-bg: #fdeee8;
+  --ui-btnc-danger-bg-hover: #fbe2d8;
+  --ui-btnc-shine-on-solid: #ffffff;
+  --ui-btnc-focus: rgba(143, 189, 242, 0.8);
+  --ui-btnc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-buttonc.ui-buttonc {
+  --ui-btnc-title: #ffffff;
+  --ui-btnc-ink: rgba(255, 255, 255, 0.94);
+  --ui-btnc-muted: rgba(255, 255, 255, 0.58);
+  --ui-btnc-icon: rgba(255, 255, 255, 0.62);
+  --ui-btnc-solid: #a8204d;
+  --ui-btnc-solid-hover: #bd2a5a;
+  --ui-btnc-on-solid: #ffffff;
+  --ui-btnc-surface: #16345c;
+  --ui-btnc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-btnc-shadow-hover: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 14px 24px -14px rgba(3, 12, 28, 0.75);
+  --ui-btnc-wash: rgba(255, 255, 255, 0.04);
+  --ui-btnc-danger: #f2a48c;
+  --ui-btnc-danger-bg: rgba(242, 164, 140, 0.14);
+  --ui-btnc-danger-bg-hover: rgba(242, 164, 140, 0.22);
+  --ui-btnc-shine-on-solid: #ffffff;
+  --ui-btnc-focus: rgba(143, 189, 242, 0.6);
+  --ui-btnc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-buttonc[data-variant="primary"] {
+  border-radius: 9px;
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 6px 12px -6px rgba(133, 20, 55, 0.6);
+  transition: background-color .15s, box-shadow .15s, transform .15s cubic-bezier(.16, 1, .3, 1);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-buttonc[data-variant="primary"],
+html body :is(.dark, [data-theme="dark"]) .ui-buttonc[data-variant="primary"] {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 6px 14px -6px rgba(3, 12, 28, 0.8);
+}
+
 \`;
 `;export{e as default};

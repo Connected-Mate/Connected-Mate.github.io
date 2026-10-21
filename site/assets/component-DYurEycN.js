@@ -428,5 +428,19 @@ const css = /* css */ \`
   --ui-at-shadow: 0 calc(10 * var(--u)) calc(24 * var(--u)) rgba(0, 22, 43, 0.4), 0 calc(2 * var(--u)) calc(5 * var(--u)) rgba(0, 22, 43, 0.3);
 }
 :where(.dark, [data-theme="dark"]) .ui-at-tool { background: #f1f5fa; }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-at.ui-at {
+  --ui-at-surface: #ffffff;
+  --ui-at-text: rgba(0, 22, 43, 0.66);
+  --ui-at-accent: #1a3e70;
+  --ui-at-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-at.ui-at {
+  --ui-at-surface: #16345c;
+  --ui-at-text: rgba(255, 255, 255, 0.72);
+  --ui-at-accent: #8fbdf2;
+  --ui-at-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

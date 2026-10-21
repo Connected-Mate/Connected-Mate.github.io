@@ -334,5 +334,15 @@ const css = /* css */ \`
   --ui-ig-center-shadow: 0 calc(16 * var(--u)) calc(18 * var(--u)) calc(-12 * var(--u)) rgba(0, 22, 43, 0.5);
 }
 :where(.dark, [data-theme="dark"]) .ui-ig-logo { fill: var(--ui-ig-cd, var(--ui-ig-c, var(--ui-ig-ink))); }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-ig.ui-ig {
+  --ui-ig-ink: #00162b;
+  --ui-ig-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-ig.ui-ig {
+  --ui-ig-ink: rgba(255, 255, 255, 0.94);
+  --ui-ig-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

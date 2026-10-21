@@ -491,5 +491,114 @@ const css = /* css */ \`
   --ui-src-focus: rgba(72, 131, 206, 0.5);
 }
 :where(.dark, [data-theme="dark"]) .ui-src__menu { background: #0b2345; }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-src.ui-src {
+  --ui-src-card: #ffffff;
+  --ui-src-strong: #00162b;
+  --ui-src-ink: #00162b;
+  --ui-src-text: rgba(0, 22, 43, 0.66);
+  --ui-src-muted: rgba(0, 22, 43, 0.56);
+  --ui-src-faint: rgba(0, 22, 43, 0.36);
+  --ui-src-icon: rgba(0, 22, 43, 0.52);
+  --ui-src-line: #dae2ec;
+  --ui-src-wash: rgba(26, 62, 112, 0.035);
+  --ui-src-fill: rgba(26, 62, 112, 0.06);
+  --ui-src-accent: #1a3e70;
+  --ui-src-accent-bg: #eef5ff;
+  --ui-src-accent-line: #c1daff;
+  --ui-src-ok: #1d6a34;
+  --ui-src-ok-bg: #eafbee;
+  --ui-src-solid: #851437;
+  --ui-src-solid-hover: #6d0f2d;
+  --ui-src-on-solid: #ffffff;
+  --ui-src-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-src-shadow-hover: 0 0 0 1px #cbd6e4, 0 14px 24px -14px rgba(26, 62, 112, 0.38), 0 4px 10px -6px rgba(26, 62, 112, 0.18);
+  --ui-src-shadow-pop: 0 0 0 1px #cbd6e4, 0 24px 48px -24px rgba(26, 62, 112, 0.3), 0 8px 16px -4px rgba(26, 62, 112, 0.16);
+  --ui-src-focus: rgba(143, 189, 242, 0.8);
+  --ui-src-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-src.ui-src {
+  --ui-src-card: #16345c;
+  --ui-src-strong: #ffffff;
+  --ui-src-ink: rgba(255, 255, 255, 0.94);
+  --ui-src-text: rgba(255, 255, 255, 0.72);
+  --ui-src-muted: rgba(255, 255, 255, 0.58);
+  --ui-src-faint: rgba(255, 255, 255, 0.36);
+  --ui-src-icon: rgba(255, 255, 255, 0.62);
+  --ui-src-line: rgba(255, 255, 255, 0.12);
+  --ui-src-wash: rgba(255, 255, 255, 0.04);
+  --ui-src-fill: rgba(255, 255, 255, 0.07);
+  --ui-src-accent: #8fbdf2;
+  --ui-src-accent-bg: rgba(143, 189, 242, 0.16);
+  --ui-src-accent-line: rgba(143, 189, 242, 0.4);
+  --ui-src-ok: #7fe0a0;
+  --ui-src-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-src-solid: #a8204d;
+  --ui-src-solid-hover: #bd2a5a;
+  --ui-src-on-solid: #ffffff;
+  --ui-src-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-src-shadow-hover: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 14px 24px -14px rgba(3, 12, 28, 0.75);
+  --ui-src-shadow-pop: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 24px 44px -20px rgba(3, 12, 28, 0.75), 0 8px 16px -8px rgba(3, 12, 28, 0.5);
+  --ui-src-focus: rgba(143, 189, 242, 0.6);
+  --ui-src-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-src {
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px #dae2ec, 0 0 0 6px #f2f6fa, 0 0 0 7px #dae2ec,
+  0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.18);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-src,
+html body :is(.dark, [data-theme="dark"]) .ui-src {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 0 6px #0f2747, 0 0 0 7px rgba(255, 255, 255, 0.1),
+  0 26px 40px -20px rgba(3, 12, 28, 0.8);
+}
+html body .ui-src__menu {
+  border-radius: 12px;
+}
+html body :where(.ui-src) .ui-src__btn--primary {
+  border-radius: 9px;
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 6px 12px -6px rgba(133, 20, 55, 0.6);
+  transition: background-color .15s, box-shadow .15s, transform .15s cubic-bezier(.16, 1, .3, 1);
+}
+html:is(.dark, [data-theme="dark"]) body :where(.ui-src) .ui-src__btn--primary,
+html body :is(.dark, [data-theme="dark"]) :where(.ui-src) .ui-src__btn--primary {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 6px 14px -6px rgba(3, 12, 28, 0.8);
+}
+html body .ui-src__btn {
+  border-radius: 9px;
+}
+html body .ui-src__option[aria-checked="true"] {
+  box-shadow: inset 0 0 0 1px #c1daff;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-src__option[aria-checked="true"],
+html body :is(.dark, [data-theme="dark"]) .ui-src__option[aria-checked="true"] {
+  box-shadow: inset 0 0 0 1px rgba(143, 189, 242, 0.34);
+}
+html body .ui-src__done {
+  box-shadow: inset 0 0 0 1px #c9f5cf;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-src__done,
+html body :is(.dark, [data-theme="dark"]) .ui-src__done {
+  box-shadow: inset 0 0 0 1px rgba(127, 224, 160, 0.32);
+}
+html body .ui-src__foot {
+  background: #f5f8fb;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-src__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-src__foot {
+  background: rgba(4, 16, 38, 0.32);
+}
+html body :where(.ui-src) .ui-src__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
+  box-shadow: 0 0 0 1px #cbd6e4, 0 6px 12px -8px rgba(26, 62, 112, 0.35);
+  font-weight: 600;
+}
+html:is(.dark, [data-theme="dark"]) body :where(.ui-src) .ui-src__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) :where(.ui-src) .ui-src__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 6px 12px -8px rgba(3, 12, 28, 0.7);
+}
+
 \`;
 `;export{e as default};

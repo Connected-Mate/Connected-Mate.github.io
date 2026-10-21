@@ -715,5 +715,41 @@ const css = /* css */ \`
   --ui-otpc-success-tint: rgba(62, 194, 122, 0.14);
   --ui-otpc-lift: 0 1px 2px 0 rgba(0, 22, 43, 0.4);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-otpc.ui-otpc {
+  --ui-otpc-card: #ffffff;
+  --ui-otpc-ink: #00162b;
+  --ui-otpc-strong: #00162b;
+  --ui-otpc-text: rgba(0, 22, 43, 0.66);
+  --ui-otpc-muted: rgba(0, 22, 43, 0.56);
+  --ui-otpc-faint: rgba(0, 22, 43, 0.36);
+  --ui-otpc-icon: rgba(0, 22, 43, 0.52);
+  --ui-otpc-line: #dae2ec;
+  --ui-otpc-fill: rgba(26, 62, 112, 0.06);
+  --ui-otpc-wash: rgba(26, 62, 112, 0.035);
+  --ui-otpc-accent: #1a3e70;
+  --ui-otpc-focus: rgba(143, 189, 242, 0.8);
+  --ui-otpc-danger: #8a3a22;
+  --ui-otpc-success: #1d6a34;
+  --ui-otpc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-otpc.ui-otpc {
+  --ui-otpc-card: #16345c;
+  --ui-otpc-ink: rgba(255, 255, 255, 0.94);
+  --ui-otpc-strong: #ffffff;
+  --ui-otpc-text: rgba(255, 255, 255, 0.72);
+  --ui-otpc-muted: rgba(255, 255, 255, 0.58);
+  --ui-otpc-faint: rgba(255, 255, 255, 0.36);
+  --ui-otpc-icon: rgba(255, 255, 255, 0.62);
+  --ui-otpc-line: rgba(255, 255, 255, 0.12);
+  --ui-otpc-fill: rgba(255, 255, 255, 0.07);
+  --ui-otpc-wash: rgba(255, 255, 255, 0.04);
+  --ui-otpc-accent: #8fbdf2;
+  --ui-otpc-focus: rgba(143, 189, 242, 0.6);
+  --ui-otpc-danger: #f2a48c;
+  --ui-otpc-success: #7fe0a0;
+  --ui-otpc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

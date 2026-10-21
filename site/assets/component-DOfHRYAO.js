@@ -921,5 +921,60 @@ const css = /* css */ \`
   --ui-tc-focus: rgba(255, 255, 255, 0.3);
 }
 :where(.dark, [data-theme="dark"]) .ui-tc { box-shadow: inset 0 0 0 1px var(--ui-tc-line); }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-tc.ui-tc {
+  --ui-tc-ink: #00162b;
+  --ui-tc-text: rgba(0, 22, 43, 0.66);
+  --ui-tc-muted: rgba(0, 22, 43, 0.56);
+  --ui-tc-bg: #ffffff;
+  --ui-tc-line: #dae2ec;
+  --ui-tc-hover: rgba(26, 62, 112, 0.06);
+  --ui-tc-tile: #f2f6fa;
+  --ui-tc-focus: rgba(143, 189, 242, 0.8);
+  --ui-tc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ui-tc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+}
+:is(.dark, [data-theme="dark"]) .ui-tc.ui-tc {
+  --ui-tc-ink: rgba(255, 255, 255, 0.94);
+  --ui-tc-text: rgba(255, 255, 255, 0.72);
+  --ui-tc-muted: rgba(255, 255, 255, 0.58);
+  --ui-tc-bg: #16345c;
+  --ui-tc-line: rgba(255, 255, 255, 0.12);
+  --ui-tc-hover: rgba(255, 255, 255, 0.07);
+  --ui-tc-tile: #1b3c68;
+  --ui-tc-focus: rgba(143, 189, 242, 0.6);
+  --ui-tc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ui-tc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+}
+.ui-tc-group.ui-tc-group {
+  --ui-tc-ink: #00162b;
+  --ui-tc-text: rgba(0, 22, 43, 0.66);
+  --ui-tc-muted: rgba(0, 22, 43, 0.56);
+  --ui-tc-bg: #ffffff;
+  --ui-tc-line: #dae2ec;
+  --ui-tc-hover: rgba(26, 62, 112, 0.06);
+  --ui-tc-tile: #f2f6fa;
+  --ui-tc-focus: rgba(143, 189, 242, 0.8);
+  --ui-tc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-tc-group.ui-tc-group {
+  --ui-tc-ink: rgba(255, 255, 255, 0.94);
+  --ui-tc-text: rgba(255, 255, 255, 0.72);
+  --ui-tc-muted: rgba(255, 255, 255, 0.58);
+  --ui-tc-bg: #16345c;
+  --ui-tc-line: rgba(255, 255, 255, 0.12);
+  --ui-tc-hover: rgba(255, 255, 255, 0.07);
+  --ui-tc-tile: #1b3c68;
+  --ui-tc-focus: rgba(143, 189, 242, 0.6);
+  --ui-tc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-tc__error {
+  box-shadow: inset 0 0 0 1px #f5d5c9;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-tc__error,
+html body :is(.dark, [data-theme="dark"]) .ui-tc__error {
+  box-shadow: inset 0 0 0 1px rgba(242, 164, 140, 0.32);
+}
+
 \`;
 `;export{e as default};

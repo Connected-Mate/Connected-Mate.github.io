@@ -420,5 +420,59 @@ const css = /* css */ \`
   color: #02112b !important;
 }
 :where(.dark, [data-theme="dark"]) .ui-sr__btn--primary:hover { background: linear-gradient(#ffffff, #e7edf5); }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-sr.ui-sr {
+  --ui-sr-tray: #f2f6fa;
+  --ui-sr-card: #ffffff;
+  --ui-sr-ink: #00162b;
+  --ui-sr-text: rgba(0, 22, 43, 0.66);
+  --ui-sr-muted: rgba(0, 22, 43, 0.56);
+  --ui-sr-accent: #1a3e70;
+  --ui-sr-ok: #1d6a34;
+  --ui-sr-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-sr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-sr.ui-sr {
+  --ui-sr-tray: #0f2747;
+  --ui-sr-card: #16345c;
+  --ui-sr-ink: rgba(255, 255, 255, 0.94);
+  --ui-sr-text: rgba(255, 255, 255, 0.72);
+  --ui-sr-muted: rgba(255, 255, 255, 0.58);
+  --ui-sr-accent: #8fbdf2;
+  --ui-sr-ok: #7fe0a0;
+  --ui-sr-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-sr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-sr {
+  box-shadow: 0 0 0 1px #dae2ec, 0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.16);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-sr,
+html body :is(.dark, [data-theme="dark"]) .ui-sr {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 26px 40px -20px rgba(3, 12, 28, 0.8);
+}
+html body .ui-sr__card {
+  box-shadow: 0 0 0 1px #dae2ec, 0 12px 20px -14px rgba(26, 62, 112, 0.4);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-sr__card,
+html body :is(.dark, [data-theme="dark"]) .ui-sr__card {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 20px -12px rgba(3, 12, 28, 0.7);
+}
+html body .ui-sr__btn--primary {
+  background: #851437;
+  color: #ffffff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 6px 12px -6px rgba(133, 20, 55, 0.6);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-sr__btn--primary,
+html body :is(.dark, [data-theme="dark"]) .ui-sr__btn--primary {
+  background: #a8204d;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 6px 14px -6px rgba(3, 12, 28, 0.8);
+}
+html body .ui-sr__title {
+  font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.002em;
+}
+
 \`;
 `;export{e as default};

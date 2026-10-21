@@ -710,5 +710,89 @@ const css = /* css */ \`
   --ui-ma-tip-text: #041632;
   --ui-ma-focus: rgba(255, 255, 255, 0.3);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-ma.ui-ma {
+  --ui-ma-card: #ffffff;
+  --ui-ma-line: #dae2ec;
+  --ui-ma-ink: #00162b;
+  --ui-ma-text: rgba(0, 22, 43, 0.66);
+  --ui-ma-muted: rgba(0, 22, 43, 0.56);
+  --ui-ma-hover: rgba(26, 62, 112, 0.06);
+  --ui-ma-accent: #1a3e70;
+  --ui-ma-accent-bg: #eef5ff;
+  --ui-ma-ok: #1d6a34;
+  --ui-ma-ok-bg: #eafbee;
+  --ui-ma-focus: rgba(143, 189, 242, 0.8);
+  --ui-ma-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-ma.ui-ma {
+  --ui-ma-card: #16345c;
+  --ui-ma-line: rgba(255, 255, 255, 0.12);
+  --ui-ma-ink: rgba(255, 255, 255, 0.94);
+  --ui-ma-text: rgba(255, 255, 255, 0.72);
+  --ui-ma-muted: rgba(255, 255, 255, 0.58);
+  --ui-ma-hover: rgba(255, 255, 255, 0.07);
+  --ui-ma-accent: #8fbdf2;
+  --ui-ma-accent-bg: rgba(143, 189, 242, 0.16);
+  --ui-ma-ok: #7fe0a0;
+  --ui-ma-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-ma-focus: rgba(143, 189, 242, 0.6);
+  --ui-ma-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-ma__panel {
+  box-shadow: 0 0 0 1px #dae2ec, 0 12px 20px -14px rgba(26, 62, 112, 0.4);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-ma__panel,
+html body :is(.dark, [data-theme="dark"]) .ui-ma__panel {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 20px -12px rgba(3, 12, 28, 0.7);
+}
+html body .ui-ma__send {
+  background: #851437;
+  color: #ffffff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 6px 12px -6px rgba(133, 20, 55, 0.6);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-ma__send,
+html body :is(.dark, [data-theme="dark"]) .ui-ma__send {
+  background: #a8204d;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 6px 14px -6px rgba(3, 12, 28, 0.8);
+}
+html body .ui-ma__btn {
+  border-radius: 9px;
+}
+html body .ui-ma__input {
+  border-radius: 10px;
+  caret-color: #851437;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-ma__input,
+html body :is(.dark, [data-theme="dark"]) .ui-ma__input {
+  caret-color: #f6bcc8;
+}
+as in the hub. */
+
+html body .ui-ma__chip[aria-pressed="true"],
+html body .ui-ma__chip[aria-pressed="true"]:hover:not(:disabled) {
+  box-shadow: inset 0 0 0 1px #c1daff;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-ma__chip[aria-pressed="true"],
+html body :is(.dark, [data-theme="dark"]) .ui-ma__chip[aria-pressed="true"],
+html:is(.dark, [data-theme="dark"]) body .ui-ma__chip[aria-pressed="true"]:hover:not(:disabled),
+html body :is(.dark, [data-theme="dark"]) .ui-ma__chip[aria-pressed="true"]:hover:not(:disabled) {
+  box-shadow: inset 0 0 0 1px rgba(143, 189, 242, 0.34);
+}
+html body .ui-ma__send[data-sent] {
+  box-shadow: inset 0 0 0 1px #c9f5cf;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-ma__send[data-sent],
+html body :is(.dark, [data-theme="dark"]) .ui-ma__send[data-sent] {
+  box-shadow: inset 0 0 0 1px rgba(127, 224, 160, 0.32);
+}
+html body .ui-ma__input {
+  box-shadow: 0 0 0 1px #cbd6e4, inset 0 2px 6px -4px rgba(26, 62, 112, 0.25);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-ma__input,
+html body :is(.dark, [data-theme="dark"]) .ui-ma__input {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), inset 0 2px 6px -4px rgba(0, 0, 0, 0.4);
+}
+
 \`;
 `;export{e as default};

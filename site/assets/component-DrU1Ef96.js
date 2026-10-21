@@ -326,5 +326,21 @@ const css = /* css */ \`
   --ui-tl-shine: rgba(255, 255, 255, 0.95);
   --ui-tl-done: #e8eef6;
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-tl.ui-tl {
+  --ui-tl-ink: #00162b;
+  --ui-tl-text: rgba(0, 22, 43, 0.66);
+  --ui-tl-bg: #ffffff;
+  --ui-tl-line: #dae2ec;
+  --ui-tl-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-tl.ui-tl {
+  --ui-tl-ink: rgba(255, 255, 255, 0.94);
+  --ui-tl-text: rgba(255, 255, 255, 0.72);
+  --ui-tl-bg: #16345c;
+  --ui-tl-line: rgba(255, 255, 255, 0.12);
+  --ui-tl-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

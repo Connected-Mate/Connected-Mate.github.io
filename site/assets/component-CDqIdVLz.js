@@ -697,5 +697,37 @@ const css = /* css */ \`
   --ui-otp-accent: #4b87d1;
   --ui-otp-focus: rgba(255, 255, 255, 0.3);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-otp.ui-otp {
+  --ui-otp-bg: #ffffff;
+  --ui-otp-card: #ffffff;
+  --ui-otp-line: #dae2ec;
+  --ui-otp-line-strong: #cbd6e4;
+  --ui-otp-ink: #00162b;
+  --ui-otp-text: rgba(0, 22, 43, 0.66);
+  --ui-otp-muted: rgba(0, 22, 43, 0.56);
+  --ui-otp-faint: rgba(0, 22, 43, 0.36);
+  --ui-otp-danger: #8a3a22;
+  --ui-otp-success: #1d6a34;
+  --ui-otp-accent: #1a3e70;
+  --ui-otp-focus: rgba(143, 189, 242, 0.8);
+  --ui-otp-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-otp.ui-otp {
+  --ui-otp-bg: #16345c;
+  --ui-otp-card: #16345c;
+  --ui-otp-line: rgba(255, 255, 255, 0.12);
+  --ui-otp-line-strong: rgba(255, 255, 255, 0.2);
+  --ui-otp-ink: rgba(255, 255, 255, 0.94);
+  --ui-otp-text: rgba(255, 255, 255, 0.72);
+  --ui-otp-muted: rgba(255, 255, 255, 0.58);
+  --ui-otp-faint: rgba(255, 255, 255, 0.36);
+  --ui-otp-danger: #f2a48c;
+  --ui-otp-success: #7fe0a0;
+  --ui-otp-accent: #8fbdf2;
+  --ui-otp-focus: rgba(143, 189, 242, 0.6);
+  --ui-otp-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

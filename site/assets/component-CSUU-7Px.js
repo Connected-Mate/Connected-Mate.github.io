@@ -730,5 +730,13 @@ const css = /* css */ \`
 :where(.dark, [data-theme="dark"]) .ui-rd-panel { background: #0b2345; border-color: rgba(255, 255, 255, 0.08); }
 :where(.dark, [data-theme="dark"]) .ui-rd-fill { background: #0f2a50; }
 :where(.dark, [data-theme="dark"]) .ui-rd-option { color: #e8eef6; }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-rd.ui-rd {
+  --ui-rd-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-rd.ui-rd {
+  --ui-rd-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

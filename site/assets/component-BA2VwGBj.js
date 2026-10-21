@@ -295,5 +295,13 @@ const css = /* css */ \`
   --ui-ti-shadow: 0 calc(10 * var(--u)) calc(24 * var(--u)) rgba(0, 22, 43, 0.4), 0 calc(2 * var(--u)) calc(5 * var(--u)) rgba(0, 22, 43, 0.3);
   --ui-ti-lift: 0 calc(18 * var(--u)) calc(34 * var(--u)) rgba(0, 22, 43, 0.5), 0 calc(3 * var(--u)) calc(8 * var(--u)) rgba(0, 22, 43, 0.3);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-ti.ui-ti {
+  --ui-ti-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-ti.ui-ti {
+  --ui-ti-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

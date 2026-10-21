@@ -851,5 +851,121 @@ const css = /* css */ \`
   --ui-edc-focus: rgba(72, 131, 206, 0.5);
 }
 :where(.dark, [data-theme="dark"]) .ui-edc__primary:hover:not(:disabled) { background: #ffffff; }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-edc.ui-edc {
+  --ui-edc-card: #ffffff;
+  --ui-edc-strong: #00162b;
+  --ui-edc-ink: #00162b;
+  --ui-edc-text: rgba(0, 22, 43, 0.66);
+  --ui-edc-muted: rgba(0, 22, 43, 0.56);
+  --ui-edc-faint: rgba(0, 22, 43, 0.36);
+  --ui-edc-icon: rgba(0, 22, 43, 0.52);
+  --ui-edc-line: #dae2ec;
+  --ui-edc-fill: rgba(26, 62, 112, 0.06);
+  --ui-edc-wash: rgba(26, 62, 112, 0.035);
+  --ui-edc-solid: #851437;
+  --ui-edc-on-solid: #ffffff;
+  --ui-edc-accent: #1a3e70;
+  --ui-edc-ok: #1d6a34;
+  --ui-edc-ok-bg: #eafbee;
+  --ui-edc-warn: #775810;
+  --ui-edc-warn-bg: #fdf6dd;
+  --ui-edc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-edc-shadow-pop: 0 0 0 1px #cbd6e4, 0 24px 48px -24px rgba(26, 62, 112, 0.3), 0 8px 16px -4px rgba(26, 62, 112, 0.16);
+  --ui-edc-focus: rgba(143, 189, 242, 0.8);
+  --ui-edc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-edc.ui-edc {
+  --ui-edc-card: #16345c;
+  --ui-edc-strong: #ffffff;
+  --ui-edc-ink: rgba(255, 255, 255, 0.94);
+  --ui-edc-text: rgba(255, 255, 255, 0.72);
+  --ui-edc-muted: rgba(255, 255, 255, 0.58);
+  --ui-edc-faint: rgba(255, 255, 255, 0.36);
+  --ui-edc-icon: rgba(255, 255, 255, 0.62);
+  --ui-edc-line: rgba(255, 255, 255, 0.12);
+  --ui-edc-fill: rgba(255, 255, 255, 0.07);
+  --ui-edc-wash: rgba(255, 255, 255, 0.04);
+  --ui-edc-solid: #a8204d;
+  --ui-edc-on-solid: #ffffff;
+  --ui-edc-accent: #8fbdf2;
+  --ui-edc-ok: #7fe0a0;
+  --ui-edc-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-edc-warn: #f3d27a;
+  --ui-edc-warn-bg: rgba(243, 210, 122, 0.14);
+  --ui-edc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-edc-shadow-pop: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 24px 44px -20px rgba(3, 12, 28, 0.75), 0 8px 16px -8px rgba(3, 12, 28, 0.5);
+  --ui-edc-focus: rgba(143, 189, 242, 0.6);
+  --ui-edc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-edc {
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px #dae2ec, 0 0 0 6px #f2f6fa, 0 0 0 7px #dae2ec,
+  0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.18);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-edc,
+html body :is(.dark, [data-theme="dark"]) .ui-edc {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 0 6px #0f2747, 0 0 0 7px rgba(255, 255, 255, 0.1),
+  0 26px 40px -20px rgba(3, 12, 28, 0.8);
+}
+html body .ui-edc__menu {
+  border-radius: 12px;
+}
+html body .ui-edc__primary {
+  border-radius: 9px;
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 6px 12px -6px rgba(133, 20, 55, 0.6);
+  transition: background-color .15s, box-shadow .15s, transform .15s cubic-bezier(.16, 1, .3, 1);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-edc__primary,
+html body :is(.dark, [data-theme="dark"]) .ui-edc__primary {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 6px 14px -6px rgba(3, 12, 28, 0.8);
+}
+html body .ui-edc__primary:hover:not(:disabled) {
+  background: #6d0f2d;
+  color: #ffffff;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-edc__primary:hover:not(:disabled),
+html body :is(.dark, [data-theme="dark"]) .ui-edc__primary:hover:not(:disabled) {
+  background: #bd2a5a;
+}
+html body .ui-edc__secondary {
+  border-radius: 9px;
+}
+html body .ui-edc__badge[data-tone="ok"],
+html body .ui-edc__receipt-icon[data-tone="ok"] {
+  box-shadow: inset 0 0 0 1px #c9f5cf;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-edc__badge[data-tone="ok"],
+html body :is(.dark, [data-theme="dark"]) .ui-edc__badge[data-tone="ok"],
+html:is(.dark, [data-theme="dark"]) body .ui-edc__receipt-icon[data-tone="ok"],
+html body :is(.dark, [data-theme="dark"]) .ui-edc__receipt-icon[data-tone="ok"] {
+  box-shadow: inset 0 0 0 1px rgba(127, 224, 160, 0.32);
+}
+html body .ui-edc__status {
+  box-shadow: inset 0 0 0 1px #fae6a0;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-edc__status,
+html body :is(.dark, [data-theme="dark"]) .ui-edc__status {
+  box-shadow: inset 0 0 0 1px rgba(243, 210, 122, 0.32);
+}
+html body .ui-edc__foot {
+  background: #f5f8fb;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-edc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-edc__foot {
+  background: rgba(4, 16, 38, 0.32);
+}
+html body .ui-edc__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
+  box-shadow: 0 0 0 1px #cbd6e4, 0 6px 12px -8px rgba(26, 62, 112, 0.35);
+  font-weight: 600;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-edc__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-edc__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 6px 12px -8px rgba(3, 12, 28, 0.7);
+}
+
 \`;
 `;export{e as default};

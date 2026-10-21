@@ -723,5 +723,36 @@ const css = /* css */ \`
   --ui-cf-nav-line: rgba(255, 255, 255, 0.1);
   --ui-cf-focus: rgba(255, 255, 255, 0.35);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-cf.ui-cf {
+  --ui-cf-ink: #00162b;
+  --ui-cf-muted: rgba(0, 22, 43, 0.56);
+  --ui-cf-card: #ffffff;
+  --ui-cf-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-cf-focus: rgba(143, 189, 242, 0.8);
+  --ui-cf-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-cf.ui-cf {
+  --ui-cf-ink: rgba(255, 255, 255, 0.94);
+  --ui-cf-muted: rgba(255, 255, 255, 0.58);
+  --ui-cf-card: #16345c;
+  --ui-cf-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-cf-focus: rgba(143, 189, 242, 0.6);
+  --ui-cf-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-cf__card {
+  box-shadow: 0 0 0 1px #dae2ec, 0 12px 20px -14px rgba(26, 62, 112, 0.4);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-cf__card,
+html body :is(.dark, [data-theme="dark"]) .ui-cf__card {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 20px -12px rgba(3, 12, 28, 0.7);
+}
+html body .ui-cf__title {
+  font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.002em;
+}
+
 \`;
 `;export{e as default};

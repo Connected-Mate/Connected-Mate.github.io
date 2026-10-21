@@ -433,5 +433,45 @@ const css = /* css */ \`
   --ui-btn-danger-bg: rgba(255, 64, 64, 0.16);
   --ui-btn-focus: rgba(232, 238, 246, 0.3);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-button.ui-button {
+  --ui-btn-ink: #00162b;
+  --ui-btn-dark-top: #921a40;
+  --ui-btn-dark-bottom: #7a1131;
+  --ui-btn-dark-hover-top: #7f1536;
+  --ui-btn-dark-hover-bottom: #650d2a;
+  --ui-btn-edge-top: #b04468;
+  --ui-btn-edge-mid: #851437;
+  --ui-btn-edge-bottom: #5c0b25;
+  --ui-btn-dark-shadow: rgba(133, 20, 55, 0.22);
+  --ui-btn-surface: #ffffff;
+  --ui-btn-line: #dae2ec;
+  --ui-btn-muted: rgba(0, 22, 43, 0.56);
+  --ui-btn-fill: rgba(26, 62, 112, 0.06);
+  --ui-btn-danger: #8a3a22;
+  --ui-btn-danger-bg: #fdeee8;
+  --ui-btn-focus: rgba(143, 189, 242, 0.8);
+  --ui-btn-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-button.ui-button {
+  --ui-btn-ink: rgba(255, 255, 255, 0.94);
+  --ui-btn-dark-top: #b02654;
+  --ui-btn-dark-bottom: #951b44;
+  --ui-btn-dark-hover-top: #bd2f5f;
+  --ui-btn-dark-hover-bottom: #a2214d;
+  --ui-btn-edge-top: #cf5a80;
+  --ui-btn-edge-mid: #a8204d;
+  --ui-btn-edge-bottom: #6d0f2d;
+  --ui-btn-dark-shadow: rgba(3, 12, 28, 0.5);
+  --ui-btn-surface: #16345c;
+  --ui-btn-line: rgba(255, 255, 255, 0.12);
+  --ui-btn-muted: rgba(255, 255, 255, 0.58);
+  --ui-btn-fill: rgba(255, 255, 255, 0.07);
+  --ui-btn-danger: #f2a48c;
+  --ui-btn-danger-bg: rgba(242, 164, 140, 0.14);
+  --ui-btn-focus: rgba(143, 189, 242, 0.6);
+  --ui-btn-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

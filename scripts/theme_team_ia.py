@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Repaint the static mirror in the A-Team design system (IA Innovation team).
 
-The mirror keeps every route, demo and layout of the original site. This pass
-only changes what a viewer reads as the brand: colours, typeface and the
-raster previews that show the components. Reference: the Vibe Creators hub
+The site itself stays exactly as the original: its pages, header, sidebar and
+typeface are untouched. Only the COMPONENTS are dressed (the demo modules, the
+registry code and the raster previews that show them), plus one stylesheet,
+/ateam/composants.css, generated from their own CSS by theme/composants.py. Reference: the Vibe Creators hub
 ("Osmose", css/hub-osmose.css in the programme repo) — its sign-in page, the
 account pages and the programme e-mails. Light objects on a tinted, gridded
 ground (#eaeff6), each with a 1px hairline and a navy-tinted shadow; a navy
@@ -38,7 +39,9 @@ from PIL import Image, UnidentifiedImageError
 
 MARKER = ".theme-team-ia"
 TEXT_SUFFIXES = {".css", ".js", ".json", ".svg", ".html", ".webmanifest"}
-IMAGE_DIRS = ("previews", "landing", "illustrations")  # not photos of people or album covers
+IMAGE_DIRS = ("previews", "illustrations")  # component pictures only: not the landing, people or covers
+# The modules that hold the components (both styles), and the registry code people copy.
+COMPONENT_ASSETS = re.compile(r"^(demo|component|docs)[.-]")
 IMAGE_SUFFIXES = {".webp", ".png", ".jpg", ".jpeg"}
 
 NEUTRAL_HUE = 258.0  # bleu nuit #1a3e70
@@ -63,9 +66,9 @@ BRAND_COLOURS = {
 }
 
 THEME_DIR = Path(__file__).resolve().parent / "theme"
-# The A-Team layer: stylesheet, masthead script and brand files, served from /ateam/.
-THEME_FILES = ("osmose.css", "composants.css", "ateam.js", "a-team.svg", "inoui-white.png")
-HEAD_TAGS = '<link rel="stylesheet" href="/ateam/osmose.css">\n    <script defer src="/ateam/ateam.js"></script>\n  '
+# The component layer, served from /ateam/.
+THEME_FILES = ("composants.css",)
+HEAD_TAGS = '<link rel="stylesheet" href="/ateam/composants.css">\n  '
 
 
 
@@ -252,6 +255,14 @@ def paint_image(path):
     return True
 
 
+def is_component(path, site):
+    """A component's own file: a demo/component module, or a registry item (the code people copy)."""
+    parts = path.relative_to(site).parts
+    if parts[0] == "assets":
+        return bool(COMPONENT_ASSETS.match(path.name))
+    return parts[0] == "r" and path.suffix == ".json"
+
+
 def main():
     site = Path(sys.argv[1] if len(sys.argv) > 1 else Path(__file__).resolve().parent.parent / "site")
     marker = site / MARKER
@@ -264,7 +275,7 @@ def main():
     texts = images = 0
     for path in sorted(p for p in site.rglob("*") if p.is_file()):
         suffix = path.suffix.lower()
-        if suffix in TEXT_SUFFIXES:
+        if suffix in TEXT_SUFFIXES and is_component(path, site):
             before = path.read_text(encoding="utf-8")
             after = paint_text(before, painter)
             if suffix == ".json" and path.parent.name == "r":
@@ -285,13 +296,13 @@ def main():
     pages = 0
     for page in sorted(site.rglob("*.html")):
         html = page.read_text(encoding="utf-8")
-        if "</head>" not in html or "/ateam/osmose.css" in html:
+        if "</head>" not in html or "/ateam/composants.css" in html:
             continue
         page.write_text(html.replace("</head>", HEAD_TAGS + "</head>", 1), encoding="utf-8")
         pages += 1
 
     marker.write_text("Repainted in the A-Team design system by scripts/theme_team_ia.py\n", encoding="utf-8")
-    print(f"Repainted {texts} text files and {images} images; A-Team layer added to {pages} pages.")
+    print(f"Repainted {texts} text files and {images} images; component layer linked from {pages} pages.")
 
 
 if __name__ == "__main__":

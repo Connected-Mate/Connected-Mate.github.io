@@ -365,5 +365,15 @@ const css = /* css */ \`
   --ui-gc-halo: rgba(255, 255, 255, 0.35);
   --ui-gc-edge: rgba(255, 255, 255, 0.25);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-gc.ui-gc {
+  --ui-gc-text: rgba(0, 22, 43, 0.66);
+  --ui-gc-ink: #00162b;
+}
+:is(.dark, [data-theme="dark"]) .ui-gc.ui-gc {
+  --ui-gc-text: rgba(255, 255, 255, 0.72);
+  --ui-gc-ink: rgba(255, 255, 255, 0.94);
+}
+
 \`;
 `;export{e as default};

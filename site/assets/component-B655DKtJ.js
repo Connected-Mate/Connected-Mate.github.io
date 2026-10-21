@@ -439,5 +439,43 @@ const css = /* css */ \`
 :where(.dark, [data-theme="dark"]) .ui-pm__track { background: rgba(255, 255, 255, 0.1); }
 :where(.dark, [data-theme="dark"]) .ui-pm__next:hover,
 :where(.dark, [data-theme="dark"]) .ui-pm__next:focus-visible { background: rgba(255, 255, 255, 0.06); }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-pm.ui-pm {
+  --ui-pm-card: #ffffff;
+  --ui-pm-line: #dae2ec;
+  --ui-pm-ink: #00162b;
+  --ui-pm-text: rgba(0, 22, 43, 0.66);
+  --ui-pm-muted: rgba(0, 22, 43, 0.56);
+  --ui-pm-icon: rgba(0, 22, 43, 0.52);
+  --ui-pm-hover: rgba(26, 62, 112, 0.06);
+  --ui-pm-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ui-pm-tray: #f2f6fa;
+}
+:is(.dark, [data-theme="dark"]) .ui-pm.ui-pm {
+  --ui-pm-card: #16345c;
+  --ui-pm-line: rgba(255, 255, 255, 0.12);
+  --ui-pm-ink: rgba(255, 255, 255, 0.94);
+  --ui-pm-text: rgba(255, 255, 255, 0.72);
+  --ui-pm-muted: rgba(255, 255, 255, 0.58);
+  --ui-pm-icon: rgba(255, 255, 255, 0.62);
+  --ui-pm-hover: rgba(255, 255, 255, 0.07);
+  --ui-pm-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ui-pm-tray: #0f2747;
+}
+html body .ui-pm {
+  box-shadow: 0 0 0 1px #dae2ec, 0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.16);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-pm,
+html body :is(.dark, [data-theme="dark"]) .ui-pm {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 26px 40px -20px rgba(3, 12, 28, 0.8);
+}
+html body .ui-pm__card {
+  box-shadow: 0 0 0 1px #dae2ec, 0 12px 20px -14px rgba(26, 62, 112, 0.4);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-pm__card,
+html body :is(.dark, [data-theme="dark"]) .ui-pm__card {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 20px -12px rgba(3, 12, 28, 0.7);
+}
+
 \`;
 `;export{e as default};

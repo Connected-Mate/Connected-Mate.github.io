@@ -595,5 +595,36 @@ const css = /* css */ \`
   --ui-tw-focus: #4b87d1;
 }
 :where(.dark, [data-theme="dark"]) .ui-tw__avatar { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06); }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-tw.ui-tw {
+  --ui-tw-card: #ffffff;
+  --ui-tw-line: #dae2ec;
+  --ui-tw-ink: #00162b;
+  --ui-tw-text: rgba(0, 22, 43, 0.66);
+  --ui-tw-muted: rgba(0, 22, 43, 0.56);
+  --ui-tw-faint: rgba(0, 22, 43, 0.36);
+  --ui-tw-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-tw-focus: rgba(143, 189, 242, 0.8);
+  --ui-tw-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-tw.ui-tw {
+  --ui-tw-card: #16345c;
+  --ui-tw-line: rgba(255, 255, 255, 0.12);
+  --ui-tw-ink: rgba(255, 255, 255, 0.94);
+  --ui-tw-text: rgba(255, 255, 255, 0.72);
+  --ui-tw-muted: rgba(255, 255, 255, 0.58);
+  --ui-tw-faint: rgba(255, 255, 255, 0.36);
+  --ui-tw-shadow: 0 0 0 1px var(--ui-tw-line);
+  --ui-tw-focus: rgba(143, 189, 242, 0.6);
+  --ui-tw-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-tw__card {
+  box-shadow: 0 0 0 1px #dae2ec, 0 12px 20px -14px rgba(26, 62, 112, 0.4);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-tw__card,
+html body :is(.dark, [data-theme="dark"]) .ui-tw__card {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 20px -12px rgba(3, 12, 28, 0.7);
+}
+
 \`;
 `;export{e as default};

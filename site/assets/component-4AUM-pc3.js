@@ -393,5 +393,46 @@ const css = /* css */ \`
   background-image: linear-gradient(90deg, transparent 30%, rgba(255, 255, 255, 0.7) 50%, transparent 70%);
 }
 :where(.dark, [data-theme="dark"]) .ui-progress__step:focus-visible { outline-color: rgba(232, 238, 246, 0.3); }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-progress.ui-progress {
+  --ui-pg-card: #ffffff;
+  --ui-pg-line: #dae2ec;
+  --ui-pg-ink: #00162b;
+  --ui-pg-muted: rgba(0, 22, 43, 0.56);
+  --ui-pg-track: rgba(26, 62, 112, 0.1);
+  --ui-pg-hover: rgba(26, 62, 112, 0.06);
+  --ui-pg-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-progress.ui-progress {
+  --ui-pg-card: #16345c;
+  --ui-pg-line: rgba(255, 255, 255, 0.12);
+  --ui-pg-ink: rgba(255, 255, 255, 0.94);
+  --ui-pg-muted: rgba(255, 255, 255, 0.58);
+  --ui-pg-track: rgba(255, 255, 255, 0.12);
+  --ui-pg-hover: rgba(255, 255, 255, 0.07);
+  --ui-pg-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-progress__title {
+  font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.002em;
+}
+html body .ui-progress__step[aria-checked="true"] .ui-progress__check {
+  background: #851437;
+  box-shadow: none;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-progress__step[aria-checked="true"] .ui-progress__check,
+html body :is(.dark, [data-theme="dark"]) .ui-progress__step[aria-checked="true"] .ui-progress__check {
+  background: #a8204d;
+}
+html body .ui-progress__fill {
+  background: linear-gradient(90deg, #851437, #b5426a);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-progress__fill,
+html body :is(.dark, [data-theme="dark"]) .ui-progress__fill {
+  background: linear-gradient(90deg, #a8204d, #d9608a);
+}
+
 \`;
 `;export{e as default};

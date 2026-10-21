@@ -363,5 +363,83 @@ const css = /* css */ \`
   --ui-dic-shadow-hover: 0 0 0 0.5px rgba(255, 255, 255, 0.16), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
   --ui-dic-focus: rgba(72, 131, 206, 0.5);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-dic.ui-dic {
+  --ui-dic-card: #ffffff;
+  --ui-dic-strong: #00162b;
+  --ui-dic-ink: #00162b;
+  --ui-dic-text: rgba(0, 22, 43, 0.66);
+  --ui-dic-muted: rgba(0, 22, 43, 0.56);
+  --ui-dic-faint: rgba(0, 22, 43, 0.36);
+  --ui-dic-line: #dae2ec;
+  --ui-dic-wash: rgba(26, 62, 112, 0.035);
+  --ui-dic-ok: #1d6a34;
+  --ui-dic-ok-bg: #eafbee;
+  --ui-dic-solid: #851437;
+  --ui-dic-solid-hover: #6d0f2d;
+  --ui-dic-on-solid: #ffffff;
+  --ui-dic-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-dic-shadow-hover: 0 0 0 1px #cbd6e4, 0 14px 24px -14px rgba(26, 62, 112, 0.38), 0 4px 10px -6px rgba(26, 62, 112, 0.18);
+  --ui-dic-focus: rgba(143, 189, 242, 0.8);
+  --ui-dic-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-dic.ui-dic {
+  --ui-dic-card: #16345c;
+  --ui-dic-strong: #ffffff;
+  --ui-dic-ink: rgba(255, 255, 255, 0.94);
+  --ui-dic-text: rgba(255, 255, 255, 0.72);
+  --ui-dic-muted: rgba(255, 255, 255, 0.58);
+  --ui-dic-faint: rgba(255, 255, 255, 0.36);
+  --ui-dic-line: rgba(255, 255, 255, 0.12);
+  --ui-dic-wash: rgba(255, 255, 255, 0.04);
+  --ui-dic-ok: #7fe0a0;
+  --ui-dic-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-dic-solid: #a8204d;
+  --ui-dic-solid-hover: #bd2a5a;
+  --ui-dic-on-solid: #ffffff;
+  --ui-dic-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-dic-shadow-hover: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 14px 24px -14px rgba(3, 12, 28, 0.75);
+  --ui-dic-focus: rgba(143, 189, 242, 0.6);
+  --ui-dic-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-dic {
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px #dae2ec, 0 0 0 6px #f2f6fa, 0 0 0 7px #dae2ec,
+  0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.18);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-dic,
+html body :is(.dark, [data-theme="dark"]) .ui-dic {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 0 6px #0f2747, 0 0 0 7px rgba(255, 255, 255, 0.1),
+  0 26px 40px -20px rgba(3, 12, 28, 0.8);
+}
+html body :where(.ui-dic) .ui-dic__btn--primary {
+  border-radius: 9px;
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 6px 12px -6px rgba(133, 20, 55, 0.6);
+  transition: background-color .15s, box-shadow .15s, transform .15s cubic-bezier(.16, 1, .3, 1);
+}
+html:is(.dark, [data-theme="dark"]) body :where(.ui-dic) .ui-dic__btn--primary,
+html body :is(.dark, [data-theme="dark"]) :where(.ui-dic) .ui-dic__btn--primary {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 6px 14px -6px rgba(3, 12, 28, 0.8);
+}
+html body .ui-dic__btn {
+  border-radius: 9px;
+}
+html body .ui-dic__done {
+  box-shadow: inset 0 0 0 1px #c9f5cf;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-dic__done,
+html body :is(.dark, [data-theme="dark"]) .ui-dic__done {
+  box-shadow: inset 0 0 0 1px rgba(127, 224, 160, 0.32);
+}
+html body :where(.ui-dic) .ui-dic__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
+  box-shadow: 0 0 0 1px #cbd6e4, 0 6px 12px -8px rgba(26, 62, 112, 0.35);
+  font-weight: 600;
+}
+html:is(.dark, [data-theme="dark"]) body :where(.ui-dic) .ui-dic__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) :where(.ui-dic) .ui-dic__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 6px 12px -8px rgba(3, 12, 28, 0.7);
+}
+
 \`;
 `;export{e as default};

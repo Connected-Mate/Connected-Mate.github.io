@@ -302,5 +302,15 @@ const css = /* css */ \`
 :where(.dark, [data-theme="dark"]) .ui-gc-reply {
   box-shadow: 0 4px 12px rgba(0, 22, 43, 0.4), 0 1px 2px rgba(0, 22, 43, 0.4);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-gc.ui-gc {
+  --ui-gc-text: rgba(0, 22, 43, 0.66);
+  --ui-gc-ink: #00162b;
+}
+:is(.dark, [data-theme="dark"]) .ui-gc.ui-gc {
+  --ui-gc-text: rgba(255, 255, 255, 0.72);
+  --ui-gc-ink: rgba(255, 255, 255, 0.94);
+}
+
 \`;
 `;export{e as default};

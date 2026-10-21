@@ -488,5 +488,68 @@ const css = /* css */ \`
   --ui-fm-focus: #508cd7;
   --ui-fm-shadow: 0 1px 2px rgba(0, 22, 43, 0.4);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-fm.ui-fm {
+  --ui-fm-tray: #f2f6fa;
+  --ui-fm-card: #ffffff;
+  --ui-fm-ink: #00162b;
+  --ui-fm-text: rgba(0, 22, 43, 0.66);
+  --ui-fm-muted: rgba(0, 22, 43, 0.56);
+  --ui-fm-chip: #f2f6fa;
+  --ui-fm-chip-hover: #e9eff6;
+  --ui-fm-focus: rgba(143, 189, 242, 0.8);
+  --ui-fm-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-fm-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-fm.ui-fm {
+  --ui-fm-tray: #0f2747;
+  --ui-fm-card: #16345c;
+  --ui-fm-ink: rgba(255, 255, 255, 0.94);
+  --ui-fm-text: rgba(255, 255, 255, 0.72);
+  --ui-fm-muted: rgba(255, 255, 255, 0.58);
+  --ui-fm-chip: rgba(255, 255, 255, 0.07);
+  --ui-fm-chip-hover: rgba(255, 255, 255, 0.11);
+  --ui-fm-focus: rgba(143, 189, 242, 0.6);
+  --ui-fm-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-fm-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-fm {
+  box-shadow: 0 0 0 1px #dae2ec, 0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.16);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-fm,
+html body :is(.dark, [data-theme="dark"]) .ui-fm {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 26px 40px -20px rgba(3, 12, 28, 0.8);
+}
+html body .ui-fm__card {
+  box-shadow: 0 0 0 1px #dae2ec, 0 12px 20px -14px rgba(26, 62, 112, 0.4);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-fm__card,
+html body :is(.dark, [data-theme="dark"]) .ui-fm__card {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 20px -12px rgba(3, 12, 28, 0.7);
+}
+html body .ui-fm__title {
+  font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.002em;
+}
+html body .ui-fm__option[aria-checked="true"] .ui-fm__box {
+  background: #851437;
+  box-shadow: none;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-fm__option[aria-checked="true"] .ui-fm__box,
+html body :is(.dark, [data-theme="dark"]) .ui-fm__option[aria-checked="true"] .ui-fm__box {
+  background: #a8204d;
+}
+html body .ui-fm__hint kbd {
+  background: #ffffff;
+  box-shadow: 0 0 0 1px #dae2ec, 0 1px 0 1px #cbd6e4;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-fm__hint kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-fm__hint kbd {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 1px 0 1px rgba(0, 0, 0, 0.3);
+}
+
 \`;
 `;export{e as default};

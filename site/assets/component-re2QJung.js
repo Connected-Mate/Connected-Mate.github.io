@@ -207,5 +207,39 @@ const css = /* css */ \`
 :where(.dark, [data-theme="dark"]) .ui-cs__trend[data-tone="good"] { background: rgba(31, 138, 76, 0.18); color: #3fbf74; }
 :where(.dark, [data-theme="dark"]) .ui-cs__trend[data-tone="bad"] { background: rgba(229, 72, 77, 0.16); color: #f2777b; }
 :where(.dark, [data-theme="dark"]) .ui-cs__trend[data-tone="neutral"] { background: #0f2a50; color: #8090a8; }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-cs.ui-cs {
+  --ui-cs-tray: #f2f6fa;
+  --ui-cs-card: #ffffff;
+  --ui-cs-line: #dae2ec;
+  --ui-cs-ink: #00162b;
+  --ui-cs-muted: rgba(0, 22, 43, 0.56);
+  --ui-cs-accent: #1a3e70;
+  --ui-cs-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-cs.ui-cs {
+  --ui-cs-tray: #0f2747;
+  --ui-cs-card: #16345c;
+  --ui-cs-line: rgba(255, 255, 255, 0.12);
+  --ui-cs-ink: rgba(255, 255, 255, 0.94);
+  --ui-cs-muted: rgba(255, 255, 255, 0.58);
+  --ui-cs-accent: #8fbdf2;
+  --ui-cs-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-cs {
+  box-shadow: 0 0 0 1px #dae2ec, 0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.16);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-cs,
+html body :is(.dark, [data-theme="dark"]) .ui-cs {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 26px 40px -20px rgba(3, 12, 28, 0.8);
+}
+html body .ui-cs__card {
+  box-shadow: 0 0 0 1px #dae2ec, 0 12px 20px -14px rgba(26, 62, 112, 0.4);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-cs__card,
+html body :is(.dark, [data-theme="dark"]) .ui-cs__card {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 20px -12px rgba(3, 12, 28, 0.7);
+}
+
 \`;
 `;export{e as default};

@@ -967,5 +967,91 @@ const css = /* css */ \`
   --ui-tcc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
   --ui-tcc-focus: rgba(72, 131, 206, 0.5);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-tcc.ui-tcc {
+  --ui-tcc-card: #ffffff;
+  --ui-tcc-strong: #00162b;
+  --ui-tcc-ink: #00162b;
+  --ui-tcc-text: rgba(0, 22, 43, 0.66);
+  --ui-tcc-muted: rgba(0, 22, 43, 0.56);
+  --ui-tcc-faint: rgba(0, 22, 43, 0.36);
+  --ui-tcc-icon: rgba(0, 22, 43, 0.52);
+  --ui-tcc-line: #dae2ec;
+  --ui-tcc-wash: rgba(26, 62, 112, 0.035);
+  --ui-tcc-accent: #1a3e70;
+  --ui-tcc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-tcc-focus: rgba(143, 189, 242, 0.8);
+  --ui-tcc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-tcc.ui-tcc {
+  --ui-tcc-card: #16345c;
+  --ui-tcc-strong: #ffffff;
+  --ui-tcc-ink: rgba(255, 255, 255, 0.94);
+  --ui-tcc-text: rgba(255, 255, 255, 0.72);
+  --ui-tcc-muted: rgba(255, 255, 255, 0.58);
+  --ui-tcc-faint: rgba(255, 255, 255, 0.36);
+  --ui-tcc-icon: rgba(255, 255, 255, 0.62);
+  --ui-tcc-line: rgba(255, 255, 255, 0.12);
+  --ui-tcc-wash: rgba(255, 255, 255, 0.04);
+  --ui-tcc-accent: #8fbdf2;
+  --ui-tcc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-tcc-focus: rgba(143, 189, 242, 0.6);
+  --ui-tcc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ui-tcc-group.ui-tcc-group {
+  --ui-tcc-card: #ffffff;
+  --ui-tcc-strong: #00162b;
+  --ui-tcc-ink: #00162b;
+  --ui-tcc-text: rgba(0, 22, 43, 0.66);
+  --ui-tcc-muted: rgba(0, 22, 43, 0.56);
+  --ui-tcc-faint: rgba(0, 22, 43, 0.36);
+  --ui-tcc-icon: rgba(0, 22, 43, 0.52);
+  --ui-tcc-line: #dae2ec;
+  --ui-tcc-wash: rgba(26, 62, 112, 0.035);
+  --ui-tcc-accent: #1a3e70;
+  --ui-tcc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-tcc-focus: rgba(143, 189, 242, 0.8);
+  --ui-tcc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-tcc-group.ui-tcc-group {
+  --ui-tcc-card: #16345c;
+  --ui-tcc-strong: #ffffff;
+  --ui-tcc-ink: rgba(255, 255, 255, 0.94);
+  --ui-tcc-text: rgba(255, 255, 255, 0.72);
+  --ui-tcc-muted: rgba(255, 255, 255, 0.58);
+  --ui-tcc-faint: rgba(255, 255, 255, 0.36);
+  --ui-tcc-icon: rgba(255, 255, 255, 0.62);
+  --ui-tcc-line: rgba(255, 255, 255, 0.12);
+  --ui-tcc-wash: rgba(255, 255, 255, 0.04);
+  --ui-tcc-accent: #8fbdf2;
+  --ui-tcc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-tcc-focus: rgba(143, 189, 242, 0.6);
+  --ui-tcc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-tcc {
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px #dae2ec, 0 0 0 6px #f2f6fa, 0 0 0 7px #dae2ec,
+  0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.18);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-tcc,
+html body :is(.dark, [data-theme="dark"]) .ui-tcc {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 0 6px #0f2747, 0 0 0 7px rgba(255, 255, 255, 0.1),
+  0 26px 40px -20px rgba(3, 12, 28, 0.8);
+}
+html body .ui-tcc-group__stack .ui-tcc__icon {
+  box-shadow: 0 0 0 1px #dae2ec, 0 4px 10px -4px rgba(26, 62, 112, 0.3), inset 0 -2px 6px -4px rgba(26, 62, 112, 0.4);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-tcc-group__stack .ui-tcc__icon,
+html body :is(.dark, [data-theme="dark"]) .ui-tcc-group__stack .ui-tcc__icon {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 4px 10px -4px rgba(3, 12, 28, 0.7), inset 0 -2px 6px -4px rgba(255, 255, 255, 0.25);
+}
+html body .ui-tcc__error {
+  box-shadow: inset 0 0 0 1px #f5d5c9;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-tcc__error,
+html body :is(.dark, [data-theme="dark"]) .ui-tcc__error {
+  box-shadow: inset 0 0 0 1px rgba(242, 164, 140, 0.32);
+}
+
 \`;
 `;export{e as default};

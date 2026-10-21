@@ -338,5 +338,19 @@ const css = /* css */ \`
   --ui-lyr-text: #e8eef6;
   --ui-lyr-muted: #8090a8;
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-lyr.ui-lyr {
+  --ui-lyr-accent: #1a3e70;
+  --ui-lyr-text: rgba(0, 22, 43, 0.66);
+  --ui-lyr-muted: rgba(0, 22, 43, 0.56);
+  --ui-lyr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-lyr.ui-lyr {
+  --ui-lyr-accent: #8fbdf2;
+  --ui-lyr-text: rgba(255, 255, 255, 0.72);
+  --ui-lyr-muted: rgba(255, 255, 255, 0.58);
+  --ui-lyr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

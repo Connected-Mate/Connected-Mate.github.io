@@ -432,5 +432,68 @@ const css = /* css */ \`
   --ui-pgc-focus: rgba(72, 131, 206, 0.5);
   --ui-pgc-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(0, 22, 43, 0.4);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-progressc.ui-progressc {
+  --ui-pgc-card: #ffffff;
+  --ui-pgc-strong: #00162b;
+  --ui-pgc-ink: #00162b;
+  --ui-pgc-muted: rgba(0, 22, 43, 0.56);
+  --ui-pgc-faint: rgba(0, 22, 43, 0.36);
+  --ui-pgc-icon: rgba(0, 22, 43, 0.52);
+  --ui-pgc-track: rgba(26, 62, 112, 0.1);
+  --ui-pgc-hover: rgba(26, 62, 112, 0.06);
+  --ui-pgc-accent: #1a3e70;
+  --ui-pgc-on-accent: #ffffff;
+  --ui-pgc-focus: rgba(143, 189, 242, 0.8);
+  --ui-pgc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-pgc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-progressc.ui-progressc {
+  --ui-pgc-card: #16345c;
+  --ui-pgc-strong: #ffffff;
+  --ui-pgc-ink: rgba(255, 255, 255, 0.94);
+  --ui-pgc-muted: rgba(255, 255, 255, 0.58);
+  --ui-pgc-faint: rgba(255, 255, 255, 0.36);
+  --ui-pgc-icon: rgba(255, 255, 255, 0.62);
+  --ui-pgc-track: rgba(255, 255, 255, 0.12);
+  --ui-pgc-hover: rgba(255, 255, 255, 0.07);
+  --ui-pgc-accent: #8fbdf2;
+  --ui-pgc-on-accent: #0f2747;
+  --ui-pgc-focus: rgba(143, 189, 242, 0.6);
+  --ui-pgc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-pgc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-progressc {
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px #dae2ec, 0 0 0 6px #f2f6fa, 0 0 0 7px #dae2ec,
+  0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.18);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-progressc,
+html body :is(.dark, [data-theme="dark"]) .ui-progressc {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 0 6px #0f2747, 0 0 0 7px rgba(255, 255, 255, 0.1),
+  0 26px 40px -20px rgba(3, 12, 28, 0.8);
+}
+html body .ui-progressc__title {
+  font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.002em;
+}
+html body .ui-progressc__step[aria-checked="true"] .ui-progressc__check {
+  background: #851437;
+  box-shadow: none;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-progressc__step[aria-checked="true"] .ui-progressc__check,
+html body :is(.dark, [data-theme="dark"]) .ui-progressc__step[aria-checked="true"] .ui-progressc__check {
+  background: #a8204d;
+}
+html body .ui-progressc__fill {
+  background: linear-gradient(90deg, #851437, #b5426a);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-progressc__fill,
+html body :is(.dark, [data-theme="dark"]) .ui-progressc__fill {
+  background: linear-gradient(90deg, #a8204d, #d9608a);
+}
+
 \`;
 `;export{e as default};

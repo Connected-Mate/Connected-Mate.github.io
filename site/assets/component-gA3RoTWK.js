@@ -368,5 +368,36 @@ const css = /* css */ \`
   box-shadow: 0 0 0 1px var(--ui-ns-line), 0 1px 2px rgba(0, 22, 43, 0.4);
 }
 :where(.dark, [data-theme="dark"]) .ui-ns__btn:hover { background: #163158; }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-ns.ui-ns {
+  --ui-ns-card: #ffffff;
+  --ui-ns-line: #dae2ec;
+  --ui-ns-ink: #00162b;
+  --ui-ns-muted: rgba(0, 22, 43, 0.56);
+  --ui-ns-accent: #1a3e70;
+  --ui-ns-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-ns.ui-ns {
+  --ui-ns-card: #16345c;
+  --ui-ns-line: rgba(255, 255, 255, 0.12);
+  --ui-ns-ink: rgba(255, 255, 255, 0.94);
+  --ui-ns-muted: rgba(255, 255, 255, 0.58);
+  --ui-ns-accent: #8fbdf2;
+  --ui-ns-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-ns__card {
+  box-shadow: 0 0 0 1px #dae2ec, 0 12px 20px -14px rgba(26, 62, 112, 0.4);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-ns__card,
+html body :is(.dark, [data-theme="dark"]) .ui-ns__card {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 20px -12px rgba(3, 12, 28, 0.7);
+}
+html body .ui-ns__title {
+  font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.002em;
+}
+
 \`;
 `;export{e as default};

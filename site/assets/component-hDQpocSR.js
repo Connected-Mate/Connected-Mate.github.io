@@ -309,5 +309,17 @@ const css = /* css */ \`
   --ui-mw-fill: rgba(255, 255, 255, 0.07);
   --ui-mw-mark: #e8eef6;
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-mw.ui-mw {
+  --ui-mw-ink: #00162b;
+  --ui-mw-muted: rgba(0, 22, 43, 0.56);
+  --ui-mw-fill: rgba(26, 62, 112, 0.06);
+}
+:is(.dark, [data-theme="dark"]) .ui-mw.ui-mw {
+  --ui-mw-ink: rgba(255, 255, 255, 0.94);
+  --ui-mw-muted: rgba(255, 255, 255, 0.58);
+  --ui-mw-fill: rgba(255, 255, 255, 0.07);
+}
+
 \`;
 `;export{e as default};

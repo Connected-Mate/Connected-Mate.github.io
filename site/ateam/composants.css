@@ -13,13 +13,13 @@
   --ui-ad-accent: #1a3e70;
   --ui-ad-ok: #1d6a34;
   --ui-ad-accent-ring: #c1daff;
-  --ui-ad-tile: #eef2f8;
+  --ui-ad-tile: #f2f6fa;
   --ui-ad-ok-bg: #eafbee;
   --ui-ad-danger: #8a3a22;
   --ui-ad-danger-bg: #fdeee8;
   --ui-ad-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ui-ad-faint: rgba(0, 22, 43, 0.36);
-  --ui-ad-chip: #eef5ff;
+  --ui-ad-chip: #f2f6fa;
   --ui-ad-track: rgba(26, 62, 112, 0.1);
   --ui-ad-warn-bg: #fdf6dd;
   --ui-ad-warn-fg: #775810;
@@ -42,7 +42,7 @@
   --ui-ad-danger-bg: rgba(242, 164, 140, 0.14);
   --ui-ad-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ui-ad-faint: rgba(255, 255, 255, 0.36);
-  --ui-ad-chip: rgba(143, 189, 242, 0.16);
+  --ui-ad-chip: rgba(255, 255, 255, 0.07);
   --ui-ad-track: rgba(255, 255, 255, 0.12);
   --ui-ad-warn-bg: rgba(243, 210, 122, 0.14);
   --ui-ad-warn-fg: #f3d27a;
@@ -95,7 +95,7 @@
   --ui-ag-ink: #00162b;
   --ui-ag-text: rgba(0, 22, 43, 0.66);
   --ui-ag-muted: rgba(0, 22, 43, 0.56);
-  --ui-ag-chip: #eef5ff;
+  --ui-ag-chip: #f2f6fa;
   --ui-ag-soft: #f7f9fc;
   --ui-ag-ok: #1d6a34;
   --ui-ag-ok-bg: #eafbee;
@@ -106,7 +106,7 @@
   --ui-ag-ink: rgba(255, 255, 255, 0.94);
   --ui-ag-text: rgba(255, 255, 255, 0.72);
   --ui-ag-muted: rgba(255, 255, 255, 0.58);
-  --ui-ag-chip: rgba(143, 189, 242, 0.16);
+  --ui-ag-chip: rgba(255, 255, 255, 0.07);
   --ui-ag-soft: #1b3c68;
   --ui-ag-ok: #7fe0a0;
   --ui-ag-ok-bg: rgba(127, 224, 160, 0.14);
@@ -121,7 +121,7 @@
   --ui-agt-muted: rgba(0, 22, 43, 0.56);
   --ui-agt-faint: rgba(0, 22, 43, 0.36);
   --ui-agt-line: #dae2ec;
-  --ui-agt-chip: #eef5ff;
+  --ui-agt-chip: #f2f6fa;
   --ui-agt-accent: #1a3e70;
   --ui-agt-ok-bg: #eafbee;
   --ui-agt-ok-fg: #1d6a34;
@@ -140,7 +140,7 @@
   --ui-agt-muted: rgba(255, 255, 255, 0.58);
   --ui-agt-faint: rgba(255, 255, 255, 0.36);
   --ui-agt-line: rgba(255, 255, 255, 0.12);
-  --ui-agt-chip: rgba(143, 189, 242, 0.16);
+  --ui-agt-chip: rgba(255, 255, 255, 0.07);
   --ui-agt-accent: #8fbdf2;
   --ui-agt-ok-bg: rgba(127, 224, 160, 0.14);
   --ui-agt-ok-fg: #7fe0a0;
@@ -201,7 +201,7 @@
   --ui-ai-tray: #f2f6fa;
   --ui-ai-card: #ffffff;
   --ui-ai-line: #dae2ec;
-  --ui-ai-chip: #eef5ff;
+  --ui-ai-chip: #f2f6fa;
   --ui-ai-track: rgba(26, 62, 112, 0.1);
   --ui-ai-ink: #00162b;
   --ui-ai-text: rgba(0, 22, 43, 0.66);
@@ -220,7 +220,7 @@
   --ui-ai-tray: #0f2747;
   --ui-ai-card: #16345c;
   --ui-ai-line: rgba(255, 255, 255, 0.12);
-  --ui-ai-chip: rgba(143, 189, 242, 0.16);
+  --ui-ai-chip: rgba(255, 255, 255, 0.07);
   --ui-ai-track: rgba(255, 255, 255, 0.12);
   --ui-ai-ink: rgba(255, 255, 255, 0.94);
   --ui-ai-text: rgba(255, 255, 255, 0.72);
@@ -265,7 +265,8 @@
   --ui-ans-text: rgba(0, 22, 43, 0.66);
   --ui-ans-muted: rgba(0, 22, 43, 0.56);
   --ui-ans-faint: rgba(0, 22, 43, 0.36);
-  --ui-ans-chip: #eef5ff;
+  --ui-ans-chip: #f2f6fa;
+  --ui-ans-chip-hover: #e9eff6;
   --ui-ans-hover: rgba(26, 62, 112, 0.06);
   --ui-ans-ok: #1d6a34;
   --ui-ans-focus: rgba(143, 189, 242, 0.8);
@@ -280,7 +281,8 @@
   --ui-ans-text: rgba(255, 255, 255, 0.72);
   --ui-ans-muted: rgba(255, 255, 255, 0.58);
   --ui-ans-faint: rgba(255, 255, 255, 0.36);
-  --ui-ans-chip: rgba(143, 189, 242, 0.16);
+  --ui-ans-chip: rgba(255, 255, 255, 0.07);
+  --ui-ans-chip-hover: rgba(255, 255, 255, 0.11);
   --ui-ans-hover: rgba(255, 255, 255, 0.07);
   --ui-ans-ok: #7fe0a0;
   --ui-ans-focus: rgba(143, 189, 242, 0.6);
@@ -335,7 +337,7 @@
   --ui-ap-muted: rgba(0, 22, 43, 0.56);
   --ui-ap-line: #dae2ec;
   --ui-ap-soft: #f7f9fc;
-  --ui-ap-tile: #eef2f8;
+  --ui-ap-tile: #f2f6fa;
   --ui-ap-hover: rgba(26, 62, 112, 0.06);
   --ui-ap-primary: #851437;
   --ui-ap-primary-hover: #6d0f2d;
@@ -371,7 +373,7 @@
   --ui-apc-muted: rgba(0, 22, 43, 0.56);
   --ui-apc-line: #dae2ec;
   --ui-apc-soft: #f7f9fc;
-  --ui-apc-tile: #eef2f8;
+  --ui-apc-tile: #f2f6fa;
   --ui-apc-hover: rgba(26, 62, 112, 0.06);
   --ui-apc-primary: #851437;
   --ui-apc-primary-hover: #6d0f2d;
@@ -773,7 +775,7 @@
   --ui-cbx-text: rgba(0, 22, 43, 0.66);
   --ui-cbx-muted: rgba(0, 22, 43, 0.56);
   --ui-cbx-faint: rgba(0, 22, 43, 0.36);
-  --ui-cbx-chip: #eef5ff;
+  --ui-cbx-chip: #f2f6fa;
   --ui-cbx-accent: #1a3e70;
   --ui-cbx-focus: rgba(143, 189, 242, 0.8);
   --ui-cbx-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
@@ -788,7 +790,7 @@
   --ui-cbx-text: rgba(255, 255, 255, 0.72);
   --ui-cbx-muted: rgba(255, 255, 255, 0.58);
   --ui-cbx-faint: rgba(255, 255, 255, 0.36);
-  --ui-cbx-chip: rgba(143, 189, 242, 0.16);
+  --ui-cbx-chip: rgba(255, 255, 255, 0.07);
   --ui-cbx-accent: #8fbdf2;
   --ui-cbx-focus: rgba(143, 189, 242, 0.6);
   --ui-cbx-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
@@ -917,7 +919,7 @@
   --ui-cm-text: rgba(0, 22, 43, 0.66);
   --ui-cm-muted: rgba(0, 22, 43, 0.56);
   --ui-cm-faint: rgba(0, 22, 43, 0.36);
-  --ui-cm-tile: #eef2f8;
+  --ui-cm-tile: #f2f6fa;
   --ui-cm-ok: #1d6a34;
   --ui-cm-accent: #1a3e70;
   --ui-cm-ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -947,7 +949,7 @@
   --ui-cmc-icon: rgba(0, 22, 43, 0.52);
   --ui-cmc-line: #dae2ec;
   --ui-cmc-line-strong: #cbd6e4;
-  --ui-cmc-tile: #eef2f8;
+  --ui-cmc-tile: #f2f6fa;
   --ui-cmc-accent: #1a3e70;
   --ui-cmc-ok: #1d6a34;
   --ui-cmc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
@@ -1535,8 +1537,6 @@
   --ui-drpc-wash: rgba(26, 62, 112, 0.035);
   --ui-drpc-fill: rgba(26, 62, 112, 0.06);
   --ui-drpc-fill-strong: rgba(26, 62, 112, 0.1);
-  --ui-drpc-chip: #eef5ff;
-  --ui-drpc-on-chip: #1a3e70;
   --ui-drpc-accent: #1a3e70;
   --ui-drpc-focus: rgba(143, 189, 242, 0.8);
   --ui-drpc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
@@ -1557,8 +1557,6 @@
   --ui-drpc-wash: rgba(255, 255, 255, 0.04);
   --ui-drpc-fill: rgba(255, 255, 255, 0.07);
   --ui-drpc-fill-strong: rgba(255, 255, 255, 0.12);
-  --ui-drpc-chip: rgba(143, 189, 242, 0.16);
-  --ui-drpc-on-chip: #c1daff;
   --ui-drpc-accent: #8fbdf2;
   --ui-drpc-focus: rgba(143, 189, 242, 0.6);
   --ui-drpc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
@@ -1716,7 +1714,7 @@
   --ui-ed-ink: #00162b;
   --ui-ed-text: rgba(0, 22, 43, 0.66);
   --ui-ed-muted: rgba(0, 22, 43, 0.56);
-  --ui-ed-chip: #eef5ff;
+  --ui-ed-chip: #f2f6fa;
   --ui-ed-hover: rgba(26, 62, 112, 0.06);
   --ui-ed-warn: #775810;
   --ui-ed-warn-bg: #fdf6dd;
@@ -1738,7 +1736,7 @@
   --ui-ed-ink: rgba(255, 255, 255, 0.94);
   --ui-ed-text: rgba(255, 255, 255, 0.72);
   --ui-ed-muted: rgba(255, 255, 255, 0.58);
-  --ui-ed-chip: rgba(143, 189, 242, 0.16);
+  --ui-ed-chip: rgba(255, 255, 255, 0.07);
   --ui-ed-hover: rgba(255, 255, 255, 0.07);
   --ui-ed-warn: #f3d27a;
   --ui-ed-warn-bg: rgba(243, 210, 122, 0.14);
@@ -1807,7 +1805,8 @@
   --ui-fm-ink: #00162b;
   --ui-fm-text: rgba(0, 22, 43, 0.66);
   --ui-fm-muted: rgba(0, 22, 43, 0.56);
-  --ui-fm-chip: #eef5ff;
+  --ui-fm-chip: #f2f6fa;
+  --ui-fm-chip-hover: #e9eff6;
   --ui-fm-focus: rgba(143, 189, 242, 0.8);
   --ui-fm-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
   --ui-fm-ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -1819,7 +1818,8 @@
   --ui-fm-ink: rgba(255, 255, 255, 0.94);
   --ui-fm-text: rgba(255, 255, 255, 0.72);
   --ui-fm-muted: rgba(255, 255, 255, 0.58);
-  --ui-fm-chip: rgba(143, 189, 242, 0.16);
+  --ui-fm-chip: rgba(255, 255, 255, 0.07);
+  --ui-fm-chip-hover: rgba(255, 255, 255, 0.11);
   --ui-fm-focus: rgba(143, 189, 242, 0.6);
   --ui-fm-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
   --ui-fm-ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -2291,7 +2291,7 @@
   --ui-md-text: rgba(0, 22, 43, 0.66);
   --ui-md-muted: rgba(0, 22, 43, 0.56);
   --ui-md-accent: #1a3e70;
-  --ui-md-chip: #eef5ff;
+  --ui-md-chip: #f2f6fa;
   --ui-md-hover: rgba(26, 62, 112, 0.06);
   --ui-md-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
   --ui-md-ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -2305,7 +2305,7 @@
   --ui-md-text: rgba(255, 255, 255, 0.72);
   --ui-md-muted: rgba(255, 255, 255, 0.58);
   --ui-md-accent: #8fbdf2;
-  --ui-md-chip: rgba(143, 189, 242, 0.16);
+  --ui-md-chip: rgba(255, 255, 255, 0.07);
   --ui-md-hover: rgba(255, 255, 255, 0.07);
   --ui-md-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
   --ui-md-ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -2658,7 +2658,7 @@
   --ui-pl-faint: rgba(0, 22, 43, 0.36);
   --ui-pl-line: #dae2ec;
   --ui-pl-hover: rgba(26, 62, 112, 0.06);
-  --ui-pl-chip: #eef5ff;
+  --ui-pl-chip: #f2f6fa;
   --ui-pl-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -2671,7 +2671,7 @@
   --ui-pl-faint: rgba(255, 255, 255, 0.36);
   --ui-pl-line: rgba(255, 255, 255, 0.12);
   --ui-pl-hover: rgba(255, 255, 255, 0.07);
-  --ui-pl-chip: rgba(143, 189, 242, 0.16);
+  --ui-pl-chip: rgba(255, 255, 255, 0.07);
   --ui-pl-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -2686,7 +2686,7 @@
   --ui-plc-line: #dae2ec;
   --ui-plc-fill: rgba(26, 62, 112, 0.06);
   --ui-plc-wash: rgba(26, 62, 112, 0.035);
-  --ui-plc-chip: #eef5ff;
+  --ui-plc-chip: #f2f6fa;
   --ui-plc-accent: #1a3e70;
   --ui-plc-on-accent: #ffffff;
   --ui-plc-primary: #851437;
@@ -2709,7 +2709,7 @@
   --ui-plc-line: rgba(255, 255, 255, 0.12);
   --ui-plc-fill: rgba(255, 255, 255, 0.07);
   --ui-plc-wash: rgba(255, 255, 255, 0.04);
-  --ui-plc-chip: rgba(143, 189, 242, 0.16);
+  --ui-plc-chip: rgba(255, 255, 255, 0.07);
   --ui-plc-accent: #8fbdf2;
   --ui-plc-on-accent: #0f2747;
   --ui-plc-primary: #a8204d;
@@ -2861,7 +2861,7 @@
   --ui-pp-accent-soft: #eef5ff;
   --ui-pp-track: rgba(26, 62, 112, 0.1);
   --ui-pp-wash: rgba(26, 62, 112, 0.035);
-  --ui-pp-tile: #eef2f8;
+  --ui-pp-tile: #f2f6fa;
   --ui-pp-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -2889,7 +2889,7 @@
   --ui-pr-muted: rgba(0, 22, 43, 0.56);
   --ui-pr-faint: rgba(0, 22, 43, 0.36);
   --ui-pr-line: #dae2ec;
-  --ui-pr-chip: #eef5ff;
+  --ui-pr-chip: #f2f6fa;
   --ui-pr-track: rgba(26, 62, 112, 0.1);
   --ui-pr-accent: #1a3e70;
   --ui-pr-ok-bg: #eafbee;
@@ -2911,7 +2911,7 @@
   --ui-pr-muted: rgba(255, 255, 255, 0.58);
   --ui-pr-faint: rgba(255, 255, 255, 0.36);
   --ui-pr-line: rgba(255, 255, 255, 0.12);
-  --ui-pr-chip: rgba(143, 189, 242, 0.16);
+  --ui-pr-chip: rgba(255, 255, 255, 0.07);
   --ui-pr-track: rgba(255, 255, 255, 0.12);
   --ui-pr-accent: #8fbdf2;
   --ui-pr-ok-bg: rgba(127, 224, 160, 0.14);
@@ -3129,7 +3129,7 @@
   --ui-sf-muted: rgba(0, 22, 43, 0.56);
   --ui-sf-faint: rgba(0, 22, 43, 0.36);
   --ui-sf-hover: rgba(26, 62, 112, 0.06);
-  --ui-sf-chip: #eef5ff;
+  --ui-sf-chip: #f2f6fa;
   --ui-sf-track: rgba(26, 62, 112, 0.1);
   --ui-sf-accent: #1a3e70;
   --ui-sf-accent-soft: #eef5ff;
@@ -3147,7 +3147,7 @@
   --ui-sf-muted: rgba(255, 255, 255, 0.58);
   --ui-sf-faint: rgba(255, 255, 255, 0.36);
   --ui-sf-hover: rgba(255, 255, 255, 0.07);
-  --ui-sf-chip: rgba(143, 189, 242, 0.16);
+  --ui-sf-chip: rgba(255, 255, 255, 0.07);
   --ui-sf-track: rgba(255, 255, 255, 0.12);
   --ui-sf-accent: #8fbdf2;
   --ui-sf-accent-soft: rgba(143, 189, 242, 0.16);
@@ -3176,8 +3176,6 @@
   --ui-sfc-ok-soft: #c9f5cf;
   --ui-sfc-danger: #8a3a22;
   --ui-sfc-danger-soft: #f5d5c9;
-  --ui-sfc-chip: #eef5ff;
-  --ui-sfc-on-chip: #1a3e70;
   --ui-sfc-focus: rgba(143, 189, 242, 0.8);
   --ui-sfc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
   --ui-sfc-shadow-hover: 0 0 0 1px #cbd6e4, 0 14px 24px -14px rgba(26, 62, 112, 0.38), 0 4px 10px -6px rgba(26, 62, 112, 0.18);
@@ -3205,8 +3203,6 @@
   --ui-sfc-ok-soft: rgba(127, 224, 160, 0.3);
   --ui-sfc-danger: #f2a48c;
   --ui-sfc-danger-soft: rgba(242, 164, 140, 0.3);
-  --ui-sfc-chip: rgba(143, 189, 242, 0.16);
-  --ui-sfc-on-chip: #c1daff;
   --ui-sfc-focus: rgba(143, 189, 242, 0.6);
   --ui-sfc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
   --ui-sfc-shadow-hover: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 14px 24px -14px rgba(3, 12, 28, 0.75);
@@ -3374,7 +3370,7 @@
   --ui-st-faint: rgba(0, 22, 43, 0.36);
   --ui-st-line: #dae2ec;
   --ui-st-hover: rgba(26, 62, 112, 0.06);
-  --ui-st-chip: #eef5ff;
+  --ui-st-chip: #f2f6fa;
   --ui-st-accent: #1a3e70;
   --ui-st-accent-bg: #eef5ff;
   --ui-st-ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -3389,7 +3385,7 @@
   --ui-st-faint: rgba(255, 255, 255, 0.36);
   --ui-st-line: rgba(255, 255, 255, 0.12);
   --ui-st-hover: rgba(255, 255, 255, 0.07);
-  --ui-st-chip: rgba(143, 189, 242, 0.16);
+  --ui-st-chip: rgba(255, 255, 255, 0.07);
   --ui-st-accent: #8fbdf2;
   --ui-st-accent-bg: rgba(143, 189, 242, 0.16);
   --ui-st-ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -3464,7 +3460,7 @@
   --ui-tc-bg: #ffffff;
   --ui-tc-line: #dae2ec;
   --ui-tc-hover: rgba(26, 62, 112, 0.06);
-  --ui-tc-tile: #eef2f8;
+  --ui-tc-tile: #f2f6fa;
   --ui-tc-focus: rgba(143, 189, 242, 0.8);
   --ui-tc-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ui-tc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
@@ -3490,7 +3486,7 @@
   --ui-tc-bg: #ffffff;
   --ui-tc-line: #dae2ec;
   --ui-tc-hover: rgba(26, 62, 112, 0.06);
-  --ui-tc-tile: #eef2f8;
+  --ui-tc-tile: #f2f6fa;
   --ui-tc-focus: rgba(143, 189, 242, 0.8);
   --ui-tc-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -3576,7 +3572,8 @@
   --ui-tk-text: rgba(0, 22, 43, 0.66);
   --ui-tk-muted: rgba(0, 22, 43, 0.56);
   --ui-tk-line: #dae2ec;
-  --ui-tk-chip: #eef5ff;
+  --ui-tk-chip: #f2f6fa;
+  --ui-tk-chip-hover: #e9eff6;
   --ui-tk-focus: rgba(143, 189, 242, 0.8);
   --ui-tk-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -3586,7 +3583,8 @@
   --ui-tk-text: rgba(255, 255, 255, 0.72);
   --ui-tk-muted: rgba(255, 255, 255, 0.58);
   --ui-tk-line: rgba(255, 255, 255, 0.12);
-  --ui-tk-chip: rgba(143, 189, 242, 0.16);
+  --ui-tk-chip: rgba(255, 255, 255, 0.07);
+  --ui-tk-chip-hover: rgba(255, 255, 255, 0.11);
   --ui-tk-focus: rgba(143, 189, 242, 0.6);
   --ui-tk-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -3885,7 +3883,8 @@
   --ui-wa-ink: #00162b;
   --ui-wa-text: rgba(0, 22, 43, 0.66);
   --ui-wa-muted: rgba(0, 22, 43, 0.56);
-  --ui-wa-chip: #eef5ff;
+  --ui-wa-chip: #f2f6fa;
+  --ui-wa-chip-hover: #e9eff6;
   --ui-wa-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
   --ui-wa-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -3896,7 +3895,8 @@
   --ui-wa-ink: rgba(255, 255, 255, 0.94);
   --ui-wa-text: rgba(255, 255, 255, 0.72);
   --ui-wa-muted: rgba(255, 255, 255, 0.58);
-  --ui-wa-chip: rgba(143, 189, 242, 0.16);
+  --ui-wa-chip: rgba(255, 255, 255, 0.07);
+  --ui-wa-chip-hover: rgba(255, 255, 255, 0.11);
   --ui-wa-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
   --ui-wa-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -4182,6 +4182,303 @@ html:is(.dark, [data-theme="dark"]) body .ui-xcc__card,
 html body :is(.dark, [data-theme="dark"]) .ui-xcc__card {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 0 6px #0f2747, 0 0 0 7px rgba(255, 255, 255, 0.1),
     0 26px 40px -20px rgba(3, 12, 28, 0.8);
+}
+
+/* Classic: the tray is the hub's matte frame — its own hairline, the navy shadow falls from it. */
+html body .ui-ad,
+html body .ui-ai,
+html body .ui-al,
+html body .ui-ans,
+html body .ui-ap,
+html body .ui-apc,
+html body .ui-bc,
+html body .ui-bs,
+html body .ui-ca,
+html body .ui-cb,
+html body .ui-cm,
+html body .ui-cp,
+html body .ui-cs,
+html body .ui-ct,
+html body .ui-cw,
+html body .ui-cx,
+html body .ui-db,
+html body .ui-df,
+html body .ui-di,
+html body .ui-dt,
+html body .ui-dz,
+html body .ui-ed,
+html body .ui-fm,
+html body .ui-ip,
+html body .ui-is,
+html body .ui-iv,
+html body .ui-md,
+html body .ui-mp,
+html body .ui-pc,
+html body .ui-pl,
+html body .ui-pli,
+html body .ui-pm,
+html body .ui-pr,
+html body .ui-seg,
+html body .ui-sf,
+html body .ui-sr,
+html body .ui-st,
+html body .ui-tp,
+html body .ui-um,
+html body .ui-xc {
+  box-shadow: 0 0 0 1px #dae2ec, 0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.16);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-ad,
+html body :is(.dark, [data-theme="dark"]) .ui-ad,
+html:is(.dark, [data-theme="dark"]) body .ui-ai,
+html body :is(.dark, [data-theme="dark"]) .ui-ai,
+html:is(.dark, [data-theme="dark"]) body .ui-al,
+html body :is(.dark, [data-theme="dark"]) .ui-al,
+html:is(.dark, [data-theme="dark"]) body .ui-ans,
+html body :is(.dark, [data-theme="dark"]) .ui-ans,
+html:is(.dark, [data-theme="dark"]) body .ui-ap,
+html body :is(.dark, [data-theme="dark"]) .ui-ap,
+html:is(.dark, [data-theme="dark"]) body .ui-apc,
+html body :is(.dark, [data-theme="dark"]) .ui-apc,
+html:is(.dark, [data-theme="dark"]) body .ui-bc,
+html body :is(.dark, [data-theme="dark"]) .ui-bc,
+html:is(.dark, [data-theme="dark"]) body .ui-bs,
+html body :is(.dark, [data-theme="dark"]) .ui-bs,
+html:is(.dark, [data-theme="dark"]) body .ui-ca,
+html body :is(.dark, [data-theme="dark"]) .ui-ca,
+html:is(.dark, [data-theme="dark"]) body .ui-cb,
+html body :is(.dark, [data-theme="dark"]) .ui-cb,
+html:is(.dark, [data-theme="dark"]) body .ui-cm,
+html body :is(.dark, [data-theme="dark"]) .ui-cm,
+html:is(.dark, [data-theme="dark"]) body .ui-cp,
+html body :is(.dark, [data-theme="dark"]) .ui-cp,
+html:is(.dark, [data-theme="dark"]) body .ui-cs,
+html body :is(.dark, [data-theme="dark"]) .ui-cs,
+html:is(.dark, [data-theme="dark"]) body .ui-ct,
+html body :is(.dark, [data-theme="dark"]) .ui-ct,
+html:is(.dark, [data-theme="dark"]) body .ui-cw,
+html body :is(.dark, [data-theme="dark"]) .ui-cw,
+html:is(.dark, [data-theme="dark"]) body .ui-cx,
+html body :is(.dark, [data-theme="dark"]) .ui-cx,
+html:is(.dark, [data-theme="dark"]) body .ui-db,
+html body :is(.dark, [data-theme="dark"]) .ui-db,
+html:is(.dark, [data-theme="dark"]) body .ui-df,
+html body :is(.dark, [data-theme="dark"]) .ui-df,
+html:is(.dark, [data-theme="dark"]) body .ui-di,
+html body :is(.dark, [data-theme="dark"]) .ui-di,
+html:is(.dark, [data-theme="dark"]) body .ui-dt,
+html body :is(.dark, [data-theme="dark"]) .ui-dt,
+html:is(.dark, [data-theme="dark"]) body .ui-dz,
+html body :is(.dark, [data-theme="dark"]) .ui-dz,
+html:is(.dark, [data-theme="dark"]) body .ui-ed,
+html body :is(.dark, [data-theme="dark"]) .ui-ed,
+html:is(.dark, [data-theme="dark"]) body .ui-fm,
+html body :is(.dark, [data-theme="dark"]) .ui-fm,
+html:is(.dark, [data-theme="dark"]) body .ui-ip,
+html body :is(.dark, [data-theme="dark"]) .ui-ip,
+html:is(.dark, [data-theme="dark"]) body .ui-is,
+html body :is(.dark, [data-theme="dark"]) .ui-is,
+html:is(.dark, [data-theme="dark"]) body .ui-iv,
+html body :is(.dark, [data-theme="dark"]) .ui-iv,
+html:is(.dark, [data-theme="dark"]) body .ui-md,
+html body :is(.dark, [data-theme="dark"]) .ui-md,
+html:is(.dark, [data-theme="dark"]) body .ui-mp,
+html body :is(.dark, [data-theme="dark"]) .ui-mp,
+html:is(.dark, [data-theme="dark"]) body .ui-pc,
+html body :is(.dark, [data-theme="dark"]) .ui-pc,
+html:is(.dark, [data-theme="dark"]) body .ui-pl,
+html body :is(.dark, [data-theme="dark"]) .ui-pl,
+html:is(.dark, [data-theme="dark"]) body .ui-pli,
+html body :is(.dark, [data-theme="dark"]) .ui-pli,
+html:is(.dark, [data-theme="dark"]) body .ui-pm,
+html body :is(.dark, [data-theme="dark"]) .ui-pm,
+html:is(.dark, [data-theme="dark"]) body .ui-pr,
+html body :is(.dark, [data-theme="dark"]) .ui-pr,
+html:is(.dark, [data-theme="dark"]) body .ui-seg,
+html body :is(.dark, [data-theme="dark"]) .ui-seg,
+html:is(.dark, [data-theme="dark"]) body .ui-sf,
+html body :is(.dark, [data-theme="dark"]) .ui-sf,
+html:is(.dark, [data-theme="dark"]) body .ui-sr,
+html body :is(.dark, [data-theme="dark"]) .ui-sr,
+html:is(.dark, [data-theme="dark"]) body .ui-st,
+html body :is(.dark, [data-theme="dark"]) .ui-st,
+html:is(.dark, [data-theme="dark"]) body .ui-tp,
+html body :is(.dark, [data-theme="dark"]) .ui-tp,
+html:is(.dark, [data-theme="dark"]) body .ui-um,
+html body :is(.dark, [data-theme="dark"]) .ui-um,
+html:is(.dark, [data-theme="dark"]) body .ui-xc,
+html body :is(.dark, [data-theme="dark"]) .ui-xc {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 26px 40px -20px rgba(3, 12, 28, 0.8);
+}
+
+/* Classic: the card is the raised panel in that frame — hairline and a short navy drop. */
+html body .ui-ad__card,
+html body .ui-agt__card,
+html body .ui-ai__card,
+html body .ui-al__card,
+html body .ui-ans__card,
+html body .ui-ap__card,
+html body .ui-apc__card,
+html body .ui-bc__card,
+html body .ui-bs__card,
+html body .ui-ca__card,
+html body .ui-cb__card,
+html body .ui-cbx__card,
+html body .ui-cf__card,
+html body .ui-cm__card,
+html body .ui-cmc__card,
+html body .ui-cp__card,
+html body .ui-cs__card,
+html body .ui-ct__card,
+html body .ui-cw__card,
+html body .ui-cx__card,
+html body .ui-cx__kpi,
+html body .ui-db__card,
+html body .ui-df__card,
+html body .ui-di__card,
+html body .ui-drp__body,
+html body .ui-dt__card,
+html body .ui-dz__card,
+html body .ui-ed__card,
+html body .ui-ed__receipt,
+html body .ui-fm__card,
+html body .ui-ip__card,
+html body .ui-is__card,
+html body .ui-iv__card,
+html body .ui-iv__sheet,
+html body .ui-kb__card,
+html body .ui-ma__panel,
+html body .ui-md__card,
+html body .ui-md__kpi,
+html body .ui-mdp__card,
+html body .ui-mp__card,
+html body .ui-ns__card,
+html body .ui-pc__card,
+html body .ui-pl__card,
+html body .ui-pli__card,
+html body .ui-pm__card,
+html body .ui-pp__card,
+html body .ui-pr__body,
+html body .ui-sf__card,
+html body .ui-sr__card,
+html body .ui-st__card,
+html body .ui-tb__card,
+html body .ui-tp__card,
+html body .ui-tw__card,
+html body .ui-um__card,
+html body .ui-xc__card {
+  box-shadow: 0 0 0 1px #dae2ec, 0 12px 20px -14px rgba(26, 62, 112, 0.4);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-ad__card,
+html body :is(.dark, [data-theme="dark"]) .ui-ad__card,
+html:is(.dark, [data-theme="dark"]) body .ui-agt__card,
+html body :is(.dark, [data-theme="dark"]) .ui-agt__card,
+html:is(.dark, [data-theme="dark"]) body .ui-ai__card,
+html body :is(.dark, [data-theme="dark"]) .ui-ai__card,
+html:is(.dark, [data-theme="dark"]) body .ui-al__card,
+html body :is(.dark, [data-theme="dark"]) .ui-al__card,
+html:is(.dark, [data-theme="dark"]) body .ui-ans__card,
+html body :is(.dark, [data-theme="dark"]) .ui-ans__card,
+html:is(.dark, [data-theme="dark"]) body .ui-ap__card,
+html body :is(.dark, [data-theme="dark"]) .ui-ap__card,
+html:is(.dark, [data-theme="dark"]) body .ui-apc__card,
+html body :is(.dark, [data-theme="dark"]) .ui-apc__card,
+html:is(.dark, [data-theme="dark"]) body .ui-bc__card,
+html body :is(.dark, [data-theme="dark"]) .ui-bc__card,
+html:is(.dark, [data-theme="dark"]) body .ui-bs__card,
+html body :is(.dark, [data-theme="dark"]) .ui-bs__card,
+html:is(.dark, [data-theme="dark"]) body .ui-ca__card,
+html body :is(.dark, [data-theme="dark"]) .ui-ca__card,
+html:is(.dark, [data-theme="dark"]) body .ui-cb__card,
+html body :is(.dark, [data-theme="dark"]) .ui-cb__card,
+html:is(.dark, [data-theme="dark"]) body .ui-cbx__card,
+html body :is(.dark, [data-theme="dark"]) .ui-cbx__card,
+html:is(.dark, [data-theme="dark"]) body .ui-cf__card,
+html body :is(.dark, [data-theme="dark"]) .ui-cf__card,
+html:is(.dark, [data-theme="dark"]) body .ui-cm__card,
+html body :is(.dark, [data-theme="dark"]) .ui-cm__card,
+html:is(.dark, [data-theme="dark"]) body .ui-cmc__card,
+html body :is(.dark, [data-theme="dark"]) .ui-cmc__card,
+html:is(.dark, [data-theme="dark"]) body .ui-cp__card,
+html body :is(.dark, [data-theme="dark"]) .ui-cp__card,
+html:is(.dark, [data-theme="dark"]) body .ui-cs__card,
+html body :is(.dark, [data-theme="dark"]) .ui-cs__card,
+html:is(.dark, [data-theme="dark"]) body .ui-ct__card,
+html body :is(.dark, [data-theme="dark"]) .ui-ct__card,
+html:is(.dark, [data-theme="dark"]) body .ui-cw__card,
+html body :is(.dark, [data-theme="dark"]) .ui-cw__card,
+html:is(.dark, [data-theme="dark"]) body .ui-cx__card,
+html body :is(.dark, [data-theme="dark"]) .ui-cx__card,
+html:is(.dark, [data-theme="dark"]) body .ui-cx__kpi,
+html body :is(.dark, [data-theme="dark"]) .ui-cx__kpi,
+html:is(.dark, [data-theme="dark"]) body .ui-db__card,
+html body :is(.dark, [data-theme="dark"]) .ui-db__card,
+html:is(.dark, [data-theme="dark"]) body .ui-df__card,
+html body :is(.dark, [data-theme="dark"]) .ui-df__card,
+html:is(.dark, [data-theme="dark"]) body .ui-di__card,
+html body :is(.dark, [data-theme="dark"]) .ui-di__card,
+html:is(.dark, [data-theme="dark"]) body .ui-drp__body,
+html body :is(.dark, [data-theme="dark"]) .ui-drp__body,
+html:is(.dark, [data-theme="dark"]) body .ui-dt__card,
+html body :is(.dark, [data-theme="dark"]) .ui-dt__card,
+html:is(.dark, [data-theme="dark"]) body .ui-dz__card,
+html body :is(.dark, [data-theme="dark"]) .ui-dz__card,
+html:is(.dark, [data-theme="dark"]) body .ui-ed__card,
+html body :is(.dark, [data-theme="dark"]) .ui-ed__card,
+html:is(.dark, [data-theme="dark"]) body .ui-ed__receipt,
+html body :is(.dark, [data-theme="dark"]) .ui-ed__receipt,
+html:is(.dark, [data-theme="dark"]) body .ui-fm__card,
+html body :is(.dark, [data-theme="dark"]) .ui-fm__card,
+html:is(.dark, [data-theme="dark"]) body .ui-ip__card,
+html body :is(.dark, [data-theme="dark"]) .ui-ip__card,
+html:is(.dark, [data-theme="dark"]) body .ui-is__card,
+html body :is(.dark, [data-theme="dark"]) .ui-is__card,
+html:is(.dark, [data-theme="dark"]) body .ui-iv__card,
+html body :is(.dark, [data-theme="dark"]) .ui-iv__card,
+html:is(.dark, [data-theme="dark"]) body .ui-iv__sheet,
+html body :is(.dark, [data-theme="dark"]) .ui-iv__sheet,
+html:is(.dark, [data-theme="dark"]) body .ui-kb__card,
+html body :is(.dark, [data-theme="dark"]) .ui-kb__card,
+html:is(.dark, [data-theme="dark"]) body .ui-ma__panel,
+html body :is(.dark, [data-theme="dark"]) .ui-ma__panel,
+html:is(.dark, [data-theme="dark"]) body .ui-md__card,
+html body :is(.dark, [data-theme="dark"]) .ui-md__card,
+html:is(.dark, [data-theme="dark"]) body .ui-md__kpi,
+html body :is(.dark, [data-theme="dark"]) .ui-md__kpi,
+html:is(.dark, [data-theme="dark"]) body .ui-mdp__card,
+html body :is(.dark, [data-theme="dark"]) .ui-mdp__card,
+html:is(.dark, [data-theme="dark"]) body .ui-mp__card,
+html body :is(.dark, [data-theme="dark"]) .ui-mp__card,
+html:is(.dark, [data-theme="dark"]) body .ui-ns__card,
+html body :is(.dark, [data-theme="dark"]) .ui-ns__card,
+html:is(.dark, [data-theme="dark"]) body .ui-pc__card,
+html body :is(.dark, [data-theme="dark"]) .ui-pc__card,
+html:is(.dark, [data-theme="dark"]) body .ui-pl__card,
+html body :is(.dark, [data-theme="dark"]) .ui-pl__card,
+html:is(.dark, [data-theme="dark"]) body .ui-pli__card,
+html body :is(.dark, [data-theme="dark"]) .ui-pli__card,
+html:is(.dark, [data-theme="dark"]) body .ui-pm__card,
+html body :is(.dark, [data-theme="dark"]) .ui-pm__card,
+html:is(.dark, [data-theme="dark"]) body .ui-pp__card,
+html body :is(.dark, [data-theme="dark"]) .ui-pp__card,
+html:is(.dark, [data-theme="dark"]) body .ui-pr__body,
+html body :is(.dark, [data-theme="dark"]) .ui-pr__body,
+html:is(.dark, [data-theme="dark"]) body .ui-sf__card,
+html body :is(.dark, [data-theme="dark"]) .ui-sf__card,
+html:is(.dark, [data-theme="dark"]) body .ui-sr__card,
+html body :is(.dark, [data-theme="dark"]) .ui-sr__card,
+html:is(.dark, [data-theme="dark"]) body .ui-st__card,
+html body :is(.dark, [data-theme="dark"]) .ui-st__card,
+html:is(.dark, [data-theme="dark"]) body .ui-tb__card,
+html body :is(.dark, [data-theme="dark"]) .ui-tb__card,
+html:is(.dark, [data-theme="dark"]) body .ui-tp__card,
+html body :is(.dark, [data-theme="dark"]) .ui-tp__card,
+html:is(.dark, [data-theme="dark"]) body .ui-tw__card,
+html body :is(.dark, [data-theme="dark"]) .ui-tw__card,
+html:is(.dark, [data-theme="dark"]) body .ui-um__card,
+html body :is(.dark, [data-theme="dark"]) .ui-um__card,
+html:is(.dark, [data-theme="dark"]) body .ui-xc__card,
+html body :is(.dark, [data-theme="dark"]) .ui-xc__card {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 20px -12px rgba(3, 12, 28, 0.7);
 }
 
 html body .ui-agtc__pop,
@@ -4506,6 +4803,56 @@ html body .ui-umc__title {
   letter-spacing: 0.002em;
 }
 
+html body .ui-as-section-head__title,
+html body .ui-ev__title h1,
+html body .ui-ns__title,
+html body .ui-progress__title,
+html body .ui-sf__heading,
+html body .ui-tp__title {
+  font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.002em;
+}
+
+html body .ui-ad__heading,
+html body .ui-kb__heading,
+html body .ui-ob-step__title,
+html body .ui-tb__title-input {
+  font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.002em;
+}
+
+html body .ui-ans__question {
+  font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.002em;
+}
+
+html body .ui-pp__title {
+  font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.002em;
+}
+
+html body .ui-aw__title {
+  font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 0.002em;
+}
+
+html body .ui-ad__title {
+  font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: 0.002em;
+}
+
 /* Icon tiles: pebbles, lit from below. */
 html body .ui-isc__logo,
 html body .ui-mdp__glyph,
@@ -4797,4 +5144,502 @@ html body :is(.dark, [data-theme="dark"]) .ui-prc__risk,
 html:is(.dark, [data-theme="dark"]) body .ui-umc__pct[data-state="warn"],
 html body :is(.dark, [data-theme="dark"]) .ui-umc__pct[data-state="warn"] {
   box-shadow: inset 0 0 0 1px rgba(243, 210, 122, 0.32);
+}
+
+/* Card feet live in the frame: the matte band under the raised panel. */
+html body .ui-ansc__foot,
+html body .ui-apc__card > .ui-apc__foot,
+html body .ui-bcc__foot,
+html body .ui-cac__foot,
+html body .ui-cbc__foot,
+html body .ui-cbxc__foot,
+html body .ui-ccc__foot,
+html body .ui-cmc__foot,
+html body .ui-cwc__foot,
+html body .ui-dfc__foot,
+html body .ui-drpc__foot,
+html body .ui-dtc__foot,
+html body .ui-dzc__foot,
+html body .ui-edc__foot,
+html body .ui-ipc__foot,
+html body .ui-kpic__footer,
+html body .ui-mdpc__foot,
+html body .ui-mpc__foot,
+html body .ui-pcc__foot,
+html body .ui-plc__foot,
+html body .ui-plic__foot,
+html body .ui-sfc__foot,
+html body .ui-src__foot,
+html body .ui-tpc__foot,
+html body .ui-umc__foot,
+html body .ui-xcc__foot {
+  background: #f5f8fb;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+html:is(.dark, [data-theme="dark"]) body .ui-ansc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-ansc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-apc__card > .ui-apc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-apc__card > .ui-apc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-bcc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-bcc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-cac__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-cac__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-cbc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-cbc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-cbxc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-cbxc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-ccc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-ccc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-cmc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-cmc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-cwc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-cwc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-dfc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-dfc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-drpc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-drpc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-dtc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-dtc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-dzc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-dzc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-edc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-edc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-ipc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-ipc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-kpic__footer,
+html body :is(.dark, [data-theme="dark"]) .ui-kpic__footer,
+html:is(.dark, [data-theme="dark"]) body .ui-mdpc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-mdpc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-mpc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-mpc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-pcc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-pcc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-plc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-plc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-plic__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-plic__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-sfc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-sfc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-src__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-src__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-tpc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-tpc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-umc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-umc__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-xcc__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-xcc__foot {
+  background: rgba(4, 16, 38, 0.32);
+}
+
+/* Secondary actions: the hub's light object — pale panel, firm hairline, a short navy drop. */
+html body .ui-agt__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-agtc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-ai__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-aic__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-al__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-alc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-bs__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-bsc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-ca__btn--main:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-cac__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-cac__btn--main:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-ccc__button:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-cpc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-cwc__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-dfc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-drpc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-ed__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-edc__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-isc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-kb__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-mp__action--undo:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-mpc__action--undo:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-plc__btn--secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-pr__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-prc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-sfc__btn-ghost:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-sfc__btn-secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-tpc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-um__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-umc__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :where(.ui-dic) .ui-dic__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :where(.ui-nsc) .ui-nsc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :where(.ui-src) .ui-src__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :where(.ui-tsc) .ui-tsc__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
+  box-shadow: 0 0 0 1px #cbd6e4, 0 6px 12px -8px rgba(26, 62, 112, 0.35);
+  font-weight: 600;
+}
+
+html:is(.dark, [data-theme="dark"]) body .ui-agt__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-agt__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-agtc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-agtc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-ai__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-ai__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-aic__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-aic__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-al__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-al__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-alc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-alc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-bs__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-bs__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-bsc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-bsc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-ca__btn--main:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-ca__btn--main:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-cac__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-cac__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-cac__btn--main:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-cac__btn--main:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-ccc__button:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-ccc__button:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-cpc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-cpc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-cwc__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-cwc__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-dfc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-dfc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-drpc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-drpc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-ed__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-ed__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-edc__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-edc__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-isc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-isc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-kb__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-kb__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-mp__action--undo:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-mp__action--undo:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-mpc__action--undo:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-mpc__action--undo:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-plc__btn--secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-plc__btn--secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-pr__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-pr__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-prc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-prc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-sfc__btn-ghost:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-sfc__btn-ghost:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-sfc__btn-secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-sfc__btn-secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-tpc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-tpc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-um__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-um__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-umc__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-umc__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body :where(.ui-dic) .ui-dic__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) :where(.ui-dic) .ui-dic__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body :where(.ui-nsc) .ui-nsc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) :where(.ui-nsc) .ui-nsc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body :where(.ui-src) .ui-src__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) :where(.ui-src) .ui-src__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body :where(.ui-tsc) .ui-tsc__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) :where(.ui-tsc) .ui-tsc__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 6px 12px -8px rgba(3, 12, 28, 0.7);
+}
+
+/* Fields: the hub shell — firm hairline and a soft inner shade. */
+html body .ui-ad__search,
+html body .ui-ag__search,
+html body .ui-aw__field,
+html body .ui-aw__search,
+html body .ui-bs__input,
+html body .ui-bs__select,
+html body .ui-bsc__input,
+html body .ui-bsc__select,
+html body .ui-cbx__field,
+html body .ui-cbxc__field,
+html body .ui-cx__search,
+html body .ui-is__field,
+html body .ui-isc__field,
+html body .ui-ma__input,
+html body .ui-mac__input,
+html body .ui-mp__search,
+html body .ui-mpc__search,
+html body .ui-pli__search,
+html body .ui-plic__search,
+html body .ui-sf__input,
+html body .ui-sfc__input,
+html body .ui-st__field,
+html body .ui-stc__field,
+html body .ui-tb__search,
+html body .ui-wa__field {
+  box-shadow: 0 0 0 1px #cbd6e4, inset 0 2px 6px -4px rgba(26, 62, 112, 0.25);
+}
+
+html:is(.dark, [data-theme="dark"]) body .ui-ad__search,
+html body :is(.dark, [data-theme="dark"]) .ui-ad__search,
+html:is(.dark, [data-theme="dark"]) body .ui-ag__search,
+html body :is(.dark, [data-theme="dark"]) .ui-ag__search,
+html:is(.dark, [data-theme="dark"]) body .ui-aw__field,
+html body :is(.dark, [data-theme="dark"]) .ui-aw__field,
+html:is(.dark, [data-theme="dark"]) body .ui-aw__search,
+html body :is(.dark, [data-theme="dark"]) .ui-aw__search,
+html:is(.dark, [data-theme="dark"]) body .ui-bs__input,
+html body :is(.dark, [data-theme="dark"]) .ui-bs__input,
+html:is(.dark, [data-theme="dark"]) body .ui-bs__select,
+html body :is(.dark, [data-theme="dark"]) .ui-bs__select,
+html:is(.dark, [data-theme="dark"]) body .ui-bsc__input,
+html body :is(.dark, [data-theme="dark"]) .ui-bsc__input,
+html:is(.dark, [data-theme="dark"]) body .ui-bsc__select,
+html body :is(.dark, [data-theme="dark"]) .ui-bsc__select,
+html:is(.dark, [data-theme="dark"]) body .ui-cbx__field,
+html body :is(.dark, [data-theme="dark"]) .ui-cbx__field,
+html:is(.dark, [data-theme="dark"]) body .ui-cbxc__field,
+html body :is(.dark, [data-theme="dark"]) .ui-cbxc__field,
+html:is(.dark, [data-theme="dark"]) body .ui-cx__search,
+html body :is(.dark, [data-theme="dark"]) .ui-cx__search,
+html:is(.dark, [data-theme="dark"]) body .ui-is__field,
+html body :is(.dark, [data-theme="dark"]) .ui-is__field,
+html:is(.dark, [data-theme="dark"]) body .ui-isc__field,
+html body :is(.dark, [data-theme="dark"]) .ui-isc__field,
+html:is(.dark, [data-theme="dark"]) body .ui-ma__input,
+html body :is(.dark, [data-theme="dark"]) .ui-ma__input,
+html:is(.dark, [data-theme="dark"]) body .ui-mac__input,
+html body :is(.dark, [data-theme="dark"]) .ui-mac__input,
+html:is(.dark, [data-theme="dark"]) body .ui-mp__search,
+html body :is(.dark, [data-theme="dark"]) .ui-mp__search,
+html:is(.dark, [data-theme="dark"]) body .ui-mpc__search,
+html body :is(.dark, [data-theme="dark"]) .ui-mpc__search,
+html:is(.dark, [data-theme="dark"]) body .ui-pli__search,
+html body :is(.dark, [data-theme="dark"]) .ui-pli__search,
+html:is(.dark, [data-theme="dark"]) body .ui-plic__search,
+html body :is(.dark, [data-theme="dark"]) .ui-plic__search,
+html:is(.dark, [data-theme="dark"]) body .ui-sf__input,
+html body :is(.dark, [data-theme="dark"]) .ui-sf__input,
+html:is(.dark, [data-theme="dark"]) body .ui-sfc__input,
+html body :is(.dark, [data-theme="dark"]) .ui-sfc__input,
+html:is(.dark, [data-theme="dark"]) body .ui-st__field,
+html body :is(.dark, [data-theme="dark"]) .ui-st__field,
+html:is(.dark, [data-theme="dark"]) body .ui-stc__field,
+html body :is(.dark, [data-theme="dark"]) .ui-stc__field,
+html:is(.dark, [data-theme="dark"]) body .ui-tb__search,
+html body :is(.dark, [data-theme="dark"]) .ui-tb__search,
+html:is(.dark, [data-theme="dark"]) body .ui-wa__field,
+html body :is(.dark, [data-theme="dark"]) .ui-wa__field {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), inset 0 2px 6px -4px rgba(0, 0, 0, 0.4);
+}
+
+/* Ticked boxes and switches that are on: berry, the colour of a choice made. */
+html body .ui-ap__box input:checked,
+html body .ui-apc__box input:checked,
+html body .ui-cx__toggle[aria-checked="true"],
+html body .ui-db__auto[aria-checked="true"] .ui-db__switch,
+html body .ui-dbc__auto[aria-checked="true"] .ui-dbc__switch,
+html body .ui-dt__check[aria-checked="true"],
+html body .ui-fm__option[aria-checked="true"] .ui-fm__box,
+html body .ui-fmc__option[aria-checked="true"] .ui-fmc__box,
+html body .ui-ip__switch[aria-checked="true"],
+html body .ui-ipc__switch[aria-checked="true"],
+html body .ui-is__switch[aria-checked="true"],
+html body .ui-isc__switch[aria-checked="true"],
+html body .ui-md__compare input:checked + .ui-md__switch,
+html body .ui-mdp__toggle[aria-checked="true"] .ui-mdp__switch,
+html body .ui-mdpc__toggle[aria-checked="true"] .ui-mdpc__switch,
+html body .ui-mp__switch[aria-checked="true"] .ui-mp__track,
+html body .ui-mpc__switch[aria-checked="true"] .ui-mpc__track,
+html body .ui-progress__step[aria-checked="true"] .ui-progress__check,
+html body .ui-progressc__step[aria-checked="true"] .ui-progressc__check {
+  background: #851437;
+  box-shadow: none;
+}
+
+html:is(.dark, [data-theme="dark"]) body .ui-ap__box input:checked,
+html body :is(.dark, [data-theme="dark"]) .ui-ap__box input:checked,
+html:is(.dark, [data-theme="dark"]) body .ui-apc__box input:checked,
+html body :is(.dark, [data-theme="dark"]) .ui-apc__box input:checked,
+html:is(.dark, [data-theme="dark"]) body .ui-cx__toggle[aria-checked="true"],
+html body :is(.dark, [data-theme="dark"]) .ui-cx__toggle[aria-checked="true"],
+html:is(.dark, [data-theme="dark"]) body .ui-db__auto[aria-checked="true"] .ui-db__switch,
+html body :is(.dark, [data-theme="dark"]) .ui-db__auto[aria-checked="true"] .ui-db__switch,
+html:is(.dark, [data-theme="dark"]) body .ui-dbc__auto[aria-checked="true"] .ui-dbc__switch,
+html body :is(.dark, [data-theme="dark"]) .ui-dbc__auto[aria-checked="true"] .ui-dbc__switch,
+html:is(.dark, [data-theme="dark"]) body .ui-dt__check[aria-checked="true"],
+html body :is(.dark, [data-theme="dark"]) .ui-dt__check[aria-checked="true"],
+html:is(.dark, [data-theme="dark"]) body .ui-fm__option[aria-checked="true"] .ui-fm__box,
+html body :is(.dark, [data-theme="dark"]) .ui-fm__option[aria-checked="true"] .ui-fm__box,
+html:is(.dark, [data-theme="dark"]) body .ui-fmc__option[aria-checked="true"] .ui-fmc__box,
+html body :is(.dark, [data-theme="dark"]) .ui-fmc__option[aria-checked="true"] .ui-fmc__box,
+html:is(.dark, [data-theme="dark"]) body .ui-ip__switch[aria-checked="true"],
+html body :is(.dark, [data-theme="dark"]) .ui-ip__switch[aria-checked="true"],
+html:is(.dark, [data-theme="dark"]) body .ui-ipc__switch[aria-checked="true"],
+html body :is(.dark, [data-theme="dark"]) .ui-ipc__switch[aria-checked="true"],
+html:is(.dark, [data-theme="dark"]) body .ui-is__switch[aria-checked="true"],
+html body :is(.dark, [data-theme="dark"]) .ui-is__switch[aria-checked="true"],
+html:is(.dark, [data-theme="dark"]) body .ui-isc__switch[aria-checked="true"],
+html body :is(.dark, [data-theme="dark"]) .ui-isc__switch[aria-checked="true"],
+html:is(.dark, [data-theme="dark"]) body .ui-md__compare input:checked + .ui-md__switch,
+html body :is(.dark, [data-theme="dark"]) .ui-md__compare input:checked + .ui-md__switch,
+html:is(.dark, [data-theme="dark"]) body .ui-mdp__toggle[aria-checked="true"] .ui-mdp__switch,
+html body :is(.dark, [data-theme="dark"]) .ui-mdp__toggle[aria-checked="true"] .ui-mdp__switch,
+html:is(.dark, [data-theme="dark"]) body .ui-mdpc__toggle[aria-checked="true"] .ui-mdpc__switch,
+html body :is(.dark, [data-theme="dark"]) .ui-mdpc__toggle[aria-checked="true"] .ui-mdpc__switch,
+html:is(.dark, [data-theme="dark"]) body .ui-mp__switch[aria-checked="true"] .ui-mp__track,
+html body :is(.dark, [data-theme="dark"]) .ui-mp__switch[aria-checked="true"] .ui-mp__track,
+html:is(.dark, [data-theme="dark"]) body .ui-mpc__switch[aria-checked="true"] .ui-mpc__track,
+html body :is(.dark, [data-theme="dark"]) .ui-mpc__switch[aria-checked="true"] .ui-mpc__track,
+html:is(.dark, [data-theme="dark"]) body .ui-progress__step[aria-checked="true"] .ui-progress__check,
+html body :is(.dark, [data-theme="dark"]) .ui-progress__step[aria-checked="true"] .ui-progress__check,
+html:is(.dark, [data-theme="dark"]) body .ui-progressc__step[aria-checked="true"] .ui-progressc__check,
+html body :is(.dark, [data-theme="dark"]) .ui-progressc__step[aria-checked="true"] .ui-progressc__check {
+  background: #a8204d;
+}
+
+/* Progress fills: the berry rail of the hub titles. */
+html body .ui-dz__bar > span,
+html body .ui-dzc__bar > span,
+html body .ui-pli__bar[data-on],
+html body .ui-plic__bar[data-on],
+html body .ui-pmc__fill,
+html body .ui-progress__fill,
+html body .ui-progressc__fill,
+html body .ui-sfc__bar::after,
+html body .ui-sg__fill,
+html body .ui-sgc__fill {
+  background: linear-gradient(90deg, #851437, #b5426a);
+}
+
+html:is(.dark, [data-theme="dark"]) body .ui-dz__bar > span,
+html body :is(.dark, [data-theme="dark"]) .ui-dz__bar > span,
+html:is(.dark, [data-theme="dark"]) body .ui-dzc__bar > span,
+html body :is(.dark, [data-theme="dark"]) .ui-dzc__bar > span,
+html:is(.dark, [data-theme="dark"]) body .ui-pli__bar[data-on],
+html body :is(.dark, [data-theme="dark"]) .ui-pli__bar[data-on],
+html:is(.dark, [data-theme="dark"]) body .ui-plic__bar[data-on],
+html body :is(.dark, [data-theme="dark"]) .ui-plic__bar[data-on],
+html:is(.dark, [data-theme="dark"]) body .ui-pmc__fill,
+html body :is(.dark, [data-theme="dark"]) .ui-pmc__fill,
+html:is(.dark, [data-theme="dark"]) body .ui-progress__fill,
+html body :is(.dark, [data-theme="dark"]) .ui-progress__fill,
+html:is(.dark, [data-theme="dark"]) body .ui-progressc__fill,
+html body :is(.dark, [data-theme="dark"]) .ui-progressc__fill,
+html:is(.dark, [data-theme="dark"]) body .ui-sfc__bar::after,
+html body :is(.dark, [data-theme="dark"]) .ui-sfc__bar::after,
+html:is(.dark, [data-theme="dark"]) body .ui-sg__fill,
+html body :is(.dark, [data-theme="dark"]) .ui-sg__fill,
+html:is(.dark, [data-theme="dark"]) body .ui-sgc__fill,
+html body :is(.dark, [data-theme="dark"]) .ui-sgc__fill {
+  background: linear-gradient(90deg, #a8204d, #d9608a);
+}
+
+/* Keys: small pebbles with a firmer bottom edge. */
+html body .ui-ap__kbd,
+html body .ui-apc__kbd,
+html body .ui-cbx kbd,
+html body .ui-cbxc kbd,
+html body .ui-cm kbd,
+html body .ui-cx__hint kbd,
+html body .ui-db__key,
+html body .ui-dbc__key,
+html body .ui-df__pbtn kbd,
+html body .ui-dfc__pbtn kbd,
+html body .ui-fm__hint kbd,
+html body .ui-fmc kbd,
+html body .ui-is__key,
+html body .ui-is__key[data-new],
+html body .ui-isc__key,
+html body .ui-isc__key[data-new],
+html body .ui-mdp__keys kbd,
+html body .ui-pr__kbd,
+html body .ui-prc__kbd,
+html body .ui-st kbd,
+html body .ui-stc kbd,
+html body .ui-tp__kbd,
+html body .ui-tpc__kbd {
+  background: #ffffff;
+  box-shadow: 0 0 0 1px #dae2ec, 0 1px 0 1px #cbd6e4;
+}
+
+html:is(.dark, [data-theme="dark"]) body .ui-ap__kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-ap__kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-apc__kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-apc__kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-cbx kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-cbx kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-cbxc kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-cbxc kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-cm kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-cm kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-cx__hint kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-cx__hint kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-db__key,
+html body :is(.dark, [data-theme="dark"]) .ui-db__key,
+html:is(.dark, [data-theme="dark"]) body .ui-dbc__key,
+html body :is(.dark, [data-theme="dark"]) .ui-dbc__key,
+html:is(.dark, [data-theme="dark"]) body .ui-df__pbtn kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-df__pbtn kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-dfc__pbtn kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-dfc__pbtn kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-fm__hint kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-fm__hint kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-fmc kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-fmc kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-is__key,
+html body :is(.dark, [data-theme="dark"]) .ui-is__key,
+html:is(.dark, [data-theme="dark"]) body .ui-is__key[data-new],
+html body :is(.dark, [data-theme="dark"]) .ui-is__key[data-new],
+html:is(.dark, [data-theme="dark"]) body .ui-isc__key,
+html body :is(.dark, [data-theme="dark"]) .ui-isc__key,
+html:is(.dark, [data-theme="dark"]) body .ui-isc__key[data-new],
+html body :is(.dark, [data-theme="dark"]) .ui-isc__key[data-new],
+html:is(.dark, [data-theme="dark"]) body .ui-mdp__keys kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-mdp__keys kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-pr__kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-pr__kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-prc__kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-prc__kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-st kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-st kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-stc kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-stc kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-tp__kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-tp__kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-tpc__kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-tpc__kbd {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 1px 0 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Group labels: the hub's small capitals. */
+html body .ui-ad__group-head,
+html body .ui-adc__group-head,
+html body .ui-as-news__kicker,
+html body .ui-cbx__group-label,
+html body .ui-pp__eyebrow {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+/* The highlighted row of a list: the info family, as a selected hub row. */
+html body .ui-cb__item[data-active],
+html body .ui-cbc__item[data-active],
+html body .ui-mdpc__list:focus-visible .ui-mdpc__option[data-active],
+html body .ui-mdpc__list[data-pointing] .ui-mdpc__option[data-active],
+html body .ui-um__item[data-active],
+html body .ui-umc__item[data-active] {
+  background: #eef5ff;
+  box-shadow: inset 2px 0 0 #851437;
+}
+
+html:is(.dark, [data-theme="dark"]) body .ui-cb__item[data-active],
+html body :is(.dark, [data-theme="dark"]) .ui-cb__item[data-active],
+html:is(.dark, [data-theme="dark"]) body .ui-cbc__item[data-active],
+html body :is(.dark, [data-theme="dark"]) .ui-cbc__item[data-active],
+html:is(.dark, [data-theme="dark"]) body .ui-mdpc__list:focus-visible .ui-mdpc__option[data-active],
+html body :is(.dark, [data-theme="dark"]) .ui-mdpc__list:focus-visible .ui-mdpc__option[data-active],
+html:is(.dark, [data-theme="dark"]) body .ui-mdpc__list[data-pointing] .ui-mdpc__option[data-active],
+html body :is(.dark, [data-theme="dark"]) .ui-mdpc__list[data-pointing] .ui-mdpc__option[data-active],
+html:is(.dark, [data-theme="dark"]) body .ui-um__item[data-active],
+html body :is(.dark, [data-theme="dark"]) .ui-um__item[data-active],
+html:is(.dark, [data-theme="dark"]) body .ui-umc__item[data-active],
+html body :is(.dark, [data-theme="dark"]) .ui-umc__item[data-active] {
+  background: rgba(143, 189, 242, 0.14);
+  box-shadow: inset 2px 0 0 #d9608a;
 }

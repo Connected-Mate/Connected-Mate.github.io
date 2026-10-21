@@ -146,5 +146,19 @@ const css = /* css */ \`
   --ui-shm-text: #5c708d;
   --ui-shm-text-glow: #f2f5fb;
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-shm.ui-shm {
+  --ui-shm-text: rgba(0, 22, 43, 0.66);
+}
+:is(.dark, [data-theme="dark"]) .ui-shm.ui-shm {
+  --ui-shm-text: rgba(255, 255, 255, 0.72);
+}
+.ui-shm-text.ui-shm-text {
+  --ui-shm-text: rgba(0, 22, 43, 0.66);
+}
+:is(.dark, [data-theme="dark"]) .ui-shm-text.ui-shm-text {
+  --ui-shm-text: rgba(255, 255, 255, 0.72);
+}
+
 \`;
 `;export{e as default};

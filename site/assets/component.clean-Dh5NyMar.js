@@ -733,5 +733,76 @@ const css = /* css */ \`
   --ui-mac-shadow-pop: 0 0 0 0.5px rgba(255, 255, 255, 0.12), 0 12px 28px -10px rgba(0, 22, 43, 0.6);
   --ui-mac-focus: rgba(72, 131, 206, 0.5);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-mac.ui-mac {
+  --ui-mac-card: #ffffff;
+  --ui-mac-strong: #00162b;
+  --ui-mac-ink: #00162b;
+  --ui-mac-text: rgba(0, 22, 43, 0.66);
+  --ui-mac-muted: rgba(0, 22, 43, 0.56);
+  --ui-mac-faint: rgba(0, 22, 43, 0.36);
+  --ui-mac-icon: rgba(0, 22, 43, 0.52);
+  --ui-mac-line: #dae2ec;
+  --ui-mac-fill: rgba(26, 62, 112, 0.06);
+  --ui-mac-wash: rgba(26, 62, 112, 0.035);
+  --ui-mac-solid: #851437;
+  --ui-mac-solid-hover: #6d0f2d;
+  --ui-mac-on-solid: #ffffff;
+  --ui-mac-accent: #1a3e70;
+  --ui-mac-ok: #1d6a34;
+  --ui-mac-ok-bg: #eafbee;
+  --ui-mac-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-mac-shadow-pop: 0 0 0 1px #cbd6e4, 0 24px 48px -24px rgba(26, 62, 112, 0.3), 0 8px 16px -4px rgba(26, 62, 112, 0.16);
+  --ui-mac-focus: rgba(143, 189, 242, 0.8);
+  --ui-mac-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-mac.ui-mac {
+  --ui-mac-card: #16345c;
+  --ui-mac-strong: #ffffff;
+  --ui-mac-ink: rgba(255, 255, 255, 0.94);
+  --ui-mac-text: rgba(255, 255, 255, 0.72);
+  --ui-mac-muted: rgba(255, 255, 255, 0.58);
+  --ui-mac-faint: rgba(255, 255, 255, 0.36);
+  --ui-mac-icon: rgba(255, 255, 255, 0.62);
+  --ui-mac-line: rgba(255, 255, 255, 0.12);
+  --ui-mac-fill: rgba(255, 255, 255, 0.07);
+  --ui-mac-wash: rgba(255, 255, 255, 0.04);
+  --ui-mac-solid: #a8204d;
+  --ui-mac-solid-hover: #bd2a5a;
+  --ui-mac-on-solid: #ffffff;
+  --ui-mac-accent: #8fbdf2;
+  --ui-mac-ok: #7fe0a0;
+  --ui-mac-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-mac-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-mac-shadow-pop: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 24px 44px -20px rgba(3, 12, 28, 0.75), 0 8px 16px -8px rgba(3, 12, 28, 0.5);
+  --ui-mac-focus: rgba(143, 189, 242, 0.6);
+  --ui-mac-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html body .ui-mac__btn {
+  border-radius: 9px;
+}
+html body .ui-mac__input {
+  border-radius: 10px;
+  caret-color: #851437;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-mac__input,
+html body :is(.dark, [data-theme="dark"]) .ui-mac__input {
+  caret-color: #f6bcc8;
+}
+html body .ui-mac__send[data-sent] {
+  box-shadow: inset 0 0 0 1px #c9f5cf;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-mac__send[data-sent],
+html body :is(.dark, [data-theme="dark"]) .ui-mac__send[data-sent] {
+  box-shadow: inset 0 0 0 1px rgba(127, 224, 160, 0.32);
+}
+html body .ui-mac__input {
+  box-shadow: 0 0 0 1px #cbd6e4, inset 0 2px 6px -4px rgba(26, 62, 112, 0.25);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-mac__input,
+html body :is(.dark, [data-theme="dark"]) .ui-mac__input {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), inset 0 2px 6px -4px rgba(0, 0, 0, 0.4);
+}
+
 \`;
 `;export{e as default};

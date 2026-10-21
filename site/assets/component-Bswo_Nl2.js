@@ -182,5 +182,13 @@ const css = /* css */ \`
 :where(.dark, [data-theme="dark"]) .ui-gb {
   --ui-gb-color: rgba(255, 255, 255, 0.07);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-gb.ui-gb {
+  --ui-gb-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:is(.dark, [data-theme="dark"]) .ui-gb.ui-gb {
+  --ui-gb-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 \`;
 `;export{e as default};

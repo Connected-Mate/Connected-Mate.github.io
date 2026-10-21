@@ -246,5 +246,17 @@ const css = /* css */ \`
   .ui-lc .ui-lc-face { transition: none; }
   .ui-lc .ui-lc-bubble { translate: calc(\${u(1)} * var(--x)) calc(\${u(1)} * var(--y)); }
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+.ui-lc.ui-lc {
+  --ui-lc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-lc-shadow-hover: 0 0 0 1px #cbd6e4, 0 14px 24px -14px rgba(26, 62, 112, 0.38), 0 4px 10px -6px rgba(26, 62, 112, 0.18);
+  --ui-lc-ink: #00162b;
+}
+:is(.dark, [data-theme="dark"]) .ui-lc.ui-lc {
+  --ui-lc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-lc-shadow-hover: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 14px 24px -14px rgba(3, 12, 28, 0.75);
+  --ui-lc-ink: rgba(255, 255, 255, 0.94);
+}
+
 \`;
 `;export{e as default};
