@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Fleet – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/agent-fleet" />
+    <meta name="description" content="Several agents side by side – each card sums up its sub-agents, and a click opens its tree to the right while the last one folds back into its card. Part of…" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="affectUI" />
+    <meta property="og:title" content="Agent Fleet – React component · affectUI" />
+    <meta property="og:description" content="Several agents side by side – each card sums up its sub-agents, and a click opens its tree to the right while the last one folds back into its card. Part of…" />
+    <meta property="og:url" content="https://www.affectui.com/components/agent-fleet" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:creator" content="@flohoeller" />
+    <meta name="twitter:title" content="Agent Fleet – React component · affectUI" />
+    <meta name="twitter:description" content="Several agents side by side – each card sums up its sub-agents, and a click opens its tree to the right while the last one folds back into its card. Part of…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Agent Fleet","item":"https://www.affectui.com/components/agent-fleet"}]},{"@type":"SoftwareSourceCode","name":"Agent Fleet (affectUI)","description":"Several agents side by side – each card sums up its sub-agents, and a click opens its tree to the right while the last one folds back into its card","url":"https://www.affectui.com/components/agent-fleet","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-11-02","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)" />
+    <script>
+      try {
+        const t = localStorage.getItem("theme");
+        if (t) document.documentElement.dataset.theme = t;
+        // Components switch with a .dark class, the shadcn convention – set it for "system" too
+        const dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", dark);
+      } catch {}
+    </script>
+    <script data-static-mirror-compatibility>
+(() => {
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
+  const libraryPath = (value) => {
+    const target = new URL(value, window.location.href);
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+      ? "/components" + target.search + target.hash
+      : value;
+  };
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+    window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  for (const method of ["pushState", "replaceState"]) {
+    const original = window.history[method].bind(window.history);
+    window.history[method] = (state, title, url) => original(state, title, url == null ? url : libraryPath(url));
+  }
+  const removeSalesLayer = () => {
+    document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
+    document.querySelectorAll("a[href]").forEach((anchor) => {
+      const target = new URL(anchor.getAttribute("href"), window.location.href);
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+    });
+    document.querySelectorAll("button").forEach((button) => {
+      const label = button.textContent.trim().replace(/s+/g, " ");
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+    });
+  };
+  let queued = false;
+  const scheduleCleanup = () => {
+    if (queued) return;
+    queued = true;
+    queueMicrotask(() => {
+      queued = false;
+      removeSalesLayer();
+    });
+  };
+  new MutationObserver(scheduleCleanup).observe(document.documentElement, { childList: true, subtree: true });
+  document.addEventListener("DOMContentLoaded", scheduleCleanup);
+  scheduleCleanup();
+  document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const anchor = event.target?.closest?.("a[href]");
+    if (!anchor) return;
+    const target = new URL(anchor.getAttribute("href"), window.location.href);
+    if (target.origin !== window.location.origin) return;
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign("/components" + target.search + target.hash);
+    }
+  }, true);
+})();
+</script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
+    <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
+  <link rel="stylesheet" href="/ateam/composants.css">
+  </head>
+  <body>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/agents">Agents</a></p>
+<h1>Agent Fleet</h1>
+<p>Several agents side by side – each card sums up its sub-agents, and a click opens its tree to the right while the last one folds back into its card.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/agent-fleet.json</code> · Import from <code>@/components/ui/agent-fleet</code></p>
+<h2>When to use</h2><ul><li>Several agents working at the same time – a launch, the support queue, a release – each with sub-agents of its own</li><li>Seeing at a glance which agent needs you, which one failed and what the whole fleet costs – without every tree open at once</li><li>A fleet overview on a dashboard: one tree open, the others folded to a single card</li></ul><h2>When not to use</h2><ul><li>One run with one orchestrator – use Agent Tree</li><li>When things happened, in time order – use Agent Lanes</li><li>Handing tasks to agents yourself – use Delegate Board</li></ul><h2>Usage</h2><pre><code>import { AgentFleet, type FleetAgent } from &quot;@/components/ui/agent-fleet&quot;;
+
+const fleet: FleetAgent[] = [
+  {
+    id: &quot;launch&quot;, name: &quot;Launch lead&quot;, model: &quot;Opus 5.5&quot;, task: &quot;Launch the new pricing page&quot;,
+    status: &quot;running&quot;, cost: 0.42, started: Date.now() - 840_000,
+    children: [
+      { id: &quot;research&quot;, name: &quot;Researcher&quot;, task: &quot;Compare five competitors&quot;, status: &quot;done&quot;, cost: 0.31, started: Date.now() - 780_000, ended: Date.now() - 360_000 },
+      { id: &quot;copy&quot;, name: &quot;Writer&quot;, task: &quot;Write the plan copy&quot;, status: &quot;waiting&quot;, cost: 0.18, started: Date.now() - 720_000 },
+    ],
+  },
+  { id: &quot;support&quot;, name: &quot;Support lead&quot;, task: &quot;Answer the open tickets&quot;, status: &quot;running&quot;, cost: 0.12, started: Date.now() - 1_560_000 },
+];
+
+export function Fleet() {
+  return &lt;AgentFleet agents={fleet} onSelect={(agent) =&gt; openLog(agent.id)} /&gt;;
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>agents</code></td><td><code>FleetAgent[]</code></td><td></td><td>{ id, name, task, model?, avatar?, tools?, status, steps?, cost?, started?, ended?, children? } – the main agents, each with its sub-agents; pass them again whenever something changes; tools are small marks shown as overlapping tiles before the task</td></tr><tr><td><code>steps</code></td><td><code>FleetStep[]</code></td><td></td><td>Per sub-agent, { title, status?, tool?, took? } – the tasks it worked through; a click on its card opens them in a small window</td></tr><tr><td><code>status</code></td><td><code>&quot;queued&quot; | &quot;running&quot; | &quot;waiting&quot; | &quot;done&quot; | &quot;failed&quot; | &quot;stopped&quot;</code></td><td></td><td>Per agent – &quot;waiting&quot; reads &quot;Needs you&quot;; queued and stopped sub-agents and their connectors are muted</td></tr><tr><td><code>cost</code></td><td><code>number</code></td><td></td><td>Per agent, its own cost – a main agent shows its whole branch, the bar the whole fleet</td></tr><tr><td><code>open / defaultOpen</code></td><td><code>string | null</code></td><td><code>the first agent</code></td><td>Id of the main agent whose tree is open, controlled or uncontrolled – null folds them all</td></tr><tr><td><code>onOpenChange</code></td><td><code>(id: string | null) =&gt; void</code></td><td></td><td>An agent was opened – or folded with a second click</td></tr><tr><td><code>ask / error</code></td><td><code>string</code></td><td></td><td>Per sub-agent – what a waiting one needs you to decide, and what went wrong for a failed one; shown at the top of its window above Approve and Reject, or Retry and Dismiss</td></tr><tr><td><code>onResolve</code></td><td><code>(agent, action: &quot;approve&quot; | &quot;reject&quot; | &quot;retry&quot; | &quot;dismiss&quot;) =&gt; void</code></td><td></td><td>An answer for a sub-agent that needs you or failed – update its status in your data; without it, those cards get no Answer or Resolve button</td></tr><tr><td><code>onSelect</code></td><td><code>(agent: FleetAgent) =&gt; void</code></td><td></td><td>A click on a sub-agent – makes the sub-agent cards clickable; one with steps opens its tasks window as well</td></tr><tr><td><code>now</code></td><td><code>number</code></td><td><code>Date.now()</code></td><td>The clock for running times – without it the cards tick every second while an agent runs</td></tr><tr><td><code>formatCost</code></td><td><code>(amount: number) =&gt; string</code></td><td><code>dollars, e.g. &quot;$0.42&quot;</code></td><td>Formats every cost</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td><code>&quot;Agents&quot;</code></td><td>Heading of the bar</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>↑ / ↓: Moves between the main agents</li><li>Home / End: Jumps to the first or the last main agent</li><li>Enter / Space: On a main agent: opens its tree, or folds it when it&#39;s open – on a sub-agent: opens or closes its tasks window</li><li>Tab: Moves on into the open tree&#39;s cards – those with steps, an answer to give or onSelect; in an answer window, Approve or Retry has focus and Tab reaches the other</li><li>Esc: Closes the tasks window and puts focus back on its card</li></ul><h2>Accessibility</h2><ul><li>Every main agent is a button with aria-expanded, pointing at the open tree with aria-controls</li><li>The open tree is a tree labelled &quot;Sub-agents of …&quot;; every sub-agent is a treeitem labelled with its name and status</li><li>The totals in the bar – agents, running, needs you, cost – are announced politely when they change</li><li>Status is never color alone: every card spells it out, and the phrase under each main agent says what the ring shows</li><li>The small Answer or Resolve button on a card is a pointer shortcut – keyboard users open the same window from the card itself</li><li>A sub-agent with steps, or one that needs you or failed, has aria-haspopup and aria-expanded; its tasks window is a dialog labelled &quot;Tasks of …&quot;, closed by Esc or a click elsewhere</li></ul><h2>Responsive</h2><ul><li>Wide enough for the column, a gap and the deepest tree, the tree opens to the right of the column</li><li>Narrower, the tree opens under its card and pushes the agents below down – and folds back up before the next one opens</li><li>Every card has a fixed height – one line of task, one line of numbers – so nothing jumps when a status changes</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/agent-tree">Agent Tree</a> – Who started whom – an orchestrator and its sub-agents as a live tree, with status, cost and time on every card, costs rolling up each branch, and branches that fold to one line</li><li><a href="/components/agent-lanes">Agent Lanes</a> – Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the block</li><li><a href="/components/agent-monitor">Agent Monitor</a> – One agent at work, as a card – its current step with a clock and the bill so far, a time strip and the finished steps with the logo of each tool, a click on any of them for the details; the exact command when it needs your OK; folds into a small bar with the tools it has used</li><li><a href="/components/delegate-board">Delegate Board</a> – Hand work to your agents by dragging it onto them – each agent previews its new “busy until” time, or switch to Auto and every new task goes to whoever is free first</li></ul></main></div></div>
+  </body>
+</html>

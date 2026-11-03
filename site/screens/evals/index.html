@@ -3,61 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>affectUI · Agent-ready React UI for AI products</title>
-    <link rel="canonical" href="https://www.affectui.com/" />
-    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <title>Evals – React app screen · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/screens/evals" />
+    <meta name="description" content="Prompt evaluation dashboard: pass rate by version, reviewable prompt changes and test cases you can re-run. Part of affectUI Pro – one file, no dependencies." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta property="og:url" content="https://www.affectui.com/" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:title" content="Evals – React app screen · affectUI" />
+    <meta property="og:description" content="Prompt evaluation dashboard: pass rate by version, reviewable prompt changes and test cases you can re-run. Part of affectUI Pro – one file, no dependencies." />
+    <meta property="og:url" content="https://www.affectui.com/screens/evals" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@flohoeller" />
+    <meta name="twitter:site" content="@affectui" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
-    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://www.affectui.com/#website",
-            "url": "https://www.affectui.com/",
-            "name": "affectUI",
-            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
-            "inLanguage": "en",
-            "publisher": { "@id": "https://www.affectui.com/#organization" }
-          },
-          {
-            "@type": "Organization",
-            "@id": "https://www.affectui.com/#organization",
-            "name": "affectUI",
-            "url": "https://www.affectui.com/",
-            "logo": "https://www.affectui.com/icon-512.png",
-            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "affectUI",
-            "applicationCategory": "DeveloperApplication",
-            "operatingSystem": "Web",
-            "url": "https://www.affectui.com/",
-            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
-          }
-        ]
-      }
-    </script>
+    <meta name="twitter:title" content="Evals – React app screen · affectUI" />
+    <meta name="twitter:description" content="Prompt evaluation dashboard: pass rate by version, reviewable prompt changes and test cases you can re-run. Part of affectUI Pro – one file, no dependencies." />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Screens","item":"https://www.affectui.com/screens"},{"@type":"ListItem","position":3,"name":"Evals","item":"https://www.affectui.com/screens/evals"}]},{"@type":"SoftwareSourceCode","name":"Evals (affectUI)","description":"Prompt evaluation dashboard: pass rate by version, reviewable prompt changes and test cases you can re-run","url":"https://www.affectui.com/screens/evals","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-10","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -77,21 +45,17 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const origin = "https://www.affectui.com";
-  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && salesOnly.test(target.pathname)
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
-    return;
-  }
-  if (serverOnly.test(window.location.pathname)) {
-    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -102,11 +66,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -127,34 +91,38 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (salesOnly.test(target.pathname)) {
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
-    } else if (serverOnly.test(target.pathname)) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
   <link rel="stylesheet" href="/ateam/composants.css">
   </head>
   <body>
-    <div id="root">
-      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
-      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
-        affectUI – Agent-ready UI for AI products
-      </h1>
-    </div>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/screens">Screens</a> › App screens</p>
+<h1>Evals</h1>
+<p>Prompt evaluation dashboard: pass rate by version, reviewable prompt changes and test cases you can re-run.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/evals.json</code> · Import from <code>@/components/ui/evals</code></p>
+<h2>When to use</h2><ul><li>Eval dashboards for prompts, agents or LLM features</li><li>Comparing prompt or model versions against a fixed test suite</li></ul><h2>When not to use</h2><ul><li>Live production monitoring of single requests – use a log or trace view</li></ul><h2>Usage</h2><pre><code>import { EvalsScreen } from &quot;@/components/ui/evals&quot;;
+
+export default function Page() {
+  return &lt;EvalsScreen workspace=&quot;Acme&quot; user={{ name: &quot;Alex Morgan&quot; }} onNavigate={(label) =&gt; router.push(routes[label])} /&gt;;
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>onNavigate</code></td><td><code>(label: string) =&gt; void</code></td><td></td><td>Called with the label of a sidebar item</td></tr><tr><td><code>workspace</code></td><td><code>string</code></td><td><code>&quot;Acme&quot;</code></td><td>Workspace name in the sidebar</td></tr><tr><td><code>user</code></td><td><code>{ name: string; avatar?: string }</code></td><td><code>{ name: &quot;Alex Morgan&quot; }</code></td><td>Account at the bottom of the sidebar</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Accessibility</h2><ul><li>Sidebar items, the version menu, filters and Run eval are real buttons with labels</li><li>Test case rows are focusable and select with Enter or Space</li><li>Prompt changes are reviewed with the keyboard: Tab between changes, Y accepts, N rejects</li><li>Icons are decorative and hidden from screen readers</li></ul><h2>Responsive</h2><ul><li>Fills its container – give it the full viewport height in your app</li><li>Below 1000px the right column moves under the table; the table scrolls sideways on phones</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;; colors are CSS variables on .ui-as</li></ul><h2>Requirements</h2><ul><li>React 19</li><li>@hugeicons/react</li><li>@hugeicons/core-free-icons</li><li>App Shell Inset, KPI Chart, Inline Diff, Segmented Control and Button (installed with it)</li></ul></main></div></div>
   </body>
 </html>

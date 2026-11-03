@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review Center – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/review-center" />
+    <meta name="description" content="A focused workspace for what your agents want to do – the queue sorted by risk, one item at a time with the shaky spans marked, Approve, Edit, Reject and Skip…" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="affectUI" />
+    <meta property="og:title" content="Review Center – React component · affectUI" />
+    <meta property="og:description" content="A focused workspace for what your agents want to do – the queue sorted by risk, one item at a time with the shaky spans marked, Approve, Edit, Reject and Skip…" />
+    <meta property="og:url" content="https://www.affectui.com/components/review-center" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:creator" content="@flohoeller" />
+    <meta name="twitter:title" content="Review Center – React component · affectUI" />
+    <meta name="twitter:description" content="A focused workspace for what your agents want to do – the queue sorted by risk, one item at a time with the shaky spans marked, Approve, Edit, Reject and Skip…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Review Center","item":"https://www.affectui.com/components/review-center"}]},{"@type":"SoftwareSourceCode","name":"Review Center (affectUI)","description":"A focused workspace for what your agents want to do – the queue sorted by risk, one item at a time with the shaky spans marked, Approve, Edit, Reject and Skip on single keys, a stamp as each one leaves and the next one rising in","url":"https://www.affectui.com/components/review-center","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-22","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)" />
+    <script>
+      try {
+        const t = localStorage.getItem("theme");
+        if (t) document.documentElement.dataset.theme = t;
+        // Components switch with a .dark class, the shadcn convention – set it for "system" too
+        const dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", dark);
+      } catch {}
+    </script>
+    <script data-static-mirror-compatibility>
+(() => {
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
+  const libraryPath = (value) => {
+    const target = new URL(value, window.location.href);
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+      ? "/components" + target.search + target.hash
+      : value;
+  };
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+    window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  for (const method of ["pushState", "replaceState"]) {
+    const original = window.history[method].bind(window.history);
+    window.history[method] = (state, title, url) => original(state, title, url == null ? url : libraryPath(url));
+  }
+  const removeSalesLayer = () => {
+    document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
+    document.querySelectorAll("a[href]").forEach((anchor) => {
+      const target = new URL(anchor.getAttribute("href"), window.location.href);
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+    });
+    document.querySelectorAll("button").forEach((button) => {
+      const label = button.textContent.trim().replace(/s+/g, " ");
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+    });
+  };
+  let queued = false;
+  const scheduleCleanup = () => {
+    if (queued) return;
+    queued = true;
+    queueMicrotask(() => {
+      queued = false;
+      removeSalesLayer();
+    });
+  };
+  new MutationObserver(scheduleCleanup).observe(document.documentElement, { childList: true, subtree: true });
+  document.addEventListener("DOMContentLoaded", scheduleCleanup);
+  scheduleCleanup();
+  document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const anchor = event.target?.closest?.("a[href]");
+    if (!anchor) return;
+    const target = new URL(anchor.getAttribute("href"), window.location.href);
+    if (target.origin !== window.location.origin) return;
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign("/components" + target.search + target.hash);
+    }
+  }, true);
+})();
+</script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
+    <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
+  <link rel="stylesheet" href="/ateam/composants.css">
+  </head>
+  <body>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/agents">Agents</a></p>
+<h1>Review Center</h1>
+<p>A focused workspace for what your agents want to do – the queue sorted by risk, one item at a time with the shaky spans marked, Approve, Edit, Reject and Skip on single keys, a stamp as each one leaves and the next one rising in.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/review-center.json</code> · Import from <code>@/components/ui/review-center</code></p>
+<h2>When to use</h2><ul><li>Human in the loop at volume: a person signs off what agents produced – code changes, migrations, plans, contract edits, refunds, payments – one item after another</li><li>Code review for agents: a multi-file change as file rows with +/- counts and a unified diff with line numbers, the risky lines flagged with the agent&#39;s own note</li><li>When the reviewer has to see why the agent wants something and where it is unsure, not only what it wants</li><li>Review queues with a service level: oldest items and items close to their deadline need to stand out</li></ul><h2>When not to use</h2><ul><li>A board of background tasks with their status – use Agent Inbox</li><li>A handful of yes/no questions answered in passing – use Decision Inbox</li><li>One action that waits for a go, with a countdown – use Approval Card</li><li>An agent asking for access to a tool or scope – use Permission Request</li><li>An agent stuck on a decision that lays out its options and their consequences – use Decision Tree</li></ul><h2>Usage</h2><pre><code>import { ReviewCenter, type ReviewItem } from &quot;@/components/ui/review-center&quot;;
+
+const items: ReviewItem[] = [
+  {
+    id: &quot;refund-4821&quot;,
+    title: &quot;Refund order #4821 for Maya Chen&quot;,
+    agent: &quot;Support agent&quot;, model: &quot;Sonnet 5.5&quot;,
+    type: &quot;Refund&quot;, risk: &quot;high&quot;, confidence: 0.62,
+    createdAt: Date.now() - 26 * 60_000,
+    reasoning: &quot;Her blender arrived cracked – damaged items are covered within 30 days.&quot;,
+    fields: [
+      // A flagged span: marked in the proposal, its note shows on hover or with F
+      { label: &quot;Amount&quot;, value: [{ text: &quot;$184.00&quot;, note: &quot;Includes $20 express shipping.&quot;, source: &quot;Refund policy §4&quot; }] },
+      { label: &quot;Order&quot;, value: &quot;#4821&quot; },
+    ],
+    bodyLabel: &quot;Reply to Maya&quot;,
+    body: &quot;Hi Maya, I&#39;m so sorry your blender arrived cracked …&quot;,
+  },
+];
+
+export function Reviews() {
+  return (
+    &lt;ReviewCenter
+      items={items}
+      reviewed={24}
+      onDecide={(item, result) =&gt; save(item.id, result)} // { decision, reason?, text?, fields? }
+      onUndo={(item) =&gt; revert(item.id)}
+    /&gt;
+  );
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>items</code></td><td><code>ReviewItem[]</code></td><td></td><td>{ id, title, agent, model?, icon?, type, risk, confidence, createdAt, reasoning?, fields?, body?, bodyLabel?, format?, sources? } – everything waiting; decided items hide themselves, new ids slide into the queue</td></tr><tr><td><code>risk</code></td><td><code>&quot;high&quot; | &quot;medium&quot; | &quot;low&quot;</code></td><td></td><td>Per item – sorts the queue (high first), feeds the High risk filter and shows as a small tag next to the agent (high and medium)</td></tr><tr><td><code>confidence</code></td><td><code>number</code></td><td></td><td>Per item, 0–1 – below lowConfidence the item counts as Unsure</td></tr><tr><td><code>fields / body</code></td><td><code>ReviewText</code></td><td></td><td>Per item – a string, or an array of strings and { text, note, source? } flags; flags are marked and explain themselves on hover, focus or F. Edit (E) works on these two</td></tr><tr><td><code>files</code></td><td><code>ReviewFile[]</code></td><td></td><td>Per item – a code change: { path, added?, removed?, diff?, start? } – a row per file, a unified diff with line numbers and a light syntax tint under the files that have one</td></tr><tr><td><code>steps</code></td><td><code>ReviewStep[]</code></td><td></td><td>Per item – a plan: { title, tool?, icon?, detail? } as numbered steps; a step with a flag gets an amber number</td></tr><tr><td><code>format</code></td><td><code>&quot;text&quot; | &quot;code&quot;</code></td><td><code>&quot;text&quot;</code></td><td>Per item – &quot;code&quot; shows the body as a diff, like a file&#39;s</td></tr><tr><td><code>onDecide</code></td><td><code>(item, result) =&gt; void</code></td><td></td><td>Approved or rejected – result is { decision, reason?, text?, fields? }; text and fields only when the reviewer edited them</td></tr><tr><td><code>onUndo</code></td><td><code>(item, result) =&gt; void</code></td><td></td><td>The last decision was taken back – put the item back if you dropped it from items</td></tr><tr><td><code>onSkip</code></td><td><code>(item) =&gt; void</code></td><td></td><td>The reviewer moved on without deciding; the row is marked skipped</td></tr><tr><td><code>reviewed</code></td><td><code>number</code></td><td><code>0</code></td><td>How many were reviewed before (e.g. today) – the header counts on from here</td></tr><tr><td><code>total</code></td><td><code>number</code></td><td><code>reviewed + waiting</code></td><td>The total in the header</td></tr><tr><td><code>sla</code></td><td><code>number</code></td><td><code>1800000</code></td><td>How long an item may wait, in ms – waiting times turn amber at 75% and red past it</td></tr><tr><td><code>now</code></td><td><code>number</code></td><td></td><td>The clock (epoch ms) – defaults to the real one, ticking every 10s</td></tr><tr><td><code>lowConfidence</code></td><td><code>number</code></td><td><code>0.7</code></td><td>Below this an item is Unsure</td></tr><tr><td><code>reasons</code></td><td><code>string[]</code></td><td><code>[&quot;Wrong info&quot;, &quot;Tone&quot;, &quot;Not allowed&quot;, &quot;Other&quot;]</code></td><td>The quick reasons for a rejection, picked with 1–4</td></tr><tr><td><code>order</code></td><td><code>&quot;risk&quot; | &quot;oldest&quot; | &quot;given&quot;</code></td><td><code>&quot;risk&quot;</code></td><td>High risk first then oldest, oldest first, or as passed</td></tr><tr><td><code>filter / defaultFilter</code></td><td><code>&quot;all&quot; | &quot;high&quot; | &quot;unsure&quot;</code></td><td><code>&quot;all&quot;</code></td><td>The queue&#39;s filter, controlled or uncontrolled</td></tr><tr><td><code>onFilterChange</code></td><td><code>(filter) =&gt; void</code></td><td></td><td>The filter changed</td></tr><tr><td><code>ref</code></td><td><code>Ref&lt;ReviewCenterHandle&gt;</code></td><td></td><td>approve, reject(reason?), edit, setDraft, save, cancel, skip, next, previous, undo, peek(index), select(id)</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td><code>&quot;Review center&quot;</code></td><td>Heading of the bar</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>A: Approves the current item</li><li>E: Edits the proposal in place – Cmd/Ctrl+Enter approves with the edits, Esc cancels</li><li>R: Rejects – then 1–4 picks the reason, Esc cancels</li><li>S: Skips to the next item without deciding</li><li>J / K: Next and previous item (ArrowDown and ArrowUp work too)</li><li>F: Shows the agent&#39;s note on the next flagged span</li><li>Z: Undoes the last decision (Cmd/Ctrl+Z too)</li><li>Esc: Closes the reason picker, the editor or a note</li></ul><h2>Accessibility</h2><ul><li>Shortcuts work while the focus is anywhere inside – a click on plain content keeps them working; buttons carry aria-keyshortcuts</li><li>Every action is a real button; the reason picker is a labelled group</li><li>Queue rows show only the title, the type and the waiting time; as buttons they are labelled with title, type, risk, confidence and waiting time; the current one has aria-current</li><li>Flagged spans are focusable and point to their note with aria-describedby (role tooltip)</li><li>Decisions, skips and undos are announced in a polite live region, with the new count</li><li>When the row or field you were on leaves, the focus moves to the next item instead of getting lost</li></ul><h2>Responsive</h2><ul><li>Built on a container query: wide, the queue sits on the left and the item on the right, in a fixed-height workspace</li><li>Under 640px the queue goes on top, three rows high, the item under it; its box glides to each item&#39;s height; buttons share the width</li><li>Under 420px the agent line wraps between its parts instead of cutting them, button icons step aside and the flag counter hides – flags are tapped directly; diffs scroll sideways</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/decision-tree">Decision Tree</a> – An agent stuck on a decision lays out its options as a tree – the consequences of each branch, the risky ones marked, its own pick highlighted – and you choose a path or write your own</li><li><a href="/components/agent-inbox">Agent Inbox</a> – All your background agent tasks in one calm list – live clocks and status tags, filter tabs with rolling counts, rows that unfold to the last steps with Approve, Reject, Retry or Open, and glide to their new place</li><li><a href="/components/decision-inbox">Decision Inbox</a> – Open decisions with two quick answers each – answered ones confirm and fold away</li><li><a href="/components/approval-card">Approval Card</a> – An agent asks before it acts – risk badge, preview, Approve and Deny with shortcuts, a pausing countdown, and a smooth morph into a resolved row</li></ul><h2>Guides</h2><ul><li><a href="/guides/human-in-the-loop-ui">Human-in-the-loop UI: approvals, permissions and autonomy</a> – UI patterns for keeping people in control of AI agents – approval cards, permission requests, autonomy levels, steering and reviewing changes.</li><li><a href="/guides/approval-ui-ai-agents">Approval UI for AI agents: what to show before an agent acts</a> – How to design the approval step for AI agent actions – what the card must show, risk levels, timeouts, batching many requests, and undo after approval.</li></ul></main></div></div>
+  </body>
+</html>

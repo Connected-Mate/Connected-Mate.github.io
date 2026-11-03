@@ -3,61 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>affectUI · Agent-ready React UI for AI products</title>
-    <link rel="canonical" href="https://www.affectui.com/" />
-    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <title>Toaster – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/toaster" />
+    <meta name="description" content="Calm toasts from anywhere – a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss. Part of affectUI Pro – one…" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta property="og:url" content="https://www.affectui.com/" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:title" content="Toaster – React component · affectUI" />
+    <meta property="og:description" content="Calm toasts from anywhere – a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss. Part of affectUI Pro – one…" />
+    <meta property="og:url" content="https://www.affectui.com/components/toaster" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@flohoeller" />
+    <meta name="twitter:site" content="@affectui" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
-    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://www.affectui.com/#website",
-            "url": "https://www.affectui.com/",
-            "name": "affectUI",
-            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
-            "inLanguage": "en",
-            "publisher": { "@id": "https://www.affectui.com/#organization" }
-          },
-          {
-            "@type": "Organization",
-            "@id": "https://www.affectui.com/#organization",
-            "name": "affectUI",
-            "url": "https://www.affectui.com/",
-            "logo": "https://www.affectui.com/icon-512.png",
-            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "affectUI",
-            "applicationCategory": "DeveloperApplication",
-            "operatingSystem": "Web",
-            "url": "https://www.affectui.com/",
-            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
-          }
-        ]
-      }
-    </script>
+    <meta name="twitter:title" content="Toaster – React component · affectUI" />
+    <meta name="twitter:description" content="Calm toasts from anywhere – a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss. Part of affectUI Pro – one…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Toaster","item":"https://www.affectui.com/components/toaster"}]},{"@type":"SoftwareSourceCode","name":"Toaster (affectUI)","description":"Calm toasts from anywhere – a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss","url":"https://www.affectui.com/components/toaster","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-08","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -77,21 +45,17 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const origin = "https://www.affectui.com";
-  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && salesOnly.test(target.pathname)
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
-    return;
-  }
-  if (serverOnly.test(window.location.pathname)) {
-    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -102,11 +66,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -127,34 +91,65 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (salesOnly.test(target.pathname)) {
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
-    } else if (serverOnly.test(target.pathname)) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
   <link rel="stylesheet" href="/ateam/composants.css">
   </head>
   <body>
-    <div id="root">
-      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
-      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
-        affectUI – Agent-ready UI for AI products
-      </h1>
-    </div>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/feedback">Feedback</a></p>
+<h1>Toaster</h1>
+<p>Calm toasts from anywhere – a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/toaster.json</code> · Import from <code>@/components/ui/toaster</code></p>
+<h2>When to use</h2><ul><li>Short confirmations after an action – saved, copied, sent, moved to trash (with Undo)</li><li>Background work people started and want to hear back from – uploads, syncs, exports (toast.promise)</li><li>Errors that don&#39;t block the page, e.g. a sync that failed and can be retried later</li></ul><h2>When not to use</h2><ul><li>Errors in a form – show them next to the field</li><li>Anything people must read or decide on – use a dialog or an inline banner</li><li>Long-running progress with details – a progress panel or tracker fits better</li></ul><h2>Usage</h2><pre><code>import { Toaster, toast } from &quot;@/components/ui/toaster&quot;;
+
+// Once, near the root of the app
+export function App() {
+  return (
+    &lt;&gt;
+      &lt;Routes /&gt;
+      &lt;Toaster position=&quot;bottom-right&quot; /&gt;
+    &lt;/&gt;
+  );
+}
+
+// Anywhere – no hook or context needed
+function save() {
+  toast.success(&quot;Draft saved&quot;, { description: &quot;Q3 Board Report · all changes kept&quot; });
+}
+
+function remove(file: File) {
+  trash(file.id);
+  toast(&quot;File moved to trash&quot;, {
+    description: file.name,
+    action: { label: &quot;Undo&quot;, onClick: () =&gt; restore(file.id) },
+  });
+}
+
+function upload(file: File) {
+  toast.promise(api.upload(file), {
+    loading: { title: &quot;Uploading report…&quot;, description: file.name },
+    success: (res) =&gt; ({ title: &quot;Report uploaded&quot;, description: `Shared with ${res.people} people` }),
+    error: (err) =&gt; ({ title: &quot;Upload failed&quot;, description: String(err) }),
+  });
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>position</code></td><td><code>&quot;top-left&quot; | &quot;top-center&quot; | &quot;top-right&quot; | &quot;bottom-left&quot; | &quot;bottom-center&quot; | &quot;bottom-right&quot;</code></td><td><code>&quot;bottom-right&quot;</code></td><td>Corner or edge the stack sits in; new toasts come in from that edge</td></tr><tr><td><code>inline</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Positions the stack inside the nearest positioned ancestor instead of the viewport</td></tr><tr><td><code>id</code></td><td><code>string</code></td><td></td><td>Only shows toasts sent with { toaster: id } – for a second, separate stack</td></tr><tr><td><code>duration</code></td><td><code>number</code></td><td><code>4000</code></td><td>Default time on screen in ms; each toast can override it, Infinity keeps it open</td></tr><tr><td><code>visibleToasts</code></td><td><code>number</code></td><td><code>3</code></td><td>Toasts visible at once; older ones wait (with a paused timer) until there&#39;s room</td></tr><tr><td><code>expand</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Always shows the stack fanned out instead of on hover and focus</td></tr><tr><td><code>offset</code></td><td><code>number</code></td><td><code>24 (20 inline)</code></td><td>Distance from the edges in px; phones always use 12px gutters</td></tr><tr><td><code>gap</code></td><td><code>number</code></td><td><code>10</code></td><td>Space between toasts when fanned out, in px</td></tr><tr><td><code>hotkey</code></td><td><code>string | null</code></td><td><code>&quot;F8&quot;</code></td><td>Key (KeyboardEvent.key or .code) that moves focus to the newest toast</td></tr><tr><td><code>hairline</code></td><td><code>boolean</code></td><td><code>true</code></td><td>A 1px line along the bottom that runs down with the timer and stops when it pauses</td></tr><tr><td><code>closeButton</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Small close button on hover and focus – always visible on touch screens</td></tr><tr><td><code>label</code></td><td><code>string</code></td><td><code>&quot;Notifications&quot;</code></td><td>Name of the region for screen readers (the hotkey is added)</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the region</td></tr><tr><td><code>toast(title, options?)</code></td><td><code>(ReactNode, ToastOptions) =&gt; ToastId</code></td><td></td><td>Shows a plain toast; also toast.success, toast.error, toast.info and toast.loading. Returns the id</td></tr><tr><td><code>toast.promise(promise, messages, options?)</code></td><td><code>&lt;T&gt;(Promise&lt;T&gt; | () =&gt; Promise&lt;T&gt;, { loading, success, error }) =&gt; Promise&lt;T&gt;</code></td><td></td><td>A loading toast that turns into success or error; each message is a title, { title, description } or a function of the result</td></tr><tr><td><code>toast.dismiss(id?)</code></td><td><code>(ToastId?) =&gt; void</code></td><td></td><td>Closes one toast, or all of them without an id</td></tr><tr><td><code>ToastOptions</code></td><td><code>{ id?, description?, action?: { label, onClick }, duration?, icon?, toaster?, onDismiss? }</code></td><td></td><td>Pass an existing id to update that toast in place (the timer restarts, the text crossfades). action.onClick closes the toast unless it calls event.preventDefault()</td></tr></tbody></table><h2>Keyboard</h2><ul><li>F8: Moves focus to the newest toast and fans the stack out</li><li>Tab: Goes from toast to toast, through their action and close buttons</li><li>Esc: Closes the focused toast (or the newest) and moves focus to the next one; focus returns where it was after the last</li></ul><h2>Accessibility</h2><ul><li>The stack is a labelled region (&quot;Notifications (F8)&quot;); every toast is focusable</li><li>New and updated toasts are read out in a polite status region – errors in an alert region, so they come first</li><li>The timer pauses while the pointer or keyboard focus is in the stack and while the tab is hidden, so nothing vanishes mid-read</li><li>Swiping is never the only way out: there&#39;s Esc and a named close button</li><li>Icons are decorative; color is limited to the success and error icons, the text says what happened</li></ul><h2>Responsive</h2><ul><li>356px wide on larger screens; under 600px it spans the width with 12px gutters (and respects the home indicator)</li><li>Touch: tap the stack to fan it out, swipe sideways or down to dismiss; close and action buttons get bigger hit areas</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/notification-stack">Notification Stack</a> – Notice cards stacked behind each other – dismiss the front one to reveal the next</li><li><a href="/components/progress-tracker">Progress Tracker</a> – Onboarding checklist with an animated progress bar, ticks that draw themselves and auto play</li><li><a href="/components/dropzone">Dropzone</a> – Drag files in and watch them upload – fanning documents, colored type badges, progress with time left, errors with retry</li></ul></main></div></div>
   </body>
 </html>

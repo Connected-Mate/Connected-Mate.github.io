@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Handoff – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/agent-handoff" />
+    <meta name="description" content="A task passed from agent to agent like a relay – at every handoff what went along to the next one, and what got lost on the way. Part of affectUI Pro – one…" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="affectUI" />
+    <meta property="og:title" content="Agent Handoff – React component · affectUI" />
+    <meta property="og:description" content="A task passed from agent to agent like a relay – at every handoff what went along to the next one, and what got lost on the way. Part of affectUI Pro – one…" />
+    <meta property="og:url" content="https://www.affectui.com/components/agent-handoff" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:creator" content="@flohoeller" />
+    <meta name="twitter:title" content="Agent Handoff – React component · affectUI" />
+    <meta name="twitter:description" content="A task passed from agent to agent like a relay – at every handoff what went along to the next one, and what got lost on the way. Part of affectUI Pro – one…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Agent Handoff","item":"https://www.affectui.com/components/agent-handoff"}]},{"@type":"SoftwareSourceCode","name":"Agent Handoff (affectUI)","description":"A task passed from agent to agent like a relay – at every handoff what went along to the next one, and what got lost on the way","url":"https://www.affectui.com/components/agent-handoff","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-28","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)" />
+    <script>
+      try {
+        const t = localStorage.getItem("theme");
+        if (t) document.documentElement.dataset.theme = t;
+        // Components switch with a .dark class, the shadcn convention – set it for "system" too
+        const dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", dark);
+      } catch {}
+    </script>
+    <script data-static-mirror-compatibility>
+(() => {
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
+  const libraryPath = (value) => {
+    const target = new URL(value, window.location.href);
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+      ? "/components" + target.search + target.hash
+      : value;
+  };
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+    window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  for (const method of ["pushState", "replaceState"]) {
+    const original = window.history[method].bind(window.history);
+    window.history[method] = (state, title, url) => original(state, title, url == null ? url : libraryPath(url));
+  }
+  const removeSalesLayer = () => {
+    document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
+    document.querySelectorAll("a[href]").forEach((anchor) => {
+      const target = new URL(anchor.getAttribute("href"), window.location.href);
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+    });
+    document.querySelectorAll("button").forEach((button) => {
+      const label = button.textContent.trim().replace(/s+/g, " ");
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+    });
+  };
+  let queued = false;
+  const scheduleCleanup = () => {
+    if (queued) return;
+    queued = true;
+    queueMicrotask(() => {
+      queued = false;
+      removeSalesLayer();
+    });
+  };
+  new MutationObserver(scheduleCleanup).observe(document.documentElement, { childList: true, subtree: true });
+  document.addEventListener("DOMContentLoaded", scheduleCleanup);
+  scheduleCleanup();
+  document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const anchor = event.target?.closest?.("a[href]");
+    if (!anchor) return;
+    const target = new URL(anchor.getAttribute("href"), window.location.href);
+    if (target.origin !== window.location.origin) return;
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign("/components" + target.search + target.hash);
+    }
+  }, true);
+})();
+</script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
+    <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
+  <link rel="stylesheet" href="/ateam/composants.css">
+  </head>
+  <body>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/agents">Agents</a></p>
+<h1>Agent Handoff</h1>
+<p>A task passed from agent to agent like a relay – at every handoff what went along to the next one, and what got lost on the way.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/agent-handoff.json</code> · Import from <code>@/components/ui/agent-handoff</code></p>
+<h2>When to use</h2><ul><li>Several agents work on tasks one after another – research, analysis, writing, review – and people need to see what each one passed on</li><li>Debugging multi-agent pipelines: where did the context get lost?</li><li>Letting people push a task on to a later agent and watch it travel down the relay</li></ul><h2>When not to use</h2><ul><li>Agents working side by side at the same time – use Agent Lanes</li><li>Who started whom, as a hierarchy – use Agent Tree</li></ul><h2>Usage</h2><pre><code>import { AgentHandoff, type HandoffAgent, type Handoff } from &quot;@/components/ui/agent-handoff&quot;;
+
+const agents: HandoffAgent[] = [
+  { id: &quot;research&quot;, name: &quot;Researcher&quot;, model: &quot;Opus 5.5&quot;, avatar: &lt;ClaudeLogo /&gt; },
+  { id: &quot;writer&quot;, name: &quot;Writer&quot;, model: &quot;GPT-5&quot;, avatar: &lt;OpenAILogo /&gt; },
+];
+
+const handoffs: Handoff[] = [
+  {
+    id: &quot;launch-1&quot;, from: &quot;research&quot;, to: &quot;writer&quot;, task: &quot;Launch post&quot;,
+    items: [
+      { id: &quot;brief&quot;, label: &quot;launch-brief.md&quot;, kind: &quot;file&quot; },
+      { id: &quot;quotes&quot;, label: &quot;3 user quotes&quot;, kind: &quot;note&quot;, lost: true, why: &quot;Over the writer&#39;s context budget&quot; },
+    ],
+  },
+];
+
+&lt;AgentHandoff
+  agents={agents}
+  handoffs={handoffs}
+  tasks={[
+    { id: &quot;launch&quot;, title: &quot;Launch post&quot;, logo: &lt;NotionLogo /&gt;, status: &quot;working&quot;, agent: &quot;writer&quot;, note: &quot;Drafting&quot; },
+    { id: &quot;pricing&quot;, title: &quot;Pricing page copy&quot;, logo: &lt;NotionLogo /&gt;, status: &quot;todo&quot; },
+  ]}
+  onAssign={(task, agent) =&gt; run(task.id, agent.id)}
+  onRestore={(handoff, item) =&gt; passOn(handoff.id, item.id)}
+/&gt;</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>agents</code></td><td><code>HandoffAgent[]</code></td><td></td><td>In relay order: { id, name, model?, avatar?, description? } – each card shows what it&#39;s for and the task it&#39;s on, taken from tasks</td></tr><tr><td><code>handoffs</code></td><td><code>Handoff[]</code></td><td></td><td>What was handed over: { id, from, to, task, items } – each lands as a card in the column between from and to, latest on top; a new id sends light along its lines</td></tr><tr><td><code>items</code></td><td><code>HandoffItem[]</code></td><td></td><td>Per handoff: { id, label, kind?: &quot;file&quot; | &quot;source&quot; | &quot;fact&quot; | &quot;decision&quot; | &quot;note&quot;, lost?, why? } – lost ones are struck through, why shows on hover</td></tr><tr><td><code>tasks</code></td><td><code>HandoffTask[]</code></td><td></td><td>Every task: { id, title, logo?, status: &quot;todo&quot; | &quot;working&quot; | &quot;done&quot; | &quot;warning&quot;, agent?, note? } – handoffs refer to them by title for the logo and where the task is now; the first agent shows the next todo one as up next</td></tr><tr><td><code>onAssign</code></td><td><code>(task, agent) =&gt; void</code></td><td></td><td>A handoff card was dropped on an agent to the right of its column – give that task to it and keep handoffs and tasks up to date. Cards only move on down the relay, never back</td></tr><tr><td><code>onRestore</code></td><td><code>(handoff, item) =&gt; void</code></td><td></td><td>Adds &quot;Add back&quot; to a lost item&#39;s card – pass it on after all</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Moves through the waiting tasks, the agents (while a task is picked up) and the handed-over items</li><li>Enter / Space: Opens a card or an agent&#39;s task; with a card picked up, gives it to the focused agent; on a lost item: shows why, and Add back</li></ul><h2>Accessibility</h2><ul><li>Tasks can be given to an agent without dragging: double-tap a card, then tap an agent to its right</li><li>Each column and each handoff&#39;s items are labelled lists; cards and lost items are buttons with aria-expanded</li></ul><h2>Responsive</h2><ul><li>Below about 760px the status shows as an icon only; below 620px the relay stacks into one column – an agent, its handoff, the next agent </li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/agent-lanes">Agent Lanes</a> – Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the block</li><li><a href="/components/agent-tree">Agent Tree</a> – Who started whom – an orchestrator and its sub-agents as a live tree, with status, cost and time on every card, costs rolling up each branch, and branches that fold to one line</li><li><a href="/components/context-map">Context Map</a> – What fills an agent&#39;s context window, as a living treemap – system prompt, tools, memory, every file, the chat and tool results as tiles that glide as it grows, the free space dashed, and compaction squeezing old turns into a summary</li><li><a href="/components/trace-waterfall">Trace Waterfall</a> – Where the time and money of an agent run go – every LLM call, tool call and sub-agent as a bar on a live timeline, with tokens and cost per step, the slowest call marked and branches that fold into their parent</li></ul><h2>Guides</h2><ul><li><a href="/guides/show-what-ai-agent-is-doing">How to show what an AI agent is doing</a> – UI patterns that make an AI agent&#39;s work visible – the current step, its plan, tool calls, a live tree or timeline, and a trace of where time and money went.</li><li><a href="/guides/multi-agent-ui-react">Multi-agent UI in React: orchestrators, sub-agents and hand-offs</a> – How to show several AI agents working together – who started whom, who is busy, hand-offs, parallel work, conflicts and the queue – with React components for each.</li></ul></main></div></div>
+  </body>
+</html>

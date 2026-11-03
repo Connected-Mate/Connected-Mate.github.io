@@ -3,61 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>affectUI · Agent-ready React UI for AI products</title>
-    <link rel="canonical" href="https://www.affectui.com/" />
-    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <title>Pricing Plans – React block · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/blocks/pricing-plans" />
+    <meta name="description" content="Pricing section with a monthly / yearly switch, three plan cards and collapsible details. Part of affectUI Pro – one file, no dependencies." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta property="og:url" content="https://www.affectui.com/" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:title" content="Pricing Plans – React block · affectUI" />
+    <meta property="og:description" content="Pricing section with a monthly / yearly switch, three plan cards and collapsible details. Part of affectUI Pro – one file, no dependencies." />
+    <meta property="og:url" content="https://www.affectui.com/blocks/pricing-plans" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@flohoeller" />
+    <meta name="twitter:site" content="@affectui" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
-    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://www.affectui.com/#website",
-            "url": "https://www.affectui.com/",
-            "name": "affectUI",
-            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
-            "inLanguage": "en",
-            "publisher": { "@id": "https://www.affectui.com/#organization" }
-          },
-          {
-            "@type": "Organization",
-            "@id": "https://www.affectui.com/#organization",
-            "name": "affectUI",
-            "url": "https://www.affectui.com/",
-            "logo": "https://www.affectui.com/icon-512.png",
-            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "affectUI",
-            "applicationCategory": "DeveloperApplication",
-            "operatingSystem": "Web",
-            "url": "https://www.affectui.com/",
-            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
-          }
-        ]
-      }
-    </script>
+    <meta name="twitter:title" content="Pricing Plans – React block · affectUI" />
+    <meta name="twitter:description" content="Pricing section with a monthly / yearly switch, three plan cards and collapsible details. Part of affectUI Pro – one file, no dependencies." />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Blocks","item":"https://www.affectui.com/blocks"},{"@type":"ListItem","position":3,"name":"Pricing Plans","item":"https://www.affectui.com/blocks/pricing-plans"}]},{"@type":"SoftwareSourceCode","name":"Pricing Plans (affectUI)","description":"Pricing section with a monthly / yearly switch, three plan cards and collapsible details","url":"https://www.affectui.com/blocks/pricing-plans","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -77,21 +45,17 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const origin = "https://www.affectui.com";
-  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && salesOnly.test(target.pathname)
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
-    return;
-  }
-  if (serverOnly.test(window.location.pathname)) {
-    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -102,11 +66,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -127,34 +91,38 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (salesOnly.test(target.pathname)) {
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
-    } else if (serverOnly.test(target.pathname)) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
   <link rel="stylesheet" href="/ateam/composants.css">
   </head>
   <body>
-    <div id="root">
-      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
-      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
-        affectUI – Agent-ready UI for AI products
-      </h1>
-    </div>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/blocks">Blocks</a> › <a href="/blocks/category/pricing">Pricing</a></p>
+<h1>Pricing Plans</h1>
+<p>Pricing section with a monthly / yearly switch, three plan cards and collapsible details.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/pricing-plans.json</code> · Import from <code>@/components/ui/pricing-plans</code></p>
+<h2>When to use</h2><ul><li>A pricing page or section with up to three plans and a monthly / yearly choice</li><li>Plans that differ in a few limits plus a longer list of features</li></ul><h2>When not to use</h2><ul><li>One-time purchases – drop the billing switch or use a simpler card</li><li>More than three or four plans – use a comparison table instead</li></ul><h2>Usage</h2><pre><code>import { PricingPlans } from &quot;@/components/ui/pricing-plans&quot;;
+
+export function Pricing() {
+  return &lt;PricingPlans plans={plans} defaultBilling=&quot;yearly&quot; /&gt;;
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>plans</code></td><td><code>Plan[]</code></td><td></td><td>Name, monthly and yearly price, limits, sync chip, features and an onSelect callback. One to three plans sit side by side, four two by two; a price that is not a number reads “Custom”; none shows a short empty note</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td><code>&quot;Choose your plan&quot;</code></td><td>Section heading</td></tr><tr><td><code>subtitle</code></td><td><code>string</code></td><td></td><td>Line under the heading</td></tr><tr><td><code>defaultBilling</code></td><td><code>&quot;monthly&quot; | &quot;yearly&quot;</code></td><td><code>&quot;yearly&quot;</code></td><td>Billing period shown first</td></tr><tr><td><code>currency</code></td><td><code>string</code></td><td><code>&quot;$&quot;</code></td><td>Symbol in front of the prices, or a three-letter code like &quot;EUR&quot; to format them as that currency (cents only when a price has them)</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the section</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Move between the switch, the buttons and the detail toggles</li><li>Enter / Space: Switch the billing period, start a plan or show / hide details</li></ul><h2>Accessibility</h2><ul><li>The billing switch is a radio group</li><li>Details toggles use aria-expanded; hidden details are inert</li><li>Features that are not included are announced as such</li></ul><h2>Responsive</h2><ul><li>Three columns on wide screens, one column below 860px</li><li>Long plan names, badges, limit labels, sync chips and button labels stay on one line with an ellipsis and show in full on hover; feature labels wrap</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul></main></div></div>
   </body>
 </html>

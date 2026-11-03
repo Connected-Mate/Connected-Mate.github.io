@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-CTsRTJUX.js";import{t}from"./component.clean-D_s3HzFG.js";/* empty css             */var n=e();function r(){return(0,n.jsx)(`div`,{className:`command-demo`,children:(0,n.jsx)(t,{})})}export{r as default};

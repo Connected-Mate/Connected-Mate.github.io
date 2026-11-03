@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Recap – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/agent-recap" />
+    <meta name="description" content="What the agents did while you were away – the night as a small chart with a peak per event, then a board of what needs you, what failed and what&#39;s done, acted…" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="affectUI" />
+    <meta property="og:title" content="Agent Recap – React component · affectUI" />
+    <meta property="og:description" content="What the agents did while you were away – the night as a small chart with a peak per event, then a board of what needs you, what failed and what&#39;s done, acted…" />
+    <meta property="og:url" content="https://www.affectui.com/components/agent-recap" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:creator" content="@flohoeller" />
+    <meta name="twitter:title" content="Agent Recap – React component · affectUI" />
+    <meta name="twitter:description" content="What the agents did while you were away – the night as a small chart with a peak per event, then a board of what needs you, what failed and what&#39;s done, acted…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Agent Recap","item":"https://www.affectui.com/components/agent-recap"}]},{"@type":"SoftwareSourceCode","name":"Agent Recap (affectUI)","description":"What the agents did while you were away – the night as a small chart with a peak per event, then a board of what needs you, what failed and what's done, acted on right on the card","url":"https://www.affectui.com/components/agent-recap","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-30","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)" />
+    <script>
+      try {
+        const t = localStorage.getItem("theme");
+        if (t) document.documentElement.dataset.theme = t;
+        // Components switch with a .dark class, the shadcn convention – set it for "system" too
+        const dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", dark);
+      } catch {}
+    </script>
+    <script data-static-mirror-compatibility>
+(() => {
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
+  const libraryPath = (value) => {
+    const target = new URL(value, window.location.href);
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+      ? "/components" + target.search + target.hash
+      : value;
+  };
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+    window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  for (const method of ["pushState", "replaceState"]) {
+    const original = window.history[method].bind(window.history);
+    window.history[method] = (state, title, url) => original(state, title, url == null ? url : libraryPath(url));
+  }
+  const removeSalesLayer = () => {
+    document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
+    document.querySelectorAll("a[href]").forEach((anchor) => {
+      const target = new URL(anchor.getAttribute("href"), window.location.href);
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+    });
+    document.querySelectorAll("button").forEach((button) => {
+      const label = button.textContent.trim().replace(/s+/g, " ");
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+    });
+  };
+  let queued = false;
+  const scheduleCleanup = () => {
+    if (queued) return;
+    queued = true;
+    queueMicrotask(() => {
+      queued = false;
+      removeSalesLayer();
+    });
+  };
+  new MutationObserver(scheduleCleanup).observe(document.documentElement, { childList: true, subtree: true });
+  document.addEventListener("DOMContentLoaded", scheduleCleanup);
+  scheduleCleanup();
+  document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const anchor = event.target?.closest?.("a[href]");
+    if (!anchor) return;
+    const target = new URL(anchor.getAttribute("href"), window.location.href);
+    if (target.origin !== window.location.origin) return;
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign("/components" + target.search + target.hash);
+    }
+  }, true);
+})();
+</script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
+    <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
+  <link rel="stylesheet" href="/ateam/composants.css">
+  </head>
+  <body>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/agents">Agents</a></p>
+<h1>Agent Recap</h1>
+<p>What the agents did while you were away – the night as a small chart with a peak per event, then a board of what needs you, what failed and what&#39;s done, acted on right on the card.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/agent-recap.json</code> · Import from <code>@/components/ui/agent-recap</code></p>
+<h2>When to use</h2><ul><li>The first thing people see when they come back to agents that kept working – in the morning, after a meeting, after a weekend</li><li>A catch-up where the few things that need a decision come first and can be decided right there</li><li>Showing that the agents were busy without making people read every step</li></ul><h2>When not to use</h2><ul><li>A live feed of what agents are doing right now – use Agent Monitor or Agent Lanes</li><li>A full log with undo for every change – use Agent Ledger</li><li>Decisions without the rest of the night – use Decision Inbox</li></ul><h2>Usage</h2><pre><code>import { AgentRecap, type RecapEvent } from &quot;@/components/ui/agent-recap&quot;;
+
+const events: RecapEvent[] = [
+  { id: &quot;refund&quot;, kind: &quot;needs&quot;, at: &quot;2026-10-30T02:14&quot;, title: &quot;Refund $240 to Acme Corp&quot;,
+    detail: &quot;Over the $200 auto-approve limit&quot;, action: &quot;Approve&quot;, doneLabel: &quot;Approved&quot; },
+  { id: &quot;sync&quot;, kind: &quot;failed&quot;, at: &quot;2026-10-30T03:02&quot;, title: &quot;Contact sync to the CRM&quot;,
+    detail: &quot;Token expired after 1,284 of 3,900 contacts&quot; },
+  { id: &quot;tickets&quot;, kind: &quot;done&quot;, at: &quot;2026-10-29T19:05&quot;, title: &quot;Answered support tickets&quot;, count: 38 },
+];
+
+export function Morning() {
+  return &lt;AgentRecap events={events} since={lastSeenAt} onAction={(e, a) =&gt; handle(e, a)} /&gt;;
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>events</code></td><td><code>RecapEvent[]</code></td><td></td><td>{ id, at, kind, title, detail?, logo?, count?, action?, doneLabel? } – everything that happened, any order</td></tr><tr><td><code>kind</code></td><td><code>&quot;needs&quot; | &quot;failed&quot; | &quot;done&quot;</code></td><td></td><td>Per event – needs you (with its action), failed (with Retry) or done</td></tr><tr><td><code>since / until</code></td><td><code>Date | string | number</code></td><td></td><td>When the person left, and now – the chart runs between them; until defaults to the time it renders</td></tr><tr><td><code>onAction</code></td><td><code>(event, action: &quot;primary&quot; | &quot;review&quot;) =&gt; void | Promise</code></td><td></td><td>The main action (Approve, Retry …) or Review. Return a promise and the row shows it working until it settles – a rejected one puts the row back</td></tr><tr><td><code>onUndo / onRedo</code></td><td><code>(event) =&gt; void</code></td><td></td><td>Undo on a card that was acted on or on something an agent did (a done card), and Redo after that</td></tr><tr><td><code>limit</code></td><td><code>number</code></td><td><code>3</code></td><td>Cards per lane at most – every lane keeps room for this many, so the three stay the same height however full they are</td></tr><tr><td><code>replay</code></td><td><code>number</code></td><td><code>1800</code></td><td>How long the night replays when it opens, in ms – 0 shows everything at once</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td><code>&quot;While you were away&quot;</code></td><td>Heading</td></tr><tr><td><code>locale</code></td><td><code>string</code></td><td></td><td>For the times and counts</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Moves through the actions card by card – Review, then the main action (or Undo / Redo)</li><li>Enter / Space: Runs the focused action; focus then moves to Undo, and back to the action after Undo</li></ul><h2>Accessibility</h2><ul><li>A section named by its heading; each lane has a heading with its count – of everything in it, also beyond the limit</li><li>Every button says what it does to which task – &quot;Approve: Refund $240 to Acme Corp&quot; – so a screen reader never hears three bare Approves</li><li>When an action finishes, a polite live region says so – &quot;Approved: Refund $240 to Acme Corp&quot; – and focus moves to Undo, so it never drops to the page</li><li>Focusing anything in a card lights up its dot on the chart, the same as pointing at it; the chart itself is decorative and hidden from screen readers – everything on it is in the cards</li><li>Every time is a &lt;time&gt; with the full date; empty lanes say so in words</li></ul><h2>Responsive</h2><ul><li>Every card is the same height and ends in the same line – a state tag (Done, Fixed, Approved) and the buttons – so acting on one never moves anything</li><li>Under 640px the three lanes stack</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/decision-inbox">Decision Inbox</a> – Open decisions with two quick answers each – answered ones confirm and fold away</li><li><a href="/components/agent-inbox">Agent Inbox</a> – All your background agent tasks in one calm list – live clocks and status tags, filter tabs with rolling counts, rows that unfold to the last steps with Approve, Reject, Retry or Open, and glide to their new place</li><li><a href="/components/agent-ledger">Agent Ledger</a> – Everything an agent changed in your systems, each change with an undo – before and after per row, and pointing at Undo shows what builds on it: what would be undone too, and what can&#39;t be taken back</li><li><a href="/components/notification-stack">Notification Stack</a> – Notice cards stacked behind each other – dismiss the front one to reveal the next</li></ul></main></div></div>
+  </body>
+</html>

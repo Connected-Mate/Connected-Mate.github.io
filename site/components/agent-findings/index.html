@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Findings – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/agent-findings" />
+    <meta name="description" content="A swarm of agents checking something – one calm row per agent with its progress, and their findings sliding into a short feed as they&#39;re found. Part of…" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="affectUI" />
+    <meta property="og:title" content="Agent Findings – React component · affectUI" />
+    <meta property="og:description" content="A swarm of agents checking something – one calm row per agent with its progress, and their findings sliding into a short feed as they&#39;re found. Part of…" />
+    <meta property="og:url" content="https://www.affectui.com/components/agent-findings" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:creator" content="@flohoeller" />
+    <meta name="twitter:title" content="Agent Findings – React component · affectUI" />
+    <meta name="twitter:description" content="A swarm of agents checking something – one calm row per agent with its progress, and their findings sliding into a short feed as they&#39;re found. Part of…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Agent Findings","item":"https://www.affectui.com/components/agent-findings"}]},{"@type":"SoftwareSourceCode","name":"Agent Findings (affectUI)","description":"A swarm of agents checking something – one calm row per agent with its progress, and their findings sliding into a short feed as they're found","url":"https://www.affectui.com/components/agent-findings","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-29","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)" />
+    <script>
+      try {
+        const t = localStorage.getItem("theme");
+        if (t) document.documentElement.dataset.theme = t;
+        // Components switch with a .dark class, the shadcn convention – set it for "system" too
+        const dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", dark);
+      } catch {}
+    </script>
+    <script data-static-mirror-compatibility>
+(() => {
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
+  const libraryPath = (value) => {
+    const target = new URL(value, window.location.href);
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+      ? "/components" + target.search + target.hash
+      : value;
+  };
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+    window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  for (const method of ["pushState", "replaceState"]) {
+    const original = window.history[method].bind(window.history);
+    window.history[method] = (state, title, url) => original(state, title, url == null ? url : libraryPath(url));
+  }
+  const removeSalesLayer = () => {
+    document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
+    document.querySelectorAll("a[href]").forEach((anchor) => {
+      const target = new URL(anchor.getAttribute("href"), window.location.href);
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+    });
+    document.querySelectorAll("button").forEach((button) => {
+      const label = button.textContent.trim().replace(/s+/g, " ");
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+    });
+  };
+  let queued = false;
+  const scheduleCleanup = () => {
+    if (queued) return;
+    queued = true;
+    queueMicrotask(() => {
+      queued = false;
+      removeSalesLayer();
+    });
+  };
+  new MutationObserver(scheduleCleanup).observe(document.documentElement, { childList: true, subtree: true });
+  document.addEventListener("DOMContentLoaded", scheduleCleanup);
+  scheduleCleanup();
+  document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const anchor = event.target?.closest?.("a[href]");
+    if (!anchor) return;
+    const target = new URL(anchor.getAttribute("href"), window.location.href);
+    if (target.origin !== window.location.origin) return;
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign("/components" + target.search + target.hash);
+    }
+  }, true);
+})();
+</script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
+    <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
+  <link rel="stylesheet" href="/ateam/composants.css">
+  </head>
+  <body>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/agents">Agents</a></p>
+<h1>Agent Findings</h1>
+<p>A swarm of agents checking something – one calm row per agent with its progress, and their findings sliding into a short feed as they&#39;re found.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/agent-findings.json</code> · Import from <code>@/components/ui/agent-findings</code></p>
+<h2>When to use</h2><ul><li>Several agents check, audit or verify something in parallel and people want to follow along without drowning in detail</li><li>Security reviews, code audits, test runs, data checks – anything that turns up findings as it goes</li></ul><h2>When not to use</h2><ul><li>When it matters who started whom – use Agent Tree</li><li>When the timeline matters – use Agent Lanes or Trace Waterfall</li></ul><h2>Usage</h2><pre><code>import { AgentFindings, type FindingAgent, type Finding } from &quot;@/components/ui/agent-findings&quot;;
+
+export function Run({ agents, findings }: { agents: FindingAgent[]; findings: Finding[] }) {
+  return (
+    &lt;AgentFindings
+      title=&quot;Verification&quot;
+      agents={agents} // { id, name, model?, avatar?, step?, done, total, status? }
+      findings={findings} // { id, agentId, title, severity: &quot;critical&quot; | &quot;warning&quot; | &quot;note&quot;, location?, at }
+      onOpen={(finding) =&gt; openFinding(finding.id)}
+    /&gt;
+  );
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>agents</code></td><td><code>FindingAgent[]</code></td><td></td><td>One row each: name, current step, checks done of total; status defaults to running until done reaches total</td></tr><tr><td><code>findings</code></td><td><code>Finding[]</code></td><td></td><td>What the agents found, with severity, where and when – the newest come first in the feed</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td><code>&quot;Verification&quot;</code></td><td>Heading in the bar</td></tr><tr><td><code>rows</code></td><td><code>number</code></td><td><code>4</code></td><td>How many findings the feed shows at most – it grows to that height as they come in</td></tr><tr><td><code>now</code></td><td><code>number</code></td><td></td><td>A clock you control for the “2m” times – without it they follow real time</td></tr><tr><td><code>onOpen</code></td><td><code>(finding: Finding) =&gt; void</code></td><td></td><td>A finding was clicked</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Moves through the agents and the findings in the feed</li><li>Enter / Space: On an agent: shows only its findings (again: all); on a finding: opens it</li></ul><h2>Accessibility</h2><ul><li>The feed is a polite live region – new findings are announced as they arrive</li><li>Every severity has a text label for screen readers, not just a color</li><li>Agents are toggle buttons (aria-pressed) for the filter</li></ul><h2>Responsive</h2><ul><li>Below 480px the check counts and locations drop, so the rows keep one line</li><li>Dark mode built in; colors are CSS variables on .ui-af</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Guides</h2><ul><li><a href="/guides/multi-agent-ui-react">Multi-agent UI in React: orchestrators, sub-agents and hand-offs</a> – How to show several AI agents working together – who started whom, who is busy, hand-offs, parallel work, conflicts and the queue – with React components for each.</li></ul></main></div></div>
+  </body>
+</html>

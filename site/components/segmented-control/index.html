@@ -3,61 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>affectUI · Agent-ready React UI for AI products</title>
-    <link rel="canonical" href="https://www.affectui.com/" />
-    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <title>Segmented Control – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/segmented-control" />
+    <meta name="description" content="Switch between two to six options – a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges. Free…" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta property="og:url" content="https://www.affectui.com/" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:title" content="Segmented Control – React component · affectUI" />
+    <meta property="og:description" content="Switch between two to six options – a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges. Free…" />
+    <meta property="og:url" content="https://www.affectui.com/components/segmented-control" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@flohoeller" />
+    <meta name="twitter:site" content="@affectui" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
-    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://www.affectui.com/#website",
-            "url": "https://www.affectui.com/",
-            "name": "affectUI",
-            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
-            "inLanguage": "en",
-            "publisher": { "@id": "https://www.affectui.com/#organization" }
-          },
-          {
-            "@type": "Organization",
-            "@id": "https://www.affectui.com/#organization",
-            "name": "affectUI",
-            "url": "https://www.affectui.com/",
-            "logo": "https://www.affectui.com/icon-512.png",
-            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "affectUI",
-            "applicationCategory": "DeveloperApplication",
-            "operatingSystem": "Web",
-            "url": "https://www.affectui.com/",
-            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
-          }
-        ]
-      }
-    </script>
+    <meta name="twitter:title" content="Segmented Control – React component · affectUI" />
+    <meta name="twitter:description" content="Switch between two to six options – a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges. Free…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Segmented Control","item":"https://www.affectui.com/components/segmented-control"}]},{"@type":"SoftwareSourceCode","name":"Segmented Control (affectUI)","description":"Switch between two to six options – a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges","url":"https://www.affectui.com/components/segmented-control","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","dateCreated":"2026-10-08","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -77,21 +45,17 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const origin = "https://www.affectui.com";
-  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && salesOnly.test(target.pathname)
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
-    return;
-  }
-  if (serverOnly.test(window.location.pathname)) {
-    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -102,11 +66,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -127,34 +91,52 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (salesOnly.test(target.pathname)) {
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
-    } else if (serverOnly.test(target.pathname)) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
   <link rel="stylesheet" href="/ateam/composants.css">
   </head>
   <body>
-    <div id="root">
-      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
-      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
-        affectUI – Agent-ready UI for AI products
-      </h1>
-    </div>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/navigation">Navigation</a></p>
+<h1>Segmented Control</h1>
+<p>Switch between two to six options – a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges.</p>
+<p>Free and open source (MIT). Install: <code>npx shadcn@latest add https://www.affectui.com/r/segmented-control.json</code> · Import from <code>@/components/ui/segmented-control</code></p>
+<h2>When to use</h2><ul><li>Switching between two to six views of the same content – sections of a dashboard, list / board / calendar, monthly / yearly</li><li>A choice that applies right away and where every option should stay visible</li></ul><h2>When not to use</h2><ul><li>More than six options or long labels – use a select or a menu</li><li>Choices that are confirmed with a Save button inside a form – radio buttons read clearer there</li><li>Turning one thing on or off – that&#39;s a switch</li></ul><h2>Usage</h2><pre><code>import { SegmentedControl } from &quot;@/components/ui/segmented-control&quot;;
+
+export function DashboardTabs() {
+  const [section, setSection] = useState(&quot;overview&quot;);
+  return (
+    &lt;SegmentedControl
+      aria-label=&quot;Dashboard section&quot;
+      kind=&quot;tabs&quot;
+      value={section}
+      onChange={setSection}
+      options={[
+        { value: &quot;overview&quot;, label: &quot;Overview&quot;, controls: &quot;panel-overview&quot; },
+        { value: &quot;analytics&quot;, label: &quot;Analytics&quot;, controls: &quot;panel-analytics&quot; },
+        { value: &quot;reports&quot;, label: &quot;Reports&quot;, controls: &quot;panel-reports&quot; },
+        { value: &quot;notifications&quot;, label: &quot;Notifications&quot;, count: unread, controls: &quot;panel-notifications&quot; },
+      ]}
+    /&gt;
+  );
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>options</code></td><td><code>SegmentOption[]</code></td><td></td><td>{ value, label?, icon?, count?, badge?, disabled?, ariaLabel?, controls? } – two to six work best; give icon-only options an ariaLabel</td></tr><tr><td><code>value</code></td><td><code>string</code></td><td></td><td>Controlled value</td></tr><tr><td><code>defaultValue</code></td><td><code>string</code></td><td><code>first enabled option</code></td><td>Starting value when uncontrolled</td></tr><tr><td><code>onChange</code></td><td><code>(value: string) =&gt; void</code></td><td></td><td>Called with the new value – on click, while dragging the pill and on arrow keys</td></tr><tr><td><code>size</code></td><td><code>&quot;sm&quot; | &quot;md&quot; | &quot;lg&quot;</code></td><td><code>&quot;md&quot;</code></td><td>26, 30 or 36px tall options (40px+ on touch screens)</td></tr><tr><td><code>variant</code></td><td><code>&quot;tray&quot; | &quot;underline&quot;</code></td><td><code>&quot;tray&quot;</code></td><td>A gray track with a raised white pill, or text tabs on a hairline with a sliding line</td></tr><tr><td><code>fullWidth</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Fills its container with equal segments, each as wide as the widest one needs</td></tr><tr><td><code>kind</code></td><td><code>&quot;radio&quot; | &quot;tabs&quot;</code></td><td><code>&quot;radio&quot;</code></td><td>A radiogroup, or a tablist that switches panels (pair with controls on each option)</td></tr><tr><td><code>disabled</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Disables the whole control</td></tr><tr><td><code>aria-label</code></td><td><code>string</code></td><td></td><td>Names the group – or use aria-labelledby</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Focuses the active option (one tab stop for the whole control)</li><li>← / →: Moves to and selects the previous or next option, wrapping around; ↑ ↓ too as a radiogroup</li><li>Home / End: Selects the first or last option</li><li>↵: Selects the focused option (Space works too)</li></ul><h2>Accessibility</h2><ul><li>A radiogroup with radios (aria-checked), or a tablist with tabs (aria-selected, aria-controls) with kind=&quot;tabs&quot;</li><li>Roving tabindex: only the active option is in the tab order; disabled options are skipped by the arrow keys</li><li>The semibold copy of each label is aria-hidden, so names are read once; counts and badges are part of the name</li><li>Visible focus ring on the focused option</li></ul><h2>Responsive</h2><ul><li>If it doesn&#39;t fit, it scrolls sideways with soft edges on the sides that hide options and keeps the active one in view</li><li>Touch screens: options are at least 40px tall; a tap picks on lift, so swiping to scroll never picks by accident</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/date-range-picker">Date Range Picker</a> – Presets and two calendars with a hover preview, comparison with the previous period or year, full keyboard control</li><li><a href="/components/filter-menu">Filter Menu</a> – Grouped filters with removable chips, collapsible checkbox groups, Clear all and full keyboard control</li><li><a href="/components/data-table">Data Table</a> – Spreadsheet-style table: select cells and ranges, edit in place, copy and paste, undo and sort</li></ul></main></div></div>
   </body>
 </html>

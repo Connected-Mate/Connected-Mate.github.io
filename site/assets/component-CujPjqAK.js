@@ -363,5 +363,42 @@ const css = /* css */ \`
   --ui-fc-halo: rgba(255, 255, 255, 0.35);
   --ui-fc-edge: rgba(255, 255, 255, 0.25);
 }
+/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
+html body .ui-fc {
+  box-shadow: 0 0 0 1px #dae2ec, 0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.16);
+}
+html:is(.dark, [data-theme="dark"]) body .ui-fc,
+html body :is(.dark, [data-theme="dark"]) .ui-fc {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 26px 40px -20px rgba(3, 12, 28, 0.8);
+}
+html body .ui-fc__node--from .ui-fc__node-icon,
+html body .ui-fc__pop-badge[data-tone="trying"] {
+  box-shadow: inset 0 0 0 1px #c1daff;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-fc__node--from .ui-fc__node-icon,
+html body :is(.dark, [data-theme="dark"]) .ui-fc__node--from .ui-fc__node-icon,
+html:is(.dark, [data-theme="dark"]) body .ui-fc__pop-badge[data-tone="trying"],
+html body :is(.dark, [data-theme="dark"]) .ui-fc__pop-badge[data-tone="trying"] {
+  box-shadow: inset 0 0 0 1px rgba(143, 189, 242, 0.34);
+}
+html body .ui-fc__node--to[data-state="answered"] .ui-fc__node-icon,
+html body .ui-fc__pop-badge[data-tone="answered"] {
+  box-shadow: inset 0 0 0 1px #c9f5cf;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-fc__node--to[data-state="answered"] .ui-fc__node-icon,
+html body :is(.dark, [data-theme="dark"]) .ui-fc__node--to[data-state="answered"] .ui-fc__node-icon,
+html:is(.dark, [data-theme="dark"]) body .ui-fc__pop-badge[data-tone="answered"],
+html body :is(.dark, [data-theme="dark"]) .ui-fc__pop-badge[data-tone="answered"] {
+  box-shadow: inset 0 0 0 1px rgba(127, 224, 160, 0.32);
+}
+html body .ui-fc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
+  box-shadow: 0 0 0 1px #cbd6e4, 0 6px 12px -8px rgba(26, 62, 112, 0.35);
+  font-weight: 600;
+}
+html:is(.dark, [data-theme="dark"]) body .ui-fc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-fc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 6px 12px -8px rgba(3, 12, 28, 0.7);
+}
+
 \`;
 `;export{e as default};

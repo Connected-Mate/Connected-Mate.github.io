@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Cursors – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/agent-cursors" />
+    <meta name="description" content="Agents working in a document like teammates in a multiplayer editor – live pointers with names, suggestions typed letter by letter, images they resize, code…" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="affectUI" />
+    <meta property="og:title" content="Agent Cursors – React component · affectUI" />
+    <meta property="og:description" content="Agents working in a document like teammates in a multiplayer editor – live pointers with names, suggestions typed letter by letter, images they resize, code…" />
+    <meta property="og:url" content="https://www.affectui.com/components/agent-cursors" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:creator" content="@flohoeller" />
+    <meta name="twitter:title" content="Agent Cursors – React component · affectUI" />
+    <meta name="twitter:description" content="Agents working in a document like teammates in a multiplayer editor – live pointers with names, suggestions typed letter by letter, images they resize, code…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Agent Cursors","item":"https://www.affectui.com/components/agent-cursors"}]},{"@type":"SoftwareSourceCode","name":"Agent Cursors (affectUI)","description":"Agents working in a document like teammates in a multiplayer editor – live pointers with names, suggestions typed letter by letter, images they resize, code they fix and comments beside the page","url":"https://www.affectui.com/components/agent-cursors","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-19","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)" />
+    <script>
+      try {
+        const t = localStorage.getItem("theme");
+        if (t) document.documentElement.dataset.theme = t;
+        // Components switch with a .dark class, the shadcn convention – set it for "system" too
+        const dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", dark);
+      } catch {}
+    </script>
+    <script data-static-mirror-compatibility>
+(() => {
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
+  const libraryPath = (value) => {
+    const target = new URL(value, window.location.href);
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+      ? "/components" + target.search + target.hash
+      : value;
+  };
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+    window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  for (const method of ["pushState", "replaceState"]) {
+    const original = window.history[method].bind(window.history);
+    window.history[method] = (state, title, url) => original(state, title, url == null ? url : libraryPath(url));
+  }
+  const removeSalesLayer = () => {
+    document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
+    document.querySelectorAll("a[href]").forEach((anchor) => {
+      const target = new URL(anchor.getAttribute("href"), window.location.href);
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+    });
+    document.querySelectorAll("button").forEach((button) => {
+      const label = button.textContent.trim().replace(/s+/g, " ");
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+    });
+  };
+  let queued = false;
+  const scheduleCleanup = () => {
+    if (queued) return;
+    queued = true;
+    queueMicrotask(() => {
+      queued = false;
+      removeSalesLayer();
+    });
+  };
+  new MutationObserver(scheduleCleanup).observe(document.documentElement, { childList: true, subtree: true });
+  document.addEventListener("DOMContentLoaded", scheduleCleanup);
+  scheduleCleanup();
+  document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const anchor = event.target?.closest?.("a[href]");
+    if (!anchor) return;
+    const target = new URL(anchor.getAttribute("href"), window.location.href);
+    if (target.origin !== window.location.origin) return;
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign("/components" + target.search + target.hash);
+    }
+  }, true);
+})();
+</script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
+    <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
+  <link rel="stylesheet" href="/ateam/composants.css">
+  </head>
+  <body>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/agents">Agents</a></p>
+<h1>Agent Cursors</h1>
+<p>Agents working in a document like teammates in a multiplayer editor – live pointers with names, suggestions typed letter by letter, images they resize, code they fix and comments beside the page.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/agent-cursors.json</code> · Import from <code>@/components/ui/agent-cursors</code></p>
+<h2>When to use</h2><ul><li>Agents that write or edit a document, a brief or a spec while you watch – text, images, code and comments – and you want to see who is where</li><li>Several agents on one text at once: each change stays a suggestion in its agent&#39;s color until you accept it</li><li>Making agent work feel like working with teammates – the same pointers people know from Figma or Google Docs</li></ul><h2>When not to use</h2><ul><li>One agent rewriting a reply – use Writing Assistant or Inline Diff</li><li>Changes to code or files – use Inline Diff or Change Summary</li><li>Who started which agent – use Agent Tree</li></ul><h2>Usage</h2><pre><code>import { AgentCursors, acceptSuggestion } from &quot;@/components/ui/agent-cursors&quot;;
+
+// One shared ink for all of them – their logos tell them apart (pass color to give one its own)
+const agents = [
+  { id: &quot;research&quot;, name: &quot;Researcher&quot;, avatar: &lt;ClaudeLogo /&gt; },
+  { id: &quot;writer&quot;, name: &quot;Writer&quot;, avatar: &lt;OpenAILogo /&gt; },
+];
+
+export function Brief() {
+  const [doc, setDoc] = useState({ blocks, suggestions: [] });
+  // From your agents&#39; stream: where each one is and what it does
+  const cursors = {
+    research: { block: &quot;why&quot;, at: 24, select: 9, doing: &quot;Checking the numbers&quot; },
+    writer: { block: &quot;list&quot;, at: 31, doing: &quot;Adding detail&quot;, typing: true },
+  };
+
+  return (
+    &lt;AgentCursors
+      title=&quot;Launch brief&quot;
+      agents={agents}
+      blocks={doc.blocks}
+      suggestions={doc.suggestions}
+      cursors={cursors}
+      onAccept={(s) =&gt; setDoc((d) =&gt; acceptSuggestion(d.blocks, d.suggestions, s.id))}
+      onReject={(s) =&gt; setDoc((d) =&gt; ({ ...d, suggestions: d.suggestions.filter((x) =&gt; x.id !== s.id) }))}
+    /&gt;
+  );
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>agents</code></td><td><code>CursorAgent[]</code></td><td></td><td>{ id, name, color?, avatar?, tint?, cost? } – everyone who can be in the document; without a color every agent shares one ink (near-black, light in dark mode) and the logos tell them apart</td></tr><tr><td><code>blocks</code></td><td><code>DocBlock[]</code></td><td></td><td>{ id, kind?: &quot;title&quot; | &quot;heading&quot; | &quot;paragraph&quot; | &quot;item&quot; | &quot;code&quot; | &quot;image&quot;, text?, … } – the document; consecutive items form one list. Images take width (0–1), ratio, float (&quot;left&quot; | &quot;right&quot; – the next text runs beside them), loading, src and alt; their text is the caption. Tables take rows of cell blocks (the first row is the header); a cell with a tone shows as a status pill</td></tr><tr><td><code>cursors</code></td><td><code>Record&lt;string, AgentCursor | null&gt;</code></td><td></td><td>Per agent: { block, at?, in?, select?, point?, doing?, typing? } – where it is (a block or a comment), a selected passage or a held image, the corner or middle of an image, what it&#39;s doing (on its flag) and whether it types; null or missing means it left</td></tr><tr><td><code>comments</code></td><td><code>DocComment[]</code></td><td></td><td>{ id, agent, block, at?, x?, y?, text, open? } – comment pins on the page: on a character of the block (at), or at its top edge x along the page (0–1); y moves it down; open keeps the window open (e.g. while the agent writes), otherwise a dark round pin with the agent&#39;s mark that grows into the window on hover</td></tr><tr><td><code>onResolveComment</code></td><td><code>(comment: DocComment) =&gt; void</code></td><td></td><td>The black check in a comment&#39;s window – remove it from your list</td></tr><tr><td><code>onReply</code></td><td><code>(comment: DocComment, text: string) =&gt; void</code></td><td></td><td>Shows a reply field in the window; Enter sends</td></tr><tr><td><code>height</code></td><td><code>number</code></td><td></td><td>A fixed page height in px – the rest of the document fades out towards the bottom</td></tr><tr><td><code>tabs / tab / onTabChange</code></td><td><code>{ id, label }[] / string / (id) =&gt; void</code></td><td></td><td>Tabs above the page – the open one white with a stroke; you switch the blocks and agents</td></tr><tr><td><code>agents[].cost</code></td><td><code>number</code></td><td></td><td>Per agent: what it has cost so far – a small tag on its flag, the total in the header</td></tr><tr><td><code>agents[].tint</code></td><td><code>string</code></td><td></td><td>Per agent: the fill of its face while you follow it – defaults to a light wash of its color</td></tr><tr><td><code>formatCost</code></td><td><code>(amount: number) =&gt; string</code></td><td><code>dollars, e.g. &quot;$0.42&quot;</code></td><td>Formats every cost</td></tr><tr><td><code>suggestions</code></td><td><code>DocSuggestion[]</code></td><td><code>[]</code></td><td>{ id, agent, block, at, remove?, insert?, note? } – changes waiting for you: removed text is struck through, new text underlined, both in the agent&#39;s color</td></tr><tr><td><code>onAccept / onReject</code></td><td><code>(suggestion: DocSuggestion) =&gt; void</code></td><td></td><td>From the window that opens on a suggestion – acceptSuggestion() writes one into your blocks</td></tr><tr><td><code>onAcceptAll</code></td><td><code>() =&gt; void</code></td><td></td><td>Shows &quot;Accept all&quot; in the header when there is more than one suggestion</td></tr><tr><td><code>following / onFollowingChange</code></td><td><code>string | null</code></td><td></td><td>The agent you follow, controlled or uncontrolled – the other pointers and selections fade back</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td><code>&quot;Untitled&quot;</code></td><td>The document&#39;s name in the header</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr><tr><td><code>acceptSuggestion</code></td><td><code>(blocks, suggestions, id) =&gt; { blocks, suggestions }</code></td><td></td><td>Helper: writes a suggestion into the text and moves the other suggestions in that block along</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Moves to the faces in the header, then from suggestion to suggestion – a focused suggestion opens its window</li><li>Enter / Space: On a face: follow that agent, or stop following</li><li>Esc: Closes the window of a suggestion</li></ul><h2>Accessibility</h2><ul><li>The text is real text in headings, paragraphs and a list – pointers, carets and selections are decoration and hidden from screen readers</li><li>Every suggestion is focusable and labelled, e.g. &quot;Researcher suggests adding: 38%&quot;; its window is a dialog with Accept and Reject buttons</li><li>The faces are toggle buttons (aria-pressed) named after the agent and what it is doing; a followed face fills with its tint</li><li>New suggestions are announced politely, with the agent&#39;s note</li></ul><h2>Responsive</h2><ul><li>Every position is measured from the page itself, so any width, font size or zoom works – the pointers stay on their letters while the text wraps</li><li>Comment windows open towards the bottom right – towards the left near the right edge, upwards near the bottom</li><li>Flags always sit to the bottom right of their pointer; near the right edge they are cut off rather than moved</li><li>Below 520px the page gets tighter margins and the suggestion count in the header gives way to the faces</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/writing-assistant">Writing Assistant</a> – AI chat card with a soft gradient glow, suggestions, streaming replies and live voice dictation</li><li><a href="/components/inline-diff">Inline Diff</a> – AI edits to prose shown inline – struck and added words you accept or reject one by one, with keys, a popover and undo</li><li><a href="/components/agent-tree">Agent Tree</a> – Who started whom – an orchestrator and its sub-agents as a live tree, with status, cost and time on every card, costs rolling up each branch, and branches that fold to one line</li><li><a href="/components/comment-thread">Comment Thread</a> – One comment with replies – an assistant reports what it did, folds open details and answers @mentions</li></ul><h2>Guides</h2><ul><li><a href="/guides/multi-agent-ui-react">Multi-agent UI in React: orchestrators, sub-agents and hand-offs</a> – How to show several AI agents working together – who started whom, who is busy, hand-offs, parallel work, conflicts and the queue – with React components for each.</li></ul></main></div></div>
+  </body>
+</html>

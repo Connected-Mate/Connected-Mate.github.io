@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Queue – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/agent-queue" />
+    <meta name="description" content="The work waiting for your agents, and how fast it moves – jobs drop into a live queue, glide into free worker slots as growing bars and land in Done or…" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="affectUI" />
+    <meta property="og:title" content="Agent Queue – React component · affectUI" />
+    <meta property="og:description" content="The work waiting for your agents, and how fast it moves – jobs drop into a live queue, glide into free worker slots as growing bars and land in Done or…" />
+    <meta property="og:url" content="https://www.affectui.com/components/agent-queue" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:creator" content="@flohoeller" />
+    <meta name="twitter:title" content="Agent Queue – React component · affectUI" />
+    <meta name="twitter:description" content="The work waiting for your agents, and how fast it moves – jobs drop into a live queue, glide into free worker slots as growing bars and land in Done or…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Agent Queue","item":"https://www.affectui.com/components/agent-queue"}]},{"@type":"SoftwareSourceCode","name":"Agent Queue (affectUI)","description":"The work waiting for your agents, and how fast it moves – jobs drop into a live queue, glide into free worker slots as growing bars and land in Done or Failed, while a depth chart shows the backlog build up when a rate limit pauses the workers and drain when they resume","url":"https://www.affectui.com/components/agent-queue","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-22","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)" />
+    <script>
+      try {
+        const t = localStorage.getItem("theme");
+        if (t) document.documentElement.dataset.theme = t;
+        // Components switch with a .dark class, the shadcn convention – set it for "system" too
+        const dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", dark);
+      } catch {}
+    </script>
+    <script data-static-mirror-compatibility>
+(() => {
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
+  const libraryPath = (value) => {
+    const target = new URL(value, window.location.href);
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+      ? "/components" + target.search + target.hash
+      : value;
+  };
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+    window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  for (const method of ["pushState", "replaceState"]) {
+    const original = window.history[method].bind(window.history);
+    window.history[method] = (state, title, url) => original(state, title, url == null ? url : libraryPath(url));
+  }
+  const removeSalesLayer = () => {
+    document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
+    document.querySelectorAll("a[href]").forEach((anchor) => {
+      const target = new URL(anchor.getAttribute("href"), window.location.href);
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+    });
+    document.querySelectorAll("button").forEach((button) => {
+      const label = button.textContent.trim().replace(/s+/g, " ");
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+    });
+  };
+  let queued = false;
+  const scheduleCleanup = () => {
+    if (queued) return;
+    queued = true;
+    queueMicrotask(() => {
+      queued = false;
+      removeSalesLayer();
+    });
+  };
+  new MutationObserver(scheduleCleanup).observe(document.documentElement, { childList: true, subtree: true });
+  document.addEventListener("DOMContentLoaded", scheduleCleanup);
+  scheduleCleanup();
+  document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const anchor = event.target?.closest?.("a[href]");
+    if (!anchor) return;
+    const target = new URL(anchor.getAttribute("href"), window.location.href);
+    if (target.origin !== window.location.origin) return;
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign("/components" + target.search + target.hash);
+    }
+  }, true);
+})();
+</script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
+    <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
+  <link rel="stylesheet" href="/ateam/composants.css">
+  </head>
+  <body>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/agents">Agents</a></p>
+<h1>Agent Queue</h1>
+<p>The work waiting for your agents, and how fast it moves – jobs drop into a live queue, glide into free worker slots as growing bars and land in Done or Failed, while a depth chart shows the backlog build up when a rate limit pauses the workers and drain when they resume.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/agent-queue.json</code> · Import from <code>@/components/ui/agent-queue</code></p>
+<h2>When to use</h2><ul><li>A job queue in an agent product – how many tasks wait, which worker runs what, and how fast the backlog moves</li><li>Watching backpressure live: a provider rate-limits, the workers pause, the queue builds up and drains again</li><li>An ops view next to your agents where people can pause the queue, add or remove workers, or move a job to the front</li></ul><h2>When not to use</h2><ul><li>Several agents side by side over time – use Agent Lanes</li><li>Handing work to a specific agent by hand – use Delegate Board</li><li>A list of background tasks with their results – use Agent Inbox</li><li>Where the time and money of one run go – use Trace Waterfall</li></ul><h2>Usage</h2><pre><code>import { AgentQueue, type QueueJob, type QueueWorker } from &quot;@/components/ui/agent-queue&quot;;
+
+const workers: QueueWorker[] = [
+  { id: &quot;w1&quot;, name: &quot;Sonnet 5.5&quot; },
+  { id: &quot;w2&quot;, name: &quot;GPT-6 Sol&quot; },
+];
+
+const jobs: QueueJob[] = [
+  { id: &quot;j1&quot;, name: &quot;Summarize ticket #4821&quot;, kind: &quot;llm&quot;, status: &quot;running&quot;, worker: &quot;w1&quot;,
+    enqueuedAt: t0, startedAt: t0 + 1200, progress: 0.4 },
+  { id: &quot;j2&quot;, name: &quot;Embed 240 docs&quot;, kind: &quot;tool&quot;, status: &quot;queued&quot;, enqueuedAt: t0 + 800 },
+  { id: &quot;j3&quot;, name: &quot;Draft reply – Acme&quot;, kind: &quot;llm&quot;, status: &quot;queued&quot;, priority: &quot;high&quot;, enqueuedAt: t0 + 2100 },
+];
+
+export function Jobs() {
+  // Times are on one clock (epoch ms here) – without now, the component ticks Date.now while there is work
+  return &lt;AgentQueue jobs={jobs} workers={workers} backpressure={20} /&gt;;
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>jobs</code></td><td><code>QueueJob[]</code></td><td></td><td>{ id, name, kind, status, enqueuedAt, priority?, startedAt?, endedAt?, worker?, progress?, estimate?, attempt?, maxAttempts?, detail?, icon?, error? } – waiting, running and recently finished jobs</td></tr><tr><td><code>kind</code></td><td><code>&quot;llm&quot; | &quot;tool&quot; | &quot;agent&quot; | &quot;human&quot;</code></td><td></td><td>Per job – picks its tint: LLM calls violet, tool calls teal, sub-agents slate, human review blue</td></tr><tr><td><code>status</code></td><td><code>&quot;queued&quot; | &quot;running&quot; | &quot;done&quot; | &quot;failed&quot;</code></td><td></td><td>Per job – a job that goes from running back to queued with a higher attempt shows as a retry</td></tr><tr><td><code>priority</code></td><td><code>&quot;high&quot; | &quot;normal&quot; | &quot;low&quot;</code></td><td><code>&quot;normal&quot;</code></td><td>Per job – a high one glides past the others to the front</td></tr><tr><td><code>progress / estimate</code></td><td><code>number</code></td><td></td><td>Per job – 0–1 while it runs, or the expected run time in ms to estimate it</td></tr><tr><td><code>workers</code></td><td><code>QueueWorker[]</code></td><td></td><td>{ id, name, detail?, icon? } – the slots; their number is the concurrency</td></tr><tr><td><code>now</code></td><td><code>number</code></td><td></td><td>The clock, on the same scale as the job times – without it, the component keeps its own (Date.now)</td></tr><tr><td><code>rateLimits</code></td><td><code>{ from, until, label? }[]</code></td><td></td><td>Stretches when the provider rate-limits – while one is active the running jobs pause in amber with a countdown</td></tr><tr><td><code>paused / onPausedChange</code></td><td><code>boolean / (paused) =&gt; void</code></td><td></td><td>The queue is paused; the handler shows a Pause/Resume button</td></tr><tr><td><code>onConcurrencyChange</code></td><td><code>(workers: number) =&gt; void</code></td><td></td><td>Shows a – N + stepper for the number of workers</td></tr><tr><td><code>minConcurrency / maxConcurrency</code></td><td><code>number</code></td><td><code>1 / 8</code></td><td>The stepper&#39;s range</td></tr><tr><td><code>backpressure</code></td><td><code>number</code></td><td></td><td>A depth that means trouble – a dashed line on the chart; above it Waiting turns amber</td></tr><tr><td><code>window</code></td><td><code>number</code></td><td><code>120000</code></td><td>How far back the depth chart looks, in ms</td></tr><tr><td><code>totals</code></td><td><code>{ done?, failed? }</code></td><td></td><td>Counts since the start, when jobs only holds the recent ones</td></tr><tr><td><code>openId / defaultOpenId</code></td><td><code>string | null</code></td><td><code>null</code></td><td>The job whose card is pinned, controlled or uncontrolled</td></tr><tr><td><code>onOpenChange</code></td><td><code>(id: string | null, job?: QueueJob) =&gt; void</code></td><td></td><td>A job&#39;s card was pinned or closed</td></tr><tr><td><code>onPromote / onCancel</code></td><td><code>(job: QueueJob) =&gt; void</code></td><td></td><td>Show &quot;Move to front&quot; and &quot;Cancel&quot; in a pinned card</td></tr><tr><td><code>title / name</code></td><td><code>string</code></td><td><code>&quot;Queue&quot;</code></td><td>Heading, and the queue&#39;s name muted next to it</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Moves into the jobs (one job is in the tab order), then to the card&#39;s buttons</li><li>ArrowUp / ArrowDown / ArrowLeft / ArrowRight: Walks through the running jobs, slot by slot, then the queue from the front; Home and End jump to the ends</li><li>Enter / Space: Pins or closes the focused job&#39;s card</li><li>Esc: Closes the card</li></ul><h2>Accessibility</h2><ul><li>Every job is a real button, labelled with its name, kind, how long it waited or ran, its place in line, priority and attempt</li><li>Roving focus – only one job is in the tab order, so the flow is a single stop</li><li>The pinned card is a dialog with a close button; Esc closes it and returns focus to the job</li><li>Rate limits, their end, failures, retries and crossing the backpressure line are announced in a polite live region</li><li>The chart is an image with a text summary: how many wait now, the peak, the average and the rate-limited stretches</li><li>Pause is a toggle button with aria-pressed; the stepper&#39;s buttons say what they do and the count is announced</li></ul><h2>Responsive</h2><ul><li>Built on a container query and the measured width: wide, the flow runs left to right – queue, workers, Done and Failed</li><li>Under 600px the flow stacks: queue on top, the workers below (just their marks, the rail gets the room), Done and Failed side by side</li><li>The four numbers wrap to two columns; under 440px Pause and the stepper get a row of their own</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/agent-lanes">Agent Lanes</a> – Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the block</li><li><a href="/components/delegate-board">Delegate Board</a> – Hand work to your agents by dragging it onto them – each agent previews its new “busy until” time, or switch to Auto and every new task goes to whoever is free first</li><li><a href="/components/agent-inbox">Agent Inbox</a> – All your background agent tasks in one calm list – live clocks and status tags, filter tabs with rolling counts, rows that unfold to the last steps with Approve, Reject, Retry or Open, and glide to their new place</li><li><a href="/components/trace-waterfall">Trace Waterfall</a> – Where the time and money of an agent run go – every LLM call, tool call and sub-agent as a bar on a live timeline, with tokens and cost per step, the slowest call marked and branches that fold into their parent</li></ul><h2>Guides</h2><ul><li><a href="/guides/multi-agent-ui-react">Multi-agent UI in React: orchestrators, sub-agents and hand-offs</a> – How to show several AI agents working together – who started whom, who is busy, hand-offs, parallel work, conflicts and the queue – with React components for each.</li></ul></main></div></div>
+  </body>
+</html>

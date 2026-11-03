@@ -3,61 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>affectUI · Agent-ready React UI for AI products</title>
-    <link rel="canonical" href="https://www.affectui.com/" />
-    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <title>Filter Menu – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/filter-menu" />
+    <meta name="description" content="Grouped filters with removable chips, collapsible checkbox groups, Clear all and full keyboard control. Free and open source – one file, no dependencies." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta property="og:url" content="https://www.affectui.com/" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:title" content="Filter Menu – React component · affectUI" />
+    <meta property="og:description" content="Grouped filters with removable chips, collapsible checkbox groups, Clear all and full keyboard control. Free and open source – one file, no dependencies." />
+    <meta property="og:url" content="https://www.affectui.com/components/filter-menu" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@flohoeller" />
+    <meta name="twitter:site" content="@affectui" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
-    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://www.affectui.com/#website",
-            "url": "https://www.affectui.com/",
-            "name": "affectUI",
-            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
-            "inLanguage": "en",
-            "publisher": { "@id": "https://www.affectui.com/#organization" }
-          },
-          {
-            "@type": "Organization",
-            "@id": "https://www.affectui.com/#organization",
-            "name": "affectUI",
-            "url": "https://www.affectui.com/",
-            "logo": "https://www.affectui.com/icon-512.png",
-            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "affectUI",
-            "applicationCategory": "DeveloperApplication",
-            "operatingSystem": "Web",
-            "url": "https://www.affectui.com/",
-            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
-          }
-        ]
-      }
-    </script>
+    <meta name="twitter:title" content="Filter Menu – React component · affectUI" />
+    <meta name="twitter:description" content="Grouped filters with removable chips, collapsible checkbox groups, Clear all and full keyboard control. Free and open source – one file, no dependencies." />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Filter Menu","item":"https://www.affectui.com/components/filter-menu"}]},{"@type":"SoftwareSourceCode","name":"Filter Menu (affectUI)","description":"Grouped filters with removable chips, collapsible checkbox groups, Clear all and full keyboard control","url":"https://www.affectui.com/components/filter-menu","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","dateCreated":"2026-10-04","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -77,21 +45,17 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const origin = "https://www.affectui.com";
-  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && salesOnly.test(target.pathname)
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
-    return;
-  }
-  if (serverOnly.test(window.location.pathname)) {
-    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -102,11 +66,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -127,34 +91,44 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (salesOnly.test(target.pathname)) {
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
-    } else if (serverOnly.test(target.pathname)) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
   <link rel="stylesheet" href="/ateam/composants.css">
   </head>
   <body>
-    <div id="root">
-      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
-      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
-        affectUI – Agent-ready UI for AI products
-      </h1>
-    </div>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/inputs">Inputs</a></p>
+<h1>Filter Menu</h1>
+<p>Grouped filters with removable chips, collapsible checkbox groups, Clear all and full keyboard control.</p>
+<p>Free and open source (MIT). Install: <code>npx shadcn@latest add https://www.affectui.com/r/filter-menu.json</code> · Import from <code>@/components/ui/filter-menu</code></p>
+<h2>When to use</h2><ul><li>Filtering a list, table or board by a few groups of options – stage, owner, region and the like</li><li>Side panels or popovers where people pick several filters and want to see them all at a glance</li></ul><h2>When not to use</h2><ul><li>A single choice from a short list – use a select or segmented control</li><li>Free-text search or numeric ranges with a slider – this menu works with predefined options</li></ul><h2>Usage</h2><pre><code>import { FilterMenu } from &quot;@/components/ui/filter-menu&quot;;
+
+const groups = [
+  { id: &quot;stage&quot;, label: &quot;Stage&quot;, options: [{ id: &quot;new&quot;, label: &quot;New lead&quot; }, { id: &quot;won&quot;, label: &quot;Won&quot; }] },
+  { id: &quot;size&quot;, label: &quot;Deal size&quot;, chipPrefix: &quot;Deal: &quot;, options: [{ id: &quot;s&quot;, label: &quot;Under $5k&quot; }, { id: &quot;l&quot;, label: &quot;Over $50k&quot; }] },
+];
+
+export function DealFilters() {
+  const [filters, setFilters] = useState({});
+  return &lt;FilterMenu groups={groups} value={filters} onChange={setFilters} /&gt;;
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>groups</code></td><td><code>FilterGroup[]</code></td><td></td><td>Required. Each { id, label, options: { id, label }[], chipPrefix? }</td></tr><tr><td><code>value</code></td><td><code>Record&lt;string, string[]&gt;</code></td><td></td><td>Picked option ids per group – makes it controlled</td></tr><tr><td><code>defaultValue</code></td><td><code>Record&lt;string, string[]&gt;</code></td><td><code>{}</code></td><td>Starting filters when uncontrolled</td></tr><tr><td><code>onChange</code></td><td><code>(value) =&gt; void</code></td><td></td><td>Called with the new filters after every change</td></tr><tr><td><code>defaultOpen</code></td><td><code>string[]</code></td><td><code>the first group</code></td><td>Groups that start open</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td><code>&quot;Filters&quot;</code></td><td>Heading on top</td></tr><tr><td><code>hints</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Shows the keyboard hints on the tray</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>↑ / ↓: Moves through group headers and the options of open groups</li><li>Enter / Space: Picks or unpicks an option, or opens and closes a group</li><li>→ / ←: Opens a group, or closes it and jumps back to its header</li><li>Home / End: Jumps to the first or last row</li></ul><h2>Accessibility</h2><ul><li>Group headers are buttons with aria-expanded; options are role=checkbox with aria-checked</li><li>One roving tab stop for the list, so Tab moves past it in one step</li><li>Each chip has a remove button labelled with the filter; changes to the chips are announced politely</li></ul><h2>Responsive</h2><ul><li>Fills its container up to 420px wide; chips wrap onto new lines</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul></main></div></div>
   </body>
 </html>

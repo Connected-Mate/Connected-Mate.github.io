@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallel Attempts – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/parallel-attempts" />
+    <meta name="description" content="An agent tries the same task several ways at once and the best one wins – every attempt races as a row with its model, approach and live bar, then gets a…" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="affectUI" />
+    <meta property="og:title" content="Parallel Attempts – React component · affectUI" />
+    <meta property="og:description" content="An agent tries the same task several ways at once and the best one wins – every attempt races as a row with its model, approach and live bar, then gets a…" />
+    <meta property="og:url" content="https://www.affectui.com/components/parallel-attempts" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:creator" content="@flohoeller" />
+    <meta name="twitter:title" content="Parallel Attempts – React component · affectUI" />
+    <meta name="twitter:description" content="An agent tries the same task several ways at once and the best one wins – every attempt races as a row with its model, approach and live bar, then gets a…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Parallel Attempts","item":"https://www.affectui.com/components/parallel-attempts"}]},{"@type":"SoftwareSourceCode","name":"Parallel Attempts (affectUI)","description":"An agent tries the same task several ways at once and the best one wins – every attempt races as a row with its model, approach and live bar, then gets a score; the best is marked and picked, and you can switch to another","url":"https://www.affectui.com/components/parallel-attempts","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-23","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)" />
+    <script>
+      try {
+        const t = localStorage.getItem("theme");
+        if (t) document.documentElement.dataset.theme = t;
+        // Components switch with a .dark class, the shadcn convention – set it for "system" too
+        const dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", dark);
+      } catch {}
+    </script>
+    <script data-static-mirror-compatibility>
+(() => {
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
+  const libraryPath = (value) => {
+    const target = new URL(value, window.location.href);
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+      ? "/components" + target.search + target.hash
+      : value;
+  };
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+    window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  for (const method of ["pushState", "replaceState"]) {
+    const original = window.history[method].bind(window.history);
+    window.history[method] = (state, title, url) => original(state, title, url == null ? url : libraryPath(url));
+  }
+  const removeSalesLayer = () => {
+    document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
+    document.querySelectorAll("a[href]").forEach((anchor) => {
+      const target = new URL(anchor.getAttribute("href"), window.location.href);
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+    });
+    document.querySelectorAll("button").forEach((button) => {
+      const label = button.textContent.trim().replace(/s+/g, " ");
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+    });
+  };
+  let queued = false;
+  const scheduleCleanup = () => {
+    if (queued) return;
+    queued = true;
+    queueMicrotask(() => {
+      queued = false;
+      removeSalesLayer();
+    });
+  };
+  new MutationObserver(scheduleCleanup).observe(document.documentElement, { childList: true, subtree: true });
+  document.addEventListener("DOMContentLoaded", scheduleCleanup);
+  scheduleCleanup();
+  document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const anchor = event.target?.closest?.("a[href]");
+    if (!anchor) return;
+    const target = new URL(anchor.getAttribute("href"), window.location.href);
+    if (target.origin !== window.location.origin) return;
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign("/components" + target.search + target.hash);
+    }
+  }, true);
+})();
+</script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
+    <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
+  <link rel="stylesheet" href="/ateam/composants.css">
+  </head>
+  <body>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/agents">Agents</a></p>
+<h1>Parallel Attempts</h1>
+<p>An agent tries the same task several ways at once and the best one wins – every attempt races as a row with its model, approach and live bar, then gets a score; the best is marked and picked, and you can switch to another.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/parallel-attempts.json</code> · Import from <code>@/components/ui/parallel-attempts</code></p>
+<h2>When to use</h2><ul><li>An agent tries a task several ways at once – different models, prompts or approaches – and the best result wins</li><li>Best-of-N runs, where you want to see them race, compare their scores and keep the say in which one is used</li><li>Code fixes, drafts or plans that are cheap to try in parallel and easy to score</li></ul><h2>When not to use</h2><ul><li>One run and where its time goes – use Trace Waterfall</li><li>Many small tasks spread over workers – use Fan-out Grid</li><li>A single decision the agent can&#39;t take alone – use Decision Tree</li></ul><h2>Usage</h2><pre><code>import { ParallelAttempts, type Attempt } from &quot;@/components/ui/parallel-attempts&quot;;
+
+const attempts: Attempt[] = [
+  { id: &quot;a&quot;, name: &quot;Opus 5.5&quot;, approach: &quot;Add a retry with backoff&quot;,
+    status: &quot;running&quot;, progress: 0.6, step: &quot;Running tests 12/20&quot; },
+  { id: &quot;b&quot;, name: &quot;GPT-6 Sol&quot;, approach: &quot;Mock the payment API&quot;,
+    status: &quot;done&quot;, score: 94, note: &quot;20/20 runs green&quot;, took: 125000, cost: 0.27 },
+];
+
+export function Fix() {
+  return &lt;ParallelAttempts attempts={attempts} task=&quot;Fix the flaky checkout test&quot; onPick={(a) =&gt; apply(a.id)} /&gt;;
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>attempts</code></td><td><code>Attempt[]</code></td><td></td><td>{ id, name, approach, model?, icon?, status, progress?, step?, score?, note?, took?, cost? } – one per attempt, in the order the rows should show; name is usually the model, icon its logo (on a small tile before the name)</td></tr><tr><td><code>status</code></td><td><code>&quot;running&quot; | &quot;done&quot; | &quot;failed&quot;</code></td><td></td><td>Per attempt – picks the bar&#39;s tint: blue with a shine, green, red</td></tr><tr><td><code>progress</code></td><td><code>number</code></td><td></td><td>Per attempt, 0 to 1 – the bar&#39;s length while it runs (and where a failed one stopped)</td></tr><tr><td><code>step</code></td><td><code>string</code></td><td></td><td>Per attempt – what it does right now, shown on the right while it runs</td></tr><tr><td><code>score</code></td><td><code>number</code></td><td></td><td>Per attempt, 0–100 once done – the highest is marked Best and picked unless you pick another</td></tr><tr><td><code>note</code></td><td><code>string</code></td><td></td><td>Per attempt – one line about the outcome, or the error</td></tr><tr><td><code>task</code></td><td><code>string</code></td><td></td><td>What all of them try to do, next to the title</td></tr><tr><td><code>picked</code></td><td><code>string | null</code></td><td></td><td>Controlled pick – leave it out and the best finished attempt is picked on its own</td></tr><tr><td><code>onPick</code></td><td><code>(attempt) =&gt; void</code></td><td></td><td>Another attempt was picked with &quot;Use this one&quot;</td></tr><tr><td><code>formatCost</code></td><td><code>(amount: number) =&gt; string</code></td><td><code>dollars</code></td><td>Formats every cost</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td><code>&quot;Best of N&quot;</code></td><td>Heading of the bar</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Moves to the finished attempts&#39; &quot;Use this one&quot; buttons</li><li>Enter / Space: Uses the focused attempt</li></ul><h2>Accessibility</h2><ul><li>The rows are a radiogroup labelled with the title; each finished attempt&#39;s button is a radio with its name and score</li><li>Bars are decoration – what they show is in the text beside them</li></ul><h2>Responsive</h2><ul><li>Built on a container query: wide, name, bar and score sit in one line</li><li>Under 560px the bar moves under the name, the approach drops out and the score sits beside the name</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/fan-out-grid">Fan-out Grid</a> – One agent hands a big job to many workers – every task a cell on a live grid that fills in as they get through it, with retries, failures, cost and the time left, and the details of any task on hover</li><li><a href="/components/agent-lanes">Agent Lanes</a> – Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the block</li><li><a href="/components/trace-waterfall">Trace Waterfall</a> – Where the time and money of an agent run go – every LLM call, tool call and sub-agent as a bar on a live timeline, with tokens and cost per step, the slowest call marked and branches that fold into their parent</li><li><a href="/components/decision-tree">Decision Tree</a> – An agent stuck on a decision lays out its options as a tree – the consequences of each branch, the risky ones marked, its own pick highlighted – and you choose a path or write your own</li></ul><h2>Guides</h2><ul><li><a href="/guides/model-picker-ui">Model picker UI: letting users choose an LLM</a> – How to design a model picker for an AI product – what to show per model, defaults, reasoning settings, and what happens when a model fails.</li><li><a href="/guides/multi-agent-ui-react">Multi-agent UI in React: orchestrators, sub-agents and hand-offs</a> – How to show several AI agents working together – who started whom, who is busy, hand-offs, parallel work, conflicts and the queue – with React components for each.</li></ul></main></div></div>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Monitor – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/agent-monitor" />
+    <meta name="description" content="One agent at work, as a card – its current step with a clock and the bill so far, a time strip and the finished steps with the logo of each tool, a click on…" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="affectUI" />
+    <meta property="og:title" content="Agent Monitor – React component · affectUI" />
+    <meta property="og:description" content="One agent at work, as a card – its current step with a clock and the bill so far, a time strip and the finished steps with the logo of each tool, a click on…" />
+    <meta property="og:url" content="https://www.affectui.com/components/agent-monitor" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:creator" content="@flohoeller" />
+    <meta name="twitter:title" content="Agent Monitor – React component · affectUI" />
+    <meta name="twitter:description" content="One agent at work, as a card – its current step with a clock and the bill so far, a time strip and the finished steps with the logo of each tool, a click on…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Agent Monitor","item":"https://www.affectui.com/components/agent-monitor"}]},{"@type":"SoftwareSourceCode","name":"Agent Monitor (affectUI)","description":"One agent at work, as a card – its current step with a clock and the bill so far, a time strip and the finished steps with the logo of each tool, a click on any of them for the details; the exact command when it needs your OK; folds into a small bar with the tools it has used","url":"https://www.affectui.com/components/agent-monitor","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-29","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)" />
+    <script>
+      try {
+        const t = localStorage.getItem("theme");
+        if (t) document.documentElement.dataset.theme = t;
+        // Components switch with a .dark class, the shadcn convention – set it for "system" too
+        const dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", dark);
+      } catch {}
+    </script>
+    <script data-static-mirror-compatibility>
+(() => {
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
+  const libraryPath = (value) => {
+    const target = new URL(value, window.location.href);
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+      ? "/components" + target.search + target.hash
+      : value;
+  };
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+    window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  for (const method of ["pushState", "replaceState"]) {
+    const original = window.history[method].bind(window.history);
+    window.history[method] = (state, title, url) => original(state, title, url == null ? url : libraryPath(url));
+  }
+  const removeSalesLayer = () => {
+    document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
+    document.querySelectorAll("a[href]").forEach((anchor) => {
+      const target = new URL(anchor.getAttribute("href"), window.location.href);
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+    });
+    document.querySelectorAll("button").forEach((button) => {
+      const label = button.textContent.trim().replace(/s+/g, " ");
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+    });
+  };
+  let queued = false;
+  const scheduleCleanup = () => {
+    if (queued) return;
+    queued = true;
+    queueMicrotask(() => {
+      queued = false;
+      removeSalesLayer();
+    });
+  };
+  new MutationObserver(scheduleCleanup).observe(document.documentElement, { childList: true, subtree: true });
+  document.addEventListener("DOMContentLoaded", scheduleCleanup);
+  scheduleCleanup();
+  document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const anchor = event.target?.closest?.("a[href]");
+    if (!anchor) return;
+    const target = new URL(anchor.getAttribute("href"), window.location.href);
+    if (target.origin !== window.location.origin) return;
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign("/components" + target.search + target.hash);
+    }
+  }, true);
+})();
+</script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
+    <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
+  <link rel="stylesheet" href="/ateam/composants.css">
+  </head>
+  <body>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/agents">Agents</a></p>
+<h1>Agent Monitor</h1>
+<p>One agent at work, as a card – its current step with a clock and the bill so far, a time strip and the finished steps with the logo of each tool, a click on any of them for the details; the exact command when it needs your OK; folds into a small bar with the tools it has used.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/agent-monitor.json</code> · Import from <code>@/components/ui/agent-monitor</code></p>
+<h2>When to use</h2><ul><li>A dashboard tile or side panel that keeps one agent in view while people do other work – its current step, the clock and the bill so far</li><li>Agents that must ask before they touch something real – a deploy, a release, a refund: the card shows the exact command and takes Allow or Decline from the keyboard</li><li>Runs where it matters which tool the time went to – the time strip and the logos answer that without opening a log</li></ul><h2>When not to use</h2><ul><li>You need every tool call with its input and output – use Trace Waterfall</li><li>More than one agent works at once – use Agent Lanes or Agent Tree</li><li>Only a single &quot;thinking…&quot; line is needed – a shimmering label is enough</li></ul><h2>Usage</h2><pre><code>import { AgentMonitor } from &quot;@/components/ui/agent-monitor&quot;;
+
+&lt;AgentMonitor
+  state={run.state}                  // &quot;idle&quot; | &quot;running&quot; | &quot;waiting&quot; | &quot;paused&quot; | &quot;finished&quot; | &quot;failed&quot; | &quot;cancelled&quot;
+  agent={{ name: &quot;Claude Opus 5.5&quot;, role: &quot;Release agent&quot;, mark: &lt;ClaudeLogo /&gt; }}
+  since={run.since}
+  pausedFor={run.pausedFor}
+  cost={run.cost}
+  steps={[
+    { id: &quot;issues&quot;, label: &quot;Collected 14 issues&quot;, icon: &lt;LinearLogo /&gt;, state: &quot;done&quot;, took: 1700 },
+    { id: &quot;notes&quot;, label: &quot;Drafting the release notes&quot;, icon: &lt;NotionLogo /&gt;, state: &quot;running&quot;, since: run.stepSince },
+    { id: &quot;build&quot;, label: &quot;Build the preview&quot;, kind: &quot;run&quot;, state: &quot;queued&quot; },
+  ]}
+  ask={{ title: &quot;Ready to ship&quot;, command: &quot;gh release create v3.2.0 --latest&quot;, icon: &lt;GitHubLogo /&gt; }}
+  outcome={{ note: &quot;v3.2.0 is live · 14 changes&quot; }}
+  onPause={() =&gt; runs.pause(run.id)}
+  onResume={() =&gt; runs.resume(run.id)}
+  onCancel={() =&gt; runs.cancel(run.id)}
+  onAllow={() =&gt; runs.allow(run.id)}
+  onDecline={() =&gt; runs.decline(run.id)}
+  onRetry={() =&gt; runs.retry(run.id)}
+  onOpenLog={() =&gt; openLog(run.id)}
+/&gt;</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>state</code></td><td><code>&quot;idle&quot; | &quot;running&quot; | &quot;waiting&quot; | &quot;paused&quot; | &quot;finished&quot; | &quot;failed&quot; | &quot;cancelled&quot;</code></td><td><code>&quot;idle&quot;</code></td><td>Where the run is – a small pill next to the cost: blue Running, amber Needs you, green Finished, red Failed</td></tr><tr><td><code>agent</code></td><td><code>{ name: string; role?: string; mark?: ReactNode }</code></td><td><code>{ name: &quot;Agent&quot; }</code></td><td>Who&#39;s working: a name, a role or model, and a 16px logo – without one, the name&#39;s first letter</td></tr><tr><td><code>steps</code></td><td><code>AgentRunStep[]</code></td><td></td><td>Every step, oldest first: { id, label, kind?, icon?, state: &quot;queued&quot; | &quot;running&quot; | &quot;done&quot; | &quot;failed&quot;, since?, took? } – the running one fills the well, finished ones become bars and rows (three rows tall, the rest scroll), queued ones count toward &quot;3/6&quot;</td></tr><tr><td><code>icon (step)</code></td><td><code>ReactNode</code></td><td></td><td>The logo of the tool the step used – GitHub, Linear, Slack, Notion… – shown in its row and in the well</td></tr><tr><td><code>tool / detail / output (step)</code></td><td><code>string</code></td><td></td><td>Fill the step&#39;s info card: the tool&#39;s name, a sentence on what happened, and the command it ran or the place it touched – a click on the row or its bar opens it</td></tr><tr><td><code>kind (step)</code></td><td><code>&quot;read&quot; | &quot;search&quot; | &quot;edit&quot; | &quot;run&quot; | &quot;think&quot; | &quot;web&quot;</code></td><td></td><td>A plain icon for steps without a logo</td></tr><tr><td><code>current</code></td><td><code>{ label: string; kind?; icon? }</code></td><td></td><td>Overrides what the well says while running – by default it&#39;s the running step</td></tr><tr><td><code>since / until</code></td><td><code>number</code></td><td></td><td>When the run began and ended (ms) – the clock counts between them</td></tr><tr><td><code>pausedFor</code></td><td><code>number</code></td><td><code>0</code></td><td>Time spent paused (ms), left out of the clock so it picks up where it stopped</td></tr><tr><td><code>cost</code></td><td><code>number</code></td><td></td><td>USD spent so far – shimmers while the agent is busy</td></tr><tr><td><code>ask</code></td><td><code>{ title: string; command?: string; icon?: ReactNode }</code></td><td></td><td>While waiting: a short title, the exact command as code, and the logo of the tool it&#39;s about to use</td></tr><tr><td><code>outcome</code></td><td><code>{ added?; removed?; files?; note? }</code></td><td></td><td>Once finished: lines added and removed, files touched, or a short note – after &quot;Finished in 19s&quot;</td></tr><tr><td><code>error</code></td><td><code>string</code></td><td></td><td>Once failed: what went wrong, in a few words</td></tr><tr><td><code>onAllow / onDecline</code></td><td><code>() =&gt; void</code></td><td></td><td>Allow and Decline while waiting – Enter and Escape do the same while the card has the focus</td></tr><tr><td><code>onPause / onResume / onCancel</code></td><td><code>() =&gt; void</code></td><td></td><td>Steer a running or paused run – Pause or Resume and Cancel sit side by side as two small buttons; paused, the clock and the running bar stand still</td></tr><tr><td><code>onRetry</code></td><td><code>() =&gt; void</code></td><td></td><td>Try again after a failure</td></tr><tr><td><code>onOpenLog</code></td><td><code>() =&gt; void</code></td><td></td><td>Shows Log, to jump to the full trace</td></tr><tr><td><code>defaultFolded</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Start folded, as the small bar</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Fold away, the step list when it scrolls, then the controls at the foot</li><li>↑ / ↓: On the focused step list: scroll through the finished steps</li><li>Enter: Waiting, with the card focused: Allow</li><li>Escape: Waiting, with the card focused: Decline – with an info card open, it closes the info card and puts the focus back on its row</li><li>Enter / Space: On a step row: open or close its info card, the focus moving to its close button – on the folded bar: open the card, the focus landing on Fold away</li></ul><h2>Accessibility</h2><ul><li>The card is a labelled region naming the agent, its state and its current step; the folded bar is a button with the same name</li><li>The time strip is one image whose label lists each step with its time; the rows are a list, and the logos are decoration</li><li>Cost and time are labelled in words for screen readers</li><li>Each row is a button with aria-expanded; the info card is a labelled dialog, and a press outside it closes it</li></ul><h2>Responsive</h2><ul><li>372px wide (a white card on a gray tray, the controls on the tray), or narrower with its container – long steps and commands end in an ellipsis</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/trace-waterfall">Trace Waterfall</a> – Where the time and money of an agent run go – every LLM call, tool call and sub-agent as a bar on a live timeline, with tokens and cost per step, the slowest call marked and branches that fold into their parent</li><li><a href="/components/agent-lanes">Agent Lanes</a> – Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the block</li><li><a href="/components/permission-request">Permission Request</a> – An agent asks for one specific right – who, why and exactly what will happen – and you allow it once, for an hour or always; then it folds into one line with the time left and Revoke</li><li><a href="/components/tool-call-card">Tool Call Card</a> – An agent&#39;s tool call in one line – live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that sums them up</li></ul></main></div></div>
+  </body>
+</html>

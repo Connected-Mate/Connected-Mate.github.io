@@ -3,61 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>affectUI · Agent-ready React UI for AI products</title>
-    <link rel="canonical" href="https://www.affectui.com/" />
-    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <title>Tool Call Card – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/tool-call-card" />
+    <meta name="description" content="An agent&#39;s tool call in one line – live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that…" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta property="og:url" content="https://www.affectui.com/" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:title" content="Tool Call Card – React component · affectUI" />
+    <meta property="og:description" content="An agent&#39;s tool call in one line – live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that…" />
+    <meta property="og:url" content="https://www.affectui.com/components/tool-call-card" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@flohoeller" />
+    <meta name="twitter:site" content="@affectui" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
-    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://www.affectui.com/#website",
-            "url": "https://www.affectui.com/",
-            "name": "affectUI",
-            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
-            "inLanguage": "en",
-            "publisher": { "@id": "https://www.affectui.com/#organization" }
-          },
-          {
-            "@type": "Organization",
-            "@id": "https://www.affectui.com/#organization",
-            "name": "affectUI",
-            "url": "https://www.affectui.com/",
-            "logo": "https://www.affectui.com/icon-512.png",
-            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "affectUI",
-            "applicationCategory": "DeveloperApplication",
-            "operatingSystem": "Web",
-            "url": "https://www.affectui.com/",
-            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
-          }
-        ]
-      }
-    </script>
+    <meta name="twitter:title" content="Tool Call Card – React component · affectUI" />
+    <meta name="twitter:description" content="An agent&#39;s tool call in one line – live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Tool Call Card","item":"https://www.affectui.com/components/tool-call-card"}]},{"@type":"SoftwareSourceCode","name":"Tool Call Card (affectUI)","description":"An agent's tool call in one line – live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that sums them up","url":"https://www.affectui.com/components/tool-call-card","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","dateCreated":"2026-10-09","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -77,21 +45,17 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const origin = "https://www.affectui.com";
-  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && salesOnly.test(target.pathname)
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
-    return;
-  }
-  if (serverOnly.test(window.location.pathname)) {
-    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -102,11 +66,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -127,34 +91,55 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (salesOnly.test(target.pathname)) {
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
-    } else if (serverOnly.test(target.pathname)) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
   <link rel="stylesheet" href="/ateam/composants.css">
   </head>
   <body>
-    <div id="root">
-      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
-      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
-        affectUI – Agent-ready UI for AI products
-      </h1>
-    </div>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/agents">Agents</a></p>
+<h1>Tool Call Card</h1>
+<p>An agent&#39;s tool call in one line – live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that sums them up.</p>
+<p>Free and open source (MIT). Install: <code>npx shadcn@latest add https://www.affectui.com/r/tool-call-card.json</code> · Import from <code>@/components/ui/tool-call-card</code></p>
+<h2>When to use</h2><ul><li>Tool and function calls in an agent chat or run log – what was called, with what, and what came back</li><li>Agents that call several tools per turn – wrap them in ToolCallGroup so the answer isn&#39;t buried under cards</li><li>Developer-facing views where people need to copy the exact arguments or result to debug</li></ul><h2>When not to use</h2><ul><li>Plain reasoning with no tool calls – use Thinking State or Thinking Loader</li><li>End users who never care about JSON – show a one-line status instead and keep the details in a log</li><li>Huge payloads (megabytes of JSON) – trim or paginate them first; the card renders the whole string</li></ul><h2>Usage</h2><pre><code>import { ToolCallCard, ToolCallGroup } from &quot;@/components/ui/tool-call-card&quot;;
+
+export function ToolCalls({ calls }: { calls: ToolCall[] }) {
+  return (
+    &lt;ToolCallGroup&gt;
+      {calls.map((call) =&gt; (
+        &lt;ToolCallCard
+          key={call.id}
+          name={call.name}
+          summary={call.summary}
+          status={call.status}
+          args={call.args}
+          result={call.result}
+          error={call.error}
+          startedAt={call.startedAt}
+          duration={call.durationMs}
+          onRetry={() =&gt; retryToolCall(call.id)}
+        /&gt;
+      ))}
+    &lt;/ToolCallGroup&gt;
+  );
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code></td><td><code>string</code></td><td></td><td>Tool name as the agent calls it, shown in mono – e.g. &quot;search_web&quot;</td></tr><tr><td><code>status</code></td><td><code>&quot;running&quot; | &quot;success&quot; | &quot;error&quot;</code></td><td></td><td>Spinner with a live timer, check with the duration, or a red &quot;Failed&quot;</td></tr><tr><td><code>summary</code></td><td><code>ReactNode</code></td><td></td><td>Short human summary next to the name; truncates with an ellipsis</td></tr><tr><td><code>icon</code></td><td><code>ReactNode</code></td><td><code>wrench icon</code></td><td>Icon in the tile on the left – a 16px stroke SVG fits best</td></tr><tr><td><code>args</code></td><td><code>unknown</code></td><td></td><td>Arguments – objects are pretty-printed and highlighted, JSON strings are parsed; the section is hidden when undefined</td></tr><tr><td><code>result</code></td><td><code>unknown</code></td><td></td><td>What the tool returned – like args; other strings are shown as plain text. While running without a result, &quot;Waiting for result…&quot; is shown</td></tr><tr><td><code>error</code></td><td><code>string</code></td><td></td><td>Error message, shown in the body when status is &quot;error&quot;</td></tr><tr><td><code>startedAt</code></td><td><code>number</code></td><td></td><td>Start time in ms since epoch – the live timer counts from here instead of from when the card turned running</td></tr><tr><td><code>duration</code></td><td><code>number</code></td><td></td><td>Final duration in ms – otherwise the time measured while the card was running</td></tr><tr><td><code>defaultOpen</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Start expanded (uncontrolled)</td></tr><tr><td><code>open</code></td><td><code>boolean</code></td><td></td><td>Expanded state (controlled)</td></tr><tr><td><code>onOpenChange</code></td><td><code>(open: boolean) =&gt; void</code></td><td></td><td>Called when the header is toggled</td></tr><tr><td><code>openOnError</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Opens the card when the call fails and closes it on the next run, unless someone toggled it by hand (uncontrolled only)</td></tr><tr><td><code>onRetry</code></td><td><code>() =&gt; void</code></td><td></td><td>Shows a Retry button next to the error message</td></tr><tr><td><code>maxCodeHeight</code></td><td><code>number</code></td><td><code>220</code></td><td>Height in px after which arguments and result are capped with a fade and a &quot;Show all&quot; toggle</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr><tr><td><code>ToolCallGroup · children</code></td><td><code>ToolCallCard elements</code></td><td></td><td>The cards – the group reads their icon, status and duration props for its header, so pass them as direct children</td></tr><tr><td><code>ToolCallGroup · label</code></td><td><code>string</code></td><td><code>&quot;Used N tools&quot;</code></td><td>Header label once nothing is running</td></tr><tr><td><code>ToolCallGroup · runningLabel</code></td><td><code>string</code></td><td><code>&quot;Using tools…&quot;</code></td><td>Shimmering header label while any card is running</td></tr><tr><td><code>ToolCallGroup · duration</code></td><td><code>number</code></td><td></td><td>Total in ms – otherwise the sum of the cards&#39; duration props, or the time measured while any card was running</td></tr><tr><td><code>ToolCallGroup · defaultOpen / open / onOpenChange</code></td><td><code>boolean / boolean / (open) =&gt; void</code></td><td><code>false</code></td><td>Expanded state, uncontrolled or controlled</td></tr><tr><td><code>ToolCallGroup · className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Moves through the headers, copy buttons, Show all and Retry; content of closed cards is skipped</li><li>Enter / Space: On a header: expands or collapses the card or the group</li></ul><h2>Accessibility</h2><ul><li>Headers are real buttons with aria-expanded and aria-controls pointing at the body</li><li>Closed bodies are inert, so they can&#39;t be focused or read until opened</li><li>A polite live region per card announces &quot;search_web running&quot;, &quot;finished&quot; or &quot;failed: …&quot;; the group announces &quot;Using tools…&quot; and &quot;Used 3 tools&quot;</li><li>Copy buttons are labelled &quot;Copy arguments&quot; / &quot;Copy result&quot; and switch to &quot;Copied&quot;; icons are aria-hidden</li><li>Errors use text and an icon, not only red</li></ul><h2>Responsive</h2><ul><li>Fills its container; name and summary truncate with an ellipsis, the status never wraps – works down to ~320px</li><li>Code wraps long lines instead of scrolling sideways</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/thinking-loader">Thinking Loader</a> – A small working pill for AI replies – an eight-ray spinner and a shimmering label that rolls through phases and settles on a check</li><li><a href="/components/thinking-state">Thinking State</a> – AI working panel with a live timer, searched sources and thinking steps that appear one by one</li><li><a href="/components/ai-answer">AI Answer</a> – Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups</li></ul><h2>Guides</h2><ul><li><a href="/guides/ai-chat-ui-components-react">React components for AI chat interfaces</a> – What an AI chat UI needs – composer, streaming answers, thinking states, tool calls, citations, message actions – and React components for each.</li><li><a href="/guides/tool-calls-agent-ui">How to show tool calls in an AI agent UI</a> – How to display an agent&#39;s tool calls – one readable line per call, arguments and results on demand, errors with retry – and when to switch to a trace or a graph.</li><li><a href="/guides/show-what-ai-agent-is-doing">How to show what an AI agent is doing</a> – UI patterns that make an AI agent&#39;s work visible – the current step, its plan, tool calls, a live tree or timeline, and a trace of where time and money went.</li></ul></main></div></div>
   </body>
 </html>

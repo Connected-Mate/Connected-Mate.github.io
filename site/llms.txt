@@ -1,8 +1,8 @@
 # affectUI
 
-> Agent-ready React UI for AI products and SaaS: 110 components, screens, blocks, illustrations and motion effects. Every item is one .tsx file with its styles inside – no Tailwind, no animation library, no other dependencies. React 19, dark mode and reduced motion built in.
+> Agent-ready React UI for AI products and SaaS: 132 components, screens, blocks, illustrations and motion effects. Every item is one .tsx file with its styles inside – no Tailwind, no animation library, no other dependencies. React 19, dark mode and reduced motion built in.
 
-40 items are free and open source (MIT). The other 70 are part of affectUI Pro, a one-time purchase (https://www.affectui.com/pricing).
+40 items are free and open source (MIT). The other 92 are part of affectUI Pro, a one-time purchase (https://www.affectui.com/pricing).
 
 ## How to add an item
 
@@ -21,11 +21,45 @@
 - [Using with AI](https://www.affectui.com/docs/ai): prompts and setup for coding assistants
 - [Full docs in one file](https://www.affectui.com/llms-full.txt): every item's usage, props and notes
 
+## Guides
+
+- [React components for AI chat interfaces](https://www.affectui.com/guides/ai-chat-ui-components-react): What an AI chat UI needs – composer, streaming answers, thinking states, tool calls, citations, message actions – and React components for each.
+- [How to build an agent dashboard in React](https://www.affectui.com/guides/agent-dashboard-react): The views an AI agent dashboard needs – what's running, who started what, what needs a person, what it cost – and React components for each.
+- [Human-in-the-loop UI: approvals, permissions and autonomy](https://www.affectui.com/guides/human-in-the-loop-ui): UI patterns for keeping people in control of AI agents – approval cards, permission requests, autonomy levels, steering and reviewing changes.
+- [How to show tool calls in an AI agent UI](https://www.affectui.com/guides/tool-calls-agent-ui): How to display an agent's tool calls – one readable line per call, arguments and results on demand, errors with retry – and when to switch to a trace or a graph.
+- [Streaming AI responses in React without layout shift](https://www.affectui.com/guides/streaming-ai-responses-react): How to render streamed LLM answers in React so the page doesn't jump – stable containers, a clear thinking state, smooth text, and actions that appear in place.
+- [Model picker UI: letting users choose an LLM](https://www.affectui.com/guides/model-picker-ui): How to design a model picker for an AI product – what to show per model, defaults, reasoning settings, and what happens when a model fails.
+- [How to show AI agent costs and token usage](https://www.affectui.com/guides/ai-agent-costs-token-usage-ui): UI patterns for showing what AI agents cost – per run, per step and per agent – plus token usage, context limits and budgets.
+- [How to show what an AI agent is doing](https://www.affectui.com/guides/show-what-ai-agent-is-doing): UI patterns that make an AI agent's work visible – the current step, its plan, tool calls, a live tree or timeline, and a trace of where time and money went.
+- [Approval UI for AI agents: what to show before an agent acts](https://www.affectui.com/guides/approval-ui-ai-agents): How to design the approval step for AI agent actions – what the card must show, risk levels, timeouts, batching many requests, and undo after approval.
+- [Multi-agent UI in React: orchestrators, sub-agents and hand-offs](https://www.affectui.com/guides/multi-agent-ui-react): How to show several AI agents working together – who started whom, who is busy, hand-offs, parallel work, conflicts and the queue – with React components for each.
+- [Context window UI: showing what fills an LLM's context](https://www.affectui.com/guides/context-window-ui): How to show an LLM's context window to users – what takes up space, how full it is, what to remove, when to compact, and how memory fits in.
+
+## Comparisons
+
+- [affectUI compared](https://www.affectui.com/compare): one table of affectUI, shadcn/ui, AI Elements, assistant-ui, Aceternity UI and Magic UI
+- [affectUI vs shadcn/ui](https://www.affectui.com/compare/shadcn-ui): How affectUI and shadcn/ui differ, where each fits, and how to use them together in one React project.
+- [affectUI vs AI Elements](https://www.affectui.com/compare/ai-elements): How affectUI and Vercel's AI Elements differ – what each covers, what it needs to run, how it connects to the AI SDK – and how to use them together.
+- [affectUI vs assistant-ui](https://www.affectui.com/compare/assistant-ui): How affectUI and assistant-ui differ – a chat framework with runtimes versus finished components for AI products – and how to combine them.
+- [affectUI vs CopilotKit](https://www.affectui.com/compare/copilotkit): How affectUI and CopilotKit differ – a framework that connects agents to your app versus finished components for AI products – and how to use them together.
+- [affectUI vs prompt-kit](https://www.affectui.com/compare/prompt-kit): How affectUI and prompt-kit differ – chat building blocks on shadcn/ui and Tailwind versus finished components for AI products and agents – and when to use which.
+- [affectUI vs Aceternity UI and Magic UI](https://www.affectui.com/compare/aceternity-magic-ui): How affectUI differs from Aceternity UI and Magic UI – components for the AI product itself versus animated sections for landing pages – and when to use which.
+
 ## Components
 
+- [Agent Checkpoints](https://www.affectui.com/components/agent-checkpoints): An agent's run as a line of checkpoints, like git for agents – rewind to any of them and a new attempt branches out of it, while the one it left fades back but stays (Pro, Agents)
+- [Agent Cursors](https://www.affectui.com/components/agent-cursors): Agents working in a document like teammates in a multiplayer editor – live pointers with names, suggestions typed letter by letter, images they resize, code they fix and comments beside the page (Pro, Agents)
+- [Agent Findings](https://www.affectui.com/components/agent-findings): A swarm of agents checking something – one calm row per agent with its progress, and their findings sliding into a short feed as they're found (Pro, Agents)
+- [Agent Fleet](https://www.affectui.com/components/agent-fleet): Several agents side by side – each card sums up its sub-agents, and a click opens its tree to the right while the last one folds back into its card (Pro, Agents)
+- [Agent Graph](https://www.affectui.com/components/agent-graph): Agents and the tools they call as a living network – a pulse along the link for every call and its answer, busy links growing thicker, agents that breathe while they work and turn amber when they need you (Pro, Agents)
+- [Agent Handoff](https://www.affectui.com/components/agent-handoff): A task passed from agent to agent like a relay – at every handoff what went along to the next one, and what got lost on the way (Pro, Agents)
 - [Agent Inbox](https://www.affectui.com/components/agent-inbox): All your background agent tasks in one calm list – live clocks and status tags, filter tabs with rolling counts, rows that unfold to the last steps with Approve, Reject, Retry or Open, and glide to their new place (Pro, Agents)
 - [Agent Lanes](https://www.affectui.com/components/agent-lanes): Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the block (Pro, Agents)
+- [Agent Ledger](https://www.affectui.com/components/agent-ledger): Everything an agent changed in your systems, each change with an undo – before and after per row, and pointing at Undo shows what builds on it: what would be undone too, and what can't be taken back (Pro, Agents)
+- [Agent Monitor](https://www.affectui.com/components/agent-monitor): One agent at work, as a card – its current step with a clock and the bill so far, a time strip and the finished steps with the logo of each tool, a click on any of them for the details; the exact command when it needs your OK; folds into a small bar with the tools it has used (Pro, Agents)
 - [Agent Plan](https://www.affectui.com/components/agent-plan): An agent's step-by-step plan to review before it runs – rename, drag to reorder, remove or add steps, then watch each one run with live timers and retry from a failed step (Pro, Agents)
+- [Agent Queue](https://www.affectui.com/components/agent-queue): The work waiting for your agents, and how fast it moves – jobs drop into a live queue, glide into free worker slots as growing bars and land in Done or Failed, while a depth chart shows the backlog build up when a rate limit pauses the workers and drain when they resume (Pro, Agents)
+- [Agent Recap](https://www.affectui.com/components/agent-recap): What the agents did while you were away – the night as a small chart with a peak per event, then a board of what needs you, what failed and what's done, acted on right on the card (Pro, Agents)
 - [Agent Steering](https://www.affectui.com/components/agent-steering): Steer an agent while it works – queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away (Pro, Agents)
 - [Agent Tree](https://www.affectui.com/components/agent-tree): Who started whom – an orchestrator and its sub-agents as a live tree, with status, cost and time on every card, costs rolling up each branch, and branches that fold to one line (Pro, Agents)
 - [AI Answer](https://www.affectui.com/components/ai-answer): Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups (Pro, Chat)
@@ -42,14 +76,19 @@
 - [Comment Thread](https://www.affectui.com/components/comment-thread): One comment with replies – an assistant reports what it did, folds open details and answers @mentions (Free, Chat)
 - [Comments Panel](https://www.affectui.com/components/comments-panel): Comment feed with filters, runnable /edit commands, resolve and a composer (Pro, Chat)
 - [Compact Breakdown](https://www.affectui.com/components/compact-breakdown): A total split into its parts in one small card – numbers roll, the bar glides and the ranked rows trade places when the period changes (Pro, Data display)
+- [Conflict Radar](https://www.affectui.com/components/conflict-radar): Agents working on their own branches at once, and where they get in each other's way – a row per file and a column per agent, a line between the agents that changed the same lines, each agent's way in one sentence to pick from, and Merge once all are settled (Pro, Agents)
+- [Context Map](https://www.affectui.com/components/context-map): What fills an agent's context window, as a living treemap – system prompt, tools, memory, every file, the chat and tool results as tiles that glide as it grows, the free space dashed, and compaction squeezing old turns into a summary (Pro, Agents)
 - [Context Window](https://www.affectui.com/components/context-window): What fills the model's context, as a field of cells – hover a part to light it up, remove files, and compact the conversation while its cells shimmer and clear (Pro, Agents)
 - [Data Table](https://www.affectui.com/components/data-table): Spreadsheet-style table: select cells and ranges, edit in place, copy and paste, undo and sort (Pro, Data display)
 - [Date Range Picker](https://www.affectui.com/components/date-range-picker): Presets and two calendars with a hover preview, comparison with the previous period or year, full keyboard control (Pro, Inputs)
 - [Decision Inbox](https://www.affectui.com/components/decision-inbox): Open decisions with two quick answers each – answered ones confirm and fold away (Free, Feedback)
+- [Decision Tree](https://www.affectui.com/components/decision-tree): An agent stuck on a decision lays out its options as a tree – the consequences of each branch, the risky ones marked, its own pick highlighted – and you choose a path or write your own (Pro, Agents)
 - [Delegate Board](https://www.affectui.com/components/delegate-board): Hand work to your agents by dragging it onto them – each agent previews its new “busy until” time, or switch to Auto and every new task goes to whoever is free first (Pro, Agents)
 - [Dropzone](https://www.affectui.com/components/dropzone): Drag files in and watch them upload – fanning documents, colored type badges, progress with time left, errors with retry (Pro, Inputs)
 - [Email Draft](https://www.affectui.com/components/email-draft): Agent-written email for review – switch recipient and tone, edit inline, remove the attachment, send or discard with undo (Free, Cards)
 - [Experiment Card](https://www.affectui.com/components/experiment-card): An A/B test in two lines that quietly unfolds on hover – variants linked to a tiny chart, a metric switch with rolling numbers, and a winner you pick with a click (Pro, Data display)
+- [Fallback Chain](https://www.affectui.com/components/fallback-chain): One request finding a model that answers, as a small flow diagram – the request branches out to each model in its fallback order, a light runs to the one being tried, failed branches break red, and the one that answers runs on to the response (Pro, Agents)
+- [Fan-out Grid](https://www.affectui.com/components/fan-out-grid): One agent hands a big job to many workers – every task a cell on a live grid that fills in as they get through it, with retries, failures, cost and the time left, and the details of any task on hover (Pro, Agents)
 - [Filter Menu](https://www.affectui.com/components/filter-menu): Grouped filters with removable chips, collapsible checkbox groups, Clear all and full keyboard control (Free, Inputs)
 - [Inline Diff](https://www.affectui.com/components/inline-diff): AI edits to prose shown inline – struck and added words you accept or reject one by one, with keys, a popover and undo (Pro, Agents)
 - [Integration Picker](https://www.affectui.com/components/integration-picker): Integrations page of a command menu – search, a list of services and the picked one with its connection on two tiles (Pro, Navigation)
@@ -60,12 +99,16 @@
 - [Model Picker](https://www.affectui.com/components/model-picker): The model menu of an AI chat – point at a model and its speed, quality and cost bars fill, switch on extended thinking and its effort unfolds, while the tray rolls the first-token time and price (Pro, Chat)
 - [Notification Stack](https://www.affectui.com/components/notification-stack): Notice cards stacked behind each other – dismiss the front one to reveal the next (Free, Feedback)
 - [OTP Input](https://www.affectui.com/components/otp-input): The verification code field done right – a gliding focus ring, paste and SMS autofill, a calm shake on errors and a morph into Verified (Free, Inputs)
+- [Parallel Attempts](https://www.affectui.com/components/parallel-attempts): An agent tries the same task several ways at once and the best one wins – every attempt races as a row with its model, approach and live bar, then gets a score; the best is marked and picked, and you can switch to another (Pro, Agents)
 - [Permission Request](https://www.affectui.com/components/permission-request): An agent asks for one specific right – who, why and exactly what will happen – and you allow it once, for an hour or always; then it folds into one line with the time left and Revoke (Pro, Agents)
+- [Plan vs Actual](https://www.affectui.com/components/plan-vs-actual): An agent's plan against what really happens – every step's bar grows over its dashed planned ghost, overruns turn amber, the steps after it slide right, and the expected finish moves away from the planned one (Pro, Agents)
 - [Profile Menu](https://www.affectui.com/components/profile-menu): Account card with the signed-in user, menu actions and profile setup progress (Free, Navigation)
 - [Progress Tracker](https://www.affectui.com/components/progress-tracker): Onboarding checklist with an animated progress bar, ticks that draw themselves and auto play (Free, Feedback)
 - [Project Card](https://www.affectui.com/components/project-card): A two-line project summary that quietly unfolds on hover – a progress ring with one segment per subtask, a people filter and a status picker, all linked by hover (Pro, Cards)
 - [Prompt Library](https://www.affectui.com/components/prompt-library): Saved prompt templates with variables – type straight into the sentence, watch the finished prompt assemble below, and use it once every variable is filled (Pro, Inputs)
 - [Reaction Bar](https://www.affectui.com/components/reaction-bar): Like, comment, repost and share in one pill – icons pop and fill, counts roll in digit by digit (Free, Buttons)
+- [Review Center](https://www.affectui.com/components/review-center): A focused workspace for what your agents want to do – the queue sorted by risk, one item at a time with the shaky spans marked, Approve, Edit, Reject and Skip on single keys, a stamp as each one leaves and the next one rising in (Pro, Agents)
+- [Scheduled Runs](https://www.affectui.com/components/scheduled-runs): Agent tasks sorted into a week of sessions – each session has a usage limit, small tasks fill the gaps, big ones are split across sessions, and the stack flies in one card at a time (Pro, Agents)
 - [Segmented Control](https://www.affectui.com/components/segmented-control): Switch between two to six options – a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges (Free, Navigation)
 - [Setup Guide](https://www.affectui.com/components/setup-guide): Onboarding panel with a progress bar and collapsible task groups that strike through when done (Pro, Feedback)
 - [Smart Recommendation](https://www.affectui.com/components/smart-recommendation): Suggestion card with a confidence signal, alternatives to switch to and accept with undo (Free, Cards)
@@ -75,6 +118,7 @@
 - [Tips Panel](https://www.affectui.com/components/tips-panel): Grid of short tips with one action each – taken tips turn into a done state (Free, Cards)
 - [Toaster](https://www.affectui.com/components/toaster): Calm toasts from anywhere – a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss (Pro, Feedback)
 - [Tool Call Card](https://www.affectui.com/components/tool-call-card): An agent's tool call in one line – live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that sums them up (Free, Agents)
+- [Trace Waterfall](https://www.affectui.com/components/trace-waterfall): Where the time and money of an agent run go – every LLM call, tool call and sub-agent as a bar on a live timeline, with tokens and cost per step, the slowest call marked and branches that fold into their parent (Pro, Agents)
 - [Usage Meter](https://www.affectui.com/components/usage-meter): Plan usage and AI credits – a stacked credits meter by category, daily sparkline, limits and a button that speaks up near the limit (Pro, Data display)
 - [Writing Assistant](https://www.affectui.com/components/writing-assistant): AI chat card with a soft gradient glow, suggestions, streaming replies and live voice dictation (Pro, Chat)
 
@@ -85,6 +129,8 @@
 - [Analytics](https://www.affectui.com/screens/analytics): Revenue dashboard: key figures, revenue by channel, breakdown, top products and weekly trends (Pro, App screens)
 - [App Shell Flat](https://www.affectui.com/screens/app-shell-flat): The App Shell laid flat – gray sidebar and an edge-to-edge page, split by a single hairline (Pro, App screens)
 - [App Shell Inset](https://www.affectui.com/screens/app-shell): Collapsible sidebar with workspace, menu, projects and account – the frame every screen sits in (Pro, App screens)
+- [App Shell Workspace Flat](https://www.affectui.com/screens/app-shell-workspace-flat): The flat App Shell with a resizable work area on the right – sidebar, page and tools, each split by a hairline (Pro, App screens)
+- [App Shell Workspace Inset](https://www.affectui.com/screens/app-shell-workspace): App Shell Inset with a resizable work area on the right – tools, browser and suggested sources next to the page, like Claude or Codex (Pro, App screens)
 - [Assistant Home](https://www.affectui.com/screens/assistant-home): AI assistant start page: greeting, prompt box with tools, connected apps and suggestions (Pro, App screens)
 - [CRM](https://www.affectui.com/screens/crm): Company list with pipelines, open views as tabs and an editable data table (Pro, App screens)
 - [Evals](https://www.affectui.com/screens/evals): Prompt evaluation dashboard: pass rate by version, reviewable prompt changes and test cases you can re-run (Pro, App screens)

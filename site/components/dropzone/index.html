@@ -3,61 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>affectUI · Agent-ready React UI for AI products</title>
-    <link rel="canonical" href="https://www.affectui.com/" />
-    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <title>Dropzone – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/dropzone" />
+    <meta name="description" content="Drag files in and watch them upload – fanning documents, colored type badges, progress with time left, errors with retry. Part of affectUI Pro – one file, no…" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta property="og:url" content="https://www.affectui.com/" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:title" content="Dropzone – React component · affectUI" />
+    <meta property="og:description" content="Drag files in and watch them upload – fanning documents, colored type badges, progress with time left, errors with retry. Part of affectUI Pro – one file, no…" />
+    <meta property="og:url" content="https://www.affectui.com/components/dropzone" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@flohoeller" />
+    <meta name="twitter:site" content="@affectui" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
-    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://www.affectui.com/#website",
-            "url": "https://www.affectui.com/",
-            "name": "affectUI",
-            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
-            "inLanguage": "en",
-            "publisher": { "@id": "https://www.affectui.com/#organization" }
-          },
-          {
-            "@type": "Organization",
-            "@id": "https://www.affectui.com/#organization",
-            "name": "affectUI",
-            "url": "https://www.affectui.com/",
-            "logo": "https://www.affectui.com/icon-512.png",
-            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "affectUI",
-            "applicationCategory": "DeveloperApplication",
-            "operatingSystem": "Web",
-            "url": "https://www.affectui.com/",
-            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
-          }
-        ]
-      }
-    </script>
+    <meta name="twitter:title" content="Dropzone – React component · affectUI" />
+    <meta name="twitter:description" content="Drag files in and watch them upload – fanning documents, colored type badges, progress with time left, errors with retry. Part of affectUI Pro – one file, no…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Dropzone","item":"https://www.affectui.com/components/dropzone"}]},{"@type":"SoftwareSourceCode","name":"Dropzone (affectUI)","description":"Drag files in and watch them upload – fanning documents, colored type badges, progress with time left, errors with retry","url":"https://www.affectui.com/components/dropzone","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-08","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -77,21 +45,17 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const origin = "https://www.affectui.com";
-  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && salesOnly.test(target.pathname)
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
-    return;
-  }
-  if (serverOnly.test(window.location.pathname)) {
-    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -102,11 +66,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -127,34 +91,54 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (salesOnly.test(target.pathname)) {
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
-    } else if (serverOnly.test(target.pathname)) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
   <link rel="stylesheet" href="/ateam/composants.css">
   </head>
   <body>
-    <div id="root">
-      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
-      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
-        affectUI – Agent-ready UI for AI products
-      </h1>
-    </div>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/inputs">Inputs</a></p>
+<h1>Dropzone</h1>
+<p>Drag files in and watch them upload – fanning documents, colored type badges, progress with time left, errors with retry.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/dropzone.json</code> · Import from <code>@/components/ui/dropzone</code></p>
+<h2>When to use</h2><ul><li>Uploading documents, images or media – attachments, imports, asset libraries, onboarding</li><li>Several files at once, where people want to see what&#39;s done, what&#39;s still running and what failed</li></ul><h2>When not to use</h2><ul><li>A single avatar or logo – a simple picker with a preview is lighter</li><li>Huge uploads that run in the background for minutes – show them in a separate transfer panel</li></ul><h2>Usage</h2><pre><code>import { Dropzone } from &quot;@/components/ui/dropzone&quot;;
+
+export function Attachments() {
+  return (
+    &lt;Dropzone
+      accept={[&quot;.pdf&quot;, &quot;.png&quot;, &quot;.jpg&quot;, &quot;.xlsx&quot;]}
+      maxSize={25 * 1024 * 1024}
+      onUpload={(file, onProgress) =&gt;
+        new Promise((resolve, reject) =&gt; {
+          const xhr = new XMLHttpRequest();
+          xhr.upload.onprogress = (e) =&gt; onProgress(e.loaded / e.total);
+          xhr.onload = () =&gt; (xhr.status &lt; 300 ? resolve() : reject(new Error(&quot;Upload failed&quot;)));
+          xhr.onerror = () =&gt; reject(new Error(&quot;Upload failed – connection lost&quot;));
+          xhr.open(&quot;POST&quot;, &quot;/api/upload&quot;);
+          xhr.send(file);
+        })
+      }
+      onChange={(items) =&gt; setAttachments(items.filter((i) =&gt; i.status === &quot;done&quot;))}
+    /&gt;
+  );
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>accept</code></td><td><code>string[]</code></td><td></td><td>Allowed extensions, e.g. [&quot;.pdf&quot;, &quot;.png&quot;]; any file when left out. Other files get a row with an error</td></tr><tr><td><code>maxSize</code></td><td><code>number</code></td><td><code>25 MB</code></td><td>Largest file in bytes; bigger files get a &quot;Too large&quot; row</td></tr><tr><td><code>onUpload</code></td><td><code>(file: File, onProgress: (p: number) =&gt; void) =&gt; Promise&lt;void&gt;</code></td><td></td><td>Uploads one file and reports progress from 0 to 1; reject to mark it as failed (the message is shown, Retry calls it again). Simulated when left out</td></tr><tr><td><code>onChange</code></td><td><code>(items: UploadItem[]) =&gt; void</code></td><td></td><td>Every change of the list: { id, name, size, status, progress, error?, file? }</td></tr><tr><td><code>hint</code></td><td><code>string</code></td><td></td><td>Text under the title; defaults to the accepted types and the size limit</td></tr><tr><td><code>autoplay</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Plays a sample drop of four files – for previews and landing pages</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Reaches the drop area, then Retry and Remove in every row</li><li>↵: On the drop area: opens the file picker (Space works too)</li></ul><h2>Accessibility</h2><ul><li>The drop area is a button that opens the file picker, described by the accepted types and size</li><li>Every row has a progress bar with its value; Retry and Remove are named after the file</li><li>Finished, failed and rejected files are announced in a polite live region</li></ul><h2>Responsive</h2><ul><li>Fills its container up to 520px; long file names are cut with an ellipsis</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/chat-composer">Chat Composer</a> – Prompt composer with model picker, voice input, app connections and approval request</li><li><a href="/components/ai-answer">AI Answer</a> – Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups</li><li><a href="/illustrations/glass-folder">Glass Folder</a> – Glassy blue folder with documents behind a frosted pocket that tips open on hover</li></ul></main></div></div>
   </body>
 </html>

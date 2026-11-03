@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Shell Workspace Inset – React app screen · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/screens/app-shell-workspace" />
+    <meta name="description" content="App Shell Inset with a resizable work area on the right – tools, browser and suggested sources next to the page, like Claude or Codex. Part of affectUI Pro –…" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="affectUI" />
+    <meta property="og:title" content="App Shell Workspace Inset – React app screen · affectUI" />
+    <meta property="og:description" content="App Shell Inset with a resizable work area on the right – tools, browser and suggested sources next to the page, like Claude or Codex. Part of affectUI Pro –…" />
+    <meta property="og:url" content="https://www.affectui.com/screens/app-shell-workspace" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:creator" content="@flohoeller" />
+    <meta name="twitter:title" content="App Shell Workspace Inset – React app screen · affectUI" />
+    <meta name="twitter:description" content="App Shell Inset with a resizable work area on the right – tools, browser and suggested sources next to the page, like Claude or Codex. Part of affectUI Pro –…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Screens","item":"https://www.affectui.com/screens"},{"@type":"ListItem","position":3,"name":"App Shell Workspace Inset","item":"https://www.affectui.com/screens/app-shell-workspace"}]},{"@type":"SoftwareSourceCode","name":"App Shell Workspace Inset (affectUI)","description":"App Shell Inset with a resizable work area on the right – tools, browser and suggested sources next to the page, like Claude or Codex","url":"https://www.affectui.com/screens/app-shell-workspace","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-24","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)" />
+    <script>
+      try {
+        const t = localStorage.getItem("theme");
+        if (t) document.documentElement.dataset.theme = t;
+        // Components switch with a .dark class, the shadcn convention – set it for "system" too
+        const dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", dark);
+      } catch {}
+    </script>
+    <script data-static-mirror-compatibility>
+(() => {
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
+  const libraryPath = (value) => {
+    const target = new URL(value, window.location.href);
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+      ? "/components" + target.search + target.hash
+      : value;
+  };
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+    window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  for (const method of ["pushState", "replaceState"]) {
+    const original = window.history[method].bind(window.history);
+    window.history[method] = (state, title, url) => original(state, title, url == null ? url : libraryPath(url));
+  }
+  const removeSalesLayer = () => {
+    document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
+    document.querySelectorAll("a[href]").forEach((anchor) => {
+      const target = new URL(anchor.getAttribute("href"), window.location.href);
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+    });
+    document.querySelectorAll("button").forEach((button) => {
+      const label = button.textContent.trim().replace(/s+/g, " ");
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+    });
+  };
+  let queued = false;
+  const scheduleCleanup = () => {
+    if (queued) return;
+    queued = true;
+    queueMicrotask(() => {
+      queued = false;
+      removeSalesLayer();
+    });
+  };
+  new MutationObserver(scheduleCleanup).observe(document.documentElement, { childList: true, subtree: true });
+  document.addEventListener("DOMContentLoaded", scheduleCleanup);
+  scheduleCleanup();
+  document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const anchor = event.target?.closest?.("a[href]");
+    if (!anchor) return;
+    const target = new URL(anchor.getAttribute("href"), window.location.href);
+    if (target.origin !== window.location.origin) return;
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign("/components" + target.search + target.hash);
+    }
+  }, true);
+})();
+</script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
+    <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
+  <link rel="stylesheet" href="/ateam/composants.css">
+  </head>
+  <body>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/screens">Screens</a> › App screens</p>
+<h1>App Shell Workspace Inset</h1>
+<p>App Shell Inset with a resizable work area on the right – tools, browser and suggested sources next to the page, like Claude or Codex.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/app-shell-workspace.json</code> · Import from <code>@/components/ui/app-shell-workspace</code></p>
+<h2>When to use</h2><ul><li>AI assistants and agent tools that keep a terminal, browser or sources next to the conversation</li><li>Editors and dashboards with a detail or preview pane beside the page</li></ul><h2>When not to use</h2><ul><li>When the page needs the full width – use App Shell Inset without the work area</li><li>Marketing pages – use a block or a plain layout</li></ul><h2>Usage</h2><pre><code>import { AppShellWorkspace } from &quot;@/components/ui/app-shell-workspace&quot;;
+
+export function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    &lt;AppShellWorkspace active=&quot;New chat&quot; onNavigate={(label) =&gt; router.push(routes[label])} onOpen={(id) =&gt; openTool(id)}&gt;
+      &lt;div className=&quot;ui-as-page&quot;&gt;{children}&lt;/div&gt;
+    &lt;/AppShellWorkspace&gt;
+  );
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>children</code></td><td><code>ReactNode</code></td><td></td><td>The page shown between the sidebar and the work area</td></tr><tr><td><code>tools</code></td><td><code>WorkspaceTool[]</code></td><td><code>Terminal, Browser, Notes</code></td><td>Rows under Tools, each { id, label, icon, shortcut? }</td></tr><tr><td><code>sources</code></td><td><code>WorkspaceSource[]</code></td><td></td><td>Rows under Suggested, each { id, title, source, mark? }</td></tr><tr><td><code>onOpen</code></td><td><code>(id: string) =&gt; void</code></td><td></td><td>A tool or a suggestion was clicked</td></tr><tr><td><code>panel</code></td><td><code>ReactNode</code></td><td></td><td>Your own content for the work area instead of tools and suggestions</td></tr><tr><td><code>panelTitle</code></td><td><code>string</code></td><td><code>&quot;Workspace&quot;</code></td><td>Heading of the work area</td></tr><tr><td><code>panelWidth</code></td><td><code>{ default?: number; min?: number; max?: number }</code></td><td><code>{ default: 360, min: 280, max: 560 }</code></td><td>Work area width in px – drag its edge between min and max</td></tr><tr><td><code>sidebarWidth</code></td><td><code>{ default?: number; min?: number; max?: number }</code></td><td><code>{ default: 272, min: 220, max: 380 }</code></td><td>Sidebar width in px, the same way</td></tr><tr><td><code>…</code></td><td><code>AppShellProps</code></td><td></td><td>Everything App Shell takes: active, onNavigate, workspace, user, nav, projects, groups, setup, className</td></tr></tbody></table><h2>Accessibility</h2><ul><li>Both edges are separators you can focus: arrow keys resize (Shift for bigger steps), Home and End jump to the minimum and maximum, double-click resets</li><li>The work area is a labelled landmark; while it&#39;s folded away it&#39;s inert, and its icon in the top right brings it back</li></ul><h2>Responsive</h2><ul><li>Below 900px the work area becomes a drawer from the right, like the sidebar from the left; Escape or a tap beside it closes it</li><li>Dark mode built in, from the App Shell tokens</li></ul><h2>Requirements</h2><ul><li>React 19</li><li>@hugeicons/react</li><li>@hugeicons/core-free-icons</li><li>App Shell Inset (installed with it)</li></ul><h2>Guides</h2><ul><li><a href="/guides/agent-dashboard-react">How to build an agent dashboard in React</a> – The views an AI agent dashboard needs – what&#39;s running, who started what, what needs a person, what it cost – and React components for each.</li></ul></main></div></div>
+  </body>
+</html>

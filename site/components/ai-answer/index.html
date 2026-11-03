@@ -3,61 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>affectUI · Agent-ready React UI for AI products</title>
-    <link rel="canonical" href="https://www.affectui.com/" />
-    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <title>AI Answer – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/ai-answer" />
+    <meta name="description" content="Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups. Part of affectUI Pro – one file, no…" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta property="og:url" content="https://www.affectui.com/" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:title" content="AI Answer – React component · affectUI" />
+    <meta property="og:description" content="Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups. Part of affectUI Pro – one file, no…" />
+    <meta property="og:url" content="https://www.affectui.com/components/ai-answer" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@flohoeller" />
+    <meta name="twitter:site" content="@affectui" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
-    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
-    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://www.affectui.com/#website",
-            "url": "https://www.affectui.com/",
-            "name": "affectUI",
-            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
-            "inLanguage": "en",
-            "publisher": { "@id": "https://www.affectui.com/#organization" }
-          },
-          {
-            "@type": "Organization",
-            "@id": "https://www.affectui.com/#organization",
-            "name": "affectUI",
-            "url": "https://www.affectui.com/",
-            "logo": "https://www.affectui.com/icon-512.png",
-            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "affectUI",
-            "applicationCategory": "DeveloperApplication",
-            "operatingSystem": "Web",
-            "url": "https://www.affectui.com/",
-            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
-          }
-        ]
-      }
-    </script>
+    <meta name="twitter:title" content="AI Answer – React component · affectUI" />
+    <meta name="twitter:description" content="Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups. Part of affectUI Pro – one file, no…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"AI Answer","item":"https://www.affectui.com/components/ai-answer"}]},{"@type":"SoftwareSourceCode","name":"AI Answer (affectUI)","description":"Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups","url":"https://www.affectui.com/components/ai-answer","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-08","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -77,21 +45,17 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const origin = "https://www.affectui.com";
-  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && salesOnly.test(target.pathname)
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
-    return;
-  }
-  if (serverOnly.test(window.location.pathname)) {
-    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -102,11 +66,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -127,34 +91,53 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (salesOnly.test(target.pathname)) {
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
-    } else if (serverOnly.test(target.pathname)) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
   <link rel="stylesheet" href="/ateam/composants.css">
   </head>
   <body>
-    <div id="root">
-      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
-      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
-        affectUI – Agent-ready UI for AI products
-      </h1>
-    </div>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/chat">Chat</a></p>
+<h1>AI Answer</h1>
+<p>Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/ai-answer.json</code> · Import from <code>@/components/ui/ai-answer</code></p>
+<h2>When to use</h2><ul><li>Answers from an assistant that searched your docs, the web or connected tools and should show where each claim comes from</li><li>Research, support or knowledge-base products where people need to check the source before they act</li></ul><h2>When not to use</h2><ul><li>Casual chat without sources – a plain message bubble is lighter</li><li>Long documents or code – the answer is made for a few paragraphs and lists</li></ul><h2>Usage</h2><pre><code>import { AIAnswer, type AnswerSource } from &quot;@/components/ui/ai-answer&quot;;
+
+const sources: AnswerSource[] = [
+  { name: &quot;Notion&quot;, title: &quot;Offsite plan – shortlist and budget&quot;, href: &quot;https://notion.so/…&quot;, snippet: &quot;Budget €4,500 for three nights…&quot; },
+  { name: &quot;Slack&quot;, title: &quot;#team-offsite – who can make which dates&quot;, href: &quot;https://slack.com/…&quot; },
+];
+
+export function Answer({ text, done }: { text: string; done: boolean }) {
+  return (
+    &lt;AIAnswer
+      question=&quot;Where should we hold the team offsite?&quot;
+      sources={sources}
+      // Blank lines: paragraphs · &quot;- &quot;: list · **bold** · [1] or [1,2]: citations (1-based)
+      answer={text}
+      streaming={!done}
+      onRegenerate={() =&gt; regenerate()}
+      onFeedback={(value, reason) =&gt; track(&quot;answer_feedback&quot;, { value, reason })}
+    /&gt;
+  );
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>question</code></td><td><code>string</code></td><td></td><td>Shown as the title above the sources</td></tr><tr><td><code>sources</code></td><td><code>AnswerSource[]</code></td><td></td><td>Each { title, name, href?, icon?, snippet? }; name is the short label on the citation chip</td></tr><tr><td><code>answer</code></td><td><code>string</code></td><td></td><td>Blank lines make paragraphs, lines starting with &quot;- &quot; a list, **bold**, [1] or [1,3] cite sources (1-based). It may grow while streaming; a different text starts over</td></tr><tr><td><code>streaming</code></td><td><code>boolean</code></td><td><code>false</code></td><td>More text is still coming from your model – keeps the cursor going once it has caught up</td></tr><tr><td><code>animate</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Stream the text in; false shows it at once</td></tr><tr><td><code>speed</code></td><td><code>number</code></td><td><code>38</code></td><td>Words per second while streaming in</td></tr><tr><td><code>followUps</code></td><td><code>string[]</code></td><td></td><td>Related questions shown below the finished answer</td></tr><tr><td><code>onFollowUp</code></td><td><code>(question: string) =&gt; void</code></td><td></td><td>A follow-up was clicked</td></tr><tr><td><code>onRegenerate</code></td><td><code>() =&gt; void</code></td><td></td><td>Regenerate was clicked – the answer streams in again; pass a new answer to replace it</td></tr><tr><td><code>onStop</code></td><td><code>() =&gt; void</code></td><td></td><td>Stop was clicked while writing – cancel your request here</td></tr><tr><td><code>onFeedback</code></td><td><code>(value: &quot;up&quot; | &quot;down&quot;, reason?: string) =&gt; void</code></td><td></td><td>Thumbs up, or thumbs down with the reason that was picked</td></tr><tr><td><code>feedbackReasons</code></td><td><code>string[]</code></td><td><code>[&quot;Not accurate&quot;, &quot;Wrong source&quot;, &quot;Too long&quot;, &quot;Out of date&quot;]</code></td><td>Reasons offered after a thumbs down</td></tr><tr><td><code>onCopy</code></td><td><code>(text: string) =&gt; void</code></td><td></td><td>Called with the copied text: the answer without markup plus a numbered source list</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Moves through source cards, citation chips, follow-ups and actions</li><li>Esc: Closes the source preview of the focused chip</li></ul><h2>Accessibility</h2><ul><li>Citation chips are buttons named after their sources; the preview is a tooltip linked to the chip</li><li>The answer is marked busy while it streams, so screen readers read it once it&#39;s complete</li><li>Copy, feedback and status changes are announced in a polite live region</li></ul><h2>Responsive</h2><ul><li>Fills its container up to 640px; source cards scroll sideways on narrow screens</li><li>Tap a citation chip to open its preview on touch screens</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/thinking-state">Thinking State</a> – AI working panel with a live timer, searched sources and thinking steps that appear one by one</li><li><a href="/components/chat-composer">Chat Composer</a> – Prompt composer with model picker, voice input, app connections and approval request</li><li><a href="/components/comment-thread">Comment Thread</a> – One comment with replies – an assistant reports what it did, folds open details and answers @mentions</li></ul><h2>Guides</h2><ul><li><a href="/guides/ai-chat-ui-components-react">React components for AI chat interfaces</a> – What an AI chat UI needs – composer, streaming answers, thinking states, tool calls, citations, message actions – and React components for each.</li><li><a href="/guides/streaming-ai-responses-react">Streaming AI responses in React without layout shift</a> – How to render streamed LLM answers in React so the page doesn&#39;t jump – stable containers, a clear thinking state, smooth text, and actions that appear in place.</li></ul></main></div></div>
   </body>
 </html>

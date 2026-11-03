@@ -3,50 +3,66 @@
  * Palette: doubled root class, above the component's own light and dark roots.
  * Shape: `html body` in front, so the component's hover and checked states still win. */
 
+.ui-ack.ui-ack {
+  --ui-ack-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-ack.ui-ack {
+  --ui-ack-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-ackc.ui-ackc {
+  --ui-ackc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-ackc.ui-ackc {
+  --ui-ackc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .ui-ad.ui-ad {
   --ui-ad-tray: #f2f6fa;
   --ui-ad-card: #ffffff;
-  --ui-ad-line: #dae2ec;
   --ui-ad-ink: #00162b;
   --ui-ad-text: rgba(0, 22, 43, 0.66);
   --ui-ad-muted: rgba(0, 22, 43, 0.56);
+  --ui-ad-faint: rgba(0, 22, 43, 0.36);
+  --ui-ad-line: #dae2ec;
+  --ui-ad-chip: #f2f6fa;
+  --ui-ad-track: rgba(26, 62, 112, 0.1);
   --ui-ad-accent: #1a3e70;
+  --ui-ad-warn-bg: #fdf6dd;
+  --ui-ad-warn-fg: #775810;
+  --ui-ad-danger-bg: #fdeee8;
+  --ui-ad-danger-fg: #8a3a22;
+  --ui-ad-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ui-ad-ok: #1d6a34;
   --ui-ad-accent-ring: #c1daff;
   --ui-ad-tile: #f2f6fa;
   --ui-ad-ok-bg: #eafbee;
   --ui-ad-danger: #8a3a22;
-  --ui-ad-danger-bg: #fdeee8;
-  --ui-ad-ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --ui-ad-faint: rgba(0, 22, 43, 0.36);
-  --ui-ad-chip: #f2f6fa;
-  --ui-ad-track: rgba(26, 62, 112, 0.1);
-  --ui-ad-warn-bg: #fdf6dd;
-  --ui-ad-warn-fg: #775810;
-  --ui-ad-danger-fg: #8a3a22;
 }
 
 :is(.dark, [data-theme="dark"]) .ui-ad.ui-ad {
   --ui-ad-tray: #0f2747;
   --ui-ad-card: #16345c;
-  --ui-ad-line: rgba(255, 255, 255, 0.12);
   --ui-ad-ink: rgba(255, 255, 255, 0.94);
   --ui-ad-text: rgba(255, 255, 255, 0.72);
   --ui-ad-muted: rgba(255, 255, 255, 0.58);
+  --ui-ad-faint: rgba(255, 255, 255, 0.36);
+  --ui-ad-line: rgba(255, 255, 255, 0.12);
+  --ui-ad-chip: rgba(255, 255, 255, 0.07);
+  --ui-ad-track: rgba(255, 255, 255, 0.12);
   --ui-ad-accent: #8fbdf2;
+  --ui-ad-warn-bg: rgba(243, 210, 122, 0.14);
+  --ui-ad-warn-fg: #f3d27a;
+  --ui-ad-danger-bg: rgba(242, 164, 140, 0.14);
+  --ui-ad-danger-fg: #f2a48c;
+  --ui-ad-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ui-ad-ok: #7fe0a0;
   --ui-ad-accent-ring: rgba(143, 189, 242, 0.4);
   --ui-ad-tile: #1b3c68;
   --ui-ad-ok-bg: rgba(127, 224, 160, 0.14);
   --ui-ad-danger: #f2a48c;
-  --ui-ad-danger-bg: rgba(242, 164, 140, 0.14);
-  --ui-ad-ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --ui-ad-faint: rgba(255, 255, 255, 0.36);
-  --ui-ad-chip: rgba(255, 255, 255, 0.07);
-  --ui-ad-track: rgba(255, 255, 255, 0.12);
-  --ui-ad-warn-bg: rgba(243, 210, 122, 0.14);
-  --ui-ad-warn-fg: #f3d27a;
-  --ui-ad-danger-fg: #f2a48c;
 }
 
 .ui-adc.ui-adc {
@@ -111,6 +127,284 @@
   --ui-ag-ok: #7fe0a0;
   --ui-ag-ok-bg: rgba(127, 224, 160, 0.14);
   --ui-ag-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-agc.ui-agc {
+  --ui-agc-card: #ffffff;
+  --ui-agc-tray: #f2f6fa;
+  --ui-agc-ink: #00162b;
+  --ui-agc-text: rgba(0, 22, 43, 0.66);
+  --ui-agc-muted: rgba(0, 22, 43, 0.56);
+  --ui-agc-line: #dae2ec;
+  --ui-agc-chip: #f2f6fa;
+  --ui-agc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-agc.ui-agc {
+  --ui-agc-card: #16345c;
+  --ui-agc-tray: #0f2747;
+  --ui-agc-ink: rgba(255, 255, 255, 0.94);
+  --ui-agc-text: rgba(255, 255, 255, 0.72);
+  --ui-agc-muted: rgba(255, 255, 255, 0.58);
+  --ui-agc-line: rgba(255, 255, 255, 0.12);
+  --ui-agc-chip: rgba(255, 255, 255, 0.07);
+  --ui-agc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-agcc.ui-agcc {
+  --ui-agcc-card: #ffffff;
+  --ui-agcc-strong: #00162b;
+  --ui-agcc-ink: #00162b;
+  --ui-agcc-text: rgba(0, 22, 43, 0.66);
+  --ui-agcc-muted: rgba(0, 22, 43, 0.56);
+  --ui-agcc-faint: rgba(0, 22, 43, 0.36);
+  --ui-agcc-line: #dae2ec;
+  --ui-agcc-chip: #f2f6fa;
+  --ui-agcc-solid: #851437;
+  --ui-agcc-on-solid: #ffffff;
+  --ui-agcc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-agcc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-agcc.ui-agcc {
+  --ui-agcc-card: #16345c;
+  --ui-agcc-strong: #ffffff;
+  --ui-agcc-ink: rgba(255, 255, 255, 0.94);
+  --ui-agcc-text: rgba(255, 255, 255, 0.72);
+  --ui-agcc-muted: rgba(255, 255, 255, 0.58);
+  --ui-agcc-faint: rgba(255, 255, 255, 0.36);
+  --ui-agcc-line: rgba(255, 255, 255, 0.12);
+  --ui-agcc-chip: rgba(255, 255, 255, 0.07);
+  --ui-agcc-solid: #a8204d;
+  --ui-agcc-on-solid: #ffffff;
+  --ui-agcc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-agcc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-agg.ui-agg {
+  --ui-agg-tray: #f2f6fa;
+  --ui-agg-card: #ffffff;
+  --ui-agg-ink: #00162b;
+  --ui-agg-text: rgba(0, 22, 43, 0.66);
+  --ui-agg-muted: rgba(0, 22, 43, 0.56);
+  --ui-agg-line: #dae2ec;
+  --ui-agg-chip: #f2f6fa;
+  --ui-agg-ok: #1d6a34;
+  --ui-agg-ok-bg: #eafbee;
+  --ui-agg-ok-fg: #1d6a34;
+  --ui-agg-warn-bg: #fdf6dd;
+  --ui-agg-warn-fg: #775810;
+  --ui-agg-danger: #8a3a22;
+  --ui-agg-danger-bg: #fdeee8;
+  --ui-agg-danger-fg: #8a3a22;
+  --ui-agg-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-agg.ui-agg {
+  --ui-agg-tray: #0f2747;
+  --ui-agg-card: #16345c;
+  --ui-agg-ink: rgba(255, 255, 255, 0.94);
+  --ui-agg-text: rgba(255, 255, 255, 0.72);
+  --ui-agg-muted: rgba(255, 255, 255, 0.58);
+  --ui-agg-line: rgba(255, 255, 255, 0.12);
+  --ui-agg-chip: rgba(255, 255, 255, 0.07);
+  --ui-agg-ok: #7fe0a0;
+  --ui-agg-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-agg-ok-fg: #7fe0a0;
+  --ui-agg-warn-bg: rgba(243, 210, 122, 0.14);
+  --ui-agg-warn-fg: #f3d27a;
+  --ui-agg-danger: #f2a48c;
+  --ui-agg-danger-bg: rgba(242, 164, 140, 0.14);
+  --ui-agg-danger-fg: #f2a48c;
+  --ui-agg-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-aggc.ui-aggc {
+  --ui-aggc-card: #ffffff;
+  --ui-aggc-strong: #00162b;
+  --ui-aggc-ink: #00162b;
+  --ui-aggc-text: rgba(0, 22, 43, 0.66);
+  --ui-aggc-muted: rgba(0, 22, 43, 0.56);
+  --ui-aggc-faint: rgba(0, 22, 43, 0.36);
+  --ui-aggc-line: #dae2ec;
+  --ui-aggc-fill: rgba(26, 62, 112, 0.06);
+  --ui-aggc-ok: #1d6a34;
+  --ui-aggc-ok-bg: #eafbee;
+  --ui-aggc-ok-fg: #1d6a34;
+  --ui-aggc-warn-bg: #fdf6dd;
+  --ui-aggc-warn-fg: #775810;
+  --ui-aggc-danger: #8a3a22;
+  --ui-aggc-danger-bg: #fdeee8;
+  --ui-aggc-danger-fg: #8a3a22;
+  --ui-aggc-focus: rgba(143, 189, 242, 0.8);
+  --ui-aggc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-aggc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-aggc.ui-aggc {
+  --ui-aggc-card: #16345c;
+  --ui-aggc-strong: #ffffff;
+  --ui-aggc-ink: rgba(255, 255, 255, 0.94);
+  --ui-aggc-text: rgba(255, 255, 255, 0.72);
+  --ui-aggc-muted: rgba(255, 255, 255, 0.58);
+  --ui-aggc-faint: rgba(255, 255, 255, 0.36);
+  --ui-aggc-line: rgba(255, 255, 255, 0.12);
+  --ui-aggc-fill: rgba(255, 255, 255, 0.07);
+  --ui-aggc-ok: #7fe0a0;
+  --ui-aggc-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-aggc-ok-fg: #7fe0a0;
+  --ui-aggc-warn-bg: rgba(243, 210, 122, 0.14);
+  --ui-aggc-warn-fg: #f3d27a;
+  --ui-aggc-danger: #f2a48c;
+  --ui-aggc-danger-bg: rgba(242, 164, 140, 0.14);
+  --ui-aggc-danger-fg: #f2a48c;
+  --ui-aggc-focus: rgba(143, 189, 242, 0.6);
+  --ui-aggc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-aggc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-agm.ui-agm {
+  --ui-agm-tray: #f2f6fa;
+  --ui-agm-card: #ffffff;
+  --ui-agm-strong: #00162b;
+  --ui-agm-ink: #00162b;
+  --ui-agm-text: rgba(0, 22, 43, 0.66);
+  --ui-agm-muted: rgba(0, 22, 43, 0.56);
+  --ui-agm-faint: rgba(0, 22, 43, 0.36);
+  --ui-agm-line: #dae2ec;
+  --ui-agm-fill: rgba(26, 62, 112, 0.06);
+  --ui-agm-accent: #1a3e70;
+  --ui-agm-accent-bg: #eef5ff;
+  --ui-agm-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-agm-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-agm.ui-agm {
+  --ui-agm-tray: #0f2747;
+  --ui-agm-card: #16345c;
+  --ui-agm-strong: #ffffff;
+  --ui-agm-ink: rgba(255, 255, 255, 0.94);
+  --ui-agm-text: rgba(255, 255, 255, 0.72);
+  --ui-agm-muted: rgba(255, 255, 255, 0.58);
+  --ui-agm-faint: rgba(255, 255, 255, 0.36);
+  --ui-agm-line: rgba(255, 255, 255, 0.12);
+  --ui-agm-fill: rgba(255, 255, 255, 0.07);
+  --ui-agm-accent: #8fbdf2;
+  --ui-agm-accent-bg: rgba(143, 189, 242, 0.16);
+  --ui-agm-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-agm-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-agmc.ui-agmc {
+  --ui-agmc-card: #ffffff;
+  --ui-agmc-strong: #00162b;
+  --ui-agmc-ink: #00162b;
+  --ui-agmc-text: rgba(0, 22, 43, 0.66);
+  --ui-agmc-muted: rgba(0, 22, 43, 0.56);
+  --ui-agmc-faint: rgba(0, 22, 43, 0.36);
+  --ui-agmc-line: #dae2ec;
+  --ui-agmc-fill: rgba(26, 62, 112, 0.06);
+  --ui-agmc-accent: #1a3e70;
+  --ui-agmc-accent-bg: #eef5ff;
+  --ui-agmc-focus: rgba(143, 189, 242, 0.8);
+  --ui-agmc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-agmc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-agmc.ui-agmc {
+  --ui-agmc-card: #16345c;
+  --ui-agmc-strong: #ffffff;
+  --ui-agmc-ink: rgba(255, 255, 255, 0.94);
+  --ui-agmc-text: rgba(255, 255, 255, 0.72);
+  --ui-agmc-muted: rgba(255, 255, 255, 0.58);
+  --ui-agmc-faint: rgba(255, 255, 255, 0.36);
+  --ui-agmc-line: rgba(255, 255, 255, 0.12);
+  --ui-agmc-fill: rgba(255, 255, 255, 0.07);
+  --ui-agmc-accent: #8fbdf2;
+  --ui-agmc-accent-bg: rgba(143, 189, 242, 0.16);
+  --ui-agmc-focus: rgba(143, 189, 242, 0.6);
+  --ui-agmc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-agmc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-agq.ui-agq {
+  --ui-agq-tray: #f2f6fa;
+  --ui-agq-card: #ffffff;
+  --ui-agq-strong: #00162b;
+  --ui-agq-ink: #00162b;
+  --ui-agq-text: rgba(0, 22, 43, 0.66);
+  --ui-agq-muted: rgba(0, 22, 43, 0.56);
+  --ui-agq-faint: rgba(0, 22, 43, 0.36);
+  --ui-agq-line: #dae2ec;
+  --ui-agq-chip: #f2f6fa;
+  --ui-agq-wash: rgba(26, 62, 112, 0.035);
+  --ui-agq-accent: #1a3e70;
+  --ui-agq-ok-bg: #eafbee;
+  --ui-agq-ok-fg: #1d6a34;
+  --ui-agq-warn-bg: #fdf6dd;
+  --ui-agq-warn-fg: #775810;
+  --ui-agq-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-agq-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-agq.ui-agq {
+  --ui-agq-tray: #0f2747;
+  --ui-agq-card: #16345c;
+  --ui-agq-strong: #ffffff;
+  --ui-agq-ink: rgba(255, 255, 255, 0.94);
+  --ui-agq-text: rgba(255, 255, 255, 0.72);
+  --ui-agq-muted: rgba(255, 255, 255, 0.58);
+  --ui-agq-faint: rgba(255, 255, 255, 0.36);
+  --ui-agq-line: rgba(255, 255, 255, 0.12);
+  --ui-agq-chip: rgba(255, 255, 255, 0.07);
+  --ui-agq-wash: rgba(255, 255, 255, 0.04);
+  --ui-agq-accent: #8fbdf2;
+  --ui-agq-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-agq-ok-fg: #7fe0a0;
+  --ui-agq-warn-bg: rgba(243, 210, 122, 0.14);
+  --ui-agq-warn-fg: #f3d27a;
+  --ui-agq-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-agq-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-agqc.ui-agqc {
+  --ui-agqc-card: #ffffff;
+  --ui-agqc-strong: #00162b;
+  --ui-agqc-ink: #00162b;
+  --ui-agqc-text: rgba(0, 22, 43, 0.66);
+  --ui-agqc-muted: rgba(0, 22, 43, 0.56);
+  --ui-agqc-faint: rgba(0, 22, 43, 0.36);
+  --ui-agqc-line: #dae2ec;
+  --ui-agqc-fill: rgba(26, 62, 112, 0.06);
+  --ui-agqc-wash: rgba(26, 62, 112, 0.035);
+  --ui-agqc-accent: #1a3e70;
+  --ui-agqc-ok-bg: #eafbee;
+  --ui-agqc-ok-fg: #1d6a34;
+  --ui-agqc-warn-bg: #fdf6dd;
+  --ui-agqc-warn-fg: #775810;
+  --ui-agqc-focus: rgba(143, 189, 242, 0.8);
+  --ui-agqc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-agqc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-agqc.ui-agqc {
+  --ui-agqc-card: #16345c;
+  --ui-agqc-strong: #ffffff;
+  --ui-agqc-ink: rgba(255, 255, 255, 0.94);
+  --ui-agqc-text: rgba(255, 255, 255, 0.72);
+  --ui-agqc-muted: rgba(255, 255, 255, 0.58);
+  --ui-agqc-faint: rgba(255, 255, 255, 0.36);
+  --ui-agqc-line: rgba(255, 255, 255, 0.12);
+  --ui-agqc-fill: rgba(255, 255, 255, 0.07);
+  --ui-agqc-wash: rgba(255, 255, 255, 0.04);
+  --ui-agqc-accent: #8fbdf2;
+  --ui-agqc-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-agqc-ok-fg: #7fe0a0;
+  --ui-agqc-warn-bg: rgba(243, 210, 122, 0.14);
+  --ui-agqc-warn-fg: #f3d27a;
+  --ui-agqc-focus: rgba(143, 189, 242, 0.6);
+  --ui-agqc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-agqc-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ui-agt.ui-agt {
@@ -197,6 +491,62 @@
   --ui-agtc-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.ui-ah.ui-ah {
+  --ui-ah-card: #ffffff;
+  --ui-ah-strong: #00162b;
+  --ui-ah-ink: #00162b;
+  --ui-ah-text: rgba(0, 22, 43, 0.66);
+  --ui-ah-muted: rgba(0, 22, 43, 0.56);
+  --ui-ah-faint: rgba(0, 22, 43, 0.36);
+  --ui-ah-line: #dae2ec;
+  --ui-ah-accent: #1a3e70;
+  --ui-ah-accent-bg: #eef5ff;
+  --ui-ah-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-ah-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-ah.ui-ah {
+  --ui-ah-card: #16345c;
+  --ui-ah-strong: #ffffff;
+  --ui-ah-ink: rgba(255, 255, 255, 0.94);
+  --ui-ah-text: rgba(255, 255, 255, 0.72);
+  --ui-ah-muted: rgba(255, 255, 255, 0.58);
+  --ui-ah-faint: rgba(255, 255, 255, 0.36);
+  --ui-ah-line: rgba(255, 255, 255, 0.12);
+  --ui-ah-accent: #8fbdf2;
+  --ui-ah-accent-bg: rgba(143, 189, 242, 0.16);
+  --ui-ah-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-ah-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-ahc.ui-ahc {
+  --ui-ahc-card: #ffffff;
+  --ui-ahc-strong: #00162b;
+  --ui-ahc-ink: #00162b;
+  --ui-ahc-text: rgba(0, 22, 43, 0.66);
+  --ui-ahc-muted: rgba(0, 22, 43, 0.56);
+  --ui-ahc-faint: rgba(0, 22, 43, 0.36);
+  --ui-ahc-line: #dae2ec;
+  --ui-ahc-accent: #1a3e70;
+  --ui-ahc-accent-bg: #eef5ff;
+  --ui-ahc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-ahc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-ahc.ui-ahc {
+  --ui-ahc-card: #16345c;
+  --ui-ahc-strong: #ffffff;
+  --ui-ahc-ink: rgba(255, 255, 255, 0.94);
+  --ui-ahc-text: rgba(255, 255, 255, 0.72);
+  --ui-ahc-muted: rgba(255, 255, 255, 0.58);
+  --ui-ahc-faint: rgba(255, 255, 255, 0.36);
+  --ui-ahc-line: rgba(255, 255, 255, 0.12);
+  --ui-ahc-accent: #8fbdf2;
+  --ui-ahc-accent-bg: rgba(143, 189, 242, 0.16);
+  --ui-ahc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-ahc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .ui-ai.ui-ai {
   --ui-ai-tray: #f2f6fa;
   --ui-ai-card: #ffffff;
@@ -255,6 +605,70 @@
   --ui-aic-faint: rgba(255, 255, 255, 0.36);
   --ui-aic-focus: rgba(143, 189, 242, 0.6);
   --ui-aic-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-al.ui-al {
+  --ui-al-tray: #f2f6fa;
+  --ui-al-card: #ffffff;
+  --ui-al-strong: #00162b;
+  --ui-al-ink: #00162b;
+  --ui-al-text: rgba(0, 22, 43, 0.66);
+  --ui-al-muted: rgba(0, 22, 43, 0.56);
+  --ui-al-faint: rgba(0, 22, 43, 0.36);
+  --ui-al-line: #dae2ec;
+  --ui-al-fill: rgba(26, 62, 112, 0.06);
+  --ui-al-accent: #1a3e70;
+  --ui-al-focus: rgba(143, 189, 242, 0.8);
+  --ui-al-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-al-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-al.ui-al {
+  --ui-al-tray: #0f2747;
+  --ui-al-card: #16345c;
+  --ui-al-strong: #ffffff;
+  --ui-al-ink: rgba(255, 255, 255, 0.94);
+  --ui-al-text: rgba(255, 255, 255, 0.72);
+  --ui-al-muted: rgba(255, 255, 255, 0.58);
+  --ui-al-faint: rgba(255, 255, 255, 0.36);
+  --ui-al-line: rgba(255, 255, 255, 0.12);
+  --ui-al-fill: rgba(255, 255, 255, 0.07);
+  --ui-al-accent: #8fbdf2;
+  --ui-al-focus: rgba(143, 189, 242, 0.6);
+  --ui-al-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-al-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-alc.ui-alc {
+  --ui-alc-card: #ffffff;
+  --ui-alc-strong: #00162b;
+  --ui-alc-ink: #00162b;
+  --ui-alc-text: rgba(0, 22, 43, 0.66);
+  --ui-alc-muted: rgba(0, 22, 43, 0.56);
+  --ui-alc-faint: rgba(0, 22, 43, 0.36);
+  --ui-alc-line: #dae2ec;
+  --ui-alc-fill: rgba(26, 62, 112, 0.06);
+  --ui-alc-accent: #1a3e70;
+  --ui-alc-focus: rgba(143, 189, 242, 0.8);
+  --ui-alc-ok-fg: #1d6a34;
+  --ui-alc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-alc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-alc.ui-alc {
+  --ui-alc-card: #16345c;
+  --ui-alc-strong: #ffffff;
+  --ui-alc-ink: rgba(255, 255, 255, 0.94);
+  --ui-alc-text: rgba(255, 255, 255, 0.72);
+  --ui-alc-muted: rgba(255, 255, 255, 0.58);
+  --ui-alc-faint: rgba(255, 255, 255, 0.36);
+  --ui-alc-line: rgba(255, 255, 255, 0.12);
+  --ui-alc-fill: rgba(255, 255, 255, 0.07);
+  --ui-alc-accent: #8fbdf2;
+  --ui-alc-focus: rgba(143, 189, 242, 0.6);
+  --ui-alc-ok-fg: #7fe0a0;
+  --ui-alc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-alc-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ui-ans.ui-ans {
@@ -399,6 +813,42 @@
   --ui-apc-ok-bg: rgba(127, 224, 160, 0.14);
   --ui-apc-ok-ink: #7fe0a0;
   --ui-apc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-ar.ui-ar {
+  --ui-ar-tray: #f2f6fa;
+  --ui-ar-card: #ffffff;
+  --ui-ar-strong: #00162b;
+  --ui-ar-ink: #00162b;
+  --ui-ar-text: rgba(0, 22, 43, 0.66);
+  --ui-ar-muted: rgba(0, 22, 43, 0.56);
+  --ui-ar-faint: rgba(0, 22, 43, 0.36);
+  --ui-ar-line: #dae2ec;
+  --ui-ar-soft: #f7f9fc;
+  --ui-ar-ok: #1d6a34;
+  --ui-ar-ok-bg: #eafbee;
+  --ui-ar-primary: #851437;
+  --ui-ar-primary-hover: #6d0f2d;
+  --ui-ar-primary-ink: #ffffff;
+  --ui-ar-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-ar.ui-ar {
+  --ui-ar-tray: #0f2747;
+  --ui-ar-card: #16345c;
+  --ui-ar-strong: #ffffff;
+  --ui-ar-ink: rgba(255, 255, 255, 0.94);
+  --ui-ar-text: rgba(255, 255, 255, 0.72);
+  --ui-ar-muted: rgba(255, 255, 255, 0.58);
+  --ui-ar-faint: rgba(255, 255, 255, 0.36);
+  --ui-ar-line: rgba(255, 255, 255, 0.12);
+  --ui-ar-soft: #1b3c68;
+  --ui-ar-ok: #7fe0a0;
+  --ui-ar-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-ar-primary: #a8204d;
+  --ui-ar-primary-hover: #bd2a5a;
+  --ui-ar-primary-ink: #ffffff;
+  --ui-ar-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ui-at.ui-at {
@@ -914,29 +1364,35 @@
 .ui-cm.ui-cm {
   --ui-cm-tray: #f2f6fa;
   --ui-cm-card: #ffffff;
-  --ui-cm-line: #dae2ec;
+  --ui-cm-strong: #00162b;
   --ui-cm-ink: #00162b;
   --ui-cm-text: rgba(0, 22, 43, 0.66);
   --ui-cm-muted: rgba(0, 22, 43, 0.56);
   --ui-cm-faint: rgba(0, 22, 43, 0.36);
+  --ui-cm-line: #dae2ec;
+  --ui-cm-accent: #1a3e70;
+  --ui-cm-hover: rgba(26, 62, 112, 0.06);
+  --ui-cm-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-cm-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ui-cm-tile: #f2f6fa;
   --ui-cm-ok: #1d6a34;
-  --ui-cm-accent: #1a3e70;
-  --ui-cm-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 :is(.dark, [data-theme="dark"]) .ui-cm.ui-cm {
   --ui-cm-tray: #0f2747;
   --ui-cm-card: #16345c;
-  --ui-cm-line: rgba(255, 255, 255, 0.12);
+  --ui-cm-strong: #ffffff;
   --ui-cm-ink: rgba(255, 255, 255, 0.94);
   --ui-cm-text: rgba(255, 255, 255, 0.72);
   --ui-cm-muted: rgba(255, 255, 255, 0.58);
   --ui-cm-faint: rgba(255, 255, 255, 0.36);
+  --ui-cm-line: rgba(255, 255, 255, 0.12);
+  --ui-cm-accent: #8fbdf2;
+  --ui-cm-hover: rgba(255, 255, 255, 0.07);
+  --ui-cm-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-cm-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ui-cm-tile: #1b3c68;
   --ui-cm-ok: #7fe0a0;
-  --ui-cm-accent: #8fbdf2;
-  --ui-cm-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ui-cmc.ui-cmc {
@@ -954,6 +1410,7 @@
   --ui-cmc-ok: #1d6a34;
   --ui-cmc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
   --ui-cmc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ui-cmc-hover: rgba(26, 62, 112, 0.06);
 }
 
 :is(.dark, [data-theme="dark"]) .ui-cmc.ui-cmc {
@@ -971,6 +1428,7 @@
   --ui-cmc-ok: #7fe0a0;
   --ui-cmc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
   --ui-cmc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ui-cmc-hover: rgba(255, 255, 255, 0.07);
 }
 
 .ui-cp.ui-cp {
@@ -1049,6 +1507,78 @@
   --ui-cpc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
   --ui-cpc-shadow-pop: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 24px 44px -20px rgba(3, 12, 28, 0.75), 0 8px 16px -8px rgba(3, 12, 28, 0.5);
   --ui-cpc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-cr.ui-cr {
+  --ui-cr-tray: #f2f6fa;
+  --ui-cr-card: #ffffff;
+  --ui-cr-strong: #00162b;
+  --ui-cr-ink: #00162b;
+  --ui-cr-text: rgba(0, 22, 43, 0.66);
+  --ui-cr-muted: rgba(0, 22, 43, 0.56);
+  --ui-cr-faint: rgba(0, 22, 43, 0.36);
+  --ui-cr-line: #dae2ec;
+  --ui-cr-fill: rgba(26, 62, 112, 0.06);
+  --ui-cr-hover: rgba(26, 62, 112, 0.06);
+  --ui-cr-ok-bg: #eafbee;
+  --ui-cr-ok: #1d6a34;
+  --ui-cr-accent: #1a3e70;
+  --ui-cr-focus: rgba(143, 189, 242, 0.8);
+  --ui-cr-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-cr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-cr.ui-cr {
+  --ui-cr-tray: #0f2747;
+  --ui-cr-card: #16345c;
+  --ui-cr-strong: #ffffff;
+  --ui-cr-ink: rgba(255, 255, 255, 0.94);
+  --ui-cr-text: rgba(255, 255, 255, 0.72);
+  --ui-cr-muted: rgba(255, 255, 255, 0.58);
+  --ui-cr-faint: rgba(255, 255, 255, 0.36);
+  --ui-cr-line: rgba(255, 255, 255, 0.12);
+  --ui-cr-fill: rgba(255, 255, 255, 0.07);
+  --ui-cr-hover: rgba(255, 255, 255, 0.07);
+  --ui-cr-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-cr-ok: #7fe0a0;
+  --ui-cr-accent: #8fbdf2;
+  --ui-cr-focus: rgba(143, 189, 242, 0.6);
+  --ui-cr-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-cr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-crc.ui-crc {
+  --ui-crc-card: #ffffff;
+  --ui-crc-strong: #00162b;
+  --ui-crc-ink: #00162b;
+  --ui-crc-text: rgba(0, 22, 43, 0.66);
+  --ui-crc-muted: rgba(0, 22, 43, 0.56);
+  --ui-crc-faint: rgba(0, 22, 43, 0.36);
+  --ui-crc-line: #dae2ec;
+  --ui-crc-fill: rgba(26, 62, 112, 0.06);
+  --ui-crc-hover: rgba(26, 62, 112, 0.06);
+  --ui-crc-ok-bg: #eafbee;
+  --ui-crc-ok: #1d6a34;
+  --ui-crc-focus: rgba(143, 189, 242, 0.8);
+  --ui-crc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-crc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-crc.ui-crc {
+  --ui-crc-card: #16345c;
+  --ui-crc-strong: #ffffff;
+  --ui-crc-ink: rgba(255, 255, 255, 0.94);
+  --ui-crc-text: rgba(255, 255, 255, 0.72);
+  --ui-crc-muted: rgba(255, 255, 255, 0.58);
+  --ui-crc-faint: rgba(255, 255, 255, 0.36);
+  --ui-crc-line: rgba(255, 255, 255, 0.12);
+  --ui-crc-fill: rgba(255, 255, 255, 0.07);
+  --ui-crc-hover: rgba(255, 255, 255, 0.07);
+  --ui-crc-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-crc-ok: #7fe0a0;
+  --ui-crc-focus: rgba(143, 189, 242, 0.6);
+  --ui-crc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-crc-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ui-cs.ui-cs {
@@ -1353,6 +1883,80 @@
   --ui-dbc-focus: rgba(143, 189, 242, 0.6);
   --ui-dbc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
   --ui-dbc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-dct.ui-dct {
+  --ui-dct-tray: #f2f6fa;
+  --ui-dct-card: #ffffff;
+  --ui-dct-strong: #00162b;
+  --ui-dct-ink: #00162b;
+  --ui-dct-text: rgba(0, 22, 43, 0.66);
+  --ui-dct-muted: rgba(0, 22, 43, 0.56);
+  --ui-dct-faint: rgba(0, 22, 43, 0.36);
+  --ui-dct-line: #dae2ec;
+  --ui-dct-line-strong: #cbd6e4;
+  --ui-dct-fill: rgba(26, 62, 112, 0.06);
+  --ui-dct-accent: #1a3e70;
+  --ui-dct-focus: rgba(143, 189, 242, 0.8);
+  --ui-dct-ok-bg: #eafbee;
+  --ui-dct-ok-fg: #1d6a34;
+  --ui-dct-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-dct-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-dct.ui-dct {
+  --ui-dct-tray: #0f2747;
+  --ui-dct-card: #16345c;
+  --ui-dct-strong: #ffffff;
+  --ui-dct-ink: rgba(255, 255, 255, 0.94);
+  --ui-dct-text: rgba(255, 255, 255, 0.72);
+  --ui-dct-muted: rgba(255, 255, 255, 0.58);
+  --ui-dct-faint: rgba(255, 255, 255, 0.36);
+  --ui-dct-line: rgba(255, 255, 255, 0.12);
+  --ui-dct-line-strong: rgba(255, 255, 255, 0.2);
+  --ui-dct-fill: rgba(255, 255, 255, 0.07);
+  --ui-dct-accent: #8fbdf2;
+  --ui-dct-focus: rgba(143, 189, 242, 0.6);
+  --ui-dct-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-dct-ok-fg: #7fe0a0;
+  --ui-dct-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-dct-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-dctc.ui-dctc {
+  --ui-dctc-card: #ffffff;
+  --ui-dctc-strong: #00162b;
+  --ui-dctc-ink: #00162b;
+  --ui-dctc-text: rgba(0, 22, 43, 0.66);
+  --ui-dctc-muted: rgba(0, 22, 43, 0.56);
+  --ui-dctc-faint: rgba(0, 22, 43, 0.36);
+  --ui-dctc-line: #dae2ec;
+  --ui-dctc-line-strong: #cbd6e4;
+  --ui-dctc-fill: rgba(26, 62, 112, 0.06);
+  --ui-dctc-accent: #1a3e70;
+  --ui-dctc-focus: rgba(143, 189, 242, 0.8);
+  --ui-dctc-ok-bg: #eafbee;
+  --ui-dctc-ok-fg: #1d6a34;
+  --ui-dctc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-dctc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-dctc.ui-dctc {
+  --ui-dctc-card: #16345c;
+  --ui-dctc-strong: #ffffff;
+  --ui-dctc-ink: rgba(255, 255, 255, 0.94);
+  --ui-dctc-text: rgba(255, 255, 255, 0.72);
+  --ui-dctc-muted: rgba(255, 255, 255, 0.58);
+  --ui-dctc-faint: rgba(255, 255, 255, 0.36);
+  --ui-dctc-line: rgba(255, 255, 255, 0.12);
+  --ui-dctc-line-strong: rgba(255, 255, 255, 0.2);
+  --ui-dctc-fill: rgba(255, 255, 255, 0.07);
+  --ui-dctc-accent: #8fbdf2;
+  --ui-dctc-focus: rgba(143, 189, 242, 0.6);
+  --ui-dctc-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-dctc-ok-fg: #7fe0a0;
+  --ui-dctc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-dctc-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ui-df.ui-df {
@@ -1859,6 +2463,68 @@
   --ui-fmc-focus: rgba(143, 189, 242, 0.6);
   --ui-fmc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
   --ui-fmc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-fog.ui-fog {
+  --ui-fog-tray: #f2f6fa;
+  --ui-fog-card: #ffffff;
+  --ui-fog-strong: #00162b;
+  --ui-fog-ink: #00162b;
+  --ui-fog-text: rgba(0, 22, 43, 0.66);
+  --ui-fog-muted: rgba(0, 22, 43, 0.56);
+  --ui-fog-faint: rgba(0, 22, 43, 0.36);
+  --ui-fog-line: #dae2ec;
+  --ui-fog-fill: rgba(26, 62, 112, 0.06);
+  --ui-fog-accent: #1a3e70;
+  --ui-fog-focus: rgba(143, 189, 242, 0.8);
+  --ui-fog-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-fog-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-fog.ui-fog {
+  --ui-fog-tray: #0f2747;
+  --ui-fog-card: #16345c;
+  --ui-fog-strong: #ffffff;
+  --ui-fog-ink: rgba(255, 255, 255, 0.94);
+  --ui-fog-text: rgba(255, 255, 255, 0.72);
+  --ui-fog-muted: rgba(255, 255, 255, 0.58);
+  --ui-fog-faint: rgba(255, 255, 255, 0.36);
+  --ui-fog-line: rgba(255, 255, 255, 0.12);
+  --ui-fog-fill: rgba(255, 255, 255, 0.07);
+  --ui-fog-accent: #8fbdf2;
+  --ui-fog-focus: rgba(143, 189, 242, 0.6);
+  --ui-fog-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-fog-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-fogc.ui-fogc {
+  --ui-fogc-card: #ffffff;
+  --ui-fogc-strong: #00162b;
+  --ui-fogc-ink: #00162b;
+  --ui-fogc-text: rgba(0, 22, 43, 0.66);
+  --ui-fogc-muted: rgba(0, 22, 43, 0.56);
+  --ui-fogc-faint: rgba(0, 22, 43, 0.36);
+  --ui-fogc-line: #dae2ec;
+  --ui-fogc-fill: rgba(26, 62, 112, 0.06);
+  --ui-fogc-accent: #1a3e70;
+  --ui-fogc-focus: rgba(143, 189, 242, 0.8);
+  --ui-fogc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-fogc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-fogc.ui-fogc {
+  --ui-fogc-card: #16345c;
+  --ui-fogc-strong: #ffffff;
+  --ui-fogc-ink: rgba(255, 255, 255, 0.94);
+  --ui-fogc-text: rgba(255, 255, 255, 0.72);
+  --ui-fogc-muted: rgba(255, 255, 255, 0.58);
+  --ui-fogc-faint: rgba(255, 255, 255, 0.36);
+  --ui-fogc-line: rgba(255, 255, 255, 0.12);
+  --ui-fogc-fill: rgba(255, 255, 255, 0.07);
+  --ui-fogc-accent: #8fbdf2;
+  --ui-fogc-focus: rgba(143, 189, 242, 0.6);
+  --ui-fogc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-fogc-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ui-gb.ui-gb {
@@ -2581,6 +3247,76 @@
   --ui-otpc-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.ui-pa.ui-pa {
+  --ui-pa-tray: #f2f6fa;
+  --ui-pa-card: #ffffff;
+  --ui-pa-strong: #00162b;
+  --ui-pa-ink: #00162b;
+  --ui-pa-text: rgba(0, 22, 43, 0.66);
+  --ui-pa-muted: rgba(0, 22, 43, 0.56);
+  --ui-pa-faint: rgba(0, 22, 43, 0.36);
+  --ui-pa-line: #dae2ec;
+  --ui-pa-fill: rgba(26, 62, 112, 0.06);
+  --ui-pa-track: rgba(26, 62, 112, 0.1);
+  --ui-pa-accent: #1a3e70;
+  --ui-pa-focus: rgba(143, 189, 242, 0.8);
+  --ui-pa-wash: rgba(26, 62, 112, 0.035);
+  --ui-pa-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-pa-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-pa.ui-pa {
+  --ui-pa-tray: #0f2747;
+  --ui-pa-card: #16345c;
+  --ui-pa-strong: #ffffff;
+  --ui-pa-ink: rgba(255, 255, 255, 0.94);
+  --ui-pa-text: rgba(255, 255, 255, 0.72);
+  --ui-pa-muted: rgba(255, 255, 255, 0.58);
+  --ui-pa-faint: rgba(255, 255, 255, 0.36);
+  --ui-pa-line: rgba(255, 255, 255, 0.12);
+  --ui-pa-fill: rgba(255, 255, 255, 0.07);
+  --ui-pa-track: rgba(255, 255, 255, 0.12);
+  --ui-pa-accent: #8fbdf2;
+  --ui-pa-focus: rgba(143, 189, 242, 0.6);
+  --ui-pa-wash: rgba(255, 255, 255, 0.04);
+  --ui-pa-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-pa-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-pac.ui-pac {
+  --ui-pac-card: #ffffff;
+  --ui-pac-strong: #00162b;
+  --ui-pac-ink: #00162b;
+  --ui-pac-text: rgba(0, 22, 43, 0.66);
+  --ui-pac-muted: rgba(0, 22, 43, 0.56);
+  --ui-pac-faint: rgba(0, 22, 43, 0.36);
+  --ui-pac-line: #dae2ec;
+  --ui-pac-fill: rgba(26, 62, 112, 0.06);
+  --ui-pac-track: rgba(26, 62, 112, 0.1);
+  --ui-pac-accent: #1a3e70;
+  --ui-pac-focus: rgba(143, 189, 242, 0.8);
+  --ui-pac-wash: rgba(26, 62, 112, 0.035);
+  --ui-pac-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-pac-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-pac.ui-pac {
+  --ui-pac-card: #16345c;
+  --ui-pac-strong: #ffffff;
+  --ui-pac-ink: rgba(255, 255, 255, 0.94);
+  --ui-pac-text: rgba(255, 255, 255, 0.72);
+  --ui-pac-muted: rgba(255, 255, 255, 0.58);
+  --ui-pac-faint: rgba(255, 255, 255, 0.36);
+  --ui-pac-line: rgba(255, 255, 255, 0.12);
+  --ui-pac-fill: rgba(255, 255, 255, 0.07);
+  --ui-pac-track: rgba(255, 255, 255, 0.12);
+  --ui-pac-accent: #8fbdf2;
+  --ui-pac-focus: rgba(143, 189, 242, 0.6);
+  --ui-pac-wash: rgba(255, 255, 255, 0.04);
+  --ui-pac-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-pac-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .ui-pc.ui-pc {
   --ui-pc-tray: #f2f6fa;
   --ui-pc-card: #ffffff;
@@ -3027,6 +3763,36 @@
   --ui-pgc-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.ui-pvac.ui-pvac {
+  --ui-pvac-card: #ffffff;
+  --ui-pvac-strong: #00162b;
+  --ui-pvac-ink: #00162b;
+  --ui-pvac-text: rgba(0, 22, 43, 0.66);
+  --ui-pvac-muted: rgba(0, 22, 43, 0.56);
+  --ui-pvac-faint: rgba(0, 22, 43, 0.36);
+  --ui-pvac-line: #dae2ec;
+  --ui-pvac-hover: rgba(26, 62, 112, 0.06);
+  --ui-pvac-accent: #1a3e70;
+  --ui-pvac-focus: rgba(143, 189, 242, 0.8);
+  --ui-pvac-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-pvac-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-pvac.ui-pvac {
+  --ui-pvac-card: #16345c;
+  --ui-pvac-strong: #ffffff;
+  --ui-pvac-ink: rgba(255, 255, 255, 0.94);
+  --ui-pvac-text: rgba(255, 255, 255, 0.72);
+  --ui-pvac-muted: rgba(255, 255, 255, 0.58);
+  --ui-pvac-faint: rgba(255, 255, 255, 0.36);
+  --ui-pvac-line: rgba(255, 255, 255, 0.12);
+  --ui-pvac-hover: rgba(255, 255, 255, 0.07);
+  --ui-pvac-accent: #8fbdf2;
+  --ui-pvac-focus: rgba(143, 189, 242, 0.6);
+  --ui-pvac-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-pvac-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .ui-rb.ui-rb {
   --ui-rb-ink: #00162b;
   --ui-rb-ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -3059,12 +3825,154 @@
   --ui-rbc-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.ui-rcp.ui-rcp {
+  --ui-rcp-card: #ffffff;
+  --ui-rcp-strong: #00162b;
+  --ui-rcp-ink: #00162b;
+  --ui-rcp-text: rgba(0, 22, 43, 0.66);
+  --ui-rcp-muted: rgba(0, 22, 43, 0.56);
+  --ui-rcp-faint: rgba(0, 22, 43, 0.36);
+  --ui-rcp-line: #dae2ec;
+  --ui-rcp-ok: #1d6a34;
+  --ui-rcp-hover: rgba(26, 62, 112, 0.06);
+  --ui-rcp-ok-bg: #eafbee;
+  --ui-rcp-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-rcp-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-rcp.ui-rcp {
+  --ui-rcp-card: #16345c;
+  --ui-rcp-strong: #ffffff;
+  --ui-rcp-ink: rgba(255, 255, 255, 0.94);
+  --ui-rcp-text: rgba(255, 255, 255, 0.72);
+  --ui-rcp-muted: rgba(255, 255, 255, 0.58);
+  --ui-rcp-faint: rgba(255, 255, 255, 0.36);
+  --ui-rcp-line: rgba(255, 255, 255, 0.12);
+  --ui-rcp-ok: #7fe0a0;
+  --ui-rcp-hover: rgba(255, 255, 255, 0.07);
+  --ui-rcp-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-rcp-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-rcp-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .ui-rd.ui-rd {
   --ui-rd-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 :is(.dark, [data-theme="dark"]) .ui-rd.ui-rd {
   --ui-rd-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-rvc.ui-rvc {
+  --ui-rvc-tray: #f2f6fa;
+  --ui-rvc-card: #ffffff;
+  --ui-rvc-strong: #00162b;
+  --ui-rvc-ink: #00162b;
+  --ui-rvc-text: rgba(0, 22, 43, 0.66);
+  --ui-rvc-muted: rgba(0, 22, 43, 0.56);
+  --ui-rvc-faint: rgba(0, 22, 43, 0.36);
+  --ui-rvc-line: #dae2ec;
+  --ui-rvc-line-strong: #cbd6e4;
+  --ui-rvc-hover: rgba(26, 62, 112, 0.06);
+  --ui-rvc-chip: #f2f6fa;
+  --ui-rvc-wash: rgba(26, 62, 112, 0.035);
+  --ui-rvc-accent: #1a3e70;
+  --ui-rvc-primary: #851437;
+  --ui-rvc-track: rgba(26, 62, 112, 0.1);
+  --ui-rvc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-rvc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-rvc.ui-rvc {
+  --ui-rvc-tray: #0f2747;
+  --ui-rvc-card: #16345c;
+  --ui-rvc-strong: #ffffff;
+  --ui-rvc-ink: rgba(255, 255, 255, 0.94);
+  --ui-rvc-text: rgba(255, 255, 255, 0.72);
+  --ui-rvc-muted: rgba(255, 255, 255, 0.58);
+  --ui-rvc-faint: rgba(255, 255, 255, 0.36);
+  --ui-rvc-line: rgba(255, 255, 255, 0.12);
+  --ui-rvc-line-strong: rgba(255, 255, 255, 0.2);
+  --ui-rvc-hover: rgba(255, 255, 255, 0.07);
+  --ui-rvc-chip: rgba(255, 255, 255, 0.07);
+  --ui-rvc-wash: rgba(255, 255, 255, 0.04);
+  --ui-rvc-accent: #8fbdf2;
+  --ui-rvc-primary: #a8204d;
+  --ui-rvc-track: rgba(255, 255, 255, 0.12);
+  --ui-rvc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-rvc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-rvcc.ui-rvcc {
+  --ui-rvcc-card: #ffffff;
+  --ui-rvcc-strong: #00162b;
+  --ui-rvcc-ink: #00162b;
+  --ui-rvcc-text: rgba(0, 22, 43, 0.66);
+  --ui-rvcc-muted: rgba(0, 22, 43, 0.56);
+  --ui-rvcc-faint: rgba(0, 22, 43, 0.36);
+  --ui-rvcc-line: #dae2ec;
+  --ui-rvcc-line-strong: #cbd6e4;
+  --ui-rvcc-hover: rgba(26, 62, 112, 0.06);
+  --ui-rvcc-fill: rgba(26, 62, 112, 0.06);
+  --ui-rvcc-wash: rgba(26, 62, 112, 0.035);
+  --ui-rvcc-accent: #1a3e70;
+  --ui-rvcc-primary: #851437;
+  --ui-rvcc-track: rgba(26, 62, 112, 0.1);
+  --ui-rvcc-focus: rgba(143, 189, 242, 0.8);
+  --ui-rvcc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-rvcc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-rvcc.ui-rvcc {
+  --ui-rvcc-card: #16345c;
+  --ui-rvcc-strong: #ffffff;
+  --ui-rvcc-ink: rgba(255, 255, 255, 0.94);
+  --ui-rvcc-text: rgba(255, 255, 255, 0.72);
+  --ui-rvcc-muted: rgba(255, 255, 255, 0.58);
+  --ui-rvcc-faint: rgba(255, 255, 255, 0.36);
+  --ui-rvcc-line: rgba(255, 255, 255, 0.12);
+  --ui-rvcc-line-strong: rgba(255, 255, 255, 0.2);
+  --ui-rvcc-hover: rgba(255, 255, 255, 0.07);
+  --ui-rvcc-fill: rgba(255, 255, 255, 0.07);
+  --ui-rvcc-wash: rgba(255, 255, 255, 0.04);
+  --ui-rvcc-accent: #8fbdf2;
+  --ui-rvcc-primary: #a8204d;
+  --ui-rvcc-track: rgba(255, 255, 255, 0.12);
+  --ui-rvcc-focus: rgba(143, 189, 242, 0.6);
+  --ui-rvcc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-rvcc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-sch.ui-sch {
+  --ui-sch-tray: #f2f6fa;
+  --ui-sch-card: #ffffff;
+  --ui-sch-strong: #00162b;
+  --ui-sch-ink: #00162b;
+  --ui-sch-text: rgba(0, 22, 43, 0.66);
+  --ui-sch-muted: rgba(0, 22, 43, 0.56);
+  --ui-sch-faint: rgba(0, 22, 43, 0.36);
+  --ui-sch-line: #dae2ec;
+  --ui-sch-accent: #1a3e70;
+  --ui-sch-accent-bg: #eef5ff;
+  --ui-sch-track: rgba(26, 62, 112, 0.1);
+  --ui-sch-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-sch-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-sch.ui-sch {
+  --ui-sch-tray: #0f2747;
+  --ui-sch-card: #16345c;
+  --ui-sch-strong: #ffffff;
+  --ui-sch-ink: rgba(255, 255, 255, 0.94);
+  --ui-sch-text: rgba(255, 255, 255, 0.72);
+  --ui-sch-muted: rgba(255, 255, 255, 0.58);
+  --ui-sch-faint: rgba(255, 255, 255, 0.36);
+  --ui-sch-line: rgba(255, 255, 255, 0.12);
+  --ui-sch-accent: #8fbdf2;
+  --ui-sch-accent-bg: rgba(143, 189, 242, 0.16);
+  --ui-sch-track: rgba(255, 255, 255, 0.12);
+  --ui-sch-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-sch-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ui-seg.ui-seg {
@@ -3359,6 +4267,36 @@
   --ui-src-shadow-pop: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 24px 44px -20px rgba(3, 12, 28, 0.75), 0 8px 16px -8px rgba(3, 12, 28, 0.5);
   --ui-src-focus: rgba(143, 189, 242, 0.6);
   --ui-src-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-srn.ui-srn {
+  --ui-srn-card: #ffffff;
+  --ui-srn-strong: #00162b;
+  --ui-srn-ink: #00162b;
+  --ui-srn-text: rgba(0, 22, 43, 0.66);
+  --ui-srn-muted: rgba(0, 22, 43, 0.56);
+  --ui-srn-faint: rgba(0, 22, 43, 0.36);
+  --ui-srn-line: #dae2ec;
+  --ui-srn-accent: #1a3e70;
+  --ui-srn-accent-bg: #eef5ff;
+  --ui-srn-track: rgba(26, 62, 112, 0.1);
+  --ui-srn-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-srn-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-srn.ui-srn {
+  --ui-srn-card: #16345c;
+  --ui-srn-strong: #ffffff;
+  --ui-srn-ink: rgba(255, 255, 255, 0.94);
+  --ui-srn-text: rgba(255, 255, 255, 0.72);
+  --ui-srn-muted: rgba(255, 255, 255, 0.58);
+  --ui-srn-faint: rgba(255, 255, 255, 0.36);
+  --ui-srn-line: rgba(255, 255, 255, 0.12);
+  --ui-srn-accent: #8fbdf2;
+  --ui-srn-accent-bg: rgba(143, 189, 242, 0.16);
+  --ui-srn-track: rgba(255, 255, 255, 0.12);
+  --ui-srn-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-srn-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ui-st.ui-st {
@@ -3779,6 +4717,14 @@
   --ui-tw-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
   --ui-tw-focus: rgba(143, 189, 242, 0.8);
   --ui-tw-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ui-tw-tray: #f2f6fa;
+  --ui-tw-strong: #00162b;
+  --ui-tw-hover: rgba(26, 62, 112, 0.06);
+  --ui-tw-chip: #f2f6fa;
+  --ui-tw-wash: rgba(26, 62, 112, 0.035);
+  --ui-tw-accent: #1a3e70;
+  --ui-tw-ok-bg: #eafbee;
+  --ui-tw-ok-fg: #1d6a34;
 }
 
 :is(.dark, [data-theme="dark"]) .ui-tw.ui-tw {
@@ -3791,6 +4737,52 @@
   --ui-tw-shadow: 0 0 0 1px var(--ui-tw-line);
   --ui-tw-focus: rgba(143, 189, 242, 0.6);
   --ui-tw-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ui-tw-tray: #0f2747;
+  --ui-tw-strong: #ffffff;
+  --ui-tw-hover: rgba(255, 255, 255, 0.07);
+  --ui-tw-chip: rgba(255, 255, 255, 0.07);
+  --ui-tw-wash: rgba(255, 255, 255, 0.04);
+  --ui-tw-accent: #8fbdf2;
+  --ui-tw-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-tw-ok-fg: #7fe0a0;
+}
+
+.ui-twc.ui-twc {
+  --ui-twc-card: #ffffff;
+  --ui-twc-strong: #00162b;
+  --ui-twc-ink: #00162b;
+  --ui-twc-text: rgba(0, 22, 43, 0.66);
+  --ui-twc-muted: rgba(0, 22, 43, 0.56);
+  --ui-twc-faint: rgba(0, 22, 43, 0.36);
+  --ui-twc-line: #dae2ec;
+  --ui-twc-hover: rgba(26, 62, 112, 0.06);
+  --ui-twc-fill: rgba(26, 62, 112, 0.06);
+  --ui-twc-wash: rgba(26, 62, 112, 0.035);
+  --ui-twc-accent: #1a3e70;
+  --ui-twc-ok-bg: #eafbee;
+  --ui-twc-ok-fg: #1d6a34;
+  --ui-twc-focus: rgba(143, 189, 242, 0.8);
+  --ui-twc-shadow: 0 0 0 1px #dae2ec, 0 8px 16px -8px rgba(26, 62, 112, 0.2);
+  --ui-twc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(.dark, [data-theme="dark"]) .ui-twc.ui-twc {
+  --ui-twc-card: #16345c;
+  --ui-twc-strong: #ffffff;
+  --ui-twc-ink: rgba(255, 255, 255, 0.94);
+  --ui-twc-text: rgba(255, 255, 255, 0.72);
+  --ui-twc-muted: rgba(255, 255, 255, 0.58);
+  --ui-twc-faint: rgba(255, 255, 255, 0.36);
+  --ui-twc-line: rgba(255, 255, 255, 0.12);
+  --ui-twc-hover: rgba(255, 255, 255, 0.07);
+  --ui-twc-fill: rgba(255, 255, 255, 0.07);
+  --ui-twc-wash: rgba(255, 255, 255, 0.04);
+  --ui-twc-accent: #8fbdf2;
+  --ui-twc-ok-bg: rgba(127, 224, 160, 0.14);
+  --ui-twc-ok-fg: #7fe0a0;
+  --ui-twc-focus: rgba(143, 189, 242, 0.6);
+  --ui-twc-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11), 0 8px 16px -8px rgba(3, 12, 28, 0.6);
+  --ui-twc-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ui-um.ui-um {
@@ -4018,7 +5010,14 @@
 /* Objects are DOUBLE, as in the hub: the raised panel sits in a matte frame
  * (#f2f6fa, its own hairline), and the navy shadow falls from the frame. */
 html body .ui-adc__card,
+html body .ui-afc__card,
+html body .ui-agfc__main,
+html body .ui-aggc__card,
+html body .ui-agm__btn,
+html body .ui-agm__seg-btn,
 html body .ui-agt__btn,
+html body .ui-ahc__card,
+html body .ui-ahc__ghost,
 html body .ui-ai__btn,
 html body .ui-aic__card,
 html body .ui-alc__ask,
@@ -4034,11 +5033,18 @@ html body .ui-cac,
 html body .ui-cbc,
 html body .ui-ccc__body,
 html body .ui-cpc,
+html body .ui-cr__kpi,
+html body .ui-crc__card,
+html body .ui-crc__kpi,
 html body .ui-csc,
 html body .ui-ctc,
 html body .ui-cwc,
 html body .ui-cx__chip-btn,
 html body .ui-dbc__card,
+html body .ui-dct__opt,
+html body .ui-dct__out,
+html body .ui-dct__root,
+html body .ui-dctc__empty-mark,
 html body .ui-dfc__card,
 html body .ui-dic,
 html body .ui-drpc__panel,
@@ -4046,6 +5052,8 @@ html body .ui-dtc,
 html body .ui-dzc__area,
 html body .ui-dzc__card,
 html body .ui-edc,
+html body .ui-fcc__model,
+html body .ui-fcc__node,
 html body .ui-fmc,
 html body .ui-ipc__card,
 html body .ui-isc,
@@ -4059,9 +5067,16 @@ html body .ui-pmc__card,
 html body .ui-pr__avatar,
 html body .ui-prc__card,
 html body .ui-progressc,
+html body .ui-rcp__card,
+html body .ui-rvc__btn,
+html body .ui-rvc__reason,
+html body .ui-rvcc__code,
+html body .ui-rvcc__empty-mark,
+html body .ui-sch__info,
 html body .ui-sfc,
 html body .ui-sgc,
 html body .ui-src,
+html body .ui-srn__info,
 html body .ui-stc__card,
 html body .ui-tcc,
 html body .ui-thinkc,
@@ -4076,8 +5091,22 @@ html body .ui-xcc__card {
 }
 html:is(.dark, [data-theme="dark"]) body .ui-adc__card,
 html body :is(.dark, [data-theme="dark"]) .ui-adc__card,
+html:is(.dark, [data-theme="dark"]) body .ui-afc__card,
+html body :is(.dark, [data-theme="dark"]) .ui-afc__card,
+html:is(.dark, [data-theme="dark"]) body .ui-agfc__main,
+html body :is(.dark, [data-theme="dark"]) .ui-agfc__main,
+html:is(.dark, [data-theme="dark"]) body .ui-aggc__card,
+html body :is(.dark, [data-theme="dark"]) .ui-aggc__card,
+html:is(.dark, [data-theme="dark"]) body .ui-agm__btn,
+html body :is(.dark, [data-theme="dark"]) .ui-agm__btn,
+html:is(.dark, [data-theme="dark"]) body .ui-agm__seg-btn,
+html body :is(.dark, [data-theme="dark"]) .ui-agm__seg-btn,
 html:is(.dark, [data-theme="dark"]) body .ui-agt__btn,
 html body :is(.dark, [data-theme="dark"]) .ui-agt__btn,
+html:is(.dark, [data-theme="dark"]) body .ui-ahc__card,
+html body :is(.dark, [data-theme="dark"]) .ui-ahc__card,
+html:is(.dark, [data-theme="dark"]) body .ui-ahc__ghost,
+html body :is(.dark, [data-theme="dark"]) .ui-ahc__ghost,
 html:is(.dark, [data-theme="dark"]) body .ui-ai__btn,
 html body :is(.dark, [data-theme="dark"]) .ui-ai__btn,
 html:is(.dark, [data-theme="dark"]) body .ui-aic__card,
@@ -4108,6 +5137,12 @@ html:is(.dark, [data-theme="dark"]) body .ui-ccc__body,
 html body :is(.dark, [data-theme="dark"]) .ui-ccc__body,
 html:is(.dark, [data-theme="dark"]) body .ui-cpc,
 html body :is(.dark, [data-theme="dark"]) .ui-cpc,
+html:is(.dark, [data-theme="dark"]) body .ui-cr__kpi,
+html body :is(.dark, [data-theme="dark"]) .ui-cr__kpi,
+html:is(.dark, [data-theme="dark"]) body .ui-crc__card,
+html body :is(.dark, [data-theme="dark"]) .ui-crc__card,
+html:is(.dark, [data-theme="dark"]) body .ui-crc__kpi,
+html body :is(.dark, [data-theme="dark"]) .ui-crc__kpi,
 html:is(.dark, [data-theme="dark"]) body .ui-csc,
 html body :is(.dark, [data-theme="dark"]) .ui-csc,
 html:is(.dark, [data-theme="dark"]) body .ui-ctc,
@@ -4118,6 +5153,14 @@ html:is(.dark, [data-theme="dark"]) body .ui-cx__chip-btn,
 html body :is(.dark, [data-theme="dark"]) .ui-cx__chip-btn,
 html:is(.dark, [data-theme="dark"]) body .ui-dbc__card,
 html body :is(.dark, [data-theme="dark"]) .ui-dbc__card,
+html:is(.dark, [data-theme="dark"]) body .ui-dct__opt,
+html body :is(.dark, [data-theme="dark"]) .ui-dct__opt,
+html:is(.dark, [data-theme="dark"]) body .ui-dct__out,
+html body :is(.dark, [data-theme="dark"]) .ui-dct__out,
+html:is(.dark, [data-theme="dark"]) body .ui-dct__root,
+html body :is(.dark, [data-theme="dark"]) .ui-dct__root,
+html:is(.dark, [data-theme="dark"]) body .ui-dctc__empty-mark,
+html body :is(.dark, [data-theme="dark"]) .ui-dctc__empty-mark,
 html:is(.dark, [data-theme="dark"]) body .ui-dfc__card,
 html body :is(.dark, [data-theme="dark"]) .ui-dfc__card,
 html:is(.dark, [data-theme="dark"]) body .ui-dic,
@@ -4132,6 +5175,10 @@ html:is(.dark, [data-theme="dark"]) body .ui-dzc__card,
 html body :is(.dark, [data-theme="dark"]) .ui-dzc__card,
 html:is(.dark, [data-theme="dark"]) body .ui-edc,
 html body :is(.dark, [data-theme="dark"]) .ui-edc,
+html:is(.dark, [data-theme="dark"]) body .ui-fcc__model,
+html body :is(.dark, [data-theme="dark"]) .ui-fcc__model,
+html:is(.dark, [data-theme="dark"]) body .ui-fcc__node,
+html body :is(.dark, [data-theme="dark"]) .ui-fcc__node,
 html:is(.dark, [data-theme="dark"]) body .ui-fmc,
 html body :is(.dark, [data-theme="dark"]) .ui-fmc,
 html:is(.dark, [data-theme="dark"]) body .ui-ipc__card,
@@ -4158,12 +5205,26 @@ html:is(.dark, [data-theme="dark"]) body .ui-prc__card,
 html body :is(.dark, [data-theme="dark"]) .ui-prc__card,
 html:is(.dark, [data-theme="dark"]) body .ui-progressc,
 html body :is(.dark, [data-theme="dark"]) .ui-progressc,
+html:is(.dark, [data-theme="dark"]) body .ui-rcp__card,
+html body :is(.dark, [data-theme="dark"]) .ui-rcp__card,
+html:is(.dark, [data-theme="dark"]) body .ui-rvc__btn,
+html body :is(.dark, [data-theme="dark"]) .ui-rvc__btn,
+html:is(.dark, [data-theme="dark"]) body .ui-rvc__reason,
+html body :is(.dark, [data-theme="dark"]) .ui-rvc__reason,
+html:is(.dark, [data-theme="dark"]) body .ui-rvcc__code,
+html body :is(.dark, [data-theme="dark"]) .ui-rvcc__code,
+html:is(.dark, [data-theme="dark"]) body .ui-rvcc__empty-mark,
+html body :is(.dark, [data-theme="dark"]) .ui-rvcc__empty-mark,
+html:is(.dark, [data-theme="dark"]) body .ui-sch__info,
+html body :is(.dark, [data-theme="dark"]) .ui-sch__info,
 html:is(.dark, [data-theme="dark"]) body .ui-sfc,
 html body :is(.dark, [data-theme="dark"]) .ui-sfc,
 html:is(.dark, [data-theme="dark"]) body .ui-sgc,
 html body :is(.dark, [data-theme="dark"]) .ui-sgc,
 html:is(.dark, [data-theme="dark"]) body .ui-src,
 html body :is(.dark, [data-theme="dark"]) .ui-src,
+html:is(.dark, [data-theme="dark"]) body .ui-srn__info,
+html body :is(.dark, [data-theme="dark"]) .ui-srn__info,
 html:is(.dark, [data-theme="dark"]) body .ui-stc__card,
 html body :is(.dark, [data-theme="dark"]) .ui-stc__card,
 html:is(.dark, [data-theme="dark"]) body .ui-tcc,
@@ -4185,50 +5246,71 @@ html body :is(.dark, [data-theme="dark"]) .ui-xcc__card {
 }
 
 /* Classic: the tray is the hub's matte frame — its own hairline, the navy shadow falls from it. */
+html body .ui-ack,
 html body .ui-ad,
+html body .ui-af,
+html body .ui-agg,
+html body .ui-agq,
 html body .ui-ai,
 html body .ui-al,
 html body .ui-ans,
 html body .ui-ap,
 html body .ui-apc,
+html body .ui-ar,
 html body .ui-bc,
 html body .ui-bs,
 html body .ui-ca,
 html body .ui-cb,
 html body .ui-cm,
 html body .ui-cp,
+html body .ui-cr,
 html body .ui-cs,
 html body .ui-ct,
 html body .ui-cw,
 html body .ui-cx,
 html body .ui-db,
+html body .ui-dct,
 html body .ui-df,
 html body .ui-di,
 html body .ui-dt,
 html body .ui-dz,
 html body .ui-ed,
+html body .ui-fc,
 html body .ui-fm,
+html body .ui-fog,
 html body .ui-ip,
 html body .ui-is,
 html body .ui-iv,
 html body .ui-md,
 html body .ui-mp,
+html body .ui-pa,
 html body .ui-pc,
 html body .ui-pl,
 html body .ui-pli,
 html body .ui-pm,
 html body .ui-pr,
+html body .ui-rvc,
+html body .ui-sch,
 html body .ui-seg,
 html body .ui-sf,
 html body .ui-sr,
 html body .ui-st,
 html body .ui-tp,
+html body .ui-tw,
 html body .ui-um,
 html body .ui-xc {
   box-shadow: 0 0 0 1px #dae2ec, 0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.16);
 }
+html:is(.dark, [data-theme="dark"]) body .ui-ack,
+html body :is(.dark, [data-theme="dark"]) .ui-ack,
 html:is(.dark, [data-theme="dark"]) body .ui-ad,
 html body :is(.dark, [data-theme="dark"]) .ui-ad,
+html:is(.dark, [data-theme="dark"]) body .ui-af,
+html body :is(.dark, [data-theme="dark"]) .ui-af,
+html:is(.dark, [data-theme="dark"]) body .ui-agg,
+html body :is(.dark, [data-theme="dark"]) .ui-agg,
+html:is(.dark, [data-theme="dark"]) body .ui-agq,
+html body :is(.dark, [data-theme="dark"]) .ui-agq,
 html:is(.dark, [data-theme="dark"]) body .ui-ai,
 html body :is(.dark, [data-theme="dark"]) .ui-ai,
 html:is(.dark, [data-theme="dark"]) body .ui-al,
@@ -4239,6 +5321,8 @@ html:is(.dark, [data-theme="dark"]) body .ui-ap,
 html body :is(.dark, [data-theme="dark"]) .ui-ap,
 html:is(.dark, [data-theme="dark"]) body .ui-apc,
 html body :is(.dark, [data-theme="dark"]) .ui-apc,
+html:is(.dark, [data-theme="dark"]) body .ui-ar,
+html body :is(.dark, [data-theme="dark"]) .ui-ar,
 html:is(.dark, [data-theme="dark"]) body .ui-bc,
 html body :is(.dark, [data-theme="dark"]) .ui-bc,
 html:is(.dark, [data-theme="dark"]) body .ui-bs,
@@ -4251,6 +5335,8 @@ html:is(.dark, [data-theme="dark"]) body .ui-cm,
 html body :is(.dark, [data-theme="dark"]) .ui-cm,
 html:is(.dark, [data-theme="dark"]) body .ui-cp,
 html body :is(.dark, [data-theme="dark"]) .ui-cp,
+html:is(.dark, [data-theme="dark"]) body .ui-cr,
+html body :is(.dark, [data-theme="dark"]) .ui-cr,
 html:is(.dark, [data-theme="dark"]) body .ui-cs,
 html body :is(.dark, [data-theme="dark"]) .ui-cs,
 html:is(.dark, [data-theme="dark"]) body .ui-ct,
@@ -4261,6 +5347,8 @@ html:is(.dark, [data-theme="dark"]) body .ui-cx,
 html body :is(.dark, [data-theme="dark"]) .ui-cx,
 html:is(.dark, [data-theme="dark"]) body .ui-db,
 html body :is(.dark, [data-theme="dark"]) .ui-db,
+html:is(.dark, [data-theme="dark"]) body .ui-dct,
+html body :is(.dark, [data-theme="dark"]) .ui-dct,
 html:is(.dark, [data-theme="dark"]) body .ui-df,
 html body :is(.dark, [data-theme="dark"]) .ui-df,
 html:is(.dark, [data-theme="dark"]) body .ui-di,
@@ -4271,8 +5359,12 @@ html:is(.dark, [data-theme="dark"]) body .ui-dz,
 html body :is(.dark, [data-theme="dark"]) .ui-dz,
 html:is(.dark, [data-theme="dark"]) body .ui-ed,
 html body :is(.dark, [data-theme="dark"]) .ui-ed,
+html:is(.dark, [data-theme="dark"]) body .ui-fc,
+html body :is(.dark, [data-theme="dark"]) .ui-fc,
 html:is(.dark, [data-theme="dark"]) body .ui-fm,
 html body :is(.dark, [data-theme="dark"]) .ui-fm,
+html:is(.dark, [data-theme="dark"]) body .ui-fog,
+html body :is(.dark, [data-theme="dark"]) .ui-fog,
 html:is(.dark, [data-theme="dark"]) body .ui-ip,
 html body :is(.dark, [data-theme="dark"]) .ui-ip,
 html:is(.dark, [data-theme="dark"]) body .ui-is,
@@ -4283,6 +5375,8 @@ html:is(.dark, [data-theme="dark"]) body .ui-md,
 html body :is(.dark, [data-theme="dark"]) .ui-md,
 html:is(.dark, [data-theme="dark"]) body .ui-mp,
 html body :is(.dark, [data-theme="dark"]) .ui-mp,
+html:is(.dark, [data-theme="dark"]) body .ui-pa,
+html body :is(.dark, [data-theme="dark"]) .ui-pa,
 html:is(.dark, [data-theme="dark"]) body .ui-pc,
 html body :is(.dark, [data-theme="dark"]) .ui-pc,
 html:is(.dark, [data-theme="dark"]) body .ui-pl,
@@ -4293,6 +5387,10 @@ html:is(.dark, [data-theme="dark"]) body .ui-pm,
 html body :is(.dark, [data-theme="dark"]) .ui-pm,
 html:is(.dark, [data-theme="dark"]) body .ui-pr,
 html body :is(.dark, [data-theme="dark"]) .ui-pr,
+html:is(.dark, [data-theme="dark"]) body .ui-rvc,
+html body :is(.dark, [data-theme="dark"]) .ui-rvc,
+html:is(.dark, [data-theme="dark"]) body .ui-sch,
+html body :is(.dark, [data-theme="dark"]) .ui-sch,
 html:is(.dark, [data-theme="dark"]) body .ui-seg,
 html body :is(.dark, [data-theme="dark"]) .ui-seg,
 html:is(.dark, [data-theme="dark"]) body .ui-sf,
@@ -4303,6 +5401,8 @@ html:is(.dark, [data-theme="dark"]) body .ui-st,
 html body :is(.dark, [data-theme="dark"]) .ui-st,
 html:is(.dark, [data-theme="dark"]) body .ui-tp,
 html body :is(.dark, [data-theme="dark"]) .ui-tp,
+html:is(.dark, [data-theme="dark"]) body .ui-tw,
+html body :is(.dark, [data-theme="dark"]) .ui-tw,
 html:is(.dark, [data-theme="dark"]) body .ui-um,
 html body :is(.dark, [data-theme="dark"]) .ui-um,
 html:is(.dark, [data-theme="dark"]) body .ui-xc,
@@ -4312,12 +5412,22 @@ html body :is(.dark, [data-theme="dark"]) .ui-xc {
 
 /* Classic: the card is the raised panel in that frame — hairline and a short navy drop. */
 html body .ui-ad__card,
+html body .ui-af__card,
+html body .ui-agcc__sheet,
+html body .ui-agf__card,
+html body .ui-agg__card,
+html body .ui-agm__card,
+html body .ui-agmc__card,
+html body .ui-agq__card,
 html body .ui-agt__card,
+html body .ui-ah__card,
 html body .ui-ai__card,
 html body .ui-al__card,
 html body .ui-ans__card,
 html body .ui-ap__card,
 html body .ui-apc__card,
+html body .ui-ar__card,
+html body .ui-ar__panel,
 html body .ui-bc__card,
 html body .ui-bs__card,
 html body .ui-ca__card,
@@ -4327,12 +5437,14 @@ html body .ui-cf__card,
 html body .ui-cm__card,
 html body .ui-cmc__card,
 html body .ui-cp__card,
+html body .ui-cr__card,
 html body .ui-cs__card,
 html body .ui-ct__card,
 html body .ui-cw__card,
 html body .ui-cx__card,
 html body .ui-cx__kpi,
 html body .ui-db__card,
+html body .ui-dct__body,
 html body .ui-df__card,
 html body .ui-di__card,
 html body .ui-drp__body,
@@ -4358,6 +5470,8 @@ html body .ui-pli__card,
 html body .ui-pm__card,
 html body .ui-pp__card,
 html body .ui-pr__body,
+html body .ui-rvc__card,
+html body .ui-sch__body,
 html body .ui-sf__card,
 html body .ui-sr__card,
 html body .ui-st__card,
@@ -4370,8 +5484,24 @@ html body .ui-xc__card {
 }
 html:is(.dark, [data-theme="dark"]) body .ui-ad__card,
 html body :is(.dark, [data-theme="dark"]) .ui-ad__card,
+html:is(.dark, [data-theme="dark"]) body .ui-af__card,
+html body :is(.dark, [data-theme="dark"]) .ui-af__card,
+html:is(.dark, [data-theme="dark"]) body .ui-agcc__sheet,
+html body :is(.dark, [data-theme="dark"]) .ui-agcc__sheet,
+html:is(.dark, [data-theme="dark"]) body .ui-agf__card,
+html body :is(.dark, [data-theme="dark"]) .ui-agf__card,
+html:is(.dark, [data-theme="dark"]) body .ui-agg__card,
+html body :is(.dark, [data-theme="dark"]) .ui-agg__card,
+html:is(.dark, [data-theme="dark"]) body .ui-agm__card,
+html body :is(.dark, [data-theme="dark"]) .ui-agm__card,
+html:is(.dark, [data-theme="dark"]) body .ui-agmc__card,
+html body :is(.dark, [data-theme="dark"]) .ui-agmc__card,
+html:is(.dark, [data-theme="dark"]) body .ui-agq__card,
+html body :is(.dark, [data-theme="dark"]) .ui-agq__card,
 html:is(.dark, [data-theme="dark"]) body .ui-agt__card,
 html body :is(.dark, [data-theme="dark"]) .ui-agt__card,
+html:is(.dark, [data-theme="dark"]) body .ui-ah__card,
+html body :is(.dark, [data-theme="dark"]) .ui-ah__card,
 html:is(.dark, [data-theme="dark"]) body .ui-ai__card,
 html body :is(.dark, [data-theme="dark"]) .ui-ai__card,
 html:is(.dark, [data-theme="dark"]) body .ui-al__card,
@@ -4382,6 +5512,10 @@ html:is(.dark, [data-theme="dark"]) body .ui-ap__card,
 html body :is(.dark, [data-theme="dark"]) .ui-ap__card,
 html:is(.dark, [data-theme="dark"]) body .ui-apc__card,
 html body :is(.dark, [data-theme="dark"]) .ui-apc__card,
+html:is(.dark, [data-theme="dark"]) body .ui-ar__card,
+html body :is(.dark, [data-theme="dark"]) .ui-ar__card,
+html:is(.dark, [data-theme="dark"]) body .ui-ar__panel,
+html body :is(.dark, [data-theme="dark"]) .ui-ar__panel,
 html:is(.dark, [data-theme="dark"]) body .ui-bc__card,
 html body :is(.dark, [data-theme="dark"]) .ui-bc__card,
 html:is(.dark, [data-theme="dark"]) body .ui-bs__card,
@@ -4400,6 +5534,8 @@ html:is(.dark, [data-theme="dark"]) body .ui-cmc__card,
 html body :is(.dark, [data-theme="dark"]) .ui-cmc__card,
 html:is(.dark, [data-theme="dark"]) body .ui-cp__card,
 html body :is(.dark, [data-theme="dark"]) .ui-cp__card,
+html:is(.dark, [data-theme="dark"]) body .ui-cr__card,
+html body :is(.dark, [data-theme="dark"]) .ui-cr__card,
 html:is(.dark, [data-theme="dark"]) body .ui-cs__card,
 html body :is(.dark, [data-theme="dark"]) .ui-cs__card,
 html:is(.dark, [data-theme="dark"]) body .ui-ct__card,
@@ -4412,6 +5548,8 @@ html:is(.dark, [data-theme="dark"]) body .ui-cx__kpi,
 html body :is(.dark, [data-theme="dark"]) .ui-cx__kpi,
 html:is(.dark, [data-theme="dark"]) body .ui-db__card,
 html body :is(.dark, [data-theme="dark"]) .ui-db__card,
+html:is(.dark, [data-theme="dark"]) body .ui-dct__body,
+html body :is(.dark, [data-theme="dark"]) .ui-dct__body,
 html:is(.dark, [data-theme="dark"]) body .ui-df__card,
 html body :is(.dark, [data-theme="dark"]) .ui-df__card,
 html:is(.dark, [data-theme="dark"]) body .ui-di__card,
@@ -4462,6 +5600,10 @@ html:is(.dark, [data-theme="dark"]) body .ui-pp__card,
 html body :is(.dark, [data-theme="dark"]) .ui-pp__card,
 html:is(.dark, [data-theme="dark"]) body .ui-pr__body,
 html body :is(.dark, [data-theme="dark"]) .ui-pr__body,
+html:is(.dark, [data-theme="dark"]) body .ui-rvc__card,
+html body :is(.dark, [data-theme="dark"]) .ui-rvc__card,
+html:is(.dark, [data-theme="dark"]) body .ui-sch__body,
+html body :is(.dark, [data-theme="dark"]) .ui-sch__body,
 html:is(.dark, [data-theme="dark"]) body .ui-sf__card,
 html body :is(.dark, [data-theme="dark"]) .ui-sf__card,
 html:is(.dark, [data-theme="dark"]) body .ui-sr__card,
@@ -4481,6 +5623,7 @@ html body :is(.dark, [data-theme="dark"]) .ui-xc__card {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 20px -12px rgba(3, 12, 28, 0.7);
 }
 
+html body .ui-agfc__pop,
 html body .ui-agtc__pop,
 html body .ui-ansc__pop,
 html body .ui-bcc__menu,
@@ -4488,24 +5631,35 @@ html body .ui-bcc__tooltip,
 html body .ui-bsc__menu,
 html body .ui-cbxc__pop,
 html body .ui-ccc__menu-panel,
+html body .ui-cmc__menu,
+html body .ui-cmc__tip,
 html body .ui-cpc__menu,
+html body .ui-dctc__tip,
 html body .ui-dfc__pop,
 html body .ui-dtc__picker,
 html body .ui-edc__menu,
+html body .ui-fogc__tip,
 html body .ui-isc__menu,
 html body .ui-kb__menu,
 html body .ui-mdpc__pop,
+html body .ui-rvcc__tip,
 html body .ui-src__menu,
+html body .ui-twc__pop,
 html body .ui-um__tip {
   border-radius: 12px;
 }
 
 /* The main action: a flat berry block, 1px lighter edge on top, a berry-tinted drop. */
+html body .ui-agcc__all,
+html body .ui-agcc__btn--primary,
+html body .ui-agcc__face-tip,
+html body .ui-agfc__btn--primary,
 html body .ui-agtc__btn--primary,
 html body .ui-al__btn--primary,
 html body .ui-alc__btn--primary,
 html body .ui-ap__btn--primary,
 html body .ui-apc__btn--primary,
+html body .ui-ar__btn--main,
 html body .ui-buttonc[data-variant="primary"],
 html body .ui-df__btn--primary,
 html body .ui-dfc__btn--primary,
@@ -4517,6 +5671,8 @@ html body .ui-pcc__action,
 html body .ui-plc__btn--primary,
 html body .ui-pr__btn--primary,
 html body .ui-prc__btn--primary,
+html body .ui-rvc__btn[data-primary],
+html body .ui-rvcc__btn[data-primary],
 html body .ui-tpc__btn--primary,
 html body .ui-xcc__action,
 html body :where(.ui-dic) .ui-dic__btn--primary,
@@ -4526,6 +5682,14 @@ html body :where(.ui-src) .ui-src__btn--primary {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 6px 12px -6px rgba(133, 20, 55, 0.6);
   transition: background-color .15s, box-shadow .15s, transform .15s cubic-bezier(.16, 1, .3, 1);
 }
+html:is(.dark, [data-theme="dark"]) body .ui-agcc__all,
+html body :is(.dark, [data-theme="dark"]) .ui-agcc__all,
+html:is(.dark, [data-theme="dark"]) body .ui-agcc__btn--primary,
+html body :is(.dark, [data-theme="dark"]) .ui-agcc__btn--primary,
+html:is(.dark, [data-theme="dark"]) body .ui-agcc__face-tip,
+html body :is(.dark, [data-theme="dark"]) .ui-agcc__face-tip,
+html:is(.dark, [data-theme="dark"]) body .ui-agfc__btn--primary,
+html body :is(.dark, [data-theme="dark"]) .ui-agfc__btn--primary,
 html:is(.dark, [data-theme="dark"]) body .ui-agtc__btn--primary,
 html body :is(.dark, [data-theme="dark"]) .ui-agtc__btn--primary,
 html:is(.dark, [data-theme="dark"]) body .ui-al__btn--primary,
@@ -4536,6 +5700,8 @@ html:is(.dark, [data-theme="dark"]) body .ui-ap__btn--primary,
 html body :is(.dark, [data-theme="dark"]) .ui-ap__btn--primary,
 html:is(.dark, [data-theme="dark"]) body .ui-apc__btn--primary,
 html body :is(.dark, [data-theme="dark"]) .ui-apc__btn--primary,
+html:is(.dark, [data-theme="dark"]) body .ui-ar__btn--main,
+html body :is(.dark, [data-theme="dark"]) .ui-ar__btn--main,
 html:is(.dark, [data-theme="dark"]) body .ui-buttonc[data-variant="primary"],
 html body :is(.dark, [data-theme="dark"]) .ui-buttonc[data-variant="primary"],
 html:is(.dark, [data-theme="dark"]) body .ui-df__btn--primary,
@@ -4558,6 +5724,10 @@ html:is(.dark, [data-theme="dark"]) body .ui-pr__btn--primary,
 html body :is(.dark, [data-theme="dark"]) .ui-pr__btn--primary,
 html:is(.dark, [data-theme="dark"]) body .ui-prc__btn--primary,
 html body :is(.dark, [data-theme="dark"]) .ui-prc__btn--primary,
+html:is(.dark, [data-theme="dark"]) body .ui-rvc__btn[data-primary],
+html body :is(.dark, [data-theme="dark"]) .ui-rvc__btn[data-primary],
+html:is(.dark, [data-theme="dark"]) body .ui-rvcc__btn[data-primary],
+html body :is(.dark, [data-theme="dark"]) .ui-rvcc__btn[data-primary],
 html:is(.dark, [data-theme="dark"]) body .ui-tpc__btn--primary,
 html body :is(.dark, [data-theme="dark"]) .ui-tpc__btn--primary,
 html:is(.dark, [data-theme="dark"]) body .ui-xcc__action,
@@ -4570,6 +5740,9 @@ html body :is(.dark, [data-theme="dark"]) :where(.ui-src) .ui-src__btn--primary 
 }
 
 /* Classic style: its navy main action becomes the berry block, white label in both themes. */
+html body .ui-agc__btn--primary,
+html body .ui-agcc__btn--primary,
+html body .ui-agf__btn--primary,
 html body .ui-agt__btn--primary,
 html body .ui-ai__btn--primary,
 html body .ui-aic__btn--primary,
@@ -4597,6 +5770,12 @@ html body .ui-xc__action {
   color: #ffffff;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 6px 12px -6px rgba(133, 20, 55, 0.6);
 }
+html:is(.dark, [data-theme="dark"]) body .ui-agc__btn--primary,
+html body :is(.dark, [data-theme="dark"]) .ui-agc__btn--primary,
+html:is(.dark, [data-theme="dark"]) body .ui-agcc__btn--primary,
+html body :is(.dark, [data-theme="dark"]) .ui-agcc__btn--primary,
+html:is(.dark, [data-theme="dark"]) body .ui-agf__btn--primary,
+html body :is(.dark, [data-theme="dark"]) .ui-agf__btn--primary,
 html:is(.dark, [data-theme="dark"]) body .ui-agt__btn--primary,
 html body :is(.dark, [data-theme="dark"]) .ui-agt__btn--primary,
 html:is(.dark, [data-theme="dark"]) body .ui-ai__btn--primary,
@@ -4647,6 +5826,9 @@ html body :is(.dark, [data-theme="dark"]) .ui-xc__action {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 6px 14px -6px rgba(3, 12, 28, 0.8);
 }
 
+html body .ui-agc__btn--primary:hover,
+html body .ui-agcc__btn--primary:hover,
+html body .ui-agf__btn--primary:hover,
 html body .ui-agt__btn--primary:hover,
 html body .ui-ai__btn--primary:hover,
 html body .ui-edc__primary:hover:not(:disabled),
@@ -4656,6 +5838,12 @@ html body .ui-um__action[data-strong]:hover {
   background: #6d0f2d;
   color: #ffffff;
 }
+html:is(.dark, [data-theme="dark"]) body .ui-agc__btn--primary:hover,
+html body :is(.dark, [data-theme="dark"]) .ui-agc__btn--primary:hover,
+html:is(.dark, [data-theme="dark"]) body .ui-agcc__btn--primary:hover,
+html body :is(.dark, [data-theme="dark"]) .ui-agcc__btn--primary:hover,
+html:is(.dark, [data-theme="dark"]) body .ui-agf__btn--primary:hover,
+html body :is(.dark, [data-theme="dark"]) .ui-agf__btn--primary:hover,
 html:is(.dark, [data-theme="dark"]) body .ui-agt__btn--primary:hover,
 html body :is(.dark, [data-theme="dark"]) .ui-agt__btn--primary:hover,
 html:is(.dark, [data-theme="dark"]) body .ui-ai__btn--primary:hover,
@@ -4671,10 +5859,13 @@ html body :is(.dark, [data-theme="dark"]) .ui-um__action[data-strong]:hover {
   background: #bd2a5a;
 }
 
+html body .ui-agcc__btn,
+html body .ui-agqc__btn,
 html body .ui-agtc__btn,
 html body .ui-aic__btn,
 html body .ui-alc__btn,
 html body .ui-ansc__action,
+html body .ui-ar__btn,
 html body .ui-bsc__btn,
 html body .ui-ca__btn,
 html body .ui-cac__action,
@@ -4687,6 +5878,7 @@ html body .ui-dfc__btn,
 html body .ui-dic__btn,
 html body .ui-drpc__btn,
 html body .ui-edc__secondary,
+html body .ui-fcc__btn,
 html body .ui-isc__btn,
 html body .ui-kb__action,
 html body .ui-ma__btn,
@@ -4697,6 +5889,8 @@ html body .ui-pcc__action,
 html body .ui-plc__btn,
 html body .ui-prc__btn,
 html body .ui-rbc__btn,
+html body .ui-rcp__btn,
+html body .ui-rvcc__btn,
 html body .ui-sfc__btn,
 html body .ui-src__btn,
 html body .ui-tpc__btn,
@@ -4707,6 +5901,7 @@ html body .ui-xcc__action {
 }
 
 /* Fields: the hub shell — 10px corners, berry caret. */
+html body .ui-as-side__search,
 html body .ui-bsc__input,
 html body .ui-bsc__select,
 html body .ui-cbxc__field,
@@ -4717,11 +5912,14 @@ html body .ui-mp__search,
 html body .ui-mpc__search,
 html body .ui-pli__search,
 html body .ui-plic__search,
+html body .ui-rvc__input,
 html body .ui-sfc__input,
 html body .ui-stc__field {
   border-radius: 10px;
   caret-color: #851437;
 }
+html:is(.dark, [data-theme="dark"]) body .ui-as-side__search,
+html body :is(.dark, [data-theme="dark"]) .ui-as-side__search,
 html:is(.dark, [data-theme="dark"]) body .ui-bsc__input,
 html body :is(.dark, [data-theme="dark"]) .ui-bsc__input,
 html:is(.dark, [data-theme="dark"]) body .ui-bsc__select,
@@ -4742,6 +5940,8 @@ html:is(.dark, [data-theme="dark"]) body .ui-pli__search,
 html body :is(.dark, [data-theme="dark"]) .ui-pli__search,
 html:is(.dark, [data-theme="dark"]) body .ui-plic__search,
 html body :is(.dark, [data-theme="dark"]) .ui-plic__search,
+html:is(.dark, [data-theme="dark"]) body .ui-rvc__input,
+html body :is(.dark, [data-theme="dark"]) .ui-rvc__input,
 html:is(.dark, [data-theme="dark"]) body .ui-sfc__input,
 html body :is(.dark, [data-theme="dark"]) .ui-sfc__input,
 html:is(.dark, [data-theme="dark"]) body .ui-stc__field,
@@ -4757,8 +5957,6 @@ html body .ui-aic__heading,
 html body .ui-aic__title,
 html body .ui-ap__title,
 html body .ui-apc__title,
-html body .ui-as .ui-pl__title,
-html body .ui-as-empty__title,
 html body .ui-di__title,
 html body .ui-kpi__title,
 html body .ui-um__title {
@@ -4769,6 +5967,7 @@ html body .ui-um__title {
 }
 
 html body .ui-ansc__question,
+html body .ui-ar__title,
 html body .ui-as-int-section__title,
 html body .ui-bcc__title,
 html body .ui-bs__title,
@@ -4791,10 +5990,14 @@ html body .ui-nsc__title,
 html body .ui-pl__title,
 html body .ui-plc__title,
 html body .ui-progressc__title,
+html body .ui-rcp__title,
+html body .ui-rvcc__title,
+html body .ui-sch__title,
 html body .ui-sfc__heading,
 html body .ui-sg__title,
 html body .ui-sgc__title,
 html body .ui-sr__title,
+html body .ui-srn__title,
 html body .ui-tpc__title,
 html body .ui-umc__title {
   font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
@@ -4803,7 +6006,6 @@ html body .ui-umc__title {
   letter-spacing: 0.002em;
 }
 
-html body .ui-as-section-head__title,
 html body .ui-ev__title h1,
 html body .ui-ns__title,
 html body .ui-progress__title,
@@ -4825,7 +6027,8 @@ html body .ui-tb__title-input {
   letter-spacing: 0.002em;
 }
 
-html body .ui-ans__question {
+html body .ui-ans__question,
+html body .ui-rvc__title {
   font-family: "Avenir Next Condensed", "Avenir Next", Avenir, "Arial Narrow", system-ui, sans-serif;
   font-size: 19px;
   font-weight: 700;
@@ -4854,35 +6057,124 @@ html body .ui-ad__title {
 }
 
 /* Icon tiles: pebbles, lit from below. */
+html body .ui-ack__icon,
+html body .ui-ackc__icon,
+html body .ui-agmc__icon,
+html body .ui-agq__logo,
+html body .ui-agqc__logo,
+html body .ui-ah__logo,
+html body .ui-ahc__logo,
+html body .ui-al__icon,
+html body .ui-alc__icon,
+html body .ui-ar__mark,
+html body .ui-cm__logo,
+html body .ui-cmc__logo,
+html body .ui-dctc__icon,
 html body .ui-isc__logo,
 html body .ui-mdp__glyph,
 html body .ui-mdpc__glyph,
-html body .ui-tcc-group__stack .ui-tcc__icon {
+html body .ui-pa__icon,
+html body .ui-pac__icon,
+html body .ui-pvac__icon,
+html body .ui-rcp__mark,
+html body .ui-sch__mark,
+html body .ui-srn__mark,
+html body .ui-tcc-group__stack .ui-tcc__icon,
+html body .ui-tw__icon,
+html body .ui-twc__icon {
   box-shadow: 0 0 0 1px #dae2ec, 0 4px 10px -4px rgba(26, 62, 112, 0.3), inset 0 -2px 6px -4px rgba(26, 62, 112, 0.4);
 }
+html:is(.dark, [data-theme="dark"]) body .ui-ack__icon,
+html body :is(.dark, [data-theme="dark"]) .ui-ack__icon,
+html:is(.dark, [data-theme="dark"]) body .ui-ackc__icon,
+html body :is(.dark, [data-theme="dark"]) .ui-ackc__icon,
+html:is(.dark, [data-theme="dark"]) body .ui-agmc__icon,
+html body :is(.dark, [data-theme="dark"]) .ui-agmc__icon,
+html:is(.dark, [data-theme="dark"]) body .ui-agq__logo,
+html body :is(.dark, [data-theme="dark"]) .ui-agq__logo,
+html:is(.dark, [data-theme="dark"]) body .ui-agqc__logo,
+html body :is(.dark, [data-theme="dark"]) .ui-agqc__logo,
+html:is(.dark, [data-theme="dark"]) body .ui-ah__logo,
+html body :is(.dark, [data-theme="dark"]) .ui-ah__logo,
+html:is(.dark, [data-theme="dark"]) body .ui-ahc__logo,
+html body :is(.dark, [data-theme="dark"]) .ui-ahc__logo,
+html:is(.dark, [data-theme="dark"]) body .ui-al__icon,
+html body :is(.dark, [data-theme="dark"]) .ui-al__icon,
+html:is(.dark, [data-theme="dark"]) body .ui-alc__icon,
+html body :is(.dark, [data-theme="dark"]) .ui-alc__icon,
+html:is(.dark, [data-theme="dark"]) body .ui-ar__mark,
+html body :is(.dark, [data-theme="dark"]) .ui-ar__mark,
+html:is(.dark, [data-theme="dark"]) body .ui-cm__logo,
+html body :is(.dark, [data-theme="dark"]) .ui-cm__logo,
+html:is(.dark, [data-theme="dark"]) body .ui-cmc__logo,
+html body :is(.dark, [data-theme="dark"]) .ui-cmc__logo,
+html:is(.dark, [data-theme="dark"]) body .ui-dctc__icon,
+html body :is(.dark, [data-theme="dark"]) .ui-dctc__icon,
 html:is(.dark, [data-theme="dark"]) body .ui-isc__logo,
 html body :is(.dark, [data-theme="dark"]) .ui-isc__logo,
 html:is(.dark, [data-theme="dark"]) body .ui-mdp__glyph,
 html body :is(.dark, [data-theme="dark"]) .ui-mdp__glyph,
 html:is(.dark, [data-theme="dark"]) body .ui-mdpc__glyph,
 html body :is(.dark, [data-theme="dark"]) .ui-mdpc__glyph,
+html:is(.dark, [data-theme="dark"]) body .ui-pa__icon,
+html body :is(.dark, [data-theme="dark"]) .ui-pa__icon,
+html:is(.dark, [data-theme="dark"]) body .ui-pac__icon,
+html body :is(.dark, [data-theme="dark"]) .ui-pac__icon,
+html:is(.dark, [data-theme="dark"]) body .ui-pvac__icon,
+html body :is(.dark, [data-theme="dark"]) .ui-pvac__icon,
+html:is(.dark, [data-theme="dark"]) body .ui-rcp__mark,
+html body :is(.dark, [data-theme="dark"]) .ui-rcp__mark,
+html:is(.dark, [data-theme="dark"]) body .ui-sch__mark,
+html body :is(.dark, [data-theme="dark"]) .ui-sch__mark,
+html:is(.dark, [data-theme="dark"]) body .ui-srn__mark,
+html body :is(.dark, [data-theme="dark"]) .ui-srn__mark,
 html:is(.dark, [data-theme="dark"]) body .ui-tcc-group__stack .ui-tcc__icon,
-html body :is(.dark, [data-theme="dark"]) .ui-tcc-group__stack .ui-tcc__icon {
+html body :is(.dark, [data-theme="dark"]) .ui-tcc-group__stack .ui-tcc__icon,
+html:is(.dark, [data-theme="dark"]) body .ui-tw__icon,
+html body :is(.dark, [data-theme="dark"]) .ui-tw__icon,
+html:is(.dark, [data-theme="dark"]) body .ui-twc__icon,
+html body :is(.dark, [data-theme="dark"]) .ui-twc__icon {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 4px 10px -4px rgba(3, 12, 28, 0.7), inset 0 -2px 6px -4px rgba(255, 255, 255, 0.25);
 }
 
 /* State chips: each family is a fill AND its hairline, as in the hub. */
 
+html body .ui-agm__state[data-status="running"],
+html body .ui-agmc__state[data-status="running"],
+html body .ui-ah__status[data-status="working"],
+html body .ui-ahc__status[data-status="working"],
+html body .ui-fc__node--from .ui-fc__node-icon,
+html body .ui-fc__pop-badge[data-tone="trying"],
+html body .ui-fcc__node--from .ui-fcc__node-icon,
+html body .ui-fcc__pop-badge[data-tone="trying"],
 html body .ui-ma__chip[aria-pressed="true"],
 html body .ui-ma__chip[aria-pressed="true"]:hover:not(:disabled),
 html body .ui-pli__token[data-filled],
 html body .ui-plic__token[data-filled],
+html body .ui-sch__cell[data-over],
 html body .ui-src__option[aria-checked="true"],
+html body .ui-srn__cell[data-over],
 html body .ui-st__chip-btn:hover,
 html body .ui-stc__chip-btn:hover {
   box-shadow: inset 0 0 0 1px #c1daff;
 }
 
+html:is(.dark, [data-theme="dark"]) body .ui-agm__state[data-status="running"],
+html body :is(.dark, [data-theme="dark"]) .ui-agm__state[data-status="running"],
+html:is(.dark, [data-theme="dark"]) body .ui-agmc__state[data-status="running"],
+html body :is(.dark, [data-theme="dark"]) .ui-agmc__state[data-status="running"],
+html:is(.dark, [data-theme="dark"]) body .ui-ah__status[data-status="working"],
+html body :is(.dark, [data-theme="dark"]) .ui-ah__status[data-status="working"],
+html:is(.dark, [data-theme="dark"]) body .ui-ahc__status[data-status="working"],
+html body :is(.dark, [data-theme="dark"]) .ui-ahc__status[data-status="working"],
+html:is(.dark, [data-theme="dark"]) body .ui-fc__node--from .ui-fc__node-icon,
+html body :is(.dark, [data-theme="dark"]) .ui-fc__node--from .ui-fc__node-icon,
+html:is(.dark, [data-theme="dark"]) body .ui-fc__pop-badge[data-tone="trying"],
+html body :is(.dark, [data-theme="dark"]) .ui-fc__pop-badge[data-tone="trying"],
+html:is(.dark, [data-theme="dark"]) body .ui-fcc__node--from .ui-fcc__node-icon,
+html body :is(.dark, [data-theme="dark"]) .ui-fcc__node--from .ui-fcc__node-icon,
+html:is(.dark, [data-theme="dark"]) body .ui-fcc__pop-badge[data-tone="trying"],
+html body :is(.dark, [data-theme="dark"]) .ui-fcc__pop-badge[data-tone="trying"],
 html:is(.dark, [data-theme="dark"]) body .ui-ma__chip[aria-pressed="true"],
 html body :is(.dark, [data-theme="dark"]) .ui-ma__chip[aria-pressed="true"],
 html:is(.dark, [data-theme="dark"]) body .ui-ma__chip[aria-pressed="true"]:hover:not(:disabled),
@@ -4891,8 +6183,12 @@ html:is(.dark, [data-theme="dark"]) body .ui-pli__token[data-filled],
 html body :is(.dark, [data-theme="dark"]) .ui-pli__token[data-filled],
 html:is(.dark, [data-theme="dark"]) body .ui-plic__token[data-filled],
 html body :is(.dark, [data-theme="dark"]) .ui-plic__token[data-filled],
+html:is(.dark, [data-theme="dark"]) body .ui-sch__cell[data-over],
+html body :is(.dark, [data-theme="dark"]) .ui-sch__cell[data-over],
 html:is(.dark, [data-theme="dark"]) body .ui-src__option[aria-checked="true"],
 html body :is(.dark, [data-theme="dark"]) .ui-src__option[aria-checked="true"],
+html:is(.dark, [data-theme="dark"]) body .ui-srn__cell[data-over],
+html body :is(.dark, [data-theme="dark"]) .ui-srn__cell[data-over],
 html:is(.dark, [data-theme="dark"]) body .ui-st__chip-btn:hover,
 html body :is(.dark, [data-theme="dark"]) .ui-st__chip-btn:hover,
 html:is(.dark, [data-theme="dark"]) body .ui-stc__chip-btn:hover,
@@ -4900,11 +6196,29 @@ html body :is(.dark, [data-theme="dark"]) .ui-stc__chip-btn:hover {
   box-shadow: inset 0 0 0 1px rgba(143, 189, 242, 0.34);
 }
 
+html body .ui-agm__done-tag[data-tone="ask"],
+html body .ui-agm__state[data-status="waiting"],
+html body .ui-agm__well[data-status="waiting"],
+html body .ui-agmc__done-tag[data-tone="ask"],
+html body .ui-agmc__state[data-status="waiting"],
+html body .ui-agmc__well[data-status="waiting"],
 html body .ui-pli__tag[data-tone="amber"],
 html body .ui-plic__tag[data-tone="amber"] {
   box-shadow: inset 0 0 0 1px #fae6a0;
 }
 
+html:is(.dark, [data-theme="dark"]) body .ui-agm__done-tag[data-tone="ask"],
+html body :is(.dark, [data-theme="dark"]) .ui-agm__done-tag[data-tone="ask"],
+html:is(.dark, [data-theme="dark"]) body .ui-agm__state[data-status="waiting"],
+html body :is(.dark, [data-theme="dark"]) .ui-agm__state[data-status="waiting"],
+html:is(.dark, [data-theme="dark"]) body .ui-agm__well[data-status="waiting"],
+html body :is(.dark, [data-theme="dark"]) .ui-agm__well[data-status="waiting"],
+html:is(.dark, [data-theme="dark"]) body .ui-agmc__done-tag[data-tone="ask"],
+html body :is(.dark, [data-theme="dark"]) .ui-agmc__done-tag[data-tone="ask"],
+html:is(.dark, [data-theme="dark"]) body .ui-agmc__state[data-status="waiting"],
+html body :is(.dark, [data-theme="dark"]) .ui-agmc__state[data-status="waiting"],
+html:is(.dark, [data-theme="dark"]) body .ui-agmc__well[data-status="waiting"],
+html body :is(.dark, [data-theme="dark"]) .ui-agmc__well[data-status="waiting"],
 html:is(.dark, [data-theme="dark"]) body .ui-pli__tag[data-tone="amber"],
 html body :is(.dark, [data-theme="dark"]) .ui-pli__tag[data-tone="amber"],
 html:is(.dark, [data-theme="dark"]) body .ui-plic__tag[data-tone="amber"],
@@ -4915,6 +6229,12 @@ html body :is(.dark, [data-theme="dark"]) .ui-plic__tag[data-tone="amber"] {
 html body .ui-ad__connect[data-state="on"]:hover,
 html body .ui-ad__risk[data-risk="destructive"],
 html body .ui-adc__risk[data-risk="destructive"],
+html body .ui-agf__status[data-status="failed"],
+html body .ui-agfc__status[data-status="failed"],
+html body .ui-agg__chip[data-kind="error"],
+html body .ui-agg__pill[data-status="error"],
+html body .ui-aggc__chip[data-kind="error"],
+html body .ui-aggc__pill[data-status="error"],
 html body .ui-agt__status[data-status="failed"],
 html body .ui-agt__sum-btn[data-kind="failed"],
 html body .ui-agtc__status[data-status="failed"],
@@ -4933,6 +6253,18 @@ html:is(.dark, [data-theme="dark"]) body .ui-ad__risk[data-risk="destructive"],
 html body :is(.dark, [data-theme="dark"]) .ui-ad__risk[data-risk="destructive"],
 html:is(.dark, [data-theme="dark"]) body .ui-adc__risk[data-risk="destructive"],
 html body :is(.dark, [data-theme="dark"]) .ui-adc__risk[data-risk="destructive"],
+html:is(.dark, [data-theme="dark"]) body .ui-agf__status[data-status="failed"],
+html body :is(.dark, [data-theme="dark"]) .ui-agf__status[data-status="failed"],
+html:is(.dark, [data-theme="dark"]) body .ui-agfc__status[data-status="failed"],
+html body :is(.dark, [data-theme="dark"]) .ui-agfc__status[data-status="failed"],
+html:is(.dark, [data-theme="dark"]) body .ui-agg__chip[data-kind="error"],
+html body :is(.dark, [data-theme="dark"]) .ui-agg__chip[data-kind="error"],
+html:is(.dark, [data-theme="dark"]) body .ui-agg__pill[data-status="error"],
+html body :is(.dark, [data-theme="dark"]) .ui-agg__pill[data-status="error"],
+html:is(.dark, [data-theme="dark"]) body .ui-aggc__chip[data-kind="error"],
+html body :is(.dark, [data-theme="dark"]) .ui-aggc__chip[data-kind="error"],
+html:is(.dark, [data-theme="dark"]) body .ui-aggc__pill[data-status="error"],
+html body :is(.dark, [data-theme="dark"]) .ui-aggc__pill[data-status="error"],
 html:is(.dark, [data-theme="dark"]) body .ui-agt__status[data-status="failed"],
 html body :is(.dark, [data-theme="dark"]) .ui-agt__status[data-status="failed"],
 html:is(.dark, [data-theme="dark"]) body .ui-agt__sum-btn[data-kind="failed"],
@@ -4954,11 +6286,29 @@ html body :is(.dark, [data-theme="dark"]) .ui-prc__risk[data-risk="destructive"]
   box-shadow: inset 0 0 0 1px rgba(242, 164, 140, 0.32);
 }
 
+html body .ui-agm[data-status="finished"] .ui-agm__seg:not([data-state="failed"]),
+html body .ui-agm__done-tag,
+html body .ui-agm__state[data-status="finished"],
+html body .ui-agmc[data-status="finished"] .ui-agmc__seg:not([data-state="failed"]),
+html body .ui-agmc__done-tag,
+html body .ui-agmc__state[data-status="finished"],
 html body .ui-pli__tag[data-tone="green"],
 html body .ui-plic__tag[data-tone="green"] {
   box-shadow: inset 0 0 0 1px #c9f5cf;
 }
 
+html:is(.dark, [data-theme="dark"]) body .ui-agm[data-status="finished"] .ui-agm__seg:not([data-state="failed"]),
+html body :is(.dark, [data-theme="dark"]) .ui-agm[data-status="finished"] .ui-agm__seg:not([data-state="failed"]),
+html:is(.dark, [data-theme="dark"]) body .ui-agm__done-tag,
+html body :is(.dark, [data-theme="dark"]) .ui-agm__done-tag,
+html:is(.dark, [data-theme="dark"]) body .ui-agm__state[data-status="finished"],
+html body :is(.dark, [data-theme="dark"]) .ui-agm__state[data-status="finished"],
+html:is(.dark, [data-theme="dark"]) body .ui-agmc[data-status="finished"] .ui-agmc__seg:not([data-state="failed"]),
+html body :is(.dark, [data-theme="dark"]) .ui-agmc[data-status="finished"] .ui-agmc__seg:not([data-state="failed"]),
+html:is(.dark, [data-theme="dark"]) body .ui-agmc__done-tag,
+html body :is(.dark, [data-theme="dark"]) .ui-agmc__done-tag,
+html:is(.dark, [data-theme="dark"]) body .ui-agmc__state[data-status="finished"],
+html body :is(.dark, [data-theme="dark"]) .ui-agmc__state[data-status="finished"],
 html:is(.dark, [data-theme="dark"]) body .ui-pli__tag[data-tone="green"],
 html body :is(.dark, [data-theme="dark"]) .ui-pli__tag[data-tone="green"],
 html:is(.dark, [data-theme="dark"]) body .ui-plic__tag[data-tone="green"],
@@ -4967,11 +6317,20 @@ html body :is(.dark, [data-theme="dark"]) .ui-plic__tag[data-tone="green"] {
 }
 
 html body .ui-ad__connect[data-state="on"],
+html body .ui-agf__status[data-status="done"],
+html body .ui-agfc__status[data-status="done"],
+html body .ui-agg__pill[data-status="done"],
+html body .ui-aggc__pill[data-status="done"],
+html body .ui-agq__bin[data-kind="done"] .ui-agq__bin-icon,
+html body .ui-agqc__bin[data-kind="done"] .ui-agqc__bin-icon,
+html body .ui-agqc__pill[data-status="done"],
 html body .ui-agt__status[data-status="done"],
 html body .ui-agtc__status[data-status="done"],
 html body .ui-ai__state[data-status="done"],
 html body .ui-ap__mark,
 html body .ui-apc__mark,
+html body .ui-ar__card[data-state="resolved"] .ui-ar__mark,
+html body .ui-ar__state,
 html body .ui-cwc__compact[data-done],
 html body .ui-db__tag[data-kind="free"],
 html body .ui-dbc__tag[data-kind="free"],
@@ -4980,15 +6339,37 @@ html body .ui-ed__badge[data-tone="ok"],
 html body .ui-ed__receipt-icon[data-tone="ok"],
 html body .ui-edc__badge[data-tone="ok"],
 html body .ui-edc__receipt-icon[data-tone="ok"],
+html body .ui-fc__node--to[data-state="answered"] .ui-fc__node-icon,
+html body .ui-fc__pop-badge[data-tone="answered"],
+html body .ui-fcc__node--to[data-state="answered"] .ui-fcc__node-icon,
+html body .ui-fcc__pop-badge[data-tone="answered"],
 html body .ui-iv__badge,
 html body .ui-ma__send[data-sent],
 html body .ui-mac__send[data-sent],
-html body .ui-src__done {
+html body .ui-rcp__card[data-state="resolved"] .ui-rcp__mark,
+html body .ui-rcp__state,
+html body .ui-src__done,
+html body .ui-tw__pop .ui-tw__pill[data-status="done"],
+html body .ui-twc__pill[data-status="done"] {
   box-shadow: inset 0 0 0 1px #c9f5cf;
 }
 
 html:is(.dark, [data-theme="dark"]) body .ui-ad__connect[data-state="on"],
 html body :is(.dark, [data-theme="dark"]) .ui-ad__connect[data-state="on"],
+html:is(.dark, [data-theme="dark"]) body .ui-agf__status[data-status="done"],
+html body :is(.dark, [data-theme="dark"]) .ui-agf__status[data-status="done"],
+html:is(.dark, [data-theme="dark"]) body .ui-agfc__status[data-status="done"],
+html body :is(.dark, [data-theme="dark"]) .ui-agfc__status[data-status="done"],
+html:is(.dark, [data-theme="dark"]) body .ui-agg__pill[data-status="done"],
+html body :is(.dark, [data-theme="dark"]) .ui-agg__pill[data-status="done"],
+html:is(.dark, [data-theme="dark"]) body .ui-aggc__pill[data-status="done"],
+html body :is(.dark, [data-theme="dark"]) .ui-aggc__pill[data-status="done"],
+html:is(.dark, [data-theme="dark"]) body .ui-agq__bin[data-kind="done"] .ui-agq__bin-icon,
+html body :is(.dark, [data-theme="dark"]) .ui-agq__bin[data-kind="done"] .ui-agq__bin-icon,
+html:is(.dark, [data-theme="dark"]) body .ui-agqc__bin[data-kind="done"] .ui-agqc__bin-icon,
+html body :is(.dark, [data-theme="dark"]) .ui-agqc__bin[data-kind="done"] .ui-agqc__bin-icon,
+html:is(.dark, [data-theme="dark"]) body .ui-agqc__pill[data-status="done"],
+html body :is(.dark, [data-theme="dark"]) .ui-agqc__pill[data-status="done"],
 html:is(.dark, [data-theme="dark"]) body .ui-agt__status[data-status="done"],
 html body :is(.dark, [data-theme="dark"]) .ui-agt__status[data-status="done"],
 html:is(.dark, [data-theme="dark"]) body .ui-agtc__status[data-status="done"],
@@ -4999,6 +6380,10 @@ html:is(.dark, [data-theme="dark"]) body .ui-ap__mark,
 html body :is(.dark, [data-theme="dark"]) .ui-ap__mark,
 html:is(.dark, [data-theme="dark"]) body .ui-apc__mark,
 html body :is(.dark, [data-theme="dark"]) .ui-apc__mark,
+html:is(.dark, [data-theme="dark"]) body .ui-ar__card[data-state="resolved"] .ui-ar__mark,
+html body :is(.dark, [data-theme="dark"]) .ui-ar__card[data-state="resolved"] .ui-ar__mark,
+html:is(.dark, [data-theme="dark"]) body .ui-ar__state,
+html body :is(.dark, [data-theme="dark"]) .ui-ar__state,
 html:is(.dark, [data-theme="dark"]) body .ui-cwc__compact[data-done],
 html body :is(.dark, [data-theme="dark"]) .ui-cwc__compact[data-done],
 html:is(.dark, [data-theme="dark"]) body .ui-db__tag[data-kind="free"],
@@ -5015,17 +6400,39 @@ html:is(.dark, [data-theme="dark"]) body .ui-edc__badge[data-tone="ok"],
 html body :is(.dark, [data-theme="dark"]) .ui-edc__badge[data-tone="ok"],
 html:is(.dark, [data-theme="dark"]) body .ui-edc__receipt-icon[data-tone="ok"],
 html body :is(.dark, [data-theme="dark"]) .ui-edc__receipt-icon[data-tone="ok"],
+html:is(.dark, [data-theme="dark"]) body .ui-fc__node--to[data-state="answered"] .ui-fc__node-icon,
+html body :is(.dark, [data-theme="dark"]) .ui-fc__node--to[data-state="answered"] .ui-fc__node-icon,
+html:is(.dark, [data-theme="dark"]) body .ui-fc__pop-badge[data-tone="answered"],
+html body :is(.dark, [data-theme="dark"]) .ui-fc__pop-badge[data-tone="answered"],
+html:is(.dark, [data-theme="dark"]) body .ui-fcc__node--to[data-state="answered"] .ui-fcc__node-icon,
+html body :is(.dark, [data-theme="dark"]) .ui-fcc__node--to[data-state="answered"] .ui-fcc__node-icon,
+html:is(.dark, [data-theme="dark"]) body .ui-fcc__pop-badge[data-tone="answered"],
+html body :is(.dark, [data-theme="dark"]) .ui-fcc__pop-badge[data-tone="answered"],
 html:is(.dark, [data-theme="dark"]) body .ui-iv__badge,
 html body :is(.dark, [data-theme="dark"]) .ui-iv__badge,
 html:is(.dark, [data-theme="dark"]) body .ui-ma__send[data-sent],
 html body :is(.dark, [data-theme="dark"]) .ui-ma__send[data-sent],
 html:is(.dark, [data-theme="dark"]) body .ui-mac__send[data-sent],
 html body :is(.dark, [data-theme="dark"]) .ui-mac__send[data-sent],
+html:is(.dark, [data-theme="dark"]) body .ui-rcp__card[data-state="resolved"] .ui-rcp__mark,
+html body :is(.dark, [data-theme="dark"]) .ui-rcp__card[data-state="resolved"] .ui-rcp__mark,
+html:is(.dark, [data-theme="dark"]) body .ui-rcp__state,
+html body :is(.dark, [data-theme="dark"]) .ui-rcp__state,
 html:is(.dark, [data-theme="dark"]) body .ui-src__done,
-html body :is(.dark, [data-theme="dark"]) .ui-src__done {
+html body :is(.dark, [data-theme="dark"]) .ui-src__done,
+html:is(.dark, [data-theme="dark"]) body .ui-tw__pop .ui-tw__pill[data-status="done"],
+html body :is(.dark, [data-theme="dark"]) .ui-tw__pop .ui-tw__pill[data-status="done"],
+html:is(.dark, [data-theme="dark"]) body .ui-twc__pill[data-status="done"],
+html body :is(.dark, [data-theme="dark"]) .ui-twc__pill[data-status="done"] {
   box-shadow: inset 0 0 0 1px rgba(127, 224, 160, 0.32);
 }
 
+html body .ui-agm__done-tag[data-tone="fail"],
+html body .ui-agm__state[data-status="failed"],
+html body .ui-agmc__done-tag[data-tone="fail"],
+html body .ui-agmc__state[data-status="failed"],
+html body .ui-ah__item[data-lost],
+html body .ui-ahc__item[data-lost],
 html body .ui-mp__icon--forget:hover,
 html body .ui-pl__step[data-step="failed"] .ui-pl__marker,
 html body .ui-plc__step[data-step="failed"] .ui-plc__marker,
@@ -5036,6 +6443,18 @@ html body .ui-tcc__error {
   box-shadow: inset 0 0 0 1px #f5d5c9;
 }
 
+html:is(.dark, [data-theme="dark"]) body .ui-agm__done-tag[data-tone="fail"],
+html body :is(.dark, [data-theme="dark"]) .ui-agm__done-tag[data-tone="fail"],
+html:is(.dark, [data-theme="dark"]) body .ui-agm__state[data-status="failed"],
+html body :is(.dark, [data-theme="dark"]) .ui-agm__state[data-status="failed"],
+html:is(.dark, [data-theme="dark"]) body .ui-agmc__done-tag[data-tone="fail"],
+html body :is(.dark, [data-theme="dark"]) .ui-agmc__done-tag[data-tone="fail"],
+html:is(.dark, [data-theme="dark"]) body .ui-agmc__state[data-status="failed"],
+html body :is(.dark, [data-theme="dark"]) .ui-agmc__state[data-status="failed"],
+html:is(.dark, [data-theme="dark"]) body .ui-ah__item[data-lost],
+html body :is(.dark, [data-theme="dark"]) .ui-ah__item[data-lost],
+html:is(.dark, [data-theme="dark"]) body .ui-ahc__item[data-lost],
+html body :is(.dark, [data-theme="dark"]) .ui-ahc__item[data-lost],
 html:is(.dark, [data-theme="dark"]) body .ui-mp__icon--forget:hover,
 html body :is(.dark, [data-theme="dark"]) .ui-mp__icon--forget:hover,
 html:is(.dark, [data-theme="dark"]) body .ui-pl__step[data-step="failed"] .ui-pl__marker,
@@ -5091,6 +6510,16 @@ html body :is(.dark, [data-theme="dark"]) .ui-xcc__tag {
 
 html body .ui-ad__risk,
 html body .ui-adc__risk,
+html body .ui-agf__status[data-status="waiting"],
+html body .ui-agfc__status[data-status="waiting"],
+html body .ui-agg__chip[data-kind="waiting"],
+html body .ui-agg__pill[data-status="waiting"],
+html body .ui-aggc__chip[data-kind="waiting"],
+html body .ui-aggc__pill[data-status="waiting"],
+html body .ui-agq__badge[data-kind="high"],
+html body .ui-agq__head .ui-agq__pill[data-status="limited"],
+html body .ui-agqc__badge[data-kind="high"],
+html body .ui-agqc__pill[data-status="limited"],
 html body .ui-agt__status[data-status="waiting"],
 html body .ui-agt__sum-btn[data-kind="waiting"],
 html body .ui-agtc__status[data-status="waiting"],
@@ -5113,6 +6542,26 @@ html:is(.dark, [data-theme="dark"]) body .ui-ad__risk,
 html body :is(.dark, [data-theme="dark"]) .ui-ad__risk,
 html:is(.dark, [data-theme="dark"]) body .ui-adc__risk,
 html body :is(.dark, [data-theme="dark"]) .ui-adc__risk,
+html:is(.dark, [data-theme="dark"]) body .ui-agf__status[data-status="waiting"],
+html body :is(.dark, [data-theme="dark"]) .ui-agf__status[data-status="waiting"],
+html:is(.dark, [data-theme="dark"]) body .ui-agfc__status[data-status="waiting"],
+html body :is(.dark, [data-theme="dark"]) .ui-agfc__status[data-status="waiting"],
+html:is(.dark, [data-theme="dark"]) body .ui-agg__chip[data-kind="waiting"],
+html body :is(.dark, [data-theme="dark"]) .ui-agg__chip[data-kind="waiting"],
+html:is(.dark, [data-theme="dark"]) body .ui-agg__pill[data-status="waiting"],
+html body :is(.dark, [data-theme="dark"]) .ui-agg__pill[data-status="waiting"],
+html:is(.dark, [data-theme="dark"]) body .ui-aggc__chip[data-kind="waiting"],
+html body :is(.dark, [data-theme="dark"]) .ui-aggc__chip[data-kind="waiting"],
+html:is(.dark, [data-theme="dark"]) body .ui-aggc__pill[data-status="waiting"],
+html body :is(.dark, [data-theme="dark"]) .ui-aggc__pill[data-status="waiting"],
+html:is(.dark, [data-theme="dark"]) body .ui-agq__badge[data-kind="high"],
+html body :is(.dark, [data-theme="dark"]) .ui-agq__badge[data-kind="high"],
+html:is(.dark, [data-theme="dark"]) body .ui-agq__head .ui-agq__pill[data-status="limited"],
+html body :is(.dark, [data-theme="dark"]) .ui-agq__head .ui-agq__pill[data-status="limited"],
+html:is(.dark, [data-theme="dark"]) body .ui-agqc__badge[data-kind="high"],
+html body :is(.dark, [data-theme="dark"]) .ui-agqc__badge[data-kind="high"],
+html:is(.dark, [data-theme="dark"]) body .ui-agqc__pill[data-status="limited"],
+html body :is(.dark, [data-theme="dark"]) .ui-agqc__pill[data-status="limited"],
 html:is(.dark, [data-theme="dark"]) body .ui-agt__status[data-status="waiting"],
 html body :is(.dark, [data-theme="dark"]) .ui-agt__status[data-status="waiting"],
 html:is(.dark, [data-theme="dark"]) body .ui-agt__sum-btn[data-kind="waiting"],
@@ -5168,6 +6617,7 @@ html body .ui-mpc__foot,
 html body .ui-pcc__foot,
 html body .ui-plc__foot,
 html body .ui-plic__foot,
+html body .ui-pvac__foot,
 html body .ui-sfc__foot,
 html body .ui-src__foot,
 html body .ui-tpc__foot,
@@ -5220,6 +6670,8 @@ html:is(.dark, [data-theme="dark"]) body .ui-plc__foot,
 html body :is(.dark, [data-theme="dark"]) .ui-plc__foot,
 html:is(.dark, [data-theme="dark"]) body .ui-plic__foot,
 html body :is(.dark, [data-theme="dark"]) .ui-plic__foot,
+html:is(.dark, [data-theme="dark"]) body .ui-pvac__foot,
+html body :is(.dark, [data-theme="dark"]) .ui-pvac__foot,
 html:is(.dark, [data-theme="dark"]) body .ui-sfc__foot,
 html body :is(.dark, [data-theme="dark"]) .ui-sfc__foot,
 html:is(.dark, [data-theme="dark"]) body .ui-src__foot,
@@ -5234,6 +6686,14 @@ html body :is(.dark, [data-theme="dark"]) .ui-xcc__foot {
 }
 
 /* Secondary actions: the hub's light object — pale panel, firm hairline, a short navy drop. */
+html body .ui-agc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-agcc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-agf__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-agfc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-agm__btn kbd:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-agm__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-agq__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-agqc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body .ui-agt__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body .ui-agtc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body .ui-ai__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
@@ -5252,6 +6712,8 @@ html body .ui-dfc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not(
 html body .ui-drpc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body .ui-ed__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body .ui-edc__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-fc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-fcc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body .ui-isc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body .ui-kb__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body .ui-mp__action--undo:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
@@ -5259,6 +6721,9 @@ html body .ui-mpc__action--undo:where(:not([class*="primary"]):not([class*="ghos
 html body .ui-plc__btn--secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body .ui-pr__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body .ui-prc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-rcp__btn--main:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-rvc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body .ui-rvcc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body .ui-sfc__btn-ghost:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body .ui-sfc__btn-secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body .ui-tpc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
@@ -5272,6 +6737,22 @@ html body :where(.ui-tsc) .ui-tsc__action:where(:not([class*="primary"]):not([cl
   font-weight: 600;
 }
 
+html:is(.dark, [data-theme="dark"]) body .ui-agc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-agc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-agcc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-agcc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-agf__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-agf__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-agfc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-agfc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-agm__btn kbd:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-agm__btn kbd:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-agm__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-agm__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-agq__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-agq__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-agqc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-agqc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html:is(.dark, [data-theme="dark"]) body .ui-agt__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body :is(.dark, [data-theme="dark"]) .ui-agt__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html:is(.dark, [data-theme="dark"]) body .ui-agtc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
@@ -5308,6 +6789,10 @@ html:is(.dark, [data-theme="dark"]) body .ui-ed__secondary:where(:not([class*="p
 html body :is(.dark, [data-theme="dark"]) .ui-ed__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html:is(.dark, [data-theme="dark"]) body .ui-edc__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body :is(.dark, [data-theme="dark"]) .ui-edc__secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-fc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-fc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-fcc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-fcc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html:is(.dark, [data-theme="dark"]) body .ui-isc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body :is(.dark, [data-theme="dark"]) .ui-isc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html:is(.dark, [data-theme="dark"]) body .ui-kb__action:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
@@ -5322,6 +6807,12 @@ html:is(.dark, [data-theme="dark"]) body .ui-pr__btn:where(:not([class*="primary
 html body :is(.dark, [data-theme="dark"]) .ui-pr__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html:is(.dark, [data-theme="dark"]) body .ui-prc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body :is(.dark, [data-theme="dark"]) .ui-prc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-rcp__btn--main:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-rcp__btn--main:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-rvc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-rvc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html:is(.dark, [data-theme="dark"]) body .ui-rvcc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
+html body :is(.dark, [data-theme="dark"]) .ui-rvcc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html:is(.dark, [data-theme="dark"]) body .ui-sfc__btn-ghost:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html body :is(.dark, [data-theme="dark"]) .ui-sfc__btn-ghost:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
 html:is(.dark, [data-theme="dark"]) body .ui-sfc__btn-secondary:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
@@ -5346,6 +6837,8 @@ html body :is(.dark, [data-theme="dark"]) :where(.ui-tsc) .ui-tsc__action:where(
 /* Fields: the hub shell — firm hairline and a soft inner shade. */
 html body .ui-ad__search,
 html body .ui-ag__search,
+html body .ui-as-side__search,
+html body .ui-as-side__search kbd,
 html body .ui-aw__field,
 html body .ui-aw__search,
 html body .ui-bs__input,
@@ -5363,6 +6856,8 @@ html body .ui-mp__search,
 html body .ui-mpc__search,
 html body .ui-pli__search,
 html body .ui-plic__search,
+html body .ui-rvc__input,
+html body .ui-rvcc__input,
 html body .ui-sf__input,
 html body .ui-sfc__input,
 html body .ui-st__field,
@@ -5376,6 +6871,10 @@ html:is(.dark, [data-theme="dark"]) body .ui-ad__search,
 html body :is(.dark, [data-theme="dark"]) .ui-ad__search,
 html:is(.dark, [data-theme="dark"]) body .ui-ag__search,
 html body :is(.dark, [data-theme="dark"]) .ui-ag__search,
+html:is(.dark, [data-theme="dark"]) body .ui-as-side__search,
+html body :is(.dark, [data-theme="dark"]) .ui-as-side__search,
+html:is(.dark, [data-theme="dark"]) body .ui-as-side__search kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-as-side__search kbd,
 html:is(.dark, [data-theme="dark"]) body .ui-aw__field,
 html body :is(.dark, [data-theme="dark"]) .ui-aw__field,
 html:is(.dark, [data-theme="dark"]) body .ui-aw__search,
@@ -5410,6 +6909,10 @@ html:is(.dark, [data-theme="dark"]) body .ui-pli__search,
 html body :is(.dark, [data-theme="dark"]) .ui-pli__search,
 html:is(.dark, [data-theme="dark"]) body .ui-plic__search,
 html body :is(.dark, [data-theme="dark"]) .ui-plic__search,
+html:is(.dark, [data-theme="dark"]) body .ui-rvc__input,
+html body :is(.dark, [data-theme="dark"]) .ui-rvc__input,
+html:is(.dark, [data-theme="dark"]) body .ui-rvcc__input,
+html body :is(.dark, [data-theme="dark"]) .ui-rvcc__input,
 html:is(.dark, [data-theme="dark"]) body .ui-sf__input,
 html body :is(.dark, [data-theme="dark"]) .ui-sf__input,
 html:is(.dark, [data-theme="dark"]) body .ui-sfc__input,
@@ -5528,18 +7031,29 @@ html body :is(.dark, [data-theme="dark"]) .ui-sgc__fill {
 }
 
 /* Keys: small pebbles with a firmer bottom edge. */
+html body .ui-agm__btn kbd,
+html body .ui-agm__btn--go kbd,
+html body .ui-agmc__btn kbd,
+html body .ui-agmc__btn--go kbd,
 html body .ui-ap__kbd,
 html body .ui-apc__kbd,
+html body .ui-asw__kbd,
 html body .ui-cbx kbd,
 html body .ui-cbxc kbd,
 html body .ui-cm kbd,
 html body .ui-cx__hint kbd,
 html body .ui-db__key,
 html body .ui-dbc__key,
+html body .ui-dct__kbd,
+html body .ui-dctc__kbd,
 html body .ui-df__pbtn kbd,
 html body .ui-dfc__pbtn kbd,
 html body .ui-fm__hint kbd,
 html body .ui-fmc kbd,
+html body .ui-fog__key,
+html body .ui-fog__key[aria-pressed="true"],
+html body .ui-fogc__key,
+html body .ui-fogc__key[aria-pressed="true"],
 html body .ui-is__key,
 html body .ui-is__key[data-new],
 html body .ui-isc__key,
@@ -5547,6 +7061,8 @@ html body .ui-isc__key[data-new],
 html body .ui-mdp__keys kbd,
 html body .ui-pr__kbd,
 html body .ui-prc__kbd,
+html body .ui-rvc__kbd,
+html body .ui-rvcc__kbd,
 html body .ui-st kbd,
 html body .ui-stc kbd,
 html body .ui-tp__kbd,
@@ -5555,10 +7071,20 @@ html body .ui-tpc__kbd {
   box-shadow: 0 0 0 1px #dae2ec, 0 1px 0 1px #cbd6e4;
 }
 
+html:is(.dark, [data-theme="dark"]) body .ui-agm__btn kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-agm__btn kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-agm__btn--go kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-agm__btn--go kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-agmc__btn kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-agmc__btn kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-agmc__btn--go kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-agmc__btn--go kbd,
 html:is(.dark, [data-theme="dark"]) body .ui-ap__kbd,
 html body :is(.dark, [data-theme="dark"]) .ui-ap__kbd,
 html:is(.dark, [data-theme="dark"]) body .ui-apc__kbd,
 html body :is(.dark, [data-theme="dark"]) .ui-apc__kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-asw__kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-asw__kbd,
 html:is(.dark, [data-theme="dark"]) body .ui-cbx kbd,
 html body :is(.dark, [data-theme="dark"]) .ui-cbx kbd,
 html:is(.dark, [data-theme="dark"]) body .ui-cbxc kbd,
@@ -5571,6 +7097,10 @@ html:is(.dark, [data-theme="dark"]) body .ui-db__key,
 html body :is(.dark, [data-theme="dark"]) .ui-db__key,
 html:is(.dark, [data-theme="dark"]) body .ui-dbc__key,
 html body :is(.dark, [data-theme="dark"]) .ui-dbc__key,
+html:is(.dark, [data-theme="dark"]) body .ui-dct__kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-dct__kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-dctc__kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-dctc__kbd,
 html:is(.dark, [data-theme="dark"]) body .ui-df__pbtn kbd,
 html body :is(.dark, [data-theme="dark"]) .ui-df__pbtn kbd,
 html:is(.dark, [data-theme="dark"]) body .ui-dfc__pbtn kbd,
@@ -5579,6 +7109,14 @@ html:is(.dark, [data-theme="dark"]) body .ui-fm__hint kbd,
 html body :is(.dark, [data-theme="dark"]) .ui-fm__hint kbd,
 html:is(.dark, [data-theme="dark"]) body .ui-fmc kbd,
 html body :is(.dark, [data-theme="dark"]) .ui-fmc kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-fog__key,
+html body :is(.dark, [data-theme="dark"]) .ui-fog__key,
+html:is(.dark, [data-theme="dark"]) body .ui-fog__key[aria-pressed="true"],
+html body :is(.dark, [data-theme="dark"]) .ui-fog__key[aria-pressed="true"],
+html:is(.dark, [data-theme="dark"]) body .ui-fogc__key,
+html body :is(.dark, [data-theme="dark"]) .ui-fogc__key,
+html:is(.dark, [data-theme="dark"]) body .ui-fogc__key[aria-pressed="true"],
+html body :is(.dark, [data-theme="dark"]) .ui-fogc__key[aria-pressed="true"],
 html:is(.dark, [data-theme="dark"]) body .ui-is__key,
 html body :is(.dark, [data-theme="dark"]) .ui-is__key,
 html:is(.dark, [data-theme="dark"]) body .ui-is__key[data-new],
@@ -5593,6 +7131,10 @@ html:is(.dark, [data-theme="dark"]) body .ui-pr__kbd,
 html body :is(.dark, [data-theme="dark"]) .ui-pr__kbd,
 html:is(.dark, [data-theme="dark"]) body .ui-prc__kbd,
 html body :is(.dark, [data-theme="dark"]) .ui-prc__kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-rvc__kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-rvc__kbd,
+html:is(.dark, [data-theme="dark"]) body .ui-rvcc__kbd,
+html body :is(.dark, [data-theme="dark"]) .ui-rvcc__kbd,
 html:is(.dark, [data-theme="dark"]) body .ui-st kbd,
 html body :is(.dark, [data-theme="dark"]) .ui-st kbd,
 html:is(.dark, [data-theme="dark"]) body .ui-stc kbd,

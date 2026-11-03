@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conflict Radar – React component · affectUI</title>
+    <link rel="canonical" href="https://www.affectui.com/components/conflict-radar" />
+    <meta name="description" content="Agents working on their own branches at once, and where they get in each other&#39;s way – a row per file and a column per agent, a line between the agents that…" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="affectUI" />
+    <meta property="og:title" content="Conflict Radar – React component · affectUI" />
+    <meta property="og:description" content="Agents working on their own branches at once, and where they get in each other&#39;s way – a row per file and a column per agent, a line between the agents that…" />
+    <meta property="og:url" content="https://www.affectui.com/components/conflict-radar" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:creator" content="@flohoeller" />
+    <meta name="twitter:title" content="Conflict Radar – React component · affectUI" />
+    <meta name="twitter:description" content="Agents working on their own branches at once, and where they get in each other&#39;s way – a row per file and a column per agent, a line between the agents that…" />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Conflict Radar","item":"https://www.affectui.com/components/conflict-radar"}]},{"@type":"SoftwareSourceCode","name":"Conflict Radar (affectUI)","description":"Agents working on their own branches at once, and where they get in each other's way – a row per file and a column per agent, a line between the agents that changed the same lines, each agent's way in one sentence to pick from, and Merge once all are settled","url":"https://www.affectui.com/components/conflict-radar","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-25","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)" />
+    <script>
+      try {
+        const t = localStorage.getItem("theme");
+        if (t) document.documentElement.dataset.theme = t;
+        // Components switch with a .dark class, the shadcn convention – set it for "system" too
+        const dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", dark);
+      } catch {}
+    </script>
+    <script data-static-mirror-compatibility>
+(() => {
+  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
+  const scalingPath = "/components/agent-tree-scaling";
+  const libraryPath = (value) => {
+    const target = new URL(value, window.location.href);
+    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+      ? "/components" + target.search + target.hash
+      : value;
+  };
+  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+    window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  for (const method of ["pushState", "replaceState"]) {
+    const original = window.history[method].bind(window.history);
+    window.history[method] = (state, title, url) => original(state, title, url == null ? url : libraryPath(url));
+  }
+  const removeSalesLayer = () => {
+    document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
+    document.querySelectorAll("a[href]").forEach((anchor) => {
+      const target = new URL(anchor.getAttribute("href"), window.location.href);
+      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+    });
+    document.querySelectorAll("button").forEach((button) => {
+      const label = button.textContent.trim().replace(/s+/g, " ");
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+    });
+  };
+  let queued = false;
+  const scheduleCleanup = () => {
+    if (queued) return;
+    queued = true;
+    queueMicrotask(() => {
+      queued = false;
+      removeSalesLayer();
+    });
+  };
+  new MutationObserver(scheduleCleanup).observe(document.documentElement, { childList: true, subtree: true });
+  document.addEventListener("DOMContentLoaded", scheduleCleanup);
+  scheduleCleanup();
+  document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const anchor = event.target?.closest?.("a[href]");
+    if (!anchor) return;
+    const target = new URL(anchor.getAttribute("href"), window.location.href);
+    if (target.origin !== window.location.origin) return;
+    if (target.pathname === scalingPath) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(scalingPath);
+    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign("/components" + target.search + target.hash);
+    }
+  }, true);
+})();
+</script>
+    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
+    <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
+  <link rel="stylesheet" href="/ateam/composants.css">
+  </head>
+  <body>
+    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/agents">Agents</a></p>
+<h1>Conflict Radar</h1>
+<p>Agents working on their own branches at once, and where they get in each other&#39;s way – a row per file and a column per agent, a line between the agents that changed the same lines, each agent&#39;s way in one sentence to pick from, and Merge once all are settled.</p>
+<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/conflict-radar.json</code> · Import from <code>@/components/ui/conflict-radar</code></p>
+<h2>When to use</h2><ul><li>Several coding agents work on their own branches of the same repo at once, and people need to see where they overlap before anything is merged</li><li>Agents came up with different ways to solve the same thing and someone has to pick one</li></ul><h2>When not to use</h2><ul><li>When the agents try the same task and the best one simply wins – use Parallel Attempts</li><li>When the timeline matters – use Agent Lanes</li><li>For a single agent&#39;s changes – use Agent Ledger</li></ul><h2>Usage</h2><pre><code>import { ConflictRadar, type RadarAgent, type RadarFile } from &quot;@/components/ui/conflict-radar&quot;;
+
+export function Branches({ agents, files }: { agents: RadarAgent[]; files: RadarFile[] }) {
+  const [resolved, setResolved] = useState&lt;Record&lt;string, string&gt;&gt;({});
+  return (
+    &lt;ConflictRadar
+      agents={agents} // { id, name, model?, avatar?, status?: &quot;running&quot; | &quot;done&quot; }
+      files={files} // { path, edits: [{ agentId, lines: [from, to], summary?, active? }] }
+      resolved={resolved}
+      onResolve={(path, agentId) =&gt; setResolved((r) =&gt; ({ ...r, [path]: agentId }))}
+      onMerge={() =&gt; mergeBranches(resolved)}
+    /&gt;
+  );
+}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>agents</code></td><td><code>RadarAgent[]</code></td><td></td><td>One column each: name, model or branch, a mark, and whether it&#39;s still working</td></tr><tr><td><code>files</code></td><td><code>RadarFile[]</code></td><td></td><td>One row each, with every agent&#39;s edit – the lines it changes, whether it&#39;s still writing, and for conflicts its way in one sentence</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td><code>&quot;Parallel work&quot;</code></td><td>Heading in the bar</td></tr><tr><td><code>resolved</code></td><td><code>Record&lt;string, string&gt;</code></td><td></td><td>The agent picked per conflicting file – leave it out and the component keeps the picks itself</td></tr><tr><td><code>onResolve</code></td><td><code>(path: string, agentId: string) =&gt; void</code></td><td></td><td>A way was picked for a conflict</td></tr><tr><td><code>onMerge</code></td><td><code>() =&gt; void</code></td><td></td><td>Merge was clicked – it&#39;s only enabled once every conflict is settled and every agent is done</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Moves through Merge, the conflicting files and the ways to settle the one in focus</li><li>Enter / Space: On a conflicting file: shows its ways below; on a way: keeps it</li></ul><h2>Accessibility</h2><ul><li>The grid is a table with the agents as column headers; every cell says who changed the file and whether it was kept</li><li>Conflicts and settled files are named in text, not only by color</li><li>The ways to settle a conflict are a radio group</li><li>The comparison is a polite live region, so the next conflict is announced when it comes into focus</li></ul><h2>Responsive</h2><ul><li>Below 440px agent names and folders drop, the columns get smaller and a way&#39;s sentence moves under its name</li><li>Dark mode built in; colors are CSS variables on .ui-cr</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/parallel-attempts">Parallel Attempts</a> – An agent tries the same task several ways at once and the best one wins – every attempt races as a row with its model, approach and live bar, then gets a score; the best is marked and picked, and you can switch to another</li><li><a href="/components/agent-lanes">Agent Lanes</a> – Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the block</li><li><a href="/components/agent-ledger">Agent Ledger</a> – Everything an agent changed in your systems, each change with an undo – before and after per row, and pointing at Undo shows what builds on it: what would be undone too, and what can&#39;t be taken back</li></ul><h2>Guides</h2><ul><li><a href="/guides/multi-agent-ui-react">Multi-agent UI in React: orchestrators, sub-agents and hand-offs</a> – How to show several AI agents working together – who started whom, who is busy, hand-offs, parallel work, conflicts and the queue – with React components for each.</li></ul></main></div></div>
+  </body>
+</html>
