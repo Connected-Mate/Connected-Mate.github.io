@@ -160,27 +160,6 @@ function compatibilityScript() {
     const original = window.history[method].bind(window.history);
     window.history[method] = (state, title, url) => original(state, title, url == null ? url : libraryPath(url));
   }
-  const relabel = (root) => {
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-    let node;
-    while ((node = walker.nextNode())) {
-      if (node.textContent.trim() === "Agent Tree") node.textContent = node.textContent.replace("Agent Tree", "Agent Tree Scaling");
-    }
-  };
-  const injectScaling = () => {
-    document.querySelectorAll('a[href="/components/agent-tree"]').forEach((anchor) => {
-      const parent = anchor.parentElement;
-      if (!parent || parent.querySelector('a[href="' + scalingPath + '"]')) return;
-      const clone = anchor.cloneNode(true);
-      clone.setAttribute("href", scalingPath);
-      clone.removeAttribute("aria-current");
-      clone.classList.remove("active", "nav-link--active");
-      relabel(clone);
-      const image = clone.querySelector("img[src*='/previews/']");
-      if (image) image.src = "/previews/agent-tree-scaling.webp";
-      anchor.insertAdjacentElement("afterend", clone);
-    });
-  };
   const removeSalesLayer = () => {
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
@@ -191,7 +170,6 @@ function compatibilityScript() {
       const label = button.textContent.trim().replace(/\s+/g, " ");
       if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
     });
-    injectScaling();
   };
   let queued = false;
   const scheduleCleanup = () => {
@@ -388,11 +366,25 @@ function patchJavaScript(source) {
     output = replaceJsxSection(output, "id:`mcp-pro`", "id:`llms`", (jsx, section) => `(0,${jsx}.jsx)(${section},{id:\`mcp-locked\`,title:\`Locked source and MCP\`,children:(0,${jsx}.jsx)(\`p\`,{className:\`doc__p\`,children:\`The mirrored documentation and free registry work without a key. Locked source is not included in this static mirror.\`})})`, "MCP Pro documentation");
   }
 
-  if (output.includes(" as ComponentPage")) {
+  // Component-page Pro copy. affectUI moves these strings between the ComponentPage chunk and the
+  // main bundle from one release to the next, so each patch applies wherever its anchor lives;
+  // checkSite() then refuses any leftover Pro sales text.
+  if (output.includes("It's a Pro item")) {
     output = replacePatternOnce(output, /`   It's a Pro item – the command needs my \$\{[\w$]+\.name\} access key, set up as described at \$\{[\w$]+\.url\}\/docs\/installation#pro`/, "`   Its source is not included in this static mirror; use the preview and documentation as the reference.`", "locked AI prompt");
+  }
+  if (output.includes("`Get Pro`,{from:`page copy`")) {
     output = replacePatternOnce(output, /onClick:async\(\)=>\{if\(!t\)return [\w$]+\(`Get Pro`,\{from:`page copy`,item:e\.slug\}\),[\w$]+\(\{entry:e,from:`page copy`\}\);if\(n\)try\{/, "onClick:async()=>{if(!t)return;if(n)try{", "locked copy action");
+  }
+  if (output.includes("title:t?`Copy the source code`:`The code is part of Pro`,children:")) {
     output = replaceOnce(output, "title:t?`Copy the source code`:`The code is part of Pro`,children:", "title:t?`Copy the source code`:`Source is not included in this static mirror.`,disabled:!t||void 0,children:", "locked copy button");
+  }
+  if (output.includes("label:`Get Pro to install`")) {
     output = replacePatternOnce(output, /\(0,([\w$]+)\.jsx\)\(([\w$]+),\{label:`Get Pro to install`\}\)/, "(0,$1.jsx)(`span`,{className:`doc__p`,children:`Source is not included in this static mirror.`})", "locked install callout");
+  }
+  if (output.includes("Pro items install with your personal access key")) {
+    output = replacePatternOnce(output, /[\w$]+\.pro&&\(0,[\w$]+\.jsxs\)\(`p`,\{className:`doc__p`,children:\[`Pro items install with your personal access key –`,.*?`, then the command below works\.`\]\}\)/, "null", "locked install note");
+  }
+  if (output.includes("lead:`${e.name} is a Pro component.`")) {
     output = replaceOnce(output, "lead:`${e.name} is a Pro component.`", "lead:`${e.name} source is not included in this static mirror.`", "locked installation heading");
   }
   return output;
@@ -1007,7 +999,7 @@ async function checkSite() {
     if (extension === ".js" && source.includes("fetch(`/api/checkout`")) {
       throw new Error(`Local checkout endpoint remains in ${pathname}`);
     }
-    if (extension === ".js" && ["Part of Pro – get Pro to copy", "Get Pro to copy the code", "Like it? ${e} more components are in Pro.", "The code is part of Pro", "Get Pro to install"].some((text) => source.includes(text))) {
+    if (extension === ".js" && ["Part of Pro – get Pro to copy", "Get Pro to copy the code", "Like it? ${e} more components are in Pro.", "The code is part of Pro", "Get Pro to install", "It's a Pro item", "Pro items install with your personal access key", "`Get Pro`,{from:`page copy`"].some((text) => source.includes(text))) {
       throw new Error(`Old Pro sales copy remains in ${pathname}`);
     }
     if (excludedAssetPattern.test(pathname)) throw new Error(`Excluded credential/account/pricing asset was mirrored: ${pathname}`);
