@@ -3,29 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thinking Loader – React component · affectUI</title>
-    <link rel="canonical" href="https://www.affectui.com/components/thinking-loader" />
-    <meta name="description" content="A small working pill for AI replies – an eight-ray spinner and a shimmering label that rolls through phases and settles on a check. Free and open source – one…" />
+    <title>affectUI · Agent-ready React UI for AI products</title>
+    <link rel="canonical" href="https://www.affectui.com/" />
+    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="Thinking Loader – React component · affectUI" />
-    <meta property="og:description" content="A small working pill for AI replies – an eight-ray spinner and a shimmering label that rolls through phases and settles on a check. Free and open source – one…" />
-    <meta property="og:url" content="https://www.affectui.com/components/thinking-loader" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta property="og:url" content="https://www.affectui.com/" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:site" content="@flohoeller" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="Thinking Loader – React component · affectUI" />
-    <meta name="twitter:description" content="A small working pill for AI replies – an eight-ray spinner and a shimmering label that rolls through phases and settles on a check. Free and open source – one…" />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Thinking Loader","item":"https://www.affectui.com/components/thinking-loader"}]},{"@type":"SoftwareSourceCode","name":"Thinking Loader (affectUI)","description":"A small working pill for AI replies – an eight-ray spinner and a shimmering label that rolls through phases and settles on a check","url":"https://www.affectui.com/components/thinking-loader","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","dateCreated":"2026-10-09","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
+    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.affectui.com/#website",
+            "url": "https://www.affectui.com/",
+            "name": "affectUI",
+            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://www.affectui.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.affectui.com/#organization",
+            "name": "affectUI",
+            "url": "https://www.affectui.com/",
+            "logo": "https://www.affectui.com/icon-512.png",
+            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "affectUI",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "url": "https://www.affectui.com/",
+            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
+          }
+        ]
+      }
+    </script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -45,17 +77,21 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const origin = "https://www.affectui.com";
+  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
-  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+    return target.origin === window.location.origin && salesOnly.test(target.pathname)
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  if (serverOnly.test(window.location.pathname)) {
+    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -66,11 +102,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -91,44 +127,33 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (target.pathname === scalingPath) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(scalingPath);
-    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+    if (salesOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
+    } else if (serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
-  <link rel="stylesheet" href="/ateam/composants.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
   </head>
   <body>
-    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/chat">Chat</a></p>
-<h1>Thinking Loader</h1>
-<p>A small working pill for AI replies – an eight-ray spinner and a shimmering label that rolls through phases and settles on a check.</p>
-<p>Free and open source (MIT). Install: <code>npx shadcn@latest add https://www.affectui.com/r/thinking-loader.json</code> · Import from <code>@/components/ui/thinking-loader</code></p>
-<h2>When to use</h2><ul><li>The wait between sending a prompt and the first streamed token – one line that says what the model is doing</li><li>Agent and pipeline steps with real labels: searching, reading, running a tool, writing</li><li>Inline in a chat bubble or next to a button where a full panel would be too much</li></ul><h2>When not to use</h2><ul><li>When people should see the sources and every step – use Thinking State</li><li>Page or data loading with no phases – a skeleton or a plain spinner reads calmer</li><li>Waits under half a second – the loader would only flash</li></ul><h2>Usage</h2><pre><code>import { ThinkingLoader } from &quot;@/components/ui/thinking-loader&quot;;
-
-export function AssistantPending({ streaming }: { streaming: boolean }) {
-  return (
-    &lt;ThinkingLoader
-      phases={[&quot;Thinking&quot;, &quot;Searching the web&quot;, &quot;Reading sources&quot;, &quot;Writing response&quot;]}
-      interval={2200}
-      done={streaming}
-    /&gt;
-  );
-}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>phases</code></td><td><code>string[]</code></td><td><code>[&quot;Thinking&quot;, &quot;Searching the web&quot;, &quot;Reading sources&quot;, &quot;Writing response&quot;]</code></td><td>Labels to walk through, one after another</td></tr><tr><td><code>interval</code></td><td><code>number</code></td><td><code>2200</code></td><td>Time per phase in ms when the phase isn&#39;t controlled</td></tr><tr><td><code>phase</code></td><td><code>number</code></td><td></td><td>Controlled index into phases – the timer stops and the loader shows this phase</td></tr><tr><td><code>loop</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Start over after the last phase instead of holding it</td></tr><tr><td><code>done</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Turns the spinner into a check and the label into doneLabel; setting it back to false starts over</td></tr><tr><td><code>doneLabel</code></td><td><code>string | ((seconds: number) =&gt; string)</code></td><td><code>(s) =&gt; `Thought for ${s}s`</code></td><td>Label once done – a function gets the seconds since the loader started</td></tr><tr><td><code>size</code></td><td><code>&quot;sm&quot; | &quot;md&quot;</code></td><td><code>&quot;md&quot;</code></td><td>28 or 34px tall</td></tr><tr><td><code>variant</code></td><td><code>&quot;pill&quot; | &quot;plain&quot;</code></td><td><code>&quot;pill&quot;</code></td><td>A bordered capsule, or just the spinner and the label</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Accessibility</h2><ul><li>role=&quot;status&quot; with aria-live=&quot;polite&quot;: screen readers hear each new phase and the done label once</li><li>The spinner, the check and the label rolling out are aria-hidden; the shimmer copy has empty alt text, so labels are read once</li></ul><h2>Responsive</h2><ul><li>Sizes to its label; long phases stay on one line, so keep them short (two to four words)</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/thinking-state">Thinking State</a> – AI working panel with a live timer, searched sources and thinking steps that appear one by one</li><li><a href="/components/ai-answer">AI Answer</a> – Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups</li><li><a href="/components/chat-composer">Chat Composer</a> – Prompt composer with model picker, voice input, app connections and approval request</li></ul><h2>Guides</h2><ul><li><a href="/guides/ai-chat-ui-components-react">React components for AI chat interfaces</a> – What an AI chat UI needs – composer, streaming answers, thinking states, tool calls, citations, message actions – and React components for each.</li><li><a href="/guides/streaming-ai-responses-react">Streaming AI responses in React without layout shift</a> – How to render streamed LLM answers in React so the page doesn&#39;t jump – stable containers, a clear thinking state, smooth text, and actions that appear in place.</li><li><a href="/guides/show-what-ai-agent-is-doing">How to show what an AI agent is doing</a> – UI patterns that make an AI agent&#39;s work visible – the current step, its plan, tool calls, a live tree or timeline, and a trace of where time and money went.</li></ul></main></div></div>
+    <div id="root">
+      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
+      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
+        affectUI – Agent-ready UI for AI products
+      </h1>
+    </div>
   </body>
 </html>

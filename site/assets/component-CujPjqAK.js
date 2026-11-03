@@ -289,20 +289,20 @@ export function FrostCloud({
 const css = /* css */ \`
 /* Palette as variables – blue, or red-orange via data-color="orange" */
 .ui-fc {
-  --ui-fc-sky-top: #326eb6;
-  --ui-fc-sky-bottom: #89bbfc;
-  --ui-fc-sky-light: rgba(177, 210, 252, 0.55);
+  --ui-fc-sky-top: #2475ea;
+  --ui-fc-sky-bottom: #4ac8f5;
+  --ui-fc-sky-light: rgba(110, 225, 255, 0.55);
   --ui-fc-white: #ffffff;
-  --ui-fc-frost: #f3f7fb;
-  --ui-fc-tint: rgba(82, 142, 217, 0.2);
-  --ui-fc-hole-1: #5894e0;
-  --ui-fc-hole-2: #93c2fe;
-  --ui-fc-eye-drop: rgba(54, 114, 186, 0.1);
-  --ui-fc-eye-shade: rgba(22, 84, 154, 0.24);
-  --ui-fc-halo: rgba(73, 133, 208, 0.2);
-  --ui-fc-edge: rgba(53, 112, 185, 0.4);
-  --ui-fc-shadow: rgba(25, 86, 157, 0.55);
-  --ui-fc-ground: rgba(14, 78, 148, 0.4);
+  --ui-fc-frost: #eef8ff;
+  --ui-fc-tint: rgba(70, 165, 235, 0.2);
+  --ui-fc-hole-1: #3aaef2;
+  --ui-fc-hole-2: #62cdfa;
+  --ui-fc-eye-drop: rgba(40, 130, 210, 0.1);
+  --ui-fc-eye-shade: rgba(10, 90, 190, 0.24);
+  --ui-fc-halo: rgba(30, 150, 255, 0.2);
+  --ui-fc-edge: rgba(20, 120, 240, 0.4);
+  --ui-fc-shadow: rgba(10, 90, 200, 0.55);
+  --ui-fc-ground: rgba(10, 80, 190, 0.4);
   position: relative;
   display: grid;
   place-items: center;
@@ -317,7 +317,7 @@ const css = /* css */ \`
   --ui-fc-sky-top: #e94135;
   --ui-fc-sky-bottom: #fa9842;
   --ui-fc-sky-light: rgba(255, 205, 150, 0.5);
-  --ui-fc-frost: #f4f7fc;
+  --ui-fc-frost: #fff5f0;
   --ui-fc-tint: rgba(235, 110, 70, 0.2);
   --ui-fc-hole-1: #f05f42;
   --ui-fc-hole-2: #fba05b;
@@ -348,10 +348,10 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> – a deeper sky */
 :where(.dark, [data-theme="dark"]) .ui-fc {
-  --ui-fc-sky-top: #19569c;
-  --ui-fc-sky-bottom: #508cd7;
-  --ui-fc-sky-light: rgba(151, 193, 248, 0.45);
-  --ui-fc-ground: rgba(12, 53, 100, 0.5);
+  --ui-fc-sky-top: #1659c8;
+  --ui-fc-sky-bottom: #2aa6e6;
+  --ui-fc-sky-light: rgba(90, 205, 255, 0.45);
+  --ui-fc-ground: rgba(5, 50, 140, 0.5);
 }
 :where(.dark, [data-theme="dark"]) .ui-fc[data-color="orange"] {
   --ui-fc-sky-top: #bf2722;
@@ -363,42 +363,5 @@ const css = /* css */ \`
   --ui-fc-halo: rgba(255, 255, 255, 0.35);
   --ui-fc-edge: rgba(255, 255, 255, 0.25);
 }
-/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
-html body .ui-fc {
-  box-shadow: 0 0 0 1px #dae2ec, 0 26px 38px -22px rgba(26, 62, 112, 0.45), 0 6px 14px -8px rgba(26, 62, 112, 0.16);
-}
-html:is(.dark, [data-theme="dark"]) body .ui-fc,
-html body :is(.dark, [data-theme="dark"]) .ui-fc {
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 26px 40px -20px rgba(3, 12, 28, 0.8);
-}
-html body .ui-fc__node--from .ui-fc__node-icon,
-html body .ui-fc__pop-badge[data-tone="trying"] {
-  box-shadow: inset 0 0 0 1px #c1daff;
-}
-html:is(.dark, [data-theme="dark"]) body .ui-fc__node--from .ui-fc__node-icon,
-html body :is(.dark, [data-theme="dark"]) .ui-fc__node--from .ui-fc__node-icon,
-html:is(.dark, [data-theme="dark"]) body .ui-fc__pop-badge[data-tone="trying"],
-html body :is(.dark, [data-theme="dark"]) .ui-fc__pop-badge[data-tone="trying"] {
-  box-shadow: inset 0 0 0 1px rgba(143, 189, 242, 0.34);
-}
-html body .ui-fc__node--to[data-state="answered"] .ui-fc__node-icon,
-html body .ui-fc__pop-badge[data-tone="answered"] {
-  box-shadow: inset 0 0 0 1px #c9f5cf;
-}
-html:is(.dark, [data-theme="dark"]) body .ui-fc__node--to[data-state="answered"] .ui-fc__node-icon,
-html body :is(.dark, [data-theme="dark"]) .ui-fc__node--to[data-state="answered"] .ui-fc__node-icon,
-html:is(.dark, [data-theme="dark"]) body .ui-fc__pop-badge[data-tone="answered"],
-html body :is(.dark, [data-theme="dark"]) .ui-fc__pop-badge[data-tone="answered"] {
-  box-shadow: inset 0 0 0 1px rgba(127, 224, 160, 0.32);
-}
-html body .ui-fc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
-  box-shadow: 0 0 0 1px #cbd6e4, 0 6px 12px -8px rgba(26, 62, 112, 0.35);
-  font-weight: 600;
-}
-html:is(.dark, [data-theme="dark"]) body .ui-fc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])),
-html body :is(.dark, [data-theme="dark"]) .ui-fc__btn:where(:not([class*="primary"]):not([class*="ghost"]):not([data-variant])) {
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 6px 12px -8px rgba(3, 12, 28, 0.7);
-}
-
 \`;
 `;export{e as default};

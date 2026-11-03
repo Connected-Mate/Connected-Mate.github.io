@@ -3,29 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OTP Input – React component · affectUI</title>
-    <link rel="canonical" href="https://www.affectui.com/components/otp-input" />
-    <meta name="description" content="The verification code field done right – a gliding focus ring, paste and SMS autofill, a calm shake on errors and a morph into Verified. Free and open source…" />
+    <title>affectUI · Agent-ready React UI for AI products</title>
+    <link rel="canonical" href="https://www.affectui.com/" />
+    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="OTP Input – React component · affectUI" />
-    <meta property="og:description" content="The verification code field done right – a gliding focus ring, paste and SMS autofill, a calm shake on errors and a morph into Verified. Free and open source…" />
-    <meta property="og:url" content="https://www.affectui.com/components/otp-input" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta property="og:url" content="https://www.affectui.com/" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:site" content="@flohoeller" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="OTP Input – React component · affectUI" />
-    <meta name="twitter:description" content="The verification code field done right – a gliding focus ring, paste and SMS autofill, a calm shake on errors and a morph into Verified. Free and open source…" />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"OTP Input","item":"https://www.affectui.com/components/otp-input"}]},{"@type":"SoftwareSourceCode","name":"OTP Input (affectUI)","description":"The verification code field done right – a gliding focus ring, paste and SMS autofill, a calm shake on errors and a morph into Verified","url":"https://www.affectui.com/components/otp-input","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","dateCreated":"2026-10-08","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
+    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.affectui.com/#website",
+            "url": "https://www.affectui.com/",
+            "name": "affectUI",
+            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://www.affectui.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.affectui.com/#organization",
+            "name": "affectUI",
+            "url": "https://www.affectui.com/",
+            "logo": "https://www.affectui.com/icon-512.png",
+            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "affectUI",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "url": "https://www.affectui.com/",
+            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
+          }
+        ]
+      }
+    </script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -45,17 +77,21 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const origin = "https://www.affectui.com";
+  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
-  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+    return target.origin === window.location.origin && salesOnly.test(target.pathname)
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  if (serverOnly.test(window.location.pathname)) {
+    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -66,11 +102,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -91,70 +127,33 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (target.pathname === scalingPath) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(scalingPath);
-    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+    if (salesOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
+    } else if (serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
-  <link rel="stylesheet" href="/ateam/composants.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
   </head>
   <body>
-    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/inputs">Inputs</a></p>
-<h1>OTP Input</h1>
-<p>The verification code field done right – a gliding focus ring, paste and SMS autofill, a calm shake on errors and a morph into Verified.</p>
-<p>Free and open source (MIT). Install: <code>npx shadcn@latest add https://www.affectui.com/r/otp-input.json</code> · Import from <code>@/components/ui/otp-input</code></p>
-<h2>When to use</h2><ul><li>Two-step sign-in, email or phone verification, confirming a sensitive action with a one-time code</li><li>Any short code people copy from an email or SMS – paste and autofill fill every box at once</li></ul><h2>When not to use</h2><ul><li>Codes longer than about 8 characters or with free-form text – a plain text field is easier to read and correct</li><li>Passwords or PINs that must stay hidden – the boxes show what&#39;s typed</li></ul><h2>Usage</h2><pre><code>import { useState } from &quot;react&quot;;
-import { OtpInput, type OtpStatus } from &quot;@/components/ui/otp-input&quot;;
-
-export function VerifyEmail() {
-  const [code, setCode] = useState(&quot;&quot;);
-  const [status, setStatus] = useState&lt;OtpStatus&gt;(&quot;idle&quot;);
-  const [triesLeft, setTriesLeft] = useState(3);
-
-  async function verify(value: string) {
-    setStatus(&quot;verifying&quot;);
-    const res = await fetch(&quot;/api/verify&quot;, { method: &quot;POST&quot;, body: JSON.stringify({ code: value }) });
-    if (res.ok) {
-      setStatus(&quot;success&quot;);
-      router.push(&quot;/dashboard&quot;);
-    } else {
-      setTriesLeft((n) =&gt; n - 1);
-      setStatus(&quot;error&quot;);
-    }
-  }
-
-  return (
-    &lt;OtpInput
-      value={code}
-      onChange={(next) =&gt; {
-        setCode(next);
-        if (status === &quot;error&quot; &amp;&amp; next) setStatus(&quot;idle&quot;);
-      }}
-      onComplete={verify}
-      status={status}
-      errorMessage={`That code didn&#39;t work. ${triesLeft} tries left.`}
-      separator
-      autoFocus
-      onResend={() =&gt; fetch(&quot;/api/send-code&quot;, { method: &quot;POST&quot; })}
-      resendIn={30}
-    /&gt;
-  );
-}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>length</code></td><td><code>number</code></td><td><code>6</code></td><td>Number of boxes</td></tr><tr><td><code>separator</code></td><td><code>boolean | number</code></td><td><code>false</code></td><td>A small dash between the boxes – true puts it in the middle, a number after that many boxes</td></tr><tr><td><code>numeric</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Digits only with the numeric keyboard on phones; false allows letters too, shown in capitals</td></tr><tr><td><code>value</code></td><td><code>string</code></td><td></td><td>The code – makes the field controlled</td></tr><tr><td><code>defaultValue</code></td><td><code>string</code></td><td><code>&quot;&quot;</code></td><td>Starting code when uncontrolled</td></tr><tr><td><code>onChange</code></td><td><code>(code: string) =&gt; void</code></td><td></td><td>Every change: typing, Backspace, paste, autofill and the clearing after an error</td></tr><tr><td><code>onComplete</code></td><td><code>(code: string) =&gt; void</code></td><td></td><td>Called once the last box is filled by the user – the place to start verifying</td></tr><tr><td><code>status</code></td><td><code>&quot;idle&quot; | &quot;verifying&quot; | &quot;error&quot; | &quot;success&quot;</code></td><td><code>&quot;idle&quot;</code></td><td>Verifying shimmers and locks the field, error shakes and shows the message, success morphs into the pill</td></tr><tr><td><code>errorMessage</code></td><td><code>ReactNode</code></td><td><code>&quot;That code didn&#39;t work. Try again.&quot;</code></td><td>Shown below the boxes after an error, until the user types again</td></tr><tr><td><code>clearOnError</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Clears the boxes shortly after the shake, ready for the next try</td></tr><tr><td><code>successLabel</code></td><td><code>string</code></td><td><code>&quot;Verified&quot;</code></td><td>Text in the pill on success</td></tr><tr><td><code>onResend</code></td><td><code>() =&gt; void</code></td><td></td><td>Shows &quot;Didn&#39;t get a code?&quot; below the boxes with a countdown that becomes a Resend button; clicking restarts the countdown</td></tr><tr><td><code>resendIn</code></td><td><code>number</code></td><td><code>30</code></td><td>Seconds until the code can be resent</td></tr><tr><td><code>align</code></td><td><code>&quot;start&quot; | &quot;center&quot;</code></td><td><code>&quot;start&quot;</code></td><td>Where the boxes and the lines below them sit</td></tr><tr><td><code>disabled</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Dims the field and ignores input</td></tr><tr><td><code>autoFocus</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Focuses the field on mount (without scrolling)</td></tr><tr><td><code>label</code></td><td><code>string</code></td><td><code>&quot;Verification code&quot;</code></td><td>Accessible name; the number of digits is added</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>0–9: Fills the active box and moves on; typing on a filled box replaces it</li><li>⌫: Clears the box and goes back one</li><li>← / →: Moves between the filled boxes and the next empty one</li><li>Home / End: Jumps to the first box, or to the next empty one</li><li>⌘ / V: Pastes a whole code – spaces and dashes are ignored</li></ul><h2>Accessibility</h2><ul><li>One real text input carries the whole code, so screen readers hear one field (&quot;Verification code, 6 digits&quot;) instead of six</li><li>autocomplete=&quot;one-time-code&quot; lets iOS and Android offer the code from an SMS; inputMode=&quot;numeric&quot; opens the number pad</li><li>Errors set aria-invalid and point to the message with aria-describedby; verifying, errors, success and resend are announced in a polite live region</li></ul><h2>Responsive</h2><ul><li>Container query: the boxes shrink to fit their container – six boxes with a separator fit a 320px phone</li><li>Inputs use 16px text under the hood, so iOS doesn&#39;t zoom in on focus</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/combobox">Combobox</a> – Pick one or many from a searchable, grouped list – chips with avatars, highlighted matches, create-on-the-fly and full keyboard support</li><li><a href="/components/segmented-control">Segmented Control</a> – Switch between two to six options – a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges</li><li><a href="/components/button">Button</a> – Primary, secondary, ghost and destructive buttons with icons, sizes and a shimmering loading state</li><li><a href="/components/toaster">Toaster</a> – Calm toasts from anywhere – a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss</li></ul></main></div></div>
+    <div id="root">
+      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
+      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
+        affectUI – Agent-ready UI for AI products
+      </h1>
+    </div>
   </body>
 </html>

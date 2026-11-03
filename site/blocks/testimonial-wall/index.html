@@ -3,29 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Testimonial Wall – React block · affectUI</title>
-    <link rel="canonical" href="https://www.affectui.com/blocks/testimonial-wall" />
-    <meta name="description" content="The landing-page wall of quotes – columns that scroll endlessly in opposite directions, ease to a stop on hover and scrub with inertia. Free and open source –…" />
+    <title>affectUI · Agent-ready React UI for AI products</title>
+    <link rel="canonical" href="https://www.affectui.com/" />
+    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="Testimonial Wall – React block · affectUI" />
-    <meta property="og:description" content="The landing-page wall of quotes – columns that scroll endlessly in opposite directions, ease to a stop on hover and scrub with inertia. Free and open source –…" />
-    <meta property="og:url" content="https://www.affectui.com/blocks/testimonial-wall" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta property="og:url" content="https://www.affectui.com/" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:site" content="@flohoeller" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="Testimonial Wall – React block · affectUI" />
-    <meta name="twitter:description" content="The landing-page wall of quotes – columns that scroll endlessly in opposite directions, ease to a stop on hover and scrub with inertia. Free and open source –…" />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Blocks","item":"https://www.affectui.com/blocks"},{"@type":"ListItem","position":3,"name":"Testimonial Wall","item":"https://www.affectui.com/blocks/testimonial-wall"}]},{"@type":"SoftwareSourceCode","name":"Testimonial Wall (affectUI)","description":"The landing-page wall of quotes – columns that scroll endlessly in opposite directions, ease to a stop on hover and scrub with inertia","url":"https://www.affectui.com/blocks/testimonial-wall","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","dateCreated":"2026-10-08","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
+    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.affectui.com/#website",
+            "url": "https://www.affectui.com/",
+            "name": "affectUI",
+            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://www.affectui.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.affectui.com/#organization",
+            "name": "affectUI",
+            "url": "https://www.affectui.com/",
+            "logo": "https://www.affectui.com/icon-512.png",
+            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "affectUI",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "url": "https://www.affectui.com/",
+            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
+          }
+        ]
+      }
+    </script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -45,17 +77,21 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const origin = "https://www.affectui.com";
+  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
-  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+    return target.origin === window.location.origin && salesOnly.test(target.pathname)
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  if (serverOnly.test(window.location.pathname)) {
+    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -66,11 +102,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -91,63 +127,33 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (target.pathname === scalingPath) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(scalingPath);
-    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+    if (salesOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
+    } else if (serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
-  <link rel="stylesheet" href="/ateam/composants.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
   </head>
   <body>
-    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/blocks">Blocks</a> › <a href="/blocks/category/social-proof">Social proof</a></p>
-<h1>Testimonial Wall</h1>
-<p>The landing-page wall of quotes – columns that scroll endlessly in opposite directions, ease to a stop on hover and scrub with inertia.</p>
-<p>Free and open source (MIT). Install: <code>npx shadcn@latest add https://www.affectui.com/r/testimonial-wall.json</code> · Import from <code>@/components/ui/testimonial-wall</code></p>
-<h2>When to use</h2><ul><li>A “Loved by” section on a landing or pricing page with eight or more quotes</li><li>Social proof that should feel alive without asking for attention – it runs slowly and stops the moment someone reads</li></ul><h2>When not to use</h2><ul><li>Two or three quotes – show them side by side; a loop of three repeats too obviously</li><li>A single hero quote or a case study – it deserves a static, larger layout</li><li>Reviews people need to search or filter – use a list or grid</li></ul><h2>Usage</h2><pre><code>import { TestimonialWall } from &quot;@/components/ui/testimonial-wall&quot;;
-
-const items = [
-  {
-    quote: &quot;We replaced three half-finished internal kits with it in a sprint.&quot;,
-    name: &quot;Lena Hartmann&quot;,
-    role: &quot;Design Lead&quot;,
-    company: &quot;Fieldnote&quot;,
-    avatar: &quot;/avatars/lena.jpg&quot;,
-    rating: 5,
-  },
-  {
-    quote: &quot;The motion is the part nobody notices – which is exactly the point.&quot;,
-    name: &quot;Jonas Weber&quot;,
-    role: &quot;Staff Engineer&quot;,
-    company: &quot;Ledgerline&quot;,
-    verified: true,
-  },
-  // … at least two quotes per column, ideally four or more
-];
-
-export function Testimonials() {
-  return (
-    &lt;section className=&quot;py-24&quot;&gt;
-      &lt;p className=&quot;text-center text-sm text-neutral-500&quot;&gt;Testimonials&lt;/p&gt;
-      &lt;h2 className=&quot;mb-10 text-center text-3xl font-semibold tracking-tight&quot;&gt;Loved by product teams&lt;/h2&gt;
-      &lt;TestimonialWall items={items} speed={26} className=&quot;[--ui-tw-height:640px]&quot; /&gt;
-    &lt;/section&gt;
-  );
-}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>items</code></td><td><code>{ quote, name, role?, company?, avatar?, rating?, verified? }[]</code></td><td></td><td>The quotes. avatar is a photo URL – without one, or when it fails to load, the initials sit on a soft gray circle. rating (1–5) adds a small gray star row, verified a gray check beside the name. Quotes keep their line breaks and stop at ten lines; role and company wrap once, then end in an ellipsis. Fewer quotes than columns use fewer columns; none shows a short empty note</td></tr><tr><td><code>columns</code></td><td><code>1 | 2 | 3</code></td><td><code>3</code></td><td>Most columns on a wide container; the wall itself drops to 2 below 740px and 1 below 480px of its own width</td></tr><tr><td><code>speed</code></td><td><code>number</code></td><td><code>28</code></td><td>Pixels per second of the first column; the others run about 15 % slower and faster, in alternating directions</td></tr><tr><td><code>pauseOnHover</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Ease the hovered column to a stop and wind it back up on leave. Keyboard focus always stops its column</td></tr><tr><td><code>label</code></td><td><code>string</code></td><td><code>&quot;What customers say&quot;</code></td><td>Accessible name of the wall</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the wrapper. Set the height with --ui-tw-height (600px by default) and the edge fade with --ui-tw-fade (96px)</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Moves through the quotes; the focused card&#39;s column stops and the card is nudged into view</li><li>Shift / Tab: Moves back; leaving the wall lets the columns run again</li></ul><h2>Accessibility</h2><ul><li>A labelled region; every quote is a figure with a blockquote and a figcaption, read out once – the copies that make the loop are aria-hidden and inert</li><li>Keyboard focus stops the column, so a card never runs away from the focus ring</li><li>Hover, focus and press-and-hold all stop the motion, which covers the WCAG pause requirement for moving content</li><li>Star ratings are an image with a text label (“Rated 5 out of 5”), the check is labelled “Verified customer”</li><li>Reduced motion shows every quote once in a static masonry grid</li></ul><h2>Responsive</h2><ul><li>Columns follow the wall&#39;s own width (3 / 2 / 1), so it works in a sidebar as well as full width</li><li>One column on phones with 15px quotes; names win over role and company when space is tight – down to 320px without overflow</li><li>Touch: vertical swipes keep scrolling the page (no scroll trap); pressing and holding a column pauses it to read</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/blocks/logo-marquee">Logo Marquee</a> – The endless “Trusted by” strip – a seamless loop that eases to a stop on hover, scrubs with inertia and lifts the hovered logo to colour</li><li><a href="/motion/tilt-card">Tilt Card</a> – A card that tilts in 3D towards the pointer, with a soft glare that follows it and a smooth spring back</li><li><a href="/motion/text-reveal">Text Reveal</a> – Text that arrives word by word or letter by letter – each piece rises out of a soft blur as it scrolls into view</li></ul></main></div></div>
+    <div id="root">
+      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
+      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
+        affectUI – Agent-ready UI for AI products
+      </h1>
+    </div>
   </body>
 </html>

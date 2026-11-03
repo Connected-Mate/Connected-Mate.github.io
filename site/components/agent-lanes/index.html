@@ -3,29 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agent Lanes – React component · affectUI</title>
-    <link rel="canonical" href="https://www.affectui.com/components/agent-lanes" />
-    <meta name="description" content="Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the…" />
+    <title>affectUI · Agent-ready React UI for AI products</title>
+    <link rel="canonical" href="https://www.affectui.com/" />
+    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="Agent Lanes – React component · affectUI" />
-    <meta property="og:description" content="Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the…" />
-    <meta property="og:url" content="https://www.affectui.com/components/agent-lanes" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta property="og:url" content="https://www.affectui.com/" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:site" content="@flohoeller" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="Agent Lanes – React component · affectUI" />
-    <meta name="twitter:description" content="Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the…" />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Agent Lanes","item":"https://www.affectui.com/components/agent-lanes"}]},{"@type":"SoftwareSourceCode","name":"Agent Lanes (affectUI)","description":"Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the block","url":"https://www.affectui.com/components/agent-lanes","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-17","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
+    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.affectui.com/#website",
+            "url": "https://www.affectui.com/",
+            "name": "affectUI",
+            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://www.affectui.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.affectui.com/#organization",
+            "name": "affectUI",
+            "url": "https://www.affectui.com/",
+            "logo": "https://www.affectui.com/icon-512.png",
+            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "affectUI",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "url": "https://www.affectui.com/",
+            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
+          }
+        ]
+      }
+    </script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -45,17 +77,21 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const origin = "https://www.affectui.com";
+  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
-  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+    return target.origin === window.location.origin && salesOnly.test(target.pathname)
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  if (serverOnly.test(window.location.pathname)) {
+    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -66,11 +102,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -91,51 +127,33 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (target.pathname === scalingPath) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(scalingPath);
-    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+    if (salesOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
+    } else if (serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
-  <link rel="stylesheet" href="/ateam/composants.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
   </head>
   <body>
-    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/agents">Agents</a></p>
-<h1>Agent Lanes</h1>
-<p>Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the block.</p>
-<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/agent-lanes.json</code> · Import from <code>@/components/ui/agent-lanes</code></p>
-<h2>When to use</h2><ul><li>A team of agents works in parallel and people want to see at a glance who is doing what, and since when</li><li>Multi-agent pipelines where work moves from one agent to the next (research → writing → review)</li><li>A control room for agents: spot the one that waits for a decision, or failed, without opening each run</li></ul><h2>When not to use</h2><ul><li>A list of background tasks grouped by state – use Agent Inbox</li><li>The steps of one single run – use Agent Plan or Agent Steering</li><li>Scheduling future work on a calendar – the lanes show the last half hour, not the week ahead</li></ul><h2>Usage</h2><pre><code>import { AgentLanes, type LaneAgent, type LaneTask } from &quot;@/components/ui/agent-lanes&quot;;
-
-const agents: LaneAgent[] = [
-  { id: &quot;research&quot;, name: &quot;Researcher&quot;, model: &quot;Opus 5.5&quot; },
-  { id: &quot;writer&quot;, name: &quot;Writer&quot;, model: &quot;Sonnet 5.5&quot; },
-];
-
-export function AgentRoom({ tasks }: { tasks: LaneTask[] }) {
-  return (
-    &lt;AgentLanes
-      agents={agents}
-      tasks={tasks} // { id, agentId, title, status, start, end?, handoffTo?, ask? }
-      onApprove={(task) =&gt; api.approve(task.id)}
-      onReject={(task) =&gt; api.reject(task.id)}
-      onOpen={(task) =&gt; router.push(`/runs/${task.id}`)}
-    /&gt;
-  );
-}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>agents</code></td><td><code>LaneAgent[]</code></td><td></td><td>One lane each: { id, name, model?, avatar? }. A logo as avatar sits on a white tile; without one the initials show. Free agents get an Idle tag, waiting ones Needs you</td></tr><tr><td><code>tasks</code></td><td><code>LaneTask[]</code></td><td></td><td>{ id, agentId, title, status: &quot;done&quot; | &quot;running&quot; | &quot;waiting&quot; | &quot;failed&quot;, start, end?, handoffTo?, ask?, summary?, tools? }. No end: the block reaches &quot;now&quot;</td></tr><tr><td><code>span</code></td><td><code>number</code></td><td><code>30 minutes</code></td><td>How much time the lanes show, in ms</td></tr><tr><td><code>now</code></td><td><code>number</code></td><td></td><td>A clock you control, e.g. a faster one for a demo. Without it the lanes follow real time, every second</td></tr><tr><td><code>onApprove / onReject</code></td><td><code>(task: LaneTask) =&gt; void</code></td><td></td><td>Approve or Reject on a waiting task. Without handlers the lanes change the status themselves</td></tr><tr><td><code>onOpen</code></td><td><code>(task: LaneTask) =&gt; void</code></td><td></td><td>Shows an Open link in the tooltip of a block that doesn&#39;t wait</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td><code>&quot;Agents&quot;</code></td><td>Heading in the bar</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Moves from block to block, lane by lane</li><li>Enter: Opens a block&#39;s tooltip (what got done), or the decision on a waiting one</li><li>Esc: Closes the decision and returns to its block</li></ul><h2>Accessibility</h2><ul><li>Every lane is a list labelled with the agent&#39;s name; every block is a button that names the agent, task, state and time</li><li>A waiting block controls its decision popover (aria-expanded), which is a labelled dialog with Approve focused</li><li>How many tasks need someone is announced politely when it changes</li></ul><h2>Responsive</h2><ul><li>Fills its container up to 760px</li><li>Below 520px the names column shrinks to the avatars</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/agent-inbox">Agent Inbox</a> – All your background agent tasks in one calm list – live clocks and status tags, filter tabs with rolling counts, rows that unfold to the last steps with Approve, Reject, Retry or Open, and glide to their new place</li><li><a href="/components/agent-plan">Agent Plan</a> – An agent&#39;s step-by-step plan to review before it runs – rename, drag to reorder, remove or add steps, then watch each one run with live timers and retry from a failed step</li><li><a href="/components/agent-steering">Agent Steering</a> – Steer an agent while it works – queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away</li><li><a href="/components/approval-card">Approval Card</a> – An agent asks before it acts – risk badge, preview, Approve and Deny with shortcuts, a pausing countdown, and a smooth morph into a resolved row</li></ul><h2>Guides</h2><ul><li><a href="/guides/agent-dashboard-react">How to build an agent dashboard in React</a> – The views an AI agent dashboard needs – what&#39;s running, who started what, what needs a person, what it cost – and React components for each.</li><li><a href="/guides/show-what-ai-agent-is-doing">How to show what an AI agent is doing</a> – UI patterns that make an AI agent&#39;s work visible – the current step, its plan, tool calls, a live tree or timeline, and a trace of where time and money went.</li><li><a href="/guides/multi-agent-ui-react">Multi-agent UI in React: orchestrators, sub-agents and hand-offs</a> – How to show several AI agents working together – who started whom, who is busy, hand-offs, parallel work, conflicts and the queue – with React components for each.</li></ul></main></div></div>
+    <div id="root">
+      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
+      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
+        affectUI – Agent-ready UI for AI products
+      </h1>
+    </div>
   </body>
 </html>

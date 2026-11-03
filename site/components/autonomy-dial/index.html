@@ -3,29 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Autonomy Dial – React component · affectUI</title>
-    <link rel="canonical" href="https://www.affectui.com/components/autonomy-dial" />
-    <meta name="description" content="How much an agent may do on its own – a three-stop dial, and its real actions gliding between “Runs on its own” and “Asks you first”, with a lock for what…" />
+    <title>affectUI · Agent-ready React UI for AI products</title>
+    <link rel="canonical" href="https://www.affectui.com/" />
+    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="Autonomy Dial – React component · affectUI" />
-    <meta property="og:description" content="How much an agent may do on its own – a three-stop dial, and its real actions gliding between “Runs on its own” and “Asks you first”, with a lock for what…" />
-    <meta property="og:url" content="https://www.affectui.com/components/autonomy-dial" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta property="og:url" content="https://www.affectui.com/" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:site" content="@flohoeller" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="Autonomy Dial – React component · affectUI" />
-    <meta name="twitter:description" content="How much an agent may do on its own – a three-stop dial, and its real actions gliding between “Runs on its own” and “Asks you first”, with a lock for what…" />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Autonomy Dial","item":"https://www.affectui.com/components/autonomy-dial"}]},{"@type":"SoftwareSourceCode","name":"Autonomy Dial (affectUI)","description":"How much an agent may do on its own – a three-stop dial, and its real actions gliding between “Runs on its own” and “Asks you first”, with a lock for what always asks","url":"https://www.affectui.com/components/autonomy-dial","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-16","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
+    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.affectui.com/#website",
+            "url": "https://www.affectui.com/",
+            "name": "affectUI",
+            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://www.affectui.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.affectui.com/#organization",
+            "name": "affectUI",
+            "url": "https://www.affectui.com/",
+            "logo": "https://www.affectui.com/icon-512.png",
+            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "affectUI",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "url": "https://www.affectui.com/",
+            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
+          }
+        ]
+      }
+    </script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -45,17 +77,21 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const origin = "https://www.affectui.com";
+  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
-  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+    return target.origin === window.location.origin && salesOnly.test(target.pathname)
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  if (serverOnly.test(window.location.pathname)) {
+    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -66,11 +102,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -91,58 +127,33 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (target.pathname === scalingPath) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(scalingPath);
-    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+    if (salesOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
+    } else if (serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
-  <link rel="stylesheet" href="/ateam/composants.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
   </head>
   <body>
-    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/agents">Agents</a></p>
-<h1>Autonomy Dial</h1>
-<p>How much an agent may do on its own – a three-stop dial, and its real actions gliding between “Runs on its own” and “Asks you first”, with a lock for what always asks.</p>
-<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/autonomy-dial.json</code> · Import from <code>@/components/ui/autonomy-dial</code></p>
-<h2>When to use</h2><ul><li>Settings of an agent product: how much the agent may do without asking</li><li>Onboarding of a new agent, where people decide how much to trust it before the first run</li><li>Anywhere a permission level is abstract – the list shows what the level actually means</li></ul><h2>When not to use</h2><ul><li>One decision before one action – use Approval Card</li><li>Turning integrations on and off – use Integration Settings</li><li>Many independent permissions with no levels – a plain list of switches is clearer</li></ul><h2>Usage</h2><pre><code>import { useState } from &quot;react&quot;;
-import { AutonomyDial, type AgentAction, type AutonomyLevel } from &quot;@/components/ui/autonomy-dial&quot;;
-
-const actions: AgentAction[] = [
-  { id: &quot;read&quot;, label: &quot;Read files and docs&quot;, detail: &quot;Drive · Notion&quot;, risk: &quot;safe&quot; },
-  { id: &quot;draft&quot;, label: &quot;Draft emails&quot;, risk: &quot;safe&quot; },
-  { id: &quot;send&quot;, label: &quot;Send emails&quot;, detail: &quot;To customers&quot;, risk: &quot;risky&quot; },
-  { id: &quot;delete&quot;, label: &quot;Delete files&quot;, risk: &quot;destructive&quot; },
-  { id: &quot;spend&quot;, label: &quot;Spend money&quot;, detail: &quot;Up to $500&quot;, risk: &quot;destructive&quot; },
-];
-
-export function AgentPermissions() {
-  const [level, setLevel] = useState&lt;AutonomyLevel&gt;(1);
-  const [pinned, setPinned] = useState([&quot;spend&quot;]);
-  return (
-    &lt;AutonomyDial
-      title=&quot;Sales agent&quot;
-      actions={actions}
-      level={level}
-      onLevelChange={setLevel}
-      pinned={pinned}
-      onPinnedChange={setPinned}
-    /&gt;
-  );
-}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>actions</code></td><td><code>AgentAction[]</code></td><td></td><td>The agent&#39;s actions: { id, label, detail?, risk: &quot;safe&quot; | &quot;risky&quot; | &quot;destructive&quot;, icon? }</td></tr><tr><td><code>level</code></td><td><code>0 | 1 | 2</code></td><td></td><td>Controlled level: 0 Always ask, 1 If risky (safe actions run), 2 Full auto</td></tr><tr><td><code>defaultLevel</code></td><td><code>0 | 1 | 2</code></td><td><code>1</code></td><td>Starting level when uncontrolled</td></tr><tr><td><code>onLevelChange</code></td><td><code>(level: AutonomyLevel) =&gt; void</code></td><td></td><td>Another level was picked</td></tr><tr><td><code>pinned</code></td><td><code>string[]</code></td><td></td><td>Controlled ids of actions that always ask, whatever the level</td></tr><tr><td><code>defaultPinned</code></td><td><code>string[]</code></td><td><code>[]</code></td><td>Starting locks when uncontrolled</td></tr><tr><td><code>onPinnedChange</code></td><td><code>(pinned: string[]) =&gt; void</code></td><td></td><td>A lock was set or removed</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td><code>&quot;Agent permissions&quot;</code></td><td>Heading, e.g. the agent&#39;s name</td></tr><tr><td><code>subtitle</code></td><td><code>string</code></td><td><code>&quot;What it may do without asking you&quot;</code></td><td>Line under the heading</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>← / →: Picks the previous or next level (also ↑ ↓)</li><li>Tab: Moves from the levels to the locks of the actions</li><li>Space: Sets or removes the focused lock</li></ul><h2>Accessibility</h2><ul><li>The levels are a radio group labelled &quot;Autonomy&quot;, described by a sentence on what the chosen level means</li><li>Both groups are labelled sections; every lock is a toggle button with aria-pressed and a label naming its action</li><li>Every change is announced politely: the level and how many actions run on their own or ask first</li></ul><h2>Responsive</h2><ul><li>Fills its container up to 400px</li><li>Below 340px the detail lines are left out and the levels get tighter</li><li>Without hover (touch) the locks are always visible; touch screens get taller rows</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/approval-card">Approval Card</a> – An agent asks before it acts – risk badge, preview, Approve and Deny with shortcuts, a pausing countdown, and a smooth morph into a resolved row</li><li><a href="/components/agent-steering">Agent Steering</a> – Steer an agent while it works – queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away</li><li><a href="/components/integration-settings">Integration Settings</a> – Settings card for a connected service – on/off switch, API key, validated site address, time zone and a save bar</li><li><a href="/components/agent-plan">Agent Plan</a> – An agent&#39;s step-by-step plan to review before it runs – rename, drag to reorder, remove or add steps, then watch each one run with live timers and retry from a failed step</li></ul><h2>Guides</h2><ul><li><a href="/guides/human-in-the-loop-ui">Human-in-the-loop UI: approvals, permissions and autonomy</a> – UI patterns for keeping people in control of AI agents – approval cards, permission requests, autonomy levels, steering and reviewing changes.</li><li><a href="/guides/approval-ui-ai-agents">Approval UI for AI agents: what to show before an agent acts</a> – How to design the approval step for AI agent actions – what the card must show, risk levels, timeouts, batching many requests, and undo after approval.</li></ul></main></div></div>
+    <div id="root">
+      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
+      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
+        affectUI – Agent-ready UI for AI products
+      </h1>
+    </div>
   </body>
 </html>

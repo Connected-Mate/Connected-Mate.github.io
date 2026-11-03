@@ -3,29 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stepper Form – React component · affectUI</title>
-    <link rel="canonical" href="https://www.affectui.com/components/stepper-form" />
-    <meta name="description" content="A multi-step flow for onboarding and setup – steps that fill and check off, sliding steps, a card that morphs to each step, inline validation and a success…" />
+    <title>affectUI · Agent-ready React UI for AI products</title>
+    <link rel="canonical" href="https://www.affectui.com/" />
+    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="Stepper Form – React component · affectUI" />
-    <meta property="og:description" content="A multi-step flow for onboarding and setup – steps that fill and check off, sliding steps, a card that morphs to each step, inline validation and a success…" />
-    <meta property="og:url" content="https://www.affectui.com/components/stepper-form" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta property="og:url" content="https://www.affectui.com/" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:site" content="@flohoeller" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="Stepper Form – React component · affectUI" />
-    <meta name="twitter:description" content="A multi-step flow for onboarding and setup – steps that fill and check off, sliding steps, a card that morphs to each step, inline validation and a success…" />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Stepper Form","item":"https://www.affectui.com/components/stepper-form"}]},{"@type":"SoftwareSourceCode","name":"Stepper Form (affectUI)","description":"A multi-step flow for onboarding and setup – steps that fill and check off, sliding steps, a card that morphs to each step, inline validation and a success state","url":"https://www.affectui.com/components/stepper-form","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-08","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
+    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.affectui.com/#website",
+            "url": "https://www.affectui.com/",
+            "name": "affectUI",
+            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://www.affectui.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.affectui.com/#organization",
+            "name": "affectUI",
+            "url": "https://www.affectui.com/",
+            "logo": "https://www.affectui.com/icon-512.png",
+            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "affectUI",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "url": "https://www.affectui.com/",
+            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
+          }
+        ]
+      }
+    </script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -45,17 +77,21 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const origin = "https://www.affectui.com";
+  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
-  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+    return target.origin === window.location.origin && salesOnly.test(target.pathname)
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  if (serverOnly.test(window.location.pathname)) {
+    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -66,11 +102,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -91,95 +127,33 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (target.pathname === scalingPath) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(scalingPath);
-    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+    if (salesOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
+    } else if (serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
-  <link rel="stylesheet" href="/ateam/composants.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
   </head>
   <body>
-    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/inputs">Inputs</a></p>
-<h1>Stepper Form</h1>
-<p>A multi-step flow for onboarding and setup – steps that fill and check off, sliding steps, a card that morphs to each step, inline validation and a success state.</p>
-<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/stepper-form.json</code> · Import from <code>@/components/ui/stepper-form</code></p>
-<h2>When to use</h2><ul><li>Onboarding, checkout or setup wizards where one long form would feel like too much at once</li><li>Flows whose later steps depend on earlier answers, ending in a review before anything is created</li></ul><h2>When not to use</h2><ul><li>Two or three fields – a single form is faster</li><li>Settings people jump around in freely – use tabs or sections instead</li></ul><h2>Usage</h2><pre><code>import { StepperForm, StepperField, StepperInput, StepperTags, StepperChoices, StepperReview, type Step } from &quot;@/components/ui/stepper-form&quot;;
-
-type Values = { name: string; slug: string; invites: string[]; plan: string };
-
-const steps: Step&lt;Values&gt;[] = [
-  {
-    id: &quot;workspace&quot;,
-    title: &quot;Workspace&quot;,
-    heading: &quot;Name your workspace&quot;,
-    render: ({ values, setValues }) =&gt; (
-      &lt;&gt;
-        &lt;StepperField name=&quot;name&quot; label=&quot;Workspace name&quot;&gt;
-          &lt;StepperInput value={values.name} onChange={(e) =&gt; setValues({ name: e.target.value, slug: slugify(e.target.value) })} /&gt;
-        &lt;/StepperField&gt;
-        &lt;StepperField name=&quot;slug&quot; label=&quot;Workspace URL&quot;&gt;
-          &lt;StepperInput prefix=&quot;acme.app/&quot; value={values.slug} onChange={(e) =&gt; setValues({ slug: e.target.value })} /&gt;
-        &lt;/StepperField&gt;
-      &lt;/&gt;
-    ),
-    validate: (v) =&gt; ({ name: v.name.trim() ? undefined : &quot;Give your workspace a name&quot; }),
-  },
-  {
-    id: &quot;team&quot;,
-    title: &quot;Team&quot;,
-    render: ({ values, setValues }) =&gt; (
-      &lt;StepperField name=&quot;invites&quot; label=&quot;Email addresses&quot; optional&gt;
-        &lt;StepperTags value={values.invites} onChange={(invites) =&gt; setValues({ invites })} /&gt;
-      &lt;/StepperField&gt;
-    ),
-  },
-  {
-    id: &quot;plan&quot;,
-    title: &quot;Plan&quot;,
-    render: ({ values, setValues }) =&gt; (
-      &lt;StepperChoices label=&quot;Plan&quot; value={values.plan} options={plans} onChange={(plan) =&gt; setValues({ plan })} /&gt;
-    ),
-  },
-  {
-    id: &quot;review&quot;,
-    title: &quot;Review&quot;,
-    render: ({ values, goTo }) =&gt; (
-      &lt;StepperReview
-        onEdit={goTo}
-        rows={[
-          { label: &quot;Workspace&quot;, value: values.name, step: &quot;workspace&quot; },
-          { label: &quot;Plan&quot;, value: values.plan, step: &quot;plan&quot; },
-        ]}
-      /&gt;
-    ),
-  },
-];
-
-export function Onboarding() {
-  return (
-    &lt;StepperForm&lt;Values&gt;
-      steps={steps}
-      initialValues={{ name: &quot;&quot;, slug: &quot;&quot;, invites: [], plan: &quot;pro&quot; }}
-      submitLabel=&quot;Create workspace&quot;
-      onComplete={(values) =&gt; api.createWorkspace(values)}
-    /&gt;
-  );
-}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>steps</code></td><td><code>Step&lt;V&gt;[]</code></td><td></td><td>{ id, title, heading?, description?, render(ctx), validate?(values) } – render gets values, setValues, errors, goTo and next; validate returns messages by field name</td></tr><tr><td><code>initialValues</code></td><td><code>V</code></td><td></td><td>Values shared by all steps, so Back and Edit keep what was entered</td></tr><tr><td><code>onComplete</code></td><td><code>(values: V) =&gt; void | Promise&lt;void&gt;</code></td><td></td><td>Runs on the last step; a promise shows the submitting label until it settles, a thrown error is shown next to the button</td></tr><tr><td><code>initialStep</code></td><td><code>number</code></td><td><code>0</code></td><td>Index of the first step shown</td></tr><tr><td><code>step</code></td><td><code>number</code></td><td></td><td>Controlled step index; pair with onStepChange</td></tr><tr><td><code>onStepChange</code></td><td><code>(step: number) =&gt; void</code></td><td></td><td>Called whenever the step changes</td></tr><tr><td><code>submitLabel</code></td><td><code>string</code></td><td><code>&quot;Finish&quot;</code></td><td>Label of the button on the last step</td></tr><tr><td><code>submittingLabel</code></td><td><code>string</code></td><td><code>&quot;Creating…&quot;</code></td><td>Label while onComplete runs</td></tr><tr><td><code>success</code></td><td><code>(values: V, reset: () =&gt; void) =&gt; ReactNode</code></td><td></td><td>Replaces the steps once done – StepperSuccess gives the popping check, a heading and a line</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr><tr><td><code>StepperField</code></td><td><code>{ name, label, hint?, optional?, children }</code></td><td></td><td>Label, control and inline message for the field name in validate; the control shakes when Continue finds a problem</td></tr><tr><td><code>StepperInput</code></td><td><code>InputHTMLAttributes &amp; { prefix? }</code></td><td></td><td>A text field wired to its StepperField; prefix shows fixed text like &quot;acme.app/&quot;</td></tr><tr><td><code>StepperTags</code></td><td><code>{ value, onChange, validate?, max?, placeholder? }</code></td><td></td><td>Entries as chips – emails by default; Enter, comma or a pasted list add, × or Backspace remove</td></tr><tr><td><code>StepperChoices</code></td><td><code>{ value, onChange, options, label }</code></td><td></td><td>Selectable cards { value, title, aside?, description?, badge? } as a radio group with a gliding ring</td></tr><tr><td><code>StepperReview</code></td><td><code>{ rows, onEdit? }</code></td><td></td><td>A summary { label, value, step? } – rows with a step get an Edit link (pass goTo)</td></tr></tbody></table><h2>Keyboard</h2><ul><li>↵: Continues (in a chip field: adds the typed entry first, Continue when it&#39;s empty)</li><li>Tab: Moves through the fields, then Back and Continue</li><li>← / →: In the plan cards: moves and selects; ↵ picks and continues</li><li>, / ⌫: In a chip field: comma adds, Backspace in the empty field removes the last chip</li></ul><h2>Accessibility</h2><ul><li>The steps are an ordered list with aria-current=&quot;step&quot;; finished steps are buttons that jump back</li><li>On narrow screens the list stays for screen readers while the compact &quot;Step 2 of 4&quot; text shows on screen</li><li>The new step&#39;s first field (or its heading) gets the focus; after a failed Continue the first invalid field does</li><li>Fields carry aria-invalid and point to their message with aria-describedby; &quot;Step 2 of 4: Team&quot; and errors are announced in a polite live region</li><li>Continue looks dimmed while the step isn&#39;t valid but still answers, so keyboard and screen reader users hear what&#39;s missing</li></ul><h2>Responsive</h2><ul><li>Fills its container up to 520px and works down to 320px</li><li>Below 420px the steps collapse to &quot;Step 2 of 4 · Team&quot;, plan cards stack and review rows wrap</li><li>Touch screens get 16px fields (no zoom on iOS) and buttons of at least 40px; the footer sticks to the bottom in long pages</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/setup-guide">Setup Guide</a> – Onboarding panel with a progress bar and collapsible task groups that strike through when done</li><li><a href="/components/progress-tracker">Progress Tracker</a> – Onboarding checklist with an animated progress bar, ticks that draw themselves and auto play</li><li><a href="/components/combobox">Combobox</a> – Pick one or many from a searchable, grouped list – chips with avatars, highlighted matches, create-on-the-fly and full keyboard support</li><li><a href="/components/segmented-control">Segmented Control</a> – Switch between two to six options – a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges</li></ul></main></div></div>
+    <div id="root">
+      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
+      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
+        affectUI – Agent-ready UI for AI products
+      </h1>
+    </div>
   </body>
 </html>

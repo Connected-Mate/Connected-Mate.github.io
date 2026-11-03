@@ -3,29 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inline Diff – React component · affectUI</title>
-    <link rel="canonical" href="https://www.affectui.com/components/inline-diff" />
-    <meta name="description" content="AI edits to prose shown inline – struck and added words you accept or reject one by one, with keys, a popover and undo. Part of affectUI Pro – one file, no…" />
+    <title>affectUI · Agent-ready React UI for AI products</title>
+    <link rel="canonical" href="https://www.affectui.com/" />
+    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="Inline Diff – React component · affectUI" />
-    <meta property="og:description" content="AI edits to prose shown inline – struck and added words you accept or reject one by one, with keys, a popover and undo. Part of affectUI Pro – one file, no…" />
-    <meta property="og:url" content="https://www.affectui.com/components/inline-diff" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta property="og:url" content="https://www.affectui.com/" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:site" content="@flohoeller" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="Inline Diff – React component · affectUI" />
-    <meta name="twitter:description" content="AI edits to prose shown inline – struck and added words you accept or reject one by one, with keys, a popover and undo. Part of affectUI Pro – one file, no…" />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Inline Diff","item":"https://www.affectui.com/components/inline-diff"}]},{"@type":"SoftwareSourceCode","name":"Inline Diff (affectUI)","description":"AI edits to prose shown inline – struck and added words you accept or reject one by one, with keys, a popover and undo","url":"https://www.affectui.com/components/inline-diff","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-09","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
+    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.affectui.com/#website",
+            "url": "https://www.affectui.com/",
+            "name": "affectUI",
+            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://www.affectui.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.affectui.com/#organization",
+            "name": "affectUI",
+            "url": "https://www.affectui.com/",
+            "logo": "https://www.affectui.com/icon-512.png",
+            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "affectUI",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "url": "https://www.affectui.com/",
+            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
+          }
+        ]
+      }
+    </script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -45,17 +77,21 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const origin = "https://www.affectui.com";
+  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
-  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+    return target.origin === window.location.origin && salesOnly.test(target.pathname)
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  if (serverOnly.test(window.location.pathname)) {
+    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -66,11 +102,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -91,46 +127,33 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (target.pathname === scalingPath) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(scalingPath);
-    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+    if (salesOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
+    } else if (serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
-  <link rel="stylesheet" href="/ateam/composants.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
   </head>
   <body>
-    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/agents">Agents</a></p>
-<h1>Inline Diff</h1>
-<p>AI edits to prose shown inline – struck and added words you accept or reject one by one, with keys, a popover and undo.</p>
-<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/inline-diff.json</code> · Import from <code>@/components/ui/inline-diff</code></p>
-<h2>When to use</h2><ul><li>An AI rewrote a piece of prose – an email, a paragraph, a product description – and people should approve each edit</li><li>&quot;Make it shorter&quot;, &quot;fix the tone&quot;, &quot;fix grammar&quot; actions where most edits are small and scattered through the text</li><li>Review steps in an agent flow where the result should only change with an explicit yes</li></ul><h2>When not to use</h2><ul><li>Code or line-based text – use a line diff with gutters instead</li><li>Full rewrites where almost every word changes – show the new version next to the old one</li><li>Live typing suggestions inside an editor – this reviews a finished suggestion, it isn&#39;t a text field</li></ul><h2>Usage</h2><pre><code>import { InlineDiff } from &quot;@/components/ui/inline-diff&quot;;
-
-export function ReviewRewrite({ draft, rewrite }: { draft: string; rewrite: string }) {
-  return (
-    &lt;InlineDiff
-      label=&quot;Suggested by AI · Make it shorter&quot;
-      original={draft}
-      suggested={rewrite}
-      onChange={(text) =&gt; saveDraft(text)}
-      onDone={(text) =&gt; setFinal(text)}
-    /&gt;
-  );
-}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>original</code></td><td><code>string</code></td><td><code>&quot;&quot;</code></td><td>The text as it is now</td></tr><tr><td><code>suggested</code></td><td><code>string</code></td><td><code>&quot;&quot;</code></td><td>The text the AI suggests – diffed word by word against original</td></tr><tr><td><code>changes</code></td><td><code>DiffSegment[]</code></td><td></td><td>Pre-computed segments ({ type: &quot;equal&quot;, text } or { type: &quot;change&quot;, remove, insert }) instead of original and suggested</td></tr><tr><td><code>onChange</code></td><td><code>(text: string) =&gt; void</code></td><td></td><td>Called on every decision and undo with the text so far – pending changes keep the original words</td></tr><tr><td><code>onDone</code></td><td><code>(text: string) =&gt; void</code></td><td></td><td>Called when the last pending change is decided, with the final text</td></tr><tr><td><code>label</code></td><td><code>string</code></td><td></td><td>Small line on the gray tray above the card, e.g. &quot;Suggested by AI · Make it shorter&quot;</td></tr><tr><td><code>ref</code></td><td><code>Ref&lt;InlineDiffHandle&gt;</code></td><td></td><td>highlight(index | null), accept(index), reject(index), acceptAll(), rejectAll(), undo(), reset()</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab / Shift+Tab: Move between pending changes</li><li>‹ / ›: Toolbar arrows: highlight the previous / next pending change (wrapping around) and open its popover</li><li>Y / Enter: Accept the focused change and move to the next one</li><li>N / Backspace: Reject the focused change and move to the next one</li><li>Esc: Leave the change or clear the arrow highlight</li></ul><h2>Accessibility</h2><ul><li>Every pending change is a focusable button labelled like &quot;Suggestion 2 of 4: replace “available” with “live”. Press Y to accept, N to reject&quot;</li><li>Removed words are a &lt;del&gt;, new words an &lt;ins&gt;; the side that was dropped is hidden from screen readers once decided</li><li>Each decision, Accept all, Reject all and Undo are announced in a polite live region with the number left</li><li>After the last decision focus moves to Undo, so the keyboard is never stranded; the hidden toolbar is inert</li><li>Popover buttons are labelled and keep focus on the change; visible focus rings throughout</li><li>The prev/next arrows never steal focus: a focused change hands focus to the next one, otherwise the change is highlighted while focus stays on the arrow</li><li>Deleted words are red and struck, added words green – color is never the only cue (strike-through, &lt;del&gt; and &lt;ins&gt;)</li></ul><h2>Responsive</h2><ul><li>Fills its container; the paragraph wraps freely and changes wrap across lines with their tints</li><li>The popover stays inside the card horizontally, down to 320px wide</li><li>Below 400px the prev/next arrows step aside; on touch screens the popover buttons grow and drop the key hints</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/writing-assistant">Writing Assistant</a> – AI chat card with a soft gradient glow, suggestions, streaming replies and live voice dictation</li><li><a href="/components/change-summary">Change Summary</a> – What moved since last time – one metric per row with a colored trend</li><li><a href="/components/approval-card">Approval Card</a> – An agent asks before it acts – risk badge, preview, Approve and Deny with shortcuts, a pausing countdown, and a smooth morph into a resolved row</li></ul><h2>Guides</h2><ul><li><a href="/guides/human-in-the-loop-ui">Human-in-the-loop UI: approvals, permissions and autonomy</a> – UI patterns for keeping people in control of AI agents – approval cards, permission requests, autonomy levels, steering and reviewing changes.</li><li><a href="/guides/approval-ui-ai-agents">Approval UI for AI agents: what to show before an agent acts</a> – How to design the approval step for AI agent actions – what the card must show, risk levels, timeouts, batching many requests, and undo after approval.</li></ul></main></div></div>
+    <div id="root">
+      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
+      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
+        affectUI – Agent-ready UI for AI products
+      </h1>
+    </div>
   </body>
 </html>

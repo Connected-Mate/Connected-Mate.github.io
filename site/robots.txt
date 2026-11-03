@@ -3,6 +3,3 @@ Allow: /
 Disallow: /account
 Disallow: /api/
 Disallow: /partner
-Disallow: /screens/*/full
-
-Sitemap: https://www.affectui.com/sitemap.xml

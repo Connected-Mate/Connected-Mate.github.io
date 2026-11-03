@@ -3,29 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Combobox – React component · affectUI</title>
-    <link rel="canonical" href="https://www.affectui.com/components/combobox" />
-    <meta name="description" content="Pick one or many from a searchable, grouped list – chips with avatars, highlighted matches, create-on-the-fly and full keyboard support. Part of affectUI Pro…" />
+    <title>affectUI · Agent-ready React UI for AI products</title>
+    <link rel="canonical" href="https://www.affectui.com/" />
+    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="Combobox – React component · affectUI" />
-    <meta property="og:description" content="Pick one or many from a searchable, grouped list – chips with avatars, highlighted matches, create-on-the-fly and full keyboard support. Part of affectUI Pro…" />
-    <meta property="og:url" content="https://www.affectui.com/components/combobox" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta property="og:url" content="https://www.affectui.com/" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:site" content="@flohoeller" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="Combobox – React component · affectUI" />
-    <meta name="twitter:description" content="Pick one or many from a searchable, grouped list – chips with avatars, highlighted matches, create-on-the-fly and full keyboard support. Part of affectUI Pro…" />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Combobox","item":"https://www.affectui.com/components/combobox"}]},{"@type":"SoftwareSourceCode","name":"Combobox (affectUI)","description":"Pick one or many from a searchable, grouped list – chips with avatars, highlighted matches, create-on-the-fly and full keyboard support","url":"https://www.affectui.com/components/combobox","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-08","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
+    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.affectui.com/#website",
+            "url": "https://www.affectui.com/",
+            "name": "affectUI",
+            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://www.affectui.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.affectui.com/#organization",
+            "name": "affectUI",
+            "url": "https://www.affectui.com/",
+            "logo": "https://www.affectui.com/icon-512.png",
+            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "affectUI",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "url": "https://www.affectui.com/",
+            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
+          }
+        ]
+      }
+    </script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -45,17 +77,21 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const origin = "https://www.affectui.com";
+  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
-  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+    return target.origin === window.location.origin && salesOnly.test(target.pathname)
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  if (serverOnly.test(window.location.pathname)) {
+    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -66,11 +102,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -91,54 +127,33 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (target.pathname === scalingPath) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(scalingPath);
-    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+    if (salesOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
+    } else if (serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
-  <link rel="stylesheet" href="/ateam/composants.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
   </head>
   <body>
-    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/inputs">Inputs</a></p>
-<h1>Combobox</h1>
-<p>Pick one or many from a searchable, grouped list – chips with avatars, highlighted matches, create-on-the-fly and full keyboard support.</p>
-<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/combobox.json</code> · Import from <code>@/components/ui/combobox</code></p>
-<h2>When to use</h2><ul><li>Assigning people, labels, tags or projects – anything picked from a list that&#39;s too long to scan</li><li>Filters where several values can apply at once, like owners or statuses</li><li>Tag fields that should also accept new values (creatable)</li></ul><h2>When not to use</h2><ul><li>Up to five fixed choices – checkboxes or a segmented control show them all at once</li><li>Free text with no list behind it – use a plain input</li><li>Running actions rather than picking values – use the command menu</li></ul><h2>Usage</h2><pre><code>import { Combobox, type ComboboxOption } from &quot;@/components/ui/combobox&quot;;
-
-const people: ComboboxOption[] = [
-  { value: &quot;maya&quot;, label: &quot;Maya Chen&quot;, hint: &quot;Product Designer&quot;, avatar: true, group: &quot;Design&quot; },
-  { value: &quot;sara&quot;, label: &quot;Sara Okafor&quot;, hint: &quot;Staff Engineer&quot;, avatar: &quot;/avatars/sara.jpg&quot;, group: &quot;Engineering&quot; },
-  { value: &quot;elif&quot;, label: &quot;Elif Yilmaz&quot;, hint: &quot;Head of Product&quot;, avatar: true, group: &quot;Product&quot; },
-];
-
-export function Reviewers() {
-  const [reviewers, setReviewers] = useState&lt;string[]&gt;([&quot;maya&quot;]);
-  return (
-    &lt;Combobox
-      label=&quot;Reviewers&quot;
-      options={people}
-      value={reviewers}
-      onChange={setReviewers}
-      placeholder=&quot;Add reviewers…&quot;
-      maxVisibleTags={4}
-    /&gt;
-  );
-}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>options</code></td><td><code>{ value, label, hint?, avatar?, color?, icon?, group?, keywords? }[]</code></td><td></td><td>The list. avatar is an image URL or true for initials; options with the same group are listed under one title</td></tr><tr><td><code>multiple</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Pick many (chips) or one – one closes the list after picking</td></tr><tr><td><code>value</code></td><td><code>string[]</code></td><td></td><td>Controlled values (also for single choice, with at most one entry)</td></tr><tr><td><code>defaultValue</code></td><td><code>string[]</code></td><td><code>[]</code></td><td>Starting values when uncontrolled</td></tr><tr><td><code>onChange</code></td><td><code>(value: string[], options: ComboboxOption[]) =&gt; void</code></td><td></td><td>Called on every pick, removal or creation</td></tr><tr><td><code>placeholder</code></td><td><code>string</code></td><td><code>&quot;Search…&quot;</code></td><td>Shown while nothing is picked</td></tr><tr><td><code>creatable</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Offer a create row when no option matches the typed text exactly</td></tr><tr><td><code>onCreate</code></td><td><code>(text: string) =&gt; ComboboxOption | void</code></td><td></td><td>Builds the new option – defaults to { value: text, label: text }</td></tr><tr><td><code>createLabel</code></td><td><code>(text: string) =&gt; string</code></td><td><code>Create “…”</code></td><td>Text of the create row, e.g. Invite “…”</td></tr><tr><td><code>maxVisibleTags</code></td><td><code>number</code></td><td></td><td>Show at most this many chips, the rest as a &quot;+3&quot; chip</td></tr><tr><td><code>label</code></td><td><code>string</code></td><td></td><td>Visible label above the field (also names the list)</td></tr><tr><td><code>defaultOpen</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Open the list right away</td></tr><tr><td><code>emptyText</code></td><td><code>string</code></td><td><code>&quot;No results&quot;</code></td><td>Shown when nothing matches</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>↑ / ↓: Open the list, then move between rows</li><li>↵: Pick or unpick the active row (or create)</li><li>⌫: In the empty field: highlight the last chip, press again to remove it</li><li>Esc: Close the list; when closed, clear the typed text</li><li>Tab: Close the list and move on</li></ul><h2>Accessibility</h2><ul><li>Follows the ARIA combobox pattern: the input has role combobox with aria-expanded, aria-controls and aria-activedescendant; the list is a listbox with grouped options</li><li>Picked rows carry aria-selected, the listbox is aria-multiselectable in multiple mode</li><li>Picks and removals are announced in a polite live region, together with the count</li><li>Focus stays in the input while clicking rows and chip × buttons; the field shows a soft focus ring</li></ul><h2>Responsive</h2><ul><li>The list is as wide as the field, so it always fits the screen</li><li>Chips wrap onto new lines and long names truncate – works down to 320px</li><li>Touch screens get 44px rows, bigger chip buttons and 16px input text (no iOS zoom)</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/filter-menu">Filter Menu</a> – Grouped filters with removable chips, collapsible checkbox groups, Clear all and full keyboard control</li><li><a href="/components/command-menu">Command Menu</a> – Search and run anything from one field – tool actions with logos and ⌘1–⌘5, everyday commands with icons</li><li><a href="/components/integration-picker">Integration Picker</a> – Integrations page of a command menu – search, a list of services and the picked one with its connection on two tiles</li></ul></main></div></div>
+    <div id="root">
+      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
+      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
+        affectUI – Agent-ready UI for AI products
+      </h1>
+    </div>
   </body>
 </html>

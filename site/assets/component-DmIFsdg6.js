@@ -93,17 +93,17 @@ export function GhostedChat({
 const css = /* css */ \`
 .ui-gc {
   --ui-gc-bubble: #FFFFFF;
-  --ui-gc-bubble-border: #e8eef6;
-  --ui-gc-bubble-shadow: 0 2px 6px rgba(7, 28, 59, 0.08), 0 1px 2px rgba(7, 28, 59, 0.05);
-  --ui-gc-text: #354d70;
-  --ui-gc-ink: #091f40;
-  --ui-gc-status: #8f9eb4;
-  --ui-gc-read: #9facc0;
+  --ui-gc-bubble-border: #EDEDED;
+  --ui-gc-bubble-shadow: 0 2px 6px rgba(28, 29, 31, 0.08), 0 1px 2px rgba(28, 29, 31, 0.05);
+  --ui-gc-text: #4A4C52;
+  --ui-gc-ink: #202020;
+  --ui-gc-status: #9A9DA3;
+  --ui-gc-read: #A8ABB1;
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 2;
   overflow: hidden;
-  font-family: Avenir Next,Avenir, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 .ui-gc *, .ui-gc *::before, .ui-gc *::after { box-sizing: border-box; margin: 0; }
 
@@ -196,7 +196,7 @@ const css = /* css */ \`
 .ui-gc-alert {
   display: inline-block;
   font-weight: 500;
-  background-image: linear-gradient(90deg, var(--ui-gc-ink) 0%, var(--ui-gc-ink) 38%, #ff4d47 50%, var(--ui-gc-ink) 62%, var(--ui-gc-ink) 100%);
+  background-image: linear-gradient(90deg, var(--ui-gc-ink) 0%, var(--ui-gc-ink) 38%, #FF4D47 50%, var(--ui-gc-ink) 62%, var(--ui-gc-ink) 100%);
   background-size: 300% 100%;
   background-position: 100% 0;
   background-repeat: no-repeat;
@@ -240,7 +240,7 @@ const css = /* css */ \`
   transform: translateX(-50%);
   width: 100%;
   height: 22px;
-  background: linear-gradient(90deg, #ffa0ab 0%, #ffb89e 33%, #eb9fac 66%, #f69eae 100%);
+  background: linear-gradient(90deg, #FFA0AB 0%, #FFB89E 33%, #C8A8E5 66%, #A8B5FF 100%);
   opacity: 0.6;
   filter: blur(12px);
   border-radius: 50%;
@@ -263,13 +263,13 @@ const css = /* css */ \`
   max-width: none;
   width: auto;
   padding: 6px 12px;
-  background: #2662a9;
-  border: 1px solid #2662a9;
+  background: #155EEF;
+  border: 1px solid #155EEF;
   border-radius: 14px 14px 14px 4px;
   color: #FFFFFF;
   font-size: 15px;
   line-height: 1.1;
-  box-shadow: 0 4px 12px rgba(38, 98, 169, 0.22), 0 1px 2px rgba(38, 98, 169, 0.18);
+  box-shadow: 0 4px 12px rgba(21, 94, 239, 0.22), 0 1px 2px rgba(21, 94, 239, 0.18);
   opacity: 0;
   transform: translateY(14px) scale(0.92);
   transform-origin: bottom left;
@@ -290,27 +290,17 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-gc {
-  --ui-gc-bubble: #0b2345;
+  --ui-gc-bubble: #232326;
   --ui-gc-bubble-border: rgba(255, 255, 255, 0.08);
-  --ui-gc-bubble-shadow: 0 2px 6px rgba(0, 22, 43, 0.35), 0 1px 2px rgba(0, 22, 43, 0.4);
-  --ui-gc-text: #bbc5d5;
-  --ui-gc-ink: #e8eef6;
-  --ui-gc-status: #8090a8;
-  --ui-gc-read: #8090a8;
+  --ui-gc-bubble-shadow: 0 2px 6px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ui-gc-text: #c4c4c4;
+  --ui-gc-ink: #ededed;
+  --ui-gc-status: #8f8f8f;
+  --ui-gc-read: #8f8f8f;
 }
 :where(.dark, [data-theme="dark"]) .ui-gc-bubble-last::after { opacity: 0.45; }
 :where(.dark, [data-theme="dark"]) .ui-gc-reply {
-  box-shadow: 0 4px 12px rgba(0, 22, 43, 0.4), 0 1px 2px rgba(0, 22, 43, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.4);
 }
-/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
-.ui-gc.ui-gc {
-  --ui-gc-text: rgba(0, 22, 43, 0.66);
-  --ui-gc-ink: #00162b;
-}
-:is(.dark, [data-theme="dark"]) .ui-gc.ui-gc {
-  --ui-gc-text: rgba(255, 255, 255, 0.72);
-  --ui-gc-ink: rgba(255, 255, 255, 0.94);
-}
-
 \`;
 `;export{e as default};

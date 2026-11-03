@@ -3,29 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Card – React component · affectUI</title>
-    <link rel="canonical" href="https://www.affectui.com/components/project-card" />
-    <meta name="description" content="A two-line project summary that quietly unfolds on hover – a progress ring with one segment per subtask, a people filter and a status picker, all linked by…" />
+    <title>affectUI · Agent-ready React UI for AI products</title>
+    <link rel="canonical" href="https://www.affectui.com/" />
+    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="Project Card – React component · affectUI" />
-    <meta property="og:description" content="A two-line project summary that quietly unfolds on hover – a progress ring with one segment per subtask, a people filter and a status picker, all linked by…" />
-    <meta property="og:url" content="https://www.affectui.com/components/project-card" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta property="og:url" content="https://www.affectui.com/" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:site" content="@flohoeller" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="Project Card – React component · affectUI" />
-    <meta name="twitter:description" content="A two-line project summary that quietly unfolds on hover – a progress ring with one segment per subtask, a people filter and a status picker, all linked by…" />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Project Card","item":"https://www.affectui.com/components/project-card"}]},{"@type":"SoftwareSourceCode","name":"Project Card (affectUI)","description":"A two-line project summary that quietly unfolds on hover – a progress ring with one segment per subtask, a people filter and a status picker, all linked by hover","url":"https://www.affectui.com/components/project-card","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-10","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
+    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.affectui.com/#website",
+            "url": "https://www.affectui.com/",
+            "name": "affectUI",
+            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://www.affectui.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.affectui.com/#organization",
+            "name": "affectUI",
+            "url": "https://www.affectui.com/",
+            "logo": "https://www.affectui.com/icon-512.png",
+            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "affectUI",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "url": "https://www.affectui.com/",
+            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
+          }
+        ]
+      }
+    </script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -45,17 +77,21 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const origin = "https://www.affectui.com";
+  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
-  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+    return target.origin === window.location.origin && salesOnly.test(target.pathname)
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  if (serverOnly.test(window.location.pathname)) {
+    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -66,11 +102,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -91,51 +127,33 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (target.pathname === scalingPath) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(scalingPath);
-    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+    if (salesOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
+    } else if (serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
-  <link rel="stylesheet" href="/ateam/composants.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
   </head>
   <body>
-    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/cards">Cards</a></p>
-<h1>Project Card</h1>
-<p>A two-line project summary that quietly unfolds on hover – a progress ring with one segment per subtask, a people filter and a status picker, all linked by hover.</p>
-<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/project-card.json</code> · Import from <code>@/components/ui/project-card</code></p>
-<h2>When to use</h2><ul><li>Boards, lists and sidebars where many projects or tasks sit next to each other and the details should be one hover away</li><li>Anything with a short summary and a longer truth behind it – a project, a ticket, a deal, an agent run</li><li>When opening a separate page or drawer would be too heavy for a quick look and a small edit</li></ul><h2>When not to use</h2><ul><li>Long content or forms – open a drawer or a page instead; this card is for a glance and a tick</li><li>Dense tables – a row that grows on hover pushes everything below it around</li><li>When the details must stay visible – show the open card as a static layout instead</li></ul><h2>Usage</h2><pre><code>import { ProjectCard } from &quot;@/components/ui/project-card&quot;;
-
-export function OnboardingCard() {
-  return (
-    &lt;ProjectCard
-      title=&quot;Onboarding flow&quot;
-      tasks={[
-        { id: &quot;welcome&quot;, label: &quot;Welcome screen&quot;, done: true, assignee: &quot;Mara&quot; },
-        { id: &quot;workspace&quot;, label: &quot;Workspace setup&quot;, done: true, assignee: &quot;Jonas&quot; },
-        { id: &quot;invite&quot;, label: &quot;Invite teammates&quot;, assignee: &quot;Mara&quot; },
-      ]}
-      status=&quot;progress&quot;
-      due=&quot;Oct 24&quot;
-      members={[{ name: &quot;Mara&quot; }, { name: &quot;Jonas&quot; }]}
-      action={{ label: &quot;Open&quot;, onClick: () =&gt; router.push(&quot;/projects/onboarding&quot;) }}
-    /&gt;
-  );
-}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>title</code></td><td><code>string</code></td><td></td><td>Name of the project</td></tr><tr><td><code>tasks</code></td><td><code>ProjectTask[]</code></td><td></td><td>{ id, label, done?, assignee? } – one ring segment and one row each; assignee is a member&#39;s name</td></tr><tr><td><code>onTasksChange</code></td><td><code>(tasks: ProjectTask[]) =&gt; void</code></td><td></td><td>Called with the full list after a tick. With it the card shows exactly what you pass; without it the ticks live inside the card</td></tr><tr><td><code>status</code></td><td><code>string</code></td><td><code>first option</code></td><td>Id of the chosen status</td></tr><tr><td><code>statuses</code></td><td><code>ProjectOption[]</code></td><td><code>To do, In progress, In review, Done</code></td><td>{ id, label, tone? } – tone is red, amber, green, blue, violet or gray and also picks the icon; icon replaces it</td></tr><tr><td><code>onStatusChange</code></td><td><code>(id: string) =&gt; void</code></td><td></td><td>Called with the picked status</td></tr><tr><td><code>due</code></td><td><code>string</code></td><td></td><td>Ready-to-show due date, e.g. &quot;Oct 24&quot; – shown as &quot;Due Oct 24&quot;</td></tr><tr><td><code>members</code></td><td><code>ProjectMember[]</code></td><td></td><td>{ name, avatar? } – the avatars in the head; hovering one shows only that person&#39;s subtasks. Initials on a soft color without an image</td></tr><tr><td><code>action</code></td><td><code>{ label: string; onClick: () =&gt; void }</code></td><td></td><td>A button on the tray of the open card, e.g. Open</td></tr><tr><td><code>hint</code></td><td><code>ReactNode</code></td><td><code>&quot;2 left&quot; / &quot;All done&quot;</code></td><td>The line on the tray while nothing is hovered</td></tr><tr><td><code>trigger</code></td><td><code>&quot;hover&quot; | &quot;click&quot;</code></td><td><code>&quot;hover&quot;</code></td><td>Hover opens under the mouse; taps and the keyboard always toggle</td></tr><tr><td><code>open</code></td><td><code>boolean</code></td><td></td><td>Controlled open state</td></tr><tr><td><code>defaultOpen</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Starts open when uncontrolled</td></tr><tr><td><code>onOpenChange</code></td><td><code>(open: boolean) =&gt; void</code></td><td></td><td>Called when the card opens or closes</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Enter / Space: On the card: opens or closes it</li><li>Tab: Through the status, the people, the subtasks and the action</li><li>Space: On a subtask: ticks or unticks it. On a person: keeps or releases their filter. On the status: unfolds the options</li><li>Esc: Closes the status options first, then the card</li></ul><h2>Accessibility</h2><ul><li>The head is one button with aria-expanded whose name carries the summary: title, progress, status and due date</li><li>Subtasks are checkboxes, the people are toggle buttons, the status options are a radio group</li><li>While the card is closed, everything inside is inert – nothing hidden can be focused or read</li><li>Focusing a subtask or a person does what hovering does, and the line on the tray is announced politely</li></ul><h2>Responsive</h2><ul><li>Fills its container up to 320px. Below 290px the date drops its word (&quot;Oct 24&quot;) and the avatars move closer; a long title is cut with an ellipsis and nothing runs under the avatars</li><li>Touch screens: a tap opens, a tap outside closes, rows and options are taller and the assignee avatars are always visible</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/progress-tracker">Progress Tracker</a> – Onboarding checklist with an animated progress bar, ticks that draw themselves and auto play</li><li><a href="/components/agent-plan">Agent Plan</a> – An agent&#39;s step-by-step plan to review before it runs – rename, drag to reorder, remove or add steps, then watch each one run with live timers and retry from a failed step</li><li><a href="/components/compact-breakdown">Compact Breakdown</a> – A total split into its parts in one small card – numbers roll, the bar glides and the ranked rows trade places when the period changes</li></ul></main></div></div>
+    <div id="root">
+      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
+      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
+        affectUI – Agent-ready UI for AI products
+      </h1>
+    </div>
   </body>
 </html>

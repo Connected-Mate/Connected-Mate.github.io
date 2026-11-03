@@ -95,20 +95,20 @@ const css = /* css */ \`
   /* 1 unit of the 600 × 400 layout grid */
   --u: calc(100cqw / 600);
   --ui-ti-bubble: #ffffff;
-  --ui-ti-bubble-ring: rgba(26, 62, 112, 0.06);
-  --ui-ti-face: #ecf0f8;
+  --ui-ti-bubble-ring: rgba(10, 10, 10, 0.06);
+  --ui-ti-face: #eef0f4;
   /* Same gray as the lines in Outreach Branches */
-  --ui-ti-line-a: #e1e7f1;
-  --ui-ti-line-b: #e1e7f1;
-  --ui-ti-dash: #e1e7f1;
-  --ui-ti-plus: #bbc5d5;
+  --ui-ti-line-a: #e4e7ec;
+  --ui-ti-line-b: #e4e7ec;
+  --ui-ti-dash: #e4e7ec;
+  --ui-ti-plus: #c4c4c4;
   --ui-ti-online: #34c46a;
   /* Ring around the status dot: mostly white with a hint of the green, fully opaque */
-  --ui-ti-dot-ring: #ecf0f8;
+  --ui-ti-dot-ring: #e2f6e9;
   --ui-ti-dot-edge: rgba(52, 196, 106, 0.1);
-  --ui-ti-cursor: #07192f;
-  --ui-ti-shadow: 0 calc(10 * var(--u)) calc(24 * var(--u)) rgba(26, 62, 112, 0.07), 0 calc(2 * var(--u)) calc(5 * var(--u)) rgba(26, 62, 112, 0.05);
-  --ui-ti-lift: 0 calc(18 * var(--u)) calc(34 * var(--u)) rgba(26, 62, 112, 0.12), 0 calc(3 * var(--u)) calc(8 * var(--u)) rgba(26, 62, 112, 0.06);
+  --ui-ti-cursor: #141b34;
+  --ui-ti-shadow: 0 calc(10 * var(--u)) calc(24 * var(--u)) rgba(0, 0, 0, 0.07), 0 calc(2 * var(--u)) calc(5 * var(--u)) rgba(0, 0, 0, 0.05);
+  --ui-ti-lift: 0 calc(18 * var(--u)) calc(34 * var(--u)) rgba(0, 0, 0, 0.12), 0 calc(3 * var(--u)) calc(8 * var(--u)) rgba(0, 0, 0, 0.06);
   --ui-ti-loop: 4.4s;
   --ui-ti-ease: cubic-bezier(0.7, 0, 0.25, 1);
   position: relative;
@@ -213,7 +213,7 @@ const css = /* css */ \`
   height: calc(48.13 * var(--u));
   overflow: visible;
   transform-origin: calc(4.72 * var(--u)) calc(0.55 * var(--u));
-  filter: drop-shadow(0 calc(3 * var(--u)) calc(7 * var(--u)) rgba(26, 62, 112, 0.16));
+  filter: drop-shadow(0 calc(3 * var(--u)) calc(7 * var(--u)) rgba(0, 0, 0, 0.16));
   animation: ui-ti-cursor var(--ui-ti-loop) infinite;
 }
 .ui-ti-cursor path {
@@ -282,26 +282,18 @@ const css = /* css */ \`
 
 /* Dark mode: follows a .dark class or data-theme="dark" on any ancestor, e.g. <html> */
 :where(.dark, [data-theme="dark"]) .ui-ti {
-  --ui-ti-bubble: #0b2345;
+  --ui-ti-bubble: #232326;
   --ui-ti-bubble-ring: rgba(255, 255, 255, 0.08);
-  --ui-ti-face: #122e56;
+  --ui-ti-face: #2e2e33;
   --ui-ti-line-a: rgba(255, 255, 255, 0.14);
   --ui-ti-line-b: rgba(255, 255, 255, 0.14);
   --ui-ti-dash: rgba(255, 255, 255, 0.14);
-  --ui-ti-plus: #485e7e;
+  --ui-ti-plus: #5c5c61;
   --ui-ti-online: #3fd17a;
   --ui-ti-dot-ring: #24392c;
   --ui-ti-dot-edge: rgba(63, 209, 122, 0.12);
-  --ui-ti-shadow: 0 calc(10 * var(--u)) calc(24 * var(--u)) rgba(0, 22, 43, 0.4), 0 calc(2 * var(--u)) calc(5 * var(--u)) rgba(0, 22, 43, 0.3);
-  --ui-ti-lift: 0 calc(18 * var(--u)) calc(34 * var(--u)) rgba(0, 22, 43, 0.5), 0 calc(3 * var(--u)) calc(8 * var(--u)) rgba(0, 22, 43, 0.3);
+  --ui-ti-shadow: 0 calc(10 * var(--u)) calc(24 * var(--u)) rgba(0, 0, 0, 0.4), 0 calc(2 * var(--u)) calc(5 * var(--u)) rgba(0, 0, 0, 0.3);
+  --ui-ti-lift: 0 calc(18 * var(--u)) calc(34 * var(--u)) rgba(0, 0, 0, 0.5), 0 calc(3 * var(--u)) calc(8 * var(--u)) rgba(0, 0, 0, 0.3);
 }
-/* ——— A-Team design system (Osmose), from scripts/theme/composants.py ——— */
-.ui-ti.ui-ti {
-  --ui-ti-ease: cubic-bezier(0.16, 1, 0.3, 1);
-}
-:is(.dark, [data-theme="dark"]) .ui-ti.ui-ti {
-  --ui-ti-ease: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
 \`;
 `;export{e as default};

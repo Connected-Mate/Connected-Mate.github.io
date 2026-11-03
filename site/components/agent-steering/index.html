@@ -3,29 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agent Steering – React component · affectUI</title>
-    <link rel="canonical" href="https://www.affectui.com/components/agent-steering" />
-    <meta name="description" content="Steer an agent while it works – queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away. Part of…" />
+    <title>affectUI · Agent-ready React UI for AI products</title>
+    <link rel="canonical" href="https://www.affectui.com/" />
+    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="Agent Steering – React component · affectUI" />
-    <meta property="og:description" content="Steer an agent while it works – queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away. Part of…" />
-    <meta property="og:url" content="https://www.affectui.com/components/agent-steering" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta property="og:url" content="https://www.affectui.com/" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:site" content="@flohoeller" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="Agent Steering – React component · affectUI" />
-    <meta name="twitter:description" content="Steer an agent while it works – queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away. Part of…" />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Agent Steering","item":"https://www.affectui.com/components/agent-steering"}]},{"@type":"SoftwareSourceCode","name":"Agent Steering (affectUI)","description":"Steer an agent while it works – queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away","url":"https://www.affectui.com/components/agent-steering","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-16","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
+    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.affectui.com/#website",
+            "url": "https://www.affectui.com/",
+            "name": "affectUI",
+            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://www.affectui.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.affectui.com/#organization",
+            "name": "affectUI",
+            "url": "https://www.affectui.com/",
+            "logo": "https://www.affectui.com/icon-512.png",
+            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "affectUI",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "url": "https://www.affectui.com/",
+            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
+          }
+        ]
+      }
+    </script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -45,17 +77,21 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const origin = "https://www.affectui.com";
+  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
-  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+    return target.origin === window.location.origin && salesOnly.test(target.pathname)
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  if (serverOnly.test(window.location.pathname)) {
+    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -66,11 +102,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -91,61 +127,33 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (target.pathname === scalingPath) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(scalingPath);
-    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+    if (salesOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
+    } else if (serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
-  <link rel="stylesheet" href="/ateam/composants.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
   </head>
   <body>
-    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/agents">Agents</a></p>
-<h1>Agent Steering</h1>
-<p>Steer an agent while it works – queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away.</p>
-<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/agent-steering.json</code> · Import from <code>@/components/ui/agent-steering</code></p>
-<h2>When to use</h2><ul><li>An agent runs for a while and people notice something it should do differently – without stopping it</li><li>Long runs where a correction is cheaper at the next step than a restart from scratch</li><li>Showing which instruction changed which step, so the run stays easy to follow later</li></ul><h2>When not to use</h2><ul><li>Reviewing a plan before the run starts – use Agent Plan</li><li>Many background runs at a glance – use Agent Inbox</li><li>A single yes or no before the agent acts – use Approval Card</li></ul><h2>Usage</h2><pre><code>import { useState } from &quot;react&quot;;
-import { AgentSteering, type SteerNote, type SteerStep } from &quot;@/components/ui/agent-steering&quot;;
-
-export function Run({ run }: { run: AgentRun }) {
-  const [steps, setSteps] = useState&lt;SteerStep[]&gt;(run.steps);
-  const [queue, setQueue] = useState&lt;SteerNote[]&gt;([]);
-
-  // Your agent takes the queue in at the start of each step: move the notes into that step – the glide is automatic
-  run.on(&quot;step&quot;, (index) =&gt; {
-    setSteps((list) =&gt; list.map((s, i) =&gt; (i === index ? { ...s, status: &quot;active&quot;, notes: queue.map((n) =&gt; ({ ...n, picked: &quot;next&quot; })) } : s)));
-    setQueue([]);
-  });
-
-  return (
-    &lt;AgentSteering
-      title=&quot;Migrate users table&quot;
-      agent=&quot;Opus 5.5&quot;
-      steps={steps}
-      queue={queue}
-      startedAt={run.startedAt}
-      onQueue={(text) =&gt; setQueue((q) =&gt; [...q, { id: crypto.randomUUID(), text }])}
-      onInterrupt={(text, id) =&gt; run.interrupt(text, id)}
-      onRemove={(id) =&gt; setQueue((q) =&gt; q.filter((n) =&gt; n.id !== id))}
-      onPause={() =&gt; run.pause()}
-      onResume={() =&gt; run.resume()}
-    /&gt;
-  );
-}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>title</code></td><td><code>string</code></td><td></td><td>What the agent is working on, shown as the heading</td></tr><tr><td><code>agent</code></td><td><code>string</code></td><td></td><td>Name of the agent or model, shown under the title</td></tr><tr><td><code>steps</code></td><td><code>SteerStep[]</code></td><td></td><td>The plan: { id, title, status?, duration?, startedAt?, notes? }. status is &quot;done&quot;, &quot;active&quot; or &quot;pending&quot;</td></tr><tr><td><code>queue</code></td><td><code>SteerNote[]</code></td><td></td><td>Notes waiting for the next step: { id, text }. Move one into a step&#39;s notes (same id, picked set) and it glides over</td></tr><tr><td><code>status</code></td><td><code>&quot;running&quot; | &quot;paused&quot; | &quot;done&quot;</code></td><td><code>&quot;running&quot;</code></td><td>The run. Clocks tick while running; when done the field closes</td></tr><tr><td><code>startedAt</code></td><td><code>number | Date</code></td><td></td><td>When the run started – the header clock ticks from here</td></tr><tr><td><code>onQueue</code></td><td><code>(text: string) =&gt; void</code></td><td></td><td>↵ in the field: add the note to your queue</td></tr><tr><td><code>onInterrupt</code></td><td><code>(text: string, queuedId?: string) =&gt; void</code></td><td></td><td>⌘↵ (Ctrl ↵) in the field, or &quot;Now&quot; on a queued note. Shows the shortcut hint and the Now buttons</td></tr><tr><td><code>onRemove</code></td><td><code>(id: string) =&gt; void</code></td><td></td><td>✕ on a queued note</td></tr><tr><td><code>onPause / onResume</code></td><td><code>() =&gt; void</code></td><td></td><td>Shows Pause while running and Resume while paused</td></tr><tr><td><code>draft / onDraftChange</code></td><td><code>string / (text: string) =&gt; void</code></td><td></td><td>Controlled field text, e.g. to prefill a suggestion</td></tr><tr><td><code>placeholder</code></td><td><code>string</code></td><td><code>&quot;Steer the agent…&quot;</code></td><td>Text in the empty field</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>↵: Queues the note for the next step</li><li>⌘ / ↵: Applies the note to the active step right away (Ctrl ↵ on Windows)</li><li>Shift / ↵: New line in the note</li><li>Esc: Clears the field</li><li>Tab: Moves to Pause, the queued notes&#39; Now and ✕ buttons and the send button</li></ul><h2>Accessibility</h2><ul><li>The plan is an ordered list labelled &quot;Plan&quot;; the active step has aria-current=&quot;step&quot;</li><li>Queuing, interrupting and every note the agent picks up are announced in a polite live region</li><li>The field is labelled &quot;Steer the agent&quot; and described by the shortcut hint below it</li><li>Icon buttons have labels: Pause, Resume, Remove “…”, Queue for the next step</li></ul><h2>Responsive</h2><ul><li>Fills its container up to 460px</li><li>Below 380px the padding gets tighter</li><li>Touch screens get larger buttons</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/agent-plan">Agent Plan</a> – An agent&#39;s step-by-step plan to review before it runs – rename, drag to reorder, remove or add steps, then watch each one run with live timers and retry from a failed step</li><li><a href="/components/agent-inbox">Agent Inbox</a> – All your background agent tasks in one calm list – live clocks and status tags, filter tabs with rolling counts, rows that unfold to the last steps with Approve, Reject, Retry or Open, and glide to their new place</li><li><a href="/components/tool-call-card">Tool Call Card</a> – An agent&#39;s tool call in one line – live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that sums them up</li><li><a href="/components/thinking-state">Thinking State</a> – AI working panel with a live timer, searched sources and thinking steps that appear one by one</li></ul><h2>Guides</h2><ul><li><a href="/guides/agent-dashboard-react">How to build an agent dashboard in React</a> – The views an AI agent dashboard needs – what&#39;s running, who started what, what needs a person, what it cost – and React components for each.</li><li><a href="/guides/human-in-the-loop-ui">Human-in-the-loop UI: approvals, permissions and autonomy</a> – UI patterns for keeping people in control of AI agents – approval cards, permission requests, autonomy levels, steering and reviewing changes.</li></ul></main></div></div>
+    <div id="root">
+      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
+      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
+        affectUI – Agent-ready UI for AI products
+      </h1>
+    </div>
   </body>
 </html>

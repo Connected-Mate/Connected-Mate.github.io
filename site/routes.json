@@ -1,6 +1,6 @@
 {
   "source": "https://www.affectui.com",
-  "fetchedFrom": "https://www.affectui.com",
+  "fetchedFrom": "https://affectui.vercel.app",
   "routes": [
     "/",
     "/blocks",
@@ -31,22 +31,11 @@
     "/category/inputs",
     "/category/navigation",
     "/components",
-    "/components/agent-checkpoints",
-    "/components/agent-cursors",
-    "/components/agent-findings",
-    "/components/agent-fleet",
-    "/components/agent-graph",
-    "/components/agent-handoff",
     "/components/agent-inbox",
     "/components/agent-lanes",
-    "/components/agent-ledger",
-    "/components/agent-monitor",
     "/components/agent-plan",
-    "/components/agent-queue",
-    "/components/agent-recap",
     "/components/agent-steering",
     "/components/agent-tree",
-    "/components/agent-tree-scale",
     "/components/ai-answer",
     "/components/approval-card",
     "/components/autonomy-dial",
@@ -61,19 +50,14 @@
     "/components/comment-thread",
     "/components/comments-panel",
     "/components/compact-breakdown",
-    "/components/conflict-radar",
-    "/components/context-map",
     "/components/context-window",
     "/components/data-table",
     "/components/date-range-picker",
     "/components/decision-inbox",
-    "/components/decision-tree",
     "/components/delegate-board",
     "/components/dropzone",
     "/components/email-draft",
     "/components/experiment-card",
-    "/components/fallback-chain",
-    "/components/fan-out-grid",
     "/components/filter-menu",
     "/components/inline-diff",
     "/components/integration-picker",
@@ -84,17 +68,12 @@
     "/components/model-picker",
     "/components/notification-stack",
     "/components/otp-input",
-    "/components/parallel-attempts",
     "/components/permission-request",
-    "/components/plan-vs-actual",
     "/components/profile-menu",
     "/components/progress-tracker",
     "/components/project-card",
     "/components/prompt-library",
     "/components/reaction-bar",
-    "/components/review-center",
-    "/components/role-change",
-    "/components/scheduled-runs",
     "/components/segmented-control",
     "/components/setup-guide",
     "/components/smart-recommendation",
@@ -104,7 +83,6 @@
     "/components/tips-panel",
     "/components/toaster",
     "/components/tool-call-card",
-    "/components/trace-waterfall",
     "/components/usage-meter",
     "/components/writing-assistant",
     "/contact",
@@ -172,10 +150,6 @@
     "/screens/app-shell",
     "/screens/app-shell-flat",
     "/screens/app-shell-flat/full",
-    "/screens/app-shell-workspace",
-    "/screens/app-shell-workspace-flat",
-    "/screens/app-shell-workspace-flat/full",
-    "/screens/app-shell-workspace/full",
     "/screens/app-shell/full",
     "/screens/assistant-home",
     "/screens/assistant-home/full",
@@ -199,36 +173,6 @@
   "items": {
     "components": [
       {
-        "slug": "agent-checkpoints",
-        "category": "Agents",
-        "pro": true
-      },
-      {
-        "slug": "agent-cursors",
-        "category": "Agents",
-        "pro": true
-      },
-      {
-        "slug": "agent-findings",
-        "category": "Agents",
-        "pro": true
-      },
-      {
-        "slug": "agent-fleet",
-        "category": "Agents",
-        "pro": true
-      },
-      {
-        "slug": "agent-graph",
-        "category": "Agents",
-        "pro": true
-      },
-      {
-        "slug": "agent-handoff",
-        "category": "Agents",
-        "pro": true
-      },
-      {
         "slug": "agent-inbox",
         "category": "Agents",
         "pro": true
@@ -239,27 +183,7 @@
         "pro": true
       },
       {
-        "slug": "agent-ledger",
-        "category": "Agents",
-        "pro": true
-      },
-      {
-        "slug": "agent-monitor",
-        "category": "Agents",
-        "pro": true
-      },
-      {
         "slug": "agent-plan",
-        "category": "Agents",
-        "pro": true
-      },
-      {
-        "slug": "agent-queue",
-        "category": "Agents",
-        "pro": true
-      },
-      {
-        "slug": "agent-recap",
         "category": "Agents",
         "pro": true
       },
@@ -344,16 +268,6 @@
         "pro": true
       },
       {
-        "slug": "conflict-radar",
-        "category": "Agents",
-        "pro": true
-      },
-      {
-        "slug": "context-map",
-        "category": "Agents",
-        "pro": true
-      },
-      {
         "slug": "context-window",
         "category": "Agents",
         "pro": true
@@ -374,11 +288,6 @@
         "pro": false
       },
       {
-        "slug": "decision-tree",
-        "category": "Agents",
-        "pro": true
-      },
-      {
         "slug": "delegate-board",
         "category": "Agents",
         "pro": true
@@ -396,16 +305,6 @@
       {
         "slug": "experiment-card",
         "category": "Data display",
-        "pro": true
-      },
-      {
-        "slug": "fallback-chain",
-        "category": "Agents",
-        "pro": true
-      },
-      {
-        "slug": "fan-out-grid",
-        "category": "Agents",
         "pro": true
       },
       {
@@ -459,17 +358,7 @@
         "pro": false
       },
       {
-        "slug": "parallel-attempts",
-        "category": "Agents",
-        "pro": true
-      },
-      {
         "slug": "permission-request",
-        "category": "Agents",
-        "pro": true
-      },
-      {
-        "slug": "plan-vs-actual",
         "category": "Agents",
         "pro": true
       },
@@ -497,16 +386,6 @@
         "slug": "reaction-bar",
         "category": "Buttons",
         "pro": false
-      },
-      {
-        "slug": "review-center",
-        "category": "Agents",
-        "pro": true
-      },
-      {
-        "slug": "scheduled-runs",
-        "category": "Agents",
-        "pro": true
       },
       {
         "slug": "segmented-control",
@@ -554,11 +433,6 @@
         "pro": false
       },
       {
-        "slug": "trace-waterfall",
-        "category": "Agents",
-        "pro": true
-      },
-      {
         "slug": "usage-meter",
         "category": "Data display",
         "pro": true
@@ -567,16 +441,6 @@
         "slug": "writing-assistant",
         "category": "Chat",
         "pro": true
-      },
-      {
-        "slug": "agent-tree-scale",
-        "category": "Agents",
-        "pro": false
-      },
-      {
-        "slug": "role-change",
-        "category": "Data display",
-        "pro": false
       }
     ],
     "screens": [
@@ -602,16 +466,6 @@
       },
       {
         "slug": "app-shell-flat",
-        "category": "App screens",
-        "pro": true
-      },
-      {
-        "slug": "app-shell-workspace",
-        "category": "App screens",
-        "pro": true
-      },
-      {
-        "slug": "app-shell-workspace-flat",
         "category": "App screens",
         "pro": true
       },
@@ -940,33 +794,13 @@
     ],
     "serverBacked": [
       "agent-chat",
-      "agent-checkpoints",
-      "agent-checkpoints-clean",
-      "agent-cursors",
-      "agent-cursors-clean",
-      "agent-findings",
-      "agent-findings-clean",
-      "agent-fleet",
-      "agent-fleet-clean",
       "agent-gallery",
-      "agent-graph",
-      "agent-graph-clean",
-      "agent-handoff",
-      "agent-handoff-clean",
       "agent-inbox",
       "agent-inbox-clean",
       "agent-lanes",
       "agent-lanes-clean",
-      "agent-ledger",
-      "agent-ledger-clean",
-      "agent-monitor",
-      "agent-monitor-clean",
       "agent-plan",
       "agent-plan-clean",
-      "agent-queue",
-      "agent-queue-clean",
-      "agent-recap",
-      "agent-recap-clean",
       "agent-run",
       "agent-steering",
       "agent-steering-clean",
@@ -979,8 +813,6 @@
       "app-directory",
       "app-shell",
       "app-shell-flat",
-      "app-shell-workspace",
-      "app-shell-workspace-flat",
       "approval-card",
       "approval-card-clean",
       "assistant-home",
@@ -1004,10 +836,6 @@
       "comments-panel-clean",
       "compact-breakdown",
       "compact-breakdown-clean",
-      "conflict-radar",
-      "conflict-radar-clean",
-      "context-map",
-      "context-map-clean",
       "context-window",
       "context-window-clean",
       "crm",
@@ -1015,8 +843,6 @@
       "data-table-clean",
       "date-range-picker",
       "date-range-picker-clean",
-      "decision-tree",
-      "decision-tree-clean",
       "delegate-board",
       "delegate-board-clean",
       "dropzone",
@@ -1024,10 +850,6 @@
       "evals",
       "experiment-card",
       "experiment-card-clean",
-      "fallback-chain",
-      "fallback-chain-clean",
-      "fan-out-grid",
-      "fan-out-grid-clean",
       "files",
       "folder",
       "glass-folder",
@@ -1053,22 +875,14 @@
       "model-picker-clean",
       "onboarding",
       "outreach-branches",
-      "parallel-attempts",
-      "parallel-attempts-clean",
       "permission-request",
       "permission-request-clean",
-      "plan-vs-actual",
-      "plan-vs-actual-clean",
       "pricing-plans",
       "project-card",
       "project-card-clean",
       "project-flow",
       "prompt-library",
       "prompt-library-clean",
-      "review-center",
-      "review-center-clean",
-      "scheduled-runs",
-      "scheduled-runs-clean",
       "settings-billing",
       "setup-guide",
       "setup-guide-clean",
@@ -1080,8 +894,6 @@
       "tilt-card",
       "toaster",
       "toaster-clean",
-      "trace-waterfall",
-      "trace-waterfall-clean",
       "usage-meter",
       "usage-meter-clean",
       "voice-orb",
@@ -1095,21 +907,11 @@
     "/pro": "/components"
   },
   "customization": {
-    "aiComponentBadgeCount": 40,
+    "aiComponentBadgeCount": 20,
     "aiComponentBadges": [
-      "agent-checkpoints",
-      "agent-cursors",
-      "agent-findings",
-      "agent-fleet",
-      "agent-graph",
-      "agent-handoff",
       "agent-inbox",
       "agent-lanes",
-      "agent-ledger",
-      "agent-monitor",
       "agent-plan",
-      "agent-queue",
-      "agent-recap",
       "agent-steering",
       "agent-tree",
       "ai-answer",
@@ -1118,24 +920,14 @@
       "chat-composer",
       "cited-answer",
       "comments-panel",
-      "conflict-radar",
-      "context-map",
       "context-window",
-      "decision-tree",
       "delegate-board",
-      "fallback-chain",
-      "fan-out-grid",
       "inline-diff",
       "memory-panel",
       "model-picker",
-      "parallel-attempts",
       "permission-request",
-      "plan-vs-actual",
       "prompt-library",
-      "review-center",
-      "scheduled-runs",
       "thinking-state",
-      "trace-waterfall",
       "writing-assistant"
     ]
   },
@@ -1146,10 +938,10 @@
     "/partner"
   ],
   "excludedAssets": [
-    "/assets/AccountPage-CS1VOR8O.js",
-    "/assets/LoginPage-C1yT67GE.js",
+    "/assets/AccountPage-mQUgvRtp.js",
+    "/assets/LoginPage-C9DWJET2.js",
     "/assets/PartnerPage-B8QmlA8_.css",
-    "/assets/PartnerPage-BqYS2pBU.js",
-    "/assets/PricingPage-C_VOGLWW.js"
+    "/assets/PartnerPage-DB3R_drX.js",
+    "/assets/PricingPage-BHXL6Q_n.js"
   ]
 }

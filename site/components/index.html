@@ -3,29 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Components · affectUI</title>
-    <link rel="canonical" href="https://www.affectui.com/components" />
-    <meta name="description" content="74 React components for AI products and SaaS – 17 free. One file each, no dependencies, dark mode built in." />
+    <title>affectUI · Agent-ready React UI for AI products</title>
+    <link rel="canonical" href="https://www.affectui.com/" />
+    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="Components · affectUI" />
-    <meta property="og:description" content="74 React components for AI products and SaaS – 17 free. One file each, no dependencies, dark mode built in." />
-    <meta property="og:url" content="https://www.affectui.com/components" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta property="og:url" content="https://www.affectui.com/" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:site" content="@flohoeller" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="Components · affectUI" />
-    <meta name="twitter:description" content="74 React components for AI products and SaaS – 17 free. One file each, no dependencies, dark mode built in." />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"}]},{"@type":"CollectionPage","name":"affectUI Components","url":"https://www.affectui.com/components"}]}</script>
+    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
+    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.affectui.com/#website",
+            "url": "https://www.affectui.com/",
+            "name": "affectUI",
+            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://www.affectui.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.affectui.com/#organization",
+            "name": "affectUI",
+            "url": "https://www.affectui.com/",
+            "logo": "https://www.affectui.com/icon-512.png",
+            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "affectUI",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "url": "https://www.affectui.com/",
+            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
+          }
+        ]
+      }
+    </script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -45,17 +77,21 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const origin = "https://www.affectui.com";
+  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
-  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+    return target.origin === window.location.origin && salesOnly.test(target.pathname)
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  if (serverOnly.test(window.location.pathname)) {
+    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -66,11 +102,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -91,30 +127,33 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (target.pathname === scalingPath) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(scalingPath);
-    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+    if (salesOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
+    } else if (serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
-  <link rel="stylesheet" href="/ateam/composants.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
   </head>
   <body>
-    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><h1>Components</h1><p>74 React components for AI products and SaaS.</p><p>By category: <a href="/category/agents">AI agent UI components for React</a> · <a href="/category/chat">AI chat UI components for React</a> · <a href="/category/inputs">React input components</a> · <a href="/category/data-display">React data display components</a> · <a href="/category/navigation">React navigation components</a> · <a href="/category/feedback">React feedback components</a> · <a href="/category/cards">React card components</a> · <a href="/category/buttons">React button components</a></p><ul><li><a href="/components/agent-checkpoints">Agent Checkpoints</a> – An agent&#39;s run as a line of checkpoints, like git for agents – rewind to any of them and a new attempt branches out of it, while the one it left fades back but stays</li><li><a href="/components/agent-cursors">Agent Cursors</a> – Agents working in a document like teammates in a multiplayer editor – live pointers with names, suggestions typed letter by letter, images they resize, code they fix and comments beside the page</li><li><a href="/components/agent-findings">Agent Findings</a> – A swarm of agents checking something – one calm row per agent with its progress, and their findings sliding into a short feed as they&#39;re found</li><li><a href="/components/agent-fleet">Agent Fleet</a> – Several agents side by side – each card sums up its sub-agents, and a click opens its tree to the right while the last one folds back into its card</li><li><a href="/components/agent-graph">Agent Graph</a> – Agents and the tools they call as a living network – a pulse along the link for every call and its answer, busy links growing thicker, agents that breathe while they work and turn amber when they need you</li><li><a href="/components/agent-handoff">Agent Handoff</a> – A task passed from agent to agent like a relay – at every handoff what went along to the next one, and what got lost on the way</li><li><a href="/components/agent-inbox">Agent Inbox</a> – All your background agent tasks in one calm list – live clocks and status tags, filter tabs with rolling counts, rows that unfold to the last steps with Approve, Reject, Retry or Open, and glide to their new place</li><li><a href="/components/agent-lanes">Agent Lanes</a> – Where every agent is right now – a live timeline with a lane per agent, tasks growing into “now”, hand-offs drawn between agents and approvals right on the block</li><li><a href="/components/agent-ledger">Agent Ledger</a> – Everything an agent changed in your systems, each change with an undo – before and after per row, and pointing at Undo shows what builds on it: what would be undone too, and what can&#39;t be taken back</li><li><a href="/components/agent-monitor">Agent Monitor</a> – One agent at work, as a card – its current step with a clock and the bill so far, a time strip and the finished steps with the logo of each tool, a click on any of them for the details; the exact command when it needs your OK; folds into a small bar with the tools it has used</li><li><a href="/components/agent-plan">Agent Plan</a> – An agent&#39;s step-by-step plan to review before it runs – rename, drag to reorder, remove or add steps, then watch each one run with live timers and retry from a failed step</li><li><a href="/components/agent-queue">Agent Queue</a> – The work waiting for your agents, and how fast it moves – jobs drop into a live queue, glide into free worker slots as growing bars and land in Done or Failed, while a depth chart shows the backlog build up when a rate limit pauses the workers and drain when they resume</li><li><a href="/components/agent-recap">Agent Recap</a> – What the agents did while you were away – the night as a small chart with a peak per event, then a board of what needs you, what failed and what&#39;s done, acted on right on the card</li><li><a href="/components/agent-steering">Agent Steering</a> – Steer an agent while it works – queue a note for the next step and watch it glide into the plan when the agent picks it up, or interrupt right away</li><li><a href="/components/agent-tree">Agent Tree</a> – Who started whom – an orchestrator and its sub-agents as a live tree, with status, cost and time on every card, costs rolling up each branch, and branches that fold to one line</li><li><a href="/components/ai-answer">AI Answer</a> – Streamed answer with source cards, citation chips that preview their source, copy, regenerate, feedback and follow-ups</li><li><a href="/components/approval-card">Approval Card</a> – An agent asks before it acts – risk badge, preview, Approve and Deny with shortcuts, a pausing countdown, and a smooth morph into a resolved row</li><li><a href="/components/autonomy-dial">Autonomy Dial</a> – How much an agent may do on its own – a three-stop dial, and its real actions gliding between “Runs on its own” and “Asks you first”, with a lock for what always asks</li><li><a href="/components/billing-schedule">Billing Schedule</a> – Build a billing phase – start date, duration, products with repeats and timing, discount, minimum and live totals</li><li><a href="/components/breakdown-chart">Breakdown Chart</a> – Stacked bar chart with measure, slice and segment pickers, a hover breakdown and a linked table</li><li><a href="/components/button">Button</a> – Primary, secondary, ghost and destructive buttons with icons, sizes and a shimmering loading state</li><li><a href="/components/change-summary">Change Summary</a> – What moved since last time – one metric per row with a colored trend</li><li><a href="/components/chat-composer">Chat Composer</a> – Prompt composer with model picker, voice input, app connections and approval request</li><li><a href="/components/cited-answer">Cited Answer</a> – An AI answer wired to its sources – point at a citation to light up its sentence and source, click to unfold the quoted passage with the matching words marked</li><li><a href="/components/combobox">Combobox</a> – Pick one or many from a searchable, grouped list – chips with avatars, highlighted matches, create-on-the-fly and full keyboard support</li><li><a href="/components/command-menu">Command Menu</a> – Search and run anything from one field – tool actions with logos and ⌘1–⌘5, everyday commands with icons</li><li><a href="/components/comment-thread">Comment Thread</a> – One comment with replies – an assistant reports what it did, folds open details and answers @mentions</li><li><a href="/components/comments-panel">Comments Panel</a> – Comment feed with filters, runnable /edit commands, resolve and a composer</li><li><a href="/components/compact-breakdown">Compact Breakdown</a> – A total split into its parts in one small card – numbers roll, the bar glides and the ranked rows trade places when the period changes</li><li><a href="/components/conflict-radar">Conflict Radar</a> – Agents working on their own branches at once, and where they get in each other&#39;s way – a row per file and a column per agent, a line between the agents that changed the same lines, each agent&#39;s way in one sentence to pick from, and Merge once all are settled</li><li><a href="/components/context-map">Context Map</a> – What fills an agent&#39;s context window, as a living treemap – system prompt, tools, memory, every file, the chat and tool results as tiles that glide as it grows, the free space dashed, and compaction squeezing old turns into a summary</li><li><a href="/components/context-window">Context Window</a> – What fills the model&#39;s context, as a field of cells – hover a part to light it up, remove files, and compact the conversation while its cells shimmer and clear</li><li><a href="/components/data-table">Data Table</a> – Spreadsheet-style table: select cells and ranges, edit in place, copy and paste, undo and sort</li><li><a href="/components/date-range-picker">Date Range Picker</a> – Presets and two calendars with a hover preview, comparison with the previous period or year, full keyboard control</li><li><a href="/components/decision-inbox">Decision Inbox</a> – Open decisions with two quick answers each – answered ones confirm and fold away</li><li><a href="/components/decision-tree">Decision Tree</a> – An agent stuck on a decision lays out its options as a tree – the consequences of each branch, the risky ones marked, its own pick highlighted – and you choose a path or write your own</li><li><a href="/components/delegate-board">Delegate Board</a> – Hand work to your agents by dragging it onto them – each agent previews its new “busy until” time, or switch to Auto and every new task goes to whoever is free first</li><li><a href="/components/dropzone">Dropzone</a> – Drag files in and watch them upload – fanning documents, colored type badges, progress with time left, errors with retry</li><li><a href="/components/email-draft">Email Draft</a> – Agent-written email for review – switch recipient and tone, edit inline, remove the attachment, send or discard with undo</li><li><a href="/components/experiment-card">Experiment Card</a> – An A/B test in two lines that quietly unfolds on hover – variants linked to a tiny chart, a metric switch with rolling numbers, and a winner you pick with a click</li><li><a href="/components/fallback-chain">Fallback Chain</a> – One request finding a model that answers, as a small flow diagram – the request branches out to each model in its fallback order, a light runs to the one being tried, failed branches break red, and the one that answers runs on to the response</li><li><a href="/components/fan-out-grid">Fan-out Grid</a> – One agent hands a big job to many workers – every task a cell on a live grid that fills in as they get through it, with retries, failures, cost and the time left, and the details of any task on hover</li><li><a href="/components/filter-menu">Filter Menu</a> – Grouped filters with removable chips, collapsible checkbox groups, Clear all and full keyboard control</li><li><a href="/components/inline-diff">Inline Diff</a> – AI edits to prose shown inline – struck and added words you accept or reject one by one, with keys, a popover and undo</li><li><a href="/components/integration-picker">Integration Picker</a> – Integrations page of a command menu – search, a list of services and the picked one with its connection on two tiles</li><li><a href="/components/integration-settings">Integration Settings</a> – Settings card for a connected service – on/off switch, API key, validated site address, time zone and a save bar</li><li><a href="/components/kpi-chart">KPI Chart</a> – Metric card with a multi-line chart and a tooltip that follows the pointer</li><li><a href="/components/memory-panel">Memory Panel</a> – What the assistant remembers about you, grouped and editable – a master switch, category filters, and on every memory edit in place, pause or forget with Undo on the tray</li><li><a href="/components/message-actions">Message Actions</a> – The quiet bar under an AI message – copy turns into a check, regenerate spins and unfolds a version switcher, thumbs pop and ask why, read aloud becomes a tiny equalizer</li><li><a href="/components/model-picker">Model Picker</a> – The model menu of an AI chat – point at a model and its speed, quality and cost bars fill, switch on extended thinking and its effort unfolds, while the tray rolls the first-token time and price</li><li><a href="/components/notification-stack">Notification Stack</a> – Notice cards stacked behind each other – dismiss the front one to reveal the next</li><li><a href="/components/otp-input">OTP Input</a> – The verification code field done right – a gliding focus ring, paste and SMS autofill, a calm shake on errors and a morph into Verified</li><li><a href="/components/parallel-attempts">Parallel Attempts</a> – An agent tries the same task several ways at once and the best one wins – every attempt races as a row with its model, approach and live bar, then gets a score; the best is marked and picked, and you can switch to another</li><li><a href="/components/permission-request">Permission Request</a> – An agent asks for one specific right – who, why and exactly what will happen – and you allow it once, for an hour or always; then it folds into one line with the time left and Revoke</li><li><a href="/components/plan-vs-actual">Plan vs Actual</a> – An agent&#39;s plan against what really happens – every step&#39;s bar grows over its dashed planned ghost, overruns turn amber, the steps after it slide right, and the expected finish moves away from the planned one</li><li><a href="/components/profile-menu">Profile Menu</a> – Account card with the signed-in user, menu actions and profile setup progress</li><li><a href="/components/progress-tracker">Progress Tracker</a> – Onboarding checklist with an animated progress bar, ticks that draw themselves and auto play</li><li><a href="/components/project-card">Project Card</a> – A two-line project summary that quietly unfolds on hover – a progress ring with one segment per subtask, a people filter and a status picker, all linked by hover</li><li><a href="/components/prompt-library">Prompt Library</a> – Saved prompt templates with variables – type straight into the sentence, watch the finished prompt assemble below, and use it once every variable is filled</li><li><a href="/components/reaction-bar">Reaction Bar</a> – Like, comment, repost and share in one pill – icons pop and fill, counts roll in digit by digit</li><li><a href="/components/review-center">Review Center</a> – A focused workspace for what your agents want to do – the queue sorted by risk, one item at a time with the shaky spans marked, Approve, Edit, Reject and Skip on single keys, a stamp as each one leaves and the next one rising in</li><li><a href="/components/scheduled-runs">Scheduled Runs</a> – Agent tasks sorted into a week of sessions – each session has a usage limit, small tasks fill the gaps, big ones are split across sessions, and the stack flies in one card at a time</li><li><a href="/components/segmented-control">Segmented Control</a> – Switch between two to six options – a raised pill or underline that glides, stretches a little and can be dragged across, with icons, counts and badges</li><li><a href="/components/setup-guide">Setup Guide</a> – Onboarding panel with a progress bar and collapsible task groups that strike through when done</li><li><a href="/components/smart-recommendation">Smart Recommendation</a> – Suggestion card with a confidence signal, alternatives to switch to and accept with undo</li><li><a href="/components/stepper-form">Stepper Form</a> – A multi-step flow for onboarding and setup – steps that fill and check off, sliding steps, a card that morphs to each step, inline validation and a success state</li><li><a href="/components/thinking-loader">Thinking Loader</a> – A small working pill for AI replies – an eight-ray spinner and a shimmering label that rolls through phases and settles on a check</li><li><a href="/components/thinking-state">Thinking State</a> – AI working panel with a live timer, searched sources and thinking steps that appear one by one</li><li><a href="/components/tips-panel">Tips Panel</a> – Grid of short tips with one action each – taken tips turn into a done state</li><li><a href="/components/toaster">Toaster</a> – Calm toasts from anywhere – a stack that fans out on hover, promise toasts that morph from spinner to check, swipe to dismiss</li><li><a href="/components/tool-call-card">Tool Call Card</a> – An agent&#39;s tool call in one line – live timer, status and summary, folds open to highlighted arguments and result with copy, retry on errors and a group that sums them up</li><li><a href="/components/trace-waterfall">Trace Waterfall</a> – Where the time and money of an agent run go – every LLM call, tool call and sub-agent as a bar on a live timeline, with tokens and cost per step, the slowest call marked and branches that fold into their parent</li><li><a href="/components/usage-meter">Usage Meter</a> – Plan usage and AI credits – a stacked credits meter by category, daily sparkline, limits and a button that speaks up near the limit</li><li><a href="/components/writing-assistant">Writing Assistant</a> – AI chat card with a soft gradient glow, suggestions, streaming replies and live voice dictation</li></ul></main></div></div>
+    <div id="root">
+      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
+      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
+        affectUI – Agent-ready UI for AI products
+      </h1>
+    </div>
   </body>
 </html>

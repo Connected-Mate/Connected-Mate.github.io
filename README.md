@@ -12,25 +12,6 @@ The original MIT-licensed source library is included under [`library/`](library/
 
 This copy was made with the founder's authorization. No authentication, locked Pro source, or private endpoint was accessed to create it.
 
-## Team IA art direction
-
-The site itself stays exactly as the original. Only the **components** wear the A-Team design system of the IA Innovation team — the Vibe Creators hub "Osmose" (sign-in page, account pages, e-mails) — in both of their styles (Classic and Clean) and both themes.
-
-`scripts/theme_team_ia.py` repaints the component modules, the registry items and the component pictures (never the site's own pages, header or typeface), then runs `scripts/theme/composants.py`, which reads every component's own CSS and writes `/ateam/composants.css`:
-
-- every component palette re-pointed at the hub tokens, light and dark paired (a token whose name is shared but whose job differs is left alone);
-- each role in its hub shape: frame and raised panel (double object), flat berry main action, condensed bold titles, field shell with a berry caret, state chips with their family hairline, card feet in the frame, keys as pebbles, berry progress rail and ticked boxes.
-
-The free components' **copyable code** (Code tab, Copy button, `/r/*.json` registry) carries the same rules at the end of its own `css` block, so a copied component looks the same in another app. Data Table, Comments Panel, Integration Settings and Setup Guide (Classic style) get their source back from the last MIT release of affectUI (`scripts/theme/mit/`, licence included). The 33 other items were never published with source. We rewrote them ourselves, from scratch and in the A-Team design system, in `components/ateam/` (`<slug>.tsx` is the copyable component, `<slug>.demo.tsx` the preview; contract and tokens in `components/ateam/DESIGN.md`). `npm run ateam` (also run by `npm run theme`) points the item's Code/Copy, in both styles, at our version; the preview stays the original one. `npm run ateam:preview <slug>` builds a standalone test page in `validation/ateam/`.
-
-```sh
-npm run mirror   # refresh the original copy
-npm run theme    # dress the components (needs Python 3 with numpy and Pillow); runs once per mirror
-npm run check
-```
-
-After changing `composants.py` alone: `python3 scripts/theme/composants.py site && cp scripts/theme/composants.css site/ateam/`.
-
 ## Rebuild the mirror
 
 Requirements: Node.js 20 or newer. There are no npm dependencies and no browser automation dependency.

@@ -3,29 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Usage Meter – React component · affectUI</title>
-    <link rel="canonical" href="https://www.affectui.com/components/usage-meter" />
-    <meta name="description" content="Plan usage and AI credits – a stacked credits meter by category, daily sparkline, limits and a button that speaks up near the limit. Part of affectUI Pro –…" />
+    <title>affectUI · Agent-ready React UI for AI products</title>
+    <link rel="canonical" href="https://www.affectui.com/" />
+    <meta name="description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="affectUI" />
-    <meta property="og:title" content="Usage Meter – React component · affectUI" />
-    <meta property="og:description" content="Plan usage and AI credits – a stacked credits meter by category, daily sparkline, limits and a button that speaks up near the limit. Part of affectUI Pro –…" />
-    <meta property="og:url" content="https://www.affectui.com/components/usage-meter" />
-    <meta property="og:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg?v=2" />
+    <meta property="og:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta property="og:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta property="og:url" content="https://www.affectui.com/" />
+    <meta property="og:image" content="https://www.affectui.com/og.jpg" />
+    <meta property="og:image:secure_url" content="https://www.affectui.com/og.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
+    <meta property="og:image:alt" content="affectUI – Polished UI for React, ready to ship" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@affectui" />
+    <meta name="twitter:site" content="@flohoeller" />
     <meta name="twitter:creator" content="@flohoeller" />
-    <meta name="twitter:title" content="Usage Meter – React component · affectUI" />
-    <meta name="twitter:description" content="Plan usage and AI credits – a stacked credits meter by category, daily sparkline, limits and a button that speaks up near the limit. Part of affectUI Pro –…" />
-    <meta name="twitter:image" content="https://www.affectui.com/og.jpg?v=2" />
-    <meta name="twitter:image:alt" content="affectUI – UI for AI agents: React components for what agents do" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"affectUI","item":"https://www.affectui.com/"},{"@type":"ListItem","position":2,"name":"Components","item":"https://www.affectui.com/components"},{"@type":"ListItem","position":3,"name":"Usage Meter","item":"https://www.affectui.com/components/usage-meter"}]},{"@type":"SoftwareSourceCode","name":"Usage Meter (affectUI)","description":"Plan usage and AI credits – a stacked credits meter by category, daily sparkline, limits and a button that speaks up near the limit","url":"https://www.affectui.com/components/usage-meter","programmingLanguage":"TypeScript","runtimePlatform":"React","isAccessibleForFree":false,"dateCreated":"2026-10-08","author":{"@id":"https://www.affectui.com/#organization"}}]}</script>
+    <meta name="twitter:title" content="affectUI · Agent-ready UI for AI products" />
+    <meta name="twitter:description" content="Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it." />
+    <meta name="twitter:image" content="https://www.affectui.com/og.jpg" />
+    <meta name="twitter:image:alt" content="affectUI – Polished UI for React, ready to ship" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.affectui.com/#website",
+            "url": "https://www.affectui.com/",
+            "name": "affectUI",
+            "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://www.affectui.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.affectui.com/#organization",
+            "name": "affectUI",
+            "url": "https://www.affectui.com/",
+            "logo": "https://www.affectui.com/icon-512.png",
+            "sameAs": ["https://x.com/flohoeller", "https://github.com/flohoeller/affectui"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "affectUI",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "url": "https://www.affectui.com/",
+            "description": "A library of polished React components, app screens, blocks, illustrations and motion effects.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free items; Pro is a one-time purchase" }
+          }
+        ]
+      }
+    </script>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -45,17 +77,21 @@
     </script>
     <script data-static-mirror-compatibility>
 (() => {
-  const serverOnly = /^\/(?:login|account|partner|api)(?:\/|$)/;
+  const origin = "https://www.affectui.com";
+  const serverOnly = /^\/(?:login|account|partner)(?:\/|$)/;
   const salesOnly = /^\/(?:pricing|pro)(?:\/|$)/;
-  const scalingPath = "/components/agent-tree-scaling";
   const libraryPath = (value) => {
     const target = new URL(value, window.location.href);
-    return target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))
+    return target.origin === window.location.origin && salesOnly.test(target.pathname)
       ? "/components" + target.search + target.hash
       : value;
   };
-  if (salesOnly.test(window.location.pathname) || serverOnly.test(window.location.pathname)) {
+  if (salesOnly.test(window.location.pathname)) {
     window.location.replace("/components" + window.location.search + window.location.hash);
+    return;
+  }
+  if (serverOnly.test(window.location.pathname)) {
+    window.location.replace(origin + window.location.pathname + window.location.search + window.location.hash);
     return;
   }
   for (const method of ["pushState", "replaceState"]) {
@@ -66,11 +102,11 @@
     document.querySelectorAll(".offer-banner, .consent").forEach((element) => element.remove());
     document.querySelectorAll("a[href]").forEach((anchor) => {
       const target = new URL(anchor.getAttribute("href"), window.location.href);
-      if (target.origin === window.location.origin && (salesOnly.test(target.pathname) || serverOnly.test(target.pathname))) anchor.remove();
+      if (target.origin === window.location.origin && salesOnly.test(target.pathname)) anchor.remove();
     });
     document.querySelectorAll("button").forEach((button) => {
       const label = button.textContent.trim().replace(/s+/g, " ");
-      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings|Sign in|Log in)$/i.test(label)) button.remove();
+      if (/^(?:Get Pro|Unlock (?:with )?Pro|See Pro|Get lifetime access|Cookie settings)$/i.test(label)) button.remove();
     });
   };
   let queued = false;
@@ -91,64 +127,33 @@
     if (!anchor) return;
     const target = new URL(anchor.getAttribute("href"), window.location.href);
     if (target.origin !== window.location.origin) return;
-    if (target.pathname === scalingPath) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.assign(scalingPath);
-    } else if (salesOnly.test(target.pathname) || serverOnly.test(target.pathname)) {
+    if (salesOnly.test(target.pathname)) {
       event.preventDefault();
       event.stopImmediatePropagation();
       window.location.assign("/components" + target.search + target.hash);
+    } else if (serverOnly.test(target.pathname)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(origin + target.pathname + target.search + target.hash);
     }
   }, true);
 })();
 </script>
-    <script type="module" crossorigin src="/assets/index-DeEm2KPi.js"></script>
+    <script type="module" crossorigin src="/assets/index-C2dRF6Sj.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BpQH8Ho1.js">
     <link rel="modulepreload" crossorigin href="/assets/react-BkAXpnfr.js">
-    <link rel="modulepreload" crossorigin href="/assets/preload-helper-DjzSQ1t3.js">
-    <link rel="modulepreload" crossorigin href="/assets/site-BExGXZUm.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-CqDuy7ko.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-CTX4bCpB.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CTsRTJUX.js">
     <link rel="modulepreload" crossorigin href="/assets/HugeiconsIcon-C2cDExRS.js">
-    <link rel="modulepreload" crossorigin href="/assets/supabase-DZKEQN-e.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BthlyMSn.css">
-  <link rel="stylesheet" href="/ateam/composants.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-B9QHEEXq.css">
   </head>
   <body>
-    <div id="root"><div data-prerender style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0"><nav><a href="/">affectUI</a> · <a href="/components">Components</a> · <a href="/screens">Screens</a> · <a href="/blocks">Blocks</a> · <a href="/illustrations">Illustrations</a> · <a href="/motion">Motion</a> · <a href="/docs/introduction">Docs</a> · <a href="/guides">Guides</a> · <a href="/compare">Compare</a> · <a href="/pricing">Pricing</a></nav><main><p><a href="/">affectUI</a> › <a href="/components">Components</a> › <a href="/category/data-display">Data display</a></p>
-<h1>Usage Meter</h1>
-<p>Plan usage and AI credits – a stacked credits meter by category, daily sparkline, limits and a button that speaks up near the limit.</p>
-<p>Part of <a href="/pricing">affectUI Pro</a>. Install: <code>npx shadcn@latest add https://www.affectui.com/r/usage-meter.json</code> · Import from <code>@/components/ui/usage-meter</code></p>
-<h2>When to use</h2><ul><li>The usage or billing page of a SaaS or AI product – credits, tokens, minutes or messages per billing cycle</li><li>Showing what the usage went into (chat, search, images, API) next to plan limits like seats and storage</li><li>Nudging people to top up or upgrade right where they see they&#39;re running out</li></ul><h2>When not to use</h2><ul><li>Long-term trends over many months – a line chart like the KPI Chart reads better</li><li>More than about five categories – the bar gets too thin; group the small ones into &quot;Other&quot;</li></ul><h2>Usage</h2><pre><code>import { useState } from &quot;react&quot;;
-import { UsageMeter } from &quot;@/components/ui/usage-meter&quot;;
-
-export function Usage({ usage }) {
-  const [period, setPeriod] = useState(&quot;month&quot;);
-  const data = usage[period]; // { used, limits, daily } per period from your API
-
-  return (
-    &lt;UsageMeter
-      title=&quot;Acme AI&quot;
-      plan=&quot;Pro plan&quot;
-      total={10000}
-      used={data.used} // [{ label: &quot;Chat&quot;, value: 3980 }, { label: &quot;Search&quot;, value: 1640 }, …]
-      limits={[
-        { label: &quot;Seats&quot;, used: 8, total: 10 },
-        { label: &quot;Storage&quot;, used: 3.2, total: 5, unit: &quot;GB&quot; },
-        { label: &quot;Projects&quot;, used: 12, total: null }, // unlimited
-      ]}
-      daily={data.daily} // [{ label: &quot;Oct 1&quot;, value: 312 }, …, { label: &quot;Oct 17&quot;, value: null }]
-      periods={[
-        { id: &quot;month&quot;, label: &quot;This month&quot; },
-        { id: &quot;last&quot;, label: &quot;Last month&quot; },
-        { id: &quot;7d&quot;, label: &quot;7 days&quot; },
-      ]}
-      period={period}
-      onPeriodChange={setPeriod}
-      resetAt=&quot;2026-10-17&quot;
-      onUpgrade={(state) =&gt; (state === &quot;ok&quot; ? openPlans() : openTopUp())}
-    /&gt;
-  );
-}</code></pre><h2>Props</h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>total</code></td><td><code>number</code></td><td></td><td>Credits included in the plan – the bar&#39;s full width</td></tr><tr><td><code>used</code></td><td><code>{ label: string; value: number; color?: string }[]</code></td><td></td><td>What the credits went into in the shown period. Without colors the parts get shades of the accent, then grays; each label keeps its shade</td></tr><tr><td><code>limits</code></td><td><code>{ label; used; total?: number | null; unit?; decimals? }[]</code></td><td></td><td>Thin meters below, e.g. seats and storage. Leave total out (or null) for unlimited – shown as &quot;of ∞&quot; on a striped track</td></tr><tr><td><code>periods</code></td><td><code>{ id: string; label: string }[]</code></td><td></td><td>Options of the period switch; no switch when left out</td></tr><tr><td><code>period</code></td><td><code>string</code></td><td></td><td>Controlled period id – pass the matching used, limits and daily with it</td></tr><tr><td><code>defaultPeriod</code></td><td><code>string</code></td><td></td><td>Starting period when uncontrolled; defaults to the first option</td></tr><tr><td><code>onPeriodChange</code></td><td><code>(id: string) =&gt; void</code></td><td></td><td>Called when a period is picked</td></tr><tr><td><code>resetAt</code></td><td><code>Date | string | number</code></td><td></td><td>When the credits reset – shown as &quot;Resets in 9 days&quot;, the date on hover</td></tr><tr><td><code>daily</code></td><td><code>{ label: string; value: number | null }[]</code></td><td></td><td>Usage per day for the sparkline; null for days still to come, shown as flat stubs</td></tr><tr><td><code>onUpgrade</code></td><td><code>(state: &quot;ok&quot; | &quot;warn&quot; | &quot;limit&quot;) =&gt; void</code></td><td></td><td>Called by the button with the current state</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td><code>&quot;Usage&quot;</code></td><td>Card title, e.g. the workspace or product name</td></tr><tr><td><code>plan</code></td><td><code>string</code></td><td></td><td>Plan name in front of the reset date</td></tr><tr><td><code>unit</code></td><td><code>string</code></td><td><code>&quot;credits&quot;</code></td><td>Unit of the main meter</td></tr><tr><td><code>warnAt</code></td><td><code>number</code></td><td><code>0.8</code></td><td>Share (0–1) from which the meter and the limits warn</td></tr><tr><td><code>upgradeLabel</code></td><td><code>string</code></td><td><code>&quot;Upgrade&quot;</code></td><td>Button text while there is room left (a quiet button)</td></tr><tr><td><code>topUpLabel</code></td><td><code>string</code></td><td><code>&quot;Add credits&quot;</code></td><td>Button text near and at the limit (a solid button)</td></tr><tr><td><code>className</code></td><td><code>string</code></td><td></td><td>Extra class on the root</td></tr></tbody></table><h2>Keyboard</h2><ul><li>Tab: Reaches the period switch, the bar, the sparkline and the button</li><li>← / →: Switch: picks the previous or next period. Bar: steps through the categories. Sparkline: steps through the days</li><li>Esc: Hides the category or day readout</li></ul><h2>Accessibility</h2><ul><li>A section labelled by its title; the bar and every limit are meters with their value as text (&quot;7,420 of 10,000 credits&quot;)</li><li>The period switch is a radio group with a roving tab stop</li><li>The category tooltip is a polite live region, so stepping through the bar reads each part</li><li>Running low and reaching the limit are announced in a polite live region; amber is never the only signal – the text says it too</li></ul><h2>Responsive</h2><ul><li>Fills its container up to 460px; at 400px and below the switch gets its own row and the limits stack as rows</li><li>Works down to 320px wide; long labels end with an ellipsis, numbers and units never split</li><li>Touch: tapping a part or a legend row shows its value, targets grow to 36–38px</li><li>Dark mode built in: switches when an ancestor (usually &lt;html&gt;) has the class dark or data-theme=&quot;dark&quot;</li></ul><h2>Requirements</h2><ul><li>React 19</li></ul><h2>Related</h2><ul><li><a href="/components/kpi-chart">KPI Chart</a> – Metric card with a multi-line chart and a tooltip that follows the pointer</li><li><a href="/components/breakdown-chart">Breakdown Chart</a> – Stacked bar chart with measure, slice and segment pickers, a hover breakdown and a linked table</li><li><a href="/components/billing-schedule">Billing Schedule</a> – Build a billing phase – start date, duration, products with repeats and timing, discount, minimum and live totals</li><li><a href="/components/progress-tracker">Progress Tracker</a> – Onboarding checklist with an animated progress bar, ticks that draw themselves and auto play</li></ul><h2>Guides</h2><ul><li><a href="/guides/agent-dashboard-react">How to build an agent dashboard in React</a> – The views an AI agent dashboard needs – what&#39;s running, who started what, what needs a person, what it cost – and React components for each.</li><li><a href="/guides/ai-agent-costs-token-usage-ui">How to show AI agent costs and token usage</a> – UI patterns for showing what AI agents cost – per run, per step and per agent – plus token usage, context limits and budgets.</li><li><a href="/guides/context-window-ui">Context window UI: showing what fills an LLM&#39;s context</a> – How to show an LLM&#39;s context window to users – what takes up space, how full it is, what to remove, when to compact, and how memory fits in.</li></ul></main></div></div>
+    <div id="root">
+      <!-- Shown to crawlers without JavaScript; React replaces it on the first render -->
+      <h1 style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">
+        affectUI – Agent-ready UI for AI products
+      </h1>
+    </div>
   </body>
 </html>
